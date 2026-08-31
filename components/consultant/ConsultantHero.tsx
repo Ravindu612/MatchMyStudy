@@ -22,9 +22,9 @@ export default function ConsultantHero({ consultant }: Props) {
   const [liveRating, setLiveRating] = useState(0);
   const [liveReviewCount, setLiveReviewCount] = useState(0);
 
-  // --------------------------------------------------
-  // Load rating
-  // --------------------------------------------------
+  // ============================================================
+  // LOAD RATING
+  // ============================================================
 
   useEffect(() => {
     async function loadRating() {
@@ -46,9 +46,9 @@ export default function ConsultantHero({ consultant }: Props) {
     loadRating();
   }, [consultant.id]);
 
-  // --------------------------------------------------
-  // Load current user
-  // --------------------------------------------------
+  // ============================================================
+  // LOAD CURRENT USER
+  // ============================================================
 
   useEffect(() => {
     let mounted = true;
@@ -120,9 +120,9 @@ export default function ConsultantHero({ consultant }: Props) {
     };
   }, []);
 
-  // --------------------------------------------------
-  // Permissions
-  // --------------------------------------------------
+  // ============================================================
+  // PERMISSIONS
+  // ============================================================
 
   const isOwner =
     !!userProfile &&
@@ -145,9 +145,9 @@ export default function ConsultantHero({ consultant }: Props) {
     consultantProActive &&
     (isOwner || isAdmin);
 
-  // --------------------------------------------------
-  // Values
-  // --------------------------------------------------
+  // ============================================================
+  // VALUES
+  // ============================================================
 
   const rating =
     liveReviewCount > 0
@@ -162,20 +162,22 @@ export default function ConsultantHero({ consultant }: Props) {
     consultant.logo ||
     "/defaults/consultant-logo.png";
 
-  // --------------------------------------------------
-  // Render
-  // --------------------------------------------------
+  // ============================================================
+  // RENDER
+  // ============================================================
 
   return (
     <div className="w-full">
 
-      {/* =====================================================
-          HERO
-      ====================================================== */}
+      {/* ======================================================
+          HERO BANNER
+      ======================================================= */}
 
       <section className="relative w-full overflow-hidden">
 
-        {/* Banner */}
+        {/* --------------------------------------------------
+            Banner
+        -------------------------------------------------- */}
 
         <div
           className="
@@ -194,11 +196,79 @@ export default function ConsultantHero({ consultant }: Props) {
 
           {/* Dark overlay */}
 
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-slate-950/15 to-slate-950/65" />
+          <div
+            className="
+              absolute
+              inset-0
+              bg-gradient-to-b
+              from-slate-950/50
+              via-slate-950/15
+              to-slate-950/75
+            "
+          />
 
-          {/* =================================================
-              PROFILE CARD
-          ================================================== */}
+          {/* ==================================================
+              BACK BUTTON
+          =================================================== */}
+
+          <div
+            className="
+              absolute
+              left-0
+              right-0
+              top-0
+              z-30
+              mx-auto
+              max-w-7xl
+              px-4
+              pt-5
+              sm:px-6
+              sm:pt-6
+              lg:px-8
+            "
+          >
+
+            <Link
+              href="/consultants"
+              className="
+                inline-flex
+                items-center
+                gap-2
+                rounded-full
+                border
+                border-white/20
+                bg-black/25
+                px-4
+                py-2.5
+                text-sm
+                font-semibold
+                text-white
+                shadow-lg
+                backdrop-blur-md
+                transition-all
+                duration-200
+                hover:-translate-y-0.5
+                hover:bg-black/40
+                hover:text-blue-100
+                sm:px-5
+                sm:py-3
+                sm:text-base
+              "
+            >
+              <span className="text-xl leading-none">
+                ←
+              </span>
+
+              <span>
+                Back to Consultant Listings
+              </span>
+            </Link>
+
+          </div>
+
+          {/* ==================================================
+              MAIN PROFILE AREA
+          =================================================== */}
 
           <div
             className="
@@ -211,13 +281,19 @@ export default function ConsultantHero({ consultant }: Props) {
               items-center
               justify-center
               px-4
-              pt-16
+              pt-24
+              pb-12
               sm:min-h-[680px]
               sm:px-8
-              sm:pt-20
+              sm:pt-28
+              sm:pb-14
               lg:min-h-[700px]
             "
           >
+
+            {/* ==================================================
+                PROFILE CARD
+            =================================================== */}
 
             <div
               className="
@@ -228,7 +304,7 @@ export default function ConsultantHero({ consultant }: Props) {
                 rounded-[2rem]
                 border
                 border-white/20
-                bg-slate-950/75
+                bg-slate-950/60
                 px-5
                 pb-10
                 pt-28
@@ -240,7 +316,9 @@ export default function ConsultantHero({ consultant }: Props) {
               "
             >
 
-              {/* Decorative glow */}
+              {/* ------------------------------------------------
+                  Decorative glow - left
+              ------------------------------------------------- */}
 
               <div
                 className="
@@ -255,6 +333,10 @@ export default function ConsultantHero({ consultant }: Props) {
                   blur-3xl
                 "
               />
+
+              {/* ------------------------------------------------
+                  Decorative glow - right
+              ------------------------------------------------- */}
 
               <div
                 className="
@@ -297,11 +379,19 @@ export default function ConsultantHero({ consultant }: Props) {
                   sm:w-44
                 "
               >
+
                 <img
                   src={logo}
                   alt={`${consultant.name} logo`}
-                  className="h-full w-full object-contain p-3"
+                  className="
+                    h-full
+                    w-full
+                    object-contain
+                    p-3
+                  "
                 />
+
+                {/* Verified badge */}
 
                 {consultant.verified && (
                   <div
@@ -326,6 +416,7 @@ export default function ConsultantHero({ consultant }: Props) {
                     ✓
                   </div>
                 )}
+
               </div>
 
               {/* =================================================
@@ -334,7 +425,9 @@ export default function ConsultantHero({ consultant }: Props) {
 
               <div className="relative z-10 text-center">
 
-                {/* Name */}
+                {/* ------------------------------------------------
+                    Consultant name
+                ------------------------------------------------- */}
 
                 <h1
                   className="
@@ -342,6 +435,7 @@ export default function ConsultantHero({ consultant }: Props) {
                     font-bold
                     tracking-tight
                     text-white
+                    drop-shadow-sm
                     sm:text-5xl
                     lg:text-6xl
                   "
@@ -349,7 +443,9 @@ export default function ConsultantHero({ consultant }: Props) {
                   {consultant.name}
                 </h1>
 
-                {/* Rating */}
+                {/* =================================================
+                    RATING + VERIFICATION
+                ================================================== */}
 
                 <div
                   className="
@@ -361,6 +457,8 @@ export default function ConsultantHero({ consultant }: Props) {
                     gap-3
                   "
                 >
+
+                  {/* Rating */}
 
                   <div
                     className="
@@ -377,6 +475,7 @@ export default function ConsultantHero({ consultant }: Props) {
                       backdrop-blur-sm
                     "
                   >
+
                     <span className="text-2xl">
                       ★
                     </span>
@@ -385,12 +484,19 @@ export default function ConsultantHero({ consultant }: Props) {
                       {rating}
                     </span>
 
-                    <span className="text-sm font-medium text-white/75">
+                    <span
+                      className="
+                        text-sm
+                        font-medium
+                        text-white/75
+                      "
+                    >
                       ({liveReviewCount}{" "}
                       {liveReviewCount === 1
                         ? "review"
                         : "reviews"})
                     </span>
+
                   </div>
 
                   {/* Verified */}
@@ -412,14 +518,19 @@ export default function ConsultantHero({ consultant }: Props) {
                         ring-emerald-400/30
                       "
                     >
-                      <span>✓</span>
+                      <span>
+                        ✓
+                      </span>
+
                       Verified Consultant
                     </span>
                   )}
 
                 </div>
 
-                {/* Location */}
+                {/* =================================================
+                    LOCATION
+                ================================================== */}
 
                 <div
                   className="
@@ -433,12 +544,16 @@ export default function ConsultantHero({ consultant }: Props) {
                     text-white/90
                   "
                 >
-                  <span>📍</span>
+
+                  <span>
+                    📍
+                  </span>
 
                   <span>
                     {consultant.city},{" "}
                     {consultant.country}
                   </span>
+
                 </div>
 
                 {/* =================================================
@@ -454,6 +569,8 @@ export default function ConsultantHero({ consultant }: Props) {
                     gap-3
                   "
                 >
+
+                  {/* Website */}
 
                   {consultant.website && (
                     <a
@@ -473,14 +590,18 @@ export default function ConsultantHero({ consultant }: Props) {
                         font-bold
                         text-white
                         shadow-lg
-                        transition
+                        transition-all
+                        duration-200
                         hover:-translate-y-0.5
                         hover:bg-blue-500
+                        hover:shadow-blue-500/30
                       "
                     >
                       🌐 Visit Website
                     </a>
                   )}
+
+                  {/* Phone */}
 
                   {consultant.phone && (
                     <a
@@ -498,14 +619,18 @@ export default function ConsultantHero({ consultant }: Props) {
                         font-bold
                         text-white
                         shadow-lg
-                        transition
+                        transition-all
+                        duration-200
                         hover:-translate-y-0.5
                         hover:bg-indigo-500
+                        hover:shadow-indigo-500/30
                       "
                     >
                       📞 Call
                     </a>
                   )}
+
+                  {/* Email */}
 
                   {consultant.email && (
                     <a
@@ -523,9 +648,11 @@ export default function ConsultantHero({ consultant }: Props) {
                         font-bold
                         text-white
                         shadow-lg
-                        transition
+                        transition-all
+                        duration-200
                         hover:-translate-y-0.5
                         hover:bg-blue-500
+                        hover:shadow-blue-500/30
                       "
                     >
                       ✉ Email
@@ -549,6 +676,8 @@ export default function ConsultantHero({ consultant }: Props) {
                     "
                   >
 
+                    {/* Edit Profile */}
+
                     {canManageProfile && (
                       <Link
                         href={`/consultants/edit/${consultant.slug}`}
@@ -563,13 +692,16 @@ export default function ConsultantHero({ consultant }: Props) {
                           font-semibold
                           text-white
                           backdrop-blur-sm
-                          transition
+                          transition-all
+                          duration-200
                           hover:bg-white/20
                         "
                       >
                         ✏️ Edit Profile
                       </Link>
                     )}
+
+                    {/* Manage / Upgrade */}
 
                     {isOwner &&
                       (consultantProActive ? (
@@ -586,7 +718,8 @@ export default function ConsultantHero({ consultant }: Props) {
                             font-semibold
                             text-white
                             backdrop-blur-sm
-                            transition
+                            transition-all
+                            duration-200
                             hover:bg-white/20
                           "
                         >
@@ -606,8 +739,11 @@ export default function ConsultantHero({ consultant }: Props) {
                             font-bold
                             text-white
                             shadow-lg
-                            transition
+                            transition-all
+                            duration-200
                             hover:-translate-y-0.5
+                            hover:from-amber-300
+                            hover:to-orange-400
                           "
                         >
                           🚀 Upgrade Profile
@@ -627,12 +763,21 @@ export default function ConsultantHero({ consultant }: Props) {
 
       </section>
 
-      {/* =====================================================
+      {/* ======================================================
           SUCCESS STORY MANAGEMENT
-      ====================================================== */}
+      ======================================================= */}
 
       {canManageSuccessStories && (
-        <div className="mx-auto mt-12 w-full max-w-6xl px-4 sm:px-6">
+        <div
+          className="
+            mx-auto
+            mt-12
+            w-full
+            max-w-6xl
+            px-4
+            sm:px-6
+          "
+        >
           <AddSuccessStory
             consultantId={consultant.id}
             onCreated={() => {

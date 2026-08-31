@@ -3,6 +3,7 @@ import Link from "next/link";
 import { universities } from "@/data/universities";
 import CountrySearch from "@/components/CountrySearch";
 import { programs } from "@/data/programs";
+import FindConsultantsButton from "@/components/consultant/FindConsultantsButton";
 
 type CountryKey = keyof typeof universities;
 
@@ -71,7 +72,33 @@ export default function CountryPage({
           </div>
         </div>
 
+                {/* Quick Actions */}
+
+        <div className="flex flex-wrap gap-4 mb-10">
+
+          <a
+            href="#universities"
+            className="rounded-xl bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 font-semibold transition"
+          >
+            🎓 Explore Universities
+          </a>
+
+          <a
+            href="#programs"
+            className="rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 font-semibold transition"
+          >
+            📚 Explore Programs
+          </a>
+
+          <FindConsultantsButton
+  destination={country}
+  className="rounded-xl bg-violet-600 hover:bg-violet-700 text-white px-6 py-3 font-semibold transition"
+/>
+
+        </div>
+
         {/* Search */}
+
         <CountrySearch
           country={country}
           universities={countryUniversities}
@@ -97,8 +124,7 @@ export default function CountryPage({
           ))}
         </div>
 
-        {/* Universities */}
-        <div>
+        <div id="universities">
           <h2 className="text-3xl font-bold mb-8 text-slate-900">
             Popular Universities in {country}
           </h2>

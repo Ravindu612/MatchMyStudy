@@ -4,6 +4,7 @@ export type Country = {
   href: string;
   status: "available" | "coming-soon";
   description: string;
+  flag?: string;
 };
 
 export const countries: Country[] = [
@@ -33,6 +34,7 @@ export const countries: Country[] = [
   },
   {
     name: "Finland",
+    flag: "🇫🇮",
     slug: "finland",
     href: "/finland",
     status: "available",

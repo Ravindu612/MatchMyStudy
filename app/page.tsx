@@ -1,6 +1,7 @@
 import GlobalSearch from "@/components/GlobalSearch";
 import Link from "next/link";
 import { countries } from "@/data/countries";
+import FindConsultantsButton from "@/components/consultant/FindConsultantsButton";
 
 
 export default function Home() {
@@ -36,6 +37,10 @@ Get personalized recommendations based on your goals, interests, and career aspi
   >
     🎯 Not Sure Where to Study?
   </a>
+
+  <FindConsultantsButton
+  className="inline-block bg-white text-blue-700 hover:bg-blue-50 px-8 py-4 rounded-xl font-semibold shadow-lg transition"
+/>
 
 </div>
       </section>
@@ -113,6 +118,17 @@ Get personalized recommendations based on your goals, interests, and career aspi
             </Link>
           ))}
         </div>
+
+        <div className="mt-10 flex justify-center">
+
+  <Link
+    href="/countries"
+    className="inline-flex items-center gap-2 rounded-xl border border-blue-600 px-6 py-3 text-blue-600 font-semibold hover:bg-blue-600 hover:text-white transition"
+  >
+    🌍 Browse All Study Destinations →
+  </Link>
+
+</div>
       </section>
       
     </main>

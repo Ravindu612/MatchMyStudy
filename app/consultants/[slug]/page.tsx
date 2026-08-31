@@ -1,10 +1,5 @@
 import ConsultantProfileClient from "@/components/consultant/ConsultantProfileClient";
 import Link from "next/link";
-// We will create these later
-// import ConsultantPartners from "@/components/consultant/ConsultantPartners";
-// import ConsultantOffice from "@/components/consultant/ConsultantOffice";
-// import ConsultantReviews from "@/components/consultant/ConsultantReviews";
-// import ClaimProfile from "@/components/consultant/ClaimProfile";
 
 type Props = {
   params: Promise<{
@@ -15,25 +10,38 @@ type Props = {
 export default async function ConsultantProfilePage({ params }: Props) {
   const { slug } = await params;
 
-  
-
   return (
+    <main className="min-h-screen bg-slate-50 pb-24">
 
-  <main className="min-h-screen bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-700 pb-24">
+      <div className="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
+        <Link
+          href="/consultants"
+          className="
+            inline-flex
+            items-center
+            gap-2
+            rounded-full
+            bg-white
+            px-5
+            py-2.5
+            text-sm
+            font-semibold
+            text-slate-700
+            shadow-sm
+            ring-1
+            ring-slate-200
+            transition
+            hover:bg-slate-100
+            hover:text-blue-600
+          "
+        >
+          <span className="text-lg">←</span>
+          Back to Consultant Listings
+        </Link>
+      </div>
 
-  <div className="max-w-6xl mx-auto px-6 pt-8">
+      <ConsultantProfileClient slug={slug} />
 
-    <Link
-      href="/consultants"
-      className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-800 transition"
-    >
-      ← Back to Consultant Listings
-    </Link>
-
-  </div>
-
-  <ConsultantProfileClient slug={slug} />
-</main>
-
-);
+    </main>
+  );
 }

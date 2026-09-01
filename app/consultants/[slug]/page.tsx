@@ -13,7 +13,7 @@ export default async function ConsultantProfilePage({
   const { slug } = await params;
 
   return (
-    <main className="min-h-screen bg-slate-50 pb-24">
+    <main className="min-h-screen bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-700 pb-24">
 
       <ConsultantProfileClient slug={slug} />
 

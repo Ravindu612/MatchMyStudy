@@ -79,7 +79,7 @@ export default async function UpgradeConsultantPage({
             <div className="mt-8 flex items-end gap-2">
 
               <span className="text-5xl font-extrabold text-slate-900">
-                $2.99
+                $9.99
               </span>
 
               <span className="pb-2 text-slate-500">
@@ -206,7 +206,7 @@ export default async function UpgradeConsultantPage({
             <div className="mt-8 flex items-end gap-2">
 
               <span className="text-5xl font-extrabold text-slate-900">
-                $29
+                $59
               </span>
 
               <span className="pb-2 text-slate-500">
@@ -217,7 +217,7 @@ export default async function UpgradeConsultantPage({
 
 
             <div className="mt-3 inline-flex rounded-full bg-green-100 px-3 py-1 text-sm font-bold text-green-700">
-              Save $7
+              Save 50%
             </div>
 
 

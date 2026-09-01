@@ -5,88 +5,129 @@ type Props = {
   consultant: Consultant;
 };
 
-export default function ConsultantOffice({ consultant }: Props) {
+export default function ConsultantOffice({
+  consultant,
+}: Props) {
   return (
     <Section
-  title="Office Information"
-  icon=""
-  gradient="linear-gradient(90deg,#0891B2,#3B82F6)"
->
+      title="Office Information"
+      icon=""
+      gradient="linear-gradient(90deg,#0891B2,#3B82F6)"
+    >
+      <div className="grid gap-8 md:grid-cols-2">
 
-      <div className="grid md:grid-cols-2 gap-8">
+        {/* =====================================================
+            CONTACT INFORMATION
+        ====================================================== */}
 
         <div className="space-y-5">
 
+          {/* Address */}
           <div>
             <h3 className="font-semibold text-slate-900">
               Address
             </h3>
 
-            <p className="text-slate-600 mt-2">
-              {consultant.address}
+            <p className="mt-2 break-words text-slate-600">
+              {consultant.address || "Not available"}
             </p>
           </div>
 
-          <div>
-            <h3 className="font-semibold text-slate-900">
-              ☎ Phone
-            </h3>
+          {/* Phone */}
+          {consultant.phone && (
+            <div>
+              <h3 className="font-semibold text-slate-900">
+                ☎ Phone
+              </h3>
 
-            <a
-              href={`tel:${consultant.phone}`}
-              className="text-blue-600 hover:underline"
-            >
-              {consultant.phone}
-            </a>
-          </div>
+              <a
+                href={`tel:${consultant.phone}`}
+                className="break-words text-blue-600 hover:underline"
+              >
+                {consultant.phone}
+              </a>
+            </div>
+          )}
 
-          <div>
-            <h3 className="font-semibold text-slate-900">
-              ✉ Email
-            </h3>
+          {/* Email */}
+          {consultant.email && (
+            <div>
+              <h3 className="font-semibold text-slate-900">
+                ✉ Email
+              </h3>
 
-            <a
-              href={`mailto:${consultant.email}`}
-              className="text-blue-600 hover:underline"
-            >
-              {consultant.email}
-            </a>
-          </div>
+              <a
+                href={`mailto:${consultant.email}`}
+                className="break-words text-blue-600 hover:underline"
+              >
+                {consultant.email}
+              </a>
+            </div>
+          )}
 
-          <div>
-            <h3 className="font-semibold text-slate-900">
-              🌐 Website
-            </h3>
+          {/* Website */}
+          {consultant.website && (
+            <div>
+              <h3 className="font-semibold text-slate-900">
+                🌐 Website
+              </h3>
 
-            <a
-              href={consultant.website}
-              target="_blank"
-              className="text-blue-600 hover:underline"
-            >
-              Visit Official Website
-            </a>
-          </div>
+              <a
+                href={consultant.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                Visit Official Website
+              </a>
+            </div>
+          )}
 
         </div>
 
-        <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 flex items-center justify-center h-64">
-            
-  <iframe
-    title="Office Location"
-    width="100%"
-    height="350"
-    loading="lazy"
-    allowFullScreen
-    className="rounded-2xl border"
-    src={`https://www.google.com/maps?q=${encodeURIComponent(
-      consultant.address ?? ""
-    )}&output=embed`}
-  />   
+
+        {/* =====================================================
+            GOOGLE MAP
+        ====================================================== */}
+
+        <div className="min-w-0">
+
+          <div
+            className="
+              relative
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-slate-200
+              bg-slate-50
+              shadow-sm
+            "
+          >
+
+            <iframe
+              title="Office Location"
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+              className="
+                block
+                h-[280px]
+                w-full
+                max-w-full
+                border-0
+                sm:h-[320px]
+              "
+              src={`https://www.google.com/maps?q=${encodeURIComponent(
+                consultant.address ?? ""
+              )}&output=embed`}
+            />
+
+          </div>
 
         </div>
 
       </div>
-
     </Section>
   );
 }

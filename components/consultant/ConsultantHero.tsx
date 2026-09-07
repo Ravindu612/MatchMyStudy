@@ -260,7 +260,7 @@ export default function ConsultantHero({ consultant }: Props) {
               </span>
 
               <span>
-                Back to Consultant Listings
+                Back to List
               </span>
             </Link>
 

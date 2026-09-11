@@ -494,24 +494,59 @@ export async function getClaimForConsultant(
 export async function cancelConsultantPro(
   consultantId: string
 ) {
-  const { data, error } = await supabase
-    .from("consultants")
-    .update({
-      is_pro: false,
-      pro_cancelled_at: new Date().toISOString(),
-    })
-    .eq("id", consultantId)
-    .select("*")
-    .single();
+  // Get the currently logged-in user
+  const {
+    data: { session },
+    error: sessionError,
+  } = await supabase.auth.getSession();
 
-  if (error) {
+  if (sessionError) {
     console.error(
-      "Cancel consultant Pro error:",
-      error
+      "Get session error:",
+      sessionError
     );
 
-    throw error;
+    throw sessionError;
   }
 
-  return data;
+  if (!session?.access_token) {
+    throw new Error(
+      "You must be logged in to cancel your Pro subscription."
+    );
+  }
+
+  // Ask our secure server API to cancel
+  // the Stripe subscription at the end
+  // of the current billing period.
+  const response = await fetch(
+    "/api/stripe/cancel-subscription",
+    {
+      method: "POST",
+
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${session.access_token}`,
+      },
+
+      body: JSON.stringify({
+        consultantId,
+      }),
+    }
+  );
+
+  const result = await response.json();
+
+  if (!response.ok) {
+    console.error(
+      "Cancel subscription API error:",
+      result
+    );
+
+    throw new Error(
+      result?.error ||
+        "Could not cancel the Pro subscription."
+    );
+  }
+
+  return result;
 }

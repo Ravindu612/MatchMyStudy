@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { getConsultantBySlug } from "@/lib/consultantService";
 import ManageProClient from "@/components/consultant/ManageProClient";
-import { cancelConsultantPro } from "@/lib/consultantService";
 import CancelProButton from "@/components/consultant/CancelProButton";
 
 type Props = {
@@ -38,16 +37,20 @@ if (!consultant) {
 
 
   const isPro =
-    consultant.is_pro === true;
+  consultant.is_pro === true;
 
-  const plan =
-    consultant.pro_plan;
+const plan =
+  consultant.pro_plan;
 
-  const startedAt =
-    consultant.pro_started_at;
+const startedAt =
+  consultant.pro_started_at;
 
-  const expiresAt =
-    consultant.pro_expires_at;
+const expiresAt =
+  consultant.pro_expires_at;
+
+const cancellationScheduled =
+  isPro &&
+  !!consultant.pro_cancelled_at;
 
   function formatDate(
     date?: string | null
@@ -110,21 +113,25 @@ if (!consultant) {
                 Subscription status
               </p>
 
-              <div className="mt-2 flex items-center gap-3">
+              <div className="mt-2 flex flex-wrap items-center gap-3">
 
-                <h2 className="text-3xl font-bold text-slate-900">
-                  {isPro
-                    ? "Pro Active"
-                    : "Not Active"}
-                </h2>
+  <h2 className="text-3xl font-bold text-slate-900">
+    {isPro ? "Pro Active" : "Not Active"}
+  </h2>
 
-                {isPro && (
-                  <span className="rounded-full bg-green-100 px-3 py-1 text-sm font-bold text-green-700">
-                    ✓ Active
-                  </span>
-                )}
+  {isPro && !cancellationScheduled && (
+    <span className="rounded-full bg-green-100 px-3 py-1 text-sm font-bold text-green-700">
+      ✓ Active
+    </span>
+  )}
 
-              </div>
+  {isPro && cancellationScheduled && (
+    <span className="rounded-full bg-amber-100 px-3 py-1 text-sm font-bold text-amber-700">
+      ⚠ Cancellation Scheduled
+    </span>
+  )}
+
+</div>
 
             </div>
 
@@ -168,10 +175,12 @@ if (!consultant) {
               <div className="rounded-2xl bg-slate-50 p-5">
 
                 <p className="text-sm font-semibold text-slate-500">
-                  {plan === "annual"
-                    ? "Expires"
-                    : "Next Billing Date"}
-                </p>
+  {cancellationScheduled
+    ? "Pro Access Until"
+    : plan === "annual"
+      ? "Expires"
+      : "Next Billing Date"}
+</p>
 
                 <p className="mt-2 text-lg font-bold text-slate-900">
                   {formatDate(expiresAt)}
@@ -183,6 +192,38 @@ if (!consultant) {
           )}
 
         </div>
+
+        {isPro && cancellationScheduled && (
+  <div className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-5">
+
+    <div className="flex items-start gap-3">
+
+      <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-amber-100 text-lg">
+        ⚠
+      </div>
+
+      <div>
+
+        <h3 className="font-bold text-amber-900">
+          Cancellation scheduled
+        </h3>
+
+        <p className="mt-1 leading-7 text-amber-800">
+          Your Pro subscription will remain active
+          until{" "}
+          <strong>
+            {formatDate(expiresAt)}
+          </strong>
+          . You will not be charged for another
+          billing period after this date.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+)}
 
 
         {/* Features */}
@@ -239,11 +280,38 @@ if (!consultant) {
   </h2>
 
   {isPro ? (
+  cancellationScheduled ? (
     <>
       <p className="mt-3 leading-7 text-slate-600">
-        Your Pro subscription is currently
-        active. You can cancel your Pro
-        membership below.
+        Your Pro subscription has been scheduled
+        for cancellation. You can continue using
+        all Pro features until{" "}
+        <strong className="text-slate-900">
+          {formatDate(expiresAt)}
+        </strong>
+        .
+      </p>
+
+      <div className="mt-6 rounded-2xl border border-green-200 bg-green-50 p-5">
+
+        <p className="font-bold text-green-800">
+          ✓ No further renewal is scheduled
+        </p>
+
+        <p className="mt-1 text-sm leading-6 text-green-700">
+          Your subscription will end automatically
+          at the end of the current billing period.
+        </p>
+
+      </div>
+    </>
+  ) : (
+    <>
+      <p className="mt-3 leading-7 text-slate-600">
+        Your Pro subscription is currently active.
+        You can cancel your Pro membership at any
+        time. Your Pro access will continue until
+        the end of your current billing period.
       </p>
 
       <div className="mt-6">
@@ -252,7 +320,8 @@ if (!consultant) {
         />
       </div>
     </>
-  ) : (
+  )
+) : (
     <>
       <p className="mt-3 leading-7 text-slate-600">
         Your Pro subscription is not currently

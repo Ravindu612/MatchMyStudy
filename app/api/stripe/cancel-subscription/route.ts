@@ -194,17 +194,15 @@ export async function POST(request: Request) {
     // The existing webhook will update Supabase.
     // ------------------------------------------------
 
-    const subscriptionData =
-  updatedSubscription as Stripe.Subscription & {
-    current_period_end?: number | null;
-  };
+   const subscriptionItem =
+  updatedSubscription.items.data[0];
 
 return NextResponse.json({
   success: true,
   cancelAtPeriodEnd:
     updatedSubscription.cancel_at_period_end,
   currentPeriodEnd:
-    subscriptionData.current_period_end ?? null,
+    subscriptionItem?.current_period_end ?? null,
 });
   } catch (error) {
     console.error(

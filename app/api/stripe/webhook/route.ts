@@ -288,23 +288,20 @@ async function updateConsultantSubscription(
     subscription.status === "active" ||
     subscription.status === "trialing";
 
-  const subscriptionData =
-  subscription as Stripe.Subscription & {
-    current_period_end?: number | null;
-    current_period_start?: number | null;
-  };
+  const subscriptionItem =
+  subscription.items.data[0];
 
 const currentPeriodEnd =
-  subscriptionData.current_period_end
+  subscriptionItem?.current_period_end
     ? new Date(
-        subscriptionData.current_period_end * 1000
+        subscriptionItem.current_period_end * 1000
       ).toISOString()
     : null;
 
 const currentPeriodStart =
-  subscriptionData.current_period_start
+  subscriptionItem?.current_period_start
     ? new Date(
-        subscriptionData.current_period_start * 1000
+        subscriptionItem.current_period_start * 1000
       ).toISOString()
     : new Date().toISOString();
 

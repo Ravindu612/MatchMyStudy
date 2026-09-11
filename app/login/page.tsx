@@ -128,6 +128,8 @@ export default function LoginPage() {
     data: {
       role: role,
     },
+
+    emailRedirectTo: `${window.location.origin}/login`,
   },
 });
 

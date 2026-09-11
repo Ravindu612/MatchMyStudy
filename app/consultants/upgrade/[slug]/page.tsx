@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getConsultantBySlug } from "@/lib/consultantService";
+import UpgradeButton from "@/components/consultant/UpgradeButton";
 
 type Props = {
   params: Promise<{
@@ -165,12 +166,13 @@ export default async function UpgradeConsultantPage({
             </div>
 
 
-            <button
-              type="button"
+            <UpgradeButton
+  slug={slug}
+  plan="monthly"
               className="mt-10 w-full rounded-xl border-2 border-blue-600 px-6 py-4 font-bold text-blue-600 transition hover:bg-blue-50"
             >
               Choose Monthly
-            </button>
+            </UpgradeButton>
 
           </div>
 
@@ -288,12 +290,13 @@ export default async function UpgradeConsultantPage({
             </div>
 
 
-            <button
-              type="button"
+            <UpgradeButton
+  slug={slug}
+  plan="annual"
               className="mt-10 w-full rounded-xl bg-blue-600 px-6 py-4 font-bold text-white shadow-lg transition hover:bg-blue-700"
             >
               Choose Annual
-            </button>
+            </UpgradeButton>
 
           </div>
 

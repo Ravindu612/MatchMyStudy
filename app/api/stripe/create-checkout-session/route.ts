@@ -101,18 +101,19 @@ export async function POST(request: Request) {
     } = await supabase
       .from("consultants")
       .select(
-        `
-          id,
-          slug,
-          name,
-          email,
-          owner_id,
-          claimed,
-          is_pro,
-          stripe_customer_id,
-          stripe_subscription_id
-        `
-      )
+  `
+    id,
+    slug,
+    name,
+    email,
+    owner_id,
+    claimed,
+    created_by_consultant,
+    is_pro,
+    stripe_customer_id,
+    stripe_subscription_id
+  `
+)
       .eq("slug", slug)
       .maybeSingle();
 
@@ -154,18 +155,27 @@ export async function POST(request: Request) {
     }
 
     // --------------------------------------------------
-    // 7. Make sure the profile has been claimed
-    // --------------------------------------------------
+// 7. Check whether the profile is eligible for Pro
+// --------------------------------------------------
+//
+// Consultant-created profiles already belong to their owner,
+// so they do not need to go through the claim process.
+//
+// MatchMyStudy-created profiles must be claimed first.
 
-    if (!consultant.claimed) {
-      return NextResponse.json(
-        {
-          error:
-            "You must claim and have your consultant profile approved before purchasing Pro.",
-        },
-        { status: 403 }
-      );
-    }
+const canPurchasePro =
+  consultant.created_by_consultant === true ||
+  consultant.claimed === true;
+
+if (!canPurchasePro) {
+  return NextResponse.json(
+    {
+      error:
+        "This consultant profile must be claimed and approved before purchasing Pro.",
+    },
+    { status: 403 }
+  );
+}
 
     // --------------------------------------------------
     // 8. Prevent duplicate active subscriptions

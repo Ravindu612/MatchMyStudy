@@ -48,6 +48,33 @@ export default function EditConsultantClient({ slug }: Props) {
 const [logoFile, setLogoFile] = useState<File | null>(null);
 const [bannerFile, setBannerFile] = useState<File | null>(null);
 
+const [partnerUniversities, setPartnerUniversities] = useState<string[]>([]);
+const [universityInput, setUniversityInput] = useState("");
+
+const handleAddUniversity = () => {
+  const university = universityInput.trim();
+
+  if (!university) return;
+
+  if (
+    partnerUniversities.some(
+      (item) => item.toLowerCase() === university.toLowerCase()
+    )
+  ) {
+    alert("This university has already been added.");
+    return;
+  }
+
+  setPartnerUniversities((prev) => [...prev, university]);
+  setUniversityInput("");
+};
+
+const handleRemoveUniversity = (university: string) => {
+  setPartnerUniversities((prev) =>
+    prev.filter((item) => item !== university)
+  );
+};
+
 const [logoPreview, setLogoPreview] = useState("");
 const [bannerPreview, setBannerPreview] = useState("");
   const [loading, setLoading] = useState(true);
@@ -195,6 +222,7 @@ const handleDelete = async () => {
   youtube: data.youtube ?? "",
 });
 
+setPartnerUniversities(data.partner_universities ?? []);
 setLogoPreview(data.logo ?? "");
 setBannerPreview(data.banner ?? "");
       }
@@ -258,6 +286,7 @@ const handleSave = async () => {
 
         services:
           formData.services,
+        partner_universities: partnerUniversities,
 
         description:
           formData.description,
@@ -290,6 +319,7 @@ const handleSave = async () => {
       destinationCountries:
         formData.destinationCountries,
       services: formData.services,
+      partnerUniversities: partnerUniversities,
       description: formData.description,
       maps: formData.maps,
       facebook: formData.facebook,
@@ -584,6 +614,75 @@ setTimeout(() => {
         </span>
       </label>
     ))}
+
+  </div>
+
+</div>
+
+<div className="mt-10">
+
+  <h2 className="text-2xl font-bold text-slate-900">
+    Partner Universities
+  </h2>
+
+  <p className="mt-2 text-sm text-slate-500">
+    Add the universities your consultancy works with.
+  </p>
+
+  <div className="mt-6">
+
+    <div className="flex gap-3">
+
+      <input
+        type="text"
+        value={universityInput}
+        onChange={(e) => setUniversityInput(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            handleAddUniversity();
+          }
+        }}
+        placeholder="Enter university name"
+        className="flex-1 rounded-xl border border-slate-300 px-4 py-3 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200"
+      />
+
+      <button
+        type="button"
+        onClick={handleAddUniversity}
+        className="rounded-xl bg-blue-600 px-5 py-3 font-medium text-white transition hover:bg-blue-700"
+      >
+        + Add
+      </button>
+
+    </div>
+
+    {partnerUniversities.length > 0 && (
+      <div className="mt-4 space-y-2">
+
+        {partnerUniversities.map((university) => (
+          <div
+            key={university}
+            className="flex items-center justify-between rounded-xl border border-slate-200 bg-white px-4 py-3"
+          >
+
+            <span className="text-sm font-medium text-slate-700">
+              {university}
+            </span>
+
+            <button
+              type="button"
+              onClick={() => handleRemoveUniversity(university)}
+              className="ml-4 text-sm font-medium text-red-600 hover:text-red-700"
+            >
+              Remove
+            </button>
+
+          </div>
+        ))}
+
+      </div>
+    )}
 
   </div>
 

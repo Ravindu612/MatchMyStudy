@@ -6,6 +6,7 @@ import { getConsultants } from "@/lib/consultantService";
 import { useEffect, useState } from "react";
 import { countries } from "@/data/countries";
 import type { Consultant } from "@/types/consultant";
+import { supabase } from "@/lib/supabase";
 
 const countryNames = countries.map((c) =>
   c.name.toLowerCase()
@@ -42,7 +43,34 @@ export default function ConsultantSearch() {
       try {
         const dbConsultants = await getConsultants();
 
-        const formattedConsultants: Consultant[] =
+let approvedClaimedConsultantIds: string[] = [];
+
+try {
+  const { data: approvedClaims, error: claimsError } =
+    await supabase
+      .from("consultant_claims")
+      .select("consultant_id")
+      .eq("status", "approved");
+
+  if (claimsError) {
+    console.error(
+      "Load approved consultant claims error:",
+      claimsError
+    );
+  } else {
+    approvedClaimedConsultantIds =
+      (approvedClaims ?? []).map(
+        (claim) => claim.consultant_id
+      );
+  }
+} catch (error) {
+  console.error(
+    "Load approved consultant claims error:",
+    error
+  );
+}
+
+const formattedConsultants: Consultant[] =
           dbConsultants.map((c: any) => ({
             id: c.id,
             slug: c.slug,
@@ -119,10 +147,13 @@ export default function ConsultantSearch() {
         );
 
         const localConsultantsWithoutDuplicates =
-          consultants.filter(
-            (consultant) =>
-              !dbSlugs.has(consultant.slug)
-          );
+  consultants.filter(
+    (consultant) =>
+      !dbSlugs.has(consultant.slug) &&
+      !approvedClaimedConsultantIds.includes(
+        consultant.id
+      )
+  );
 
         const mergedConsultants = [
           ...localConsultantsWithoutDuplicates,

@@ -142,10 +142,22 @@ proExpiresAt:
           );
 
         if (manualConsultant) {
-          setConsultant(manualConsultant);
-          setLoading(false);
-          return;
-        }
+  const { data: approvedClaim } = await supabase
+    .from("consultant_claims")
+    .select("id")
+    .eq("consultant_id", manualConsultant.id)
+    .eq("status", "approved")
+    .maybeSingle();
+
+  if (approvedClaim) {
+    setLoading(false);
+    return;
+  }
+
+  setConsultant(manualConsultant);
+  setLoading(false);
+  return;
+}
 
         /*
          * Nothing found.

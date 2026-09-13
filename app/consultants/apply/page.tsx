@@ -34,6 +34,7 @@ export default function ApplyConsultantPage() {
 
 const [logoPreview, setLogoPreview] = useState("");
 const [logoFile, setLogoFile] = useState<File | null>(null);
+const [isSubmitting, setIsSubmitting] = useState(false);
 
 const [bannerPreview, setBannerPreview] = useState("");
 const [bannerFile, setBannerFile] = useState<File | null>(null);
@@ -96,8 +97,12 @@ const handleDestinationChange = (country: string) => {
 };
 
 const handleSubmit = async () => {
+  if (isSubmitting) return;
 
-  let logoUrl = "/images/consultants/default-logo.png";
+  setIsSubmitting(true);
+
+  try {
+    let logoUrl = "/images/consultants/default-logo.png";
 
   if (logoFile) {
     logoUrl = await uploadImage(
@@ -222,13 +227,34 @@ if (!user) {
 
 if (error) {
   console.error(error);
-  alert(error.message);
+
+  if (error.code === "23505") {
+    alert(
+      "A consultancy with this name already exists. Please choose a different consultancy name."
+    );
+  } else {
+    alert(error.message);
+  }
+
+  setIsSubmitting(false);
   return;
 }
 
   console.log(consultant);
 
   router.push("/consultants/success");
+
+  } catch (error) {
+    console.error("Create consultant profile error:", error);
+
+    alert(
+      error instanceof Error
+        ? error.message
+        : "Something went wrong while creating your profile."
+    );
+  } finally {
+    setIsSubmitting(false);
+  }
 };
   return (
     <main className="min-h-screen bg-slate-50">
@@ -735,8 +761,16 @@ if (error) {
   <button
   type="button"
   onClick={handleSubmit}
-  className="mt-5 inline-block cursor-pointer rounded-xl bg-blue-600 px-6 py-3 text-white font-medium hover:bg-blue-700">
-  🚀 Publish My Consultancy Profile
+  disabled={isSubmitting}
+  className={`mt-5 inline-block rounded-xl px-6 py-3 text-white font-medium transition ${
+    isSubmitting
+      ? "cursor-not-allowed bg-blue-400 opacity-70"
+      : "cursor-pointer bg-blue-600 hover:bg-blue-700"
+  }`}
+>
+  {isSubmitting
+    ? "Creating Profile..."
+    : "🚀 Publish My Consultancy Profile"}
 </button>
 
 </div>

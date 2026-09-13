@@ -72,7 +72,7 @@ export default function ConsultantCTA() {
         href="/consultants/apply"
         className="mt-5 block w-full rounded-xl bg-white py-3 text-center font-semibold text-blue-700 hover:bg-blue-50 transition"
       >
-        Apply for Verification →
+        Create a Profile →
       </Link>
 
     </div>

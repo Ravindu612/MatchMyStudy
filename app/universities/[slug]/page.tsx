@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Globe,
   MapPin,
@@ -16,6 +17,34 @@ import Link from "next/link";
 import { universities } from "@/data/universities";
 
 const allUniversities = Object.values(universities).flat();
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+
+  const university = allUniversities.find(
+    (uni) => uni.slug === slug
+  );
+
+  if (!university) {
+    return {
+      title: "University Not Found | MatchMyStudy",
+      description:
+        "The university you are looking for could not be found on MatchMyStudy.",
+    };
+  }
+
+  return {
+    title: `${university.name} — Programs, Tuition & Study Information | MatchMyStudy`,
+    description:
+      university.descriptionShort ||
+      university.description ||
+      `Explore ${university.name}, including study programs, tuition information, scholarships, rankings, and international student information.`,
+  };
+}
 
 export default async function UniversityDetailPage({
   params,

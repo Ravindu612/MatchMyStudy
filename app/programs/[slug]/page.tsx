@@ -1,7 +1,33 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { programs } from "@/data/programs";
 import { ubcEnglishRequirements } from "@/data/ubcEnglishRequirements";
 import { englishRequirements } from "@/data/englishRequirements";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+
+  const program = programs.find((item) => item.slug === slug);
+
+  if (!program) {
+    return {
+      title: "Programme Not Found | MatchMyStudy",
+      description:
+        "The programme you are looking for could not be found on MatchMyStudy.",
+    };
+  }
+
+  return {
+    title: `${program.name} — ${program.universityName} | MatchMyStudy`,
+    description:
+      program.description ||
+      `Explore ${program.name} at ${program.universityName}, including tuition information, programme details, entry requirements, duration, and study information.`,
+  };
+}
 
 export default async function ProgramDetailPage({
   params,

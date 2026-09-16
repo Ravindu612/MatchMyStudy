@@ -18,6 +18,47 @@ import { universities } from "@/data/universities";
 
 const allUniversities = Object.values(universities).flat();
 
+function createUniversityJsonLd(university: (typeof allUniversities)[number]) {
+  const jsonLd: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "CollegeOrUniversity",
+    name: university.name,
+    description:
+      university.descriptionShort ||
+      university.description ||
+      `Learn about ${university.name}.`,
+    url: `https://www.matchmystudy.com/universities/${university.slug}`,
+  };
+
+  if (university.logo) {
+    jsonLd.logo = university.logo;
+  }
+
+  if (university.bannerImage) {
+    jsonLd.image = university.bannerImage;
+  } else if (university.logo) {
+    jsonLd.image = university.logo;
+  }
+
+  if (university.city || university.country) {
+    jsonLd.address = {
+      "@type": "PostalAddress",
+      ...(university.city && {
+        addressLocality: university.city,
+      }),
+      ...(university.country && {
+        addressCountry: university.country,
+      }),
+    };
+  }
+
+  if (university.officialWebsite) {
+    jsonLd.sameAs = [university.officialWebsite];
+  }
+
+  return jsonLd;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -80,12 +121,22 @@ export default async function UniversityDetailPage({
     );
   }
 
-  const universityPrograms = programs.filter(
+    const universityPrograms = programs.filter(
     (program) => program.universitySlug === slug
   );
 
+  const universityJsonLd = createUniversityJsonLd(university);
+
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(universityJsonLd),
+        }}
+      />
+
+      <main className="min-h-screen bg-slate-50 text-slate-900">
 
       <section className="w-full overflow-hidden">
 
@@ -382,5 +433,6 @@ export default async function UniversityDetailPage({
 
       </section>
     </main>
+    </>
   );
 }

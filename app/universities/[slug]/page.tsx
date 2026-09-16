@@ -18,6 +18,47 @@ import { universities } from "@/data/universities";
 
 const allUniversities = Object.values(universities).flat();
 
+const countryCodeMap: Record<string, string> = {
+  Australia: "AU",
+  Austria: "AT",
+  Belgium: "BE",
+  Canada: "CA",
+  China: "CN",
+  "Czech Republic": "CZ",
+  Denmark: "DK",
+  Finland: "FI",
+  France: "FR",
+  Germany: "DE",
+  Greece: "GR",
+  "Hong Kong": "HK",
+  Hungary: "HU",
+  India: "IN",
+  Ireland: "IE",
+  Italy: "IT",
+  Japan: "JP",
+  Malaysia: "MY",
+  Netherlands: "NL",
+  "New Zealand": "NZ",
+  Norway: "NO",
+  Poland: "PL",
+  Portugal: "PT",
+  Qatar: "QA",
+  Romania: "RO",
+  "Saudi Arabia": "SA",
+  Singapore: "SG",
+  "South Africa": "ZA",
+  "South Korea": "KR",
+  Spain: "ES",
+  Sweden: "SE",
+  Switzerland: "CH",
+  Taiwan: "TW",
+  Thailand: "TH",
+  Türkiye: "TR",
+  "United Arab Emirates": "AE",
+  "United Kingdom": "GB",
+  "United States": "US",
+};
+
 function createUniversityJsonLd(university: (typeof allUniversities)[number]) {
   const jsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
@@ -47,7 +88,8 @@ function createUniversityJsonLd(university: (typeof allUniversities)[number]) {
         addressLocality: university.city,
       }),
       ...(university.country && {
-        addressCountry: university.country,
+        addressCountry:
+  countryCodeMap[university.country] || university.country,
       }),
     };
   }

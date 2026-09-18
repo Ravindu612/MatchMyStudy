@@ -2904,4 +2904,1133 @@ export const universityCollegeDublinPrograms: Program[] = [
     programType: "Full Time",
     degree: "MSc",
   },
+
+    {
+    name: "Computed Tomography",
+    slug: "computed-tomography",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Health & Medicine",
+    duration: "16 Months",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Computed Tomography postgraduate programme at University College Dublin, including programme details, study duration, delivery mode, and admission information.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=X075",
+    campus: "On Campus",
+    programType: "Full Time",
+    degree: "MSc",
+  },
+
+  {
+    name: "Computer Science (Conversion)",
+    slug: "computer-science-conversion",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Science, Computer Science & Actuarial Science",
+    duration: "16 Months",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Computer Science (Conversion) postgraduate programme at University College Dublin, designed as a conversion programme in computer science with details on study duration, delivery mode, and admission information.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=T195",
+    campus: "On Campus",
+    programType: "Full Time",
+    degree: "MSc",
+  },
+
+  {
+    name: "Corporate Governance",
+    slug: "corporate-governance",
+    level: "Professional Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Business & Management",
+    duration: "1 Year",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Corporate Governance postgraduate programme at University College Dublin, including programme details, study duration, attendance mode, and admission information.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=B245",
+    programType: "Part Time",
+    degree: "ProfDip",
+  },
+
+  {
+    name: "Creative & Innovative Problem Solving for Educators",
+    slug: "creative-innovative-problem-solving-for-educators",
+    level: "Professional Certificate",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Education",
+    duration: "8 Weeks",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Creative & Innovative Problem Solving for Educators postgraduate programme at University College Dublin, focusing on creative and innovative problem-solving approaches for educators.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=F316",
+    campus: "Online",
+    programType: "Part Time",
+    degree: "ProfCert",
+  },
+
+    {
+    name: "Creative Writing",
+    slug: "creative-writing-ma",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Arts, Humanities & Social Sciences",
+    duration: "1 Year",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Creative Writing postgraduate programme at University College Dublin, including programme details, study duration, attendance mode, and admission information.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=Z012",
+    programType: "Full Time",
+    degree: "MA",
+  },
+
+  {
+    name: "Creative Writing",
+    slug: "creative-writing-mfa",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Arts, Humanities & Social Sciences",
+    duration: "1 Year",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Creative Writing postgraduate programme at University College Dublin, including programme details, study duration, attendance mode, and admission information.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=Z197",
+    programType: "Full Time",
+    degree: "MFA",
+  },
+
+  {
+    name: "Creativity, Innovation & Entrepreneurship",
+    slug: "creativity-innovation-entrepreneurship-gradcert-18-weeks",
+    level: "Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Business & Management",
+    duration: "18 Weeks",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Creativity, Innovation & Entrepreneurship postgraduate programme at University College Dublin, focusing on creativity, innovation, and entrepreneurship.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=F193",
+    campus: "On Campus",
+    programType: "Part Time",
+    degree: "GradCert",
+  },
+
+  {
+    name: "Creativity, Innovation & Entrepreneurship",
+    slug: "creativity-innovation-entrepreneurship-gradcert-1-year",
+    level: "Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Business & Management",
+    duration: "1 Year",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Creativity, Innovation & Entrepreneurship postgraduate programme at University College Dublin, focusing on creativity, innovation, and entrepreneurship.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=F224",
+    programType: "Part Time",
+    degree: "GradCert",
+  },
+
+  {
+    name: "Creativity, Innovation & Leadership",
+    slug: "creativity-innovation-leadership-on-campus",
+    level: "Professional Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Business & Management",
+    duration: "1 Year",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Creativity, Innovation & Leadership postgraduate programme at University College Dublin, focusing on creativity, innovation, leadership, and professional development.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=F170",
+    campus: "On Campus",
+    programType: "Part Time",
+    degree: "ProfDip",
+  },
+
+  {
+    name: "Creativity, Innovation & Leadership",
+    slug: "creativity-innovation-leadership-online",
+    level: "Professional Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Business & Management",
+    duration: "1 Year",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Creativity, Innovation & Leadership postgraduate programme at University College Dublin, focusing on creativity, innovation, leadership, and professional development.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=F215",
+    campus: "Online",
+    programType: "Part Time",
+    degree: "ProfDip",
+  },
+
+  {
+    name: "Criminology & Criminal Justice",
+    slug: "criminology-criminal-justice-msc",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Politics, International Relations & Law",
+    duration: "1/2 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Criminology & Criminal Justice postgraduate programme at University College Dublin, including full-time and part-time study options.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=B220",
+    campus: "On Campus",
+    programType: "Full Time / Part Time",
+    degree: "MSc",
+  },
+
+  {
+    name: "Criminology & Criminal Justice",
+    slug: "criminology-criminal-justice-llm",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Politics, International Relations & Law",
+    duration: "1/2 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Criminology & Criminal Justice postgraduate programme at University College Dublin through its law-focused postgraduate route.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=B292",
+    campus: "On Campus",
+    programType: "Full Time / Part Time",
+    degree: "LLM",
+  },
+
+  {
+    name: "Critical Geographies: Crises, Climate & Inequality",
+    slug: "critical-geographies-crises-climate-inequality",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Environment & Sustainability",
+    duration: "1/2 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Critical Geographies: Crises, Climate & Inequality postgraduate programme at University College Dublin, addressing geographical perspectives on crises, climate, and inequality.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=W589",
+    campus: "On Campus",
+    programType: "Full Time / Part Time",
+    degree: "MA",
+  },
+
+  {
+    name: "Cultural Policy & Arts Management",
+    slug: "cultural-policy-arts-management",
+    level: "Graduate Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Arts, Humanities & Social Sciences",
+    duration: "1 Year",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Cultural Policy & Arts Management postgraduate programme at University College Dublin, including programme details, study duration, attendance mode, and admission information.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=Z245",
+    programType: "Full Time",
+    degree: "GradDip",
+  },
+
+    {
+    name: "Cultural Policy & Arts Management",
+    slug: "cultural-policy-arts-management-ma",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Arts, Humanities & Social Sciences",
+    duration: "1/3 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Cultural Policy & Arts Management postgraduate programme at University College Dublin, including full-time and part-time study options.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=Z041",
+    campus: "On Campus",
+    programType: "Full Time / Part Time",
+    degree: "MA",
+  },
+
+  {
+    name: "Cybersecurity",
+    slug: "cybersecurity-msc",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Science, Computer Science & Actuarial Science",
+    duration: "2 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Cybersecurity MSc postgraduate programme at University College Dublin, including its blended delivery, part-time study structure, and programme duration.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=T380",
+    campus: "Blended",
+    programType: "Part Time",
+    degree: "MSc",
+  },
+
+  {
+    name: "Cybersecurity",
+    slug: "cybersecurity-graddip",
+    level: "Graduate Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Science, Computer Science & Actuarial Science",
+    duration: "2 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Cybersecurity Graduate Diploma at University College Dublin, including its blended delivery, part-time study structure, and programme duration.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=F249",
+    campus: "Blended",
+    programType: "Part Time",
+    degree: "GradDip",
+  },
+
+  {
+    name: "Cybersecurity",
+    slug: "cybersecurity-gradcert",
+    level: "Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Science, Computer Science & Actuarial Science",
+    duration: "9 Months",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Cybersecurity Graduate Certificate at University College Dublin, including its blended delivery, part-time study structure, and programme duration.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=T379",
+    campus: "Blended",
+    programType: "Part Time",
+    degree: "GradCert",
+  },
+
+  {
+    name: "Dairy Herd Health",
+    slug: "dairy-herd-health",
+    level: "Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Veterinary Medicine & Animal Science",
+    duration: "18 Months",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Dairy Herd Health postgraduate programme at University College Dublin, including its online delivery, part-time study structure, and programme duration.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=X389",
+    campus: "Online",
+    programType: "Part Time",
+    degree: "GradCert",
+  },
+
+  {
+    name: "Data & Computational Science",
+    slug: "data-computational-science",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Science, Computer Science & Actuarial Science",
+    duration: "1 Year",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Data & Computational Science MSc at University College Dublin, including programme details, study duration, delivery mode, and admission information.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=T306",
+    campus: "On Campus",
+    programType: "Full Time",
+    degree: "MSc",
+  },
+
+  {
+    name: "Data Protection Law & Governance",
+    slug: "data-protection-law-governance",
+    level: "Professional Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Politics, International Relations & Law",
+    duration: "9 Months",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Data Protection Law & Governance postgraduate programme at University College Dublin, focusing on data protection law, governance, and professional practice.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=B720",
+    campus: "On Campus",
+    programType: "Part Time",
+    degree: "ProfDip",
+  },
+
+  {
+    name: "Data Science",
+    slug: "data-science-msc",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Science, Computer Science & Actuarial Science",
+    duration: "2 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Data Science MSc postgraduate programme at University College Dublin, including its online delivery, part-time study structure, and programme duration.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=F275",
+    campus: "Online",
+    programType: "Part Time",
+    degree: "MSc",
+  },
+
+  {
+    name: "Data Science",
+    slug: "data-science-profdip",
+    level: "Professional Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Science, Computer Science & Actuarial Science",
+    duration: "1 Year",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Data Science Professional Diploma at University College Dublin, including its online delivery, part-time study structure, and programme duration.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=F274",
+    campus: "Online",
+    programType: "Part Time",
+    degree: "ProfDip",
+  },
+
+  {
+    name: "Design Thinking for Sustainability",
+    slug: "design-thinking-for-sustainability",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Environment & Sustainability",
+    duration: "1 Year",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Design Thinking for Sustainability MSc at University College Dublin, focusing on design thinking approaches to sustainability challenges.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=F252",
+    campus: "On Campus",
+    programType: "Full Time",
+    degree: "MSc",
+  },
+
+    {
+    name: "Design Thinking for Sustainability",
+    slug: "design-thinking-for-sustainability-grad-dip",
+    level: "Graduate Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Environment & Sustainability",
+    duration: "9 Months",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Design Thinking for Sustainability Graduate Diploma at University College Dublin, focusing on design thinking approaches to sustainability challenges.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=F189",
+    campus: "On Campus",
+    programType: "Full Time",
+    degree: "GradDip",
+  },
+
+  {
+    name: "Diagnostic Imaging Physics",
+    slug: "diagnostic-imaging-physics",
+    level: "Professional Certificate",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Health & Medicine",
+    duration: "3 Months",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Diagnostic Imaging Physics professional certificate at University College Dublin, including its specialist focus and short postgraduate study structure.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=F188",
+    campus: "",
+    programType: "Full Time",
+    degree: "ProfCert",
+  },
+
+  {
+    name: "Digital & AI Policy",
+    slug: "digital-ai-policy-grad-dip-ft",
+    level: "Graduate Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Politics, International Relations & Law",
+    duration: "1 Year",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Digital & AI Policy Graduate Diploma at University College Dublin, focusing on digital technologies, artificial intelligence, policy, and governance.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=W624",
+    campus: "",
+    programType: "Full Time",
+    degree: "GradDip",
+  },
+
+  {
+    name: "Digital & AI Policy",
+    slug: "digital-ai-policy-grad-dip-pt",
+    level: "Graduate Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Politics, International Relations & Law",
+    duration: "2 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the part-time Digital & AI Policy Graduate Diploma at University College Dublin, focusing on digital technologies, artificial intelligence, policy, and governance.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=W625",
+    campus: "",
+    programType: "Part Time",
+    degree: "GradDip",
+  },
+
+  {
+    name: "Digital & AI Policy",
+    slug: "digital-ai-policy-msc",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Politics, International Relations & Law",
+    duration: "1/2 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Digital & AI Policy MSc at University College Dublin, focusing on digital technologies, artificial intelligence, policy, and governance.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=W622",
+    campus: "",
+    programType: "Full Time / Part Time",
+    degree: "MSc",
+  },
+
+  {
+    name: "Digital Innovation",
+    slug: "digital-innovation-msc",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Science, Computer Science & Actuarial Science",
+    duration: "1/2 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Digital Innovation MSc at University College Dublin, including digital innovation concepts, programme structure, and study options.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=B551",
+    campus: "",
+    programType: "Full Time / Part Time",
+    degree: "MSc",
+  },
+
+  {
+    name: "Digital Innovation & Transformation",
+    slug: "digital-innovation-transformation-profdip",
+    level: "Professional Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Business & Management",
+    duration: "1 Year",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Digital Innovation & Transformation Professional Diploma at University College Dublin, focusing on digital innovation and organisational transformation.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=B802",
+    campus: "",
+    programType: "Part Time",
+    degree: "ProfDip",
+  },
+
+  {
+    name: "Digital Marketing",
+    slug: "digital-marketing-msc",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Business & Management",
+    duration: "1 Year",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Digital Marketing MSc at University College Dublin, including advanced digital marketing concepts, programme structure, and study information.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=B424",
+    campus: "",
+    programType: "Full Time",
+    degree: "MSc",
+  },
+
+  {
+    name: "Dioplóma Iarchéime Scríobh & Cumarsáid",
+    slug: "dioploma-iarchéime-scriobh-cumarsaid",
+    level: "Graduate Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Arts, Humanities & Social Sciences",
+    duration: "1/2 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Dioplóma Iarchéime Scríobh & Cumarsáid postgraduate programme at University College Dublin, including its writing and communication focus and study options.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=Z165",
+    campus: "",
+    programType: "Full Time / Part Time",
+    degree: "GradDip",
+  },
+
+  {
+    name: "Dioplóma Iarchéime sa Nua-Ghaeilge",
+    slug: "dioploma-iarchéime-sa-nua-ghaeilge",
+    level: "Graduate Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Arts, Humanities & Social Sciences",
+    duration: "2 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Dioplóma Iarchéime sa Nua-Ghaeilge postgraduate programme at University College Dublin, focusing on Modern Irish studies.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=Z263",
+    campus: "On Campus",
+    programType: "Part Time",
+    degree: "GradDip",
+  },
+
+    {
+    name: "Dioplóma Iarchéime sa Nua-Ghaeilge",
+    slug: "dioploma-iarchéime-sa-nua-ghaeilge-1-year",
+    level: "Graduate Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Arts, Humanities & Social Sciences",
+    duration: "1 Year",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Dioplóma Iarchéime sa Nua-Ghaeilge postgraduate programme at University College Dublin, focusing on Modern Irish studies and postgraduate language education.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=Z181",
+    campus: "",
+    programType: "Full Time",
+    degree: "GradDip",
+  },
+
+  {
+    name: "Diploma in Arbitration",
+    slug: "diploma-in-arbitration",
+    level: "Professional Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Politics, International Relations & Law",
+    duration: "1 Year",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Diploma in Arbitration postgraduate programme at University College Dublin, focusing on arbitration principles, procedures, and professional practice.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=B640",
+    campus: "On Campus",
+    programType: "Part Time",
+    degree: "ProfDip",
+  },
+
+  {
+    name: "Dispute Resolution (Mediation)",
+    slug: "dispute-resolution-mediation",
+    level: "Professional Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Politics, International Relations & Law",
+    duration: "1 Year",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Dispute Resolution (Mediation) postgraduate programme at University College Dublin, focusing on mediation and dispute resolution practices.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=B761",
+    campus: "Online",
+    programType: "Part Time",
+    degree: "ProfDip",
+  },
+
+  {
+    name: "Dual Energy X-Ray Absorptiometry (DEXA)",
+    slug: "dual-energy-x-ray-absorptiometry-dexa",
+    level: "Professional Certificate",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Health & Medicine",
+    duration: "4 Months",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Dual Energy X-Ray Absorptiometry (DEXA) professional certificate at University College Dublin, focusing on specialist knowledge and practice related to DEXA imaging.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=X579",
+    campus: "On Campus",
+    programType: "Part Time",
+    degree: "ProfCert",
+  },
+
+  {
+    name: "EU Law & Governance",
+    slug: "eu-law-governance-llm",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Politics, International Relations & Law",
+    duration: "1/2 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the EU Law & Governance LLM at University College Dublin, focusing on European Union law, governance, and related legal issues.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=B820",
+    campus: "On Campus",
+    programType: "Full Time / Part Time",
+    degree: "LLM",
+  },
+
+  {
+    name: "Early Pregnancy Ultrasound",
+    slug: "early-pregnancy-ultrasound",
+    level: "Professional Certificate",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Health & Medicine",
+    duration: "6 Months",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Early Pregnancy Ultrasound professional certificate at University College Dublin, focusing on ultrasound practice in early pregnancy care.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=X734",
+    campus: "On Campus",
+    programType: "Part Time",
+    degree: "ProfCert",
+  },
+
+  {
+    name: "Electronic Engineering",
+    slug: "electronic-engineering-postgraduate",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Engineering",
+    duration: "2 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Electronic Engineering postgraduate programme at University College Dublin, focusing on advanced electronic engineering knowledge and professional development.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=NEC1",
+    campus: "",
+    programType: "Full Time",
+    degree: "Postgraduate",
+  },
+
+  {
+    name: "English for Academics",
+    slug: "english-for-academics",
+    level: "Professional Certificate",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Arts, Humanities & Social Sciences",
+    duration: "6 Weeks",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the English for Academics professional certificate at University College Dublin, focusing on English language skills for academic contexts.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=Z377",
+    campus: "On Campus",
+    programType: "Part Time",
+    degree: "ProfCert",
+  },
+
+  {
+    name: "Entrepreneurial Mindset & Application for Educators",
+    slug: "entrepreneurial-mindset-application-for-educators",
+    level: "Professional Certificate",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Education",
+    duration: "8 Weeks",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Entrepreneurial Mindset & Application for Educators professional certificate at University College Dublin, focusing on entrepreneurial thinking and its application in education.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=F317",
+    campus: "",
+    programType: "Part Time",
+    degree: "ProfCert",
+  },
+
+  {
+    name: "Environmental & Climate Law",
+    slug: "environmental-climate-law-msc",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Environment & Sustainability",
+    duration: "1/2 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Environmental & Climate Law MSc at University College Dublin, focusing on environmental law, climate law, governance, and sustainability.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=B783",
+    campus: "Online",
+    programType: "Full Time / Part Time",
+    degree: "MSc",
+  },
+
+    {
+    name: "Environmental & Engineering Geoscience",
+    slug: "environmental-engineering-geoscience",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Environment & Sustainability",
+    duration: "1 Year",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Environmental & Engineering Geoscience MSc at University College Dublin, focusing on environmental and engineering geoscience concepts and applications.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=F290",
+    campus: "On Campus",
+    programType: "Full Time",
+    degree: "MSc",
+  },
+
+  {
+    name: "Environmental Sustainability",
+    slug: "environmental-sustainability-grad-dip",
+    level: "Graduate Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Environment & Sustainability",
+    duration: "2/4 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Environmental Sustainability Graduate Diploma at University College Dublin, focusing on sustainability principles, environmental challenges, and sustainable development.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=F063",
+    campus: "Online",
+    programType: "Full Time / Part Time",
+    degree: "GradDip",
+  },
+
+  {
+    name: "Environmental Sustainability",
+    slug: "environmental-sustainability-grad-cert",
+    level: "Diploma",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Environment & Sustainability",
+    duration: "2/4 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Environmental Sustainability Graduate Certificate at University College Dublin, focusing on sustainability principles, environmental challenges, and sustainable development.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=F065",
+    campus: "Online",
+    programType: "Full Time / Part Time",
+    degree: "GradCert",
+  },
+
+  {
+    name: "Environmental Sustainability (Negotiated Learning)",
+    slug: "environmental-sustainability-negotiated-learning",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Environment & Sustainability",
+    duration: "2/4 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Environmental Sustainability (Negotiated Learning) MSc at University College Dublin, offering flexible study through negotiated learning in environmental sustainability.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=F059",
+    campus: "Online",
+    programType: "Full Time / Part Time",
+    degree: "MSc",
+  },
+
+  {
+    name: "Epidemiology",
+    slug: "epidemiology-mph",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Health & Medicine",
+    duration: "1 Year",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Epidemiology MPH at University College Dublin, focusing on the study of disease patterns, population health, and epidemiological methods.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=X966",
+    campus: "",
+    programType: "Full Time",
+    degree: "MPH",
+  },
+
+  {
+    name: "Epidemiology & Biostatistics",
+    slug: "epidemiology-biostatistics-prof-cert",
+    level: "Professional Certificate",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Health & Medicine",
+    duration: "1 Year",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Epidemiology & Biostatistics professional certificate at University College Dublin, focusing on epidemiological methods and biostatistical approaches.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=X794",
+    campus: "",
+    programType: "Part Time",
+    degree: "ProfCert",
+  },
+
+  {
+    name: "European History",
+    slug: "european-history-ma",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Arts, Humanities & Social Sciences",
+    duration: "2 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the European History MA at University College Dublin, focusing on the study of European history and historical developments.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=Z222",
+    campus: "On Campus",
+    programType: "Full Time",
+    degree: "MA",
+  },
+
+  {
+    name: "European Master in Public Health (Europubhealth+)",
+    slug: "european-master-public-health-europubhealth",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Health & Medicine",
+    duration: "2 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the European Master in Public Health (Europubhealth+) at University College Dublin, focusing on public health education and international perspectives in population health.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=X913",
+    campus: "",
+    programType: "Full Time",
+    degree: "MPH",
+  },
+
+  {
+    name: "Evidence Synthesis",
+    slug: "evidence-synthesis-prof-cert",
+    level: "Professional Certificate",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Health & Medicine",
+    duration: "1 Year",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Evidence Synthesis professional certificate at University College Dublin, focusing on methods for evaluating and synthesising evidence.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=X973",
+    campus: "On Campus",
+    programType: "Part Time",
+    degree: "ProfCert",
+  },
+
+  {
+    name: "Executive MBA",
+    slug: "executive-mba",
+    level: "Master",
+    universitySlug: "university-college-dublin",
+    universityName: "University College Dublin",
+    country: "Ireland",
+    field: "Business & Management",
+    duration: "2 Years",
+    language: "English",
+    tuitionNote:
+      "Tuition fees vary depending on applicant status and academic year. Please check the official UCD programme page for current fees.",
+    description:
+      "Explore the Executive MBA at University College Dublin, focusing on advanced business management, leadership, and executive education.",
+    officialProgramUrl:
+      "https://hub.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=COURSE&MAJR=B094",
+    campus: "",
+    programType: "Part Time",
+    degree: "MBA",
+  },
 ];

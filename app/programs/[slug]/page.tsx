@@ -3,6 +3,7 @@ import Link from "next/link";
 import { programs } from "@/data/programs";
 import { ubcEnglishRequirements } from "@/data/ubcEnglishRequirements";
 import { englishRequirements } from "@/data/englishRequirements";
+import BackToUniversity from "@/components/BackToUniversity";
 
 export async function generateMetadata({
   params,
@@ -64,12 +65,9 @@ export default async function ProgramDetailPage({
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900 px-6 py-16">
       <section className="max-w-6xl mx-auto">
-        <Link
-          href={`/universities/${program.universitySlug}`}
-          className="text-blue-600 font-semibold"
-        >
-          ← Back to {program.universityName}
-        </Link>
+        <BackToUniversity
+  universityName={program.universityName}
+/>
 
         <div className="mt-10 bg-white border border-slate-200 shadow-sm rounded-3xl p-8 md:p-10">
           <p className="text-blue-600 font-semibold mb-4">

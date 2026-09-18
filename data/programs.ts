@@ -1,7 +1,15 @@
 import { universityOfTorontoPrograms } from "./programs/canada/universityOfTorontoPrograms";
 import { universityOfBritishColumbiaPrograms } from "./programs/canada/universityOfBritishColumbiaPrograms";
 import { universityOfMelbournePrograms } from "./programs/australia/universityOfMelbournePrograms";
-export type ProgramLevel = "Bachelor" | "Master" | "PhD" | "Diploma";
+import { universityCollegeDublinPrograms } from "./programs/ireland/universityCollegeDublinPrograms";
+export type ProgramLevel =
+  | "Bachelor"
+  | "Master"
+  | "PhD"
+  | "Diploma"
+  | "Graduate Diploma"
+  | "Professional Certificate"
+  | "Professional Diploma";
 
 export type Program = {
   name: string;
@@ -31,6 +39,7 @@ export const programs: Program[] = [
   ...universityOfTorontoPrograms,
   ...universityOfBritishColumbiaPrograms,
   ...universityOfMelbournePrograms,
+  ...universityCollegeDublinPrograms,
   {
     name: "Bachelor's Programme in Science and Technology",
     slug: "bachelor-science-technology-aalto-university",

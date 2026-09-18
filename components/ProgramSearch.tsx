@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import type { Program } from "@/data/programs";
 
 type ProgramSearchProps = {
@@ -13,18 +14,65 @@ export default function ProgramSearch({
   universityName,
   programs,
 }: ProgramSearchProps) {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedLevel, setSelectedLevel] = useState("All");
-  const [selectedField, setSelectedField] = useState("All");
-  const [selectedCampus, setSelectedCampus] = useState("All");
-  const [sortOrder, setSortOrder] = useState("A-Z");
-  const [visibleCount, setVisibleCount] = useState("20");
-  const [showAllPrograms, setShowAllPrograms] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const [searchTerm, setSearchTerm] = useState(
+    searchParams.get("search") || ""
+  );
+
+  const [selectedLevel, setSelectedLevel] = useState(
+    searchParams.get("level") || "All"
+  );
+
+  const [selectedField, setSelectedField] = useState(
+    searchParams.get("field") || "All"
+  );
+
+  const [selectedCampus, setSelectedCampus] = useState(
+    searchParams.get("campus") || "All"
+  );
+
+  const [sortOrder, setSortOrder] = useState(
+    searchParams.get("sort") || "A-Z"
+  );
+
+  const [visibleCount, setVisibleCount] = useState(
+    searchParams.get("show") || "20"
+  );
+
+  const [showAllPrograms, setShowAllPrograms] = useState(
+    searchParams.get("all") === "true"
+  );
+
+  const updateUrl = (
+    updates: Record<string, string | null>
+  ) => {
+    const params = new URLSearchParams(searchParams.toString());
+
+    Object.entries(updates).forEach(([key, value]) => {
+      if (!value || value === "All" || value === "A-Z" || value === "20") {
+        params.delete(key);
+      } else {
+        params.set(key, value);
+      }
+    });
+
+    const query = params.toString();
+
+    router.replace(
+      query ? `${pathname}?${query}` : pathname,
+      { scroll: false }
+    );
+  };
 
   const fields = useMemo(() => {
     return [
       "All",
-      ...Array.from(new Set(programs.map((program) => program.field))),
+      ...Array.from(
+        new Set(programs.map((program) => program.field))
+      ),
     ];
   }, [programs]);
 
@@ -108,8 +156,15 @@ export default function ProgramSearch({
           placeholder={`Search courses in ${universityName}`}
           value={searchTerm}
           onChange={(e) => {
-            setSearchTerm(e.target.value);
+            const value = e.target.value;
+
+            setSearchTerm(value);
             setShowAllPrograms(false);
+
+            updateUrl({
+              search: value,
+              all: null,
+            });
           }}
           className="bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
         />
@@ -117,8 +172,15 @@ export default function ProgramSearch({
         <select
           value={selectedLevel}
           onChange={(e) => {
-            setSelectedLevel(e.target.value);
+            const value = e.target.value;
+
+            setSelectedLevel(value);
             setShowAllPrograms(false);
+
+            updateUrl({
+              level: value,
+              all: null,
+            });
           }}
           className="bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
         >
@@ -126,30 +188,51 @@ export default function ProgramSearch({
           <option value="Bachelor">Bachelor&apos;s</option>
           <option value="Master">Master&apos;s</option>
           <option value="PhD">PhD</option>
+          <option value="Diploma">Diploma</option>
+          <option value="Graduate Diploma">
+            Graduate Diploma
+          </option>
+          <option value="Professional Certificate">
+            Professional Certificate
+          </option>
+          <option value="Professional Diploma">
+            Professional Diploma
+          </option>
         </select>
 
         <select
           value={selectedField}
           onChange={(e) => {
-            setSelectedField(e.target.value);
+            const value = e.target.value;
+
+            setSelectedField(value);
             setShowAllPrograms(false);
+
+            updateUrl({
+              field: value,
+              all: null,
+            });
           }}
           className="bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
         >
           {fields.map((field) => (
             <option key={field} value={field}>
-              {field === "All"
-                ? "All Fields"
-                : field}
+              {field === "All" ? "All Fields" : field}
             </option>
           ))}
         </select>
 
         <select
           value={selectedCampus}
-          onChange={(e) =>
-            setSelectedCampus(e.target.value)
-          }
+          onChange={(e) => {
+            const value = e.target.value;
+
+            setSelectedCampus(value);
+
+            updateUrl({
+              campus: value,
+            });
+          }}
           className="bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
         >
           {campuses.map((campus) => (
@@ -163,9 +246,15 @@ export default function ProgramSearch({
 
         <select
           value={sortOrder}
-          onChange={(e) =>
-            setSortOrder(e.target.value)
-          }
+          onChange={(e) => {
+            const value = e.target.value;
+
+            setSortOrder(value);
+
+            updateUrl({
+              sort: value,
+            });
+          }}
           className="bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
         >
           <option value="A-Z">A → Z</option>
@@ -174,9 +263,15 @@ export default function ProgramSearch({
 
         <select
           value={visibleCount}
-          onChange={(e) =>
-            setVisibleCount(e.target.value)
-          }
+          onChange={(e) => {
+            const value = e.target.value;
+
+            setVisibleCount(value);
+
+            updateUrl({
+              show: value,
+            });
+          }}
           className="bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
         >
           <option value="20">Show 20</option>
@@ -189,11 +284,15 @@ export default function ProgramSearch({
       <div className="flex flex-wrap items-center gap-4 mb-8">
         <button
           type="button"
-          onClick={() =>
-            setShowAllPrograms(
-              (current) => !current
-            )
-          }
+          onClick={() => {
+            const newValue = !showAllPrograms;
+
+            setShowAllPrograms(newValue);
+
+            updateUrl({
+              all: newValue ? "true" : null,
+            });
+          }}
           className="bg-blue-600 hover:bg-blue-700 px-5 py-3 rounded-xl font-semibold text-white transition"
         >
           {showAllPrograms

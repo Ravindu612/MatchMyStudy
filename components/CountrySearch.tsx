@@ -105,9 +105,13 @@ export default function CountrySearch({
           className="bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
         >
           <option value="All">All Levels</option>
-          <option value="Bachelor">Bachelor&apos;s</option>
-          <option value="Master">Master&apos;s</option>
-          <option value="PhD">PhD</option>
+  <option value="Bachelor">Bachelor&apos;s</option>
+  <option value="Master">Master&apos;s</option>
+  <option value="PhD">PhD</option>
+  <option value="Diploma">Diploma</option>
+  <option value="Graduate Diploma">Graduate Diploma</option>
+  <option value="Professional Certificate">Professional Certificate</option>
+  <option value="Professional Diploma">Professional Diploma</option>
         </select>
 
         <select

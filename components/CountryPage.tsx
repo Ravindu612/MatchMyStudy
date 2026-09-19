@@ -99,11 +99,13 @@ export default function CountryPage({
 
         {/* Search */}
 
-        <CountrySearch
-          country={country}
-          universities={countryUniversities}
-          programs={countryPrograms}
-        />
+        <div id="programs">
+  <CountrySearch
+    country={country}
+    programs={countryPrograms}
+    universities={countryUniversities}
+  />
+</div>
 
         {/* Quick Info */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 mt-12">

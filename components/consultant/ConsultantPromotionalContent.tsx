@@ -18,27 +18,15 @@ export default function ConsultantPromotionalContent({
   canManage,
   isPro,
 }: Props) {
-  if (!isPro) {
-  return null;
-}
-  const [content, setContent] = useState<
-    PromotionalContent[]
-  >([]);
-
-  const [loading, setLoading] =
-    useState(true);
-
-  const [deletingId, setDeletingId] =
-    useState<string | null>(null);
+  const [content, setContent] = useState<PromotionalContent[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
   useEffect(() => {
     async function loadContent() {
       setLoading(true);
 
-      const data =
-        await getPromotionalContent(
-          consultantId
-        );
+      const data = await getPromotionalContent(consultantId);
 
       setContent(data);
       setLoading(false);
@@ -47,9 +35,7 @@ export default function ConsultantPromotionalContent({
     loadContent();
   }, [consultantId]);
 
-  async function handleDelete(
-    contentId: string
-  ) {
+  async function handleDelete(contentId: string) {
     const confirmed = window.confirm(
       "Are you sure you want to delete this promotional content?"
     );
@@ -61,14 +47,10 @@ export default function ConsultantPromotionalContent({
     try {
       setDeletingId(contentId);
 
-      await deletePromotionalContent(
-        contentId
-      );
+      await deletePromotionalContent(contentId);
 
       setContent((prev) =>
-        prev.filter(
-          (item) => item.id !== contentId
-        )
+        prev.filter((item) => item.id !== contentId)
       );
     } catch (error) {
       console.error(error);
@@ -79,6 +61,10 @@ export default function ConsultantPromotionalContent({
     } finally {
       setDeletingId(null);
     }
+  }
+
+  if (!isPro) {
+    return null;
   }
 
   if (loading) {
@@ -93,76 +79,58 @@ export default function ConsultantPromotionalContent({
     );
   }
 
-  /*
-   * If there is no promotional content,
-   * don't display the public section.
-   */
   if (content.length === 0) {
     return null;
   }
 
   return (
-    <section className="mt-12 px-4 sm:px-6">
-
+    <section className="mt-12 overflow-hidden bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 px-4 py-12 sm:px-6 md:py-16">
       <div className="mx-auto max-w-7xl">
 
         {/* Header */}
-
         <div className="mb-10">
 
-          <div className="inline-flex items-center gap-2 rounded-full bg-purple-100 px-5 py-2 text-sm font-bold text-purple-700">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-bold text-purple-700 shadow-sm">
             ⭐ Featured Content
           </div>
 
-          <h2 className="mt-5 text-4xl font-bold text-slate-900 md:text-5xl">
+          <h2 className="mt-5 text-4xl font-bold tracking-tight text-white md:text-5xl">
             Consultancy Highlights
           </h2>
 
-          <p className="mt-4 max-w-4xl text-lg leading-8 text-slate-600">
-            Discover more about this consultancy,
-            its services, achievements and special
-            opportunities for international students.
+          <p className="mt-4 max-w-4xl text-lg leading-8 text-white/90 md:text-xl">
+            Discover more about this consultancy, its services,
+            achievements and special opportunities for international
+            students.
           </p>
 
         </div>
 
-
         {/* Content grid */}
-
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 
           {content.map((item) => (
-
             <article
               key={item.id}
-              className="overflow-hidden rounded-3xl border border-purple-200 bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
+              className="overflow-hidden rounded-3xl border border-white/40 bg-white shadow-xl transition duration-300 hover:-translate-y-1 hover:shadow-2xl"
             >
 
-              {/* Image */}
-
+              {/* Promotional Image */}
               {item.imageUrl ? (
-
-                <div className="bg-white p-4">
-
+                <div className="w-full bg-white p-4">
                   <img
                     src={item.imageUrl}
                     alt={item.title}
-                    className="h-56 w-full rounded-2xl object-cover"
+                    className="block h-auto w-full rounded-2xl object-contain"
                   />
-
                 </div>
-
               ) : (
-
                 <div className="flex h-56 items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100 text-6xl">
                   ⭐
                 </div>
-
               )}
 
-
               {/* Content */}
-
               <div className="p-6">
 
                 <h3 className="text-xl font-bold text-slate-900">
@@ -175,40 +143,28 @@ export default function ConsultantPromotionalContent({
                   </p>
                 )}
 
-
                 {/* Management */}
-
                 {canManage && (
                   <div className="mt-6 flex justify-end">
-
                     <button
                       type="button"
-                      onClick={() =>
-                        handleDelete(item.id)
-                      }
-                      disabled={
-                        deletingId === item.id
-                      }
+                      onClick={() => handleDelete(item.id)}
+                      disabled={deletingId === item.id}
                       className="rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm font-semibold text-red-700 transition hover:bg-red-100 disabled:cursor-not-allowed disabled:opacity-50"
                     >
                       {deletingId === item.id
                         ? "Deleting..."
                         : "🗑️ Delete"}
                     </button>
-
                   </div>
                 )}
 
               </div>
-
             </article>
-
           ))}
 
         </div>
-
       </div>
-
     </section>
   );
 }

@@ -14,7 +14,8 @@ export type ProgramLevel =
   | "Graduate Diploma"
   | "Professional Certificate"
   | "Professional Diploma"
-  | "Doctoral";
+  | "Doctoral"
+  | "Foundation Studies";
 
 export type Program = {
   name: string;

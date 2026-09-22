@@ -42,6 +42,13 @@ Get personalized recommendations based on your goals, interests, and career aspi
   className="inline-block bg-white text-blue-700 hover:bg-blue-50 px-8 py-4 rounded-xl font-semibold shadow-lg transition"
 />
 
+  <Link
+    href="/study-online"
+    className="inline-block border-2 border-white text-white hover:bg-white hover:text-blue-700 px-8 py-4 rounded-xl font-semibold transition"
+  >
+    💻 Study Online
+  </Link>
+
 </div>
       </section>
 

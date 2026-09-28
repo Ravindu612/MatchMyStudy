@@ -27,6 +27,9 @@ export async function generateMetadata({
     description:
       program.description ||
       `Explore ${program.name} at ${program.universityName}, including tuition information, programme details, entry requirements, duration, and study information.`,
+    alternates: {
+      canonical: `https://www.matchmystudy.com/programs/${program.slug}`,
+    },
   };
 }
 

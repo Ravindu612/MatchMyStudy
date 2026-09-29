@@ -10,7 +10,7 @@ export default function PrivacyPage() {
           </h1>
 
           <p className="text-slate-400">
-            Last updated: 31 August 2026
+            Last updated: 29 September 2026
           </p>
         </div>
 
@@ -30,6 +30,8 @@ export default function PrivacyPage() {
           <p className="text-slate-300 leading-7">
             By using MatchMyStudy, you acknowledge that your personal
             data may be processed as described in this Privacy Policy.
+            Where consent is required by applicable law, we will request
+            consent before carrying out the relevant processing.
           </p>
         </section>
 
@@ -117,10 +119,12 @@ export default function PrivacyPage() {
 
             <li>
               <strong className="text-white">
-                Technical information:
+                Technical and usage information:
               </strong>{" "}
               information that may be generated automatically when you
-              access and use the website, such as technical and security
+              access and use the website, such as browser information,
+              device information, approximate location information,
+              pages viewed, interactions, and technical and security
               information.
             </li>
           </ul>
@@ -146,6 +150,10 @@ export default function PrivacyPage() {
             <li>To process consultant verification requests.</li>
             <li>To prevent misuse, fraud, and security problems.</li>
             <li>To maintain and improve the MatchMyStudy platform.</li>
+            <li>To understand website usage and improve user experience.</li>
+            <li>To measure website traffic and engagement.</li>
+            <li>To provide advertising where applicable.</li>
+            <li>To support affiliate relationships where applicable.</li>
             <li>To comply with applicable legal obligations.</li>
           </ul>
         </section>
@@ -191,15 +199,93 @@ export default function PrivacyPage() {
             <li>
               <strong className="text-white">Consent:</strong>{" "}
               where we specifically ask for your consent and applicable
-              law requires consent.
+              law requires consent, including certain uses of cookies,
+              analytics, advertising, and similar technologies.
             </li>
           </ul>
         </section>
 
-        {/* Supabase */}
+        {/* Cookies and similar technologies */}
         <section className="space-y-4 mb-10">
           <h2 className="text-2xl font-bold text-white">
-            6. Service Providers
+            6. Cookies and Similar Technologies
+          </h2>
+
+          <p className="text-slate-300 leading-7">
+            MatchMyStudy may use cookies, local storage, and similar
+            technologies to operate the website, maintain security,
+            remember preferences, understand website usage, measure
+            performance, and support advertising services.
+          </p>
+
+          <p className="text-slate-300 leading-7">
+            Some cookies or similar technologies may be necessary for the
+            operation and security of the website. Other technologies,
+            including certain analytics and advertising technologies, may
+            require your consent depending on applicable law.
+          </p>
+
+          <p className="text-slate-300 leading-7">
+            MatchMyStudy uses Google's consent management functionality
+            for users in the European Economic Area, the United Kingdom,
+            and Switzerland to provide users with choices regarding
+            applicable consent preferences.
+          </p>
+
+          <p className="text-slate-300 leading-7">
+            You may change or withdraw your applicable consent choices
+            through the available consent settings on the website.
+          </p>
+        </section>
+
+        {/* Analytics */}
+        <section className="space-y-4 mb-10">
+          <h2 className="text-2xl font-bold text-white">
+            7. Google Analytics
+          </h2>
+
+          <p className="text-slate-300 leading-7">
+            MatchMyStudy uses Google Analytics to understand how visitors
+            use the website, measure traffic and engagement, and improve
+            the service.
+          </p>
+
+          <p className="text-slate-300 leading-7">
+            Google Analytics may collect information such as website
+            interactions, pages viewed, technical information about the
+            device and browser, and other usage information. Google may
+            process this information on behalf of MatchMyStudy and in
+            accordance with its applicable policies.
+          </p>
+
+          <p className="text-slate-300 leading-7">
+            Where consent is required, analytics-related storage and
+            processing will be handled according to the user's consent
+            choices.
+          </p>
+
+          <p className="text-slate-300 leading-7">
+            For more information about how Google handles data from
+            websites and applications, please see Google's privacy
+            information:
+          </p>
+
+          <p className="text-slate-300 leading-7">
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 underline"
+            >
+              Google Privacy & Terms
+            </a>
+          </p>
+        </section>
+
+        {/* Service Providers */}
+        <section className="space-y-4 mb-10">
+          <h2 className="text-2xl font-bold text-white">
+            8. Service Providers and Third Parties
           </h2>
 
           <p className="text-slate-300 leading-7">
@@ -213,12 +299,112 @@ export default function PrivacyPage() {
             database services. Information required to create and manage
             your account may therefore be processed through Supabase.
           </p>
+
+          <p className="text-slate-300 leading-7">
+            MatchMyStudy also uses Google services, including Google
+            Analytics. If advertising services are enabled, Google
+            advertising services such as Google AdSense may also process
+            information in connection with advertising and measurement.
+          </p>
+
+          <p className="text-slate-300 leading-7">
+            Third-party services may process information according to
+            their own privacy policies and applicable contractual and
+            legal requirements.
+          </p>
+        </section>
+
+        {/* Advertising */}
+        <section className="space-y-4 mb-10">
+          <h2 className="text-2xl font-bold text-white">
+            9. Advertising
+          </h2>
+
+          <p className="text-slate-300 leading-7">
+            MatchMyStudy may use advertising services such as Google
+            AdSense to display advertisements on the website.
+          </p>
+
+          <p className="text-slate-300 leading-7">
+            Advertising providers may use cookies, identifiers, or other
+            technologies to deliver, measure, and personalize advertising
+            where permitted by applicable law and based on the user's
+            consent choices.
+          </p>
+
+          <p className="text-slate-300 leading-7">
+            When advertising services are enabled, Google and its
+            advertising partners may process information associated with
+            advertising requests, ad interactions, and measurement.
+          </p>
+
+          <p className="text-slate-300 leading-7">
+            Users in the European Economic Area, the United Kingdom, and
+            Switzerland may be presented with a consent message and
+            choices regarding applicable advertising-related processing.
+          </p>
+
+          <p className="text-slate-300 leading-7">
+            More information about Google's use of cookies for
+            advertising can be found in Google's documentation:
+          </p>
+
+          <p className="text-slate-300 leading-7">
+            <a
+              href="https://support.google.com/adsense/answer/7549925"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 underline"
+            >
+              How Google AdSense uses cookies
+            </a>
+          </p>
+        </section>
+
+        {/* Affiliate links */}
+        <section className="space-y-4 mb-10">
+          <h2 className="text-2xl font-bold text-white">
+            10. Affiliate Links and Commercial Relationships
+          </h2>
+
+          <p className="text-slate-300 leading-7">
+            MatchMyStudy may use affiliate links or other commercial
+            relationships with third-party websites, education providers,
+            learning platforms, products, or services.
+          </p>
+
+          <p className="text-slate-300 leading-7">
+            If you click an affiliate link and subsequently make a
+            qualifying purchase or take another qualifying action,
+            MatchMyStudy may receive a commission or other compensation
+            from the third party. The price you pay is not necessarily
+            affected by the use of an affiliate link.
+          </p>
+
+          <p className="text-slate-300 leading-7">
+            Affiliate relationships do not necessarily mean that
+            MatchMyStudy endorses or guarantees the products or services
+            offered by third parties. Users should review the terms and
+            privacy policies of third-party websites before using their
+            services.
+          </p>
+
+          <p className="text-slate-300 leading-7">
+            Additional information is available on our{" "}
+            <a
+              href="/affiliate-disclosure"
+              className="text-blue-400 hover:text-blue-300 underline"
+            >
+              Affiliate Disclosure
+            </a>{" "}
+            page.
+          </p>
         </section>
 
         {/* Data sharing */}
         <section className="space-y-4 mb-10">
           <h2 className="text-2xl font-bold text-white">
-            7. When We Share Information
+            11. When We Share Information
           </h2>
 
           <p className="text-slate-300 leading-7">
@@ -232,6 +418,13 @@ export default function PrivacyPage() {
           </p>
 
           <p className="text-slate-300 leading-7">
+            Some third-party services, including analytics and
+            advertising providers, may process information as described
+            in this Privacy Policy and according to applicable consent
+            choices.
+          </p>
+
+          <p className="text-slate-300 leading-7">
             We may also disclose information where required by law,
             legal proceedings, or a lawful request from an authority.
           </p>
@@ -240,7 +433,7 @@ export default function PrivacyPage() {
         {/* Public information */}
         <section className="space-y-4 mb-10">
           <h2 className="text-2xl font-bold text-white">
-            8. Publicly Visible Information
+            12. Publicly Visible Information
           </h2>
 
           <p className="text-slate-300 leading-7">
@@ -260,7 +453,7 @@ export default function PrivacyPage() {
         {/* Retention */}
         <section className="space-y-4 mb-10">
           <h2 className="text-2xl font-bold text-white">
-            9. Data Retention
+            13. Data Retention
           </h2>
 
           <p className="text-slate-300 leading-7">
@@ -279,7 +472,7 @@ export default function PrivacyPage() {
         {/* Security */}
         <section className="space-y-4 mb-10">
           <h2 className="text-2xl font-bold text-white">
-            10. Data Security
+            14. Data Security
           </h2>
 
           <p className="text-slate-300 leading-7">
@@ -297,7 +490,7 @@ export default function PrivacyPage() {
         {/* GDPR rights */}
         <section className="space-y-4 mb-10">
           <h2 className="text-2xl font-bold text-white">
-            11. Your Data Protection Rights
+            15. Your Data Protection Rights
           </h2>
 
           <p className="text-slate-300 leading-7">
@@ -334,7 +527,7 @@ export default function PrivacyPage() {
         {/* Complaints */}
         <section className="space-y-4 mb-10">
           <h2 className="text-2xl font-bold text-white">
-            12. Complaints
+            16. Complaints
           </h2>
 
           <p className="text-slate-300 leading-7">
@@ -348,7 +541,7 @@ export default function PrivacyPage() {
         {/* Children */}
         <section className="space-y-4 mb-10">
           <h2 className="text-2xl font-bold text-white">
-            13. Children
+            17. Children
           </h2>
 
           <p className="text-slate-300 leading-7">
@@ -361,7 +554,7 @@ export default function PrivacyPage() {
         {/* Changes */}
         <section className="space-y-4 mb-10">
           <h2 className="text-2xl font-bold text-white">
-            14. Changes to This Privacy Policy
+            18. Changes to This Privacy Policy
           </h2>
 
           <p className="text-slate-300 leading-7">
@@ -375,7 +568,7 @@ export default function PrivacyPage() {
         {/* Contact */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold text-white">
-            15. Contact Us
+            19. Contact Us
           </h2>
 
           <p className="text-slate-300 leading-7">

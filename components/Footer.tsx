@@ -39,6 +39,20 @@ export default function Footer() {
           </Link>
 
           <Link
+            href="/terms"
+            className="hover:text-white transition-colors"
+          >
+            Terms & Conditions
+          </Link>
+
+          <Link
+  href="/affiliate-disclosure"
+  className="hover:text-white transition-colors"
+>
+  Affiliate Disclosure
+</Link>
+
+          <Link
             href="/contact"
             className="hover:text-white transition-colors"
           >

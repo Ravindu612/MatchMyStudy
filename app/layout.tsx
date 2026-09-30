@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   title: "Study Abroad: Find Universities, Programs & Consultants | MatchMyStudy",
   description:
     "Find the right country, university, study program, and education consultant for your study abroad journey with MatchMyStudy.",
+  other: {
+    'impact-site-verification':
+      'd2209eba-7be8-49d2-bb97-0eba8c811381',
+  },
 };
 
 export default function RootLayout({

@@ -98,7 +98,7 @@ export default function Navbar() {
   href="/"
   className="flex items-center"
 >
-  <h1 className="flex items-center text-3xl font-extrabold tracking-tight">
+  <span className="flex items-center text-3xl font-extrabold tracking-tight">
     <span className="text-blue-400">
       Match
     </span>
@@ -114,7 +114,7 @@ export default function Navbar() {
     <span className="text-violet-400">
       Study
     </span>
-  </h1>
+  </span>
 </Link>
 
         {/* RIGHT SIDE */}

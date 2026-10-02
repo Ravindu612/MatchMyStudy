@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
         
         <div>
-          <h1 className="flex items-center text-3xl font-extrabold tracking-tight">
+          <div className="flex items-center text-3xl font-extrabold tracking-tight">
             <span className="text-blue-400">
               Match
             </span>
@@ -23,7 +23,7 @@ export default function Footer() {
             <span className="text-violet-400">
               Study
             </span>
-          </h1>
+          </div>
 
           <p className="text-sm">
             Navigate Your Global Education Journey

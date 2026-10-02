@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.matchmystudy.com"),
   title: "Study Abroad: Find Universities, Programs & Consultants | MatchMyStudy",
   description:
     "Find the right country, university, study program, and education consultant for your study abroad journey with MatchMyStudy.",

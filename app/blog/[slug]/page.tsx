@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { STATIC_META } from "@/lib/seo-meta";
 
 const blogPosts = {
   "best-countries-2026": {
@@ -74,6 +76,26 @@ const blogPosts = {
     ],
   },
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+
+  const meta = STATIC_META[`/blog/${slug}`];
+
+  if (!meta) {
+    return {
+      title: "Article Not Found | MatchMyStudy",
+      description:
+        "The article you are looking for could not be found on MatchMyStudy.",
+    };
+  }
+
+  return meta;
+}
 
 export default async function BlogPostPage({
   params,

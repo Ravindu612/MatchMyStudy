@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { STATIC_META } from "@/lib/seo-meta";
+
+export const metadata = STATIC_META["/blog"];
 
 const posts = [
   {

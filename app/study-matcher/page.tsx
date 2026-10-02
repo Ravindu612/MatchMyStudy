@@ -1,4 +1,7 @@
 import StudyDestinationMatcher from "@/components/StudyDestinationMatcher";
+import { STATIC_META } from "@/lib/seo-meta";
+
+export const metadata = STATIC_META["/study-matcher"];
 
 export default function StudyMatcherPage() {
   return (

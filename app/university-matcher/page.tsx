@@ -1,3 +1,7 @@
+import { STATIC_META } from "@/lib/seo-meta";
+
+export const metadata = STATIC_META["/university-matcher"];
+
 export default function UniversityMatcherPage() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-slate-50">

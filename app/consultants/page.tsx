@@ -1,5 +1,8 @@
 import ConsultantSearch from "@/components/ConsultantSearch";
 import ConsultantCTA from "@/components/ConsultantCTA";
+import { STATIC_META } from "@/lib/seo-meta";
+
+export const metadata = STATIC_META["/consultants"];
 
 export default function ConsultantsPage() {
   return (

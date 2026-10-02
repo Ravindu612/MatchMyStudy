@@ -12,9 +12,13 @@ import {
   Award,
 } from "lucide-react";
 import ProgramSearch from "@/components/ProgramSearch";
+import UniversityProgramList from "@/components/UniversityProgramList";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { programs } from "@/data/programs";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { universities } from "@/data/universities";
+import { getCountryPath } from "@/lib/seo-meta";
 
 const allUniversities = Object.values(universities).flat();
 
@@ -113,11 +117,7 @@ export async function generateMetadata({
   );
 
   if (!university) {
-    return {
-      title: "University Not Found | MatchMyStudy",
-      description:
-        "The university you are looking for could not be found on MatchMyStudy.",
-    };
+    notFound();
   }
 
   return {
@@ -126,6 +126,9 @@ export async function generateMetadata({
       university.descriptionShort ||
       university.description ||
       `Explore ${university.name}, including study programs, tuition information, scholarships, rankings, and international student information.`,
+    alternates: {
+      canonical: `/universities/${university.slug}`,
+    },
   };
 }
 
@@ -141,26 +144,7 @@ export default async function UniversityDetailPage({
   );
 
   if (!university) {
-    return (
-      <main className="min-h-screen bg-slate-50 text-slate-900 px-6 py-16">
-        <section className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold mb-4">
-            University Not Found
-          </h1>
-
-          <p className="text-slate-600 mb-8">
-            The university you are looking for does not exist.
-          </p>
-
-          <Link
-            href="/"
-            className="text-blue-600 font-semibold"
-          >
-            ← Back to Home
-          </Link>
-        </section>
-      </main>
-    );
+    notFound();
   }
 
     const universityPrograms = programs.filter(
@@ -168,6 +152,18 @@ export default async function UniversityDetailPage({
   );
 
   const universityJsonLd = createUniversityJsonLd(university);
+
+  const breadcrumbItems = [
+    { name: "Home", href: "/" },
+    {
+      name: university.country,
+      href: getCountryPath(university.country),
+    },
+    {
+      name: university.name,
+      href: `/universities/${university.slug}`,
+    },
+  ];
 
   return (
     <>
@@ -181,6 +177,11 @@ export default async function UniversityDetailPage({
       <main className="min-h-screen bg-slate-50 text-slate-900">
 
       <section className="w-full overflow-hidden">
+
+        <Breadcrumbs
+          items={breadcrumbItems}
+          className="mb-2"
+        />
 
         <Link
           href={
@@ -469,6 +470,12 @@ export default async function UniversityDetailPage({
 
         {/* PROGRAM SEARCH */}
         <ProgramSearch
+          universityName={university.name}
+          programs={universityPrograms}
+        />
+
+        {/* ALL PROGRAMS (server-rendered links for crawlers) */}
+        <UniversityProgramList
           universityName={university.name}
           programs={universityPrograms}
         />

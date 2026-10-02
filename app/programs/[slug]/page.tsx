@@ -3,7 +3,9 @@ import Link from "next/link";
 import { programs } from "@/data/programs";
 import { ubcEnglishRequirements } from "@/data/ubcEnglishRequirements";
 import { englishRequirements } from "@/data/englishRequirements";
-import BackToUniversity from "@/components/BackToUniversity";
+import { notFound } from "next/navigation";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { getCountryPath } from "@/lib/seo-meta";
 
 export async function generateMetadata({
   params,
@@ -15,11 +17,7 @@ export async function generateMetadata({
   const program = programs.find((item) => item.slug === slug);
 
   if (!program) {
-    return {
-      title: "Programme Not Found | MatchMyStudy",
-      description:
-        "The programme you are looking for could not be found on MatchMyStudy.",
-    };
+    notFound();
   }
 
   return {
@@ -43,34 +41,41 @@ export default async function ProgramDetailPage({
   const program = programs.find((item) => item.slug === slug);
 
   if (!program) {
-    return (
-      <main className="min-h-screen bg-slate-50 text-slate-900 px-6 py-16">
-        <section className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold mb-4">
-            Programme Not Found
-          </h1>
-
-          <p className="text-slate-600 mb-8">
-            The programme you are looking for does not exist.
-          </p>
-
-          <Link
-            href="/"
-            className="text-blue-600 font-semibold"
-          >
-            ← Back to Home
-          </Link>
-        </section>
-      </main>
-    );
+    notFound();
   }
+
+  const universityHref = `/universities/${program.universitySlug}`;
+
+  const breadcrumbItems = [
+    { name: "Home", href: "/" },
+    {
+      name: program.country,
+      href: getCountryPath(program.country),
+    },
+    {
+      name: program.universityName,
+      href: universityHref,
+    },
+    {
+      name: program.name,
+      href: `/programs/${program.slug}`,
+    },
+  ];
 
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900 px-6 py-16">
       <section className="max-w-6xl mx-auto">
-        <BackToUniversity
-  universityName={program.universityName}
-/>
+        <Breadcrumbs
+          items={breadcrumbItems}
+          className="mb-6"
+        />
+
+        <Link
+          href={universityHref}
+          className="text-blue-600 font-semibold"
+        >
+          ← Back to {program.universityName}
+        </Link>
 
         <div className="mt-10 bg-white border border-slate-200 shadow-sm rounded-3xl p-8 md:p-10">
           <p className="text-blue-600 font-semibold mb-4">

@@ -1,3 +1,7 @@
+import { STATIC_META } from "@/lib/seo-meta";
+
+export const metadata = STATIC_META["/program-matcher"];
+
 export default function ProgramMatcherPage() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-slate-50">

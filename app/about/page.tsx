@@ -1,3 +1,7 @@
+import { STATIC_META } from "@/lib/seo-meta";
+
+export const metadata = STATIC_META["/about"];
+
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white px-6 py-16">

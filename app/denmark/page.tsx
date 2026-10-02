@@ -1,4 +1,7 @@
 import CountryPage from "@/components/CountryPage";
+import { countryMeta } from "@/lib/seo-meta";
+
+export const metadata = countryMeta("denmark");
 
 export default function DenmarkPage() {
   return (

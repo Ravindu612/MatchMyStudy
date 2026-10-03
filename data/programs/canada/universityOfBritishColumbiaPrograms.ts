@@ -419,10 +419,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Environmental Science",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Atmospheric Science at UBC Vancouver is a four-year BSc major in weather and climate, with a strong emphasis on computation, numerical modelling and data analysis applied to air quality, climate change, weather instruments and the atmospheric boundary layer. Students learn with the Earth Sciences Building's weather-instrument platform and hands-on labs, and the program has strong connections with Environment Canada; co-op is available. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the Atmospheric Science specialization at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/atmospheric-science/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Major in Atmospheric Science",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Specialization eligibility after first year: differential and integral calculus (e.g. MATH 101 or 121) and first-year physics with a lab (PHYS 108 or 118 plus PHYS 119, or PHYS 158 and 159), or SCIE 001; admission is competitive and based on your average",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -435,10 +447,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Science",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "The Combined Major in Science at UBC Vancouver is a four-year BSc that gives a broad science education across three of five areas: Chemistry; Life Sciences; Earth and Environmental Sciences; Mathematical and Computational Sciences; and Physics and Astronomy. It stresses data handling, communication, labs and field work rather than research training, which suits students heading to professional schools such as medicine, education or law, or into science journalism; co-op is available. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the Combined Major in Science specialization at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/science-combined-major/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Combined Major in Science",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No specific first-year courses are required to apply for the specialization after first year",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -483,10 +507,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Earth Sciences",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Earth and Ocean Sciences at UBC Vancouver is a broad four-year BSc major covering the solid earth, oceans and atmosphere, from the planet's origins to today's environmental and resource issues. Students tailor their studies with courses in geology, geophysics, oceanography and atmospheric science, in areas such as mineral deposits, sedimentary geology, climate and palaeontology, and suitable course choices support Professional Geoscientist registration; honours and co-op are available. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the Earth and Ocean Sciences specialization at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/earth-ocean-sciences/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Major in Earth and Ocean Sciences",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No specific first-year courses are required to apply for the specialization after first year",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -563,10 +599,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Environmental Science",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Environmental Sciences at UBC Vancouver is a four-year interdisciplinary BSc that applies the physical, earth and ocean, and life sciences to problems such as pollution, resource use, climate change and species loss. Students concentrate in areas such as land, air and water or ecology and conservation, and everyone completes a two-term final-year project, either a team project with a community partner (major) or individual research (honours); co-op is available. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the Environmental Sciences specialization at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/environmental-sciences/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Major in Environmental Sciences",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No specific first-year courses are required to apply for the specialization after first year",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -627,10 +675,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Geography",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Geographical Sciences at UBC Vancouver is a four-year BSc major on how life, including human societies, interacts with the Earth's atmosphere, water and landforms. Students complete at least two of five upper-year concentrations (biogeography, climatology, geographic information science, geomorphology and hydrology), with field trips in nearly all upper-level courses and a field course with a multi-day field camp; co-op is available. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the Geographical Sciences specialization at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/geographical-sciences/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Major in Geographical Sciences",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No specific first-year courses are required to apply for the specialization after first year",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -691,10 +751,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Geology",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Geology at UBC Vancouver is a four-year BSc on the Earth's origin, structure and evolution and the minerals, rocks and fluids it is made of, with field work and experiential learning at its core. It is offered as a Major in Geology or an Honours in Geological Sciences, both built to provide the courses needed for professional geoscience accreditation, and co-op is available. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the Geology specialization at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/geology/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Major in Geology (Honours in Geological Sciences)",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No specific first-year courses are required to apply for the specialization after first year; the Honours option includes an independent final-year research project",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -707,10 +779,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Geophysics",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Geophysics at UBC Vancouver is a four-year BSc that applies physics, mathematics and chemistry to understand the Earth's structure, subsurface and dynamic behaviour, with strong training in computation and data analysis. Students choose science electives from geophysics, math, physics, geology, astronomy, oceanography and chemistry, can follow an honours route toward research, and can qualify for Professional Geoscientist registration with suitable courses; co-op is available. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the Geophysics specialization at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/geophysics/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Major in Geophysics",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Specialization eligibility after first year: differential and integral calculus (e.g. MATH 101 or 121) and 3 credits of first-year physics, or SCIE 001; admission is competitive and based on your average",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -755,10 +839,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Science",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Integrated Sciences at UBC Vancouver is a four-year BSc for students whose interests cross disciplines: once admitted, you design your own upper-year curriculum bridging at least two fields, with help from an assigned faculty mentor. Your course plan is combined with small, team-taught Integrated Sciences (ISCI) core courses built around active learning, discussion and collaborative research; honours and co-op are available. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the Integrated Sciences specialization at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/integrated-sciences/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Major in Integrated Sciences",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No specific first-year courses are required; admission is based on your average and how highly you rank Integrated Sciences, and applicants prepare a proposal for their planned curriculum",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -771,10 +867,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Ocean Sciences",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Oceanography at UBC Vancouver studies the physical, chemical and biological workings of the ocean, the sea floor and the ocean's links to climate, fisheries and coastal communities. At the undergraduate level it is offered as an Honours in Fisheries Oceanography or as a combined major or honours with Biology, Chemistry, Physics, Microbiology and Immunology or another science (students with broader interests can choose the Earth and Ocean Sciences major); co-op is available. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for an oceanography specialization at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/oceanography/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Honours in Fisheries Oceanography or Combined Major/Honours in Oceanography",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Fisheries Oceanography Honours eligibility: Faculty of Science honours requirements plus first-year chemistry (CHEM 111, 121 or 141, plus CHEM 123) and BIOL 112, or SCIE 001",
+      "Each combined major has its own first-year requirements (e.g. Oceanography and Physics needs calculus and first-year physics with a lab)",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1194,10 +1303,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Biochemistry",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Biochemistry at UBC Vancouver is a four-year BSc that studies the chemical processes inside living things, from proteins, carbohydrates and lipids to the metabolic pathways of the human body. Based in the Life Sciences Centre and run by a department in the Faculty of Medicine, it includes hands-on upper-year lab courses and is offered as a major, honours, or combined major/honours with Chemistry, with co-op available. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the Biochemistry specialization at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/biochemistry-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Major in Biochemistry",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Specialization eligibility after first year: first-year chemistry (CHEM 111, 121 or 141, plus CHEM 123) and BIOL 112 and differential calculus, or SCIE 001; admission is competitive and based on your average",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1210,10 +1331,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Biology",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Biology at UBC Vancouver is a four-year BSc, run jointly by the Departments of Botany and Zoology, that covers living things from microbes and plants to animals and the ecosystems they depend on. Beyond the major, students can pursue honours streams such as Animal, Cell and Developmental, Conservation, Ecology, Evolutionary, Marine or Plant Biology, or combine Biology with Chemistry, Computer Science or Oceanography; co-op is available. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the Biology specialization at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/biology-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Major in Biology",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Specialization eligibility after first year: first-year chemistry (CHEM 111, 121 or 141, plus CHEM 123) and BIOL 112 or 121, or SCIE 001; students can also enter the major in third year",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1224,12 +1357,25 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     universityName: "University of British Columbia",
     country: "Canada",
     field: "Biotechnology",
-    duration: "4 years",
+    duration: "5 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Years 2 and 3 are taken at BCIT, so check BCIT for the fees that apply to those years. Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Biotechnology is a five-year Honours BSc offered jointly by UBC and the British Columbia Institute of Technology (BCIT), combining UBC teaching in microbiology, immunology, cell and plant biology, bioinformatics and chemistry with BCIT's hands-on lab training and courses in business communication, accounting and marketing. Students complete first year at UBC, spend the second and third years at BCIT, then return to UBC for the final two years; co-op work terms are mandatory, and the degree is awarded jointly by both institutions. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the Biotechnology Honours specialization at the end of first year; enrolment is limited.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/biotechnology/",
     campus: "Vancouver",
+    degree: "Honours Bachelor of Science (BSc) in Biotechnology (joint UBC/BCIT degree)",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Eligibility after first year: Faculty of Science honours requirements with a sessional average of at least 70%, plus first-year biology, chemistry, differential calculus and physics (or SCIE 001)",
+      "SCIE 113 must be completed by the end of the summer before starting at BCIT",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1242,10 +1388,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Health Sciences",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Cellular, Anatomical and Physiological Sciences (CAPS) at UBC Vancouver is a four-year BSc on how the human body is built and how it works, with courses on the nervous, endocrine, cardiovascular, respiratory, renal and gastrointestinal systems. Offered by the Department of Cellular and Physiological Sciences in the Faculty of Medicine, it is available as a major or as a small, highly competitive honours program built around a research thesis, and co-op is available. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the CAPS Major at the end of first year; Honours needs a separate application before third year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/cellular-anatomical-physiological-sciences/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Major or Honours in Cellular, Anatomical and Physiological Sciences",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Major eligibility after first year: first-year chemistry (CHEM 111, 121 or 141, plus CHEM 123) and BIOL 112, or SCIE 001; admission is competitive and based on your average",
+      "Honours: about 15 students are admitted each year; the application, including an interview, is due by March 31 before third year",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1290,10 +1449,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Microbiology",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Microbiology and Immunology at UBC Vancouver is a four-year BSc covering bacteria, fungi and viruses, the immune system and the microbiome, and their roles in human and environmental health. Students build lab skills in cell culture, genomics and data science, can concentrate in areas such as virology or environmental microbiology, and can combine the subject with Computer Science or Oceanography; honours and co-op are available. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the Microbiology and Immunology specialization at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/microbiology-immunology/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Major in Microbiology and Immunology",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Specialization eligibility after first year: first-year chemistry (CHEM 111, 121 or 141, plus CHEM 123) and BIOL 112, or SCIE 001; admission is competitive and based on your average; students are admitted to the Major first and can move to Honours later",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1306,10 +1477,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Neuroscience",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Neuroscience at UBC Vancouver is a four-year BSc major on the brain and nervous system, offered jointly by the Departments of Cellular and Physiological Sciences (Medicine), Zoology (Science) and Psychology (Arts). Students choose a Cellular & Molecular or a Behavioural & Cognitive emphasis, build data science skills throughout, and can complete a year-long research capstone in a campus lab; co-op is available. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the Neuroscience specialization at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/neuroscience/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Major in Neuroscience",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Specialization eligibility after first year: first-year chemistry (CHEM 111, 121 or 141, plus CHEM 123) and BIOL 112, or SCIE 001; admission is mainly by average, with a small pilot share of seats for applicants just below the cut-off",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1322,10 +1505,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Pharmacology",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Pharmacology at UBC Vancouver is a four-year BSc on how drugs act on living systems, with a strong lab focus: students learn whole-animal, isolated-tissue, biochemical and chemical techniques along with experimental design, data analysis and scientific writing. Taught by the Department of Anesthesiology, Pharmacology and Therapeutics, it is offered as a major or honours, either of which can include 12 to 16 months of co-op, and it differs from UBC's Pharmaceutical Sciences and PharmD programs by focusing on drug mechanisms and pre-clinical research. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the Pharmacology specialization at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/pharmacology/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Major in Pharmacology",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Specialization eligibility after first year: first-year chemistry (CHEM 111, 121 or 141, plus CHEM 123) and BIOL 112, or SCIE 001; at most 24 students are admitted each year, selected on academic performance and suitability for pharmacological research",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
     {
@@ -1338,10 +1533,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Biophysics",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Biophysics at UBC Vancouver is a four-year Combined Honours BSc that applies the concepts and quantitative tools of physics and mathematics to living systems, from molecules and cells to whole organisms. Students build a physics core and choose a biological sub-field (molecular and cell biology, macrobiology or applied biology); it is offered only as honours, is aimed at graduate or professional school, and co-op is available. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the Biophysics Combined Honours specialization at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/biophysics/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Combined Honours in Biophysics",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Eligibility after first year: Faculty of Science honours requirements and at least 68% in all first-year math and physics courses (60% for MATH 120/121), plus first-year chemistry, integral calculus, BIOL 112 and physics with a lab (or SCIE 001)",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1402,10 +1609,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Marine Biology",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Marine Biology at UBC Vancouver is an Honours specialization within the four-year Biology BSc, taught by the Departments of Botany and Zoology, combining marine-focused biology and oceanography courses with a final-year research project. Students can also take marine field courses at the Bamfield Marine Sciences Centre on Vancouver Island, including a four-month fall immersion program. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc), enter a Biology specialization after first year, and then apply to the Marine Biology Honours specialization.",
+    officialProgramUrl:
+      "https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/faculty-science/bachelor-science/biology",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Honours in Marine Biology",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Students first enter the Biology Major (in second or third year), then apply to Marine Biology Honours through the Biology Office in May or August",
+      "Applicants must meet the Faculty of Science honours requirements",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {

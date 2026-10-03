@@ -138,10 +138,15 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Commerce",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 66,678.30 per year for international students (Sauder rate, CAD 2,222.61 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits; CAD 9,188.40 in years 2 to 4). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "The Bachelor of Commerce at the UBC Sauder School of Business is a four-year business degree that starts with core business, management and leadership courses, then lets students specialize in their third and fourth years in one of ten areas such as Accounting, Finance, Marketing, Business Technology Management or Real Estate. Optional concentrations (for example Business Analytics or International Business), co-op and exchanges with partner business schools abroad are available. Students are admitted directly into first year through broad-based admission that looks at grades plus a BCom Personal Profile and a video interview. Pre-Calculus 12 (or an equivalent senior-level math course) and English Studies 12 are required, and calculus is strongly recommended. Intake is in September; the application deadline for September 2027 entry is January 15, 2027 (international applicants who want to be considered for International Scholars Program awards should apply by November 15, 2026).",
+    officialProgramUrl:
+      "https://you.ubc.ca/ubc_programs/commerce/",
     campus: "Vancouver",
+    degree: "Bachelor of Commerce (BCom)",
+    intake: "September",
   },
 
   {
@@ -170,10 +175,15 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Economics",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). The separate Bachelor of International Economics (BIE) has a higher rate. Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Economics at UBC Vancouver is a four-year Bachelor of Arts major taught by the Vancouver School of Economics. Students study micro- and macroeconomics, econometrics and applied fields such as labour, trade, public policy, development and resource economics, learning to use quantitative methods and communicate economic analysis. Honours and combined majors with Political Science, Philosophy, Statistics or Mathematics are offered, and co-op is available. This is not a direct-entry program: applicants are admitted to the Bachelor of Arts and apply to the Economics major (or Honours/Combined Majors) competitively, normally at the end of first year after completing courses including ECON 101, ECON 102 and calculus. Students planning to major in Economics should complete Pre-Calculus 12 (or equivalent) along with English Studies 12; IB Math AI SL does not meet the math requirement. Intake is in September; the application deadline for September 2027 entry is January 15, 2027 (international applicants who want to be considered for International Scholars Program awards should apply by November 15, 2026).",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/economics-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Economics",
+    intake: "September",
   },
 
   {
@@ -938,10 +948,15 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Computer Science",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "UBC Vancouver's four-year Bachelor of Science in Computer Science builds a strong foundation in software design, algorithms and core computing topics such as databases, operating systems, security and machine learning, alongside general Science requirements. Students can add options such as Software Engineering or the Artificial Intelligence option introduced in 2026, and co-op and honours routes are available. This is not a direct-entry program: applicants are admitted to the Faculty of Science (BSc) and apply for the Computer Science specialization at the end of first year, which is competitive and not guaranteed. Typical high-school prerequisites (BC curriculum) are English Studies 12, Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11. Intake is in September; the application deadline for September 2027 entry is January 15, 2027 (international applicants who want to be considered for International Scholars Program awards should apply by November 15, 2026).",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/computer-science-vancouver-bsc/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Major in Computer Science",
+    intake: "September",
   },
 
   {
@@ -954,10 +969,15 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Data Science",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Data Science at UBC Vancouver is an interdisciplinary four-year BSc major, offered jointly by the Departments of Computer Science and Statistics, that trains students to analyse data and use it to support decisions. It covers programming, statistical modelling, machine learning and data visualization, with a strong emphasis on ethical, transparent and reproducible data practice and on communicating results clearly; co-op is available. This is not a direct-entry program: applicants are admitted to the Faculty of Science (BSc) and apply to the Data Science major at the end of first year. Eligibility requires DSCI 100, an introductory computer science course (CPSC 103 or 110) and differential calculus, and admission is competitive. Typical high-school prerequisites (BC curriculum) are English Studies 12, Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11. Intake is in September; the application deadline for September 2027 entry is January 15, 2027 (international applicants who want to be considered for International Scholars Program awards should apply by November 15, 2026).",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/data-science-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Major in Data Science",
+    intake: "September",
   },
 
   {
@@ -970,10 +990,15 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Electrical Engineering",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 66,199.66 per year for international students (Engineering rate, CAD 1,789.18 per credit x 37 credits) and CAD 7,647.53 for Canadian students (CAD 206.69 per credit x 37 credits; CAD 8,163.31 in years 2 to 5). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Electrical Engineering at UBC Vancouver is a four-year Bachelor of Applied Science (BASc) offered by the Department of Electrical and Computer Engineering. Students complete a common first year in Engineering, then spend three years on electronics, circuit analysis, electromagnetics, signals and power systems, finishing with an industry-style capstone design project. Optional streams include Biomedical Engineering, Nanotechnology & Microsystems and Electrical Energy Systems, and co-op is available. This is not a direct-entry program: applicants apply to UBC Engineering (BASc) and choose Electrical Engineering at the end of the common first year; placement is not guaranteed. High-school applicants must submit a personal profile, and prerequisites (BC curriculum) are English Studies 12, Pre-Calculus 12, Chemistry 12 and Physics 12. Intake is in September; the application deadline for September 2027 entry is January 15, 2027 (international applicants who want to be considered for International Scholars Program awards should apply by November 15, 2026).",
+    officialProgramUrl:
+      "https://you.ubc.ca/ubc_programs/electrical-engineering-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Applied Science (BASc) in Electrical Engineering",
+    intake: "September",
   },
 
     {

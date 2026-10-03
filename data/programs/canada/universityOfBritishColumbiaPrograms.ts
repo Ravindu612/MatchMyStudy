@@ -42,10 +42,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Business",
     duration: "4.5 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "Master of Management portion (2026/27 Academic Calendar): CAD 60,937.66 in total for international students and CAD 34,011.98 for Canadian students, paid in instalments during the bachelor's years and the six-month MM. This is charged on top of the normal tuition for your bachelor's program (for example, 2026/27 first-year international tuition is CAD 53,082.00 for a BSc or CAD 51,530.40 for a BA). UBC Sauder lists CAD 63,376 (international) and CAD 34,693 (Canadian) for its next intake. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "The Bachelor + Master of Management (B+MM) dual degree lets UBC Vancouver students earn a bachelor's degree in an eligible non-business program and a Master of Management from UBC Sauder in about four and a half years. Students take business modules during each year of their undergraduate degree, then study full-time for six months in the Master of Management (accounting, finance, marketing, strategy) starting in the summer after graduation. You apply to UBC for an eligible bachelor's program and send a separate supplemental application to UBC Sauder, either when applying for first year or later for entry in second or third year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/master-management-dual-degree/",
     campus: "Vancouver",
+    degree: "Bachelor's degree (e.g. BA, BSc, BKin, BMus) + Master of Management (MM)",
+    intake: "September (bachelor's); the Master of Management part starts in May/June after you graduate",
+    applicationDeadline: "January 15, 2027 to UBC (international scholars: November 15, 2026); UBC Sauder supplemental application by January 31, 2027 for first-year entry or May 4, 2027 for second- or third-year entry",
+    admissionRequirements: [
+      "Apply and meet the requirements for an eligible bachelor's degree, such as BA, BFA, BKin, BMS, BMus, BSc, BSc (FRE), BSc (FNH) or BSF",
+      "Separate supplemental application to UBC Sauder; interviews are by invitation only",
+      "High school prerequisites are those of the bachelor's degree you choose",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -74,10 +86,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Business & Computer Science",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 66,678.30 per year for international students (Sauder rate, CAD 2,222.61 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits; CAD 9,188.40 in years 2 to 4). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Business and Computer Science (BUCS) at UBC Vancouver is a four-year Bachelor of Commerce combined major, run jointly by the UBC Sauder School of Business and the Department of Computer Science, in which students take core commerce and computer science courses in every year. It is designed for graduates who want to apply IT solutions in business, lead technology projects or move into management roles in tech companies, and co-op is available. Students are first admitted to the Bachelor of Commerce and then apply for BUCS through a competitive application each May to June, which newly admitted students can complete before first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/business-computer-science/",
     campus: "Vancouver",
+    degree: "Bachelor of Commerce (BCom), Combined Major in Business and Computer Science (BUCS)",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "BUCS admission is competitive: newly admitted students are ranked on their Commerce admission average, returning students on their latest Winter Session average, and all applicants write a short essay",
+      "Admission to the Bachelor of Commerce comes first: grades plus a BCom Personal Profile and video interview",
+      "BC high school: English Studies 12 (or English First Peoples 12) and Pre-Calculus 12",
+      "IB: Math AA (SL/HL) or Math AI HL (Math AI SL and Math Studies are not accepted)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -90,10 +115,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Business",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 56,620.80 per year for international students (Land and Food Systems rate, CAD 1,769.40 per credit x 32 credits) and CAD 6,614.08 for Canadian students (CAD 206.69 per credit x 32 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Business and Markets at UBC Vancouver is a four-year Bachelor of Science in Food and Resource Economics from the Faculty of Land and Food Systems that uses applied economics and data analysis to study how markets, business practices and international trade affect food supply, food security and the environment. Upper-year courses come from the Food and Resource Economics group, the Vancouver School of Economics and UBC Sauder, restricted electives can include Sauder courses in marketing, finance and accounting, and co-op is available. Students are admitted directly into the BSc in Food and Resource Economics from secondary school; the first two years are shared with the Data Analytics major, and the Business and Markets courses follow in years three and four.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/business-and-markets/",
     campus: "Vancouver",
+    degree: "Bachelor of Science in Food and Resource Economics (BSc FRE), Major in Business and Markets",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Direct entry from secondary school into the BSc in Food and Resource Economics; transfer applicants need at least 24 transferable credits and a 70% average",
+      "BC high school: English Studies 12 (or English First Peoples 12) and Pre-Calculus 12 (minimum 67%); Calculus 12 is recommended",
+      "IB: Math AA (SL/HL) or Math AI HL (Math AI SL and Math Studies are not accepted)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -106,10 +143,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Statistics",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition for international students: CAD 53,082.00 per year on the BSc route (Science rate, CAD 1,769.40 per credit x 30 credits) or CAD 51,530.40 on the BA route (Arts rate, CAD 1,717.68 per credit x 30 credits). Canadian students pay CAD 6,200.70 on either route (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "UBC Vancouver's combined majors in Statistics pair statistical training with a second subject, so students build statistical reasoning, computing and mathematics alongside another discipline. Options include the BSc Combined Majors in Statistics and Economics and in Computer Science and Statistics, the BA Combined Major in Economics and Statistics, and combined honours with Mathematics or Computer Science, with co-op available. None of these is direct entry: BSc students are admitted to the Faculty of Science and apply for the combined major after first year (the Statistics and Economics option also goes through the Economics admission process), while BA students are admitted to Arts and apply to the Vancouver School of Economics.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/statistics-combined-majors/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc) or Bachelor of Arts (BA), Combined Major with Statistics",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "BSc Statistics and Economics: differential and integral calculus, DSCI 100 (or 3 credits of statistics) and ECON 101 and 102; BSc Computer Science and Statistics: CPSC 110 (or 107) plus differential and integral calculus",
+      "BA Economics and Statistics: the Economics major requirements (27 credits including ECON 101 and 102, differential calculus and a writing course) plus one of DSCI 100, ECON 226 or ECON 227",
+      "BC high school: English Studies 12 (or English First Peoples 12) and Pre-Calculus 12; the BSc route also needs one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL; the BSc route also needs one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -167,10 +217,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Data Analytics",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 56,620.80 per year for international students (Land and Food Systems rate, CAD 1,769.40 per credit x 32 credits) and CAD 6,614.08 for Canadian students (CAD 206.69 per credit x 32 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Data Analytics at UBC Vancouver is a four-year Bachelor of Science in Food and Resource Economics from the Faculty of Land and Food Systems that combines applied economics with data analysis for food markets and natural resource conservation. Students learn coding in Python and R, data visualization, predictive analytics and causal inference, and use them to judge policies such as carbon taxes; co-op is available. Students are admitted directly into the BSc in Food and Resource Economics from secondary school; the first two years are shared with the Business and Markets major, and the Data Analytics courses follow in years three and four.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/data-analytics/",
     campus: "Vancouver",
+    degree: "Bachelor of Science in Food and Resource Economics (BSc FRE), Major in Data Analytics",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Direct entry from secondary school into the BSc in Food and Resource Economics; transfer applicants need at least 24 transferable credits and a 70% average",
+      "BC high school: English Studies 12 (or English First Peoples 12) and Pre-Calculus 12 (minimum 67%); Calculus 12 is recommended",
+      "IB: Math AA (SL/HL) or Math AI HL (Math AI SL and Math Studies are not accepted)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -291,10 +353,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Economics",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 62,337.60 per year for international students (International Economics rate, CAD 2,077.92 per credit x 30 credits) and CAD 9,921.30 for Canadian students (CAD 330.71 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "The Bachelor of International Economics at UBC Vancouver is a four-year, full-time degree from the Vancouver School of Economics, offered with support from UBC Sauder, that focuses on international trade, international finance, development and environmental economics. Students follow a demanding cohort-based curriculum built on core courses from both schools, and co-op is available. Students are admitted directly into first year (about 100 seats per cohort), and a small number of second-year transfer places are offered only if space is available.",
+    officialProgramUrl:
+      "https://you.ubc.ca/ubc_programs/international-economics/",
     campus: "Vancouver",
+    degree: "Bachelor of International Economics (BIE)",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Direct entry to first year with a broad-based review: grades in specific courses, achievements in and out of school, and fit for the program",
+      "BC high school: English Studies 12 (or English First Peoples 12) and Pre-Calculus 12; you must be eligible for MATH 100 at UBC, and secondary-school calculus is strongly recommended",
+      "IB: Math AA (SL/HL) or Math AI HL (Math AI SL and Math Studies are not accepted)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -339,10 +413,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Mathematics & Economics",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Mathematics and Economics at UBC Vancouver is a four-year BSc combined major that pairs a solid base in pure and applied mathematics with economic theory and econometrics, taught by the Department of Mathematics and the Vancouver School of Economics. Students take courses such as intermediate microeconomics, probability and empirical economics, co-op is available, and a BA version of the combined major is offered through the Faculty of Arts. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc), apply for the Mathematics major after first year, and then apply to the Vancouver School of Economics near the end of second year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/mathematics-economics/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Combined Major in Mathematics and Economics",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Route: get into the Mathematics major after first year (calculus such as MATH 101, 111 or 121, or SCIE 001), take the combined-major courses in second year, then apply in writing to the Vancouver School of Economics",
+      "Economics acceptance uses the same minimum requirements as the BA Economics major, including ECON 101 and 102; admission is competitive",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1056,10 +1143,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Computer Science",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Computer Science (BA) at UBC Vancouver is a four-year Bachelor of Arts that gives a thorough grounding in software design and computing topics such as databases, operating systems, security and web development, combined with the Faculty of Arts degree requirements instead of the Science ones. It suits students whose other interests lie in the arts and social sciences rather than the lab sciences, and co-op is available. This is not a direct-entry program: students are admitted to the Faculty of Arts (BA) and apply to the Computer Science major after completing CPSC 110 (or 107), CPSC 121 and CPSC 210.",
+    officialProgramUrl:
+      "https://you.ubc.ca/ubc_programs/computer-science-vancouver-ba/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Computer Science",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Major admission needs at least a 70% average in CPSC 110 (or 107), CPSC 121 and CPSC 210; meeting the minimum does not guarantee a place",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1670,10 +1769,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Statistics",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Statistics at UBC Vancouver is a four-year BSc about collecting, organizing and analyzing data, built on mathematics, probability and computing, with courses such as regression modelling and the design of experiments. Students add a nine-credit thematic concentration in an area such as computer science, economics, life sciences, commerce or the social sciences, and the program is offered as a major or honours (including combined honours), with co-op available. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the Statistics specialization at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/statistics-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Major in Statistics",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Specialization eligibility after first year: differential and integral calculus (MATH 101 or 121) and DSCI 100 (or 3 credits of statistics), or SCIE 001; Honours needs at least 65% in MATH 121, or 80% in MATH 101 with an 80% average in MATH 100/101",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1686,10 +1797,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Physics",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Physics at UBC Vancouver is a four-year BSc that studies matter, energy and how they interact, from subatomic particles to the structure of the universe, combining mechanics, electromagnetism, lab work and strong mathematics and computing. It is offered as a major or honours, with combined honours in Physics and Astronomy, Physics and Mathematics or Chemical Physics, and co-op is available; TRIUMF, Canada's particle accelerator centre, is on campus. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the Physics specialization at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/physics-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Major in Physics",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Specialization eligibility after first year: differential and integral calculus (MATH 101 or 121) and first-year physics with a lab (PHYS 108 or 118 plus PHYS 119, or PHYS 158 and 159), or SCIE 001; Honours needs at least 68% in each first-year physics and math course (60% in MATH 120 and 121)",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1814,10 +1937,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Political Science",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "The Combined Major in Economics and Political Science at UBC Vancouver is a four-year BA, taught by the Vancouver School of Economics and the Department of Political Science, that pairs intermediate micro- and macroeconomics and econometrics with the study of politics. Students complete at least 33 credits of economics, including a senior research seminar, and 30 credits of political science, with an optional Politics, Policy and Administration focus. This is not a direct-entry program: students are admitted to the Faculty of Arts (BA), declare a Political Science major, and apply to Economics for the combined major, normally once they have 27 credits.",
+    officialProgramUrl:
+      "https://economics.ubc.ca/undergraduate/ba-programs/combined-majors/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Combined Major in Economics and Political Science",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Economics admission needs 27 credits, including ECON 101, ECON 102, differential calculus, a writing course and 3 more approved credits; admission is competitive",
+      "Declare a Political Science major before or at the same time as applying to Economics",
+      "BC high school: English Studies 12 (or English First Peoples 12); Pre-Calculus 12 for students intending to major in Economics",
+      "IB Math AI SL and Math Studies do not meet the Vancouver School of Economics math requirement",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2390,10 +2526,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Astronomy",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Astronomy at UBC Vancouver is a four-year BSc that uses physics and mathematics to study the universe, from stars, black holes and exoplanets to galaxies and cosmology, with courses in computational physics and astronomical measurement. It is offered as a major or as the Combined Honours in Physics and Astronomy, which UBC recommends for graduate study and research careers, and co-op is available. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the Astronomy specialization at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/astronomy/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Major in Astronomy",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Specialization eligibility after first year: differential and integral calculus (MATH 101 or 121) and first-year physics with a lab (PHYS 108 or 118 plus PHYS 119, or PHYS 158 and 159), or SCIE 001",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2406,10 +2554,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Chemistry",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Chemistry at UBC Vancouver is a four-year BSc that studies matter and how it changes, with electives that let students focus on biological, computational, environmental, theoretical or materials chemistry. Undergraduate research is a priority, through upper-level research courses and summer research awards, and the program is offered as a major or honours (with combined options such as Chemical Biology or Biochemistry and Chemistry), with co-op available. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the Chemistry specialization at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/chemistry-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Major in Chemistry",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Specialization eligibility after first year: first-year chemistry (CHEM 111, 121 or 141, plus CHEM 123) and differential and integral calculus (MATH 101 or 121), or SCIE 001; admission is competitive",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2438,10 +2598,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Physics",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "The Combined Honours in Physics and Astronomy at UBC Vancouver is a four-year BSc honours program that pairs an extended physics and mathematics core with astronomy and astrophysics courses and an honours thesis in either subject. It is the route UBC recommends for students aiming at graduate study and research careers in astronomy, and co-op is available through the Department of Physics and Astronomy. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for this honours specialization at the end of first year.",
+    officialProgramUrl:
+      "https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/faculty-science/bachelor-science/physics",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Combined Honours in Physics and Astronomy",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Specialization eligibility after first year: differential and integral calculus (MATH 101 or 121) and first-year physics with a lab (PHYS 108 or 118 plus PHYS 119, or PHYS 158 and 159), or SCIE 001",
+      "Honours standards: Faculty of Science honours requirements, no failed courses, and at least 68% in each first-year physics and math course (60% in MATH 120 and 121)",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2486,10 +2659,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Physics",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Science rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "The Combined Major in Computer Science and Physics at UBC Vancouver is a four-year BSc that combines core computer science, such as software construction, algorithms and computer systems, with the core courses of a physics degree. A Combined Honours version is also offered, and co-op is available through Computer Science. This is not a direct-entry program: students are admitted to the Faculty of Science (BSc) and apply for the combined major at the end of first year, through the same competitive process as the Computer Science major.",
+    officialProgramUrl:
+      "https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/faculty-science/bachelor-science/computer-science",
     campus: "Vancouver",
+    degree: "Bachelor of Science (BSc), Combined Major in Computer Science and Physics",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Specialization eligibility after first year: CPSC 110 (or 107), differential and integral calculus (MATH 101 or 121) and first-year physics with a lab (PHYS 108 or 118 plus PHYS 119, or PHYS 158 and 159), or SCIE 001; admission is competitive",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {

@@ -34,6 +34,33 @@ export function pageMeta(
   };
 }
 
+/*
+ * Trim text for <meta name="description"> / og:description.
+ * Cuts at the last word boundary within `maxLength`
+ * (ellipsis included) so search snippets don't end mid-word.
+ */
+export function truncateDescription(
+  text: string,
+  maxLength = 160
+): string {
+  const clean = text.replace(/\s+/g, " ").trim();
+
+  if (clean.length <= maxLength) {
+    return clean;
+  }
+
+  // Keep one character free for the ellipsis. If the character
+  // right after the cut is a space, the last word is complete.
+  const cut = clean.slice(0, maxLength);
+  const lastSpace = cut.lastIndexOf(" ");
+  const trimmed = (lastSpace > 0 ? cut.slice(0, lastSpace) : cut).replace(
+    /[\s,;:.\-–—(]+$/,
+    ""
+  );
+
+  return `${trimmed}…`;
+}
+
 export function absoluteUrl(path: string) {
   return `${SITE_URL}${path === "/" ? "" : path}`;
 }

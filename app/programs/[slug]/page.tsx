@@ -5,7 +5,13 @@ import { ubcEnglishRequirements } from "@/data/ubcEnglishRequirements";
 import { englishRequirements } from "@/data/englishRequirements";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { getCountryPath } from "@/lib/seo-meta";
+import {
+  getCountryPath,
+  pageMeta,
+  truncateDescription,
+} from "@/lib/seo-meta";
+
+const PLACEHOLDER_DESCRIPTION = "Program details will be added soon.";
 
 export async function generateMetadata({
   params,
@@ -20,15 +26,23 @@ export async function generateMetadata({
     notFound();
   }
 
-  return {
-    title: `${program.name} — ${program.universityName} | MatchMyStudy`,
-    description:
-      program.description ||
-      `Explore ${program.name} at ${program.universityName}, including tuition information, programme details, entry requirements, duration, and study information.`,
-    alternates: {
-      canonical: `https://www.matchmystudy.com/programs/${program.slug}`,
-    },
-  };
+  const hasDescription =
+    program.description &&
+    program.description !== PLACEHOLDER_DESCRIPTION;
+
+  const description = truncateDescription(
+    hasDescription
+      ? program.description
+      : `Explore ${program.name} at ${program.universityName}, including tuition information, programme details, entry requirements, duration, and study information.`
+  );
+
+  // Same title/description/canonical as before, plus Open Graph
+  // tags via the shared helper (canonical resolves against metadataBase).
+  return pageMeta(
+    `/programs/${program.slug}`,
+    `${program.name} — ${program.universityName} | MatchMyStudy`,
+    description
+  );
 }
 
 export default async function ProgramDetailPage({
@@ -167,6 +181,28 @@ export default async function ProgramDetailPage({
                 </p>
               </div>
             )}
+
+            {program.intake && (
+              <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                <p className="text-slate-500 text-sm mb-2">
+                  Intake
+                </p>
+                <p className="text-xl font-semibold">
+                  {program.intake}
+                </p>
+              </div>
+            )}
+
+            {program.applicationDeadline && (
+              <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                <p className="text-slate-500 text-sm mb-2">
+                  Application Deadline
+                </p>
+                <p className="text-xl font-semibold">
+                  {program.applicationDeadline}
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Tuition */}
@@ -179,6 +215,24 @@ export default async function ProgramDetailPage({
               {program.tuitionNote}
             </p>
           </div>
+
+          {/* Admission Requirements */}
+          {program.admissionRequirements &&
+            program.admissionRequirements.length > 0 && (
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 mb-8">
+                <h2 className="text-2xl font-bold mb-4">
+                  Admission Requirements
+                </h2>
+
+                <ul className="list-disc pl-6 space-y-2 text-slate-600 leading-7">
+                  {program.admissionRequirements.map(
+                    (requirement) => (
+                      <li key={requirement}>{requirement}</li>
+                    )
+                  )}
+                </ul>
+              </div>
+            )}
 
           {/* English Requirements */}
           {program.universitySlug ===

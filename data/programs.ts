@@ -39,6 +39,11 @@ export type Program = {
   areaOfInterest?: string;
   careerOutcomes?: string[];
 admissionIntake?: string;
+
+  // Human-readable, e.g. "January 15, 2027 (international scholars: November 15, 2026)"
+  applicationDeadline?: string;
+  // Short bullet points shown in the "Admission Requirements" section
+  admissionRequirements?: string[];
 };
 
 export const programs: Program[] = [

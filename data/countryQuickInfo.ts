@@ -1456,4 +1456,727 @@ export const countryQuickInfo: Partial<Record<CountryKey, CountryQuickInfo>> = {
       ],
     },
   },
+  italy: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Each Italian public university sets its own fees, so there is no national tuition figure. Fees usually depend on family income (ISEE), and students whose income and assets are abroad can often use an equivalent ISEE or pay a flat rate set by the university. By law, state universities charge no fees for students with an ISEE under €13,000, and capped fees up to €30,000.",
+      figures: [
+        {
+          label: "Tuition at public universities",
+          value: "Not centrally published – set by each university",
+          sourceUrl:
+            "http://www.dsu.miur.gov.it/",
+        },
+        {
+          label: "No Tax Area (state universities)",
+          value: "No tuition with an ISEE under €13,000; reduced fees up to €30,000",
+          sourceUrl:
+            "http://www.dsu.miur.gov.it/",
+        },
+      ],
+      sources: [
+        {
+          name: "Ministry of University and Research: Right to study / No Tax Area (in Italian)",
+          url: "http://www.dsu.miur.gov.it/",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "For a university study visa, you must show the Italian embassy or consulate that you have enough money for the year. The money must come from lawful, traceable sources. A confirmed scholarship can count, but a pending application does not. The amount is set each academic year in the Ministry of University and Research circular.",
+      figures: [
+        {
+          label: "Visa proof of funds (2026-27)",
+          value: "€10,179.85 per year (about €848 per month)",
+          sourceUrl:
+            "https://ambbaku.esteri.it/wp-content/uploads/2026/05/Checklist-visto-studio-nazionale.rev_.pdf",
+        },
+      ],
+      sources: [
+        {
+          name: "Italian Embassy in Baku: Study visa checklist 2026-27 (in Italian)",
+          url: "https://ambbaku.esteri.it/wp-content/uploads/2026/05/Checklist-visto-studio-nazionale.rev_.pdf",
+        },
+        {
+          name: "Ministry of University and Research: Circular on international students 2026-27 (English version)",
+          url: "https://portale.units.it/sites/default/files/2026-05/Circolare%202026-2027%20studenti_internazionali_EN_0.pdf",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "A study residence permit lets you work as an employee up to 20 hours a week and 1,040 hours a year. If you work only during part of the year, such as the summer break, you can go above 20 hours a week as long as you stay within 1,040 hours a year. Self-employment is not hour-limited. After a degree in Italy, you can apply for a 9–12 month permit to look for work or start a business.",
+      figures: [
+        {
+          label: "Employment during studies",
+          value: "Up to 20 hours per week and 1,040 hours per year",
+          sourceUrl:
+            "https://www.integrazionemigranti.gov.it/it-it/Ricerca-news/Dettaglio-news/id/3085/-possibile-lavorare-con-un-permesso-per-motivi-di-studio-E-svolgere-un-tirocinio",
+        },
+        {
+          label: "Post-study: job-search / business permit",
+          value: "9 to 12 months",
+          sourceUrl:
+            "https://integrazionemigranti.gov.it/it-it/Ricerca-news/Dettaglio-news/id/3301/Conversione-del-permesso-di-soggiorno-da-studio-a-lavoro-Cosa-e-cambiato-con-il-decreto-Cutro",
+        },
+      ],
+      sources: [
+        {
+          name: "Integrazione Migranti (Ministry of Labour): Working on a study permit (in Italian)",
+          url: "https://www.integrazionemigranti.gov.it/it-it/Ricerca-news/Dettaglio-news/id/3085/-possibile-lavorare-con-un-permesso-per-motivi-di-studio-E-svolgere-un-tirocinio",
+        },
+        {
+          name: "Integrazione Migranti (Ministry of Labour): Converting a study permit (in Italian)",
+          url: "https://integrazionemigranti.gov.it/it-it/Ricerca-news/Dettaglio-news/id/3301/Conversione-del-permesso-di-soggiorno-da-studio-a-lavoro-Cosa-e-cambiato-con-il-decreto-Cutro",
+        },
+      ],
+    },
+  },
+  spain: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Fees at public universities are set every year by each autonomous community, and some regions charge non-EU students who are not resident in Spain more. So there is no single national figure for international students. The Ministry of Universities publishes average public prices for a first enrolment. Private universities set their own fees.",
+      figures: [
+        {
+          label: "Tuition for non-EU students",
+          value: "Not centrally published – set by each region and university",
+          sourceUrl:
+            "https://www.ciencia.gob.es/Ministerio/Estadisticas/SIIU/Precios.html",
+        },
+        {
+          label: "Average public price, bachelor's (2024-25, first enrolment)",
+          value: "About €11.95 – €19.29 per credit, depending on region",
+          sourceUrl:
+            "https://www.lamoncloa.gob.es/serviciosdeprensa/notasprensa/ciencia-innovacion-universidades/paginas/2025/310125-bajada-precio-titulos-univesidad-publica.aspx",
+        },
+        {
+          label: "Average public price, non-professional master's (2024-25)",
+          value: "About €30.04 per credit",
+          sourceUrl:
+            "https://www.lamoncloa.gob.es/serviciosdeprensa/notasprensa/ciencia-innovacion-universidades/paginas/2025/310125-bajada-precio-titulos-univesidad-publica.aspx",
+        },
+      ],
+      sources: [
+        {
+          name: "Ministry of Science, Innovation and Universities: Public university prices statistics (in Spanish)",
+          url: "https://www.ciencia.gob.es/Ministerio/Estadisticas/SIIU/Precios.html",
+        },
+        {
+          name: "La Moncloa: 2024-25 university price statistics (in Spanish)",
+          url: "https://www.lamoncloa.gob.es/serviciosdeprensa/notasprensa/ciencia-innovacion-universidades/paginas/2025/310125-bajada-precio-titulos-univesidad-publica.aspx",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "For a student stay authorisation, you must show money for each month of your stay equal to 100% of IPREM, a public income index. You need less if your accommodation is already paid for the whole stay. Money for tuition does not count towards this amount.",
+      figures: [
+        {
+          label: "Visa proof of funds (2026)",
+          value: "€600 per month (100% of IPREM)",
+          sourceUrl:
+            "https://www.exteriores.gob.es/Embajadas/nuevadelhi/es/ServiciosConsulares/Paginas/index.aspx?scca=Visados&scco=India&scd=214&scs=Visados+Nacionales+-+Visado+de+estudios",
+        },
+      ],
+      sources: [
+        {
+          name: "Spanish Embassy in New Delhi: Study visa (in Spanish)",
+          url: "https://www.exteriores.gob.es/Embajadas/nuevadelhi/es/ServiciosConsulares/Paginas/index.aspx?scca=Visados&scco=India&scd=214&scs=Visados+Nacionales+-+Visado+de+estudios",
+        },
+        {
+          name: "BOE: Immigration Regulation RD 1155/2024, Art. 35 (in Spanish)",
+          url: "https://www.boe.es/buscar/act.php?id=BOE-A-2024-24099",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Since 20 May 2025, a student stay for higher education automatically lets you work as an employee or self-employed, with no extra permit, as long as the work fits with your studies. Work is capped at 30 hours a week. After a degree of at least bachelor's level, you can apply for a 24-month permit to look for a job or start a business. You cannot work on that permit; once you find a job, you apply for a work permit.",
+      figures: [
+        {
+          label: "During higher-education studies",
+          value: "Up to 30 hours per week",
+          sourceUrl:
+            "https://www.boe.es/buscar/act.php?id=BOE-A-2024-24099",
+        },
+        {
+          label: "Post-study: job-search / business permit",
+          value: "24 months, not renewable (no work allowed on this permit)",
+          sourceUrl:
+            "https://www.inclusion.gob.es/web/migraciones/w/20.-autorizacion-de-residencia-para-busqueda-de-empleo-o-inicio-de-proyecto-empresarial",
+        },
+      ],
+      sources: [
+        {
+          name: "BOE: Immigration Regulation RD 1155/2024, Art. 57 (in Spanish)",
+          url: "https://www.boe.es/buscar/act.php?id=BOE-A-2024-24099",
+        },
+        {
+          name: "Ministry of Inclusion: Sheet 20 – Job-search residence permit (in Spanish)",
+          url: "https://www.inclusion.gob.es/web/migraciones/w/20.-autorizacion-de-residencia-para-busqueda-de-empleo-o-inicio-de-proyecto-empresarial",
+        },
+      ],
+    },
+  },
+  portugal: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Public institutions set their own fees for international (non-EU) students under the International Student Statute, so there is no national figure. For Portuguese and EU students, the state caps the yearly fee for bachelor's and integrated master's degrees.",
+      figures: [
+        {
+          label: "Tuition for international students",
+          value: "Not centrally published – set by each institution",
+          sourceUrl:
+            "https://www.dges.gov.pt/pt/pagina/propinas",
+        },
+        {
+          label: "National fee cap, Portuguese/EU students (2025-26)",
+          value: "€697 per year",
+          sourceUrl:
+            "https://www.dges.gov.pt/pt/pagina/propinas",
+        },
+      ],
+      sources: [
+        {
+          name: "DGES: Tuition fees (in Portuguese)",
+          url: "https://www.dges.gov.pt/pt/pagina/propinas",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "For a study residence visa, you must show stable means of subsistence equal to the national minimum wage (RMMG) for 12 months. The amount can be halved if your accommodation is covered, or reduced by up to 90% if food is covered too. Students admitted to institutions approved under Art. 91(5) of the Immigration Act do not need to show these funds.",
+      figures: [
+        {
+          label: "Visa proof of funds (2026)",
+          value: "€920 per month (national minimum wage)",
+          sourceUrl:
+            "https://www.dgert.gov.pt/retribuicao-minima-mensal-garantida-para-2026",
+        },
+        {
+          label: "Visa proof of funds for 12 months (2026)",
+          value: "€11,040",
+          sourceUrl:
+            "https://files.dre.pt/1s/2007/12/23800/0886608868.pdf",
+        },
+      ],
+      sources: [
+        {
+          name: "Portaria 1563/2007, Diário da República (in Portuguese)",
+          url: "https://files.dre.pt/1s/2007/12/23800/0886608868.pdf",
+        },
+        {
+          name: "DGERT: Minimum monthly wage for 2026 (in Portuguese)",
+          url: "https://www.dgert.gov.pt/retribuicao-minima-mensal-garantida-para-2026",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Holders of a residence permit for higher-education study may work as an employee or self-employed alongside their studies. The law sets no specific weekly hour limit, but study must stay the main purpose of your stay. After a master's or PhD, you can stay up to one year to look for work or start a business that matches your qualifications.",
+      figures: [
+        {
+          label: "During studies",
+          value: "Work allowed alongside studies (no fixed weekly limit published)",
+          sourceUrl:
+            "https://aima.gov.pt/pt/estudar/autorizacao-de-residencia-emitida-a-estudantes-do-ensino-superior-art-o-91",
+        },
+        {
+          label: "Post-study: job search (master's or PhD graduates)",
+          value: "Up to 1 year",
+          sourceUrl:
+            "https://aima.gov.pt/pt/trabalhar/tendo-beneficiado-de-ar-para-estudantes-do-2-o-ou-3-o-ciclos-do-ensino-superior-ou-de-ar-para-investigacao-e-concluido-os-estudo",
+        },
+      ],
+      sources: [
+        {
+          name: "AIMA: Residence permit for higher-education students, Art. 91 (in Portuguese)",
+          url: "https://aima.gov.pt/pt/estudar/autorizacao-de-residencia-emitida-a-estudantes-do-ensino-superior-art-o-91",
+        },
+        {
+          name: "AIMA: Job search after master's/PhD, Art. 122(1)(p) (in Portuguese)",
+          url: "https://aima.gov.pt/pt/trabalhar/tendo-beneficiado-de-ar-para-estudantes-do-2-o-ou-3-o-ciclos-do-ensino-superior-ou-de-ar-para-investigacao-e-concluido-os-estudo",
+        },
+      ],
+    },
+  },
+  greece: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Bachelor's programmes taught in Greek at public universities are free for all students, including non-EU students. Undergraduate programmes taught in a foreign language, aimed at international students, charge fees. Many master's programmes also charge fees, set in each programme's rules. There is no national fee figure for these.",
+      figures: [
+        {
+          label: "Greek-taught bachelor's at public universities",
+          value: "Free for all students",
+          sourceUrl:
+            "https://eurydice.eacea.ec.europa.eu/countries/greece/national-student-fee",
+        },
+        {
+          label: "Foreign-language bachelor's and most master's",
+          value: "Not centrally published – set by each programme",
+          sourceUrl:
+            "https://eurydice.eacea.ec.europa.eu/countries/greece/national-student-fee",
+        },
+      ],
+      sources: [
+        {
+          name: "Eurydice (European Commission): Greece – national student fees",
+          url: "https://eurydice.eacea.ec.europa.eu/countries/greece/national-student-fee",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "A joint ministerial decision under the Migration Code sets the minimum funds for a study visa and residence permit. The authorities assess each case, either monthly or yearly. You can prove funds with a bank account, transfer, grant, scholarship or part-time pay.",
+      figures: [
+        {
+          label: "Visa/permit proof of funds (Joint Ministerial Decision 225679/2024)",
+          value: "At least €650 per month",
+          sourceUrl:
+            "https://migration.gov.gr/wp-content/uploads/2024/10/3_%CE%9A%CE%A5%CE%91-%CE%95%CF%80%CE%B1%CF%81%CE%BA%CF%8E%CE%BD-%CF%80%CF%8C%CF%81%CF%89%CE%BD.pdf",
+        },
+      ],
+      sources: [
+        {
+          name: "Ministry of Migration and Asylum: Joint Ministerial Decision on sufficient resources (in Greek)",
+          url: "https://migration.gov.gr/wp-content/uploads/2024/10/3_%CE%9A%CE%A5%CE%91-%CE%95%CF%80%CE%B1%CF%81%CE%BA%CF%8E%CE%BD-%CF%80%CF%8C%CF%81%CF%89%CE%BD.pdf",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Students on a study residence permit may work part-time only, outside their study hours. A 2026 amendment caps this at 20 hours a week. After finishing a higher-education degree, you can stay for one year to look for work or start a business that matches your studies. After 3 months, you must show you have a real chance of being hired or starting a business.",
+      figures: [
+        {
+          label: "During studies (Law 5275/2026 amending Art. 118 of the Migration Code)",
+          value: "Part-time, up to 20 hours per week",
+          sourceUrl:
+            "https://past.auth.gr/adeia-diamonis-gia-spoudes-diarkeia-ischyos-loipes-katigories-n-5275-2026/",
+        },
+        {
+          label: "Post-study: job-search / business permit",
+          value: "1 year",
+          sourceUrl:
+            "https://migration.gov.gr/wp-content/uploads/2023/04/%CE%9A%CF%8E%CE%B4%CE%B9%CE%BA%CE%B1%CF%82-%CE%9C%CE%B5%CF%84%CE%B1%CE%BD%CE%AC%CF%83%CF%84%CE%B5%CF%85%CF%83%CE%B7%CF%82.pdf",
+        },
+      ],
+      sources: [
+        {
+          name: "Aristotle University of Thessaloniki: Notice on Law 5275/2026 (in Greek)",
+          url: "https://past.auth.gr/adeia-diamonis-gia-spoudes-diarkeia-ischyos-loipes-katigories-n-5275-2026/",
+        },
+        {
+          name: "Ministry of Migration and Asylum: Migration Code, Law 5038/2023, Art. 119 (in Greek)",
+          url: "https://migration.gov.gr/wp-content/uploads/2023/04/%CE%9A%CF%8E%CE%B4%CE%B9%CE%BA%CE%B1%CF%82-%CE%9C%CE%B5%CF%84%CE%B1%CE%BD%CE%AC%CF%83%CF%84%CE%B5%CF%85%CF%83%CE%B7%CF%82.pdf",
+        },
+      ],
+    },
+  },
+  poland: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Full-time study in Polish at public universities is free for EU/EEA citizens and holders of the Polish Card. Other foreign students pay fees that each university sets, and the fees cannot be lower than the cost of teaching. NAWA (the Polish National Agency for Academic Exchange) gives the typical range.",
+      figures: [
+        {
+          label: "Typical tuition for non-EU students",
+          value: "About €2,000 – €6,000 per year",
+          sourceUrl:
+            "https://study.gov.pl/tuition-fees",
+        },
+        {
+          label: "MBA programmes",
+          value: "About €8,000 – €12,000 per year",
+          sourceUrl:
+            "https://study.gov.pl/tuition-fees",
+        },
+      ],
+      sources: [
+        {
+          name: "Study in Poland (NAWA): Tuition fees",
+          url: "https://study.gov.pl/tuition-fees",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "For a study residence permit, the money you have each month after paying for housing must be more than Poland's social-assistance income threshold. You also need money for your housing, the return journey and your tuition.",
+      figures: [
+        {
+          label: "Permit proof of funds, single person (threshold from 1 Jan 2025)",
+          value: "More than PLN 1,010 per month, after housing costs",
+          sourceUrl:
+            "https://dziennikustaw.gov.pl/D2024000104401.pdf",
+        },
+        {
+          label: "Each dependent family member",
+          value: "More than PLN 823 per month",
+          sourceUrl:
+            "https://dziennikustaw.gov.pl/D2024000104401.pdf",
+        },
+      ],
+      sources: [
+        {
+          name: "Act on Foreigners, Art. 144 (consolidated text 2025, in Polish)",
+          url: "https://api.sejm.gov.pl/eli/acts/DU/2025/1079/text.pdf",
+        },
+        {
+          name: "Council of Ministers Regulation on income thresholds, Dz.U. 2024 poz. 1044 (in Polish)",
+          url: "https://dziennikustaw.gov.pl/D2024000104401.pdf",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Holders of a temporary residence permit for studies can work without a work permit. This also applies while your permit application is pending, if you applied while on a study visa. After graduating from a Polish university, you can get a one-time 9-month permit to look for work or start a business.",
+      figures: [
+        {
+          label: "During studies (study residence permit)",
+          value: "Work allowed without a work permit; no weekly hour limit stated",
+          sourceUrl:
+            "https://www.gov.pl/web/udsc/student",
+        },
+        {
+          label: "Post-study: job-search permit",
+          value: "9 months, once",
+          sourceUrl:
+            "https://www.gov.pl/web/udsc-en/permit-for-temporary-residence--graduate",
+        },
+      ],
+      sources: [
+        {
+          name: "Office for Foreigners (UdSC): Student FAQ (in Polish)",
+          url: "https://www.gov.pl/web/udsc/student",
+        },
+        {
+          name: "Office for Foreigners (UdSC): Temporary residence permit – graduate",
+          url: "https://www.gov.pl/web/udsc-en/permit-for-temporary-residence--graduate",
+        },
+      ],
+    },
+  },
+  "czech-republic": {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Degree programmes taught in Czech at public and state universities are free for students of any nationality. You may still pay an admission fee, and extra fees if you study longer than the standard time. Programmes in English or other languages charge fees that each university sets. Private universities set their own fees.",
+      figures: [
+        {
+          label: "Czech-taught programmes (public universities)",
+          value: "Free for all nationalities",
+          sourceUrl:
+            "https://www.studyin.cz/plan-your-studies/scholarships-and-finances/",
+        },
+        {
+          label: "English or other foreign-language programmes",
+          value: "Usually €0 – €6,000 per year",
+          sourceUrl:
+            "https://www.studyin.cz/plan-your-studies/scholarships-and-finances/",
+        },
+        {
+          label: "Medicine, arts and some specialised fields",
+          value: "Usually €8,000 – €25,000 per year",
+          sourceUrl:
+            "https://www.studyin.cz/plan-your-studies/scholarships-and-finances/",
+        },
+      ],
+      sources: [
+        {
+          name: "Study in Czechia (DZS): Scholarships and finances",
+          url: "https://www.studyin.cz/plan-your-studies/scholarships-and-finances/",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "The proof of funds is based on the subsistence minimum (CZK 3,130 a month since 2023). You need 15 times this amount for the first month plus twice the amount for each further month. Students can instead use a commitment from a public body or legal entity, or proof that the school covers all costs.",
+      figures: [
+        {
+          label: "Visa/permit proof of funds, one semester (6 months)",
+          value: "CZK 78,250",
+          sourceUrl:
+            "https://ipc.gov.cz/en/forms-and-documents/documents/proof-of-funds-for-the-residence-finances/",
+        },
+        {
+          label: "Visa/permit proof of funds, one year",
+          value: "CZK 115,810",
+          sourceUrl:
+            "https://ipc.gov.cz/en/forms-and-documents/documents/proof-of-funds-for-the-residence-finances/",
+        },
+      ],
+      sources: [
+        {
+          name: "Ministry of the Interior (ipc.gov.cz): Proof of funds for the stay",
+          url: "https://ipc.gov.cz/en/forms-and-documents/documents/proof-of-funds-for-the-residence-finances/",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Students in a full-time, university-accredited programme have free access to the labour market. This means you need no separate work permit, only your residence permit. After graduating, you can apply for a permit of up to 9 months to look for work or start a business, and you can work without limits on it.",
+      figures: [
+        {
+          label: "During full-time accredited studies",
+          value: "No work permit needed (free labour-market access)",
+          sourceUrl:
+            "https://ipc.gov.cz/en/life-in-the-czech-republic/free-access-to-the-labour-market/",
+        },
+        {
+          label: "Post-study: job-search / business permit",
+          value: "Up to 9 months, not renewable",
+          sourceUrl:
+            "https://ipc.gov.cz/en/visa-and-residence-permit-types/third-country-nationals/long-term-residence-permits/long-term-residence-permit-for-the-purpose-of-seeking-employment-or-starting-a-business/",
+        },
+      ],
+      sources: [
+        {
+          name: "Ministry of the Interior (ipc.gov.cz): Free access to the labour market",
+          url: "https://ipc.gov.cz/en/life-in-the-czech-republic/free-access-to-the-labour-market/",
+        },
+        {
+          name: "Ministry of the Interior (ipc.gov.cz): Permit for seeking employment or starting a business",
+          url: "https://ipc.gov.cz/en/visa-and-residence-permit-types/third-country-nationals/long-term-residence-permits/long-term-residence-permit-for-the-purpose-of-seeking-employment-or-starting-a-business/",
+        },
+      ],
+    },
+  },
+  hungary: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Each Hungarian university sets its own fees, which depend on the programme and study language. Study in Hungary (Tempus Public Foundation) points students to each university for exact fees.",
+      figures: [
+        {
+          label: "Tuition for international students",
+          value: "Not centrally published – set by each university",
+          sourceUrl:
+            "https://studyinhungary.hu/study-in-hungary/menu/studying-in-hungary/tuition-fees-and-funding-options.html",
+        },
+      ],
+      sources: [
+        {
+          name: "Study in Hungary (Tempus Public Foundation): Tuition fees and funding",
+          url: "https://studyinhungary.hu/study-in-hungary/menu/studying-in-hungary/tuition-fees-and-funding-options.html",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "To get a study residence permit, you must prove you can cover your living costs, accommodation, return journey and healthcare from lawful income or savings. The immigration authority (OIF) does not publish a fixed minimum amount. You can prove this with a bank statement, a sponsor's declaration, proof of regular income or a scholarship certificate.",
+      figures: [
+        {
+          label: "Permit proof of funds",
+          value: "Not centrally published – no fixed amount set",
+          sourceUrl:
+            "https://oif.gov.hu/factsheets/residence-of-the-student-pupil",
+        },
+      ],
+      sources: [
+        {
+          name: "National Directorate-General for Aliens Policing (OIF): Residence of students",
+          url: "https://oif.gov.hu/factsheets/residence-of-the-student-pupil",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Students on a study residence permit may work up to 30 hours a week during the study period. Outside the study period, they may work full-time for up to 90 days a year. After graduating, you can apply for a permit to look for a job or start a business that matches your studies.",
+      figures: [
+        {
+          label: "During the study period",
+          value: "Up to 30 hours per week",
+          sourceUrl:
+            "https://oif.gov.hu/factsheets/residence-of-the-student-pupil",
+        },
+        {
+          label: "Outside the study period",
+          value: "Full-time for up to 90 days per year",
+          sourceUrl:
+            "https://oif.gov.hu/factsheets/residence-of-the-student-pupil",
+        },
+        {
+          label: "Post-study: job-search / business permit",
+          value: "Up to 9 months, not renewable",
+          sourceUrl:
+            "https://www.oif.gov.hu/factsheets/residence-permit-for-the-purpose-of-seeking-a-job-or-starting-a-business",
+        },
+      ],
+      sources: [
+        {
+          name: "OIF: Residence of students",
+          url: "https://oif.gov.hu/factsheets/residence-of-the-student-pupil",
+        },
+        {
+          name: "OIF: Residence permit for seeking a job or starting a business",
+          url: "https://www.oif.gov.hu/factsheets/residence-permit-for-the-purpose-of-seeking-a-job-or-starting-a-business",
+        },
+      ],
+    },
+  },
+  romania: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "The government sets minimum monthly fees for self-funded students from outside the EU/EEA and Switzerland. Each university senate sets the final fee. Fees are paid in advance for 9 months of the academic year. EU/EEA and Swiss students pay the same as Romanian students.",
+      figures: [
+        {
+          label: "Minimum fee, technical, sciences, sport (bachelor's/master's)",
+          value: "€270 per month",
+          sourceUrl:
+            "https://legislatie.just.ro/Public/DetaliiDocumentAfis/110933",
+        },
+        {
+          label: "Minimum fee, social sciences, psychology, economics",
+          value: "€220 per month",
+          sourceUrl:
+            "https://legislatie.just.ro/Public/DetaliiDocumentAfis/110933",
+        },
+        {
+          label: "Minimum fee, medicine",
+          value: "€320 per month",
+          sourceUrl:
+            "https://legislatie.just.ro/Public/DetaliiDocumentAfis/110933",
+        },
+        {
+          label: "Minimum fee, architecture / music and arts",
+          value: "€350 / €420 per month",
+          sourceUrl:
+            "https://legislatie.just.ro/Public/DetaliiDocumentAfis/110933",
+        },
+      ],
+      sources: [
+        {
+          name: "Government Ordinance 22/2009 on minimum tuition fees (in Romanian)",
+          url: "https://legislatie.just.ro/Public/DetaliiDocumentAfis/110933",
+        },
+        {
+          name: "Embassy of Romania in the USA: Study in Romania",
+          url: "https://washington.mae.ro/en/romania/300",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "For a long-stay study visa, you must show money equal to at least the national gross minimum wage for each month of the visa. State scholarship holders are exempt. The minimum wage is updated by government decision.",
+      figures: [
+        {
+          label: "Visa proof of funds (minimum wage from 1 July 2026)",
+          value: "At least RON 4,325 per month",
+          sourceUrl:
+            "https://legislatie.just.ro/Public/DetaliiDocumentAfis/308231",
+        },
+      ],
+      sources: [
+        {
+          name: "General Inspectorate for Immigration: Long-stay visa for studies (in Romanian)",
+          url: "https://igi.mai.gov.ro/cum-pot-sa-obtin-o-viza-de-lunga-sedere-pentru-studii/",
+        },
+        {
+          name: "Government Decision 146/2026 on the minimum wage (in Romanian)",
+          url: "https://legislatie.just.ro/Public/DetaliiDocumentAfis/308231",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Students with a residence permit for studies can work without a work permit, but only on a part-time contract of up to 6 hours a day. Working more hours needs a work permit. After graduating, your study residence right can be extended for 9 months to look for a job or start a business.",
+      figures: [
+        {
+          label: "During studies (no work permit)",
+          value: "Part-time, up to 6 hours per day",
+          sourceUrl:
+            "https://igi.mai.gov.ro/en/studies/",
+        },
+        {
+          label: "Post-study extension",
+          value: "9 months",
+          sourceUrl:
+            "https://igi.mai.gov.ro/en/studies/",
+        },
+      ],
+      sources: [
+        {
+          name: "General Inspectorate for Immigration: Studies",
+          url: "https://igi.mai.gov.ro/en/studies/",
+        },
+      ],
+    },
+  },
+  turkiye: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Each state university's board sets the fee for students admitted through the international student quota. For 2026-27, a Presidential Decision says this fee must be at least twice the official service cost for the programme. Universities may charge less for some successful students or students from certain regions.",
+      figures: [
+        {
+          label: "State universities, international-quota students (2026-27)",
+          value: "Set by each university – at least 2 × the programme's official service cost",
+          sourceUrl:
+            "https://www.resmigazete.gov.tr/eskiler/2026/08/20260815-7.pdf",
+        },
+      ],
+      sources: [
+        {
+          name: "Official Gazette, 15 Aug 2026: Presidential Decision on 2026-27 fees, Art. 3 (in Turkish)",
+          url: "https://www.resmigazete.gov.tr/eskiler/2026/08/20260815-7.pdf",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "The Law on Foreigners and International Protection lists the conditions for a student residence permit (documents, address and no entry ban), but no fixed amount of money. No national proof-of-funds figure is published, though a consulate may ask about your means when you apply for a visa.",
+      figures: [
+        {
+          label: "Visa/permit proof of funds",
+          value: "Not centrally published – no fixed amount set",
+          sourceUrl:
+            "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6458.pdf",
+        },
+      ],
+      sources: [
+        {
+          name: "Law 6458 on Foreigners and International Protection, Arts. 38–39 (in Turkish)",
+          url: "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6458.pdf",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Students in full-time higher education can work only with a work permit. Associate and bachelor's students can apply only after finishing their first year, and may work part-time. These limits do not apply to master's and PhD students. Graduates can apply within 6 months for a one-time residence permit of up to 1 year. Work permit applications made within a year of graduating are assessed under special rules.",
+      figures: [
+        {
+          label: "Bachelor's / associate students",
+          value: "Part-time with a work permit, after the first year",
+          sourceUrl:
+            "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6735.pdf",
+        },
+        {
+          label: "Master's / PhD students",
+          value: "Work permit needed; no first-year or part-time limit",
+          sourceUrl:
+            "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6735.pdf",
+        },
+        {
+          label: "Post-study: short-term residence permit",
+          value: "Up to 1 year, once (apply within 6 months of graduating)",
+          sourceUrl:
+            "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6458.pdf",
+        },
+      ],
+      sources: [
+        {
+          name: "International Labour Force Law 6735, Art. 19 (in Turkish)",
+          url: "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6735.pdf",
+        },
+        {
+          name: "Law 6458 on Foreigners and International Protection, Art. 31 (in Turkish)",
+          url: "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6458.pdf",
+        },
+      ],
+    },
+  },
 };

@@ -2179,4 +2179,660 @@ export const countryQuickInfo: Partial<Record<CountryKey, CountryQuickInfo>> = {
       ],
     },
   },
+  japan: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "National universities base their fees on a standard amount set by the Ministry of Education (MEXT). They may charge up to 120% of it, and since a rule change they may also set separate fees for international students. Local public and private universities are not covered by this standard and set their own fees.",
+      figures: [
+        {
+          label: "National universities: standard annual tuition",
+          value: "¥535,800 per year",
+          sourceUrl:
+            "https://laws.e-gov.go.jp/law/416M60000080016",
+        },
+        {
+          label: "National universities: standard admission fee (first year only)",
+          value: "¥282,000",
+          sourceUrl:
+            "https://laws.e-gov.go.jp/law/416M60000080016",
+        },
+      ],
+      sources: [
+        {
+          name: "MEXT ordinance on national university fees, Arts. 2, 10 and 11 (in Japanese)",
+          url: "https://laws.e-gov.go.jp/law/416M60000080016",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "For the Student status of residence, you must show how your studies and stay will be paid for, using a statement of financial support and evidence such as bank records or a scholarship. The Immigration Services Agency does not publish a fixed amount. As a guide, a JASSO survey of self-funded international students found average living costs of about ¥105,000 a month, not counting study costs. Housing averaged ¥41,000 nationally and ¥57,000 in Tokyo.",
+      figures: [
+        {
+          label: "Visa proof of funds",
+          value: "Not centrally published – no fixed amount set",
+          sourceUrl:
+            "https://www.moj.go.jp/isa/applications/status/student.html",
+        },
+        {
+          label: "Average living costs, excluding study costs (JASSO 2023 survey)",
+          value: "About ¥105,000 per month",
+          sourceUrl:
+            "https://www.studyinjapan.go.jp/ja/life/cost-of-living/",
+        },
+      ],
+      sources: [
+        {
+          name: "Immigration Services Agency: Status of residence \"Student\" (in Japanese)",
+          url: "https://www.moj.go.jp/isa/applications/status/student.html",
+        },
+        {
+          name: "Study in Japan (JASSO): Cost of living (in Japanese)",
+          url: "https://www.studyinjapan.go.jp/ja/life/cost-of-living/",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Students need permission to engage in activities outside their status before taking a part-time job. With this blanket permission, you can work up to 28 hours a week. During your school's official long holidays, you can work up to 8 hours a day. Work in the adult entertainment industry is never allowed. After graduating, you can switch to a job-hunting status for 6 months and renew it once, so up to 1 year, if your school recommends you.",
+      figures: [
+        {
+          label: "During term",
+          value: "Up to 28 hours per week (with permission)",
+          sourceUrl:
+            "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri07_00003.html",
+        },
+        {
+          label: "During long school holidays",
+          value: "Up to 8 hours per day",
+          sourceUrl:
+            "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri07_00003.html",
+        },
+        {
+          label: "Post-study: job-hunting status (Designated Activities)",
+          value: "6 months, renewable once (up to 1 year)",
+          sourceUrl:
+            "https://www.moj.go.jp/isa/applications/resources/nyukan_nyukan84.html",
+        },
+      ],
+      sources: [
+        {
+          name: "Immigration Services Agency: Permission to work for Student status holders (in Japanese)",
+          url: "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri07_00003.html",
+        },
+        {
+          name: "Immigration Services Agency: Staying to job-hunt after graduation (in Japanese)",
+          url: "https://www.moj.go.jp/isa/applications/resources/nyukan_nyukan84.html",
+        },
+      ],
+    },
+  },
+  southKorea: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Each university sets its own fees. The Ministry of Education publishes national averages for Korean four-year universities every year, based on the Academy Info disclosure system. These averages are general fees, not fees specific to international students. Check each university for its international fees and scholarships.",
+      figures: [
+        {
+          label: "Four-year universities, average (2026)",
+          value: "KRW 7,270,300 per year",
+          sourceUrl:
+            "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=106020&lev=0&m=020402&opType=N&page=1&s=moe&searchType=null&statusYN=W",
+        },
+        {
+          label: "National/public vs private, average (2026)",
+          value: "KRW 4,250,000 vs KRW 8,231,500 per year",
+          sourceUrl:
+            "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=106020&lev=0&m=020402&opType=N&page=1&s=moe&searchType=null&statusYN=W",
+        },
+        {
+          label: "Medicine, average (2026)",
+          value: "KRW 10,325,900 per year",
+          sourceUrl:
+            "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=106020&lev=0&m=020402&opType=N&page=1&s=moe&searchType=null&statusYN=W",
+        },
+      ],
+      sources: [
+        {
+          name: "Ministry of Education: April 2026 university disclosure results (in Korean)",
+          url: "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=106020&lev=0&m=020402&opType=N&page=1&s=moe&searchType=null&statusYN=W",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "For a D-2 degree visa, you must prove you can pay for a year of study and living costs. Since 3 July 2023 the amount has been set in won, and it is lower for universities outside the Seoul capital region.",
+      figures: [
+        {
+          label: "Visa proof of funds, degree programme (capital region)",
+          value: "KRW 20,000,000 per year",
+          sourceUrl:
+            "https://www.korea.kr/news/policyNewsView.do?newsId=148916751",
+        },
+        {
+          label: "Visa proof of funds, degree programme (outside the capital region)",
+          value: "KRW 16,000,000 per year",
+          sourceUrl:
+            "https://www.korea.kr/news/policyNewsView.do?newsId=148916751",
+        },
+      ],
+      sources: [
+        {
+          name: "Korea.kr (Ministry of Justice): Student visa funds rules from July 2023 (in Korean)",
+          url: "https://www.korea.kr/news/policyNewsView.do?newsId=148916751",
+        },
+        {
+          name: "Ministry of Education: Standard guidelines for international students, revised March 2026 (in Korean)",
+          url: "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=350&boardSeq=105733&lev=0&m=0309&opType=N&page=1&s=moe&searchType=null&statusYN=W",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "D-2 students need part-time work permission from immigration before they start. The weekly limit depends on your degree level and Korean language level (TOPIK, the Social Integration Program or King Sejong Institute). Without the required level, bachelor's students can work only 10 hours a week and master's/PhD students 15 hours. Weekend and vacation hours are unlimited if you meet the language level. After graduating, you can switch to a D-10 job-seeking visa in 6-month steps for up to 2 years.",
+      figures: [
+        {
+          label: "Associate / bachelor's students (with required Korean level)",
+          value: "Up to 25 hours per week on weekdays; unlimited at weekends and in vacations",
+          sourceUrl:
+            "https://www.studyinkorea.go.kr/mn/life/residenceAndStayInfo.do?tab=part-time-job",
+        },
+        {
+          label: "Master's / PhD students (with required Korean level)",
+          value: "Up to 30 hours per week on weekdays; unlimited at weekends and in vacations",
+          sourceUrl:
+            "https://www.studyinkorea.go.kr/mn/life/residenceAndStayInfo.do?tab=part-time-job",
+        },
+        {
+          label: "Post-study: D-10 job-seeking visa",
+          value: "6 months at a time, up to 2 years in total",
+          sourceUrl:
+            "https://www.studyinkorea.go.kr/mn/life/residenceAndStayInfo.do?tab=part-time-job",
+        },
+      ],
+      sources: [
+        {
+          name: "Study in Korea (NIIED): Part-time work and job-seeking visa",
+          url: "https://www.studyinkorea.go.kr/mn/life/residenceAndStayInfo.do?tab=part-time-job",
+        },
+      ],
+    },
+  },
+  china: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Each Chinese university sets and publishes its own fees for international students, following national pricing rules. Fees are charged in RMB. There is no current national tuition figure for international students.",
+      figures: [
+        {
+          label: "Tuition for international students",
+          value: "Not centrally published – set and published by each university",
+          sourceUrl:
+            "https://www.gov.cn/gongbao/content/2017/content_5225869.htm",
+        },
+      ],
+      sources: [
+        {
+          name: "MOE Order No. 42 on admitting and training international students, Art. 14 (in Chinese)",
+          url: "https://www.gov.cn/gongbao/content/2017/content_5225869.htm",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "For an X1 study visa, you need the university's admission letter and the JW201 or JW202 form. The standard document list does not set a fixed amount of money, although an embassy can ask for extra documents in individual cases. Within 30 days of arriving, you must apply for a study residence permit.",
+      figures: [
+        {
+          label: "Visa proof of funds",
+          value: "Not centrally published – no fixed amount on the standard X1 checklist",
+          sourceUrl:
+            "https://pg.china-embassy.gov.cn/lsyw/lszj/fhqz/fhqzjj/202501/t20250108_11528812.html",
+        },
+      ],
+      sources: [
+        {
+          name: "Chinese Embassy in Papua New Guinea: X1/X2 visas (in Chinese)",
+          url: "https://pg.china-embassy.gov.cn/lsyw/lszj/fhqz/fhqzjj/202501/t20250108_11528812.html",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "International students may not take regular jobs or run a business. They can do work-study arranged by their university, generally up to 8 hours a week and 40 hours a month in term, and 16 hours a week and 80 hours a month in winter and summer breaks. Off-campus work-study also needs your university's approval and a note on your residence permit. It is usually only for students who are 18 or older and have studied at the university for at least a year. China has no general job-search visa after graduation. Master's and higher graduates of Chinese universities with good grades can be hired within a year of graduating without prior work experience, subject to quotas.",
+      figures: [
+        {
+          label: "Work-study during term",
+          value: "Generally up to 8 hours per week and 40 hours per month",
+          sourceUrl:
+            "http://www.moe.gov.cn/srcsite/A20/s7068/202201/t20220121_595550.html",
+        },
+        {
+          label: "Work-study in winter/summer breaks",
+          value: "Generally up to 16 hours per week and 80 hours per month",
+          sourceUrl:
+            "http://www.moe.gov.cn/srcsite/A20/s7068/202201/t20220121_595550.html",
+        },
+        {
+          label: "Post-study",
+          value: "No job-search visa; master's+ graduates can get a work permit within 1 year of graduating",
+          sourceUrl:
+            "https://www.beijing.gov.cn/gate/big5/www.beijing.gov.cn/zhengce/zhengcefagui/qtwj/201912/t20191211_1034128.html",
+        },
+      ],
+      sources: [
+        {
+          name: "MOE and others: Rules on work-study for international students, 2021 (in Chinese)",
+          url: "http://www.moe.gov.cn/srcsite/A20/s7068/202201/t20220121_595550.html",
+        },
+        {
+          name: "MOE Order No. 42, Art. 30 (in Chinese)",
+          url: "https://www.gov.cn/gongbao/content/2017/content_5225869.htm",
+        },
+        {
+          name: "MOHRSS, MFA and MOE: Notice on employing outstanding foreign graduates, 2017 (in Chinese)",
+          url: "https://www.beijing.gov.cn/gate/big5/www.beijing.gov.cn/zhengce/zhengcefagui/qtwj/201912/t20191211_1034128.html",
+        },
+      ],
+    },
+  },
+  hongKong: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Non-local students on government-funded (UGC) programmes do not receive public subsidy. Universities set their fees, which must at least cover the extra direct costs and can never be lower than the local student fee. The government reported non-local undergraduate fees of HK$140,000 to HK$171,000 a year in 2021/22. Check each university for current fees.",
+      figures: [
+        {
+          label: "Non-local undergraduate fees (2021/22)",
+          value: "HK$140,000–171,000 per year",
+          sourceUrl:
+            "https://www.info.gov.hk/gia/general/202312/06/P2023120600243.htm",
+        },
+        {
+          label: "Minimum (local UGC-funded fee, 2026/27)",
+          value: "HK$47,000 per year",
+          sourceUrl:
+            "https://www.info.gov.hk/gia/general/202406/20/P2024062000250.htm",
+        },
+      ],
+      sources: [
+        {
+          name: "Hong Kong Government: LegCo reply on non-local student fees (December 2023)",
+          url: "https://www.info.gov.hk/gia/general/202312/06/P2023120600243.htm",
+        },
+        {
+          name: "Hong Kong Government: UGC-funded tuition fee levels 2025/26 to 2027/28",
+          url: "https://www.info.gov.hk/gia/general/202406/20/P2024062000250.htm",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "To get a student visa, you must show you can pay your course fees, living costs and accommodation without working or using public funds. The Immigration Department asks for proof such as bank statements but does not set a fixed amount.",
+      figures: [
+        {
+          label: "Visa proof of funds",
+          value: "Not centrally published – no fixed amount set",
+          sourceUrl:
+            "https://www.immd.gov.hk/eng/services/visas/study.html",
+        },
+      ],
+      sources: [
+        {
+          name: "Immigration Department: Entry for study",
+          url: "https://www.immd.gov.hk/eng/services/visas/study.html",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Under the standard rules, full-time non-local students on local degree programmes may take on-campus jobs up to 20 hours a week and work freely from 1 June to 31 August. They may also do internships related to their studies. For now, these students are temporarily exempt from these limits. They can work while both their permitted stay and their No Objection Letter are valid. After graduating, you can apply within 6 months for 24 months' stay under IANG without a job offer.",
+      figures: [
+        {
+          label: "Standard rule: on-campus work",
+          value: "Up to 20 hours per week",
+          sourceUrl:
+            "https://www.immd.gov.hk/eng/services/visas/study.html",
+        },
+        {
+          label: "Standard rule: summer (1 June–31 August)",
+          value: "No limit on hours or location",
+          sourceUrl:
+            "https://www.immd.gov.hk/eng/services/visas/study.html",
+        },
+        {
+          label: "Current temporary exemption",
+          value: "Limits lifted for degree students, as stated in their No Objection Letter",
+          sourceUrl:
+            "https://www.immd.gov.hk/eng/services/visas/study.html",
+        },
+        {
+          label: "Post-study: IANG",
+          value: "24 months' stay; no job offer needed if you apply within 6 months",
+          sourceUrl:
+            "https://www.immd.gov.hk/eng/services/visas/IANG.html",
+        },
+      ],
+      sources: [
+        {
+          name: "Immigration Department: Entry for study (conditions of stay)",
+          url: "https://www.immd.gov.hk/eng/services/visas/study.html",
+        },
+        {
+          name: "Immigration Department: Immigration Arrangements for Non-local Graduates (IANG)",
+          url: "https://www.immd.gov.hk/eng/services/visas/IANG.html",
+        },
+      ],
+    },
+  },
+  taiwan: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Each university sets its own fees for international students. By law, these fees cannot be lower than the fees private schools of the same level charge local students. Students admitted under education agreements or on Taiwan government scholarships may pay local rates. Universities list their fees in their admission guides.",
+      figures: [
+        {
+          label: "Tuition for international students",
+          value: "Not centrally published – set by each university (no lower than local private-school rates)",
+          sourceUrl:
+            "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0110001",
+        },
+      ],
+      sources: [
+        {
+          name: "MOE Regulations on International Students Undertaking Studies in Taiwan, Arts. 6 and 21 (in Chinese)",
+          url: "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0110001",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "For a resident visa for study, you must give proof of funds covering the last 6 months. It can be yours or a close relative's, or you can show a scholarship. The Bureau of Consular Affairs does not set an amount. Each university sets its own financial proof standard in its admission rules.",
+      figures: [
+        {
+          label: "Visa proof of funds",
+          value: "Not centrally published – 6 months of financial records; amount set by each university",
+          sourceUrl:
+            "https://www.boca.gov.tw/cp-402-185-35222-1.html",
+        },
+      ],
+      sources: [
+        {
+          name: "Bureau of Consular Affairs: Resident visas for international degree students (in Chinese)",
+          url: "https://www.boca.gov.tw/cp-402-185-35222-1.html",
+        },
+        {
+          name: "MOE Regulations on International Students, Art. 6 (in Chinese)",
+          url: "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0110001",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "International students at registered universities need a work permit from the Ministry of Labor, which they apply for online once per semester. During term they can work up to 20 hours a week. The limit does not apply in winter and summer breaks, but normal labour law hours still apply. Since 1 January 2026, graduates with an associate degree or higher from Taiwan can stay for 2 years after graduating. During that time they can look for work, work part-time, train, intern or start a business without a work permit.",
+      figures: [
+        {
+          label: "During term",
+          value: "Up to 20 hours per week (work permit needed)",
+          sourceUrl:
+            "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=50&pcode=N0090001",
+        },
+        {
+          label: "Winter and summer breaks",
+          value: "No 20-hour limit (labour law limits apply)",
+          sourceUrl:
+            "https://www.wda.gov.tw/en/News_Content.aspx?n=179&s=13639",
+        },
+        {
+          label: "Post-study (from 1 January 2026)",
+          value: "Up to 2 years; no work permit needed",
+          sourceUrl:
+            "https://foreigntalentact.ndc.gov.tw/en/Content_List.aspx?n=1E54D6727019B6D8",
+        },
+      ],
+      sources: [
+        {
+          name: "Employment Service Act, Art. 50 (in Chinese)",
+          url: "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=50&pcode=N0090001",
+        },
+        {
+          name: "Workforce Development Agency: Student work permits and vacation hours",
+          url: "https://www.wda.gov.tw/en/News_Content.aspx?n=179&s=13639",
+        },
+        {
+          name: "National Development Council: 2025 amendments to the Foreign Professionals Act",
+          url: "https://foreigntalentact.ndc.gov.tw/en/Content_List.aspx?n=1E54D6727019B6D8",
+        },
+      ],
+    },
+  },
+  singapore: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Each university sets its own fees. For many full-time undergraduate courses at the autonomous universities, international students can apply for the Ministry of Education's Tuition Grant, which lowers the fee. In return, they must work for a Singapore entity for 3 years after graduating. Without the grant, the full fee applies.",
+      figures: [
+        {
+          label: "Tuition for international students",
+          value: "Not centrally published – set by each university",
+          sourceUrl:
+            "https://www.moe.gov.sg/financial-matters/tuition-grant-scheme",
+        },
+        {
+          label: "MOE Tuition Grant condition",
+          value: "3-year work bond after graduation",
+          sourceUrl:
+            "https://www.moe.gov.sg/financial-matters/tuition-grant-scheme",
+        },
+      ],
+      sources: [
+        {
+          name: "Ministry of Education: Tuition Grant Scheme",
+          url: "https://www.moe.gov.sg/financial-matters/tuition-grant-scheme",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "You apply for a Student's Pass online through ICA after your university registers you. The application asks how you will be financially supported, and ICA may ask for more documents. ICA does not publish a minimum amount.",
+      figures: [
+        {
+          label: "Student's Pass proof of funds",
+          value: "Not centrally published – no fixed amount set",
+          sourceUrl:
+            "https://www.ica.gov.sg/reside/STP/apply/IHL",
+        },
+      ],
+      sources: [
+        {
+          name: "ICA: Student's Pass for Institutes of Higher Learning",
+          url: "https://www.ica.gov.sg/reside/STP/apply/IHL",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Full-time students at approved institutions, including NUS, NTU, SMU, SIT, SUSS, SUTD and the polytechnics, can work up to 16 hours a week during term without a work pass. They can also work during vacations, and do internships that count towards graduation. Exchange students may not work. After graduating from a listed institution, you can apply for a Long-Term Visit Pass to stay and look for work. Once you find a job, your employer must apply for a work pass.",
+      figures: [
+        {
+          label: "During term",
+          value: "Up to 16 hours per week (approved institutions only)",
+          sourceUrl:
+            "https://www.mom.gov.sg/passes-and-permits/work-pass-exemption-for-foreign-students/",
+        },
+        {
+          label: "During vacations",
+          value: "No work pass needed (approved institutions only)",
+          sourceUrl:
+            "https://www.mom.gov.sg/passes-and-permits/work-pass-exemption-for-foreign-students/",
+        },
+        {
+          label: "Post-study: Long-Term Visit Pass to seek work",
+          value: "Available; duration not stated by ICA",
+          sourceUrl:
+            "https://www.ica.gov.sg/reside/LTVP/apply/graduate-from-an-institute-of-higher-learning-seeking-employment-in-singapore",
+        },
+      ],
+      sources: [
+        {
+          name: "Ministry of Manpower: Work pass exemption for foreign students",
+          url: "https://www.mom.gov.sg/passes-and-permits/work-pass-exemption-for-foreign-students/",
+        },
+        {
+          name: "ICA: Graduates seeking employment in Singapore (LTVP)",
+          url: "https://www.ica.gov.sg/reside/LTVP/apply/graduate-from-an-institute-of-higher-learning-seeking-employment-in-singapore",
+        },
+      ],
+    },
+  },
+  malaysia: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Fees depend on the programme and the public or private institution you choose. Education Malaysia Global Services (EMGS) points students to each institution and to its cost calculator for estimates.",
+      figures: [
+        {
+          label: "Tuition for international students",
+          value: "Not centrally published – set by each institution",
+          sourceUrl:
+            "https://educationmalaysia.gov.my/get-in-touch/faq",
+        },
+      ],
+      sources: [
+        {
+          name: "Education Malaysia (EMGS): FAQ",
+          url: "https://educationmalaysia.gov.my/get-in-touch/faq",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "Student Pass applications go through EMGS and need an offer letter, academic documents, health insurance for at least 12 months and a personal bond. The Immigration Department's list for students does not include a fixed proof-of-funds amount.",
+      figures: [
+        {
+          label: "Student Pass proof of funds",
+          value: "Not centrally published – no fixed amount set",
+          sourceUrl:
+            "https://www.imi.gov.my/index.php/en/main-services/pass/student-pass/",
+        },
+      ],
+      sources: [
+        {
+          name: "Immigration Department of Malaysia: Student Pass",
+          url: "https://www.imi.gov.my/index.php/en/main-services/pass/student-pass/",
+        },
+        {
+          name: "Education Malaysia (EMGS): FAQ",
+          url: "https://educationmalaysia.gov.my/get-in-touch/faq",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Students at public universities and approved private institutions can work part-time up to 20 hours a week, only with prior Immigration approval. Work is allowed only in restaurants, petrol stations, minimarkets, hotels or on campus. EMGS says this applies only during semester breaks or holidays of more than 7 days. Cashier and front-desk work are not allowed. After a bachelor's degree or higher, students from listed countries can apply for a Graduate Pass to stay up to 1 year.",
+      figures: [
+        {
+          label: "Part-time work",
+          value: "Up to 20 hours per week, with Immigration approval, in approved sectors",
+          sourceUrl:
+            "https://www.imi.gov.my/index.php/en/main-services/pass/student-pass/",
+        },
+        {
+          label: "When",
+          value: "Semester breaks or holidays of more than 7 days (per EMGS)",
+          sourceUrl:
+            "https://educationmalaysia.gov.my/get-in-touch/faq",
+        },
+        {
+          label: "Post-study: Graduate Pass",
+          value: "Up to 1 year (bachelor's or higher; listed nationalities)",
+          sourceUrl:
+            "https://educationmalaysia.gov.my/get-in-touch/faq",
+        },
+      ],
+      sources: [
+        {
+          name: "Immigration Department of Malaysia: Student Pass (work permission)",
+          url: "https://www.imi.gov.my/index.php/en/main-services/pass/student-pass/",
+        },
+        {
+          name: "Education Malaysia (EMGS): FAQ (work and Graduate Pass)",
+          url: "https://educationmalaysia.gov.my/get-in-touch/faq",
+        },
+      ],
+    },
+  },
+  thailand: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Each Thai university sets its own fees, which vary by programme and by whether it is Thai- or English-taught. The Ministry of Higher Education publishes study guides and scholarship lists, but no national tuition figure for international students.",
+      figures: [
+        {
+          label: "Tuition for international students",
+          value: "Not centrally published – set by each university",
+          sourceUrl:
+            "https://www.ops.go.th/en/inter-documents/inter-publications/item/9605-study-in-thailand-2022",
+        },
+      ],
+      sources: [
+        {
+          name: "Ministry of Higher Education (Office of the Permanent Secretary): Study in Thailand",
+          url: "https://www.ops.go.th/en/inter-documents/inter-publications/item/9605-study-in-thailand-2022",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "For a Non-Immigrant ED Plus visa (bachelor's and above), you must show money for tuition and living costs. The amount is set by each Thai embassy or consulate. For example, the Consulate-General in Los Angeles asks for a bank balance of at least US$4,000.",
+      figures: [
+        {
+          label: "Visa proof of funds",
+          value: "Not centrally published – set by each embassy",
+          sourceUrl:
+            "https://hochiminh.thaiembassy.org/en/publicservice/non-immigrant-ed-studying-attending-seminar-traini?menu=5d80ab3315e39c2fe800a7ac&page=5d80ab3315e39c2fe800a7ab",
+        },
+        {
+          label: "Example: Royal Thai Consulate-General, Los Angeles",
+          value: "At least US$4,000 bank balance",
+          sourceUrl:
+            "https://thaiconsulatela.thaiembassy.org/en/publicservice/non-immigrant-type-ed-plus",
+        },
+      ],
+      sources: [
+        {
+          name: "Royal Thai Consulate-General, Ho Chi Minh City: Non-Immigrant ED and ED Plus",
+          url: "https://hochiminh.thaiembassy.org/en/publicservice/non-immigrant-ed-studying-attending-seminar-traini?menu=5d80ab3315e39c2fe800a7ac&page=5d80ab3315e39c2fe800a7ab",
+        },
+        {
+          name: "Royal Thai Consulate-General, Los Angeles: Non-Immigrant ED and ED Plus",
+          url: "https://thaiconsulatela.thaiembassy.org/en/publicservice/non-immigrant-type-ed-plus",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "A study visa does not by itself allow you to work. Non-Immigrant visa holders can work only after getting a work permit, and working without one is a criminal offence. The ED visa can also be issued for an internship that is part of your course. ED Plus holders can extend their stay for 1 year after graduating to look for work, and can change to a work visa in Thailand once employed.",
+      figures: [
+        {
+          label: "Work during studies",
+          value: "Only with a work permit",
+          sourceUrl:
+            "https://hochiminh.thaiembassy.org/en/publicservice/non-immigrant-ed-studying-attending-seminar-traini?menu=5d80ab3315e39c2fe800a7ac&page=5d80ab3315e39c2fe800a7ab",
+        },
+        {
+          label: "Post-study (ED Plus, bachelor's and above)",
+          value: "1-year extension of stay to seek work",
+          sourceUrl:
+            "https://hochiminh.thaiembassy.org/en/publicservice/non-immigrant-ed-studying-attending-seminar-traini?menu=5d80ab3315e39c2fe800a7ac&page=5d80ab3315e39c2fe800a7ab",
+        },
+      ],
+      sources: [
+        {
+          name: "Royal Thai Consulate-General, Ho Chi Minh City: Non-Immigrant ED and ED Plus",
+          url: "https://hochiminh.thaiembassy.org/en/publicservice/non-immigrant-ed-studying-attending-seminar-traini?menu=5d80ab3315e39c2fe800a7ac&page=5d80ab3315e39c2fe800a7ab",
+        },
+      ],
+    },
+  },
 };

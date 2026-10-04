@@ -1,5 +1,6 @@
 import { universityOfTorontoPrograms } from "./programs/canada/universityOfTorontoPrograms";
 import { yorkUniversityPrograms } from "./programs/canada/yorkUniversityPrograms";
+import { torontoMetropolitanUniversityPrograms } from "./programs/canada/torontoMetropolitanUniversityPrograms";
 import { universityOfOttawaPrograms } from "./programs/canada/universityOfOttawaPrograms";
 import { universityOfBritishColumbiaPrograms } from "./programs/canada/universityOfBritishColumbiaPrograms";
 import { universityOfVictoriaPrograms } from "./programs/canada/universityOfVictoriaPrograms";
@@ -68,6 +69,7 @@ admissionIntake?: string;
 export const programs: Program[] = [
   ...universityOfTorontoPrograms,
   ...yorkUniversityPrograms,
+  ...torontoMetropolitanUniversityPrograms,
   ...universityOfOttawaPrograms,
   ...universityOfBritishColumbiaPrograms,
   ...universityOfVictoriaPrograms,

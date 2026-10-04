@@ -2012,10 +2012,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Kinesiology",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Kinesiology rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "The Bachelor of Kinesiology at UBC Vancouver is a four-year, 120-credit degree from the School of Kinesiology covering human movement, health and wellbeing through a core in active health, biomechanics, anatomy, physiology, motor learning, psychology and sociology. Students then specialize in one of three options: Neuromechanical and Physiological Sciences, Social and Behavioural Sciences, or Multidisciplinary Science, with labs, research and community-based learning along the way. Students are admitted directly from secondary school through a broad-based admission process.",
+    officialProgramUrl:
+      "https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/school-kinesiology/bachelor-kinesiology/introduction",
     campus: "Vancouver",
+    degree: "Bachelor of Kinesiology (BKin)",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Direct entry from secondary school with broad-based admission: grades plus supplementary information such as personal statements, leadership, extracurricular and work experience, awards and references",
+      "BC high school: English Studies 12 (or English First Peoples 12) and one of Anatomy & Physiology 12, Chemistry 12, Physics 12 or Pre-Calculus 12",
+      "IB: one of Math AA (SL/HL) or Math AI HL, IB Biology, IB Chemistry or IB Physics",
+      "Transfer students can receive up to 60 transfer credits; second-degree students must earn at least 60 new credits",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -3093,7 +3106,7 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     campus: "Vancouver",
   },
 
-    {
+  {
     name: "Nursing",
     slug: "ubc-nursing",
     level: "Bachelor",
@@ -3101,12 +3114,24 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     universityName: "University of British Columbia",
     country: "Canada",
     field: "Nursing",
-    duration: "4 years",
+    duration: "20 months",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 tuition: CAD 206.69 per credit for Canadian students (Nursing rate; CAD 6,200.70 for a 30-credit load). The program is 81 credits over five consecutive terms. Open to domestic applicants only, so no international rate applies. Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "The Bachelor of Science in Nursing at UBC Vancouver is an intensive, full-time, in-person program from the MacIsaac School of Nursing that prepares students to practise as registered nurses. Students enter at third-year level and complete five consecutive terms (about 20 months) of nursing theory and clinical practice in acute care and community settings, supported by a clinical simulation lab. This is not a direct-entry program: applicants need a completed bachelor's degree or at least 48 non-nursing university credits, and the program is open to Canadian citizens, permanent residents and refugees only.",
+    officialProgramUrl:
+      "https://you.ubc.ca/ubc_programs/nursing-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Science in Nursing (BSN)",
+    intake: "September",
+    applicationDeadline: "UBC application by December 4, 2026; Nursing supplemental application by January 15, 2027",
+    admissionRequirements: [
+      "Open to domestic applicants only (Canadian citizens, permanent residents and refugees)",
+      "At least 48 non-nursing university-transferable credits (or a bachelor's degree), including 3 credits of first-year English and 6 credits of human anatomy and physiology, with a minimum 70% average on the most recent 30 credits",
+      "Supplemental application due January 15, 2027 and the Casper test taken by January 17, 2027; selection uses GPA, the supplemental application and Casper",
+      "Admission is competitive with limited enrolment; accepted students need a criminal record check, CPR-HCP certification and N95 mask fitting",
+    ],
   },
 
   {
@@ -3167,10 +3192,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Midwifery",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 7,234.15 for Canadian students (Midwifery rate, CAD 206.69 per credit x 35 credits). Open to Canadian citizens and permanent residents only, so no international rate applies. Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "The Bachelor of Midwifery at UBC Vancouver is a four-year program from the Faculty of Medicine that prepares students to become registered midwives, providing primary care through pregnancy, birth and the first months after birth. It combines the humanities and social and biomedical sciences with extensive clinical experience, with cohorts in Vancouver, Fraser Health (Surrey) and Vancouver Island (Victoria) and an option for students outside the Lower Mainland to do most of year one from their home community. Only about 20 students are admitted each year, applicants need post-secondary human biology and first-year English, and the program is open to Canadian citizens and permanent residents only.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/midwifery/",
     campus: "Vancouver",
+    degree: "Bachelor of Midwifery (BMW)",
+    intake: "September",
+    applicationDeadline: "UBC application by December 5, 2026; Midwifery supplemental application by January 15, 2027",
+    admissionRequirements: [
+      "Open to Canadian citizens and permanent residents only; about 20 seats a year, with priority for qualified BC residents and Indigenous applicants",
+      "Required post-secondary courses: 6 credits of human biology (BIOL 155 or equivalent) and 3 credits of first-year English (WRDS 150 or equivalent); high school Math and Chemistry to at least Grade 11",
+      "Separate online supplemental application due January 15, 2027; official transcripts due to UBC by January 15, 2027",
+      "Applicants may be invited to an interview, and students must be prepared to relocate for clinical placements at their own expense",
+    ],
   },
 
   {
@@ -3253,21 +3290,33 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
   campus: "Vancouver",
 },
 
-{
-  name: "Social Work",
-  slug: "ubc-social-work",
-  level: "Bachelor",
-  universitySlug: "university-of-british-columbia",
-  universityName: "University of British Columbia",
-  country: "Canada",
-  field: "Social Work",
-  duration: "2 years",
-  language: "English",
-  tuitionNote: "Information will be added soon.",
-  description: "Program details will be added soon.",
-  officialProgramUrl: "#",
-  campus: "Vancouver",
-},
+  {
+    name: "Social Work",
+    slug: "ubc-social-work",
+    level: "Bachelor",
+    universitySlug: "university-of-british-columbia",
+    universityName: "University of British Columbia",
+    country: "Canada",
+    field: "Social Work",
+    duration: "2 years",
+    language: "English",
+    tuitionNote:
+      "2026/27 tuition: CAD 51,530.40 per year for international students (Social Work rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "The Bachelor of Social Work at UBC Vancouver is a CASWE-accredited professional degree from the School of Social Work, completed in two years full-time (or three years part-time). It trains students in generalist social work practice, combining courses in theory, policy, research and practice methods with a supervised practicum in a social agency, and puts social justice and structural analysis at its centre. This is not a direct-entry program: applicants need at least 60 university credits or a bachelor's degree, including SOWK 200 and 201, and about 60 students are admitted each year.",
+    officialProgramUrl:
+      "https://socialwork.ubc.ca/undergraduate/admissions/",
+    campus: "Vancouver",
+    degree: "Bachelor of Social Work (BSW)",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (UBC application and School of Social Work supplemental materials)",
+    admissionRequirements: [
+      "At least 60 transferable Arts or Sciences credits, or a bachelor's degree, with at least 68% (2.67 GPA) on the most recent 30 credits",
+      "Required: SOWK 200 and SOWK 201 (or equivalents) with at least a B in each, a first-year writing course and 18 credits of social sciences or humanities",
+      "At least 100 hours of relevant paid or volunteer experience, a personal statement and two reference letters (supplemental materials due January 15, 2027)",
+      "Applicants whose prior study was not in English need TOEFL (93 iBT) or Academic IELTS (6.5, no band below 6.0); admitted students need a criminal record check",
+    ],
+  },
 
 {
   name: "Law",
@@ -3285,21 +3334,34 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
   campus: "Vancouver",
 },
 
-{
-  name: "Pharmaceutical Sciences",
-  slug: "ubc-pharmaceutical-sciences",
-  level: "Bachelor",
-  universitySlug: "university-of-british-columbia",
-  universityName: "University of British Columbia",
-  country: "Canada",
-  field: "Pharmaceutical Sciences",
-  duration: "4 years",
-  language: "English",
-  tuitionNote: "Information will be added soon.",
-  description: "Program details will be added soon.",
-  officialProgramUrl: "#",
-  campus: "Vancouver",
-},
+  {
+    name: "Pharmaceutical Sciences",
+    slug: "ubc-pharmaceutical-sciences",
+    level: "Bachelor",
+    universitySlug: "university-of-british-columbia",
+    universityName: "University of British Columbia",
+    country: "Canada",
+    field: "Pharmaceutical Sciences",
+    duration: "4 years",
+    language: "English",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Pharmaceutical Sciences rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "The Bachelor of Pharmaceutical Sciences at UBC Vancouver is a four-year degree from the Faculty of Pharmaceutical Sciences that covers the science of drug discovery and development, including pharmacology, medicinal chemistry, formulations, nanomedicine, diagnostics and analytical chemistry. Students choose a course-based option, an experiential option with a one-term research project or industry practicum, or honours with research, and train on lab equipment such as UHPLC mass spectrometry and NMR. It is not a pre-pharmacy or pharmacist-licensing program; students are admitted directly from secondary school into year one (or into year two as transfers) after an interview, with about 80 places.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/pharmaceutical-sciences/",
+    campus: "Vancouver",
+    degree: "Bachelor of Pharmaceutical Sciences (BPSc)",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026); admission interview to be completed by January 29, 2027",
+    admissionRequirements: [
+      "Direct entry from secondary school into year one; transfer applicants enter year two with at least 24 credits including BIOL 112, CHEM 121 and 123, first-year calculus and WRDS 150",
+      "Broad-based admission: a personal profile plus an admission interview (sign up by January 20, 2027, complete by January 29, 2027); the BPSc must be your first-choice program",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12, Chemistry 12 and Chemistry 11, plus Life Sciences 11 or Anatomy & Physiology 12",
+      "IB: Math AA (SL/HL) or Math AI HL and IB Chemistry, plus Grade 11 Biology or equivalent",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
+  },
 
 {
   name: "Speech Sciences",
@@ -3497,21 +3559,34 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
   campus: "Okanagan",
 },
 
-{
-  name: "Medical Laboratory Science",
-  slug: "ubc-medical-laboratory-science",
-  level: "Bachelor",
-  universitySlug: "university-of-british-columbia",
-  universityName: "University of British Columbia",
-  country: "Canada",
-  field: "Medical Science",
-  duration: "2 years",
-  language: "English",
-  tuitionNote: "Information will be added soon.",
-  description: "Program details will be added soon.",
-  officialProgramUrl: "#",
-  campus: "Vancouver",
-},
+  {
+    name: "Medical Laboratory Science",
+    slug: "ubc-medical-laboratory-science",
+    level: "Bachelor",
+    universitySlug: "university-of-british-columbia",
+    universityName: "University of British Columbia",
+    country: "Canada",
+    field: "Medical Science",
+    duration: "2 years",
+    language: "English",
+    tuitionNote:
+      "2026/27 tuition: CAD 67,237.20 per year for international students (Medical Laboratory Science rate, CAD 1,769.40 per credit x 38 credits) and CAD 7,854.22 for Canadian students (CAD 206.69 per credit x 38 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Medical Laboratory Science at UBC Vancouver is a two-year Bachelor of Medical Laboratory Science from the Faculty of Medicine, based in the Department of Pathology and Laboratory Medicine at UBC Hospital, that students enter in third year. It covers the science behind hospital and research laboratory disciplines such as clinical chemistry, haematology, histology, medical microbiology, molecular biology, immunology and cytology, with small classes, extensive hands-on lab work and an optional directed research project. This is not a direct-entry program: students first complete about two years of university prerequisites (or a medical laboratory technologist diploma) and apply during their second year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/medical-laboratory-science/",
+    campus: "Vancouver",
+    degree: "Bachelor of Medical Laboratory Science (BMLSc)",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (apply during your second year of university)",
+    admissionRequirements: [
+      "Third-year entry only: high-school applicants are not eligible and should first enrol in a related UBC program",
+      "Undergraduate route: first-year chemistry, biology (BIOL 112 and 121), 6 credits of math, 3 credits of physics and 6 credits of communication, plus BIOL 200/201, organic chemistry (CHEM 233/235), 3 credits of second-year microbiology and 6 Arts credits",
+      "Alternative route: a CSMLS Medical Laboratory Technologist diploma (or equivalent) plus organic chemistry",
+      "International applicants are accepted, but qualified Canadian citizens and permanent residents get priority",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
+  },
 
   {
     name: "Food and Nutritional Sciences",
@@ -3542,52 +3617,91 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     ],
   },
 
-{
-  name: "Kinesiology: Multidisciplinary Science",
-  slug: "ubc-kinesiology-multidisciplinary-science",
-  level: "Bachelor",
-  universitySlug: "university-of-british-columbia",
-  universityName: "University of British Columbia",
-  country: "Canada",
-  field: "Kinesiology",
-  duration: "4 years",
-  language: "English",
-  tuitionNote: "Information will be added soon.",
-  description: "Program details will be added soon.",
-  officialProgramUrl: "#",
-  campus: "Vancouver",
-},
+  {
+    name: "Kinesiology: Multidisciplinary Science",
+    slug: "ubc-kinesiology-multidisciplinary-science",
+    level: "Bachelor",
+    universitySlug: "university-of-british-columbia",
+    universityName: "University of British Columbia",
+    country: "Canada",
+    field: "Kinesiology",
+    duration: "4 years",
+    language: "English",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Kinesiology rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "The Multidisciplinary Science option of the Bachelor of Kinesiology at UBC Vancouver is a four-year program in which students build a cross-disciplinary course plan from the mechanical, physiological, psychological, sociological and pedagogical branches of kinesiology. After the common kinesiology core, students take upper-level courses across at least three of six areas, such as neuromechanics, psychology of movement, sociocultural studies, and systems biology, exercise and health, and can add a minor in Arts, Commerce, Land and Food Systems or Science. Students are admitted directly into the Bachelor of Kinesiology from secondary school and specialize in the option in the upper years.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/kinesiology-multidisciplinary-science/",
+    campus: "Vancouver",
+    degree: "Bachelor of Kinesiology (BKin), Multidisciplinary Science option",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Direct entry from secondary school with broad-based admission: grades plus supplementary information such as personal statements, leadership, extracurricular and work experience, awards and references",
+      "BC high school: English Studies 12 (or English First Peoples 12) and one of Anatomy & Physiology 12, Chemistry 12, Physics 12 or Pre-Calculus 12",
+      "IB: one of Math AA (SL/HL) or Math AI HL, IB Biology, IB Chemistry or IB Physics",
+      "Transfer students can receive up to 60 transfer credits; second-degree students must earn at least 60 new credits",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
+  },
 
-{
-  name: "Kinesiology: Neuromechanical and Physiological Sciences",
-  slug: "ubc-kinesiology-neuromechanical-physiological-sciences",
-  level: "Bachelor",
-  universitySlug: "university-of-british-columbia",
-  universityName: "University of British Columbia",
-  country: "Canada",
-  field: "Kinesiology",
-  duration: "4 years",
-  language: "English",
-  tuitionNote: "Information will be added soon.",
-  description: "Program details will be added soon.",
-  officialProgramUrl: "#",
-  campus: "Vancouver",
-},
+  {
+    name: "Kinesiology: Neuromechanical and Physiological Sciences",
+    slug: "ubc-kinesiology-neuromechanical-physiological-sciences",
+    level: "Bachelor",
+    universitySlug: "university-of-british-columbia",
+    universityName: "University of British Columbia",
+    country: "Canada",
+    field: "Kinesiology",
+    duration: "4 years",
+    language: "English",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Kinesiology rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "The Neuromechanical and Physiological Sciences option of the Bachelor of Kinesiology at UBC Vancouver is a four-year program that examines the physiological, neural, mechanical and behavioural mechanisms behind human movement, and how they are affected by physical activity, aging and disease. It prepares students for advanced study in human movement science, health and fitness, or certification as a kinesiologist, and the School has 13 research labs, including ones for integrative and cardiovascular physiology and human neurophysiology. Students are admitted directly into the Bachelor of Kinesiology from secondary school and specialize in the option in the upper years.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/kinesiology-neuromechanical-physiological-sciences/",
+    campus: "Vancouver",
+    degree: "Bachelor of Kinesiology (BKin), Neuromechanical and Physiological Sciences option",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Direct entry from secondary school with broad-based admission: grades plus supplementary information such as personal statements, leadership, extracurricular and work experience, awards and references",
+      "BC high school: English Studies 12 (or English First Peoples 12) and one of Anatomy & Physiology 12, Chemistry 12, Physics 12 or Pre-Calculus 12",
+      "IB: one of Math AA (SL/HL) or Math AI HL, IB Biology, IB Chemistry or IB Physics",
+      "Transfer students can receive up to 60 transfer credits; second-degree students must earn at least 60 new credits",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
+  },
 
-{
-  name: "Kinesiology: Social and Behavioural Sciences",
-  slug: "ubc-kinesiology-social-behavioural-sciences",
-  level: "Bachelor",
-  universitySlug: "university-of-british-columbia",
-  universityName: "University of British Columbia",
-  country: "Canada",
-  field: "Kinesiology",
-  duration: "4 years",
-  language: "English",
-  tuitionNote: "Information will be added soon.",
-  description: "Program details will be added soon.",
-  officialProgramUrl: "#",
-  campus: "Vancouver",
-},
+  {
+    name: "Kinesiology: Social and Behavioural Sciences",
+    slug: "ubc-kinesiology-social-behavioural-sciences",
+    level: "Bachelor",
+    universitySlug: "university-of-british-columbia",
+    universityName: "University of British Columbia",
+    country: "Canada",
+    field: "Kinesiology",
+    duration: "4 years",
+    language: "English",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Kinesiology rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "The Social and Behavioural Sciences option of the Bachelor of Kinesiology at UBC Vancouver is a four-year program that studies the psychosocial, historical and cultural sides of sport, physical activity and health behaviour, preparing students for leadership and instructional careers in physical activity and sport. Upper-level courses come from areas such as leadership and pedagogy, psychology of movement and sociocultural studies, and the option also meets the UBC Faculty of Education's admission requirements for students who later want to teach physical education. Students are admitted directly into the Bachelor of Kinesiology from secondary school and specialize in the option in the upper years.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/kinesiology-social-behavioural-sciences/",
+    campus: "Vancouver",
+    degree: "Bachelor of Kinesiology (BKin), Social and Behavioural Sciences option",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Direct entry from secondary school with broad-based admission: grades plus supplementary information such as personal statements, leadership, extracurricular and work experience, awards and references",
+      "BC high school: English Studies 12 (or English First Peoples 12) and one of Anatomy & Physiology 12, Chemistry 12, Physics 12 or Pre-Calculus 12",
+      "IB: one of Math AA (SL/HL) or Math AI HL, IB Biology, IB Chemistry or IB Physics",
+      "Transfer students can receive up to 60 transfer credits; second-degree students must earn at least 60 new credits",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
+  },
 
 ];

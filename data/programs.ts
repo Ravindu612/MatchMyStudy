@@ -15,6 +15,7 @@ import { dublinCityUniversityPrograms } from "./programs/ireland/dublinCityUnive
 import { universityCollegeLondonPrograms } from "./programs/unitedKingdom/universityCollegeLondonPrograms";
 import { universityOfManchesterPrograms } from "./programs/unitedKingdom/universityOfManchesterPrograms";
 import { universityOfEdinburghPrograms } from "./programs/unitedKingdom/universityOfEdinburghPrograms";
+import { universityOfGlasgowPrograms } from "./programs/unitedKingdom/universityOfGlasgowPrograms";
 import { imperialCollegeLondonPrograms } from "./programs/unitedKingdom/imperialCollegeLondonPrograms";
 export type ProgramLevel =
   | "Bachelor"
@@ -74,6 +75,7 @@ export const programs: Program[] = [
   ...universityCollegeLondonPrograms,
   ...universityOfManchesterPrograms,
   ...universityOfEdinburghPrograms,
+  ...universityOfGlasgowPrograms,
   ...imperialCollegeLondonPrograms,
   {
     name: "Bachelor's Programme in Science and Technology",

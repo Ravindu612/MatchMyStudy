@@ -9,6 +9,7 @@ import { humberPolytechnicPrograms } from "./humberPolytechnicPrograms";
 import { universityOfWaterlooPrograms } from "./universityOfWaterlooPrograms";
 import { conestogaCollegePrograms } from "./conestogaCollegePrograms";
 import { universityOfCalgaryPrograms } from "./universityOfCalgaryPrograms";
+import { sheridanCollegePrograms } from "./sheridanCollegePrograms";
 import { carletonUniversityPrograms } from "./carletonUniversityPrograms";
 import { universityOfAlbertaPrograms } from "./universityOfAlbertaPrograms";
 import { westernUniversityPrograms } from "./westernUniversityPrograms";
@@ -27,6 +28,7 @@ export const canadaPrograms = [
   ...universityOfWaterlooPrograms,
   ...conestogaCollegePrograms,
   ...universityOfCalgaryPrograms,
+  ...sheridanCollegePrograms,
   ...carletonUniversityPrograms,
   ...universityOfAlbertaPrograms,
   ...westernUniversityPrograms,

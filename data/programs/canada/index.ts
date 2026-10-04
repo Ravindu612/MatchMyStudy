@@ -1,4 +1,5 @@
 import { universityOfTorontoPrograms } from "./universityOfTorontoPrograms";
+import { yorkUniversityPrograms } from "./yorkUniversityPrograms";
 import { universityOfOttawaPrograms } from "./universityOfOttawaPrograms";
 import { universityOfBritishColumbiaPrograms } from "./universityOfBritishColumbiaPrograms";
 import { universityOfWaterlooPrograms } from "./universityOfWaterlooPrograms";
@@ -9,6 +10,7 @@ import { simonFraserUniversityPrograms } from "./simonFraserUniversityPrograms";
 
 export const canadaPrograms = [
   ...universityOfTorontoPrograms,
+  ...yorkUniversityPrograms,
   ...universityOfOttawaPrograms,
   ...universityOfBritishColumbiaPrograms,
   ...universityOfWaterlooPrograms,

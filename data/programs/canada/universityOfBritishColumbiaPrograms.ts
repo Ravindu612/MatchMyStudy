@@ -362,10 +362,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Interdisciplinary Studies",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Interdisciplinary Studies (IDST) at UBC Vancouver is a Bachelor of Arts program in which students design their own cross-disciplinary course of study as an alternative to a department-based major, drawing on two of four categories: humanities, social sciences, creative and performing arts, and sciences. Students build a primary and a secondary focus in one category plus upper-level work in a second category, with the program chair's approval; co-op is available, but IDST cannot be combined with another major, minor or honours. This is not a direct-entry program: students are admitted to the Bachelor of Arts and apply to IDST once they reach third-year standing.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/interdisciplinary-studies/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Interdisciplinary Studies (IDST) program",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Apply online with third-year standing (at least 54 BA credits by the start of Winter Term 1), good academic standing with at least a 60% average, and the Arts Writing Component completed",
+      "Approval depends on a coherent proposed course plan and application responses, at the discretion of the IDST Program Chair; starting late may mean more than 120 credits",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -919,10 +932,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Geography",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Geography: Environment and Sustainability at UBC Vancouver is a four-year Bachelor of Arts major from the Department of Geography that looks at how physical, ecological, economic, socio-cultural and political systems together shape the world and its future. Students take core courses in environment and society and in earth and climate systems, then an upper-level environmental concentration and research-and-methods courses, with co-op available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and can declare the major after completing 27 credits.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/geo-environment-sustainability/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Environment and Sustainability (Geography)",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: declare it after 27 credits; it cannot be combined with a Human Geography major",
+      "Lower-level requirements: GEOG 121, GEOG (or ENST) 211, GEOS 270, GEOS 102 and 103, plus 3 more credits from an approved list",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -935,10 +961,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Geography",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Geography: Human Geography at UBC Vancouver is a four-year Bachelor of Arts major that studies how people use and experience the world, from nature-society relations and place and identity to the spatial basis of economies and cities. Upper-level courses are organized around three themes (cultures and places, cities and globalization, and nature and society) plus research and methods, and Honours and co-op are available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and can declare the major after completing 27 credits.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/human-geography/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Human Geography",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: declare it after 27 credits; it requires 9 lower-level GEOG credits plus GEOS 102 and 103, then 30 upper-level credits across the three themes and research methods",
+      "Honours: declare it by email to the department after 54 credits (and before 72), with at least a 74% average for entry and graduation",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1196,10 +1235,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Urban Studies",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Urban Studies at UBC Vancouver is a four-year Bachelor of Arts major offered jointly by the Department of Geography and the School of Community and Regional Planning, preparing students for urban-oriented careers in planning, policy, development and community work. Students take core methods courses and a two-part community-engaged capstone, plus 30 credits across five focus areas (Indigenous urban life, the nature of cities, globalizing cities, technology and cities, and cities and communities), with optional co-op. This is not a direct-entry program: admission is limited to current UBC Bachelor of Arts students, who normally apply at the end of first year to start the major in second year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/urbanstudies/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Urban Studies",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Apply to the major as a UBC BA student, normally at the end of Year 1; applicants are ranked on overall GPA, grades in GEOG 250 (URST 200) and PLAN 211, and a short written statement (max. 500 words)",
+      "The application portal reopens in January 2027, with admission notices sent in May and June",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
     {
@@ -2164,7 +2216,7 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     campus: "Okanagan",
   },
 
-    {
+  {
     name: "Anthropology",
     slug: "ubc-anthropology",
     level: "Bachelor",
@@ -2174,10 +2226,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Anthropology",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Anthropology at UBC Vancouver is a four-year Bachelor of Arts major in the comparative study of human societies and cultures, past and present, from First Nations in Canada to peoples of Asia, the Pacific and Latin America. The department's undergraduate program has three streams (socio-cultural anthropology, archaeology and bioarchaeology, and museology and visual anthropology), hands-on learning draws on UBC's Museum of Anthropology, and Honours and co-op are available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and self-declare the Anthropology major once they reach second-year standing.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/anthropology-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Anthropology",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: self-declare it at second-year standing; it requires 42 ANTH/ARCL credits, starting with ANTH 100, ARCL 103 or 140 and 6 credits of 200-level courses",
+      "Honours needs a high B average plus ANTH 100, ARCL 103 or 140 and 6 credits of 200-level ANTH/ARCL, and includes a 6-credit Honours thesis",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2206,10 +2271,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Canadian Studies",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Canadian Studies at UBC Vancouver is an interdisciplinary Bachelor of Arts major that looks at how the humanities and social sciences have shaped understanding of Canada, with courses from departments such as history, political science, geography, anthropology, sociology and film. Students take upper-level courses in three of five areas (culture, geography, history, politics and economics, and society), CDST 350 in third year and the CDST 450 senior seminar in fourth year. This is not a direct-entry program: students are admitted to the Bachelor of Arts and self-declare the major once they reach second-year standing, ideally after talking with the program chair.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/canadian-studies/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Canadian Studies",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: self-declare it (self-declared programs open at second-year standing); students are encouraged to consult the program chair when declaring",
+      "Requirements: 12 lower-level credits from an approved list, then 36 upper-level credits including CDST 350, CDST 450 and 30 credits from three of the five areas",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2315,10 +2393,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Indigenous Studies",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "First Nations and Indigenous Studies at UBC Vancouver is an interdisciplinary Bachelor of Arts major on the histories, contemporary realities and political concerns of Indigenous peoples in Canada and beyond. Students take core FNIS courses alongside approved courses from other departments and, in fourth year, complete a 6-credit research practicum in partnership with an Indigenous organization; co-op is available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and self-declare the major once they reach second-year standing.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/first-nations-indigenous-studies/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in First Nations and Indigenous Studies",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: self-declare it at second-year standing",
+      "Lower-level requirements: FNIS 100, FNIS 210, FNIS 220 and 3 credits of FNEL (First Nations and Endangered Languages) courses",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2331,13 +2422,26 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Social Studies",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Gender, Race, Sexuality and Social Justice at UBC Vancouver is an interdisciplinary Bachelor of Arts major from the Institute for Gender, Race, Sexuality and Social Justice that draws on the social sciences, humanities, science, education and law to examine local and global social justice issues. Areas of study include critical race theory, ethnic and Indigenous studies, media studies, feminist politics and methodologies, and sexuality, and co-op is available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and declare the 42-credit major after completing 27 credits.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/gender-race-sexuality-social-justice/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Gender, Race, Sexuality and Social Justice",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: declare it on Workday after completing 27 credits",
+      "Requirements: GRSJ 101 and 102, 6 credits of 200-level GRSJ (or ANTH 213), then GRSJ 325, 326, 327, 328, 422 and 480 plus 12 more upper-level credits",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
-    {
+  {
     name: "History",
     slug: "ubc-history",
     level: "Bachelor",
@@ -2347,10 +2451,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "History",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "History at UBC Vancouver is a four-year Bachelor of Arts major with courses on Asian, Canadian, European, Latin American and American history and themes such as culture, environment, politics, society, world history and the history of science. Majors complete 30 upper-level credits, including pre-modern history and a final-year seminar, and Honours programs (including Honours in History with International Relations) are available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and can declare the History major once they reach second-year standing.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/history-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in History",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: declare it at Year 2 standing; it requires 12 lower-level HIST credits (at least 6 at the 200 level) and 30 upper-level credits",
+      "Honours: consult the History Honours advisor before the end of second year; entry needs an average of at least 80% in 6 of the 12 lower-level HIST credits",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2363,10 +2480,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "International Relations",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "International Relations at UBC Vancouver is an interdisciplinary Bachelor of Arts major that combines economics, history, political science and other disciplines with the study of a language other than English to examine diplomacy, security, the global economy and development. The 60-credit major includes 12 credits in one language other than English and upper-level courses and seminars across these fields, many students go on exchange, and honours routes run through History or Political Science. This is not a direct-entry program: students are admitted to the Bachelor of Arts, complete prerequisites in their first two years and apply to the major, which has limited space, for entry in third year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/international-relations-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in International Relations",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Admission to the major is competitive with limited space: apply online (forms open after February 1) by May 15 before third year, with at least 54 credits; recent entrance averages have been as high as 80%",
+      "To be eligible, complete at least one of ECON 101 and 102, HIST 102 or 103 (or HIST 112 and 113), or POLI 260; completing all of them is strongly recommended",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2395,10 +2525,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Linguistics",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Linguistics at UBC Vancouver is a four-year Bachelor of Arts major in the systematic study of how language works, from sound systems (phonetics and phonology) to form and meaning (morphology, syntax and semantics) and how languages change over time. Students analyze data from languages of contrasting structure, such as Cantonese, local First Nations languages and Haitian Creole, and complete 6 credits in a language other than English; Honours and co-op are available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and can declare the major after completing 27 credits.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/linguistics/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Linguistics",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: declare it after 27 credits; it requires at least 42 credits, including LING 200 and 201, LING 300, 311, 313, 327 and 333, and LING 447",
+      "Honours needs at least a 76% average on 33 or more credits including LING 200 and 201, at least 80% in each of those two courses, and advisor approval",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2427,10 +2570,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Philosophy",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Philosophy at UBC Vancouver is a four-year Bachelor of Arts major that trains students to analyze and build arguments on questions from knowledge, mind and ethics to technology and public policy, with strengths in philosophy of mind and science, ethics, political philosophy, aesthetics and feminist philosophy. Majors complete 42 credits covering symbolic logic, value theory, epistemology and metaphysics, history of philosophy and a research seminar, and Honours, combined majors with Economics or Political Science, and co-op are available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and can declare the Philosophy major in second year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/philosophy-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Philosophy",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: declare it in Year 2; introductory PHIL courses are recommended but not required",
+      "Honours: apply to the department by the end of second year, normally with at least 80% in two of PHIL 220 (or 222), 230 or 240 and a recommendation from a philosophy instructor",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2443,10 +2599,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Political Science",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Political Science at UBC Vancouver is a four-year Bachelor of Arts major on how collective decisions are made and power is exercised, with sub-fields in Canadian politics, comparative politics, international relations, political behaviour, political theory and public policy. Students can follow the general major or a Politics, Policy and Administration area of focus, and Honours, combined majors with Economics or Philosophy, and co-op are available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and can declare the major once they reach second-year standing (27 credits).",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/political-science-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Political Science",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: declare it at Year 2 standing (27 credits); lower-level requirements include POLI 100, 101 and 110",
+      "Honours is by online application (open after February 1, due May 15) once students have 54 credits; spaces are limited, and students with an overall average of at least 80% are encouraged to apply",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2459,10 +2628,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Psychology",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Psychology at UBC Vancouver is a four-year Bachelor of Arts major in the scientific study of behaviour, covering behavioural neuroscience, cognitive science, clinical and health, developmental, social and personality psychology, and quantitative methods. Every major carries out a research project in the second-year methods course PSYC 217, the department has more than 45 research labs, and Honours and co-op are available; a separate BSc in Psychology is offered through the Faculty of Science. This is not a direct-entry program: students are admitted to the Bachelor of Arts and can declare the Psychology major, with no minimum grade requirement, once they reach second-year standing (27 credits).",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/psychology-vancouver-ba/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Psychology",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the BA major: declare it at second-year standing (27 credits); majors then take PSYC 217 and 218 (research methods and statistics)",
+      "Honours admits up to 30 students a year for third year and needs at least a 76% second-year average and 80% in each of PSYC 217 and 218",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2475,10 +2657,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Sociology",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Sociology at UBC Vancouver is a four-year Bachelor of Arts major on how society shapes human behaviour and how people shape society, covering topics such as inequality, gender and sexuality, race and ethnicity, crime, immigration and families. Majors take research methods, social statistics, classical and contemporary theory and a Canadian society course, and Honours (applied for in third year) and co-op are available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and self-declare the Sociology major once they reach second-year standing.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/sociology-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Sociology",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: self-declare it at second-year standing; lower-level requirements include an introductory SOCI course and SOCI 217 (research methods)",
+      "Honours is a fourth-year program applied for at the end of third year; it needs several minimum averages, including at least 80% in 300- and 400-level Sociology courses",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -3242,37 +3437,63 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
   campus: "Vancouver",
 },
 
-{
-  name: "Latin American Studies",
-  slug: "ubc-latin-american-studies",
-  level: "Bachelor",
-  universitySlug: "university-of-british-columbia",
-  universityName: "University of British Columbia",
-  country: "Canada",
-  field: "Area Studies",
-  duration: "4 years",
-  language: "English",
-  tuitionNote: "Information will be added soon.",
-  description: "Program details will be added soon.",
-  officialProgramUrl: "#",
-  campus: "Vancouver",
-},
+  {
+    name: "Latin American Studies",
+    slug: "ubc-latin-american-studies",
+    level: "Bachelor",
+    universitySlug: "university-of-british-columbia",
+    universityName: "University of British Columbia",
+    country: "Canada",
+    field: "Area Studies",
+    duration: "4 years",
+    language: "English",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Latin American Studies at UBC Vancouver is an interdisciplinary Bachelor of Arts major, administered through the Faculty of Arts' First-Year and Interdisciplinary Programs, on the cultures, languages, societies, geography, politics and history of Latin America. The 42-credit major draws on anthropology, art history, geography, history, political science and Spanish or Portuguese, and UBC has exchange agreements with universities in Brazil, Chile, Costa Rica and Mexico; co-op is available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and self-declare the major once they reach second-year standing.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/latin-american-studies-vancouver/",
+    campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Latin American Studies",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: self-declare it at second-year standing; students plan their courses in consultation with the program chair",
+      "Requirements: 42 credits including 6 credits of LAST courses, 12 lower-level and 30 upper-level Latin America-focused credits, and at least 6 credits taught in Spanish or Portuguese",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
+  },
 
-{
-  name: "United States Studies",
-  slug: "ubc-united-states-studies",
-  level: "Bachelor",
-  universitySlug: "university-of-british-columbia",
-  universityName: "University of British Columbia",
-  country: "Canada",
-  field: "Area Studies",
-  duration: "4 years",
-  language: "English",
-  tuitionNote: "Information will be added soon.",
-  description: "Program details will be added soon.",
-  officialProgramUrl: "#",
-  campus: "Vancouver",
-},
+  {
+    name: "United States Studies",
+    slug: "ubc-united-states-studies",
+    level: "Bachelor",
+    universitySlug: "university-of-british-columbia",
+    universityName: "University of British Columbia",
+    country: "Canada",
+    field: "Area Studies",
+    duration: "4 years",
+    language: "English",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "United States Studies at UBC Vancouver is an interdisciplinary Bachelor of Arts major administered by the Department of Political Science, combining political science, history and economics to build an in-depth understanding of the United States and Canada-US relations. Students take ECON 101 and 102, HIST 237 and POLI 220 in the first two years, then 30 upper-level credits including POLI 320A on US government and a research-intensive senior seminar; co-op is available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and self-declare the major, in consultation with a program advisor, once they reach second-year standing.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/united-states-studies/",
+    campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in United States Studies",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: self-declare it (self-declared programs open at second-year standing), in consultation with a program advisor",
+      "Lower-level requirements: ECON 101 and 102, HIST 237 and POLI 220; upper-level work includes 6-12 credits each in economics, history and political science",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
+  },
 
 {
   name: "Romance Studies",
@@ -3363,21 +3584,34 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     ],
   },
 
-{
-  name: "Speech Sciences",
-  slug: "ubc-speech-sciences",
-  level: "Bachelor",
-  universitySlug: "university-of-british-columbia",
-  universityName: "University of British Columbia",
-  country: "Canada",
-  field: "Speech Sciences",
-  duration: "4 years",
-  language: "English",
-  tuitionNote: "Information will be added soon.",
-  description: "Program details will be added soon.",
-  officialProgramUrl: "#",
-  campus: "Vancouver",
-},
+  {
+    name: "Speech Sciences",
+    slug: "ubc-speech-sciences",
+    level: "Bachelor",
+    universitySlug: "university-of-british-columbia",
+    universityName: "University of British Columbia",
+    country: "Canada",
+    field: "Speech Sciences",
+    duration: "4 years",
+    language: "English",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Speech Sciences at UBC Vancouver is a four-year Bachelor of Arts major administered by the Department of Linguistics, with courses from Linguistics, Psychology and the School of Audiology and Speech Sciences, designed to prepare students for graduate work in speech-language pathology or audiology. Students study research methods, language structure, child language acquisition, anatomy and physiology, experimental psychology and instrumental phonetics, and can gain experience in the School of Audiology and Speech Sciences' research labs; co-op is available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and can declare the major after completing 27 credits.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/speech-sciences/",
+    campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Speech Sciences",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: declare it after 27 credits; it requires at least 45 credits, including LING 200, 201, 209, 222 and 333, STAT 203, and 6 credits in a language other than English",
+      "The major does not on its own qualify students for graduate programs in speech-language pathology or audiology, whose prerequisites vary; it cannot be combined with a Linguistics specialization",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
+  },
 
 {
   name: "Cinema Studies",

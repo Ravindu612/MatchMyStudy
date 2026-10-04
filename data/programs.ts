@@ -14,6 +14,7 @@ import { simonFraserUniversityPrograms } from "./programs/canada/simonFraserUniv
 import { universityOfMelbournePrograms } from "./programs/australia/universityOfMelbournePrograms";
 import { universityOfSydneyPrograms } from "./programs/australia/universityOfSydneyPrograms";
 import { universityOfNewSouthWalesPrograms } from "./programs/australia/universityOfNewSouthWalesPrograms";
+import { monashUniversityPrograms } from "./programs/australia/monashUniversityPrograms";
 import { universityCollegeDublinPrograms } from "./programs/ireland/universityCollegeDublinPrograms";
 import { trinityCollegeDublinPrograms } from "./programs/ireland/trinityCollegeDublinPrograms";
 import { universityCollegeCorkPrograms } from "./programs/ireland/universityCollegeCorkPrograms";
@@ -84,6 +85,7 @@ export const programs: Program[] = [
   ...universityOfMelbournePrograms,
   ...universityOfSydneyPrograms,
   ...universityOfNewSouthWalesPrograms,
+  ...monashUniversityPrograms,
   ...universityCollegeDublinPrograms,
   ...trinityCollegeDublinPrograms,
   ...universityCollegeCorkPrograms,

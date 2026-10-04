@@ -397,10 +397,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Engineering",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 66,199.66 per year for international students (Engineering rate, CAD 1,789.18 per credit x 37 credits) and CAD 7,647.53 for Canadian students (CAD 206.69 per credit x 37 credits; CAD 8,163.31 in years 2 to 5). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Manufacturing Engineering at UBC Vancouver is a four-year Bachelor of Applied Science (BASc), offered jointly by the Departments of Mechanical Engineering and Materials Engineering, that focuses on how products are made. Students take dedicated courses in manufacturing processes, production management and industrial automation, as well as digital modelling, additive manufacturing and composites, with hands-on work in manufacturing labs. This is not a direct-entry program: students complete a common first year in UBC Engineering and choose Manufacturing Engineering at the end of it.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/manufacturing-engineering-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Applied Science (BASc) in Manufacturing Engineering",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Placement in Manufacturing Engineering after the common first year is competitive and not guaranteed",
+      "High-school applicants must submit a personal profile",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12, Chemistry 12 and Physics 12",
+      "IB: Math AA (SL/HL) or Math AI HL, IB Chemistry and IB Physics (strong applicants missing one of Chemistry or Physics may be considered case by case)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -490,10 +503,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Architecture",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,905.40 per year for international students (Design in Architecture, Landscape Architecture and Urbanism rate, CAD 1,730.18 per credit x 30 credits) and CAD 9,992.70 for Canadian students (CAD 333.09 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "The Bachelor of Design in Architecture, Landscape Architecture, and Urbanism at UBC Vancouver is a four-year undergraduate degree from the School of Architecture and Landscape Architecture that explores design at every scale, from the body to the city. A core studio sequence, supported by courses in history, theory, media, technology and professional practice, is taught in small studios with design-build, study-abroad and co-op opportunities. It is not a professional architecture degree but prepares students for graduate professional programs and design careers; students are admitted directly into first year (about 50 places) through a UBC application plus a supplemental application.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/architecture-landscape-architecture-and-urbanism/",
     campus: "Vancouver",
+    degree: "Bachelor of Design (BDes) in Architecture, Landscape Architecture, and Urbanism",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026); supplemental application (video interview and resume) by January 31, 2027",
+    admissionRequirements: [
+      "Direct entry to first year; admission is competitive and the BDes can only be chosen as your first-choice program",
+      "Supplemental application: video interview, creative test and a 1-2 page resume (no personal profile or portfolio needed)",
+      "BC high school: English Studies 12 (or English First Peoples 12); Grade 12 History or Geography is recommended",
+      "IB: no specific courses beyond UBC's general admission requirements",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -654,10 +680,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Engineering",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 66,199.66 per year for international students (Engineering rate, CAD 1,789.18 per credit x 37 credits) and CAD 7,647.53 for Canadian students (CAD 206.69 per credit x 37 credits; CAD 8,163.31 in years 2 to 5). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Environmental Engineering at UBC Vancouver is a four-year Bachelor of Applied Science (BASc) that trains engineers in chemical, biological and civil engineering to protect and improve air, water, land and living systems. Students take an ecosystem approach and work on community-focused projects, preparing for work on clean air and water facilities, impact assessments, sustainability planning and environmental policy. This is not a direct-entry program: students complete a common first year in UBC Engineering and choose Environmental Engineering at the end of it. It is separate from the joint UNBC/UBC Environmental Engineering program.",
+    officialProgramUrl:
+      "https://you.ubc.ca/ubc_programs/engineering-environmental/",
     campus: "Vancouver",
+    degree: "Bachelor of Applied Science (BASc) in Environmental Engineering",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Placement in Environmental Engineering after the common first year is competitive and not guaranteed",
+      "High-school applicants must submit a personal profile",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12, Chemistry 12 and Physics 12",
+      "IB: Math AA (SL/HL) or Math AI HL, IB Chemistry and IB Physics (strong applicants missing one of Chemistry or Physics may be considered case by case)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1063,10 +1102,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Biomedical Engineering",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 66,199.66 per year for international students (Engineering rate, CAD 1,789.18 per credit x 37 credits) and CAD 7,647.53 for Canadian students (CAD 206.69 per credit x 37 credits; CAD 8,163.31 in years 2 to 5). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Biomedical Engineering at UBC Vancouver is a four-year Bachelor of Applied Science (BASc), offered with the Faculty of Medicine, that tackles problems where human biology and engineering design meet, building the skills to make discoveries and inventions that promote health. In third year students specialize in one of four streams (biomechanics and biomaterials, cellular and molecular bioengineering, biomedical systems and signals, or biomedical informatics), and co-op is available. This is not a direct-entry program: students apply to UBC Engineering and then for the Biomedical Engineering program after first year, and those aiming for it are encouraged to request the limited Pre-Biomedical Engineering first-year timetable.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/biomedical-engineering/",
     campus: "Vancouver",
+    degree: "Bachelor of Applied Science (BASc) in Biomedical Engineering",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Entry to second-year Biomedical Engineering is competitive; the Pre-Biomedical Engineering first-year timetable is limited and competitive but gives priority placement if all criteria are met",
+      "High-school applicants must submit a personal profile",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12, Chemistry 12 and Physics 12",
+      "IB: Math AA (SL/HL) or Math AI HL, IB Chemistry and IB Physics (strong applicants missing one of Chemistry or Physics may be considered case by case)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1079,10 +1131,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Chemical Engineering",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 66,199.66 per year for international students (Engineering rate, CAD 1,789.18 per credit x 37 credits) and CAD 7,647.53 for Canadian students (CAD 206.69 per credit x 37 credits; CAD 8,163.31 in years 2 to 5). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Chemical Engineering at UBC Vancouver is a four-year Bachelor of Applied Science (BASc) that combines the physical and chemical sciences with mathematics, process engineering, design and economics. Students learn to design, build and operate the industrial processes behind products from energy, food and fertilizers to pharmaceuticals, plastics and paper, with an emphasis on pollution prevention, and co-op (typically five four-month placements) is available. This is not a direct-entry program: students complete a common first year in UBC Engineering and choose Chemical Engineering at the end of it. Completing WRDS 150 or another first-year English course before second year avoids a possible extra year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/ubc_programs/chemical-engineering/",
     campus: "Vancouver",
+    degree: "Bachelor of Applied Science (BASc) in Chemical Engineering",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Placement in Chemical Engineering after the common first year is competitive and not guaranteed",
+      "High-school applicants must submit a personal profile",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12, Chemistry 12 and Physics 12",
+      "IB: Math AA (SL/HL) or Math AI HL, IB Chemistry and IB Physics (strong applicants missing one of Chemistry or Physics may be considered case by case)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1095,10 +1160,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Chemical Engineering",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 66,199.66 per year for international students (Engineering rate, CAD 1,789.18 per credit x 37 credits) and CAD 7,647.53 for Canadian students (CAD 206.69 per credit x 37 credits; CAD 8,163.31 in years 2 to 5). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Chemical and Biological Engineering at UBC Vancouver is a four-year Bachelor of Applied Science (BASc) that pairs training in the physical sciences and mathematics with biotechnology, bioprocess engineering and the life sciences. It includes an eight-month biological process design project, and co-op (typically five four-month placements) is available. This is not a direct-entry program: students complete a common first year in UBC Engineering and choose Chemical and Biological Engineering at the end of it.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/chemical-biological-engineering/",
     campus: "Vancouver",
+    degree: "Bachelor of Applied Science (BASc) in Chemical and Biological Engineering",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Placement in Chemical and Biological Engineering after the common first year is competitive and not guaranteed",
+      "High-school applicants must submit a personal profile",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12, Chemistry 12 and Physics 12",
+      "IB: Math AA (SL/HL) or Math AI HL, IB Chemistry and IB Physics (strong applicants missing one of Chemistry or Physics may be considered case by case)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1111,10 +1189,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Civil Engineering",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 66,199.66 per year for international students (Engineering rate, CAD 1,789.18 per credit x 37 credits) and CAD 7,647.53 for Canadian students (CAD 206.69 per credit x 37 credits; CAD 8,163.31 in years 2 to 5). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Civil Engineering at UBC Vancouver is a four-year Bachelor of Applied Science (BASc) about planning, designing, building and maintaining the built environment. After core courses in mechanics, fluids and structures, students study environmental, geotechnical, hydraulics, structural and transportation engineering, with a final-year group design project; co-op is available. This is not a direct-entry program: students complete a common first year in UBC Engineering and choose Civil Engineering at the end of it.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/civil-engineering-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Applied Science (BASc) in Civil Engineering",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Placement in Civil Engineering after the common first year is competitive and not guaranteed",
+      "High-school applicants must submit a personal profile",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12, Chemistry 12 and Physics 12",
+      "IB: Math AA (SL/HL) or Math AI HL, IB Chemistry and IB Physics (strong applicants missing one of Chemistry or Physics may be considered case by case)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1127,10 +1218,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Computer Engineering",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 66,199.66 per year for international students (Engineering rate, CAD 1,789.18 per credit x 37 credits) and CAD 7,647.53 for Canadian students (CAD 206.69 per credit x 37 credits; CAD 8,163.31 in years 2 to 5). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Computer Engineering at UBC Vancouver is a four-year Bachelor of Applied Science (BASc) from the Department of Electrical and Computer Engineering that teaches how to design, develop and test computer hardware, software, networks and protocols. A Minor in Honours Mathematics option and co-op are available. This is not a direct-entry program: students complete a common first year in UBC Engineering and choose Computer Engineering at the end of it.",
+    officialProgramUrl:
+      "https://you.ubc.ca/ubc_programs/computer-engineering/",
     campus: "Vancouver",
+    degree: "Bachelor of Applied Science (BASc) in Computer Engineering",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Placement in Computer Engineering after the common first year is competitive and not guaranteed",
+      "High-school applicants must submit a personal profile",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12, Chemistry 12 and Physics 12",
+      "IB: Math AA (SL/HL) or Math AI HL, IB Chemistry and IB Physics (strong applicants missing one of Chemistry or Physics may be considered case by case)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1248,7 +1352,7 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     ],
   },
 
-    {
+  {
     name: "Engineering Physics",
     slug: "ubc-engineering-physics",
     level: "Bachelor",
@@ -1256,12 +1360,25 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     universityName: "University of British Columbia",
     country: "Canada",
     field: "Engineering Physics",
-    duration: "4 years",
+    duration: "5 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 66,199.66 per year for international students (Engineering rate, CAD 1,789.18 per credit x 37 credits) and CAD 7,647.53 for Canadian students (CAD 206.69 per credit x 37 credits; CAD 8,163.31 in years 2 to 5). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Engineering Physics at UBC Vancouver is a five-year Bachelor of Applied Science (BASc), one of UBC's most competitive programs, that combines advanced math and physics with computer science, electrical and mechanical engineering and extensive project-based design. In second year students choose an Electrical, Mechanical or Mechatronics specialty, and co-op work terms are built into the curriculum, preparing graduates for research and new-technology roles. This is not a direct-entry program: students complete the common first year in UBC Engineering, then apply to Engineering Physics (including an in-person interview) and spend four more years in the program.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/engineering-physics/",
     campus: "Vancouver",
+    degree: "Bachelor of Applied Science (BASc) in Engineering Physics",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Placement in Engineering Physics after the common first year is competitive and requires an in-person interview, usually in April",
+      "High-school applicants must submit a personal profile",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12, Chemistry 12 and Physics 12",
+      "IB: Math AA (SL/HL) or Math AI HL, IB Chemistry and IB Physics (strong applicants missing one of Chemistry or Physics may be considered case by case)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1274,10 +1391,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Geological Engineering",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 66,199.66 per year for international students (Engineering rate, CAD 1,789.18 per credit x 37 credits) and CAD 7,647.53 for Canadian students (CAD 206.69 per credit x 37 credits; CAD 8,163.31 in years 2 to 5). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Geological Engineering at UBC Vancouver is a four-year Bachelor of Applied Science (BASc), an interdisciplinary program advised through the Department of Earth, Ocean and Atmospheric Sciences, that assesses the ground and landscapes where dams, mines, roads, pipelines and other projects are planned. It covers geotechnology for construction, environmental protection, energy and water supply, mining and natural hazard management, with field schools and fieldwork, and co-op is available. This is not a direct-entry program: students complete a common first year in UBC Engineering and choose Geological Engineering at the end of it.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/geological-engineering/",
     campus: "Vancouver",
+    degree: "Bachelor of Applied Science (BASc) in Geological Engineering",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Placement in Geological Engineering after the common first year is competitive and not guaranteed",
+      "High-school applicants must submit a personal profile",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12, Chemistry 12 and Physics 12",
+      "IB: Math AA (SL/HL) or Math AI HL, IB Chemistry and IB Physics (strong applicants missing one of Chemistry or Physics may be considered case by case)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1290,10 +1420,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Engineering",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 66,199.66 per year for international students (Engineering rate, CAD 1,789.18 per credit x 37 credits) and CAD 7,647.53 for Canadian students (CAD 206.69 per credit x 37 credits; CAD 8,163.31 in years 2 to 5). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Integrated Engineering at UBC Vancouver is a four-year Bachelor of Applied Science (BASc) that gives a broad, multi-disciplinary engineering foundation instead of a single narrow specialty. It emphasizes team-based design through three full-year project courses, and students build primary and secondary disciplines through 18 credits of technical electives in third and fourth year; a co-op option extends the degree to five years. This is not a direct-entry program: students complete a common first year in UBC Engineering and choose Integrated Engineering at the end of it.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/integrated-engineering/",
     campus: "Vancouver",
+    degree: "Bachelor of Applied Science (BASc) in Integrated Engineering",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Placement in Integrated Engineering after the common first year is competitive and not guaranteed",
+      "High-school applicants must submit a personal profile",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12, Chemistry 12 and Physics 12",
+      "IB: Math AA (SL/HL) or Math AI HL, IB Chemistry and IB Physics (strong applicants missing one of Chemistry or Physics may be considered case by case)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1306,10 +1449,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Materials Engineering",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 66,199.66 per year for international students (Engineering rate, CAD 1,789.18 per credit x 37 credits) and CAD 7,647.53 for Canadian students (CAD 206.69 per credit x 37 credits; CAD 8,163.31 in years 2 to 5). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Materials Engineering at UBC Vancouver is a four-year Bachelor of Applied Science (BASc) about how metals, ceramics, polymers and composites are characterized, processed and used in design. By fourth year students apply this to process design and materials selection, and an optional co-op adds twenty months of work experience in the last three years. This is not a direct-entry program: students complete a common first year in UBC Engineering and choose Materials Engineering at the end of it.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/materials-engineering/",
     campus: "Vancouver",
+    degree: "Bachelor of Applied Science (BASc) in Materials Engineering",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Placement in Materials Engineering after the common first year is competitive and not guaranteed",
+      "High-school applicants must submit a personal profile",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12, Chemistry 12 and Physics 12",
+      "IB: Math AA (SL/HL) or Math AI HL, IB Chemistry and IB Physics (strong applicants missing one of Chemistry or Physics may be considered case by case)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1322,10 +1478,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Mechanical Engineering",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 66,199.66 per year for international students (Engineering rate, CAD 1,789.18 per credit x 37 credits) and CAD 7,647.53 for Canadian students (CAD 206.69 per credit x 37 credits; CAD 8,163.31 in years 2 to 5). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Mechanical Engineering at UBC Vancouver is a four-year Bachelor of Applied Science (BASc) that combines hands-on activities with traditional academic teaching to build both the practical and analytical skills engineers need. Students can follow an option in Aerospace, Biomechanics & Mechanical Devices, Energy & Environment, Mechatronics, or Naval Architecture & Marine Engineering, and co-op is available. This is not a direct-entry program: students complete a common first year in UBC Engineering and choose Mechanical Engineering at the end of it.",
+    officialProgramUrl:
+      "https://you.ubc.ca/ubc_programs/mechanical-engineering-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Applied Science (BASc) in Mechanical Engineering",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Placement in Mechanical Engineering after the common first year is competitive and not guaranteed",
+      "High-school applicants must submit a personal profile",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12, Chemistry 12 and Physics 12",
+      "IB: Math AA (SL/HL) or Math AI HL, IB Chemistry and IB Physics (strong applicants missing one of Chemistry or Physics may be considered case by case)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1338,10 +1507,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Mining Engineering",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 66,199.66 per year for international students (Engineering rate, CAD 1,789.18 per credit x 37 credits) and CAD 7,647.53 for Canadian students (CAD 206.69 per credit x 37 credits; CAD 8,163.31 in years 2 to 5). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Mining Engineering at UBC Vancouver is a four-year Bachelor of Applied Science (BASc) that covers mining, mineral processing and mine waste management. Alongside the engineering, students study health and safety, economics, and environmental and social issues, with hands-on work in the Coal & Mineral Processing Lab, and co-op is available. This is not a direct-entry program: students complete a common first year in UBC Engineering and choose Mining Engineering at the end of it.",
+    officialProgramUrl:
+      "https://you.ubc.ca/ubc_programs/mining-engineering/",
     campus: "Vancouver",
+    degree: "Bachelor of Applied Science (BASc) in Mining Engineering",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Placement in Mining Engineering after the common first year is competitive and not guaranteed",
+      "High-school applicants must submit a personal profile",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12, Chemistry 12 and Physics 12",
+      "IB: Math AA (SL/HL) or Math AI HL, IB Chemistry and IB Physics (strong applicants missing one of Chemistry or Physics may be considered case by case)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {

@@ -21,7 +21,9 @@ export const simonFraserUniversityPrograms: Program[] = [
     officialProgramUrl:
       "https://www.sfu.ca/students/admission/programs/a-z/c/computing-science.html",
     campus: "Burnaby",
+    programType: "Regular or co-op",
     degree: "Bachelor of Science (BSc) or Bachelor of Arts (BA) in Computing Science",
+    workIntegrated: true,
     intake: "September",
     applicationDeadline: "Fall 2027 applications (via EducationPlannerBC) open October 1, 2026 and close January 31, 2027. BC high school applicants must also submit the Student Transcript Service form by January 31, and all other admission documents are due February 28, 2027. Early admission offers for BC students go out from mid-November to January; most other decisions are made on a rolling basis from January to late April",
     admissionRequirements: [
@@ -52,7 +54,9 @@ export const simonFraserUniversityPrograms: Program[] = [
     officialProgramUrl:
       "https://www.sfu.ca/students/admission/programs/a-z/s/software-systems.html",
     campus: "Surrey",
+    programType: "Regular or co-op",
     degree: "Bachelor of Science (BSc) in Software Systems",
+    workIntegrated: true,
     intake: "September",
     applicationDeadline: "Fall 2027 applications (via EducationPlannerBC) open October 1, 2026 and close January 31, 2027. BC high school applicants must also submit the Student Transcript Service form by January 31, and all other admission documents are due February 28, 2027. Early admission offers for BC students go out from mid-November to January; most other decisions are made on a rolling basis from January to late April",
     admissionRequirements: [
@@ -151,7 +155,9 @@ export const simonFraserUniversityPrograms: Program[] = [
     officialProgramUrl:
       "https://www.sfu.ca/students/admission/programs/a-z/d/data-science.html",
     campus: "Burnaby (first year also offered at Surrey)",
+    programType: "Regular or co-op",
     degree: "Bachelor of Science (BSc) in Data Science",
+    workIntegrated: true,
     intake: "September",
     applicationDeadline: "Fall 2027 applications (via EducationPlannerBC) open October 1, 2026 and close January 31, 2027. BC high school applicants must also submit the Student Transcript Service form by January 31, and all other admission documents are due February 28, 2027. Early admission offers for BC students go out from mid-November to January; most other decisions are made on a rolling basis from January to late April",
     admissionRequirements: [
@@ -182,7 +188,9 @@ export const simonFraserUniversityPrograms: Program[] = [
     officialProgramUrl:
       "https://www.sfu.ca/students/admission/programs/a-z/b/business.html",
     campus: "Burnaby",
+    programType: "Regular or co-op",
     degree: "Bachelor of Business Administration (BBA)",
+    workIntegrated: true,
     intake: "September",
     applicationDeadline: "Fall 2027 applications (via EducationPlannerBC) open October 1, 2026 and close January 31, 2027. BC high school applicants must also submit the Student Transcript Service form by January 31, and all other admission documents are due February 28, 2027. Early admission offers for BC students go out from mid-November to January; most other decisions are made on a rolling basis from January to late April",
     admissionRequirements: [
@@ -214,7 +222,9 @@ export const simonFraserUniversityPrograms: Program[] = [
     officialProgramUrl:
       "https://www.sfu.ca/students/admission/programs/a-z/h/health-science-bsc/overview.html",
     campus: "Burnaby (first year also offered at Surrey)",
+    programType: "Regular or co-op",
     degree: "Bachelor of Science (BSc) in Health Sciences",
+    workIntegrated: true,
     intake: "September",
     applicationDeadline: "Fall 2027 applications (via EducationPlannerBC) open October 1, 2026 and close January 31, 2027. BC high school applicants must also submit the Student Transcript Service form by January 31, and all other admission documents are due February 28, 2027. Early admission offers for BC students go out from mid-November to January; most other decisions are made on a rolling basis from January to late April",
     admissionRequirements: [
@@ -245,7 +255,9 @@ export const simonFraserUniversityPrograms: Program[] = [
     officialProgramUrl:
       "https://www.sfu.ca/students/admission/programs/a-z/b/biomedical-physiology.html",
     campus: "Burnaby (first year also offered at Surrey)",
+    programType: "Regular or co-op",
     degree: "Bachelor of Science (BSc) in Biomedical Physiology",
+    workIntegrated: true,
     intake: "September",
     applicationDeadline: "Fall 2027 applications (via EducationPlannerBC) open October 1, 2026 and close January 31, 2027. BC high school applicants must also submit the Student Transcript Service form by January 31, and all other admission documents are due February 28, 2027. Early admission offers for BC students go out from mid-November to January; most other decisions are made on a rolling basis from January to late April",
     admissionRequirements: [
@@ -276,7 +288,9 @@ export const simonFraserUniversityPrograms: Program[] = [
     officialProgramUrl:
       "https://www.sfu.ca/students/admission/programs/a-z/k/kinesiology.html",
     campus: "Burnaby (first year also offered at Surrey)",
+    programType: "Regular or co-op",
     degree: "Bachelor of Science (BSc) in Kinesiology",
+    workIntegrated: true,
     intake: "September",
     applicationDeadline: "Fall 2027 applications (via EducationPlannerBC) open October 1, 2026 and close January 31, 2027. BC high school applicants must also submit the Student Transcript Service form by January 31, and all other admission documents are due February 28, 2027. Early admission offers for BC students go out from mid-November to January; most other decisions are made on a rolling basis from January to late April",
     admissionRequirements: [
@@ -307,7 +321,9 @@ export const simonFraserUniversityPrograms: Program[] = [
     officialProgramUrl:
       "https://www.sfu.ca/students/admission/programs/a-z/b/biological-sciences.html",
     campus: "Burnaby (first year also offered at Surrey)",
+    programType: "Regular or co-op",
     degree: "Bachelor of Science (BSc) in Biological Sciences",
+    workIntegrated: true,
     intake: "September",
     applicationDeadline: "Fall 2027 applications (via EducationPlannerBC) open October 1, 2026 and close January 31, 2027. BC high school applicants must also submit the Student Transcript Service form by January 31, and all other admission documents are due February 28, 2027. Early admission offers for BC students go out from mid-November to January; most other decisions are made on a rolling basis from January to late April",
     admissionRequirements: [
@@ -338,7 +354,9 @@ export const simonFraserUniversityPrograms: Program[] = [
     officialProgramUrl:
       "https://www.sfu.ca/students/admission/programs/a-z/p/psychology.html",
     campus: "Burnaby or Surrey",
+    programType: "Regular or co-op",
     degree: "Bachelor of Arts (BA) in Psychology",
+    workIntegrated: true,
     intake: "September",
     applicationDeadline: "Fall 2027 applications (via EducationPlannerBC) open October 1, 2026 and close January 31, 2027. BC high school applicants must also submit the Student Transcript Service form by January 31, and all other admission documents are due February 28, 2027. Early admission offers for BC students go out from mid-November to January; most other decisions are made on a rolling basis from January to late April",
     admissionRequirements: [
@@ -369,7 +387,9 @@ export const simonFraserUniversityPrograms: Program[] = [
     officialProgramUrl:
       "https://www.sfu.ca/students/admission/programs/a-z/c/criminology.html",
     campus: "Burnaby or Surrey",
+    programType: "Regular or co-op",
     degree: "Bachelor of Arts (BA) in Criminology",
+    workIntegrated: true,
     intake: "September",
     applicationDeadline: "Fall 2027 applications (via EducationPlannerBC) open October 1, 2026 and close January 31, 2027. BC high school applicants must also submit the Student Transcript Service form by January 31, and all other admission documents are due February 28, 2027. Early admission offers for BC students go out from mid-November to January; most other decisions are made on a rolling basis from January to late April",
     admissionRequirements: [
@@ -400,7 +420,9 @@ export const simonFraserUniversityPrograms: Program[] = [
     officialProgramUrl:
       "https://www.sfu.ca/students/admission/programs/a-z/e/economics.html",
     campus: "Burnaby or Surrey",
+    programType: "Regular or co-op",
     degree: "Bachelor of Arts (BA) or Bachelor of Science (BSc) in Economics",
+    workIntegrated: true,
     intake: "September",
     applicationDeadline: "Fall 2027 applications (via EducationPlannerBC) open October 1, 2026 and close January 31, 2027. BC high school applicants must also submit the Student Transcript Service form by January 31, and all other admission documents are due February 28, 2027. Early admission offers for BC students go out from mid-November to January; most other decisions are made on a rolling basis from January to late April",
     admissionRequirements: [
@@ -431,7 +453,9 @@ export const simonFraserUniversityPrograms: Program[] = [
     officialProgramUrl:
       "https://www.sfu.ca/students/admission/programs/a-z/p/political-science.html",
     campus: "Burnaby or Surrey",
+    programType: "Regular or co-op",
     degree: "Bachelor of Arts (BA) in Political Science",
+    workIntegrated: true,
     intake: "September",
     applicationDeadline: "Fall 2027 applications (via EducationPlannerBC) open October 1, 2026 and close January 31, 2027. BC high school applicants must also submit the Student Transcript Service form by January 31, and all other admission documents are due February 28, 2027. Early admission offers for BC students go out from mid-November to January; most other decisions are made on a rolling basis from January to late April",
     admissionRequirements: [
@@ -462,7 +486,9 @@ export const simonFraserUniversityPrograms: Program[] = [
     officialProgramUrl:
       "https://www.sfu.ca/students/admission/programs/a-z/c/communication.html",
     campus: "Burnaby",
+    programType: "Regular or co-op",
     degree: "Bachelor of Arts (BA) in Communication",
+    workIntegrated: true,
     intake: "September",
     applicationDeadline: "Fall 2027 applications (via EducationPlannerBC) open October 1, 2026 and close January 31, 2027. BC high school applicants must also submit the Student Transcript Service form by January 31, and all other admission documents are due February 28, 2027. Early admission offers for BC students go out from mid-November to January; most other decisions are made on a rolling basis from January to late April",
     admissionRequirements: [

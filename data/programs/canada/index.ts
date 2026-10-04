@@ -5,6 +5,7 @@ import { universityOfOttawaPrograms } from "./universityOfOttawaPrograms";
 import { senecaPolytechnicPrograms } from "./senecaPolytechnicPrograms";
 import { universityOfBritishColumbiaPrograms } from "./universityOfBritishColumbiaPrograms";
 import { universityOfVictoriaPrograms } from "./universityOfVictoriaPrograms";
+import { humberPolytechnicPrograms } from "./humberPolytechnicPrograms";
 import { universityOfWaterlooPrograms } from "./universityOfWaterlooPrograms";
 import { conestogaCollegePrograms } from "./conestogaCollegePrograms";
 import { universityOfCalgaryPrograms } from "./universityOfCalgaryPrograms";
@@ -22,6 +23,7 @@ export const canadaPrograms = [
   ...senecaPolytechnicPrograms,
   ...universityOfBritishColumbiaPrograms,
   ...universityOfVictoriaPrograms,
+  ...humberPolytechnicPrograms,
   ...universityOfWaterlooPrograms,
   ...conestogaCollegePrograms,
   ...universityOfCalgaryPrograms,

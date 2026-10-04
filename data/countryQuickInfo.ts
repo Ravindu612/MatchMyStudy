@@ -728,4 +728,732 @@ export const countryQuickInfo: Partial<Record<CountryKey, CountryQuickInfo>> = {
       ],
     },
   },
+  netherlands: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Students from the EU/EEA, Switzerland or Suriname usually pay the statutory fee set by the Dutch government. Other students pay an institutional fee that each university sets per programme, so check the programme page. Some institutions also charge an application fee of about €75–€100.",
+      figures: [
+        {
+          label: "Statutory fee, EU/EEA/Swiss/Surinamese students (2026-27)",
+          value: "€2,694 per year",
+          sourceUrl:
+            "https://www.studyinnl.org/finances/tuition-fees",
+        },
+        {
+          label: "Institutional fee, non-EU bachelor's (typical range)",
+          value: "About €9,000 – €20,000 per year",
+          sourceUrl:
+            "https://www.studyinnl.org/finances/tuition-fees",
+        },
+        {
+          label: "Institutional fee, non-EU master's (typical range)",
+          value: "About €12,000 – €30,000 per year",
+          sourceUrl:
+            "https://www.studyinnl.org/finances/tuition-fees",
+        },
+      ],
+      sources: [
+        {
+          name: "Study in NL (Nuffic): Tuition fees",
+          url: "https://www.studyinnl.org/finances/tuition-fees",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "To get a student residence permit, you must show the IND that you have enough money for living costs. The amount is the IND study norm, which is updated every January.",
+      figures: [
+        {
+          label: "Visa proof of funds, university/HBO (2026)",
+          value: "€1,130.77 per month",
+          sourceUrl:
+            "https://ind.nl/en/required-amounts-income-requirements",
+        },
+        {
+          label: "Visa proof of funds for 12 months (2026)",
+          value: "€13,569.24",
+          sourceUrl:
+            "https://ind.nl/en/required-amounts-income-requirements",
+        },
+      ],
+      sources: [
+        {
+          name: "IND: Required amounts and income requirements",
+          url: "https://ind.nl/en/required-amounts-income-requirements",
+        },
+        {
+          name: "IND: Income requirements for study",
+          url: "https://ind.nl/en/income-requirements-study",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Non-EU/EEA students may work alongside their studies, but the employer must get a work permit (TWV) for them. For each year you must choose either part-time work during the year or full-time seasonal work in the summer, not both. After graduating, you can apply for the orientation-year permit to look for work, with free access to the labour market.",
+      figures: [
+        {
+          label: "During the year (with employer's TWV)",
+          value: "Up to 16 hours per week",
+          sourceUrl:
+            "https://ind.nl/en/residence-permits/study/student-residence-permit-for-university-or-higher-professional-education",
+        },
+        {
+          label: "Seasonal alternative (with employer's TWV)",
+          value: "Full-time in June, July and August",
+          sourceUrl:
+            "https://ind.nl/en/residence-permits/study/student-residence-permit-for-university-or-higher-professional-education",
+        },
+        {
+          label: "Post-study: orientation year",
+          value: "1 year; apply within 3 years of graduating; no work permit needed",
+          sourceUrl:
+            "https://ind.nl/en/residence-permits/work/residence-permit-for-orientation-year",
+        },
+      ],
+      sources: [
+        {
+          name: "IND: Student residence permit for university or higher professional education",
+          url: "https://ind.nl/en/residence-permits/study/student-residence-permit-for-university-or-higher-professional-education",
+        },
+        {
+          name: "Netherlands Labour Authority: Foreign students",
+          url: "https://www.nllabourauthority.nl/topics/foreign-nationals-employment-act/foreign-students",
+        },
+        {
+          name: "IND: Residence permit for orientation year",
+          url: "https://ind.nl/en/residence-permits/work/residence-permit-for-orientation-year",
+        },
+      ],
+    },
+  },
+  sweden: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Students from outside the EU/EEA and Switzerland pay tuition. Each university sets its own fees, and the amount depends on the subject. Study in Sweden (the Swedish Institute) publishes these typical ranges. There is also an application fee for non-EU applicants.",
+      figures: [
+        {
+          label: "Typical tuition, all subjects",
+          value: "About SEK 80,000 – 320,000 per academic year (average about SEK 160,000)",
+          sourceUrl:
+            "https://studyinsweden.se/plan-your-studies/fees-costs/",
+        },
+        {
+          label: "Social sciences and humanities",
+          value: "About SEK 80,000 – 135,000 per year",
+          sourceUrl:
+            "https://studyinsweden.se/plan-your-studies/fees-costs/",
+        },
+        {
+          label: "Technology and natural sciences",
+          value: "About SEK 140,000 – 185,000 per year",
+          sourceUrl:
+            "https://studyinsweden.se/plan-your-studies/fees-costs/",
+        },
+        {
+          label: "Architecture and design",
+          value: "About SEK 210,000 – 320,000 per year",
+          sourceUrl:
+            "https://studyinsweden.se/plan-your-studies/fees-costs/",
+        },
+        {
+          label: "Application fee",
+          value: "SEK 900",
+          sourceUrl:
+            "https://studyinsweden.se/plan-your-studies/fees-costs/",
+        },
+      ],
+      sources: [
+        {
+          name: "Study in Sweden: Fees and costs",
+          url: "https://studyinsweden.se/plan-your-studies/fees-costs/",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "The Swedish Migration Agency requires you to show money for your living costs during your studies. The amount is lower if free food or free housing is part of your arrangement.",
+      figures: [
+        {
+          label: "Visa proof of funds (applications in 2026)",
+          value: "At least SEK 10,656 per month",
+          sourceUrl:
+            "https://www.migrationsverket.se/en/you-want-to-apply/study/higher-education.html",
+        },
+        {
+          label: "Visa proof of funds (applications in 2025)",
+          value: "SEK 10,584 per month",
+          sourceUrl:
+            "https://www.migrationsverket.se/en/you-want-to-apply/study/higher-education.html",
+        },
+      ],
+      sources: [
+        {
+          name: "Migrationsverket: Residence permit for higher education studies",
+          url: "https://www.migrationsverket.se/en/you-want-to-apply/study/higher-education.html",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Under new rules for permits granted from 11 June 2026, students may work up to 15 hours a week during the semesters and without a limit in June, July and August. Some work at your own university (such as teaching, research or student representation) does not count towards the limit. After completing your studies, you can apply for a permit to stay and look for work.",
+      figures: [
+        {
+          label: "During semesters (permits granted from 11 June 2026)",
+          value: "Up to 15 hours per week",
+          sourceUrl:
+            "https://www.migrationsverket.se/nyheter/news-archive/2026-05-25-new-rules-for-residence-permits-for-studies-in-higher-education.html",
+        },
+        {
+          label: "Summer",
+          value: "No limit in June, July and August",
+          sourceUrl:
+            "https://www.migrationsverket.se/nyheter/news-archive/2026-05-25-new-rules-for-residence-permits-for-studies-in-higher-education.html",
+        },
+        {
+          label: "Post-study: permit to look for work",
+          value: "Up to 1 year after a bachelor's or master's degree",
+          sourceUrl:
+            "https://www.migrationsverket.se/en/you-want-to-extend/study/look-for-work-after-completing-your-studies-in-sweden.html",
+        },
+      ],
+      sources: [
+        {
+          name: "Migrationsverket: New rules for residence permits for higher education studies (2026)",
+          url: "https://www.migrationsverket.se/nyheter/news-archive/2026-05-25-new-rules-for-residence-permits-for-studies-in-higher-education.html",
+        },
+        {
+          name: "Migrationsverket: Look for work after completing your studies",
+          url: "https://www.migrationsverket.se/en/you-want-to-extend/study/look-for-work-after-completing-your-studies-in-sweden.html",
+        },
+      ],
+    },
+  },
+  norway: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Since autumn 2023, degree students from outside the EU/EEA and Switzerland normally pay tuition at Norwegian public institutions. Each institution sets its own fees, so there is no national figure. Exchange students and PhD candidates are generally exempt. All students also pay a small semester fee to the student welfare organisation.",
+      figures: [
+        {
+          label: "Tuition, non-EU/EEA/Swiss degree students",
+          value: "Not centrally published – set by each institution",
+          sourceUrl:
+            "https://studyinnorway.no/tuition-fees-students",
+        },
+        {
+          label: "Semester fee (all students)",
+          value: "Typically about NOK 1,000 per semester",
+          sourceUrl:
+            "https://studyinnorway.no/cost-and-requirements",
+        },
+      ],
+      sources: [
+        {
+          name: "Study in Norway: Tuition fees",
+          url: "https://studyinnorway.no/tuition-fees-students",
+        },
+        {
+          name: "Study in Norway: Cost and requirements",
+          url: "https://studyinnorway.no/cost-and-requirements",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "To get a study permit, you must show UDI that you have enough money to live on for one academic year. The amount is set for each academic year.",
+      figures: [
+        {
+          label: "Visa proof of funds (2026-27)",
+          value: "NOK 170,368 per year (NOK 15,488 per month)",
+          sourceUrl:
+            "https://www.udi.no/en/want-to-apply/studies/studietillatelse/",
+        },
+      ],
+      sources: [
+        {
+          name: "UDI: Study permit",
+          url: "https://www.udi.no/en/want-to-apply/studies/studietillatelse/",
+        },
+        {
+          name: "Study in Norway: Cost and requirements",
+          url: "https://studyinnorway.no/cost-and-requirements",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "A first study permit automatically lets you work part-time during studies and full-time in the holidays. You cannot be self-employed on a study permit. After graduating, you can apply for a job-seeker permit, but you must show enough money to live on while you search.",
+      figures: [
+        {
+          label: "During studies",
+          value: "Up to 20 hours per week",
+          sourceUrl:
+            "https://www.udi.no/en/want-to-apply/studies/studietillatelse/",
+        },
+        {
+          label: "Holidays",
+          value: "Full-time",
+          sourceUrl:
+            "https://www.udi.no/en/want-to-apply/studies/studietillatelse/",
+        },
+        {
+          label: "Post-study: job-seeker permit",
+          value: "Up to 1 year; requires funds of NOK 28,448 per month",
+          sourceUrl:
+            "https://www.udi.no/en/want-to-apply/work-immigration/job-seekers/",
+        },
+      ],
+      sources: [
+        {
+          name: "UDI: Study permit",
+          url: "https://www.udi.no/en/want-to-apply/studies/studietillatelse/",
+        },
+        {
+          name: "UDI: Job seekers",
+          url: "https://www.udi.no/en/want-to-apply/work-immigration/job-seekers/",
+        },
+      ],
+    },
+  },
+  denmark: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Higher education is free for students from the EU/EEA and Switzerland. Other full-degree students pay tuition, which each institution sets. Study in Denmark (the Ministry of Higher Education and Science) publishes the typical range.",
+      figures: [
+        {
+          label: "Non-EU/EEA/Swiss full-degree students (typical range)",
+          value: "About €6,000 – €16,000 per year (DKK 45,000 – 120,000)",
+          sourceUrl:
+            "https://studyindenmark.dk/study-options/tuition-fees-and-scholarships",
+        },
+      ],
+      sources: [
+        {
+          name: "Study in Denmark: Tuition fees and scholarships",
+          url: "https://studyindenmark.dk/study-options/tuition-fees-and-scholarships",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "SIRI (the Danish Agency for International Recruitment and Integration) requires you to show money for your living costs. You need the monthly amount for each month of study, up to 12 months.",
+      figures: [
+        {
+          label: "Visa proof of funds (2026)",
+          value: "DKK 7,426 per month",
+          sourceUrl:
+            "https://www.nyidanmark.dk/en-GB/You-want-to-apply/Study/Higher-Education",
+        },
+        {
+          label: "Visa proof of funds, maximum (12 months)",
+          value: "DKK 89,112",
+          sourceUrl:
+            "https://www.nyidanmark.dk/en-GB/You-want-to-apply/Study/Higher-Education",
+        },
+      ],
+      sources: [
+        {
+          name: "SIRI / New to Denmark: Higher education",
+          url: "https://www.nyidanmark.dk/en-GB/You-want-to-apply/Study/Higher-Education",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Students in state-approved higher education programmes may work part-time during the academic year and full-time in the summer. Students in programmes that are not state-approved, who applied on or after 2 May 2025, have no right to work. A job-seeking period after graduation is usually included in the study permit.",
+      figures: [
+        {
+          label: "September – May",
+          value: "Up to 90 hours per month",
+          sourceUrl:
+            "https://www.nyidanmark.dk/en-GB/You-want-to-apply/Study/Higher-Education",
+        },
+        {
+          label: "June, July and August",
+          value: "Full-time",
+          sourceUrl:
+            "https://www.nyidanmark.dk/en-GB/You-want-to-apply/Study/Higher-Education",
+        },
+        {
+          label: "Post-study: job-seeking (bachelor's/master's, applied on or after 1 Oct 2026)",
+          value: "6 months or 1 year",
+          sourceUrl:
+            "https://www.nyidanmark.dk/en-GB/You-want-to-apply/Study/Study---job-seeking/Study---3-years-job-seeking",
+        },
+        {
+          label: "Post-study: job-seeking (applied before 1 Oct 2026)",
+          value: "6 months or 3 years",
+          sourceUrl:
+            "https://www.nyidanmark.dk/en-GB/You-want-to-apply/Study/Study---job-seeking/Study---3-years-job-seeking",
+        },
+      ],
+      sources: [
+        {
+          name: "SIRI / New to Denmark: Higher education",
+          url: "https://www.nyidanmark.dk/en-GB/You-want-to-apply/Study/Higher-Education",
+        },
+        {
+          name: "SIRI / New to Denmark: Study and job-seeking",
+          url: "https://www.nyidanmark.dk/en-GB/You-want-to-apply/Study/Study---job-seeking/Study---3-years-job-seeking",
+        },
+      ],
+    },
+  },
+  france: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Public institutions charge fees set by the state. Most students from outside the EU/EEA and Switzerland pay higher “differentiated” fees for bachelor's (licence) and master's degrees. Universities may exempt some of these students. Doctoral fees are the same for everyone. Most students also pay the CVEC student life contribution. Private institutions set their own fees.",
+      figures: [
+        {
+          label: "Licence (bachelor's), non-EU differentiated fee (2026-27)",
+          value: "€2,902 per year",
+          sourceUrl:
+            "https://www.service-public.gouv.fr/particuliers/actualites/A17481",
+        },
+        {
+          label: "Master's, non-EU differentiated fee (2026-27)",
+          value: "€3,950 per year",
+          sourceUrl:
+            "https://www.service-public.gouv.fr/particuliers/actualites/A17481",
+        },
+        {
+          label: "Doctorate, all students (2026-27)",
+          value: "€398 per year",
+          sourceUrl:
+            "https://www.service-public.gouv.fr/particuliers/actualites/A17481",
+        },
+        {
+          label: "CVEC student life contribution (2026-27)",
+          value: "€105 per year",
+          sourceUrl:
+            "https://www.service-public.gouv.fr/particuliers/actualites/A17481",
+        },
+      ],
+      sources: [
+        {
+          name: "Service-Public.fr: Tuition fees for 2026-27",
+          url: "https://www.service-public.gouv.fr/particuliers/actualites/A17481",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "For a long-stay student visa, you must show proof of resources for your stay. The amount went up for visa applications made from 1 August 2026.",
+      figures: [
+        {
+          label: "Visa proof of funds (applications from 1 Aug 2026)",
+          value: "€877.50 per month",
+          sourceUrl:
+            "https://uk.diplomatie.gouv.fr/en/france-visas-french-student-visa-important-announcement",
+        },
+        {
+          label: "Previous amount (before 1 Aug 2026)",
+          value: "€615 per month",
+          sourceUrl:
+            "https://uk.diplomatie.gouv.fr/en/france-visas-french-student-visa-important-announcement",
+        },
+      ],
+      sources: [
+        {
+          name: "French Embassy (France-Visas): Student visa announcement",
+          url: "https://uk.diplomatie.gouv.fr/en/france-visas-french-student-visa-important-announcement",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Students with a valid student residence permit or validated VLS-TS visa may work without a separate work authorisation, up to 60% of the legal yearly working time. The employer must notify the prefecture before you start. Algerian nationals have different rules. After a master's-level degree, you can get a one-year permit to look for a job or create a company.",
+      figures: [
+        {
+          label: "Work during studies",
+          value: "Up to 964 hours per year",
+          sourceUrl:
+            "https://www.service-public.gouv.fr/particuliers/vosdroits/F2713",
+        },
+        {
+          label: "Post-study: job-search / business-creation permit",
+          value: "1 year, not renewable (master's-level degree or licence professionnelle)",
+          sourceUrl:
+            "https://www.service-public.gouv.fr/particuliers/vosdroits/F17319",
+        },
+      ],
+      sources: [
+        {
+          name: "Service-Public.fr: Working as a foreign student",
+          url: "https://www.service-public.gouv.fr/particuliers/vosdroits/F2713",
+        },
+        {
+          name: "Service-Public.fr: Residence permit to look for a job or create a business",
+          url: "https://www.service-public.gouv.fr/particuliers/vosdroits/F17319",
+        },
+      ],
+    },
+  },
+  switzerland: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Each Swiss university sets its own fees, so there is no single national tuition fee. Many universities charge foreign students more than Swiss students. swissuniversities publishes an overview of fees at the cantonal universities and federal institutes of technology. The figures below are for foreign students, per semester, and do not include extra compulsory fees.",
+      figures: [
+        {
+          label: "Range for foreign students at public universities (2026-27)",
+          value: "About CHF 435 – 4,000 per semester",
+          sourceUrl:
+            "https://www.swissuniversities.ch/en/themen/lehre-studium/information-on-studies/tuition-fees/tuition-fees-at-universities",
+        },
+        {
+          label: "ETH Zurich and EPFL (2026-27)",
+          value: "CHF 2,190 per semester",
+          sourceUrl:
+            "https://www.swissuniversities.ch/en/themen/lehre-studium/information-on-studies/tuition-fees/tuition-fees-at-universities",
+        },
+        {
+          label: "Examples (2026-27)",
+          value: "Geneva CHF 435; Basel CHF 850; Bern CHF 2,550; USI CHF 4,000 per semester",
+          sourceUrl:
+            "https://www.swissuniversities.ch/en/themen/lehre-studium/information-on-studies/tuition-fees/tuition-fees-at-universities",
+        },
+      ],
+      sources: [
+        {
+          name: "swissuniversities: Tuition fees at universities",
+          url: "https://www.swissuniversities.ch/en/themen/lehre-studium/information-on-studies/tuition-fees/tuition-fees-at-universities",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "Federal law says students must have the financial means they need for their stay. The exact amount is set by the cantonal migration office, so there is no national figure. Check with your university and the canton where you will study.",
+      figures: [
+        {
+          label: "Visa proof of funds",
+          value: "Not centrally published – set by each canton",
+          sourceUrl:
+            "https://www.fedlex.admin.ch/eli/cc/2007/758/en",
+        },
+      ],
+      sources: [
+        {
+          name: "Fedlex: Foreign Nationals and Integration Act (AIG), Art. 27",
+          url: "https://www.fedlex.admin.ch/eli/cc/2007/758/en",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Students from outside the EU/EFTA may start working only 6 months after their course begins. The weekly limit applies outside holidays. The university must confirm that the job will not slow down your studies, and the employer must apply for the permit. After graduating, you have 6 months to look for a job that matches your qualifications.",
+      figures: [
+        {
+          label: "During studies (from 6 months after the start)",
+          value: "Up to 15 hours per week outside holidays",
+          sourceUrl:
+            "https://www.sem.admin.ch/sem/en/home/themen/arbeit/faq.html",
+        },
+        {
+          label: "Post-study job search",
+          value: "6 months after finishing your studies",
+          sourceUrl:
+            "https://www.sem.admin.ch/sem/en/home/themen/arbeit/faq.html",
+        },
+      ],
+      sources: [
+        {
+          name: "SEM: FAQ – Working in Switzerland",
+          url: "https://www.sem.admin.ch/sem/en/home/themen/arbeit/faq.html",
+        },
+      ],
+    },
+  },
+  austria: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "At public universities, students from outside the EU/EEA with a Student residence permit usually pay a fixed fee per semester. EU/EEA students pay nothing within the minimum study time plus two semesters. All students pay the student union (ÖH) fee. Universities of applied sciences and private universities set their own fees. Exemptions exist for some scholarship holders, exchange students and certain countries.",
+      figures: [
+        {
+          label: "Public universities, third-country students",
+          value: "€726.72 per semester",
+          sourceUrl:
+            "https://studyinaustria.at/en/tuition",
+        },
+        {
+          label: "Student union (ÖH) fee",
+          value: "€26.20 per semester",
+          sourceUrl:
+            "https://studyinaustria.at/en/tuition",
+        },
+        {
+          label: "EU/EEA students beyond minimum duration + 2 semesters",
+          value: "€363.36 per semester",
+          sourceUrl:
+            "https://studyinaustria.at/en/tuition",
+        },
+      ],
+      sources: [
+        {
+          name: "OeAD Study in Austria: Tuition fees",
+          url: "https://studyinaustria.at/en/tuition",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "For a Student residence permit, you must show regular income at the level set by the Austrian social security rates (ASVG), which are updated every year. The amount depends on your age.",
+      figures: [
+        {
+          label: "Visa proof of funds, under 24 (2026)",
+          value: "€777.58 per month",
+          sourceUrl:
+            "https://www.migration.gv.at/en/types-of-immigration/temporary-residence/",
+        },
+        {
+          label: "Visa proof of funds, 24 and over (2026)",
+          value: "€1,308.39 per month",
+          sourceUrl:
+            "https://www.migration.gv.at/en/types-of-immigration/temporary-residence/",
+        },
+      ],
+      sources: [
+        {
+          name: "migration.gv.at: Temporary residence (Students)",
+          url: "https://www.migration.gv.at/en/types-of-immigration/temporary-residence/",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Students from outside the EU/EEA need an employment permit, even for marginal jobs. The employer applies to the Public Employment Service (AMS). For jobs up to 20 hours a week, there is no labour-market test. After graduating, you can renew your Student permit once for 12 months to look for a job or start a business.",
+      figures: [
+        {
+          label: "During studies (employer gets AMS permit)",
+          value: "Up to 20 hours per week without a labour-market test",
+          sourceUrl:
+            "https://www.migration.gv.at/en/types-of-immigration/temporary-residence/",
+        },
+        {
+          label: "Post-study: job-search extension",
+          value: "12 months, once",
+          sourceUrl:
+            "https://www.migration.gv.at/en/types-of-immigration/permanent-immigration/graduates/",
+        },
+      ],
+      sources: [
+        {
+          name: "migration.gv.at: Temporary residence (Students)",
+          url: "https://www.migration.gv.at/en/types-of-immigration/temporary-residence/",
+        },
+        {
+          name: "migration.gv.at: Graduates",
+          url: "https://www.migration.gv.at/en/types-of-immigration/permanent-immigration/graduates/",
+        },
+      ],
+    },
+  },
+  belgium: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Higher education is run by the language communities, so fees differ by region. Flanders (Dutch-speaking): each institution sets fees for non-EEA students within published guidelines. Wallonia-Brussels Federation (French-speaking): fees are capped by the Federation, and most non-EU students pay an extra contribution unless they are exempt (for example, nationals of least developed countries, or some other countries at universities). Your exact fee is confirmed in your enrolment letter.",
+      figures: [
+        {
+          label: "Flanders, EU/EEA students (2026-27, 60 credits)",
+          value: "€1,181.40 per year",
+          sourceUrl:
+            "https://www.studyinflanders.be/practical-information/tuition-fees",
+        },
+        {
+          label: "Flanders, non-EU/EEA students (2026-27, 60 credits)",
+          value: "About €5,300 – €12,000 per year (arts schools €8,800 – €25,000)",
+          sourceUrl:
+            "https://www.studyinflanders.be/practical-information/tuition-fees",
+        },
+        {
+          label: "Wallonia-Brussels, non-EU students (standard)",
+          value: "€5,369 per year (€1,194 fee + €4,175 extra contribution)",
+          sourceUrl:
+            "https://www.studyinbelgium.be/en/studying-french-speaking-belgium-registration-fees",
+        },
+        {
+          label: "Wallonia-Brussels, non-EU students exempt from extra contribution",
+          value: "€835 per year",
+          sourceUrl:
+            "https://www.studyinbelgium.be/en/studying-french-speaking-belgium-registration-fees",
+        },
+      ],
+      sources: [
+        {
+          name: "Study in Flanders: Tuition fees",
+          url: "https://www.studyinflanders.be/practical-information/tuition-fees",
+        },
+        {
+          name: "Wallonie-Bruxelles Campus (Study in Belgium): Registration fees",
+          url: "https://www.studyinbelgium.be/en/studying-french-speaking-belgium-registration-fees",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "The federal Immigration Office sets the same proof of funds for the whole country. Accepted proof includes a scholarship, money transferred to your institution or an approved provider, or a formal sponsor undertaking (annex 32). Check the details with the Belgian embassy where you apply.",
+      figures: [
+        {
+          label: "Visa proof of funds (2026-27 academic year)",
+          value: "€1,062 net per month",
+          sourceUrl:
+            "https://lebanon.diplomatie.belgium.be/sites/default/files/2026-04/Checklist%20-%20Long%20stay%20Academic%20Visa%2008.04.2026_1.pdf",
+        },
+      ],
+      sources: [
+        {
+          name: "Belgian Embassy: Long-stay study visa checklist (2026-27)",
+          url: "https://lebanon.diplomatie.belgium.be/sites/default/files/2026-04/Checklist%20-%20Long%20stay%20Academic%20Visa%2008.04.2026_1.pdf",
+        },
+        {
+          name: "Immigration Office (DOFI): Sufficient means of subsistence",
+          url: "https://dofi.ibz.be/fr/themes/ressortissants-dun-pays-tiers/etudes/favoris/moyens-de-subsistance-suffisants",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "The rules are the same in Flanders and in Wallonia-Brussels. Students with a valid residence card (“labour market – limited”) can work without a separate work permit, up to 20 hours a week during term and with no weekly limit in school holidays. Work must fit with your studies. After graduating, you can ask for a “search year” permit of up to 12 months to look for work or start a business.",
+      figures: [
+        {
+          label: "During term (Flanders and Wallonia-Brussels)",
+          value: "Up to 20 hours per week",
+          sourceUrl:
+            "https://www.vlaanderen.be/werken/een-buitenlander-in-vlaanderen-tewerkstellen/voor-wie",
+        },
+        {
+          label: "School holidays",
+          value: "No weekly limit",
+          sourceUrl:
+            "https://www.studyinbelgium.be/en/working-while-studying-french-speaking-belgium",
+        },
+        {
+          label: "Post-study: search year",
+          value: "Up to 12 months",
+          sourceUrl:
+            "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/student-belgium_en",
+        },
+      ],
+      sources: [
+        {
+          name: "Vlaanderen.be: Foreign workers exempt from work authorisation",
+          url: "https://www.vlaanderen.be/werken/een-buitenlander-in-vlaanderen-tewerkstellen/voor-wie",
+        },
+        {
+          name: "Wallonie-Bruxelles Campus: Working while studying",
+          url: "https://www.studyinbelgium.be/en/working-while-studying-french-speaking-belgium",
+        },
+        {
+          name: "European Commission EU Immigration Portal: Student in Belgium",
+          url: "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/student-belgium_en",
+        },
+      ],
+    },
+  },
 };

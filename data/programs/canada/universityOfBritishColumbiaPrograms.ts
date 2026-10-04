@@ -70,10 +70,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Business & Sustainability",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Forestry - Natural Resources rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Bioeconomy Sciences and Technology (BEST) at UBC Vancouver is a four-year major in the Bachelor of Science in Natural Resources from the Faculty of Forestry and Environmental Stewardship, described by UBC as Canada's first comprehensive program focused on the bioeconomy. It builds a foundation in science and technology for designing renewable materials, energy and sustainable land-use strategies, alongside statistics, project management, communication and public participation, with an optional Minor in Commerce and a five-year co-op option. Students are admitted directly into the BSc in Natural Resources and declare the major at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/bioeconomy-sciences-technology/",
     campus: "Vancouver",
+    degree: "Bachelor of Science in Natural Resources (BSc NR), Bioeconomy Sciences and Technology Major",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Direct entry from secondary school into the BSc in Natural Resources; students take a common first year and declare this major at the end of it (April)",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Life Sciences 11 and/or Physics 11 (Biology 11 strongly recommended)",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics; Grade 11 Chemistry and Biology or equivalents are also needed",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -295,7 +307,7 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     campus: "Okanagan",
   },
 
-    {
+  {
     name: "Forest Operations",
     slug: "ubc-forest-operations",
     level: "Bachelor",
@@ -305,10 +317,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Forestry",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Forestry - Natural Resources rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Forest Operations at UBC Vancouver is a four-year major in the Bachelor of Science in Natural Resources from the Faculty of Forestry and Environmental Stewardship that adds an operational focus to forest management, covering harvest and transportation planning, forest road design, slope stability and harvesting systems. It is accredited toward becoming a professional forester, offers specializations in Harvest Planning and Engineering or Commerce (Minor in Commerce), and with extra courses can lead toward a P.Eng.; field schools at UBC's research forests and co-op are part of the experience. Students are admitted directly into the BSc in Natural Resources and declare the major at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/forest-operations/",
     campus: "Vancouver",
+    degree: "Bachelor of Science in Natural Resources (BSc NR), Forest Operations Major",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Direct entry from secondary school into the BSc in Natural Resources; students take a common first year and declare this major at the end of it (April)",
+      "For the Harvest Planning and Engineering specialization, Calculus 12 and Physics 12 are strongly recommended",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Life Sciences 11 and/or Physics 11 (Biology 11 strongly recommended)",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics; Grade 11 Chemistry and Biology or equivalents are also needed",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -471,10 +496,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Forestry",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Forestry - Natural Resources rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Wood Products at UBC Vancouver is a four-year major in the Bachelor of Science in Natural Resources from the Faculty of Forestry and Environmental Stewardship that combines wood science, engineering and business to prepare graduates to run wood products manufacturing operations. After first-year math, physics and chemistry, students study wood and materials science and processing technologies, then analysis and optimization of manufacturing, with access to the Centre for Advanced Wood Processing and a final-year major project; a five-year co-op version is available. Students are admitted directly into the BSc in Natural Resources and declare the major at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/wood-products/",
     campus: "Vancouver",
+    degree: "Bachelor of Science in Natural Resources (BSc NR), Wood Products Major",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Direct entry from secondary school into the BSc in Natural Resources; students take a common first year and declare this major at the end of it (April)",
+      "Physics 12 is recommended for this major (or at least Physics 11)",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Life Sciences 11 and/or Physics 11 (Biology 11 strongly recommended)",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics; Grade 11 Chemistry and Biology or equivalents are also needed",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
     {
@@ -588,10 +626,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Environmental Science",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Forestry - Natural Resources rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Conservation at UBC Vancouver is a four-year major in the Bachelor of Science in Natural Resources, and the most popular program in the Faculty of Forestry and Environmental Stewardship, about protecting and managing wildlife, forests, rivers, oceans and land. Students combine natural and social sciences with policy, planning and quantitative tools, and after second year can choose the Science and Management specialization (with a semester-long Integrated Field School) or Global Perspectives (with an international or cultural experience); co-op and a thesis option are available. Students are admitted directly into the BSc in Natural Resources and declare the major at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/conservation/",
     campus: "Vancouver",
+    degree: "Bachelor of Science in Natural Resources (BSc NR), Conservation Major",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Direct entry from secondary school into the BSc in Natural Resources; students take a common first year and declare this major at the end of it (April)",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Life Sciences 11 and/or Physics 11 (Biology 11 strongly recommended)",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics; Grade 11 Chemistry and Biology or equivalents are also needed",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -753,10 +803,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Forestry",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Forestry - Natural Resources rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Forest Management at UBC Vancouver is a four-year major in the Bachelor of Science in Natural Resources from the Faculty of Forestry and Environmental Stewardship, about planning and managing forest lands for multiple uses such as timber, water, wildlife, range and recreation. It is accredited by the Canadian Forestry Accreditation Board toward becoming a professional forester, combines biological, physical and social sciences with fieldwork and field schools at UBC's research forests, ends with a fourth-year forest management plan course, and offers a Community and Indigenous Forestry concentration and co-op. Students are admitted directly into the BSc in Natural Resources and declare the major at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/forest-management/",
     campus: "Vancouver",
+    degree: "Bachelor of Science in Natural Resources (BSc NR), Forest Management Major",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Direct entry from secondary school into the BSc in Natural Resources; students take a common first year and declare this major at the end of it (April)",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Life Sciences 11 and/or Physics 11 (Biology 11 strongly recommended)",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics; Grade 11 Chemistry and Biology or equivalents are also needed",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -769,10 +831,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Forestry",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Forestry - Natural Resources rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Forest Sciences at UBC Vancouver is a four-year major in the Bachelor of Science in Natural Resources from the Faculty of Forestry and Environmental Stewardship for students interested in the biology and dynamics of forest ecosystems, from wildlife, fire, insects and disease to soils, tree genetics and regeneration. After a strong science core, students choose a concentration by third year (such as genetics/genomics, forest ecology and management, biodiversity conservation, international forestry or geomatics), with extensive lab and field work, an honours thesis option and co-op. Students are admitted directly into the BSc in Natural Resources and declare the major at the end of first year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/forest-sciences/",
     campus: "Vancouver",
+    degree: "Bachelor of Science in Natural Resources (BSc NR), Forest Sciences Major",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Direct entry from secondary school into the BSc in Natural Resources; students take a common first year and declare this major at the end of it (April)",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Life Sciences 11 and/or Physics 11 (Biology 11 strongly recommended)",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics; Grade 11 Chemistry and Biology or equivalents are also needed",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -933,13 +1007,26 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Sustainability",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition depends on the faculty you start in: for international students CAD 56,620.80 in Land and Food Systems (CAD 1,769.40 per credit x 32 credits), CAD 53,082.00 in Science or CAD 51,530.40 in Arts (30 credits); for Canadian students CAD 6,614.08 in Land and Food Systems or CAD 6,200.70 in Science or Arts (CAD 206.69 per credit). Global Resource Systems itself is a Land and Food Systems degree. Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Global Resource Systems at UBC Vancouver is a four-year Bachelor of Science from the Faculty of Land and Food Systems for students who want to tackle resource problems with a global, interdisciplinary approach. In third and fourth year students design their own path by choosing a resource specialization (such as sustainable agriculture, food security, global health or international development) and a world region (Africa, Asia Pacific, Europe or the Americas), with a required language, regional coursework and an international experience abroad. This is not a direct-entry program: students complete first year in Land and Food Systems, Arts or Science and then apply to GRS to start in second or third year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/global-resource-systems/",
     campus: "Vancouver",
+    degree: "Bachelor of Science in Global Resource Systems (BSc GRS)",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Apply to GRS after completing 24 credits of first-year courses in Land and Food Systems, Arts or Science; a minimum 70% average is needed and admission is limited",
+      "Applicants submit a letter of intent of up to 500 words; selection considers grades, preparation, experience and commitment to a global education",
+      "The program requires a relevant language other than English and at least one term of learning in your chosen region",
+      "High-school prerequisites are those of the first-year program you enter (for Land and Food Systems: English Studies 12 or English First Peoples 12, Pre-Calculus 12, one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, Chemistry 11 and Physics 11)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
-    {
+  {
     name: "Indigenous Land Stewardship",
     slug: "ubc-indigenous-land-stewardship",
     level: "Bachelor",
@@ -949,10 +1036,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Environmental Studies",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 58,390.20 per year for international students (Indigenous Land Stewardship rate, CAD 1,769.40 per credit x 33 credits) and CAD 6,820.77 for Canadian students (CAD 206.69 per credit x 33 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Indigenous Land Stewardship at UBC Vancouver is a four-year, cohort-based bachelor's degree from the Faculty of Forestry and Environmental Stewardship that prepares Indigenous students and allies for land stewardship work with and for Indigenous communities and Nations. Taught by Indigenous scholars, allies, Elders and knowledge keepers, it bridges Indigenous and Western knowledge in areas such as ecology, law and governance, GIS and mapping, business management and community capacity building, and includes land-based field courses. Most courses can be taken in person or online from your home community, and students are admitted directly from secondary school (or as transfer or mid-career students) with a separate positionality statement.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/indigenous-land-stewardship/",
     campus: "Vancouver",
+    degree: "Bachelor of Indigenous Land Stewardship (BILS)",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Apply to UBC and also submit a separate positionality statement to the Faculty of Forestry and Environmental Stewardship (it is used to assess suitability and to request the limited distance or hybrid seats)",
+      "BC high school: English Studies 12 (or English First Peoples 12) and Life Sciences 11 or another approved Science 11 (Biology 11 recommended)",
+      "IB: one of IB Biology (strongly recommended), Chemistry, Physics or Environmental Sciences",
+      "Under UBC's Aboriginal Admissions Policy, Indigenous applicants may be considered below the faculty's cut-off if they meet the 70% minimum",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1038,10 +1138,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Agriculture",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 56,620.80 per year for international students (Land and Food Systems rate, CAD 1,769.40 per credit x 32 credits) and CAD 6,614.08 for Canadian students (CAD 206.69 per credit x 32 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Sustainable Agriculture and Environment at UBC Vancouver is a four-year major in the Bachelor of Science in Applied Biology from the Faculty of Land and Food Systems, applying soil, plant and agro-ecological science to grow food sustainably while conserving land and ecosystem services. Students can focus on agricultural production, integrated agro-ecosystem management, plant science or soil science, gain hands-on experience at the UBC Farm, and can choose honours or co-op. Graduates can work toward designations such as Professional Agrologist or Registered Professional Biologist, and students are admitted directly from secondary school into the BSc in Applied Biology.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/sustainable-agriculture-environment/",
     campus: "Vancouver",
+    degree: "Bachelor of Science in Applied Biology (BSc APBI), Sustainable Agriculture and Environment Major",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Direct entry from secondary school into the BSc in Applied Biology; transfer applicants need at least 24 transferable credits",
+      "Honours option: a minimum 75% cumulative average, declared from third year",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11 (Physics 11 may be waived with 86% or higher in senior Math and in Chemistry)",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics; Grade 11 Chemistry and Physics or equivalents are also needed (Physics may be waived with grades of 5 in IB Chemistry and IB Math)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1054,10 +1167,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Forestry",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 53,082.00 per year for international students (Urban Forestry rate, CAD 1,769.40 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Urban Forestry at UBC Vancouver is a four-year Bachelor of Urban Forestry, the first undergraduate degree in Canada dedicated to planning and managing urban green spaces, taught with the School of Architecture and Landscape Architecture. The curriculum covers climate change and sustainability, forest health and management, urban ecology, and recreation and human wellbeing, with skills in data analysis, planning, policy and communication, field courses in the Vancouver area and optional minors in Urban Greenspace Management or Landscape and Recreation Planning; co-op is available. Students are admitted directly from secondary school or after at least 24 post-secondary credits.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/urban-forestry/",
     campus: "Vancouver",
+    degree: "Bachelor of Urban Forestry (BUF)",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Direct entry from secondary school; transfer applicants need at least 24 credits and a 60% overall average (forestry diploma graduates need 65%)",
+      "Minors are applied for after second year and may be limited by demand",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Life Sciences 11 or Physics 11",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics; Grade 11 Chemistry and Biology (recommended) or Physics or equivalents are also needed",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -1698,10 +1824,22 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Health Sciences",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 56,620.80 per year for international students (Land and Food Systems rate, CAD 1,769.40 per credit x 32 credits) and CAD 6,614.08 for Canadian students (CAD 206.69 per credit x 32 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Food, Nutrition, and Health at UBC Vancouver is a four-year Bachelor of Science from the Faculty of Land and Food Systems that looks at food production, food security and the role of nutrition in preventing disease. It is the most flexible FNH major, letting students build their own mix of food science and nutrition courses and electives, with access to the culinary, sensory and clinical nutrition labs in the FNH building, plus co-op, minors and dual-degree options. It is a common preparation for health professional programs such as medicine, dentistry, nursing or midwifery, and students are admitted directly from secondary school.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/food-nutrition-health/",
     campus: "Vancouver",
+    degree: "Bachelor of Science in Food, Nutrition, and Health (BSc FNH), Food, Nutrition, and Health Major",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Direct entry from secondary school into the BSc in Food, Nutrition, and Health; transfer applicants need at least 24 transferable credits",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11 (Physics 11 may be waived with 86% or higher in senior Math and in Chemistry)",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics; Grade 11 Chemistry and Physics or equivalents are also needed (Physics may be waived with grades of 5 in IB Chemistry and IB Math)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -3375,21 +3513,34 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
   campus: "Vancouver",
 },
 
-{
-  name: "Food and Nutritional Sciences",
-  slug: "ubc-food-nutritional-sciences",
-  level: "Bachelor",
-  universitySlug: "university-of-british-columbia",
-  universityName: "University of British Columbia",
-  country: "Canada",
-  field: "Nutrition",
-  duration: "5 years",
-  language: "English",
-  tuitionNote: "Information will be added soon.",
-  description: "Program details will be added soon.",
-  officialProgramUrl: "#",
-  campus: "Vancouver",
-},
+  {
+    name: "Food and Nutritional Sciences",
+    slug: "ubc-food-nutritional-sciences",
+    level: "Bachelor",
+    universitySlug: "university-of-british-columbia",
+    universityName: "University of British Columbia",
+    country: "Canada",
+    field: "Nutrition",
+    duration: "5 years",
+    language: "English",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 56,620.80 per year for international students (Land and Food Systems rate, CAD 1,769.40 per credit x 32 credits) and CAD 6,614.08 for Canadian students (CAD 206.69 per credit x 32 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Food and Nutritional Sciences at UBC Vancouver is a competitive double major within the Bachelor of Science in Food, Nutrition, and Health that combines the core requirements of the Food Science and Nutritional Sciences majors in about five years. Students study the chemistry and microbiology of food, its nutritional and sensory properties and the role of nutrients in health and disease, using teaching labs, a sensory space and a pilot plant; the program is approved by the Institute of Food Technologists and co-op is available. This is not a direct-entry program: students are admitted to the BSc in Food, Nutrition, and Health and apply for the double major after first year (or after second year).",
+    officialProgramUrl:
+      "https://you.ubc.ca/ubc_programs/food-nutritional-sciences/",
+    campus: "Vancouver",
+    degree: "Bachelor of Science in Food, Nutrition, and Health (BSc FNH), Food and Nutritional Sciences Double Major",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Apply to the double major by March 31 after completing at least 24 credits of the listed first-year courses; admission is competitive",
+      "Selection: academic performance (minimum 70%, 85% of the score) plus a letter of intent of up to 500 words (15%); a 70% average in required courses must be kept each year",
+      "BC high school: English Studies 12 (or English First Peoples 12), Pre-Calculus 12 and one of Anatomy & Physiology 12, Chemistry 12 or Physics 12, plus Chemistry 11 and Physics 11 (Physics 11 may be waived with 86% or higher in senior Math and in Chemistry)",
+      "IB: Math AA (SL/HL) or Math AI HL, plus one of IB Biology, Chemistry or Physics; Grade 11 Chemistry and Physics or equivalents are also needed (Physics may be waived with grades of 5 in IB Chemistry and IB Math)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
+  },
 
 {
   name: "Kinesiology: Multidisciplinary Science",

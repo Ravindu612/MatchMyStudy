@@ -2329,10 +2329,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Writing",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Fine Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Creative Writing at UBC Vancouver is a Bachelor of Fine Arts major from the School of Creative Writing, taught as a two-year studio program of writing workshops in genres such as fiction, poetry, creative nonfiction, screenwriting, stage plays, writing for children, graphic forms, new media and literary translation. Majors complete 36 credits of 400-level workshops in at least four genres, can combine Creative Writing with another subject as a double major, and co-op is available. This is not a direct-entry program: students first complete about two years of university study (54 credits), then apply with a writing portfolio for entry in third year, and places are strictly limited.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/creative-writing-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Fine Arts (BFA), Major in Creative Writing",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 for the UBC application; the BFA major application window opens in January (for September 2026 entry it ran January 6 to February 28, 2026; 2027 dates not yet posted)",
+    admissionRequirements: [
+      "Apply to the major in the spring before third year, once you will have third-year standing (54 credits by mid-May); one document with a personal statement and writing in a primary and secondary genre is reviewed",
+      "Prerequisite: 3 credits of 200-level CRWR (such as CRWR 200) or equivalent; the open-enrolment BA Minor in Creative Writing needs no portfolio",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements; the writing portfolio is submitted with the third-year major application, not with the UBC application",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2580,10 +2593,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Media Studies",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Media Studies rate, CAD 1,717.68 per credit x 30 credits) and CAD 8,252.40 for Canadian students (Media Studies rate, CAD 275.08 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "The Bachelor of Media Studies at UBC Vancouver is a four-year, cohort-based degree that combines media theory, research and hands-on production, drawing on art history and visual art, creative writing, journalism, cinema and film production, computer science, information studies, English and German studies. Students take program-only MDIA studio courses with community partners and specialize in one focus area (information design, visual or narrative), with co-op and study abroad possible in third year. This is a direct-entry program with limited seats: students apply to UBC with the BMS as their first choice and submit a supplemental application with two original media works, or transfer into the Year 2 cohort.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/media-studies/",
     campus: "Vancouver",
+    degree: "Bachelor of Media Studies (BMS)",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 for the UBC application (international scholars: November 15, 2026); BMS supplemental application by January 17, 2027",
+    admissionRequirements: [
+      "Supplemental application (November 2, 2026 to January 17, 2027): two self-produced media works in different media and a written response of up to 1,200 characters; the BMS must be your first choice on the UBC application",
+      "Year 2 entry needs three first-year core courses (such as ARTH 101, CINE 100, CPSC 100 or MDIA 100) plus the Arts writing component",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements; IB Math Analysis and Approaches SL/HL or Applications and Interpretations HL strongly recommended; portfolio (two media works) required",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2712,10 +2738,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Visual Arts",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Fine Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Visual Art at UBC Vancouver is a four-year Bachelor of Fine Arts from the Department of Art History, Visual Art and Theory that combines studio practice with critical theory and art history. Students work in at least four media areas, from digital art, photography and painting to drawing, sculpture and print media, and Honours and co-op are available. Admission is competitive (about 300 applications for 20 places): students apply to the BFA through UBC and send a portfolio and written statement to the department, and can enter directly from high school or transfer into Year 2 or 3.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/visual-art-bfa/",
     campus: "Vancouver",
+    degree: "Bachelor of Fine Arts (BFA), Major in Visual Art",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 for the UBC application (international scholars: November 15, 2026); the departmental portfolio deadline for 2027 entry is not yet posted (for 2026 entry it was February 1, extended to February 9, 2026)",
+    admissionRequirements: [
+      "Two-step application: list the BFA as first or second choice on the UBC application, then submit the departmental supplemental application (up to five finished works in at least two media as one PDF, plus a 250-500 word statement on one work)",
+      "Honours needs permission from the Visual Art advisor and an 80% average; the separate BA in Visual Art is declared at second-year standing after VISA 110, 180 and 183 with a 72% average",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements; an audition or portfolio is required (Fine Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2969,10 +3008,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Theatre",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Theatre Studies at UBC Vancouver is a four-year Bachelor of Arts major from the Department of Theatre and Film that analyzes theatre and performance through textual, historical, sociological and philosophical approaches. Students start with introductory courses in theatre studies, acting, production and design, then focus on theatre history, dramaturgy and methods, using the Frederic Wood and Dorothy Somerset theatres; Honours and co-op are available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and self-declare the major once they reach second-year standing.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/theatre/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Theatre",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: self-declare it at second-year standing; it requires at least 42 theatre credits, including THTR 210 and 211 and 30 upper-level credits",
+      "Honours is by application and needs at least 76% in THTR 210 and 211; the BFA Acting and BFA Theatre Design and Production are separate programs with their own applications",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -3075,10 +3127,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Music",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Music at UBC Vancouver, as listed on UBC's program pages, is the Bachelor of Arts Major in Music from the School of Music, for students who want to study music as one of the liberal arts. Students take core music history, theory and ensemble or world-music courses similar to the Bachelor of Music but without private instrumental or vocal lessons, and Honours and co-op are available. This is not a direct-entry program and needs no audition: students are admitted to the Bachelor of Arts and declare the major after completing 54 credits and the required music courses.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/music/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Music",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No audition or application for the major: declare it after 54 credits; by the end of Year 2 complete MUSC 120, 121, 220 and 221, MUSC 128 or 165, and MUSC 100, 101 and 200",
+      "Honours needs at least a 68% average in each year and includes MUSC 449; students who want private lessons or performance training should apply to the Bachelor of Music instead",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -3091,10 +3156,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Music",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 48,779.80 per year for international students (Music rate, CAD 1,434.70 per credit x 34 credits) and CAD 7,027.46 for Canadian students (CAD 206.69 per credit x 34 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Opera at UBC Vancouver is a four-year Bachelor of Music major for singers who want a career in opera performance or production, offered within the School of Music's advanced performance streams. Students build vocal technique, repertoire and operatic acting over four years, take opera workshop, opera history and theatre techniques, and study Italian, French and German (6 credits each), with fully staged productions with orchestra each year. Admission is by audition: students apply to UBC, complete the BMus supplemental application and audition, and need a successful audition and interview with the Director of Opera.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/music-advanced-performance/",
     campus: "Vancouver",
+    degree: "Bachelor of Music (BMus), Major in Opera",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 for the UBC application and the BMus supplemental application and fee (international scholars: November 15, 2026); letters of reference by January 20, 2027; auditions January 30 to February 7, 2027 (video auditions due January 27, 2027)",
+    admissionRequirements: [
+      "Apply to UBC with the BMus as first or second choice, choose Opera as your first-choice major on the BMus supplemental application, send two letters of reference and audition (voice auditions February 6-7, 2027); applicants not accepted to Opera are considered for General Studies",
+      "A successful audition and interview with the Director of Opera is required before starting the major; students can also move between the Voice, Opera and General Studies streams after first or second year",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements; an audition (plus a portfolio for composition) and letters of reference are required (Music)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -3107,10 +3185,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Film Studies",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Fine Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra. Students also pay their own production costs: at least CAD 2,500 for FIPR 333 and CAD 3,500 for FIPR 433.",
+    description:
+      "Film Production at UBC Vancouver is a four-year Bachelor of Fine Arts from the Department of Theatre and Film, teaching the techniques, practice and theory of filmmaking in small cohorts of about 20 students. Students make their own films and can go deeper into documentary, alternative cinema, screenwriting and producing, and must cover part of their production costs (at least CAD 2,500 for FIPR 333 and CAD 3,500 for FIPR 433). Admission is competitive: students apply to the BFA through UBC and submit a portfolio to the department, entering directly from high school or transferring into Year 2.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/film-production/",
     campus: "Vancouver",
+    degree: "Bachelor of Fine Arts (BFA), Major in Film Production",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 for the UBC application (international scholars: November 15, 2026); supplemental materials to the Department of Theatre and Film by February 2 (11:59 pm Pacific)",
+    admissionRequirements: [
+      "Two-step application: list the BFA Film Production as first or second choice on the UBC application, then submit a 1-2 minute self-portrait video, a short film (3 minutes max) with a 250-word statement, and a one-page resume; no late applications",
+      "To progress, students need at least 72% in CINE 100 or FIPR 101 and a 72% average overall; transfers are accepted into Year 2 only",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements; an audition or portfolio is required (Fine Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -3769,85 +3860,150 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     ],
   },
 
-{
-  name: "Cinema Studies",
-  slug: "ubc-cinema-studies",
-  level: "Bachelor",
-  universitySlug: "university-of-british-columbia",
-  universityName: "University of British Columbia",
-  country: "Canada",
-  field: "Film Studies",
-  duration: "4 years",
-  language: "English",
-  tuitionNote: "Information will be added soon.",
-  description: "Program details will be added soon.",
-  officialProgramUrl: "#",
-  campus: "Vancouver",
-},
+  {
+    name: "Cinema Studies",
+    slug: "ubc-cinema-studies",
+    level: "Bachelor",
+    universitySlug: "university-of-british-columbia",
+    universityName: "University of British Columbia",
+    country: "Canada",
+    field: "Film Studies",
+    duration: "4 years",
+    language: "English",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Cinema Studies at UBC Vancouver is a four-year Bachelor of Arts major from the Department of Theatre and Film covering world cinema, film history and aesthetics, and how film industries and audiences shape what reaches the screen. Majors take CINE 100, 200-level cinema courses and at least 30 upper-level credits including CINE 331 and 445, and Honours and co-op are available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and apply in writing to the major before third year, with admission based on their grades in lower-level cinema courses.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/cinema-studies/",
+    campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Cinema Studies",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "Apply online on the Cinema Studies website before third year (deadline in early May; decisions by May 31); depending on demand, a 76% average in 100- and 200-level CINE courses is needed for the major",
+      "Honours needs an 85% average in lower-level CINE courses and adds CINE 449",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
+  },
 
-{
-  name: "Music: Composition",
-  slug: "ubc-music-composition",
-  level: "Bachelor",
-  universitySlug: "university-of-british-columbia",
-  universityName: "University of British Columbia",
-  country: "Canada",
-  field: "Music",
-  duration: "4 years",
-  language: "English",
-  tuitionNote: "Information will be added soon.",
-  description: "Program details will be added soon.",
-  officialProgramUrl: "#",
-  campus: "Vancouver",
-},
+  {
+    name: "Music: Composition",
+    slug: "ubc-music-composition",
+    level: "Bachelor",
+    universitySlug: "university-of-british-columbia",
+    universityName: "University of British Columbia",
+    country: "Canada",
+    field: "Music",
+    duration: "4 years",
+    language: "English",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 48,779.80 per year for international students (Music rate, CAD 1,434.70 per credit x 34 credits) and CAD 7,027.46 for Canadian students (CAD 206.69 per credit x 34 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Music: Composition at UBC Vancouver is a four-year Bachelor of Music major for students who have already shown ability in composing, with composition study in every year (MUSC 107 to 407) alongside private lessons, ensembles and the BMus core in music history, theory and technology. Students have their works performed by student and faculty ensembles, can use the School's electronic music studio, and must compose and have performed at least 45 minutes of music to graduate; co-op is available. Admission is by application and audition: students apply to UBC and complete the BMus supplemental application, audition and submit a composition portfolio of original scores.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/music-composition/",
+    campus: "Vancouver",
+    degree: "Bachelor of Music (BMus), Major in Composition",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 for the UBC application and the BMus supplemental application and fee (international scholars: November 15, 2026); letters of reference by January 20, 2027; auditions January 30 to February 7, 2027 (video auditions due January 27, 2027); composition portfolio due early January 2027 (date to be confirmed)",
+    admissionRequirements: [
+      "Apply to UBC with the BMus as first or second choice, complete the BMus supplemental application and fee, send two letters of reference, audition on an instrument and submit a composition portfolio (portfolio deadline to be confirmed, early January 2027)",
+      "Students must also meet the General Studies performance standard; it is possible to switch into Composition after one year in another BMus major",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements; an audition (plus a portfolio for composition) and letters of reference are required (Music)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
+  },
 
-{
-  name: "Music: Scholarship",
-  slug: "ubc-music-scholarship",
-  level: "Bachelor",
-  universitySlug: "university-of-british-columbia",
-  universityName: "University of British Columbia",
-  country: "Canada",
-  field: "Music",
-  duration: "4 years",
-  language: "English",
-  tuitionNote: "Information will be added soon.",
-  description: "Program details will be added soon.",
-  officialProgramUrl: "#",
-  campus: "Vancouver",
-},
+  {
+    name: "Music: Scholarship",
+    slug: "ubc-music-scholarship",
+    level: "Bachelor",
+    universitySlug: "university-of-british-columbia",
+    universityName: "University of British Columbia",
+    country: "Canada",
+    field: "Music",
+    duration: "4 years",
+    language: "English",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 48,779.80 per year for international students (Music rate, CAD 1,434.70 per credit x 34 credits) and CAD 7,027.46 for Canadian students (CAD 206.69 per credit x 34 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Music: Scholarship at UBC Vancouver is a Bachelor of Music major that combines upper-level work in music theory, music history and ethnomusicology with the performance standards of the BMus, as preparation for graduate study in music scholarship. Students keep four years of private lessons and ensembles while adding courses such as MUSC 328, ethnomusicology and music history seminars, with an optional research project. This is not a direct-entry major: students are admitted to the Bachelor of Music by audition, complete two years in another BMus major, and then apply in writing to start Music Scholarship in third year.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/music-scholarship/",
+    campus: "Vancouver",
+    degree: "Bachelor of Music (BMus), Major in Music Scholarship",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 for the UBC application and the BMus supplemental application and fee (international scholars: November 15, 2026); letters of reference by January 20, 2027; auditions January 30 to February 7, 2027 (video auditions due January 27, 2027)",
+    admissionRequirements: [
+      "Admission to the BMus first (UBC application, BMus supplemental application, references and audition); the Scholarship major starts in Year 3 by written application",
+      "Applicants normally need at least an 80% average in first- and second-year core music theory and history courses and at least 75% in first-year English",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements; an audition (plus a portfolio for composition) and letters of reference are required (Music)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
+  },
 
-{
-  name: "Theatre: Acting",
-  slug: "ubc-theatre-acting",
-  level: "Bachelor",
-  universitySlug: "university-of-british-columbia",
-  universityName: "University of British Columbia",
-  country: "Canada",
-  field: "Theatre",
-  duration: "4 years",
-  language: "English",
-  tuitionNote: "Information will be added soon.",
-  description: "Program details will be added soon.",
-  officialProgramUrl: "#",
-  campus: "Vancouver",
-},
+  {
+    name: "Theatre: Acting",
+    slug: "ubc-theatre-acting",
+    level: "Bachelor",
+    universitySlug: "university-of-british-columbia",
+    universityName: "University of British Columbia",
+    country: "Canada",
+    field: "Theatre",
+    duration: "4 years",
+    language: "English",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Fine Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Theatre: Acting at UBC Vancouver is a four-year Bachelor of Fine Arts from the Department of Theatre and Film that combines professional actor training with theatre history and theory and a liberal arts education. After a first year of foundation courses, students train in scene study, voice, movement, storytelling and improvisation, then move on to heightened text, devised work and screen acting, and perform in department productions. Admission is by audition: students apply to the BFA through UBC and submit a recorded audition to the department, entering Year 1 from high school or Year 2 as transfers.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/theatre-acting/",
+    campus: "Vancouver",
+    degree: "Bachelor of Fine Arts (BFA), Major in Acting",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 for the UBC application (international scholars: November 15, 2026); supplemental materials to the Department of Theatre and Film by February 2 (11:59 pm Pacific); online callbacks in March",
+    admissionRequirements: [
+      "Two-step application: list the BFA Acting as first or second choice on the UBC application, then submit a recorded 2-minute monologue from a contemporary published play, a photo, resume, a 1-minute personal video, references and three short written answers",
+      "Shortlisted applicants are invited to live online callbacks in March; transfers are accepted into Year 2 only",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements; an audition or portfolio is required (Fine Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
+  },
 
-{
-  name: "Theatre: Design and Production",
-  slug: "ubc-theatre-design-production",
-  level: "Bachelor",
-  universitySlug: "university-of-british-columbia",
-  universityName: "University of British Columbia",
-  country: "Canada",
-  field: "Theatre",
-  duration: "4 years",
-  language: "English",
-  tuitionNote: "Information will be added soon.",
-  description: "Program details will be added soon.",
-  officialProgramUrl: "#",
-  campus: "Vancouver",
-},
+  {
+    name: "Theatre: Design and Production",
+    slug: "ubc-theatre-design-production",
+    level: "Bachelor",
+    universitySlug: "university-of-british-columbia",
+    universityName: "University of British Columbia",
+    country: "Canada",
+    field: "Theatre",
+    duration: "4 years",
+    language: "English",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Fine Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Theatre: Design and Production at UBC Vancouver is a four-year Bachelor of Fine Arts from the Department of Theatre and Film that prepares students for work behind the scenes in theatre, film, TV and events. Coursework covers set, costume, lighting and sound design and technology, properties, scenic art, stage management and production design, and all students take on production roles in the department's theatre season. Admission is competitive: students apply to the BFA through UBC and submit a portfolio and letter of intent to the department, entering directly from high school or transferring into Year 2 or 3.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/theatre-design-production/",
+    campus: "Vancouver",
+    degree: "Bachelor of Fine Arts (BFA), Major in Theatre Design and Production",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 for the UBC application (international scholars: November 15, 2026); supplemental materials to the Department of Theatre and Film by February 2 (11:59 pm Pacific)",
+    admissionRequirements: [
+      "Two-step application: list the BFA Theatre Design and Production as first or second choice on the UBC application (first-choice applicants are considered first), then submit a letter of intent and a portfolio with a resume",
+      "Students must take part in department productions in roles assigned by faculty, from crew and builder to designer and stage manager",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements; an audition or portfolio is required (Fine Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
+  },
 
 
   {

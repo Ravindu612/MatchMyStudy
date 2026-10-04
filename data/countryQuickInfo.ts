@@ -460,4 +460,272 @@ export const countryQuickInfo: Partial<Record<CountryKey, CountryQuickInfo>> = {
       ],
     },
   },
+
+  unitedKingdom: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Universities set their own fees for international students, and the UK government does not publish a national figure. For the Student visa you need enough money to pay your course fees for one academic year (up to 9 months), and the amount is shown on your Confirmation of Acceptance for Studies (CAS).",
+      figures: [
+        {
+          label: "Official national figure",
+          value: "Not published – set by each university (shown on your CAS)",
+          sourceUrl: "https://www.gov.uk/student-visa/money",
+        },
+      ],
+      sources: [
+        {
+          name: "GOV.UK: Student visa – money you need",
+          url: "https://www.gov.uk/student-visa/money",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "Unless you have already been in the UK with a valid visa for 12 months, you must show money to support yourself on top of any unpaid course fees. The amount depends on whether you study in London (the City of London and the 32 boroughs) or elsewhere. These are visa minimums, not a full budget.",
+      figures: [
+        {
+          label: "Visa proof of funds, courses in London (2026)",
+          value: "£1,529 per month, for up to 9 months (£13,761)",
+          sourceUrl: "https://www.gov.uk/student-visa/money",
+        },
+        {
+          label: "Visa proof of funds, courses outside London (2026)",
+          value: "£1,171 per month, for up to 9 months (£10,539)",
+          sourceUrl: "https://www.gov.uk/student-visa/money",
+        },
+      ],
+      sources: [
+        {
+          name: "GOV.UK: Student visa – money you need",
+          url: "https://www.gov.uk/student-visa/money",
+        },
+        {
+          name: "Immigration Rules: Appendix Student (ST 12)",
+          url: "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-student",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "How much you can work depends on your course level and whether it is term-time. The limits apply to full-time students at a higher education provider with a track record of compliance; part-time students cannot work. After graduating you can apply for the Graduate visa, which is being shortened from 2027.",
+      figures: [
+        {
+          label: "Degree level or above, during term",
+          value: "Up to 20 hours per week",
+          sourceUrl:
+            "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-student",
+        },
+        {
+          label: "Below degree level, during term",
+          value: "Up to 10 hours per week",
+          sourceUrl:
+            "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-student",
+        },
+        {
+          label: "Outside term-time",
+          value: "Full-time work allowed",
+          sourceUrl:
+            "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-student",
+        },
+        {
+          label: "After graduation (Graduate visa)",
+          value:
+            "2 years if you apply by 31 Dec 2026; 18 months from 1 Jan 2027; 3 years for PhD",
+          sourceUrl: "https://www.gov.uk/graduate-visa",
+        },
+      ],
+      sources: [
+        {
+          name: "Immigration Rules: Appendix Student (ST 26)",
+          url: "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-student",
+        },
+        {
+          name: "GOV.UK: Graduate visa",
+          url: "https://www.gov.uk/graduate-visa",
+        },
+      ],
+    },
+  },
+
+  usa: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Each college sets its own tuition, and no official US-wide average is published for international students. The National Center for Education Statistics (NCES) publishes averages for all first-time, full-time undergraduates. Its public-university average is the in-state rate, so it is not shown here.",
+      figures: [
+        {
+          label: "Average tuition & fees, private nonprofit 4-year (2022–23, all undergraduates)",
+          value: "US$40,700 per year",
+          sourceUrl: "https://nces.ed.gov/fastfacts/display.asp?id=76",
+        },
+        {
+          label: "Average for international students",
+          value: "Not officially published – check each school",
+          sourceUrl: "https://nces.ed.gov/fastfacts/display.asp?id=76",
+        },
+      ],
+      sources: [
+        {
+          name: "NCES Fast Facts: Tuition costs of colleges and universities",
+          url: "https://nces.ed.gov/fastfacts/display.asp?id=76",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "The US has no fixed national proof-of-funds amount. You or a sponsor must show enough money for tuition and living expenses during your studies. Your school's international office checks this evidence before it issues your Form I-20, and you may be asked for it again at the visa interview and at the border.",
+      figures: [
+        {
+          label: "National visa proof-of-funds figure",
+          value: "Not officially published – set per school when issuing Form I-20",
+          sourceUrl:
+            "https://studyinthestates.dhs.gov/students/prepare/financial-ability",
+        },
+      ],
+      sources: [
+        {
+          name: "Study in the States (DHS): Financial ability",
+          url: "https://studyinthestates.dhs.gov/students/prepare/financial-ability",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "F-1 students can work on campus with approval from their school. Off-campus work needs separate authorisation, such as Curricular Practical Training (CPT), Optional Practical Training (OPT), or USCIS approval for severe economic hardship. DHS published a final rule in July 2026 that changes how long F students are admitted for, so check Study in the States for the latest.",
+      figures: [
+        {
+          label: "On campus, while school is in session",
+          value: "Up to 20 hours per week",
+          sourceUrl: "https://www.ice.gov/sevis/employment",
+        },
+        {
+          label: "On campus, breaks and annual vacation",
+          value: "Full-time",
+          sourceUrl: "https://www.ice.gov/sevis/employment",
+        },
+        {
+          label: "After graduation (post-completion OPT)",
+          value: "12 months per degree level; STEM graduates can extend by 24 months",
+          sourceUrl:
+            "https://studyinthestates.dhs.gov/students/work/applying-for-practical-training",
+        },
+      ],
+      sources: [
+        {
+          name: "ICE/SEVP: F-1 employment",
+          url: "https://www.ice.gov/sevis/employment",
+        },
+        {
+          name: "Study in the States: Applying for practical training",
+          url: "https://studyinthestates.dhs.gov/students/work/applying-for-practical-training",
+        },
+        {
+          name: "Study in the States: Fixed time period of admission final rule",
+          url: "https://studyinthestates.dhs.gov/final-rule-establishing-a-fixed-time-period-of-admission-and-an-extension-of-stay-procedure-quick",
+        },
+      ],
+    },
+  },
+
+  newZealand: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Fees for international students depend on the provider, subject and length of study. Medicine and veterinary science cost more. Study with New Zealand (the government's education agency) publishes typical annual ranges. International PhD students pay the same fees as domestic PhD students.",
+      figures: [
+        {
+          label: "Bachelor's degree (updated March 2025)",
+          value: "About NZ$35,000 – NZ$55,000 per year",
+          sourceUrl:
+            "https://www.studywithnewzealand.govt.nz/en/plan-your-studies/cost-of-living",
+        },
+        {
+          label: "Postgraduate degree",
+          value: "About NZ$20,000 – NZ$45,000 per year",
+          sourceUrl:
+            "https://www.studywithnewzealand.govt.nz/en/plan-your-studies/cost-of-living",
+        },
+        {
+          label: "PhD (domestic rate, updated March 2025)",
+          value: "About NZ$6,500 – NZ$7,500 per year",
+          sourceUrl:
+            "https://www.studywithnewzealand.govt.nz/en/plan-your-studies/cost-of-living",
+        },
+      ],
+      sources: [
+        {
+          name: "Study with New Zealand: Tuition fees and cost of living",
+          url: "https://www.studywithnewzealand.govt.nz/en/plan-your-studies/cost-of-living",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "Immigration New Zealand requires tertiary students to show money for living costs, separate from tuition. Study with New Zealand notes that universities estimate actual living costs at about NZ$18,000–NZ$27,000 a year, depending on the city.",
+      figures: [
+        {
+          label: "Visa proof of funds, tertiary study of 1 year or more (2026)",
+          value: "NZ$20,000 per year",
+          sourceUrl:
+            "https://www.immigration.govt.nz/process-to-apply/applying-for-a-visa/providing-evidence-and-documents-to-support-your-visa-application/student-fund-requirements/",
+        },
+        {
+          label: "Study shorter than 1 year",
+          value: "NZ$1,667 per month",
+          sourceUrl:
+            "https://www.immigration.govt.nz/process-to-apply/applying-for-a-visa/providing-evidence-and-documents-to-support-your-visa-application/student-fund-requirements/",
+        },
+      ],
+      sources: [
+        {
+          name: "Immigration New Zealand: Student fund requirements",
+          url: "https://www.immigration.govt.nz/process-to-apply/applying-for-a-visa/providing-evidence-and-documents-to-support-your-visa-application/student-fund-requirements/",
+        },
+        {
+          name: "Study with New Zealand: Tuition fees and cost of living",
+          url: "https://www.studywithnewzealand.govt.nz/en/plan-your-studies/cost-of-living",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Your exact work rights are printed in your visa conditions (eVisa). Most full-time tertiary students can work part-time during study and full-time in scheduled breaks if their course lasts at least one academic year (120 credits over two semesters). Graduates may qualify for a Post Study Work Visa.",
+      figures: [
+        {
+          label: "During study (visas granted from 3 Nov 2025)",
+          value: "Up to 25 hours per week",
+          sourceUrl:
+            "https://www.immigration.govt.nz/study/once-you-have-a-student-visa/working-on-a-student-visa/",
+        },
+        {
+          label: "Scheduled holidays (eligible courses)",
+          value: "Full-time",
+          sourceUrl:
+            "https://www.immigration.govt.nz/study/once-you-have-a-student-visa/working-on-a-student-visa/",
+        },
+        {
+          label: "After graduation (Post Study Work Visa)",
+          value:
+            "3 years after a master's or doctorate; after a bachelor's, the same length as your study",
+          sourceUrl:
+            "https://www.immigration.govt.nz/work/requirements-for-work-visas/how-long-you-can-work-on-work-visas/how-long-you-can-stay-on-a-post-study-work-visa/",
+        },
+      ],
+      sources: [
+        {
+          name: "Immigration New Zealand: Working on a student visa",
+          url: "https://www.immigration.govt.nz/study/once-you-have-a-student-visa/working-on-a-student-visa/",
+        },
+        {
+          name: "Immigration New Zealand: Post Study Work Visa length",
+          url: "https://www.immigration.govt.nz/work/requirements-for-work-visas/how-long-you-can-work-on-work-visas/how-long-you-can-stay-on-a-post-study-work-visa/",
+        },
+        {
+          name: "INZ Operational Manual WD3.5",
+          url: "https://www.immigration.govt.nz/opsmanual/71752.htm",
+        },
+      ],
+    },
+  },
 };

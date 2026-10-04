@@ -12,6 +12,7 @@ import { universityOfCalgaryPrograms } from "./programs/canada/universityOfCalga
 import { sheridanCollegePrograms } from "./programs/canada/sheridanCollegePrograms";
 import { carletonUniversityPrograms } from "./programs/canada/carletonUniversityPrograms";
 import { centennialCollegePrograms } from "./programs/canada/centennialCollegePrograms";
+import { georgeBrownCollegePrograms } from "./programs/canada/georgeBrownCollegePrograms";
 import { universityOfAlbertaPrograms } from "./programs/canada/universityOfAlbertaPrograms";
 import { universityOfManitobaPrograms } from "./programs/canada/universityOfManitobaPrograms";
 import { westernUniversityPrograms } from "./programs/canada/westernUniversityPrograms";
@@ -96,6 +97,7 @@ export const programs: Program[] = [
   ...sheridanCollegePrograms,
   ...carletonUniversityPrograms,
   ...centennialCollegePrograms,
+  ...georgeBrownCollegePrograms,
   ...universityOfAlbertaPrograms,
   ...universityOfManitobaPrograms,
   ...westernUniversityPrograms,

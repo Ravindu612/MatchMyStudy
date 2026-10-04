@@ -13,6 +13,7 @@ import { kingsCollegeLondonPrograms } from "./programs/unitedKingdom/kingsColleg
 import { dublinCityUniversityPrograms } from "./programs/ireland/dublinCityUniversityPrograms";
 import { universityCollegeLondonPrograms } from "./programs/unitedKingdom/universityCollegeLondonPrograms";
 import { universityOfManchesterPrograms } from "./programs/unitedKingdom/universityOfManchesterPrograms";
+import { universityOfEdinburghPrograms } from "./programs/unitedKingdom/universityOfEdinburghPrograms";
 export type ProgramLevel =
   | "Bachelor"
   | "Master"
@@ -69,6 +70,7 @@ export const programs: Program[] = [
   ...dublinCityUniversityPrograms,
   ...universityCollegeLondonPrograms,
   ...universityOfManchesterPrograms,
+  ...universityOfEdinburghPrograms,
   {
     name: "Bachelor's Programme in Science and Technology",
     slug: "bachelor-science-technology-aalto-university",

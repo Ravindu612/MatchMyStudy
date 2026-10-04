@@ -4,6 +4,7 @@ import { universities } from "@/data/universities";
 import CountrySearch from "@/components/CountrySearch";
 import { programs } from "@/data/programs";
 import FindConsultantsButton from "@/components/consultant/FindConsultantsButton";
+import { countryQuickInfo } from "@/data/countryQuickInfo";
 
 type CountryKey = keyof typeof universities;
 
@@ -27,6 +28,14 @@ export default function CountryPage({
   const countryPrograms = programs.filter(
     (program) => program.country.toLowerCase() === country.toLowerCase()
   );
+
+  const quickInfo = countryQuickInfo[countryKey];
+
+  const quickInfoCards = [
+    { title: "Tuition Fees", section: quickInfo?.tuitionFees },
+    { title: "Living Costs", section: quickInfo?.livingCosts },
+    { title: "Student Jobs", section: quickInfo?.studentJobs },
+  ];
 
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
@@ -109,19 +118,72 @@ export default function CountryPage({
 
         {/* Quick Info */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 mt-12">
-          {["Tuition Fees", "Living Costs", "Student Jobs"].map((item) => (
+          {quickInfoCards.map(({ title, section }) => (
             <div
-              key={item}
-              className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition"
+              key={title}
+              className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col"
             >
               <h2 className="text-xl font-bold mb-3 text-slate-900">
-                {item}
+                {title}
               </h2>
 
-              <p className="text-slate-600">
-                Useful information for international students planning to study in{" "}
-                {country}.
-              </p>
+              {section ? (
+                <>
+                  <p className="text-slate-600">{section.summary}</p>
+
+                  {section.figures && section.figures.length > 0 && (
+                    <dl className="mt-4 space-y-3">
+                      {section.figures.map((figure) => (
+                        <div key={figure.label}>
+                          <dt className="text-sm text-slate-500">
+                            {figure.label}
+                          </dt>
+                          <dd className="font-semibold text-slate-900">
+                            <a
+                              href={figure.sourceUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="hover:text-blue-600"
+                            >
+                              {figure.value}
+                            </a>
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                  )}
+
+                  <div className="mt-auto pt-4 text-xs text-slate-500">
+                    <p>
+                      Sources:{" "}
+                      {section.sources.map((source, index) => (
+                        <span key={source.url}>
+                          {index > 0 && "; "}
+                          <a
+                            href={source.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:underline"
+                          >
+                            {source.name}
+                          </a>
+                        </span>
+                      ))}
+                    </p>
+                    {quickInfo?.lastChecked && (
+                      <p className="mt-1">
+                        Last checked {quickInfo.lastChecked}. Rules and
+                        amounts change, so confirm with the official source.
+                      </p>
+                    )}
+                  </div>
+                </>
+              ) : (
+                <p className="text-slate-600">
+                  Useful information for international students planning to study in{" "}
+                  {country}.
+                </p>
+              )}
             </div>
           ))}
         </div>

@@ -2255,10 +2255,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Area Studies",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Asian Area Studies at UBC Vancouver is a four-year Bachelor of Arts major from the Department of Asian Studies on the history, literary and religious traditions, cultures and languages of East Asia (China, Japan and Korea) and South and West Asia. The 48-credit major combines ASIA courses with 12 credits of one Asian language, such as Mandarin, Japanese, Korean, Punjabi, Hindi-Urdu, Sanskrit or Persian, and Honours and co-op are available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and self-declare the major after completing 27 credits, with no prerequisite courses.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/asian-area-studies/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Asian Area Studies",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: self-declare it after completing 27 credits, with no prerequisites; it requires 27 ASIA credits, 12 credits of one Asian language and a research-intensive course",
+      "Honours is by department permission based on strong performance in recent Asian Studies courses, and adds a 6-credit Honours thesis (ASIA 499)",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2377,10 +2390,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "English",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "English at UBC Vancouver is a four-year Bachelor of Arts major from the Department of English Language and Literatures, with three emphases: Literature, Language, or Language and Literature. Students study writing in English from medieval riddles to contemporary literature, along with the history, structure and rhetoric of the English language; Honours and co-op are available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and self-declare the major and emphasis once they reach second-year standing.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/english-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in English (Literature, Language, or Language and Literature emphasis)",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: self-declare it and choose an emphasis at second-year standing; the Literature emphasis needs 6 credits of 100-level English (or equivalent), ENGL 200 and one of ENGL 220-249",
+      "Honours (Literature or Language and Literature emphasis) starts in third year and needs at least a 76% average in ENGL 200 plus a 220-249 course, or 76% in each of ENGL 200 and ENGL 229",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2692,7 +2718,7 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     campus: "Vancouver",
   },
 
-    {
+  {
     name: "Ancient Mediterranean and Near Eastern Studies",
     slug: "ubc-ancient-mediterranean-near-eastern-studies",
     level: "Bachelor",
@@ -2702,10 +2728,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Ancient Studies",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Ancient Mediterranean and Near Eastern Studies (AMNE) at UBC Vancouver is a four-year Bachelor of Arts major on the archaeology, history, languages, literatures and religions of ancient Egypt, the Near East, Greece and Rome, including Judaism and early Christianity. Students can study ancient languages such as Ancient Greek, Latin, Biblical Hebrew and Classical Arabic, and Honours and co-op are available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and self-declare the major once they reach second-year standing.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/ancient-mediterranean-near-eastern-studies/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Ancient Mediterranean and Near Eastern Studies",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: self-declare it at second-year standing; it requires 42 credits (at least 30 upper-level), including AMNE 200, AMNE 300, an ancient-language course and 400-level AMNE work",
+      "Honours needs an overall average of 76% and department permission, an 80% program average to continue, 60 credits and a 6-credit Honours thesis",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2718,10 +2757,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Art History",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Art History at UBC Vancouver is a four-year Bachelor of Arts major from the Department of Art History, Visual Art and Theory, in which students learn to analyze images, objects and visual culture in their historical and cultural contexts. Majors can concentrate on the arts of Europe and the Americas, the Indigenous Americas, or East and South Asia, using resources such as the Belkin Art Gallery and the Museum of Anthropology, and Honours and co-op are available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and enter the major in Year 2 after at least 3 credits of 100- or 200-level Art History.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/art-history/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Art History",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: enter it in Year 2 after at least 3 credits of 100- or 200-level ARTH; it requires 12 lower-level ARTH credits (ARTH 101 and/or 102 strongly recommended) and 30 upper-level credits, including ARTH 300 and a 400-level seminar",
+      "Honours is decided with a departmental advisor and normally needs 12 ARTH credits, a high B average in first and second year and at least an A- average in Art History, plus a 6-credit Honours essay",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2766,10 +2818,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Languages",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "French at UBC Vancouver is a four-year Bachelor of Arts major in French Language, Literatures and Cultures from the Department of French, Hispanic and Italian Studies, designed for students with intermediate or higher French. Students study French grammar and writing, French literature from the Middle Ages to today, and Francophone literatures and cultures from Quebec to Africa and the Caribbean; Honours, co-op and exchanges in France, Belgium, Switzerland and Quebec are available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and self-declare the major, starting when their French level allows.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/french-vancouver/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in French Language, Literatures and Cultures",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: self-declare it; before upper-level major courses, students need FREN 302 or CEFR B1 French (beginners can start with the separate Minor in French Language)",
+      "Requirements: FREN 311, 321, 352, 401 and 402 plus 21 credits across four literature and culture clusters; Honours needs third-year standing, a B+ average in French and overall, and FREN 301 and 302 (or B1)",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2782,10 +2847,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Languages",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "German Studies at UBC Vancouver is a four-year Bachelor of Arts major from the Department of Central, Eastern and Northern European Studies on the culture, film, history, language, literature, media and thought of the German-speaking world. No previous German is needed: students build up through the GERN language sequence to at least B2 level and combine it with courses taught in English and German, and Honours and co-op are available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and self-declare the major once they reach second-year standing.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/german/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in German Studies",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major and no prior German needed: self-declare it at second-year standing; it requires GERN 101-302 plus 24 upper-level GERN or GMST credits",
+      "Honours: at least 18 upper-level credits taught in German and a 6-credit Honours research capstone",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2814,10 +2892,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Languages",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Hispanic Studies at UBC Vancouver is offered as the Bachelor of Arts Major in Spanish from the Department of French, Hispanic and Italian Studies, covering Spanish language at all levels and the literature and cultures of Spain and Latin America. Students reach at least B2 Spanish and take courses from translation to the Latin American novel and Spanish film, with co-op and exchanges with universities in Latin America and Spain available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and self-declare the major once they reach second-year standing.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/spanish-hispanic-studies/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Spanish",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: self-declare it at second-year standing; students with prior Spanish take a placement assessment and may skip some lower-level courses",
+      "Requirements: SPAN 101-203 (or intensive equivalents) and SPAN 221, then SPAN 301 and 302 (or 303), 310 and 320 plus 18 credits across three clusters; no Honours option is listed",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2910,10 +3001,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "European Studies",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Modern European Studies at UBC Vancouver is an interdisciplinary Bachelor of Arts major administered by the Department of Central, Eastern and Northern European Studies (CENES), combining European languages, history, art, music, literature, philosophy, politics and economics. Students take approved courses across these fields plus 12 credits of a European language other than English, and can go on exchange to universities across Europe; co-op is available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and self-declare the major once they reach second-year standing.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/modern-european-studies/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Modern European Studies",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: self-declare it at second-year standing",
+      "Requirements: 6 lower-level and 30 upper-level credits from the approved course list, plus 12 credits of a European language other than English",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -2926,10 +3030,23 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     field: "Historical Studies",
     duration: "4 years",
     language: "English",
-    tuitionNote: "Information will be added soon.",
-    description: "Program details will be added soon.",
-    officialProgramUrl: "#",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Medieval Studies at UBC Vancouver, listed in the Academic Calendar as the Major in Global Medieval and Early Modern Studies, is an interdisciplinary Bachelor of Arts major on societies from about 500 to 1800 CE across Africa, East Asia, Europe, the Middle East and South and Southeast Asia. Students combine courses from departments such as history, art history, English, Asian studies and music, and co-op is available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and self-declare the major once they reach second-year standing.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/medieval-studies/",
     campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Global Medieval and Early Modern Studies (Medieval Studies)",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: self-declare it at second-year standing; it requires 42 credits, including MDVL 200, courses in three geographic and four disciplinary fields, and MDVL 490 or an approved capstone",
+      "No Honours option is listed; the program is offered as a major or minor",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
   },
 
   {
@@ -3406,36 +3523,62 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
   },
 
   {
-  name: "Asian Language and Culture",
-  slug: "ubc-asian-language-culture",
-  level: "Bachelor",
-  universitySlug: "university-of-british-columbia",
-  universityName: "University of British Columbia",
-  country: "Canada",
-  field: "Languages",
-  duration: "4 years",
-  language: "English",
-  tuitionNote: "Information will be added soon.",
-  description: "Program details will be added soon.",
-  officialProgramUrl: "#",
-  campus: "Vancouver",
-},
+    name: "Asian Language and Culture",
+    slug: "ubc-asian-language-culture",
+    level: "Bachelor",
+    universitySlug: "university-of-british-columbia",
+    universityName: "University of British Columbia",
+    country: "Canada",
+    field: "Languages",
+    duration: "4 years",
+    language: "English",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Asian Language and Culture at UBC Vancouver is a four-year Bachelor of Arts major from the Department of Asian Studies that combines advanced language study with a focus on China, Chinese Literature, Japan, Korea, or South Asia (Hindi-Urdu, Persian, Punjabi or Sanskrit). The 48-credit major mixes upper-level language courses with Asian culture courses and a research-intensive course, and Honours (by department permission) and co-op are available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and self-declare the major after completing 27 credits, with no prerequisite courses.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/asian-language-culture/",
+    campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Asian Language and Culture",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: self-declare it after completing 27 credits; choose an area of focus (China, Chinese Literature, Japan, Korea or South Asia)",
+      "Requirements vary by focus; for example, the China focus needs 24 credits of 300- and 400-level Chinese plus ASIA and Classical Chinese courses, so students usually start the language early",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
+  },
 
-{
-  name: "First Nations and Endangered Languages",
-  slug: "ubc-first-nations-endangered-languages",
-  level: "Bachelor",
-  universitySlug: "university-of-british-columbia",
-  universityName: "University of British Columbia",
-  country: "Canada",
-  field: "Languages",
-  duration: "4 years",
-  language: "English",
-  tuitionNote: "Information will be added soon.",
-  description: "Program details will be added soon.",
-  officialProgramUrl: "#",
-  campus: "Vancouver",
-},
+  {
+    name: "First Nations and Endangered Languages",
+    slug: "ubc-first-nations-endangered-languages",
+    level: "Bachelor",
+    universitySlug: "university-of-british-columbia",
+    universityName: "University of British Columbia",
+    country: "Canada",
+    field: "Languages",
+    duration: "4 years",
+    language: "English",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "First Nations and Endangered Languages (FNEL) at UBC Vancouver is an interdisciplinary Bachelor of Arts major in the Institute for Critical Indigenous Studies on the documentation, conservation and revitalization of endangered languages and Indigenous knowledge systems. Through a partnership with the Musqueam Indian Band, students can take classes in the Musqueam (Coast Salish) language and cultural heritage, held at the Musqueam Indian Reserve, alongside other First Nations language courses and methods courses on language documentation. This is not a direct-entry program: students are admitted to the Bachelor of Arts and self-declare the major once they reach second-year standing.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/first-nations-endangered-languages/",
+    campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in First Nations and Endangered Languages",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: self-declare it at second-year standing",
+      "Requirements: at least 54 credits, including 12 credits of FNEL language courses, FNEL 180, 281 and 282, upper-level FNEL work and 18 credits from an approved course list",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
+  },
 
   {
     name: "Latin American Studies",
@@ -3495,21 +3638,34 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
     ],
   },
 
-{
-  name: "Romance Studies",
-  slug: "ubc-romance-studies",
-  level: "Bachelor",
-  universitySlug: "university-of-british-columbia",
-  universityName: "University of British Columbia",
-  country: "Canada",
-  field: "Languages",
-  duration: "4 years",
-  language: "English",
-  tuitionNote: "Information will be added soon.",
-  description: "Program details will be added soon.",
-  officialProgramUrl: "#",
-  campus: "Vancouver",
-},
+  {
+    name: "Romance Studies",
+    slug: "ubc-romance-studies",
+    level: "Bachelor",
+    universitySlug: "university-of-british-columbia",
+    universityName: "University of British Columbia",
+    country: "Canada",
+    field: "Languages",
+    duration: "4 years",
+    language: "English",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Romance Studies at UBC Vancouver is a four-year Bachelor of Arts major from the Department of French, Hispanic and Italian Studies on the languages, literatures and cultures of the Romance world, including French, Spanish, Italian, Portuguese and Catalan. Students can study more than one Romance language and take core RMST courses plus elective clusters, with Honours, co-op and exchanges in Europe and Latin America available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and enter the major at second-year standing with program approval.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/romance-studies/",
+    campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in Romance Studies",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "The Faculty of Arts lists the major as 'approval required' at second-year standing; students plan it with the FHIS Student Programs Coordinator",
+      "Requirements: 42 credits including RMST 300, 301 and 302, 21 elective credits from at least two clusters, and at least A2 level in one Romance language; Honours needs third-year standing, a B+ average and RMST 300-302",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
+  },
 
   {
     name: "Social Work",
@@ -3694,21 +3850,34 @@ export const universityOfBritishColumbiaPrograms: Program[] = [
 },
 
 
-{
-  name: "Religion",
-  slug: "ubc-religion",
-  level: "Bachelor",
-  universitySlug: "university-of-british-columbia",
-  universityName: "University of British Columbia",
-  country: "Canada",
-  field: "Religious Studies",
-  duration: "4 years",
-  language: "English",
-  tuitionNote: "Information will be added soon.",
-  description: "Program details will be added soon.",
-  officialProgramUrl: "#",
-  campus: "Vancouver",
-},
+  {
+    name: "Religion",
+    slug: "ubc-religion",
+    level: "Bachelor",
+    universitySlug: "university-of-british-columbia",
+    universityName: "University of British Columbia",
+    country: "Canada",
+    field: "Religious Studies",
+    duration: "4 years",
+    language: "English",
+    tuitionNote:
+      "2026/27 first-year tuition: CAD 51,530.40 per year for international students (Arts rate, CAD 1,717.68 per credit x 30 credits) and CAD 6,200.70 for Canadian students (CAD 206.69 per credit x 30 credits). Fees for students starting in 2027/28 have not yet been published. Tuition only; student fees, health insurance and housing are extra.",
+    description:
+      "Religion at UBC Vancouver is an interdisciplinary Bachelor of Arts major offered by the Program in the Study of Religion, covering religions across regions and historical periods through literary, historical, anthropological, psychological and sociological approaches. Students take core RGST courses on theory and method plus courses from departments such as Ancient Mediterranean and Near Eastern Studies and Asian Studies, finishing with an advanced seminar; Honours (by coordinator permission) and co-op are available. This is not a direct-entry program: students are admitted to the Bachelor of Arts and self-declare the major once they reach second-year standing.",
+    officialProgramUrl:
+      "https://you.ubc.ca/programs/religion/",
+    campus: "Vancouver",
+    degree: "Bachelor of Arts (BA), Major in the Study of Religion",
+    intake: "September",
+    applicationDeadline: "January 15, 2027 (international scholars: November 15, 2026)",
+    admissionRequirements: [
+      "No application for the major: self-declare it (self-declared programs open at second-year standing); it requires AMNE or RGST 160, ASIA 110, RGST 200, RGST 300 and RGST 400 plus courses across four areas",
+      "Honours is by permission of the Honours Program Coordinator, needs a 76% program average and includes a 6-credit Honours thesis",
+      "BC high school: English Studies 12 (or English First Peoples 12)",
+      "IB: no specific courses beyond UBC's general admission requirements (Faculty of Arts)",
+      "English language proof, if required, is due February 15, 2027 (see English Language Requirements below)",
+    ],
+  },
 
 
 {

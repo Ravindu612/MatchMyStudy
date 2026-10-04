@@ -2835,4 +2835,421 @@ export const countryQuickInfo: Partial<Record<CountryKey, CountryQuickInfo>> = {
       ],
     },
   },
+  uae: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Each university and branch campus in the UAE sets its own fees. The government portal u.ae does not publish national tuition figures or ranges for international students, so check each institution's fee schedule.",
+      figures: [
+        {
+          label: "Tuition fees (all institutions)",
+          value: "Not centrally published – set by each institution",
+          sourceUrl:
+            "https://u.ae/en/information-and-services/education/higher-education",
+        },
+      ],
+      sources: [
+        {
+          name: "UAE Government portal (u.ae): Higher education",
+          url: "https://u.ae/en/information-and-services/education/higher-education",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "A student residence visa is sponsored either by a parent who lives in the UAE or by an accredited university. The u.ae student visa page lists the documents needed but gives no fixed proof-of-funds amount, and there is no official national living-cost figure.",
+      figures: [
+        {
+          label: "Visa proof of funds",
+          value: "Not centrally published – no fixed amount set",
+          sourceUrl:
+            "https://u.ae/en/information-and-services/visa-and-emirates-id/residence-visas/residence-visa-for-studying-in-the-uae",
+        },
+        {
+          label: "Student residence visa sponsor",
+          value: "A resident parent or the accredited university",
+          sourceUrl:
+            "https://u.ae/en/information-and-services/visa-and-emirates-id/residence-visas/residence-visa-for-studying-in-the-uae",
+        },
+      ],
+      sources: [
+        {
+          name: "UAE Government portal (u.ae): Residence visa for studying in the UAE",
+          url: "https://u.ae/en/information-and-services/visa-and-emirates-id/residence-visas/residence-visa-for-studying-in-the-uae",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Students aged 15 or over who hold a UAE residence visa can take a training placement, or be employed during academic holidays for up to 3 months in a row each time. The employer must get a student training and employment permit from the Ministry of Human Resources and Emiratisation (MOHRE), and training needs a no-objection letter from the institution. MOHRE also issues part-time work permits for people aged 18 or over. There is no student-specific post-study visa. Graduates can apply for the general jobseeker visit visa (60, 90 or 120 days, no sponsor needed) if they meet its rules. You need at least a bachelor's degree and must either be classed in MOHRE skill levels 1 to 3 or have graduated from one of the world's top 500 universities within the last 2 years. A financial guarantee is also required.",
+      figures: [
+        {
+          label: "Students 15+: work during academic holidays",
+          value: "Up to 3 consecutive months each time (MOHRE student permit)",
+          sourceUrl:
+            "https://u.ae/en/information-and-services/jobs/training-and-development/Training-minors",
+        },
+        {
+          label: "Part-time work permit",
+          value: "Available from age 18 (MOHRE permit)",
+          sourceUrl:
+            "https://mohre.gov.ae/en/services/part-time-work-permit-2022",
+        },
+        {
+          label: "Weekly hour cap during term",
+          value: "Not centrally published",
+          sourceUrl:
+            "https://u.ae/en/information-and-services/jobs/training-and-development/Training-minors",
+        },
+        {
+          label: "Post-study: jobseeker visit visa (not student-specific)",
+          value: "60, 90 or 120 days, single entry",
+          sourceUrl:
+            "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/Visit-visa/jobseeker-visit-visa",
+        },
+      ],
+      sources: [
+        {
+          name: "UAE Government portal (u.ae): Training minors",
+          url: "https://u.ae/en/information-and-services/jobs/training-and-development/Training-minors",
+        },
+        {
+          name: "MOHRE: Training and employment permit for students",
+          url: "https://www.mohre.gov.ae/en/services/training-and-work-permit-for-students-2022",
+        },
+        {
+          name: "MOHRE: Part-time work permit",
+          url: "https://mohre.gov.ae/en/services/part-time-work-permit-2022",
+        },
+        {
+          name: "UAE Government portal (u.ae): Jobseeker visit visa",
+          url: "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/Visit-visa/jobseeker-visit-visa",
+        },
+      ],
+    },
+  },
+  qatar: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "The Ministry of Education and Higher Education lists Qatar's public and private higher education institutions, but each one sets its own fees. No national tuition figures for international students are published, so check each institution.",
+      figures: [
+        {
+          label: "Tuition fees (all institutions)",
+          value: "Not centrally published – set by each institution",
+          sourceUrl:
+            "https://www.edu.gov.qa/en/Content/HigherEducationinQatar",
+        },
+      ],
+      sources: [
+        {
+          name: "Ministry of Education and Higher Education: Higher education in Qatar",
+          url: "https://www.edu.gov.qa/en/Content/HigherEducationinQatar",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "There is no national proof-of-funds amount or official living-cost figure. Universities sponsor student residence permits and set their own financial requirements. For example, Qatar University needs a third-party financial sponsor. A sponsor living in Qatar must provide a local bank guarantee of QR 20,000 in the university's favour, and a sponsor abroad must provide 6 months of bank statements.",
+      figures: [
+        {
+          label: "Visa proof of funds (national)",
+          value: "Not centrally published",
+          sourceUrl:
+            "https://www.edu.gov.qa/en/Content/HigherEducationinQatar",
+        },
+        {
+          label: "Example – Qatar University only: bank guarantee from a sponsor living in Qatar",
+          value: "QR 20,000",
+          sourceUrl:
+            "https://www.qu.edu.qa/en-us/students/international-students/students-visa/prospective-students",
+        },
+      ],
+      sources: [
+        {
+          name: "Ministry of Education and Higher Education: Higher education in Qatar",
+          url: "https://www.edu.gov.qa/en/Content/HigherEducationinQatar",
+        },
+        {
+          name: "Qatar University (public university): Apply for student visa",
+          url: "https://www.qu.edu.qa/en-us/students/international-students/students-visa/prospective-students",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "No national weekly hour limit for students is published. Jusour, a government-owned manpower company whose board is chaired by the Minister of Labour, runs the Sahem programme. Through it, legal residents studying at a Qatar-based university can find part-time jobs with one employer. Exchange students from universities abroad are not eligible. Sahem also lets recent graduates of Qatar-based institutions aged 18 to 28 extend their residence permit by 1 year while they look for work. The Ministry of Interior issues these extensions.",
+      figures: [
+        {
+          label: "Weekly hour cap during term",
+          value: "Not centrally published",
+          sourceUrl:
+            "https://www.sharek.gov.qa/en/articles/news/jusour-offers-services-to-expat-students-to-find-jobs-extend-visas/64aa8479599e823c7bb52da6",
+        },
+        {
+          label: "Part-time jobs (Jusour Sahem programme)",
+          value: "One employer; students at Qatar-based institutions",
+          sourceUrl:
+            "https://www.sharek.gov.qa/en/articles/news/jusour-offers-services-to-expat-students-to-find-jobs-extend-visas/64aa8479599e823c7bb52da6",
+        },
+        {
+          label: "Post-study: Sahem graduate residence extension (age 18–28)",
+          value: "1 year to look for work (announced July 2023)",
+          sourceUrl:
+            "https://www.sharek.gov.qa/en/articles/news/jusour-offers-services-to-expat-students-to-find-jobs-extend-visas/64aa8479599e823c7bb52da6",
+        },
+      ],
+      sources: [
+        {
+          name: "Sharek (Qatar Government): Jusour services for expat students, July 2023",
+          url: "https://www.sharek.gov.qa/en/articles/news/jusour-offers-services-to-expat-students-to-find-jobs-extend-visas/64aa8479599e823c7bb52da6",
+        },
+        {
+          name: "Jusour (Qatar Manpower Solutions): Programmes",
+          url: "https://jusour.qa/",
+        },
+      ],
+    },
+  },
+  saudiArabia: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Study in Saudi, the Ministry of Education's platform, offers fully funded, partly funded and self-funded places. Self-funded students pay all tuition and related costs, but no national fee schedule is published. Check fees with each university.",
+      figures: [
+        {
+          label: "Tuition fees (self-funded study)",
+          value: "Not centrally published – set by each university",
+          sourceUrl:
+            "https://studyinsaudi.sa/en/VisaOptions",
+        },
+      ],
+      sources: [
+        {
+          name: "Study in Saudi (Ministry of Education): Visa options and study types",
+          url: "https://studyinsaudi.sa/en/VisaOptions",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "To get an educational visa, you must show you can pay for tuition and living costs, or give a financial guarantee. No minimum amount is published. The long-term educational visa is valid for 1 year and renewed every year.",
+      figures: [
+        {
+          label: "Visa proof of funds",
+          value: "Not centrally published – no fixed amount set",
+          sourceUrl:
+            "https://studyinsaudi.sa/en/Faq",
+        },
+        {
+          label: "Long-term educational visa fee",
+          value: "SAR 800 (visa valid 1 year, renewable)",
+          sourceUrl:
+            "https://my.gov.sa/en/experience/615129/615144",
+        },
+      ],
+      sources: [
+        {
+          name: "Study in Saudi (Ministry of Education): FAQ",
+          url: "https://studyinsaudi.sa/en/Faq",
+        },
+        {
+          name: "Saudi National Portal (my.gov.sa): Educational visa journey",
+          url: "https://my.gov.sa/en/experience/615129/615144",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "The official Study in Saudi pages (English and Arabic) do not state whether educational visa holders may work, how many hours, or whether there is a post-study route. Ask your university for written confirmation before taking any job.",
+      figures: [
+        {
+          label: "Work rights while studying",
+          value: "Not centrally published",
+          sourceUrl:
+            "https://studyinsaudi.sa/en/VisaOptions",
+        },
+        {
+          label: "Post-study work route",
+          value: "Not centrally published",
+          sourceUrl:
+            "https://studyinsaudi.sa/en/VisaOptions",
+        },
+      ],
+      sources: [
+        {
+          name: "Study in Saudi (Ministry of Education): Visa options (English and Arabic)",
+          url: "https://studyinsaudi.sa/en/VisaOptions",
+        },
+        {
+          name: "Study in Saudi (Ministry of Education): FAQ",
+          url: "https://studyinsaudi.sa/en/Faq",
+        },
+      ],
+    },
+  },
+  india: {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "Each institution sets its own fees. The government's Study in India portal and the Ministry of Home Affairs do not publish national tuition figures for international students, so check each institution.",
+      figures: [
+        {
+          label: "Tuition fees (all institutions)",
+          value: "Not centrally published – set by each institution",
+          sourceUrl:
+            "http://studyinindia.gov.in/Onboarding-&-FRRO",
+        },
+      ],
+      sources: [
+        {
+          name: "Study in India (Ministry of Education): Onboarding & FRRO",
+          url: "http://studyinindia.gov.in/Onboarding-&-FRRO",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "Student visa applicants must show sound finances, for example a support letter from a parent or guardian with a bank guarantee. The Ministry of Home Affairs also asks for evidence of funds covering at least 4 months of living costs in India, but it sets no amount. For the e-Student visa, you need a support letter with a bank guarantee or 6 months of bank statements. If you stay more than 180 days, you must register with the FRRO within 14 days of arrival.",
+      figures: [
+        {
+          label: "Visa proof of funds",
+          value: "Funds for at least 4 months – amount not centrally published",
+          sourceUrl:
+            "https://www.mha.gov.in/PDF_Other/OverviewStudentVisa2014.pdf",
+        },
+        {
+          label: "FRRO registration (stays over 180 days)",
+          value: "Within 14 days of arrival",
+          sourceUrl:
+            "https://www.mha.gov.in/sites/default/files/student_visa_faq.pdf",
+        },
+      ],
+      sources: [
+        {
+          name: "Ministry of Home Affairs: Student visa overview (Sep 2014)",
+          url: "https://www.mha.gov.in/PDF_Other/OverviewStudentVisa2014.pdf",
+        },
+        {
+          name: "Ministry of Home Affairs: Student visa FAQ",
+          url: "https://www.mha.gov.in/sites/default/files/student_visa_faq.pdf",
+        },
+        {
+          name: "Indian Visa Online: e-Visa",
+          url: "https://indianvisaonline.gov.in/evisa/",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Under the Ministry of Home Affairs rules, the only purpose of a student visa is full-time study, and no national part-time work allowance is published. The visa can last up to 5 years or the length of the course. The Ministry of Home Affairs' list of visa categories has no post-study work visa. Paid work falls under the separate Employment Visa categories.",
+      figures: [
+        {
+          label: "Work while studying",
+          value: "No part-time allowance published – student visa is for full-time study only",
+          sourceUrl:
+            "https://www.mha.gov.in/PDF_Other/OverviewStudentVisa2014.pdf",
+        },
+        {
+          label: "Student visa length",
+          value: "Up to 5 years or the course length",
+          sourceUrl:
+            "https://www.mha.gov.in/sites/default/files/student_visa_faq.pdf",
+        },
+        {
+          label: "Post-study work visa",
+          value: "None listed (work needs an Employment Visa)",
+          sourceUrl:
+            "https://www.mha.gov.in/sites/default/files/2022-08/AnnexIGeneralpolicy20082020%5B1%5D.pdf",
+        },
+      ],
+      sources: [
+        {
+          name: "Ministry of Home Affairs: Student visa overview (Sep 2014)",
+          url: "https://www.mha.gov.in/PDF_Other/OverviewStudentVisa2014.pdf",
+        },
+        {
+          name: "Ministry of Home Affairs: Visa categories, general policy guidelines (Aug 2020)",
+          url: "https://www.mha.gov.in/sites/default/files/2022-08/AnnexIGeneralpolicy20082020%5B1%5D.pdf",
+        },
+        {
+          name: "Ministry of Home Affairs: Student visa FAQ",
+          url: "https://www.mha.gov.in/sites/default/files/student_visa_faq.pdf",
+        },
+      ],
+    },
+  },
+  "south-africa": {
+    lastChecked: "October 2026",
+    tuitionFees: {
+      summary:
+        "The Department of Home Affairs publishes no national fee schedule for international students. Fees are set by each institution, so check with the university directly.",
+      figures: [
+        {
+          label: "Tuition fees (all institutions)",
+          value: "Not centrally published – set by each university",
+          sourceUrl:
+            "https://www.dha.gov.za/images/PDFs/ImmigrationRegulations2014-Updated2018-compressed.pdf",
+        },
+      ],
+      sources: [
+        {
+          name: "Department of Home Affairs: Immigration Regulations 2014, reg. 12 (study visa)",
+          url: "https://www.dha.gov.za/images/PDFs/ImmigrationRegulations2014-Updated2018-compressed.pdf",
+        },
+      ],
+    },
+    livingCosts: {
+      summary:
+        "The Immigration Regulations require study visa applicants to show they have enough money but set no national amount. South African missions abroad publish their own requirement. For example, the embassy in Copenhagen asks for at least R3,000 a month to cover living costs.",
+      figures: [
+        {
+          label: "Visa proof of funds (national)",
+          value: "Not centrally published in the Regulations",
+          sourceUrl:
+            "https://www.dha.gov.za/images/PDFs/ImmigrationRegulations2014-Updated2018-compressed.pdf",
+        },
+        {
+          label: "Visa proof of funds – South African mission in Copenhagen (Nov 2025)",
+          value: "At least R3,000 per month",
+          sourceUrl:
+            "https://dirco.gov.za/copenhagen/wp-content/uploads/sites/10/2025/11/Study-Visa.pdf",
+        },
+      ],
+      sources: [
+        {
+          name: "Department of Home Affairs: Immigration Regulations 2014, reg. 12",
+          url: "https://www.dha.gov.za/images/PDFs/ImmigrationRegulations2014-Updated2018-compressed.pdf",
+        },
+        {
+          name: "DIRCO – South African Embassy Copenhagen: Study visa requirements (Nov 2025)",
+          url: "https://dirco.gov.za/copenhagen/wp-content/uploads/sites/10/2025/11/Study-Visa.pdf",
+        },
+      ],
+    },
+    studentJobs: {
+      summary:
+        "Study visa holders at a higher education institution or a further education and training (FET) college may work part-time for up to 20 hours a week. The Immigration Regulations have no dedicated post-study visa. Graduates who want to stay and work must apply for a work visa, such as a general work visa or a critical skills work visa, and meet its requirements.",
+      figures: [
+        {
+          label: "During term",
+          value: "Up to 20 hours per week",
+          sourceUrl:
+            "https://www.dha.gov.za/images/PDFs/ImmigrationRegulations2014-Updated2018-compressed.pdf",
+        },
+        {
+          label: "Post-study work visa",
+          value: "Not centrally published – no dedicated route; standard work visas apply",
+          sourceUrl:
+            "https://www.dha.gov.za/images/PDFs/ImmigrationRegulations2014-Updated2018-compressed.pdf",
+        },
+      ],
+      sources: [
+        {
+          name: "Department of Home Affairs: Immigration Regulations 2014, regs. 12 and 18",
+          url: "https://www.dha.gov.za/images/PDFs/ImmigrationRegulations2014-Updated2018-compressed.pdf",
+        },
+      ],
+    },
+  },
 };

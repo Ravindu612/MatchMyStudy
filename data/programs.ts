@@ -7,6 +7,7 @@ import { universityCollegeDublinPrograms } from "./programs/ireland/universityCo
 import { trinityCollegeDublinPrograms } from "./programs/ireland/trinityCollegeDublinPrograms";
 import { universityCollegeCorkPrograms } from "./programs/ireland/universityCollegeCorkPrograms";
 import { universityOfGalwayPrograms } from "./programs/ireland/universityOfGalwayPrograms";
+import { kingsCollegeLondonPrograms } from "./programs/unitedKingdom/kingsCollegeLondonPrograms";
 import { dublinCityUniversityPrograms } from "./programs/ireland/dublinCityUniversityPrograms";
 import { universityCollegeLondonPrograms } from "./programs/unitedKingdom/universityCollegeLondonPrograms";
 export type ProgramLevel =
@@ -59,6 +60,7 @@ export const programs: Program[] = [
   ...trinityCollegeDublinPrograms,
   ...universityCollegeCorkPrograms,
   ...universityOfGalwayPrograms,
+  ...kingsCollegeLondonPrograms,
   ...dublinCityUniversityPrograms,
   ...universityCollegeLondonPrograms,
   {

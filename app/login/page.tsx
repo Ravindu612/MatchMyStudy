@@ -1,13 +1,87 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
+import { signInWithGoogle } from "@/lib/googleAuth";
+import {
+  OAUTH_NEXT_COOKIE,
+  SIGNUP_ROLE_COOKIE,
+  parseSignupRole,
+  safeNextPath,
+  writeBrowserCookie,
+} from "@/lib/signupRole";
 
-type Role = "student" | "consultant";
+function GoogleMark() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="h-5 w-5"
+    >
+      <path
+        fill="#4285F4"
+        d="M23.49 12.27c0-.79-.07-1.54-.2-2.27H12v4.3h6.47a5.53 5.53 0 0 1-2.4 3.63v3.01h3.88c2.27-2.09 3.54-5.17 3.54-8.67Z"
+      />
+      <path
+        fill="#34A853"
+        d="M12 24c3.24 0 5.96-1.07 7.95-2.91l-3.88-3.01c-1.08.72-2.46 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.96H1.26v3.11A12 12 0 0 0 12 24Z"
+      />
+      <path
+        fill="#FBBC05"
+        d="M5.27 14.27A7.2 7.2 0 0 1 4.89 12c0-.79.14-1.55.38-2.27V6.62H1.26a12 12 0 0 0 0 10.76l4.01-3.11Z"
+      />
+      <path
+        fill="#EA4335"
+        d="M12 4.77c1.76 0 3.34.61 4.59 1.8l3.44-3.44C17.95 1.14 15.24 0 12 0 7.31 0 3.25 2.69 1.26 6.62l4.01 3.11C6.22 6.88 8.87 4.77 12 4.77Z"
+      />
+    </svg>
+  );
+}
+
+function OrDivider() {
+  return (
+    <div className="relative">
+      <div className="absolute inset-0 flex items-center">
+        <div className="w-full border-t border-slate-200" />
+      </div>
+      <div className="relative flex justify-center text-sm">
+        <span className="bg-white px-3 text-slate-500">
+          or
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function LoginFallback() {
+  return (
+    <main className="min-h-screen bg-slate-50 py-20">
+      <div className="mx-auto max-w-md px-6">
+        <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl">
+          <h1 className="text-3xl font-bold text-slate-900">
+            Login
+          </h1>
+          <p className="mt-2 text-slate-600">
+            Sign in to your MatchMyStudy account.
+          </p>
+        </div>
+      </div>
+    </main>
+  );
+}
 
 export default function LoginPage() {
+  return (
+    <Suspense fallback={<LoginFallback />}>
+      <LoginForm />
+    </Suspense>
+  );
+}
+
+function LoginForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   const [mode, setMode] = useState<"login" | "register">("login");
 
@@ -18,39 +92,30 @@ export default function LoginPage() {
   "student" | "consultant" | ""
 >("");
 
-  const [redirectPath, setRedirectPath] =
-    useState("/consultants");
+  const redirectParam = searchParams.get("redirect");
+  const redirectPath = safeNextPath(
+    redirectParam && redirectParam.startsWith("/")
+      ? redirectParam
+      : null
+  );
+  const googleError =
+    searchParams.get("error") === "google"
+      ? "Google sign-in was cancelled or could not be completed. Please try again."
+      : "";
 
   const [loading, setLoading] = useState(false);
+  const [googleLoading, setGoogleLoading] = useState(false);
   const [error, setError] = useState("");
+  const [hideGoogleError, setHideGoogleError] = useState(false);
   const [success, setSuccess] = useState("");
-
-  /*
-   * Read the page the user originally wanted to visit.
-   *
-   * Example:
-   *
-   * /login?redirect=/consultants
-   *
-   * After successful login:
-   *
-   * /consultants
-   */
-  useEffect(() => {
-    const params = new URLSearchParams(
-      window.location.search
-    );
-
-    const redirect = params.get("redirect");
-
-    if (redirect && redirect.startsWith("/")) {
-      setRedirectPath(redirect);
-    }
-  }, []);
+  const busy = loading || googleLoading;
+  const visibleError =
+    error || (hideGoogleError ? "" : googleError);
 
   function clearMessages() {
     setError("");
     setSuccess("");
+    setHideGoogleError(true);
   }
 
   async function handleLogin(
@@ -87,11 +152,13 @@ export default function LoginPage() {
     setLoading(true);
     clearMessages();
 
-    if (!role) {
-  setError("Please select your role.");
-  setLoading(false);
-  return;
-}
+    const signupRole = parseSignupRole(role);
+
+    if (!signupRole) {
+      setError("Please select your role.");
+      setLoading(false);
+      return;
+    }
 
     /*
      * Check passwords
@@ -126,7 +193,7 @@ export default function LoginPage() {
 
   options: {
     data: {
-      role: role,
+      role: signupRole,
     },
 
     emailRedirectTo: `${window.location.origin}/login`,
@@ -189,6 +256,47 @@ export default function LoginPage() {
     router.push(redirectPath);
   }
 
+  async function handleGoogleSignIn() {
+    setGoogleLoading(true);
+    clearMessages();
+
+    const nextPath = safeNextPath(redirectPath);
+    const signupRole =
+      mode === "register" ? parseSignupRole(role) : null;
+
+    if (mode === "register" && !signupRole) {
+      setError("Please select your role.");
+      setGoogleLoading(false);
+      return;
+    }
+
+    writeBrowserCookie(
+      OAUTH_NEXT_COOKIE,
+      nextPath,
+      600
+    );
+
+    if (signupRole) {
+      writeBrowserCookie(
+        SIGNUP_ROLE_COOKIE,
+        signupRole,
+        600
+      );
+    } else {
+      writeBrowserCookie(SIGNUP_ROLE_COOKIE, "", 0);
+    }
+
+    const { error: oauthError } = await signInWithGoogle(
+      `${window.location.origin}/auth/callback`
+    );
+
+    if (oauthError) {
+      console.error("Google sign-in error:", oauthError);
+      setError(oauthError.message);
+      setGoogleLoading(false);
+    }
+  }
+
   return (
     <main className="min-h-screen bg-slate-50 py-20">
 
@@ -228,7 +336,7 @@ export default function LoginPage() {
 
           {/* Error */}
 
-          {error && (
+          {visibleError && (
   <div
     className="mt-6 rounded-xl border px-4 py-3 text-base font-medium"
     style={{
@@ -237,7 +345,7 @@ export default function LoginPage() {
       color: "#991b1b",
     }}
   >
-    {error}
+    {visibleError}
   </div>
 )}
 
@@ -249,6 +357,20 @@ export default function LoginPage() {
               onSubmit={handleLogin}
               className="mt-8 space-y-5"
             >
+
+              <button
+                type="button"
+                onClick={handleGoogleSignIn}
+                disabled={busy}
+                className="flex w-full items-center justify-center gap-3 rounded-xl border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-800 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                <GoogleMark />
+                {googleLoading
+                  ? "Redirecting to Google..."
+                  : "Sign in with Google"}
+              </button>
+
+              <OrDivider />
 
               {/* Email */}
 
@@ -296,7 +418,7 @@ export default function LoginPage() {
 
               <button
                 type="submit"
-                disabled={loading}
+                disabled={busy}
                 className="w-full rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {loading
@@ -308,7 +430,7 @@ export default function LoginPage() {
 
               <p className="text-center text-xl text-slate-600">
 
-                Don't have an account?{" "}
+                Don&apos;t have an account?{" "}
 
                 <button
                   type="button"
@@ -388,7 +510,25 @@ export default function LoginPage() {
   </option>
 </select>
 
+                <p className="mt-2 text-sm text-slate-500">
+                  Google sign-up uses the role selected above.
+                </p>
+
               </div>
+
+              <button
+                type="button"
+                onClick={handleGoogleSignIn}
+                disabled={busy}
+                className="flex w-full items-center justify-center gap-3 rounded-xl border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-800 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                <GoogleMark />
+                {googleLoading
+                  ? "Redirecting to Google..."
+                  : "Sign up with Google"}
+              </button>
+
+              <OrDivider />
 
               {/* Password */}
 
@@ -440,7 +580,7 @@ export default function LoginPage() {
 
               <button
                 type="submit"
-                disabled={loading}
+                disabled={busy}
                 className="w-full rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {loading

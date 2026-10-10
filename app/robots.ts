@@ -14,6 +14,7 @@ export default function robots(): MetadataRoute.Robots {
         "/consultants/manage-pro/",
         "/consultants/upgrade/",
         "/consultants/success",
+        "/settings/",
       ],
     },
     sitemap: "https://www.matchmystudy.com/sitemap.xml",

@@ -196,10 +196,18 @@ export default function Navbar() {
               {userEmail}
             </p>
 
+            <Link
+              href="/settings/profile"
+              onClick={() => setUserMenuOpen(false)}
+              className="mt-4 block w-full rounded-xl border border-slate-200 px-4 py-2 text-center text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+            >
+              Profile settings
+            </Link>
+
             <button
               type="button"
               onClick={handleLogout}
-              className="mt-4 w-full rounded-xl bg-blue-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-600"
+              className="mt-3 w-full rounded-xl bg-blue-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-600"
             >
               Logout
             </button>
@@ -269,13 +277,22 @@ export default function Navbar() {
       </span>
     </div>
 
-    <button
-      type="button"
-      onClick={handleLogout}
-      className="rounded-lg bg-blue-500 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-600"
-    >
-      Logout
-    </button>
+    <div className="flex items-center gap-2">
+      <Link
+        href="/settings/profile"
+        onClick={() => setOpen(false)}
+        className="rounded-lg border border-slate-600 px-3 py-2 text-sm font-semibold text-white hover:bg-slate-800"
+      >
+        Profile
+      </Link>
+      <button
+        type="button"
+        onClick={handleLogout}
+        className="rounded-lg bg-blue-500 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-600"
+      >
+        Logout
+      </button>
+    </div>
   </div>
 ) : (
   <Link

@@ -35,25 +35,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/universities`,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/study-matcher`,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/program-matcher`,
+      url: `${baseUrl}/study-online`,
       changeFrequency: "monthly",
-      priority: 0.8,
+      priority: 0.7,
     },
-    {
-      url: `${baseUrl}/university-matcher`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+    // /universities (no index page yet) and the "Coming soon"
+    // /program-matcher and /university-matcher pages are left
+    // out until they have real content.
     {
       url: `${baseUrl}/blog`,
       changeFrequency: "weekly",
@@ -138,7 +131,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const programUrls: MetadataRoute.Sitemap =
     programs.map((program) => ({
-      url: `${baseUrl}/programs/${program.slug}`,
+      // Percent-encode so accented slugs (e.g. "iarchéime") are valid URLs.
+      url: `${baseUrl}/programs/${encodeURIComponent(program.slug)}`,
       changeFrequency: "monthly",
       priority: 0.7,
     }));

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { programs } from "@/data/programs";
+import { findProgramBySlug, getProgramTitle } from "@/lib/programSeo";
 import { ubcEnglishRequirements } from "@/data/ubcEnglishRequirements";
 import { englishRequirements } from "@/data/englishRequirements";
 import { notFound } from "next/navigation";
@@ -20,7 +20,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
 
-  const program = programs.find((item) => item.slug === slug);
+  const program = findProgramBySlug(slug);
 
   if (!program) {
     notFound();
@@ -39,8 +39,8 @@ export async function generateMetadata({
   // Same title/description/canonical as before, plus Open Graph
   // tags via the shared helper (canonical resolves against metadataBase).
   return pageMeta(
-    `/programs/${program.slug}`,
-    `${program.name} — ${program.universityName} | MatchMyStudy`,
+    `/programs/${encodeURIComponent(program.slug)}`,
+    getProgramTitle(program),
     description
   );
 }
@@ -52,7 +52,7 @@ export default async function ProgramDetailPage({
 }) {
   const { slug } = await params;
 
-  const program = programs.find((item) => item.slug === slug);
+  const program = findProgramBySlug(slug);
 
   if (!program) {
     notFound();

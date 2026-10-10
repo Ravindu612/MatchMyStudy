@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
+import { DEFAULT_OPEN_GRAPH, DEFAULT_TWITTER } from "@/lib/seo-meta";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -20,6 +21,10 @@ export const metadata: Metadata = {
   title: "Study Abroad: Find Universities, Programs & Consultants | MatchMyStudy",
   description:
     "Find the right country, university, study program, and education consultant for your study abroad journey with MatchMyStudy.",
+  // Defaults for pages that don't set their own share tags.
+  // (No canonical here: every page would inherit it.)
+  openGraph: DEFAULT_OPEN_GRAPH,
+  twitter: DEFAULT_TWITTER,
   other: {
     'impact-site-verification':
       'd2209eba-7be8-49d2-bb97-0eba8c811381',

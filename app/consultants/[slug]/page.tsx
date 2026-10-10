@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import ConsultantProfileClient from "@/components/consultant/ConsultantProfileClient";
-import { consultants } from "@/data/consultants";
-import { getConsultantBySlug } from "@/lib/consultantService";
+import { notFound } from "next/navigation";
+import { getPublicConsultant } from "@/lib/consultantService";
+import {
+  DEFAULT_OPEN_GRAPH,
+  DEFAULT_TWITTER,
+  truncateDescription,
+} from "@/lib/seo-meta";
 import type { Consultant } from "@/types/consultant";
 
 type Props = {
@@ -15,28 +20,59 @@ export async function generateMetadata({
 }: Props): Promise<Metadata> {
   const { slug } = await params;
 
-  // First check database consultants
-  const dbConsultant = await getConsultantBySlug(slug);
-
-  // If not found in database, check static consultants
-  const consultant =
-    dbConsultant ??
-    consultants.find((item) => item.slug === slug);
+  const consultant = await getPublicConsultant(slug);
 
   if (!consultant) {
     return {
-      title: "Consultant Not Found | MatchMyStudy",
-      description:
-        "The education consultant profile you are looking for could not be found on MatchMyStudy.",
+      title: "Consultant Profile | MatchMyStudy",
+      robots: { index: false },
     };
   }
 
+  const path = `/consultants/${consultant.slug}`;
+  const title = `${consultant.name} — Study Abroad Consultant | MatchMyStudy`;
+  const description = truncateDescription(
+    consultant.description ||
+      `Learn about ${consultant.name}, a study abroad education consultant offering services for international students.`
+  );
+
   return {
-    title: `${consultant.name} — Study Abroad Consultant | MatchMyStudy`,
-    description:
-      consultant.description ||
-      `Learn about ${consultant.name}, a study abroad education consultant offering services for international students.`,
+    title,
+    description,
+    alternates: { canonical: path },
+    openGraph: {
+      ...DEFAULT_OPEN_GRAPH,
+      title,
+      description,
+      url: path,
+      ...(consultant.logo && {
+        images: [{ url: consultant.logo }, ...DEFAULT_OPEN_GRAPH.images],
+      }),
+    },
+    twitter: { ...DEFAULT_TWITTER, title, description },
   };
+}
+
+/*
+ * True when a consultants row with this slug exists at all,
+ * including ones hidden from the public by database rules
+ * (e.g. an unapproved profile only its owner can see).
+ * Returns null when we can't tell (no service key).
+ */
+async function consultantRowExists(slug: string): Promise<boolean | null> {
+  try {
+    const { supabaseAdmin } = await import("@/lib/supabaseAdmin");
+    const { data, error } = await supabaseAdmin
+      .from("consultants")
+      .select("id")
+      .eq("slug", slug)
+      .maybeSingle();
+
+    if (error) return null;
+    return !!data;
+  } catch {
+    return null;
+  }
 }
 
 function createConsultantJsonLd(consultant: Consultant) {
@@ -110,15 +146,19 @@ export default async function ConsultantProfilePage({
 }: Props) {
   const { slug } = await params;
 
-  // First check database consultants
-  const dbConsultant = await getConsultantBySlug(slug);
-
-  // If not found in database, check static consultants
-  const consultant =
-    dbConsultant ??
-    consultants.find((item) => item.slug === slug);
+  const consultant = await getPublicConsultant(slug);
 
   if (!consultant) {
+    // Profiles the public can't see (e.g. unapproved, visible
+    // only to their owner) still render client-side, where the
+    // owner's login is available. Only slugs that don't exist
+    // anywhere get a real 404.
+    const exists = await consultantRowExists(slug);
+
+    if (exists === false) {
+      notFound();
+    }
+
     return (
       <main className="min-h-screen bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-700 pb-24">
         <ConsultantProfileClient slug={slug} />
@@ -127,7 +167,7 @@ export default async function ConsultantProfilePage({
   }
 
   const consultantJsonLd = createConsultantJsonLd(
-    consultant as Consultant
+    consultant
   );
 
   return (
@@ -140,7 +180,10 @@ export default async function ConsultantProfilePage({
       />
 
       <main className="min-h-screen bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-700 pb-24">
-        <ConsultantProfileClient slug={slug} />
+        <ConsultantProfileClient
+          slug={slug}
+          initialConsultant={consultant}
+        />
       </main>
     </>
   );

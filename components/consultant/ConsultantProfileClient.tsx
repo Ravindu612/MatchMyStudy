@@ -20,21 +20,32 @@ import ClaimProfile from "./ClaimProfile";
 import UpgradePro from "./UpgradePro";
 import { isConsultantProActive } from "@/lib/proStatus";
 
-import { getConsultantBySlug } from "@/lib/consultantService";
+import {
+  getConsultantBySlug,
+  mapDbConsultant,
+} from "@/lib/consultantService";
 import { getCurrentUserProfile } from "@/lib/auth";
 import { supabase } from "@/lib/supabase";
 
 type Props = {
   slug: string;
+  /*
+   * Profile already fetched on the server, so the first
+   * HTML (what Google reads) contains the full profile
+   * instead of "Loading consultant...". The client still
+   * refreshes it below.
+   */
+  initialConsultant?: Consultant | null;
 };
 
 export default function ConsultantProfileClient({
   slug,
+  initialConsultant = null,
 }: Props) {
   const [consultant, setConsultant] =
-    useState<Consultant | null>(null);
+    useState<Consultant | null>(initialConsultant);
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!initialConsultant);
   const [userProfile, setUserProfile] =
   useState<{
     id: string;
@@ -53,76 +64,7 @@ const [checkingPermissions, setCheckingPermissions] =
 
       if (dbConsultant) {
         
-        setConsultant({
-            id: dbConsultant.id,
-            slug: dbConsultant.slug,
-            name: dbConsultant.name,
-
-            createdByConsultant:
-              dbConsultant.created_by_consultant ?? true,
-
-            isPro:
-              dbConsultant.is_pro ?? false,
-              ownerId:
-  dbConsultant.owner_id ?? null,
-            
-            proPlan:
-  dbConsultant.pro_plan ?? undefined,
-
-proStartedAt:
-  dbConsultant.pro_started_at ?? undefined,
-
-proExpiresAt:
-  dbConsultant.pro_expires_at ?? undefined,
-
-            claimed:
-              dbConsultant.claimed ?? false,
-
-            logo: dbConsultant.logo,
-            banner: dbConsultant.banner,
-
-            verified: dbConsultant.verified,
-
-            rating: dbConsultant.rating,
-            reviews: dbConsultant.reviews,
-
-            city: dbConsultant.city,
-            country: dbConsultant.country,
-            homeCountry:
-              dbConsultant.home_country,
-
-            destinationCountries:
-              dbConsultant.destination_countries ?? [],
-
-            services:
-              dbConsultant.services ?? [],
-
-            partnerUniversities:
-              dbConsultant.partner_universities ?? [],
-
-            phone: dbConsultant.phone,
-            email: dbConsultant.email,
-            website: dbConsultant.website,
-            address: dbConsultant.address,
-
-            contactPerson:
-              dbConsultant.contact_person,
-
-            maps: dbConsultant.maps,
-            facebook: dbConsultant.facebook,
-            instagram: dbConsultant.instagram,
-            linkedin: dbConsultant.linkedin,
-            youtube: dbConsultant.youtube,
-
-            established:
-              dbConsultant.established,
-
-            description:
-              dbConsultant.description,
-
-            gallery:
-              dbConsultant.gallery ?? [],
-          });
+        setConsultant(mapDbConsultant(dbConsultant));
 
           setLoading(false);
           return;

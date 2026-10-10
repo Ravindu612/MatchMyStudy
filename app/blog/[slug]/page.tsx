@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { STATIC_META } from "@/lib/seo-meta";
@@ -87,11 +88,7 @@ export async function generateMetadata({
   const meta = STATIC_META[`/blog/${slug}`];
 
   if (!meta) {
-    return {
-      title: "Article Not Found | MatchMyStudy",
-      description:
-        "The article you are looking for could not be found on MatchMyStudy.",
-    };
+    notFound();
   }
 
   return meta;
@@ -106,26 +103,7 @@ export default async function BlogPostPage({
   const post = blogPosts[slug as keyof typeof blogPosts];
 
   if (!post) {
-    return (
-      <main className="min-h-screen bg-slate-50 text-slate-900 px-6 py-16">
-        <section className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold mb-4">
-            Article Not Found
-          </h1>
-
-          <p className="text-slate-600 mb-8">
-            The article you are looking for does not exist.
-          </p>
-
-          <Link
-            href="/blog"
-            className="text-blue-600 font-semibold"
-          >
-            ← Back to Blog
-          </Link>
-        </section>
-      </main>
-    );
+    notFound();
   }
 
   return (

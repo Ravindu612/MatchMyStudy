@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import Image from "next/image";
@@ -69,8 +69,12 @@ export default function Navbar() {
   const userInitial =
   userEmail?.charAt(0).toUpperCase() ?? "";
 
-  function handleConsultantsClick() {
+  function handleConsultantsClick(
+    event: MouseEvent<HTMLAnchorElement>
+  ) {
   setOpen(false);
+  // Real link for crawlers; logged-out visitors still go via login.
+  event.preventDefault();
 
   if (loggedIn) {
     router.push("/consultants");
@@ -158,13 +162,13 @@ export default function Navbar() {
   </li>
 
   <li>
-  <button
-    type="button"
+  <Link
+    href="/consultants"
     onClick={handleConsultantsClick}
     className="hover:text-blue-400 transition"
   >
     Consultants
-  </button>
+  </Link>
 </li>
 
   <li>
@@ -244,13 +248,13 @@ export default function Navbar() {
             Countries
           </Link>
 
-          <button
-  type="button"
+          <Link
+  href="/consultants"
   onClick={handleConsultantsClick}
   className="text-left text-white text-lg font-medium hover:text-blue-400 transition"
 >
   Consultants
-</button>
+</Link>
 
           {/* Mobile Login / Logout */}
           {userEmail ? (

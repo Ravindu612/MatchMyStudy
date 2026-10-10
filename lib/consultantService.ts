@@ -1,4 +1,5 @@
 import { supabase } from "./supabase";
+import type { Consultant } from "@/types/consultant";
 import { consultants } from "@/data/consultants";
 import { getCurrentUser } from "@/lib/auth";
 
@@ -549,4 +550,78 @@ export async function cancelConsultantPro(
   }
 
   return result;
+}
+/*
+ * Convert a Supabase `consultants` row into the Consultant
+ * shape the profile components use. Shared by the server
+ * page (first render) and the client component (refresh).
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function mapDbConsultant(dbConsultant: any): Consultant {
+  return {
+    id: dbConsultant.id,
+    slug: dbConsultant.slug,
+    name: dbConsultant.name,
+    createdByConsultant: dbConsultant.created_by_consultant ?? true,
+    isPro: dbConsultant.is_pro ?? false,
+    ownerId: dbConsultant.owner_id ?? null,
+    proPlan: dbConsultant.pro_plan ?? undefined,
+    proStartedAt: dbConsultant.pro_started_at ?? undefined,
+    proExpiresAt: dbConsultant.pro_expires_at ?? undefined,
+    claimed: dbConsultant.claimed ?? false,
+    logo: dbConsultant.logo,
+    banner: dbConsultant.banner,
+    verified: dbConsultant.verified,
+    rating: dbConsultant.rating,
+    reviews: dbConsultant.reviews,
+    city: dbConsultant.city,
+    country: dbConsultant.country,
+    homeCountry: dbConsultant.home_country,
+    destinationCountries: dbConsultant.destination_countries ?? [],
+    services: dbConsultant.services ?? [],
+    partnerUniversities: dbConsultant.partner_universities ?? [],
+    phone: dbConsultant.phone,
+    email: dbConsultant.email,
+    website: dbConsultant.website,
+    address: dbConsultant.address,
+    contactPerson: dbConsultant.contact_person,
+    maps: dbConsultant.maps,
+    facebook: dbConsultant.facebook,
+    instagram: dbConsultant.instagram,
+    linkedin: dbConsultant.linkedin,
+    youtube: dbConsultant.youtube,
+    established: dbConsultant.established,
+    description: dbConsultant.description,
+    gallery: dbConsultant.gallery ?? [],
+  };
+}
+
+/*
+ * Server-side: the publicly visible profile for a slug
+ * (database first, then the original static profile unless
+ * it has been claimed). Mirrors ConsultantProfileClient.
+ */
+export async function getPublicConsultant(
+  slug: string
+): Promise<Consultant | null> {
+  const dbConsultant = await getConsultantBySlug(slug);
+
+  if (dbConsultant) {
+    return mapDbConsultant(dbConsultant);
+  }
+
+  const manualConsultant = consultants.find((c) => c.slug === slug);
+
+  if (!manualConsultant) {
+    return null;
+  }
+
+  const { data: approvedClaim } = await supabase
+    .from("consultant_claims")
+    .select("id")
+    .eq("consultant_id", manualConsultant.id)
+    .eq("status", "approved")
+    .maybeSingle();
+
+  return approvedClaim ? null : manualConsultant;
 }

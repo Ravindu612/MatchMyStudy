@@ -18,7 +18,7 @@ import { programs } from "@/data/programs";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { universities } from "@/data/universities";
-import { getCountryPath } from "@/lib/seo-meta";
+import { getCountryPath, pageMeta, truncateDescription } from "@/lib/seo-meta";
 
 const allUniversities = Object.values(universities).flat();
 
@@ -120,16 +120,15 @@ export async function generateMetadata({
     notFound();
   }
 
-  return {
-    title: `${university.name} — Programs, Tuition & Study Information | MatchMyStudy`,
-    description:
+  return pageMeta(
+    `/universities/${university.slug}`,
+    `${university.name} — Programs, Tuition & Study Information | MatchMyStudy`,
+    truncateDescription(
       university.descriptionShort ||
-      university.description ||
-      `Explore ${university.name}, including study programs, tuition information, scholarships, rankings, and international student information.`,
-    alternates: {
-      canonical: `/universities/${university.slug}`,
-    },
-  };
+        university.description ||
+        `Explore ${university.name}, including study programs, tuition information, scholarships, rankings, and international student information.`
+    )
+  );
 }
 
 export default async function UniversityDetailPage({

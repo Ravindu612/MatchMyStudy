@@ -5,6 +5,28 @@ export const SITE_URL = "https://www.matchmystudy.com";
 export const SITE_NAME = "MatchMyStudy";
 
 /*
+ * Default 1200x630 share image (public/og-default.png),
+ * used by WhatsApp, Facebook, LinkedIn, X, etc.
+ */
+export const DEFAULT_OG_IMAGE = {
+  url: "/og-default.png",
+  width: 1200,
+  height: 630,
+  alt: "MatchMyStudy — Find universities, programs & study abroad consultants",
+};
+
+export const DEFAULT_OPEN_GRAPH = {
+  siteName: SITE_NAME,
+  type: "website" as const,
+  images: [DEFAULT_OG_IMAGE],
+};
+
+export const DEFAULT_TWITTER = {
+  card: "summary_large_image" as const,
+  images: [DEFAULT_OG_IMAGE.url],
+};
+
+/*
  * ------------------------------------------------
  * Shared page metadata helper
  * ------------------------------------------------
@@ -24,12 +46,18 @@ export function pageMeta(
     alternates: {
       canonical: path,
     },
+    // Child openGraph objects replace the parent's, so the
+    // share image must be repeated here, not only in the layout.
     openGraph: {
+      ...DEFAULT_OPEN_GRAPH,
       title,
       description,
       url: path,
-      siteName: SITE_NAME,
-      type: "website",
+    },
+    twitter: {
+      ...DEFAULT_TWITTER,
+      title,
+      description,
     },
   };
 }
@@ -148,6 +176,12 @@ export function getCountryPath(countryName: string) {
  */
 
 export const STATIC_META: Record<string, Metadata> = {
+  "/": pageMeta(
+    "/",
+    "Study Abroad: Find Universities, Programs & Consultants | MatchMyStudy",
+    "Find the right country, university, study program, and education consultant for your study abroad journey with MatchMyStudy."
+  ),
+
   "/consultants": pageMeta(
     "/consultants",
     "Study Abroad Consultants: Find Trusted Education Agents | MatchMyStudy",

@@ -1,8 +1,10 @@
+import { STATIC_META } from "@/lib/seo-meta";
 import GlobalSearch from "@/components/GlobalSearch";
 import Link from "next/link";
 import { countries } from "@/data/countries";
 import FindConsultantsButton from "@/components/consultant/FindConsultantsButton";
 
+export const metadata = STATIC_META["/"];
 
 export default function Home() {
   return (

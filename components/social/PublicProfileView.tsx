@@ -1,5 +1,9 @@
 import EditProfileLink from "@/components/social/EditProfileLink";
 import ProfileHeader from "@/components/social/ProfileHeader";
+import ProfileSocial, {
+  ProfileFollowButtons,
+  ProfileFollowStats,
+} from "@/components/social/ProfileSocial";
 import { countryPageHref } from "@/lib/social/profileOptions";
 import type { PublicProfile } from "@/types/social";
 import Link from "next/link";
@@ -12,8 +16,9 @@ export default function PublicProfileView({ profile }: Props) {
   const targets = profile.target_countries ?? [];
 
   return (
-    <main className="min-h-screen bg-slate-50 px-4 py-8 sm:px-6 sm:py-12">
-      <div className="mx-auto flex max-w-3xl flex-col gap-6">
+    <ProfileSocial profileId={profile.id}>
+      <main className="min-h-screen bg-slate-50 px-4 py-8 sm:px-6 sm:py-12">
+        <div className="mx-auto flex max-w-3xl flex-col gap-6">
         <ProfileHeader
           displayName={profile.display_name}
           handle={profile.handle}
@@ -25,7 +30,13 @@ export default function PublicProfileView({ profile }: Props) {
           isUpgraded={profile.is_upgraded}
           consultantSlug={profile.consultant_slug}
           joinedAt={profile.created_at}
-          actions={<EditProfileLink profileId={profile.id} />}
+          actions={
+            <div className="flex flex-wrap items-center gap-2">
+              <EditProfileLink profileId={profile.id} />
+              <ProfileFollowButtons profileId={profile.id} displayName={profile.display_name} />
+            </div>
+          }
+          meta={<ProfileFollowStats handle={profile.handle} />}
         />
 
         <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
@@ -62,6 +73,7 @@ export default function PublicProfileView({ profile }: Props) {
         </section>
       </div>
     </main>
+    </ProfileSocial>
   );
 }
 

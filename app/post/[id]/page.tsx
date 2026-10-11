@@ -1,6 +1,7 @@
 import PostPage from "@/components/social/PostPage";
-import { getShareablePost, isPostId } from "@/lib/social/loadPosts";
+import { getShareablePost, getVisiblePost, isPostId, type FeedPost } from "@/lib/social/loadPosts";
 import { describePostTags } from "@/lib/social/postTags";
+import { createSupabaseServerClient } from "@/lib/supabaseServer";
 import {
   DEFAULT_OPEN_GRAPH,
   DEFAULT_TWITTER,
@@ -25,7 +26,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const post = await getShareablePost(id);
+  const viewerPost = await postForSignedInViewer(id);
+
+  if (viewerPost.checked && !viewerPost.post) {
+    return {
+      title: "Post | MatchMyStudy",
+      robots: { index: false, follow: false },
+    };
+  }
+
+  const post =
+    viewerPost.checked && viewerPost.post?.visibility === "public"
+      ? viewerPost.post
+      : viewerPost.checked
+        ? null
+        : await getShareablePost(id);
 
   if (!post) {
     return {
@@ -81,7 +96,8 @@ export default async function ShareablePostPage({ params }: Props) {
     notFound();
   }
 
-  const post = await getShareablePost(id);
+  const viewerPost = await postForSignedInViewer(id);
+  const post = viewerPost.checked ? viewerPost.post : await getShareablePost(id);
   const labels = post
     ? describePostTags(
         post.tags.map((tag) => ({
@@ -92,4 +108,37 @@ export default async function ShareablePostPage({ params }: Props) {
     : [];
 
   return <PostPage id={id} initialPost={post} initialLabels={labels} />;
+}
+
+/**
+ * Signed-in requests use the cookie session so block and follow rules hide
+ * posts before HTML is sent. Logged-out requests keep the public anon read.
+ */
+async function postForSignedInViewer(
+  id: string
+): Promise<{ checked: boolean; post: FeedPost | null }> {
+  try {
+    const server = await createSupabaseServerClient();
+    const {
+      data: { user },
+    } = await server.auth.getUser();
+
+    if (!user) {
+      return { checked: false, post: null };
+    }
+
+    const visible = await getVisiblePost(id, server);
+
+    if (visible.error) {
+      return { checked: false, post: null };
+    }
+
+    return { checked: true, post: visible.post };
+  } catch (error) {
+    console.error(
+      "Load viewer post error:",
+      error instanceof Error ? error.message : "unknown"
+    );
+    return { checked: false, post: null };
+  }
 }

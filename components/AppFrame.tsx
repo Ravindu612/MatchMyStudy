@@ -13,7 +13,11 @@ export default function AppFrame({
   children: React.ReactNode;
 }) {
   const pathname = usePathname() ?? "";
-  const social = pathname === "/feed" || pathname.startsWith("/post/");
+  const social =
+    pathname === "/feed" ||
+    pathname.startsWith("/post/") ||
+    pathname === "/network" ||
+    pathname.startsWith("/network/");
 
   if (social) {
     return <div className="flex min-h-full flex-1 flex-col">{children}</div>;

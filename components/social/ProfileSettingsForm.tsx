@@ -66,10 +66,10 @@ export default function ProfileSettingsForm() {
       try {
         const {
           data: { user },
-        } = await supabase.auth.getUser();
+        } = await withTimeout(supabase.auth.getUser(), 8000);
 
         if (!user) {
-          router.replace("/login?redirect=/settings/profile");
+          window.location.assign("/login?redirect=/settings/profile");
           return;
         }
 
@@ -105,7 +105,7 @@ export default function ProfileSettingsForm() {
     return () => {
       active = false;
     };
-  }, [router]);
+  }, []);
 
   const avatarPreviewRef = useRef<string | null>(null);
   const coverPreviewRef = useRef<string | null>(null);
@@ -253,7 +253,7 @@ export default function ProfileSettingsForm() {
     try {
       const {
         data: { user },
-      } = await supabase.auth.getUser();
+      } = await withTimeout(supabase.auth.getUser(), 8000);
 
       if (!user) {
         router.replace("/login?redirect=/settings/profile");
@@ -633,6 +633,25 @@ function ImageField({
       ) : null}
     </div>
   );
+}
+
+function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => {
+      reject(new Error("Could not reach the account service. Please try again."));
+    }, ms);
+
+    promise.then(
+      (value) => {
+        clearTimeout(timer);
+        resolve(value);
+      },
+      (error: unknown) => {
+        clearTimeout(timer);
+        reject(error);
+      }
+    );
+  });
 }
 
 function toDraft(profile: OwnProfile): Draft {

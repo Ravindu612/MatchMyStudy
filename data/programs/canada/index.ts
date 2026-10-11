@@ -20,6 +20,7 @@ import { universityOfManitobaPrograms } from "./universityOfManitobaPrograms";
 import { westernUniversityPrograms } from "./westernUniversityPrograms";
 import { mcgillUniversityPrograms } from "./mcgillUniversityPrograms";
 import { simonFraserUniversityPrograms } from "./simonFraserUniversityPrograms";
+import { saitPrograms } from "./saitPrograms";
 
 export const canadaPrograms = [
   ...universityOfTorontoPrograms,
@@ -44,5 +45,6 @@ export const canadaPrograms = [
   ...westernUniversityPrograms,
   ...mcgillUniversityPrograms,
   ...simonFraserUniversityPrograms,
+  ...saitPrograms,
 ];
 

@@ -5,11 +5,11 @@ import { supabase } from "@/lib/supabase";
 import { useRouter, useSearchParams } from "next/navigation";
 import { signInWithGoogle } from "@/lib/googleAuth";
 import {
-  OAUTH_NEXT_COOKIE,
-  SIGNUP_ROLE_COOKIE,
+  clearOAuthHandoff,
   parseSignupRole,
+  rememberOAuthHandoff,
+  resolveOAuthNextPath,
   safeNextPath,
-  writeBrowserCookie,
 } from "@/lib/signupRole";
 
 function GoogleMark() {
@@ -260,7 +260,11 @@ function LoginForm() {
     setGoogleLoading(true);
     clearMessages();
 
-    const nextPath = safeNextPath(redirectPath);
+    const nextPath = resolveOAuthNextPath(
+      searchParams.get("redirect"),
+      document.referrer,
+      window.location.origin
+    );
     const signupRole =
       mode === "register" ? parseSignupRole(role) : null;
 
@@ -270,27 +274,14 @@ function LoginForm() {
       return;
     }
 
-    writeBrowserCookie(
-      OAUTH_NEXT_COOKIE,
-      nextPath,
-      600
-    );
-
-    if (signupRole) {
-      writeBrowserCookie(
-        SIGNUP_ROLE_COOKIE,
-        signupRole,
-        600
-      );
-    } else {
-      writeBrowserCookie(SIGNUP_ROLE_COOKIE, "", 0);
-    }
+    rememberOAuthHandoff(nextPath, signupRole);
 
     const { error: oauthError } = await signInWithGoogle(
       `${window.location.origin}/auth/callback`
     );
 
     if (oauthError) {
+      clearOAuthHandoff();
       console.error("Google sign-in error:", oauthError);
       setError(oauthError.message);
       setGoogleLoading(false);

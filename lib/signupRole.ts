@@ -1,12 +1,7 @@
 export const SIGNUP_ROLE_COOKIE = "mms_signup_role";
 export const OAUTH_NEXT_COOKIE = "mms_oauth_next";
-
-/**
- * Cookie name shared by the browser client that starts Google sign-in and the
- * server client that exchanges the auth code. Kept separate from the app's
- * localStorage session key so the two clients do not share a refresh token.
- */
-export const GOOGLE_OAUTH_COOKIE_NAME = "sb-google-oauth";
+export const SIGNUP_ROLE_STORAGE = "mms_signup_role";
+export const OAUTH_NEXT_STORAGE = "mms_oauth_next";
 
 export type SignupRole = "student" | "consultant";
 
@@ -118,4 +113,118 @@ export function writeBrowserCookie(
     window.location.protocol === "https:" ? "; Secure" : "";
 
   document.cookie = `${name}=${encodeURIComponent(value)}; Path=/; Max-Age=${maxAgeSeconds}; SameSite=Lax${secure}`;
+}
+
+export function readBrowserCookie(name: string): string | null {
+  const prefix = `${name}=`;
+  const parts = document.cookie ? document.cookie.split("; ") : [];
+
+  for (const part of parts) {
+    if (part.startsWith(prefix)) {
+      try {
+        return decodeURIComponent(part.slice(prefix.length));
+      } catch {
+        return null;
+      }
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Where to send someone after Google sign-in. An internal `redirect` query
+ * wins. Otherwise use the same-origin page they came from. There is no
+ * dashboard route; /consultants is the signed-in home.
+ */
+export function resolveOAuthNextPath(
+  redirectParam: string | null | undefined,
+  referrer: string | null | undefined,
+  origin: string
+): string {
+  if (redirectParam) {
+    return safeNextPath(redirectParam);
+  }
+
+  if (!referrer || !origin) {
+    return "/consultants";
+  }
+
+  try {
+    const url = new URL(referrer);
+
+    if (url.origin !== origin) {
+      return "/consultants";
+    }
+
+    if (
+      url.pathname === "/login" ||
+      url.pathname.startsWith("/auth/")
+    ) {
+      return "/consultants";
+    }
+
+    return safeNextPath(`${url.pathname}${url.search}`);
+  } catch {
+    return "/consultants";
+  }
+}
+
+function browserStorage() {
+  try {
+    return window.sessionStorage;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Remember the post-login path and signup role across the Google redirect.
+ * sessionStorage stays on this tab; the cookies cover a browser that drops
+ * sessionStorage. redirectTo itself stays an exact allow-listed URL.
+ */
+export function rememberOAuthHandoff(
+  nextPath: string,
+  role: SignupRole | null
+) {
+  const storage = browserStorage();
+
+  writeBrowserCookie(OAUTH_NEXT_COOKIE, nextPath, 600);
+  storage?.setItem(OAUTH_NEXT_STORAGE, nextPath);
+
+  if (role) {
+    writeBrowserCookie(SIGNUP_ROLE_COOKIE, role, 600);
+    storage?.setItem(SIGNUP_ROLE_STORAGE, role);
+    return;
+  }
+
+  writeBrowserCookie(SIGNUP_ROLE_COOKIE, "", 0);
+  storage?.removeItem(SIGNUP_ROLE_STORAGE);
+}
+
+export function readOAuthHandoff(): {
+  nextPath: string;
+  role: SignupRole | null;
+} {
+  const storage = browserStorage();
+  const storedNext = storage?.getItem(OAUTH_NEXT_STORAGE);
+  const storedRole = storage?.getItem(SIGNUP_ROLE_STORAGE);
+
+  return {
+    nextPath: safeNextPath(
+      storedNext || readBrowserCookie(OAUTH_NEXT_COOKIE)
+    ),
+    role: parseSignupRole(
+      storedRole || readBrowserCookie(SIGNUP_ROLE_COOKIE)
+    ),
+  };
+}
+
+export function clearOAuthHandoff() {
+  const storage = browserStorage();
+
+  storage?.removeItem(OAUTH_NEXT_STORAGE);
+  storage?.removeItem(SIGNUP_ROLE_STORAGE);
+  writeBrowserCookie(OAUTH_NEXT_COOKIE, "", 0);
+  writeBrowserCookie(SIGNUP_ROLE_COOKIE, "", 0);
 }

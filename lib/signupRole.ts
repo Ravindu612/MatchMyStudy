@@ -133,6 +133,26 @@ export function readBrowserCookie(name: string): string | null {
 }
 
 /**
+ * Login link for the current page. Client-side navigation does not update
+ * document.referrer, so the header passes the page along as `redirect`.
+ */
+export function loginPathFor(
+  pathname: string | null | undefined
+): string {
+  if (
+    !pathname ||
+    pathname === "/login" ||
+    pathname.startsWith("/auth/") ||
+    !pathname.startsWith("/") ||
+    pathname.startsWith("//")
+  ) {
+    return "/login";
+  }
+
+  return `/login?redirect=${encodeURIComponent(pathname)}`;
+}
+
+/**
  * Where to send someone after Google sign-in. An internal `redirect` query
  * wins. Otherwise use the same-origin page they came from. There is no
  * dashboard route; /consultants is the signed-in home.

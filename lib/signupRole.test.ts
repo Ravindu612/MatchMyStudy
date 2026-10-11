@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { appAuthStorageKey } from "./googleAuth";
 import {
+  loginPathFor,
   parseSignupRole,
   resolveOAuthNextPath,
   safeNextPath,
@@ -35,6 +36,18 @@ test("appAuthStorageKey matches the supabase-js localStorage key", () => {
     ),
     "sb-jxmtbvzdhayfxjgetyzq-auth-token"
   );
+});
+
+test("loginPathFor carries the current page and skips auth pages", () => {
+  assert.equal(loginPathFor("/about"), "/login?redirect=%2Fabout");
+  assert.equal(
+    loginPathFor("/consultants"),
+    "/login?redirect=%2Fconsultants"
+  );
+  assert.equal(loginPathFor("/login"), "/login");
+  assert.equal(loginPathFor("/auth/callback"), "/login");
+  assert.equal(loginPathFor("//evil.example"), "/login");
+  assert.equal(loginPathFor(null), "/login");
 });
 
 test("resolveOAuthNextPath uses the previous page when redirect is absent", () => {

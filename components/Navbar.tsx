@@ -2,12 +2,15 @@
 
 import Link from "next/link";
 import { useEffect, useState, type MouseEvent } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
+import { loginPathFor } from "@/lib/signupRole";
 import Image from "next/image";
 
 export default function Navbar() {
   const router = useRouter();
+  const pathname = usePathname();
+  const loginHref = loginPathFor(pathname);
   const [open, setOpen] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const [userEmail, setUserEmail] = useState<string | null>(null);
@@ -208,7 +211,7 @@ export default function Navbar() {
       </div>
     ) : (
       <Link
-        href="/login"
+        href={loginHref}
         className="bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded-lg text-sm font-semibold text-white"
       >
         Login
@@ -279,7 +282,7 @@ export default function Navbar() {
   </div>
 ) : (
   <Link
-    href="/login"
+    href={loginHref}
     onClick={() => setOpen(false)}
     className="bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded-lg text-sm font-semibold text-white"
   >

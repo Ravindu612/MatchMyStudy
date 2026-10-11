@@ -52,9 +52,14 @@ function PostBody({
         return;
       }
 
-      if (visible) {
-        setPost(visible);
-        const described = await fetchTagLabels(visible.tags);
+      if (visible.error) {
+        setChecked(true);
+        return;
+      }
+
+      if (visible.post) {
+        setPost(visible.post);
+        const described = await fetchTagLabels(visible.post.tags);
 
         if (!cancelled && described.length > 0) {
           setLabels((current) => {
@@ -67,7 +72,7 @@ function PostBody({
             return merged;
           });
         }
-      } else if (!initialPost) {
+      } else {
         setPost(null);
       }
 
@@ -112,16 +117,21 @@ function PostBody({
         labels={labels}
         viewerId={viewer.id}
         heading="h1"
+        commentsInitiallyOpen
         onChanged={async () => {
           const next = await getVisiblePost(id);
 
-          if (!next) {
+          if (next.error) {
+            return;
+          }
+
+          if (!next.post) {
             router.push("/feed");
             return;
           }
 
-          setPost(next);
-          const described = await fetchTagLabels(next.tags);
+          setPost(next.post);
+          const described = await fetchTagLabels(next.post.tags);
           setLabels((current) => {
             const merged = new Map(current);
 

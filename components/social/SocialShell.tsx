@@ -76,8 +76,8 @@ export default function SocialShell({ children }: { children: ReactNode }) {
     accountType: null,
   });
   const [chatsOpen, setChatsOpen] = useState(false);
-  const [networkOpen, setNetworkOpen] = useState(false);
   const feedActive = pathname === "/feed" || pathname.startsWith("/post/");
+  const networkActive = pathname === "/network" || pathname.startsWith("/network/");
   const profileHref =
     viewer.status === "ready" && viewer.handle
       ? `/u/${encodeURIComponent(viewer.handle)}`
@@ -183,13 +183,17 @@ export default function SocialShell({ children }: { children: ReactNode }) {
               >
                 Feed
               </Link>
-              <button
-                type="button"
-                onClick={() => setNetworkOpen(true)}
-                className="text-slate-300 hover:text-white"
+              <Link
+                href="/network"
+                className={
+                  networkActive
+                    ? "text-white underline decoration-blue-400 decoration-2 underline-offset-[14px]"
+                    : "text-slate-300 hover:text-white"
+                }
+                aria-current={networkActive ? "page" : undefined}
               >
                 Network
-              </button>
+              </Link>
               <Link href={profileHref} className="text-slate-300 hover:text-white">
                 My Profile
               </Link>
@@ -233,14 +237,16 @@ export default function SocialShell({ children }: { children: ReactNode }) {
                 <Newspaper className="h-5 w-5" aria-hidden="true" />
                 Feed
               </Link>
-              <button
-                type="button"
-                onClick={() => setNetworkOpen(true)}
-                className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm font-medium text-slate-700 hover:bg-slate-50"
+              <Link
+                href="/network"
+                aria-current={networkActive ? "page" : undefined}
+                className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold ${
+                  networkActive ? "bg-blue-50 text-blue-700" : "text-slate-700 hover:bg-slate-50"
+                }`}
               >
-                <Users className="h-5 w-5 text-slate-500" aria-hidden="true" />
+                <Users className={`h-5 w-5 ${networkActive ? "" : "text-slate-500"}`} aria-hidden="true" />
                 Network
-              </button>
+              </Link>
             </nav>
           </aside>
 
@@ -267,14 +273,15 @@ export default function SocialShell({ children }: { children: ReactNode }) {
               </Link>
             </li>
             <li>
-              <button
-                type="button"
-                onClick={() => setNetworkOpen(true)}
-                className="flex w-full flex-col items-center gap-1 py-2 text-[11px] font-semibold text-slate-500"
+              <Link
+                href="/network"
+                className={`flex flex-col items-center gap-1 py-2 text-[11px] font-semibold ${
+                  networkActive ? "text-blue-600" : "text-slate-500"
+                }`}
               >
                 <Users className="h-5 w-5" aria-hidden="true" />
                 Network
-              </button>
+              </Link>
             </li>
             <li>
               <Link
@@ -331,29 +338,6 @@ export default function SocialShell({ children }: { children: ReactNode }) {
           </div>
         ) : null}
 
-        {networkOpen ? (
-          <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center">
-            <button
-              type="button"
-              className="absolute inset-0 bg-slate-900/40"
-              aria-label="Close network"
-              onClick={() => setNetworkOpen(false)}
-            />
-            <div className="relative m-4 w-full max-w-sm rounded-2xl bg-white p-6 shadow-xl">
-              <h2 className="text-lg font-bold text-slate-900">Network</h2>
-              <p className="mt-2 text-sm leading-6 text-slate-600">
-                Follow suggestions will show up here. The feed is the place to post for now.
-              </p>
-              <button
-                type="button"
-                onClick={() => setNetworkOpen(false)}
-                className="mt-4 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        ) : null}
       </div>
     </ViewerContext.Provider>
   );

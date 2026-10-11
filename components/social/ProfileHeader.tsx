@@ -20,6 +20,7 @@ type Props = {
   consultantSlug?: string | null;
   joinedAt?: string | null;
   actions?: ReactNode;
+  meta?: ReactNode;
 };
 
 export default function ProfileHeader({
@@ -34,6 +35,7 @@ export default function ProfileHeader({
   consultantSlug,
   joinedAt,
   actions,
+  meta,
 }: Props) {
   const cover = displayImageUrl(coverUrl);
   const avatar = displayImageUrl(avatarUrl);
@@ -109,6 +111,8 @@ export default function ProfileHeader({
         {headline ? (
           <p className="mt-4 text-lg text-slate-700">{headline}</p>
         ) : null}
+
+        {meta}
 
         {joined ? (
           <p className="mt-3 text-sm text-slate-500">Joined {joined}</p>

@@ -2,6 +2,11 @@ import { cache } from "react";
 import { supabase } from "@/lib/supabase";
 import { safeImageUrl } from "@/lib/social/avatarPath";
 import {
+  loadPostEngagement,
+  type CommentPreview,
+  type SocialReader,
+} from "@/lib/social/engagement";
+import {
   isOwnPostMediaPath,
   POST_MEDIA_BUCKET,
 } from "@/lib/social/postValidation";
@@ -45,6 +50,10 @@ export type FeedPost = {
   author: FeedAuthor | null;
   media: FeedMedia[];
   tags: FeedTag[];
+  likeCount: number;
+  commentCount: number;
+  likedByMe: boolean;
+  latestComment: CommentPreview | null;
 };
 
 export function isPostId(value: string): boolean {
@@ -64,12 +73,13 @@ export function publicUrlForPostMedia(storagePath: string): string | null {
 }
 
 export async function listFeedPosts(
-  offset = 0
+  offset = 0,
+  reader: SocialReader = supabase
 ): Promise<
   { ok: true; posts: FeedPost[]; hasMore: boolean } | { ok: false; message: string }
 > {
   const start = Math.max(0, offset);
-  const { data, error } = await supabase
+  const { data, error } = await reader
     .from("posts")
     .select(
       "id, author_id, body, visibility, status, created_at, edited_at, deleted_at"
@@ -86,7 +96,7 @@ export async function listFeedPosts(
 
   const rows = Array.isArray(data) ? data : [];
   const hasMore = rows.length > FEED_PAGE_SIZE;
-  const posts = await attachPostDetails(rows.slice(0, FEED_PAGE_SIZE));
+  const posts = await attachPostDetails(rows.slice(0, FEED_PAGE_SIZE), reader);
 
   return { ok: true, posts, hasMore };
 }
@@ -95,12 +105,15 @@ export async function listFeedPosts(
  * A post the signed-in browser session is allowed to see, including
  * followers-only posts. Deleted and moderated posts stay out of the UI.
  */
-export async function getVisiblePost(id: string): Promise<FeedPost | null> {
+export async function getVisiblePost(
+  id: string,
+  reader: SocialReader = supabase
+): Promise<{ post: FeedPost | null; error: boolean }> {
   if (!isPostId(id)) {
-    return null;
+    return { post: null, error: false };
   }
 
-  const { data, error } = await supabase
+  const { data, error } = await reader
     .from("posts")
     .select(
       "id, author_id, body, visibility, status, created_at, edited_at, deleted_at"
@@ -110,13 +123,17 @@ export async function getVisiblePost(id: string): Promise<FeedPost | null> {
     .eq("status", "active")
     .maybeSingle();
 
-  if (error || !data) {
-    return null;
+  if (error) {
+    return { post: null, error: true };
   }
 
-  const [post] = await attachPostDetails([data]);
+  if (!data) {
+    return { post: null, error: false };
+  }
 
-  return post ?? null;
+  const [post] = await attachPostDetails([data], reader);
+
+  return { post: post ?? null, error: false };
 }
 
 /**
@@ -147,7 +164,7 @@ export const getShareablePost = cache(async function getShareablePost(
       return null;
     }
 
-    const [post] = await attachPostDetails([data]);
+    const [post] = await attachPostDetails([data], supabase);
 
     if (!post || post.visibility !== "public") {
       return null;
@@ -163,7 +180,10 @@ export const getShareablePost = cache(async function getShareablePost(
   }
 });
 
-async function attachPostDetails(rows: unknown[]): Promise<FeedPost[]> {
+async function attachPostDetails(
+  rows: unknown[],
+  reader: SocialReader
+): Promise<FeedPost[]> {
   const posts = rows.map(normalizePost).filter((post): post is FeedPost => post !== null);
 
   if (posts.length === 0) {
@@ -173,20 +193,21 @@ async function attachPostDetails(rows: unknown[]): Promise<FeedPost[]> {
   const ids = posts.map((post) => post.id);
   const authorIds = [...new Set(posts.map((post) => post.authorId))];
 
-  const [mediaResult, tagResult, authorResult] = await Promise.all([
-    supabase
+  const [mediaResult, tagResult, authorResult, engagement] = await Promise.all([
+    reader
       .from("post_media")
       .select("id, post_id, storage_path, width, height, position, media_type")
       .in("post_id", ids)
       .order("position", { ascending: true }),
-    supabase
+    reader
       .from("post_tags")
       .select("post_id, target_type, target_slug")
       .in("post_id", ids),
-    supabase
+    reader
       .from("public_profiles")
       .select("id, handle, display_name, account_type, avatar_url, is_verified")
       .in("id", authorIds),
+    loadPostEngagement(ids, reader),
   ]);
 
   const mediaByPost = new Map<string, FeedMedia[]>();
@@ -227,14 +248,22 @@ async function attachPostDetails(rows: unknown[]): Promise<FeedPost[]> {
     }
   }
 
-  return posts.map((post) => ({
-    ...post,
-    author: authors.get(post.authorId) ?? null,
-    media: (mediaByPost.get(post.id) ?? []).sort(
-      (left, right) => left.position - right.position
-    ),
-    tags: tagsByPost.get(post.id) ?? [],
-  }));
+  return posts.map((post) => {
+    const stats = engagement.get(post.id);
+
+    return {
+      ...post,
+      author: authors.get(post.authorId) ?? null,
+      media: (mediaByPost.get(post.id) ?? []).sort(
+        (left, right) => left.position - right.position
+      ),
+      tags: tagsByPost.get(post.id) ?? [],
+      likeCount: stats?.likeCount ?? 0,
+      commentCount: stats?.commentCount ?? 0,
+      likedByMe: stats?.likedByMe ?? false,
+      latestComment: stats?.latestComment ?? null,
+    };
+  });
 }
 
 function normalizePost(value: unknown): FeedPost | null {
@@ -266,6 +295,10 @@ function normalizePost(value: unknown): FeedPost | null {
     author: null,
     media: [],
     tags: [],
+    likeCount: 0,
+    commentCount: 0,
+    likedByMe: false,
+    latestComment: null,
   };
 }
 

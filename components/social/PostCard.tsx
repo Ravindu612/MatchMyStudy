@@ -1,19 +1,30 @@
 "use client";
 
+import CommentThread from "@/components/social/CommentThread";
 import PostEditor from "@/components/social/PostEditor";
 import {
   accountTypeBadgeClass,
   accountTypeLabel,
 } from "@/lib/social/accountType";
+import { commentCountLabel } from "@/lib/social/commentValidation";
+import {
+  likePost,
+  unlikePost,
+  type CommentPreview,
+  type PostComment,
+} from "@/lib/social/engagement";
 import { displayInitials, formatPostTime } from "@/lib/social/formatPostTime";
 import type { FeedPost } from "@/lib/social/loadPosts";
 import { softDeletePost, updatePost } from "@/lib/social/postActions";
 import { messageForPostError } from "@/lib/social/postValidation";
 import type { ResolvedTag } from "@/lib/social/postTags";
+import { messageForSocialError } from "@/lib/social/socialErrors";
 import { safeImageUrl } from "@/lib/social/avatarPath";
 import { tagLabelKey } from "@/lib/social/tagClient";
-import { BadgeCheck, Globe, Pencil, Share2, Trash2, Users } from "lucide-react";
+import { loginPathFor } from "@/lib/signupRole";
+import { BadgeCheck, Globe, MessageCircle, Pencil, Share2, ThumbsUp, Trash2, Users } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 type Props = {
@@ -21,6 +32,7 @@ type Props = {
   labels: Map<string, ResolvedTag>;
   viewerId: string | null;
   heading?: "h1" | "h2";
+  commentsInitiallyOpen?: boolean;
   onChanged: () => void;
   onDeleted: () => void;
 };
@@ -30,19 +42,99 @@ export default function PostCard({
   labels,
   viewerId,
   heading = "h2",
+  commentsInitiallyOpen = false,
   onChanged,
   onDeleted,
 }: Props) {
+  const pathname = usePathname();
   const [editing, setEditing] = useState(false);
   const [confirmingDelete, setConfirmingDelete] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const engagementKey = [
+    post.id,
+    post.likeCount,
+    post.likedByMe ? "1" : "0",
+    post.commentCount,
+    post.latestComment?.id ?? "",
+    post.latestComment?.body ?? "",
+    post.latestComment?.authorName ?? "",
+  ].join(":");
+  const [syncedKey, setSyncedKey] = useState(engagementKey);
+  const [liked, setLiked] = useState(post.likedByMe);
+  const [likeCount, setLikeCount] = useState(post.likeCount);
+  const [commentCount, setCommentCount] = useState(post.commentCount);
+  const [preview, setPreview] = useState<CommentPreview | null>(post.latestComment);
+  const [commentsOpen, setCommentsOpen] = useState(commentsInitiallyOpen);
+  const [likePending, setLikePending] = useState(false);
+
+  if (syncedKey !== engagementKey) {
+    setSyncedKey(engagementKey);
+    setLiked(post.likedByMe);
+    setLikeCount(post.likeCount);
+    setCommentCount(post.commentCount);
+    setPreview(post.latestComment);
+  }
+
   const author = post.author;
   const name = author?.displayName ?? "Member";
   const avatar = safeImageUrl(author?.avatarUrl);
   const mine = viewerId !== null && viewerId === post.authorId;
   const Heading = heading;
+
+  async function toggleLike() {
+    if (!viewerId) {
+      window.location.href = loginPathFor(pathname);
+      return;
+    }
+
+    const nextLiked = !liked;
+    setLiked(nextLiked);
+    setLikeCount((count) => Math.max(0, count + (nextLiked ? 1 : -1)));
+    setLikePending(true);
+    setError(null);
+
+    try {
+      if (nextLiked) {
+        await likePost(post.id);
+      } else {
+        await unlikePost(post.id);
+      }
+    } catch (likeError) {
+      setLiked(!nextLiked);
+      setLikeCount((count) => Math.max(0, count + (nextLiked ? -1 : 1)));
+      setError(messageForSocialError(likeError, "Couldn't update this like."));
+    } finally {
+      setLikePending(false);
+    }
+  }
+
+  function applyComments(comments: PostComment[]) {
+    setCommentCount(comments.length);
+    const latest = comments.reduce<PostComment | null>((current, comment) => {
+      if (!current || comment.createdAt > current.createdAt) {
+        return comment;
+      }
+
+      return current;
+    }, null);
+    setPreview(
+      latest
+        ? {
+            id: latest.id,
+            postId: latest.postId,
+            authorId: latest.authorId,
+            body: latest.body,
+            createdAt: latest.createdAt,
+            updatedAt: latest.updatedAt,
+            authorName: latest.authorName,
+            authorHandle: latest.authorHandle,
+            authorAvatarUrl: latest.authorAvatarUrl,
+          }
+        : null
+    );
+  }
 
   async function share() {
     const url = `${window.location.origin}/post/${post.id}`;
@@ -249,7 +341,42 @@ export default function PostCard({
         </p>
       ) : null}
 
-      <footer className="mt-4 flex flex-wrap items-center gap-2 border-t border-slate-100 pt-3">
+      <div className="mt-4 flex items-center justify-between text-sm text-slate-500">
+        <span className="inline-flex items-center gap-1.5">
+          <ThumbsUp className="h-4 w-4 text-amber-500" aria-hidden="true" />
+          {likeCount.toLocaleString("en-US")}
+        </span>
+        <button
+          type="button"
+          onClick={() => setCommentsOpen((open) => !open)}
+          className="hover:underline"
+        >
+          {commentCountLabel(commentCount)}
+        </button>
+      </div>
+
+      <footer className="mt-2 flex flex-wrap items-center gap-1 border-t border-slate-100 pt-2">
+        <button
+          type="button"
+          onClick={() => void toggleLike()}
+          disabled={likePending}
+          aria-pressed={liked}
+          className={`inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-50 disabled:opacity-60 ${
+            liked ? "text-blue-700" : "text-slate-600"
+          }`}
+        >
+          <ThumbsUp className={`h-4 w-4 ${liked ? "fill-current" : ""}`} aria-hidden="true" />
+          Like
+        </button>
+        <button
+          type="button"
+          onClick={() => setCommentsOpen((open) => !open)}
+          aria-expanded={commentsOpen}
+          className="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50"
+        >
+          <MessageCircle className="h-4 w-4" aria-hidden="true" />
+          Comment
+        </button>
         <button
           type="button"
           onClick={share}
@@ -304,6 +431,15 @@ export default function PostCard({
           </>
         ) : null}
       </footer>
+
+      {!commentsOpen && preview ? (
+        <p className="mt-3 line-clamp-2 rounded-xl bg-slate-50 px-3 py-2 text-sm text-slate-700">
+          {preview.body.replace(/\s+/g, " ").trim()}
+          <span className="text-slate-500"> - {preview.authorName}</span>
+        </p>
+      ) : null}
+
+      {commentsOpen ? <CommentThread postId={post.id} onUpdated={applyComments} /> : null}
     </article>
   );
 }

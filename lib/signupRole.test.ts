@@ -1,7 +1,9 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { appAuthStorageKey } from "./googleAuth";
 import {
   parseSignupRole,
+  resolveOAuthNextPath,
   safeNextPath,
   shouldApplySignupRole,
 } from "./signupRole";
@@ -24,6 +26,65 @@ test("safeNextPath keeps internal paths only", () => {
   assert.equal(safeNextPath("https://evil.example"), "/consultants");
   assert.equal(safeNextPath("//evil.example"), "/consultants");
   assert.equal(safeNextPath(null), "/consultants");
+});
+
+test("appAuthStorageKey matches the supabase-js localStorage key", () => {
+  assert.equal(
+    appAuthStorageKey(
+      "https://jxmtbvzdhayfxjgetyzq.supabase.co"
+    ),
+    "sb-jxmtbvzdhayfxjgetyzq-auth-token"
+  );
+});
+
+test("resolveOAuthNextPath uses the previous page when redirect is absent", () => {
+  const origin = "https://www.matchmystudy.com";
+
+  assert.equal(
+    resolveOAuthNextPath(
+      "/about",
+      `${origin}/login`,
+      origin
+    ),
+    "/about"
+  );
+  assert.equal(
+    resolveOAuthNextPath(
+      null,
+      `${origin}/countries?x=1`,
+      origin
+    ),
+    "/countries?x=1"
+  );
+  assert.equal(
+    resolveOAuthNextPath(null, `${origin}/login`, origin),
+    "/consultants"
+  );
+  assert.equal(
+    resolveOAuthNextPath(
+      null,
+      `${origin}/auth/callback`,
+      origin
+    ),
+    "/consultants"
+  );
+  assert.equal(
+    resolveOAuthNextPath(
+      null,
+      "https://evil.example/phish",
+      origin
+    ),
+    "/consultants"
+  );
+  assert.equal(
+    resolveOAuthNextPath(
+      "https://evil.example",
+      `${origin}/about`,
+      origin
+    ),
+    "/consultants"
+  );
+  assert.equal(resolveOAuthNextPath(null, null, origin), "/consultants");
 });
 
 test("shouldApplySignupRole ignores existing and non-new accounts", () => {

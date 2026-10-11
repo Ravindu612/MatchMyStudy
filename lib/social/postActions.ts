@@ -23,24 +23,22 @@ export type PostDraft = {
 export async function createPost(draft: PostDraft): Promise<{ id: string }> {
   const prepared = await prepareDraft(draft);
   const userId = await requireUserId();
-  const { data, error } = await supabase
-    .from("posts")
-    .insert({
-      author_id: userId,
-      body: prepared.body,
-      visibility: prepared.visibility,
-      status: "active",
-    })
-    .select("id")
-    .single();
+  // Generate the id here. Chaining `.select("id")` sends INSERT ... RETURNING,
+  // and the posts SELECT policy used to reject that even when the insert
+  // check passed. See supabase/migrations/20261011180000_posts_select_on_insert.sql.
+  const postId = crypto.randomUUID();
+  const { error } = await supabase.from("posts").insert({
+    id: postId,
+    author_id: userId,
+    body: prepared.body,
+    visibility: prepared.visibility,
+    status: "active",
+  });
 
-  if (error || !data?.id) {
-    throw new Error(
-      messageForPostError(error, "Couldn't publish this post.")
-    );
+  if (error) {
+    throw new Error(messageForPostError(error, "Couldn't publish this post."));
   }
 
-  const postId = String(data.id);
   const uploaded: string[] = [];
 
   try {

@@ -151,17 +151,17 @@ async function applyGoogleSignupRole(
     return;
   }
 
-  if (
-    !process.env.SUPABASE_SERVICE_ROLE_KEY ||
-    !process.env.NEXT_PUBLIC_SUPABASE_URL
-  ) {
+  const { getSupabaseAdmin } = await import(
+    "@/lib/supabaseAdmin"
+  );
+  const supabaseAdmin = getSupabaseAdmin();
+
+  if (!supabaseAdmin) {
     console.error(
       "SUPABASE_SERVICE_ROLE_KEY is required to apply a Google signup role."
     );
     return;
   }
-
-  const { supabaseAdmin } = await import("@/lib/supabaseAdmin");
 
   const accountType =
     role === "consultant" ? "consultant" : "student";

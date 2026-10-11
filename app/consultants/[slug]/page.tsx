@@ -61,7 +61,11 @@ export async function generateMetadata({
  */
 async function consultantRowExists(slug: string): Promise<boolean | null> {
   try {
-    const { supabaseAdmin } = await import("@/lib/supabaseAdmin");
+    const { getSupabaseAdmin } = await import("@/lib/supabaseAdmin");
+    const supabaseAdmin = getSupabaseAdmin();
+
+    if (!supabaseAdmin) return null;
+
     const { data, error } = await supabaseAdmin
       .from("consultants")
       .select("id")

@@ -1,5 +1,4 @@
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import AppFrame from "@/components/AppFrame";
 import type { Metadata } from "next";
 import { DEFAULT_OPEN_GRAPH, DEFAULT_TWITTER } from "@/lib/seo-meta";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -42,12 +41,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Navbar />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
-                <Script
+        <AppFrame>{children}</AppFrame>
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-VE9WKS9YNG"
           strategy="afterInteractive"
         />

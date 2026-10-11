@@ -178,6 +178,10 @@ export default function Navbar() {
     <Link href="/blog">Blog</Link>
   </li>
 
+  <li>
+    <Link href="/feed">Feed</Link>
+  </li>
+
   {!loadingUser && (
   <li className="relative">
     {userEmail ? (
@@ -313,6 +317,14 @@ export default function Navbar() {
             className="text-white text-lg font-medium hover:text-blue-400 transition"
           >
             Blog
+          </Link>
+
+          <Link
+            href="/feed"
+            onClick={() => setOpen(false)}
+            className="text-white text-lg font-medium hover:text-blue-400 transition"
+          >
+            Feed
           </Link>
 
         </div>

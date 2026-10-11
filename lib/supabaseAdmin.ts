@@ -1,27 +1,57 @@
-import { createClient } from "@supabase/supabase-js";
+import {
+  createClient,
+  type SupabaseClient,
+} from "@supabase/supabase-js";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+let adminClient: SupabaseClient | null = null;
 
-if (!supabaseUrl) {
-  throw new Error(
-    "NEXT_PUBLIC_SUPABASE_URL is not configured"
-  );
+/**
+ * Returns null when the service role key is not configured.
+ * The client is created on first use so `next build` can load routes
+ * that import this module without the key present.
+ */
+export function getSupabaseAdmin(): SupabaseClient | null {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!supabaseUrl || !serviceRoleKey) {
+    return null;
+  }
+
+  if (!adminClient) {
+    adminClient = createClient(supabaseUrl, serviceRoleKey, {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false,
+      },
+    });
+  }
+
+  return adminClient;
 }
 
-if (!serviceRoleKey) {
-  throw new Error(
-    "SUPABASE_SERVICE_ROLE_KEY is not configured"
-  );
+function requireSupabaseAdmin(): SupabaseClient {
+  const client = getSupabaseAdmin();
+
+  if (!client) {
+    throw new Error(
+      "SUPABASE_SERVICE_ROLE_KEY is not configured"
+    );
+  }
+
+  return client;
 }
 
-export const supabaseAdmin = createClient(
-  supabaseUrl,
-  serviceRoleKey,
+export const supabaseAdmin: SupabaseClient = new Proxy(
+  {} as SupabaseClient,
   {
-    auth: {
-      autoRefreshToken: false,
-      persistSession: false,
+    get(_target, property) {
+      const client = requireSupabaseAdmin();
+      const value = Reflect.get(client, property, client);
+
+      return typeof value === "function"
+        ? value.bind(client)
+        : value;
     },
   }
 );

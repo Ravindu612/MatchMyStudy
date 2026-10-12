@@ -1,4 +1,5 @@
 import EditProfileLink from "@/components/social/EditProfileLink";
+import ReportButton from "@/components/social/ReportButton";
 import ProfileHeader from "@/components/social/ProfileHeader";
 import ProfileSocial, {
   ProfileFollowButtons,
@@ -34,6 +35,12 @@ export default function PublicProfileView({ profile }: Props) {
             <div className="flex flex-wrap items-center gap-2">
               <EditProfileLink profileId={profile.id} />
               <ProfileFollowButtons profileId={profile.id} displayName={profile.display_name} />
+              <ReportButton
+                targetType="profile"
+                targetId={profile.id}
+                ownerId={profile.id}
+                className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+              />
             </div>
           }
           meta={<ProfileFollowStats handle={profile.handle} />}

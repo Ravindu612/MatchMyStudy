@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import AdminNav from "@/components/admin/AdminNav";
 import {
   getConsultantClaims,
   approveConsultantClaim,
@@ -103,7 +104,9 @@ export default function ClaimsPage() {
 
       <div className="mx-auto max-w-6xl px-6">
 
-        <h1 className="text-4xl font-bold text-slate-900">
+        <AdminNav />
+
+        <h1 className="mt-6 text-4xl font-bold text-slate-900">
           Consultant Claims
         </h1>
 

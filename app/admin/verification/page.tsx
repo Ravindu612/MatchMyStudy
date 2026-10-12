@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import AdminNav from "@/components/admin/AdminNav";
 import {
   getAllVerificationApplications,
   approveVerificationApplication,
@@ -189,7 +190,9 @@ async function handleReject(
 
       <div className="mx-auto max-w-6xl px-6">
 
-        <div>
+        <AdminNav />
+
+        <div className="mt-6">
 
           <div className="inline-flex rounded-full bg-blue-100 px-4 py-2 text-sm font-bold text-blue-700">
             Admin

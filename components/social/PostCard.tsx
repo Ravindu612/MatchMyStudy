@@ -2,6 +2,7 @@
 
 import CommentThread from "@/components/social/CommentThread";
 import PostEditor from "@/components/social/PostEditor";
+import ReportButton from "@/components/social/ReportButton";
 import {
   accountTypeBadgeClass,
   accountTypeLabel,
@@ -385,6 +386,9 @@ export default function PostCard({
           <Share2 className="h-4 w-4" aria-hidden="true" />
           {copied ? "Link copied" : "Share"}
         </button>
+        {mine ? null : (
+          <ReportButton targetType="post" targetId={post.id} ownerId={post.authorId} />
+        )}
         {mine ? (
           <>
             <button

@@ -54,6 +54,14 @@ export function messageForSocialError(error: unknown, fallback: string): string 
     return "Comments can be up to 2,000 characters.";
   }
 
+  if (/reports_reason_len/i.test(raw)) {
+    return "Reasons can be up to 1,000 characters.";
+  }
+
+  if (/reports_reporter_target_key/i.test(raw)) {
+    return "You've already reported this.";
+  }
+
   if (/jwt|not authenticated|auth session missing|invalid claim/i.test(raw)) {
     return "Log in to continue.";
   }

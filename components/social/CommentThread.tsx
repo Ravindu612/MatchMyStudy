@@ -1,5 +1,6 @@
 "use client";
 
+import ReportButton from "@/components/social/ReportButton";
 import { useViewer } from "@/components/social/SocialShell";
 import { safeImageUrl } from "@/lib/social/avatarPath";
 import {
@@ -295,6 +296,16 @@ function CommentRow({
           <p className="mt-1 text-sm text-red-600" role="alert">
             {error}
           </p>
+        ) : null}
+        {!mine && !editing ? (
+          <div className="mt-1">
+            <ReportButton
+              targetType="comment"
+              targetId={comment.id}
+              ownerId={comment.authorId}
+              className="inline-flex items-center gap-1 text-xs font-semibold text-slate-500 hover:text-slate-800"
+            />
+          </div>
         ) : null}
         {mine && !editing ? (
           <div className="mt-1 flex flex-wrap items-center gap-3 text-xs">

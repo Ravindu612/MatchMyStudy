@@ -2,8 +2,10 @@
 
 import { supabase } from "@/lib/supabase";
 import { safeImageUrl } from "@/lib/social/avatarPath";
+import { subscribeToBrowserSession } from "@/lib/social/browserSession";
 import { displayInitials } from "@/lib/social/formatPostTime";
-import { loginPathFor } from "@/lib/signupRole";
+import { profileHrefFor } from "@/lib/social/profileHref";
+import { isUserId } from "@/lib/social/postValidation";
 import type { ResolvedTag } from "@/lib/social/postTags";
 import { accountTypeLabel } from "@/lib/social/accountType";
 import {
@@ -14,6 +16,7 @@ import {
   MessageCircle,
   Newspaper,
   Search,
+  Shield,
   Sparkles,
   UserRound,
   Users,
@@ -40,16 +43,20 @@ export type ViewerState = {
   displayName: string | null;
   avatarUrl: string | null;
   accountType: string | null;
+  role: string | null;
 };
 
-const ViewerContext = createContext<ViewerState>({
+const EMPTY_VIEWER: ViewerState = {
   status: "loading",
   id: null,
   handle: null,
   displayName: null,
   avatarUrl: null,
   accountType: null,
-});
+  role: null,
+};
+
+const ViewerContext = createContext<ViewerState>(EMPTY_VIEWER);
 
 export function useViewer(): ViewerState {
   return useContext(ViewerContext);
@@ -67,37 +74,27 @@ const SITE_NAV = [
 export default function SocialShell({ children }: { children: ReactNode }) {
   const pathname = usePathname() ?? "/feed";
   const router = useRouter();
-  const [viewer, setViewer] = useState<ViewerState>({
-    status: "loading",
-    id: null,
-    handle: null,
-    displayName: null,
-    avatarUrl: null,
-    accountType: null,
-  });
+  const [viewer, setViewer] = useState<ViewerState>(EMPTY_VIEWER);
   const [chatsOpen, setChatsOpen] = useState(false);
   const feedActive = pathname === "/feed" || pathname.startsWith("/post/");
   const networkActive = pathname === "/network" || pathname.startsWith("/network/");
-  const profileHref =
-    viewer.status === "ready" && viewer.handle
-      ? `/u/${encodeURIComponent(viewer.handle)}`
-      : viewer.status === "ready"
-        ? "/settings/profile"
-        : loginPathFor(pathname);
+  // Server HTML has no localStorage session, so this stays on the login URL
+  // until the browser session loads and the state below updates.
+  const profileHref = profileHrefFor({
+    signedIn: viewer.status === "ready" && viewer.id !== null,
+    handle: viewer.handle,
+    pathname,
+  });
 
   useEffect(() => {
     let cancelled = false;
+    let generation = 0;
 
-    async function loadViewer() {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
+    const stop = subscribeToBrowserSession((session) => {
+      const generationId = ++generation;
+      const userId = session?.user?.id && isUserId(session.user.id) ? session.user.id : null;
 
-      if (cancelled) {
-        return;
-      }
-
-      if (!user) {
+      if (!userId) {
         setViewer({
           status: "anonymous",
           id: null,
@@ -105,41 +102,41 @@ export default function SocialShell({ children }: { children: ReactNode }) {
           displayName: null,
           avatarUrl: null,
           accountType: null,
+          role: null,
         });
         return;
       }
 
-      const { data } = await supabase
-        .from("public_profiles")
-        .select("handle, display_name, avatar_url, account_type")
-        .eq("id", user.id)
-        .maybeSingle();
-
-      if (cancelled) {
-        return;
-      }
-
-      setViewer({
+      setViewer((current) => ({
         status: "ready",
-        id: user.id,
-        handle: typeof data?.handle === "string" ? data.handle : null,
-        displayName: typeof data?.display_name === "string" ? data.display_name : null,
-        avatarUrl: safeImageUrl(typeof data?.avatar_url === "string" ? data.avatar_url : null),
-        accountType: typeof data?.account_type === "string" ? data.account_type : null,
+        id: userId,
+        handle: current.id === userId ? current.handle : null,
+        displayName: current.id === userId ? current.displayName : null,
+        avatarUrl: current.id === userId ? current.avatarUrl : null,
+        accountType: current.id === userId ? current.accountType : null,
+        role: current.id === userId ? current.role : null,
+      }));
+
+      void loadOwnProfile(userId).then((profile) => {
+        if (cancelled || generationId !== generation) {
+          return;
+        }
+
+        setViewer({
+          status: "ready",
+          id: userId,
+          handle: profile.handle,
+          displayName: profile.displayName,
+          avatarUrl: profile.avatarUrl,
+          accountType: profile.accountType,
+          role: profile.role,
+        });
       });
-    }
-
-    loadViewer();
-
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange(() => {
-      loadViewer();
     });
 
     return () => {
       cancelled = true;
-      subscription.unsubscribe();
+      stop();
     };
   }, []);
 
@@ -197,6 +194,11 @@ export default function SocialShell({ children }: { children: ReactNode }) {
               <Link href={profileHref} className="text-slate-300 hover:text-white">
                 My Profile
               </Link>
+              {viewer.role === "admin" ? (
+                <Link href="/admin/moderation" className="text-slate-300 hover:text-white">
+                  Moderation
+                </Link>
+              ) : null}
             </nav>
           </div>
         </header>
@@ -247,6 +249,15 @@ export default function SocialShell({ children }: { children: ReactNode }) {
                 <Users className={`h-5 w-5 ${networkActive ? "" : "text-slate-500"}`} aria-hidden="true" />
                 Network
               </Link>
+              {viewer.role === "admin" ? (
+                <Link
+                  href="/admin/moderation"
+                  className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+                >
+                  <Shield className="h-5 w-5 text-slate-500" aria-hidden="true" />
+                  Moderation
+                </Link>
+              ) : null}
             </nav>
           </aside>
 
@@ -341,6 +352,37 @@ export default function SocialShell({ children }: { children: ReactNode }) {
       </div>
     </ViewerContext.Provider>
   );
+}
+
+async function loadOwnProfile(userId: string): Promise<{
+  handle: string | null;
+  displayName: string | null;
+  avatarUrl: string | null;
+  accountType: string | null;
+  role: string | null;
+}> {
+  const own = await supabase
+    .from("profiles")
+    .select("handle, display_name, avatar_url, account_type, role")
+    .eq("id", userId)
+    .maybeSingle();
+  const row = !own.error && own.data ? own.data : null;
+  const fallback = row
+    ? null
+    : await supabase
+        .from("public_profiles")
+        .select("handle, display_name, avatar_url, account_type")
+        .eq("id", userId)
+        .maybeSingle();
+  const data = row ?? fallback?.data ?? null;
+
+  return {
+    handle: typeof data?.handle === "string" ? data.handle : null,
+    displayName: typeof data?.display_name === "string" ? data.display_name : null,
+    avatarUrl: safeImageUrl(typeof data?.avatar_url === "string" ? data.avatar_url : null),
+    accountType: typeof data?.account_type === "string" ? data.account_type : null,
+    role: row && typeof row.role === "string" ? row.role : null,
+  };
 }
 
 function ProfileMark({ viewer }: { viewer: ViewerState }) {

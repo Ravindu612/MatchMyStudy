@@ -1,4 +1,5 @@
-import { STATIC_META } from "@/lib/seo-meta";
+import { SITE_NAME, SITE_URL, STATIC_META } from "@/lib/seo-meta";
+import JsonLd from "@/components/JsonLd";
 import GlobalSearch from "@/components/GlobalSearch";
 import Link from "next/link";
 import { countries } from "@/data/countries";
@@ -6,9 +7,30 @@ import FindConsultantsButton from "@/components/consultant/FindConsultantsButton
 
 export const metadata = STATIC_META["/"];
 
+const homeJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: `${SITE_URL}/og-default.png`,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
+      <JsonLd data={homeJsonLd} />
       {/* Hero Section */}
       <section className="px-6 py-20 text-center bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white">
         <p className="font-semibold mb-4 tracking-wide">

@@ -13,6 +13,11 @@ import {
 
 const PLACEHOLDER_DESCRIPTION = "Program details will be added soon.";
 
+// Fallback text from data/programHelpers.ts; sections holding it are hidden.
+function hasRealInfo(value?: string | null): value is string {
+  return Boolean(value && value.trim() && !/will be added soon/i.test(value));
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -100,9 +105,11 @@ export default async function ProgramDetailPage({
             {program.name}
           </h1>
 
-          <p className="text-slate-600 text-lg mb-10 leading-8">
-            {program.description}
-          </p>
+          {hasRealInfo(program.description) && (
+            <p className="text-slate-600 text-lg mb-10 leading-8">
+              {program.description}
+            </p>
+          )}
 
           {/* Programme Details */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
@@ -142,14 +149,16 @@ export default async function ProgramDetailPage({
               </p>
             </div>
 
-            <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200">
-              <p className="text-slate-500 text-sm mb-2">
-                Duration
-              </p>
-              <p className="text-xl font-semibold">
-                {program.duration}
-              </p>
-            </div>
+            {hasRealInfo(program.duration) && (
+              <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                <p className="text-slate-500 text-sm mb-2">
+                  Duration
+                </p>
+                <p className="text-xl font-semibold">
+                  {program.duration}
+                </p>
+              </div>
+            )}
 
             <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200">
               <p className="text-slate-500 text-sm mb-2">
@@ -205,16 +214,18 @@ export default async function ProgramDetailPage({
             )}
           </div>
 
-          {/* Tuition */}
-          <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 mb-8">
-            <h2 className="text-2xl font-bold mb-4">
-              Tuition Information
-            </h2>
+          {/* Tuition (hidden until real info exists) */}
+          {hasRealInfo(program.tuitionNote) && (
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 mb-8">
+              <h2 className="text-2xl font-bold mb-4">
+                Tuition Information
+              </h2>
 
-            <p className="text-slate-600 leading-8">
-              {program.tuitionNote}
-            </p>
-          </div>
+              <p className="text-slate-600 leading-8">
+                {program.tuitionNote}
+              </p>
+            </div>
+          )}
 
           {/* Admission Requirements */}
           {program.admissionRequirements &&

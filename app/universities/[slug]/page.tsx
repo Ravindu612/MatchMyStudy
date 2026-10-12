@@ -391,6 +391,7 @@ export default async function UniversityDetailPage({
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
+            {university.popularFields?.length && (
             <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
               <div className="flex items-center gap-3 mb-4">
   <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
@@ -403,16 +404,14 @@ export default async function UniversityDetailPage({
 </div>
 
               <ul className="space-y-2 text-slate-600">
-                {university.popularFields?.length ? (
-                  university.popularFields.map((field) => (
-                    <li key={field}>• {field}</li>
-                  ))
-                ) : (
-                  <li>Information will be added soon.</li>
-                )}
+                {university.popularFields?.map((field) => (
+                  <li key={field}>• {field}</li>
+                ))}
               </ul>
             </div>
+            )}
 
+            {university.founded && (
             <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
               <div className="flex items-center gap-3 mb-4">
   <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center">
@@ -425,11 +424,12 @@ export default async function UniversityDetailPage({
 </div>
 
               <p className="text-slate-600">
-                {university.founded ||
-                  "Information will be added soon."}
+                {university.founded}
               </p>
             </div>
+            )}
 
+            {university.tuitionNote && (
             <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
               <div className="flex items-center gap-3 mb-4">
   <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
@@ -442,11 +442,12 @@ export default async function UniversityDetailPage({
 </div>
 
               <p className="text-slate-600 leading-7">
-                {university.tuitionNote ||
-                  "Tuition information will be added soon."}
+                {university.tuitionNote}
               </p>
             </div>
+            )}
 
+            {university.scholarshipNote && (
             <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
               <div className="flex items-center gap-3 mb-4">
   <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
@@ -459,10 +460,10 @@ export default async function UniversityDetailPage({
 </div>
 
               <p className="text-slate-600 leading-7">
-                {university.scholarshipNote ||
-                  "Scholarship information will be added soon."}
+                {university.scholarshipNote}
               </p>
             </div>
+            )}
 
           </div>
         </div>

@@ -1,10 +1,11 @@
+import { pageMeta } from "@/lib/seo-meta";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Study Online — Online Courses & Degree Programs | MatchMyStudy",
-  description:
-    "Explore online short courses, undergraduate courses, and postgraduate courses from leading online learning platforms and education providers.",
-};
+export const metadata = pageMeta(
+  "/study-online",
+  "Study Online — Online Courses & Degree Programs | MatchMyStudy",
+  "Explore online short courses, undergraduate courses, and postgraduate courses from leading online learning platforms and education providers."
+);
 
 const categories = [
   {

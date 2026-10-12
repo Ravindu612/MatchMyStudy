@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Link from "next/link";
 import { universities } from "@/data/universities";
 import CountrySearch from "@/components/CountrySearch";
@@ -40,6 +41,14 @@ export default function CountryPage({
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
       <section className="max-w-7xl mx-auto px-6 py-16">
+        <Breadcrumbs
+          className="mb-8"
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Countries", href: "/countries" },
+            { name: country, href: `/${String(countryKey).toLowerCase()}` },
+          ]}
+        />
 
         {/* Hero */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16">

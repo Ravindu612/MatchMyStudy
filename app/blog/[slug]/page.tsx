@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { STATIC_META } from "@/lib/seo-meta";
+import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL, STATIC_META } from "@/lib/seo-meta";
+import JsonLd from "@/components/JsonLd";
 
 const blogPosts = {
   "best-countries-2026": {
@@ -106,8 +107,29 @@ export default async function BlogPostPage({
     notFound();
   }
 
+  const postUrl = `${SITE_URL}/blog/${slug}`;
+  const organization = {
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_URL,
+    logo: { "@type": "ImageObject", url: `${SITE_URL}/og-default.png` },
+  };
+  // Posts only have a month label ("May 2026"), not a full date,
+  // so datePublished/dateModified are left out for now.
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.intro,
+    image: [`${SITE_URL}${DEFAULT_OG_IMAGE.url}`],
+    author: organization,
+    publisher: organization,
+    mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
+  };
+
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900 px-6 py-16">
+      <JsonLd data={articleJsonLd} />
       <article className="max-w-4xl mx-auto">
         <Link
           href="/blog"

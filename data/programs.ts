@@ -29,6 +29,7 @@ import { universityOfQueenslandPrograms } from "./programs/australia/universityO
 import { universityOfNewSouthWalesPrograms } from "./programs/australia/universityOfNewSouthWalesPrograms";
 import { monashUniversityPrograms } from "./programs/australia/monashUniversityPrograms";
 import { australianNationalUniversityPrograms } from "./programs/australia/australianNationalUniversityPrograms";
+import { utsPrograms } from "./programs/australia/utsPrograms";
 import { newYorkUniversityPrograms } from "./programs/unitedStates/newYorkUniversityPrograms";
 import { northeasternUniversityPrograms } from "./programs/unitedStates/northeasternUniversityPrograms";
 import { columbiaUniversityPrograms } from "./programs/unitedStates/columbiaUniversityPrograms";
@@ -120,6 +121,7 @@ export const programs: Program[] = [
   ...universityOfNewSouthWalesPrograms,
   ...monashUniversityPrograms,
   ...australianNationalUniversityPrograms,
+  ...utsPrograms,
   ...newYorkUniversityPrograms,
   ...northeasternUniversityPrograms,
   ...columbiaUniversityPrograms,

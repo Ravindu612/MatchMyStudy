@@ -87,6 +87,21 @@ async function visibleOwnerId(
     return data.author_id;
   }
 
+  if (targetType === "message") {
+    const { data, error } = await supabase
+      .from("messages")
+      .select("sender_id")
+      .eq("id", targetId)
+      .is("deleted_at", null)
+      .maybeSingle();
+
+    if (error || typeof data?.sender_id !== "string") {
+      throw new Error("This message is unavailable.");
+    }
+
+    return data.sender_id;
+  }
+
   const { data, error } = await supabase
     .from("public_profiles")
     .select("id")

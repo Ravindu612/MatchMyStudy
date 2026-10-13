@@ -99,10 +99,18 @@ test("open reports assemble post, comment, and profile targets", () => {
       {
         id: "r4",
         reporterId: "reporter",
+        targetType: "message",
+        targetId: "message-1",
+        reason: "Asked for a deposit",
+        createdAt: "2026-10-04T00:00:00.000Z",
+      },
+      {
+        id: "r5",
+        reporterId: "reporter",
         targetType: "post",
         targetId: "missing",
         reason: "Gone",
-        createdAt: "2026-10-04T00:00:00.000Z",
+        createdAt: "2026-10-05T00:00:00.000Z",
       },
     ],
     people,
@@ -125,9 +133,18 @@ test("open reports assemble post, comment, and profile targets", () => {
         deletedAt: null,
       },
     ],
+    messages: [
+      {
+        id: "message-1",
+        body: "Pay this deposit today",
+        senderId: "consultant",
+        conversationId: "conversation-1",
+        deletedAt: null,
+      },
+    ],
   });
 
-  assert.equal(views.length, 4);
+  assert.equal(views.length, 5);
   assert.equal(views[0]?.href, "/post/post-1");
   assert.equal(views[0]?.contentStatus, "active");
   assert.equal(views[0]?.profileHandle, "author");
@@ -137,6 +154,11 @@ test("open reports assemble post, comment, and profile targets", () => {
   assert.equal(views[2]?.href, "/u/consultant");
   assert.equal(views[2]?.profileId, "consultant");
   assert.equal(views[2]?.isVerified, false);
-  assert.equal(views[3]?.body, null);
-  assert.equal(views[3]?.contentStatus, null);
+  assert.equal(views[3]?.targetType, "message");
+  assert.equal(views[3]?.href, "/messages/conversation-1");
+  assert.equal(views[3]?.body, "Pay this deposit today");
+  assert.equal(views[3]?.contentStatus, "active");
+  assert.equal(views[3]?.profileHandle, "consultant");
+  assert.equal(views[4]?.body, null);
+  assert.equal(views[4]?.contentStatus, null);
 });

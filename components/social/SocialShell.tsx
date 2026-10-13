@@ -20,7 +20,6 @@ import {
   Sparkles,
   UserRound,
   Users,
-  X,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -34,7 +33,7 @@ import {
   type MouseEvent,
   type ReactNode,
 } from "react";
-import MessagesPlaceholder from "@/components/social/MessagesPlaceholder";
+import ConversationRail from "@/components/social/ConversationRail";
 
 export type ViewerState = {
   status: "loading" | "anonymous" | "ready";
@@ -75,9 +74,9 @@ export default function SocialShell({ children }: { children: ReactNode }) {
   const pathname = usePathname() ?? "/feed";
   const router = useRouter();
   const [viewer, setViewer] = useState<ViewerState>(EMPTY_VIEWER);
-  const [chatsOpen, setChatsOpen] = useState(false);
   const feedActive = pathname === "/feed" || pathname.startsWith("/post/");
   const networkActive = pathname === "/network" || pathname.startsWith("/network/");
+  const messagesActive = pathname === "/messages" || pathname.startsWith("/messages/");
   // Server HTML has no localStorage session, so this stays on the login URL
   // until the browser session loads and the state below updates.
   const profileHref = profileHrefFor({
@@ -203,7 +202,13 @@ export default function SocialShell({ children }: { children: ReactNode }) {
           </div>
         </header>
 
-        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-4 px-3 py-4 lg:grid-cols-[240px_minmax(0,1fr)_300px] lg:px-4">
+        <div
+          className={`mx-auto grid w-full max-w-7xl grid-cols-1 gap-4 px-3 py-4 lg:px-4 ${
+            messagesActive
+              ? "lg:grid-cols-[240px_minmax(0,1fr)]"
+              : "lg:grid-cols-[240px_minmax(0,1fr)_300px]"
+          }`}
+        >
           <aside className="hidden lg:block">
             <nav className="sticky top-20 rounded-2xl border border-slate-200 bg-white p-2 shadow-sm">
               <Link
@@ -249,6 +254,19 @@ export default function SocialShell({ children }: { children: ReactNode }) {
                 <Users className={`h-5 w-5 ${networkActive ? "" : "text-slate-500"}`} aria-hidden="true" />
                 Network
               </Link>
+              <Link
+                href="/messages"
+                aria-current={messagesActive ? "page" : undefined}
+                className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold ${
+                  messagesActive ? "bg-blue-50 text-blue-700" : "text-slate-700 hover:bg-slate-50"
+                }`}
+              >
+                <MessageCircle
+                  className={`h-5 w-5 ${messagesActive ? "" : "text-slate-500"}`}
+                  aria-hidden="true"
+                />
+                Messages
+              </Link>
               {viewer.role === "admin" ? (
                 <Link
                   href="/admin/moderation"
@@ -263,11 +281,13 @@ export default function SocialShell({ children }: { children: ReactNode }) {
 
           <main className="min-w-0 pb-24 lg:pb-6">{children}</main>
 
-          <aside className="hidden lg:block">
-            <div className="sticky top-20">
-              <MessagesPlaceholder />
-            </div>
-          </aside>
+          {messagesActive ? null : (
+            <aside className="hidden lg:block">
+              <div className="sticky top-20">
+                <ConversationRail />
+              </div>
+            </aside>
+          )}
         </div>
 
         <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white lg:hidden">
@@ -304,14 +324,15 @@ export default function SocialShell({ children }: { children: ReactNode }) {
               </Link>
             </li>
             <li>
-              <button
-                type="button"
-                onClick={() => setChatsOpen(true)}
-                className="flex w-full flex-col items-center gap-1 py-2 text-[11px] font-semibold text-slate-500"
+              <Link
+                href="/messages"
+                className={`flex flex-col items-center gap-1 py-2 text-[11px] font-semibold ${
+                  messagesActive ? "text-blue-600" : "text-slate-500"
+                }`}
               >
                 <MessageCircle className="h-5 w-5" aria-hidden="true" />
                 Chats
-              </button>
+              </Link>
             </li>
             <li>
               <Link
@@ -324,30 +345,6 @@ export default function SocialShell({ children }: { children: ReactNode }) {
             </li>
           </ul>
         </nav>
-
-        {chatsOpen ? (
-          <div className="fixed inset-0 z-50 lg:hidden">
-            <button
-              type="button"
-              className="absolute inset-0 bg-slate-900/40"
-              aria-label="Close messages"
-              onClick={() => setChatsOpen(false)}
-            />
-            <div className="absolute inset-x-0 bottom-0 rounded-t-3xl bg-[#eef2f7] p-4 pb-8">
-              <div className="mb-3 flex justify-end">
-                <button
-                  type="button"
-                  onClick={() => setChatsOpen(false)}
-                  className="rounded-full p-2 text-slate-500"
-                  aria-label="Close"
-                >
-                  <X className="h-5 w-5" />
-                </button>
-              </div>
-              <MessagesPlaceholder />
-            </div>
-          </div>
-        ) : null}
 
       </div>
     </ViewerContext.Provider>

@@ -17,6 +17,10 @@ export type SocialAccountType = Enums<"profile_role">;
 export type PostVisibility = Enums<"post_visibility">;
 export type ContentStatus = Enums<"content_status">;
 export type ReportTarget = Enums<"report_target">;
+
+export type Conversation = Tables<"conversations">;
+export type ConversationMember = Tables<"conversation_members">;
+export type Message = Tables<"messages">;
 export type ReportStatus = Enums<"report_status">;
 
 /** post_tags.target_type. Stored as text with a check constraint. */

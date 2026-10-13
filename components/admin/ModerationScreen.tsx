@@ -6,6 +6,7 @@ import {
   decideReport,
   listOpenReports,
   moderateContent,
+  removeReportedMessage,
   setProfileVerified,
   type OpenReportView,
 } from "@/lib/social/moderation";
@@ -113,7 +114,7 @@ export default function ModerationScreen() {
           </div>
           <h1 className="mt-4 text-4xl font-bold text-slate-900">Moderation</h1>
           <p className="mt-3 text-lg text-slate-600">
-            Open reports on posts, comments, and profiles. Hiding or removing content needs a written reason.
+            Open reports on posts, comments, profiles, and messages. Hiding or removing content needs a written reason.
           </p>
         </div>
 
@@ -151,6 +152,7 @@ function ReportCard({
   const [error, setError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
   const content = report.targetType === "post" || report.targetType === "comment";
+  const message = report.targetType === "message";
   const alreadyHidden = report.contentStatus === "hidden";
   const alreadyGone = report.contentStatus === "removed" || report.contentStatus === "deleted";
 
@@ -205,7 +207,11 @@ function ReportCard({
         </div>
         {report.href ? (
           <Link href={report.href} className="text-sm font-semibold text-blue-700 hover:underline">
-            {report.targetType === "profile" ? "View profile" : "View post"}
+            {report.targetType === "profile"
+              ? "View profile"
+              : report.targetType === "message"
+                ? "View conversation"
+                : "View post"}
           </Link>
         ) : null}
       </div>
@@ -329,6 +335,22 @@ function ReportCard({
               {busy === "remove" ? "Removing..." : "Remove"}
             </button>
           </>
+        ) : null}
+        {message ? (
+          <button
+            type="button"
+            disabled={busy !== null || report.contentStatus === "deleted" || report.body === null}
+            onClick={() =>
+              void run(
+                "remove-message",
+                () => removeReportedMessage(report.targetId, note),
+                "Message removed."
+              )
+            }
+            className="rounded-xl bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700 disabled:opacity-50"
+          >
+            {busy === "remove-message" ? "Removing..." : "Remove message"}
+          </button>
         ) : null}
         <button
           type="button"

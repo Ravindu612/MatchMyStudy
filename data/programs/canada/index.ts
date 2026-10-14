@@ -22,6 +22,7 @@ import { mcgillUniversityPrograms } from "./mcgillUniversityPrograms";
 import { simonFraserUniversityPrograms } from "./simonFraserUniversityPrograms";
 import { saitPrograms } from "./saitPrograms";
 import { naitPrograms } from "./naitPrograms";
+import { memorialUniversityPrograms } from "./memorialUniversityPrograms";
 
 export const canadaPrograms = [
   ...universityOfTorontoPrograms,
@@ -48,5 +49,6 @@ export const canadaPrograms = [
   ...simonFraserUniversityPrograms,
   ...saitPrograms,
   ...naitPrograms,
+  ...memorialUniversityPrograms,
 ];
 

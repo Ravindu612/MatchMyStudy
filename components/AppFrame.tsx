@@ -17,7 +17,9 @@ export default function AppFrame({
     pathname === "/feed" ||
     pathname.startsWith("/post/") ||
     pathname === "/network" ||
-    pathname.startsWith("/network/");
+    pathname.startsWith("/network/") ||
+    pathname === "/messages" ||
+    pathname.startsWith("/messages/");
 
   if (social) {
     return <div className="flex min-h-full flex-1 flex-col">{children}</div>;

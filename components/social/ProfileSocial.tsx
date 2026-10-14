@@ -245,7 +245,7 @@ export function ProfileFollowButtons({
         {social.summary.blockedByMe ? null : confirmingBlock ? (
           <span className="flex max-w-sm flex-wrap items-center gap-2 text-sm text-slate-600">
             <span>
-              Block {displayName}? You won&apos;t see each other&apos;s posts or comments.
+              Block {displayName}? You won&apos;t see each other&apos;s posts, comments, or messages.
             </span>
             <button
               type="button"

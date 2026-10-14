@@ -43,6 +43,10 @@ export function messageForSocialError(error: unknown, fallback: string): string 
       return "You've commented a lot in the last hour. Try again later.";
     }
 
+    if (/message/i.test(raw)) {
+      return "You've sent a lot of messages in the last hour. Try again later.";
+    }
+
     return "You're doing that too often. Try again later.";
   }
 
@@ -52,6 +56,10 @@ export function messageForSocialError(error: unknown, fallback: string): string 
 
   if (/comments_body_len/i.test(raw)) {
     return "Comments can be up to 2,000 characters.";
+  }
+
+  if (/messages_body_len/i.test(raw)) {
+    return "Messages can be up to 2,000 characters.";
   }
 
   if (/reports_reason_len/i.test(raw)) {

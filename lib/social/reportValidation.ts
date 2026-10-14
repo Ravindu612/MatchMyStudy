@@ -20,7 +20,7 @@ export function validateReportReason(
   return { ok: true, reason };
 }
 
-export type ReportTargetType = "post" | "comment" | "profile";
+export type ReportTargetType = "post" | "comment" | "profile" | "message";
 export type ModerationContentStatus = "hidden" | "removed";
 export type ReportDecision = "actioned" | "dismissed";
 
@@ -92,6 +92,14 @@ export type OpenReportComment = {
   deletedAt: string | null;
 };
 
+export type OpenReportMessage = {
+  id: string;
+  body: string;
+  senderId: string;
+  conversationId: string;
+  deletedAt: string | null;
+};
+
 export type OpenReportSource = {
   id: string;
   reporterId: string;
@@ -124,10 +132,12 @@ export function assembleOpenReports(input: {
   people: OpenReportPerson[];
   posts: OpenReportPost[];
   comments: OpenReportComment[];
+  messages: OpenReportMessage[];
 }): OpenReportView[] {
   const people = new Map(input.people.map((person) => [person.id, person]));
   const posts = new Map(input.posts.map((post) => [post.id, post]));
   const comments = new Map(input.comments.map((comment) => [comment.id, comment]));
+  const messages = new Map(input.messages.map((message) => [message.id, message]));
 
   return input.reports.flatMap((report) => {
     const targetType = reportTarget(report.targetType);
@@ -184,6 +194,24 @@ export function assembleOpenReports(input: {
       ];
     }
 
+    if (targetType === "message") {
+      const message = messages.get(report.targetId);
+      const sender = message ? people.get(message.senderId) : undefined;
+
+      return [
+        {
+          ...base,
+          body: message?.body ?? null,
+          href: message ? `/messages/${message.conversationId}` : null,
+          contentStatus: message ? (message.deletedAt ? "deleted" : "active") : null,
+          profileId: message?.senderId ?? null,
+          profileName: sender?.displayName ?? null,
+          profileHandle: sender?.handle ?? null,
+          isVerified: sender ? sender.isVerified : null,
+        },
+      ];
+    }
+
     const profile = people.get(report.targetId);
 
     return [
@@ -202,7 +230,7 @@ export function assembleOpenReports(input: {
 }
 
 function reportTarget(value: string): ReportTargetType | null {
-  if (value === "post" || value === "comment" || value === "profile") {
+  if (value === "post" || value === "comment" || value === "profile" || value === "message") {
     return value;
   }
 

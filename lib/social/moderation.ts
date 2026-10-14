@@ -8,6 +8,7 @@ import {
   verificationPatch,
   type ModerationContentStatus,
   type OpenReportComment,
+  type OpenReportMessage,
   type OpenReportPerson,
   type OpenReportPost,
   type OpenReportSource,
@@ -47,18 +48,21 @@ export async function listOpenReports(): Promise<OpenReportView[]> {
 
   const postIds = idsFor(reports, "post");
   const commentIds = idsFor(reports, "comment");
-  const [posts, comments] = await Promise.all([
+  const messageIds = idsFor(reports, "message");
+  const [posts, comments, messages] = await Promise.all([
     loadPosts(postIds),
     loadComments(commentIds),
+    loadMessages(messageIds),
   ]);
   const people = await loadPeople([
     ...reports.map((report) => report.reporterId),
     ...reports.filter((report) => report.targetType === "profile").map((report) => report.targetId),
     ...posts.map((post) => post.authorId),
     ...comments.map((comment) => comment.authorId),
+    ...messages.map((message) => message.senderId),
   ]);
 
-  return assembleOpenReports({ reports, people, posts, comments });
+  return assembleOpenReports({ reports, people, posts, comments, messages });
 }
 
 export async function moderateContent(input: {
@@ -182,6 +186,71 @@ export async function decideReport(input: {
   }
 }
 
+export async function removeReportedMessage(messageId: string, reason: string): Promise<void> {
+  if (!isUserId(messageId)) {
+    throw new Error("This message is unavailable.");
+  }
+
+  const parsed = validateReportReason(
+    reason,
+    "Write a reason before removing this message."
+  );
+
+  if (!parsed.ok) {
+    throw new Error(parsed.message);
+  }
+
+  const adminId = await requireUserId();
+  const { error } = await supabase
+    .from("messages")
+    .update({ deleted_at: new Date().toISOString() })
+    .eq("id", messageId)
+    .is("deleted_at", null);
+
+  if (error) {
+    throw new Error(messageForSocialError(error, "Couldn't remove this message."));
+  }
+
+  const { data, error: readError } = await supabase
+    .from("messages")
+    .select("id, deleted_at")
+    .eq("id", messageId)
+    .maybeSingle();
+
+  if (readError || typeof data?.deleted_at !== "string") {
+    throw new Error("Couldn't remove this message.");
+  }
+
+  const decision = reportDecisionPatch({
+    adminId,
+    status: "actioned",
+    note: parsed.reason,
+  });
+  const { error: reportError } = await supabase
+    .from("reports")
+    .update(decision)
+    .eq("target_type", "message")
+    .eq("target_id", messageId)
+    .eq("status", "open");
+
+  if (reportError) {
+    throw new Error(
+      messageForSocialError(reportError, "The message was removed, but the report could not be closed.")
+    );
+  }
+
+  const { data: stillOpen, error: stillError } = await supabase
+    .from("reports")
+    .select("id")
+    .eq("target_type", "message")
+    .eq("target_id", messageId)
+    .eq("status", "open");
+
+  if (stillError || (Array.isArray(stillOpen) && stillOpen.length > 0)) {
+    throw new Error("The message was removed, but the report could not be closed.");
+  }
+}
+
 export async function setProfileVerified(profileId: string, isVerified: boolean): Promise<void> {
   if (!isUserId(profileId)) {
     throw new Error("This profile is unavailable.");
@@ -246,6 +315,23 @@ async function loadComments(ids: string[]): Promise<OpenReportComment[]> {
   }
 
   return normalizeComments(data);
+}
+
+async function loadMessages(ids: string[]): Promise<OpenReportMessage[]> {
+  if (ids.length === 0) {
+    return [];
+  }
+
+  const { data, error } = await supabase
+    .from("messages")
+    .select("id, body, sender_id, conversation_id, deleted_at")
+    .in("id", ids);
+
+  if (error) {
+    throw new Error(messageForSocialError(error, "Couldn't load reported messages."));
+  }
+
+  return normalizeMessages(data);
 }
 
 async function loadPeople(ids: string[]): Promise<OpenReportPerson[]> {
@@ -366,6 +452,39 @@ function normalizeComments(value: unknown): OpenReportComment[] {
         authorId: record.author_id,
         postId: record.post_id,
         status: record.status,
+        deletedAt: typeof record.deleted_at === "string" ? record.deleted_at : null,
+      },
+    ];
+  });
+}
+
+function normalizeMessages(value: unknown): OpenReportMessage[] {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+
+  return value.flatMap((row) => {
+    if (!row || typeof row !== "object") {
+      return [];
+    }
+
+    const record = row as Record<string, unknown>;
+
+    if (
+      typeof record.id !== "string" ||
+      typeof record.body !== "string" ||
+      typeof record.sender_id !== "string" ||
+      typeof record.conversation_id !== "string"
+    ) {
+      return [];
+    }
+
+    return [
+      {
+        id: record.id,
+        body: record.body,
+        senderId: record.sender_id,
+        conversationId: record.conversation_id,
         deletedAt: typeof record.deleted_at === "string" ? record.deleted_at : null,
       },
     ];

@@ -1,10 +1,11 @@
 /**
  * Hand-written in the shape of `supabase gen types typescript`.
  *
- * Matches supabase/migrations/20261010230300_social_phase1.sql plus the
+ * Matches supabase/migrations/20261010230300_social_phase1.sql,
+ * supabase/migrations/20261013220000_social_phase2_messages.sql, plus the
  * production profile columns (id uuid, email text null, role text not null,
- * created_at timestamptz). consultants is not listed here: this migration
- * does not change that table, and the repo does not contain its full column
+ * created_at timestamptz). consultants is not listed here: those migrations
+ * do not change that table, and the repo does not contain its full column
  * list. Regenerate this file after the migration is applied and replace it
  * if the CLI output differs (including __InternalSupabase).
  *
@@ -102,6 +103,60 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      conversation_members: {
+        Row: {
+          conversation_id: string
+          created_at: string
+          last_read_at: string | null
+          user_id: string
+        }
+        Insert: {
+          conversation_id: string
+          created_at?: string
+          last_read_at?: string | null
+          user_id: string
+        }
+        Update: {
+          conversation_id?: string
+          created_at?: string
+          last_read_at?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "conversation_members_conversation_id_fkey"
+            columns: ["conversation_id"]
+            isOneToOne: false
+            referencedRelation: "conversations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "conversation_members_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      conversations: {
+        Row: {
+          created_at: string
+          dm_key: string
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          dm_key: string
+          id?: string
+        }
+        Update: {
+          created_at?: string
+          dm_key?: string
+          id?: string
+        }
+        Relationships: []
       }
       follows: {
         Row: {
@@ -232,6 +287,48 @@ export type Database = {
             columns: ["post_id"]
             isOneToOne: false
             referencedRelation: "posts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      messages: {
+        Row: {
+          body: string
+          conversation_id: string
+          created_at: string
+          deleted_at: string | null
+          id: string
+          sender_id: string
+        }
+        Insert: {
+          body: string
+          conversation_id: string
+          created_at?: string
+          deleted_at?: string | null
+          id?: string
+          sender_id: string
+        }
+        Update: {
+          body?: string
+          conversation_id?: string
+          created_at?: string
+          deleted_at?: string | null
+          id?: string
+          sender_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "messages_conversation_id_fkey"
+            columns: ["conversation_id"]
+            isOneToOne: false
+            referencedRelation: "conversations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "messages_sender_id_fkey"
+            columns: ["sender_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
         ]
@@ -413,11 +510,33 @@ export type Database = {
         }
         Relationships: []
       }
+      my_conversation_summaries: {
+        Row: {
+          conversation_created_at: string
+          conversation_id: string
+          last_body: string | null
+          last_deleted_at: string | null
+          last_message_at: string | null
+          last_read_at: string | null
+          last_sender_id: string | null
+          other_user_id: string
+          unread_count: number
+        }
+        Relationships: []
+      }
     }
     Functions: {
+      assert_can_send_message: {
+        Args: { p_conversation: string; p_sender: string }
+        Returns: boolean
+      }
       can_view_post: {
         Args: { p_id: string }
         Returns: boolean
+      }
+      get_or_create_dm: {
+        Args: { other_user: string }
+        Returns: string
       }
       is_admin: {
         Args: { uid?: string }
@@ -426,6 +545,22 @@ export type Database = {
       is_blocked_between: {
         Args: { a: string; b: string }
         Returns: boolean
+      }
+      is_consultant_account: {
+        Args: { p_uid: string }
+        Returns: boolean
+      }
+      is_conversation_member: {
+        Args: { p_conversation: string; p_uid: string }
+        Returns: boolean
+      }
+      is_student_account: {
+        Args: { p_uid: string }
+        Returns: boolean
+      }
+      mark_conversation_read: {
+        Args: { conversation: string }
+        Returns: string
       }
     }
     Enums: {
@@ -438,7 +573,7 @@ export type Database = {
         | "education_provider"
         | "other"
       report_status: "open" | "reviewing" | "actioned" | "dismissed"
-      report_target: "post" | "comment" | "profile"
+      report_target: "post" | "comment" | "profile" | "message"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -576,7 +711,7 @@ export const Constants = {
         "other",
       ],
       report_status: ["open", "reviewing", "actioned", "dismissed"],
-      report_target: ["post", "comment", "profile"],
+      report_target: ["post", "comment", "profile", "message"],
     },
   },
 } as const

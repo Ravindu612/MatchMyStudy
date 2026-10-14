@@ -9,6 +9,7 @@ import { isUserId } from "@/lib/social/postValidation";
 import type { ResolvedTag } from "@/lib/social/postTags";
 import { accountTypeLabel } from "@/lib/social/accountType";
 import {
+  Bell,
   BookOpen,
   Building2,
   Globe,
@@ -34,6 +35,7 @@ import {
   type ReactNode,
 } from "react";
 import ConversationRail from "@/components/social/ConversationRail";
+import NotificationBell from "@/components/social/NotificationBell";
 
 export type ViewerState = {
   status: "loading" | "anonymous" | "ready";
@@ -77,6 +79,8 @@ export default function SocialShell({ children }: { children: ReactNode }) {
   const feedActive = pathname === "/feed" || pathname.startsWith("/post/");
   const networkActive = pathname === "/network" || pathname.startsWith("/network/");
   const messagesActive = pathname === "/messages" || pathname.startsWith("/messages/");
+  const notificationsActive =
+    pathname === "/notifications" || pathname.startsWith("/notifications/");
   // Server HTML has no localStorage session, so this stays on the login URL
   // until the browser session loads and the state below updates.
   const profileHref = profileHrefFor({
@@ -167,7 +171,9 @@ export default function SocialShell({ children }: { children: ReactNode }) {
               <SocialSearch />
             </div>
 
-            <nav className="ml-auto hidden items-center gap-6 text-sm font-semibold md:flex">
+            <div className="ml-auto flex items-center gap-2 sm:gap-4">
+              <NotificationBell />
+              <nav className="hidden items-center gap-6 text-sm font-semibold md:flex">
               <Link
                 href="/feed"
                 className={
@@ -198,7 +204,8 @@ export default function SocialShell({ children }: { children: ReactNode }) {
                   Moderation
                 </Link>
               ) : null}
-            </nav>
+              </nav>
+            </div>
           </div>
         </header>
 
@@ -266,6 +273,19 @@ export default function SocialShell({ children }: { children: ReactNode }) {
                   aria-hidden="true"
                 />
                 Messages
+              </Link>
+              <Link
+                href="/notifications"
+                aria-current={notificationsActive ? "page" : undefined}
+                className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold ${
+                  notificationsActive ? "bg-blue-50 text-blue-700" : "text-slate-700 hover:bg-slate-50"
+                }`}
+              >
+                <Bell
+                  className={`h-5 w-5 ${notificationsActive ? "" : "text-slate-500"}`}
+                  aria-hidden="true"
+                />
+                Notifications
               </Link>
               {viewer.role === "admin" ? (
                 <Link

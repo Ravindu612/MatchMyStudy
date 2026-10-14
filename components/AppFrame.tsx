@@ -19,7 +19,9 @@ export default function AppFrame({
     pathname === "/network" ||
     pathname.startsWith("/network/") ||
     pathname === "/messages" ||
-    pathname.startsWith("/messages/");
+    pathname.startsWith("/messages/") ||
+    pathname === "/notifications" ||
+    pathname.startsWith("/notifications/");
 
   if (social) {
     return <div className="flex min-h-full flex-1 flex-col">{children}</div>;

@@ -224,7 +224,7 @@ function CommentRow({
   }
 
   return (
-    <li className="flex gap-3">
+    <li id={`comment-${comment.id}`} className="flex gap-3 scroll-mt-24">
       {comment.authorHandle ? (
         <Link href={`/u/${encodeURIComponent(comment.authorHandle)}`} className="shrink-0">
           <CommentAvatar name={comment.authorName} avatar={avatar} />

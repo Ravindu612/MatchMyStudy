@@ -22,6 +22,9 @@ export type Conversation = Tables<"conversations">;
 export type ConversationMember = Tables<"conversation_members">;
 export type Message = Tables<"messages">;
 export type ReportStatus = Enums<"report_status">;
+export type NotificationType = Enums<"notification_type">;
+
+export type Notification = Tables<"notifications">;
 
 /** post_tags.target_type. Stored as text with a check constraint. */
 export type PostTagTarget = "country" | "university" | "program";

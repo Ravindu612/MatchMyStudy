@@ -2,7 +2,8 @@
  * Hand-written in the shape of `supabase gen types typescript`.
  *
  * Matches supabase/migrations/20261010230300_social_phase1.sql,
- * supabase/migrations/20261013220000_social_phase2_messages.sql, plus the
+ * supabase/migrations/20261013220000_social_phase2_messages.sql,
+ * supabase/migrations/20261014200000_social_phase2_notifications.sql, plus the
  * production profile columns (id uuid, email text null, role text not null,
  * created_at timestamptz). consultants is not listed here: those migrations
  * do not change that table, and the repo does not contain its full column
@@ -333,6 +334,108 @@ export type Database = {
           },
         ]
       }
+      notifications: {
+        Row: {
+          actor_id: string | null
+          comment_id: string | null
+          conversation_id: string | null
+          created_at: string
+          id: string
+          message_id: string | null
+          post_id: string | null
+          profile_id: string | null
+          read_at: string | null
+          recipient_id: string
+          report_id: string | null
+          type: Database["public"]["Enums"]["notification_type"]
+        }
+        Insert: {
+          actor_id?: string | null
+          comment_id?: string | null
+          conversation_id?: string | null
+          created_at?: string
+          id?: string
+          message_id?: string | null
+          post_id?: string | null
+          profile_id?: string | null
+          read_at?: string | null
+          recipient_id: string
+          report_id?: string | null
+          type: Database["public"]["Enums"]["notification_type"]
+        }
+        Update: {
+          actor_id?: string | null
+          comment_id?: string | null
+          conversation_id?: string | null
+          created_at?: string
+          id?: string
+          message_id?: string | null
+          post_id?: string | null
+          profile_id?: string | null
+          read_at?: string | null
+          recipient_id?: string
+          report_id?: string | null
+          type?: Database["public"]["Enums"]["notification_type"]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "notifications_actor_id_fkey"
+            columns: ["actor_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "notifications_comment_id_fkey"
+            columns: ["comment_id"]
+            isOneToOne: false
+            referencedRelation: "comments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "notifications_conversation_id_fkey"
+            columns: ["conversation_id"]
+            isOneToOne: false
+            referencedRelation: "conversations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "notifications_message_id_fkey"
+            columns: ["message_id"]
+            isOneToOne: false
+            referencedRelation: "messages"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "notifications_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "posts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "notifications_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "notifications_recipient_id_fkey"
+            columns: ["recipient_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "notifications_report_id_fkey"
+            columns: ["report_id"]
+            isOneToOne: false
+            referencedRelation: "reports"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       posts: {
         Row: {
           author_id: string
@@ -565,6 +668,7 @@ export type Database = {
     }
     Enums: {
       content_status: "active" | "hidden" | "removed"
+      notification_type: "like" | "comment" | "follow" | "message" | "report_resolved"
       post_visibility: "public" | "followers"
       profile_role:
         | "student"
@@ -702,6 +806,7 @@ export const Constants = {
   public: {
     Enums: {
       content_status: ["active", "hidden", "removed"],
+      notification_type: ["like", "comment", "follow", "message", "report_resolved"],
       post_visibility: ["public", "followers"],
       profile_role: [
         "student",

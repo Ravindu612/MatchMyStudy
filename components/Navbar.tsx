@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { loginPathFor } from "@/lib/signupRole";
 import Image from "next/image";
+import NotificationBell from "@/components/social/NotificationBell";
 
 export default function Navbar() {
   const router = useRouter();
@@ -126,6 +127,7 @@ export default function Navbar() {
 
         {/* RIGHT SIDE */}
         <div className="flex items-center gap-3">
+          <NotificationBell hideWhenSignedOut />
 
           {/* Find Courses */}
           <Link

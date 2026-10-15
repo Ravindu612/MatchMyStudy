@@ -1,5 +1,6 @@
 "use client";
 
+import AccountPrivacy from "@/components/social/AccountPrivacy";
 import ProfileHeader from "@/components/social/ProfileHeader";
 import { ACCOUNT_TYPE_OPTIONS } from "@/lib/social/accountType";
 import { prepareProfileImage } from "@/lib/social/prepareProfileImage";
@@ -584,6 +585,8 @@ export default function ProfileSettingsForm() {
             {saving ? "Saving…" : preparing ? "Preparing photo…" : "Save profile"}
           </button>
         </form>
+
+        <AccountPrivacy />
       </div>
     </main>
   );

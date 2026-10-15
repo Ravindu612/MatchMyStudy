@@ -95,14 +95,14 @@ export type OpenReportComment = {
 export type OpenReportMessage = {
   id: string;
   body: string;
-  senderId: string;
+  senderId: string | null;
   conversationId: string;
   deletedAt: string | null;
 };
 
 export type OpenReportSource = {
   id: string;
-  reporterId: string;
+  reporterId: string | null;
   targetType: string;
   targetId: string;
   reason: string;
@@ -113,7 +113,7 @@ export type OpenReportView = {
   id: string;
   createdAt: string;
   reason: string;
-  reporterId: string;
+  reporterId: string | null;
   reporterName: string;
   reporterHandle: string | null;
   targetType: ReportTargetType;
@@ -146,13 +146,13 @@ export function assembleOpenReports(input: {
       return [];
     }
 
-    const reporter = people.get(report.reporterId);
+    const reporter = report.reporterId ? people.get(report.reporterId) : undefined;
     const base = {
       id: report.id,
       createdAt: report.createdAt,
       reason: report.reason,
       reporterId: report.reporterId,
-      reporterName: reporter?.displayName ?? "Member",
+      reporterName: reporter?.displayName ?? (report.reporterId ? "Member" : "Deleted user"),
       reporterHandle: reporter?.handle ?? null,
       targetType,
       targetId: report.targetId,
@@ -167,7 +167,7 @@ export function assembleOpenReports(input: {
           ...base,
           body: post?.body ?? null,
           href: post ? `/post/${post.id}` : null,
-          contentStatus: post ? contentState(post.status, post.deletedAt) : null,
+          contentStatus: post ? contentState(post.status, post.deletedAt) : "deleted",
           profileId: post?.authorId ?? null,
           profileName: author?.displayName ?? null,
           profileHandle: author?.handle ?? null,
@@ -185,7 +185,7 @@ export function assembleOpenReports(input: {
           ...base,
           body: comment?.body ?? null,
           href: comment ? `/post/${comment.postId}` : null,
-          contentStatus: comment ? contentState(comment.status, comment.deletedAt) : null,
+          contentStatus: comment ? contentState(comment.status, comment.deletedAt) : "deleted",
           profileId: comment?.authorId ?? null,
           profileName: author?.displayName ?? null,
           profileHandle: author?.handle ?? null,
@@ -196,16 +196,17 @@ export function assembleOpenReports(input: {
 
     if (targetType === "message") {
       const message = messages.get(report.targetId);
-      const sender = message ? people.get(message.senderId) : undefined;
+      const sender = message?.senderId ? people.get(message.senderId) : undefined;
 
       return [
         {
           ...base,
           body: message?.body ?? null,
           href: message ? `/messages/${message.conversationId}` : null,
-          contentStatus: message ? (message.deletedAt ? "deleted" : "active") : null,
+          contentStatus: message ? (message.deletedAt ? "deleted" : "active") : "deleted",
           profileId: message?.senderId ?? null,
-          profileName: sender?.displayName ?? null,
+          profileName:
+            sender?.displayName ?? (message && message.senderId === null ? "Deleted user" : null),
           profileHandle: sender?.handle ?? null,
           isVerified: sender ? sender.isVerified : null,
         },
@@ -221,7 +222,7 @@ export function assembleOpenReports(input: {
         href: profile ? `/u/${encodeURIComponent(profile.handle)}` : null,
         contentStatus: null,
         profileId: report.targetId,
-        profileName: profile?.displayName ?? null,
+        profileName: profile?.displayName ?? "Deleted user",
         profileHandle: profile?.handle ?? null,
         isVerified: profile ? profile.isVerified : null,
       },

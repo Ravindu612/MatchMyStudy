@@ -5,6 +5,7 @@ import ReportButton from "@/components/social/ReportButton";
 import { formatPostTime } from "@/lib/social/formatPostTime";
 import { MESSAGE_BODY_MAX_LENGTH, messageForMessagingError } from "@/lib/social/messageValidation";
 import {
+  DELETED_CONVERSATION_PEER_ID,
   deleteMessage,
   listMessages,
   loadConversationPeers,
@@ -201,6 +202,8 @@ export default function ConversationThread({ conversationId, viewerId, pathname 
     }
   }
 
+  const otherAccountDeleted =
+    peers.length > 0 && peers.every((peer) => peer.id === DELETED_CONVERSATION_PEER_ID);
   const title = peers.map((peer) => peer.displayName).join(", ") || "Conversation";
   const subtitle = peers
     .map((peer) => (peer.handle ? `@${peer.handle}` : null))
@@ -274,12 +277,16 @@ export default function ConversationThread({ conversationId, viewerId, pathname 
               <p className="py-8 text-center text-sm text-slate-500">No messages yet. Say hello.</p>
             ) : null}
             {messages.map((message) => {
-              const mine = message.senderId === viewerId;
+              const mine = message.senderId !== null && message.senderId === viewerId;
               const deleted = message.deletedAt !== null;
+              const fromDeletedAccount = message.senderId === null;
 
               return (
                 <div key={message.id} className={`flex ${mine ? "justify-end" : "justify-start"}`}>
                   <div className={`max-w-[80%] ${mine ? "items-end" : "items-start"} flex flex-col`}>
+                    {fromDeletedAccount ? (
+                      <span className="px-1 text-[11px] font-semibold text-slate-500">Deleted user</span>
+                    ) : null}
                     <div
                       className={`rounded-2xl px-3 py-2 text-sm leading-6 ${
                         deleted
@@ -328,7 +335,7 @@ export default function ConversationThread({ conversationId, viewerId, pathname 
                         <ReportButton
                           targetType="message"
                           targetId={message.id}
-                          ownerId={message.senderId}
+                          ownerId={message.senderId ?? DELETED_CONVERSATION_PEER_ID}
                           className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-500 hover:text-slate-800"
                         />
                       ) : null}
@@ -339,6 +346,18 @@ export default function ConversationThread({ conversationId, viewerId, pathname 
             })}
             <div ref={bottomRef} />
           </div>
+          {otherAccountDeleted ? (
+            <div className="border-t border-slate-200 px-4 py-3">
+              <p className="text-sm text-slate-500">
+                This account was deleted. You can still read the conversation.
+              </p>
+              {error ? (
+                <p className="mt-2 text-sm text-red-600" role="alert">
+                  {error}
+                </p>
+              ) : null}
+            </div>
+          ) : (
           <form
             className="border-t border-slate-200 p-3"
             onSubmit={(event) => {
@@ -382,6 +401,7 @@ export default function ConversationThread({ conversationId, viewerId, pathname 
               </p>
             ) : null}
           </form>
+          )}
         </>
       ) : null}
     </section>

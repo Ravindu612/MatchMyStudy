@@ -10,7 +10,7 @@ export default function PrivacyPage() {
           </h1>
 
           <p className="text-slate-400">
-            Last updated: 29 September 2026
+            Last updated: 15 October 2026
           </p>
         </div>
 
@@ -226,7 +226,7 @@ export default function PrivacyPage() {
           </p>
 
           <p className="text-slate-300 leading-7">
-            MatchMyStudy uses Google's consent management functionality
+            MatchMyStudy uses Google&apos;s consent management functionality
             for users in the European Economic Area, the United Kingdom,
             and Switzerland to provide users with choices regarding
             applicable consent preferences.
@@ -260,13 +260,13 @@ export default function PrivacyPage() {
 
           <p className="text-slate-300 leading-7">
             Where consent is required, analytics-related storage and
-            processing will be handled according to the user's consent
+            processing will be handled according to the user&apos;s consent
             choices.
           </p>
 
           <p className="text-slate-300 leading-7">
             For more information about how Google handles data from
-            websites and applications, please see Google's privacy
+            websites and applications, please see Google&apos;s privacy
             information:
           </p>
 
@@ -328,7 +328,7 @@ export default function PrivacyPage() {
           <p className="text-slate-300 leading-7">
             Advertising providers may use cookies, identifiers, or other
             technologies to deliver, measure, and personalize advertising
-            where permitted by applicable law and based on the user's
+            where permitted by applicable law and based on the user&apos;s
             consent choices.
           </p>
 
@@ -345,8 +345,8 @@ export default function PrivacyPage() {
           </p>
 
           <p className="text-slate-300 leading-7">
-            More information about Google's use of cookies for
-            advertising can be found in Google's documentation:
+            More information about Google&apos;s use of cookies for
+            advertising can be found in Google&apos;s documentation:
           </p>
 
           <p className="text-slate-300 leading-7">
@@ -467,6 +467,19 @@ export default function PrivacyPage() {
             Retention periods may vary depending on the type of
             information and the purpose for which it is processed.
           </p>
+
+          <p className="text-slate-300 leading-7">
+            You can delete your account from profile settings. Deletion
+            removes your login, profile, posts, comments, likes, follows,
+            and blocks. Messages you sent in someone else&apos;s
+            conversation are kept so that person still has the thread,
+            and your name on those messages is replaced with &quot;Deleted
+            user&quot;. Reports filed about an account are kept for
+            moderation, with the deleted account&apos;s name removed. A
+            consultant page you created is removed. A directory listing
+            you claimed stays on MatchMyStudy and is disconnected from
+            your account.
+          </p>
         </section>
 
         {/* Security */}
@@ -519,8 +532,18 @@ export default function PrivacyPage() {
           </ul>
 
           <p className="text-slate-300 leading-7">
-            To exercise your rights, contact us using the contact details
-            provided below.
+            You can download a JSON copy of the personal data stored for
+            your account, including links to files you uploaded, or delete
+            your account, from{" "}
+            <a
+              href="/settings/profile"
+              className="text-blue-400 hover:text-blue-300 underline"
+            >
+              profile settings
+            </a>
+            . Those tools are available when you are signed in. To
+            exercise another right, or if you cannot sign in, contact us
+            using the details below.
           </p>
         </section>
 

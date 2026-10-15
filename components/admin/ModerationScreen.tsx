@@ -225,7 +225,7 @@ function ReportCard({
         <p className="mt-5 text-sm text-slate-500">The reported content is no longer available.</p>
       ) : null}
 
-      {report.profileId ? (
+      {report.profileId || report.profileName ? (
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 px-4 py-3">
           <p className="text-sm text-slate-700">
             Profile:{" "}
@@ -239,14 +239,16 @@ function ReportCard({
             ) : (
               <span className="font-semibold">{report.profileName ?? "Member"}</span>
             )}
-            <span className="text-slate-500">
-              {" "}
-              · {report.isVerified ? "Verified" : "Not verified"}
-            </span>
+            {report.isVerified === null ? null : (
+              <span className="text-slate-500">
+                {" "}
+                · {report.isVerified ? "Verified" : "Not verified"}
+              </span>
+            )}
           </p>
           <button
             type="button"
-            disabled={busy !== null || report.isVerified === null}
+            disabled={busy !== null || report.isVerified === null || !report.profileId}
             onClick={() =>
               void run(
                 "verify",

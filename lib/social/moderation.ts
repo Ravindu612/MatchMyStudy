@@ -55,11 +55,11 @@ export async function listOpenReports(): Promise<OpenReportView[]> {
     loadMessages(messageIds),
   ]);
   const people = await loadPeople([
-    ...reports.map((report) => report.reporterId),
+    ...reports.flatMap((report) => (report.reporterId ? [report.reporterId] : [])),
     ...reports.filter((report) => report.targetType === "profile").map((report) => report.targetId),
     ...posts.map((post) => post.authorId),
     ...comments.map((comment) => comment.authorId),
-    ...messages.map((message) => message.senderId),
+    ...messages.flatMap((message) => (message.senderId ? [message.senderId] : [])),
   ]);
 
   return assembleOpenReports({ reports, people, posts, comments, messages });
@@ -365,9 +365,11 @@ function normalizeReports(value: unknown): OpenReportSource[] {
 
     const record = row as Record<string, unknown>;
 
+    const reporterId = record.reporter_id;
+
     if (
       typeof record.id !== "string" ||
-      typeof record.reporter_id !== "string" ||
+      (typeof reporterId !== "string" && reporterId !== null) ||
       typeof record.target_type !== "string" ||
       typeof record.target_id !== "string" ||
       typeof record.reason !== "string" ||
@@ -380,7 +382,7 @@ function normalizeReports(value: unknown): OpenReportSource[] {
     return [
       {
         id: record.id,
-        reporterId: record.reporter_id,
+        reporterId: typeof reporterId === "string" ? reporterId : null,
         targetType: record.target_type,
         targetId: record.target_id,
         reason: record.reason,
@@ -470,10 +472,12 @@ function normalizeMessages(value: unknown): OpenReportMessage[] {
 
     const record = row as Record<string, unknown>;
 
+    const senderId = record.sender_id;
+
     if (
       typeof record.id !== "string" ||
       typeof record.body !== "string" ||
-      typeof record.sender_id !== "string" ||
+      (typeof senderId !== "string" && senderId !== null) ||
       typeof record.conversation_id !== "string"
     ) {
       return [];
@@ -483,7 +487,7 @@ function normalizeMessages(value: unknown): OpenReportMessage[] {
       {
         id: record.id,
         body: record.body,
-        senderId: record.sender_id,
+        senderId: typeof senderId === "string" ? senderId : null,
         conversationId: record.conversation_id,
         deletedAt: typeof record.deleted_at === "string" ? record.deleted_at : null,
       },

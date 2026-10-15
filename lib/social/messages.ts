@@ -12,10 +12,12 @@ import { requireUserId } from "@/lib/social/requireUser";
 export const MESSAGES_READ_EVENT = "mms-messages-read";
 const MESSAGE_PAGE_SIZE = 100;
 
+export const DELETED_CONVERSATION_PEER_ID = "deleted-user";
+
 export type ChatMessage = {
   id: string;
   conversationId: string;
-  senderId: string;
+  senderId: string | null;
   body: string;
   createdAt: string;
   deletedAt: string | null;
@@ -141,18 +143,20 @@ export async function listConversations(): Promise<ConversationSummary[]> {
   }
 
   const rows = normalizeSummaries(data);
-  const profiles = await loadProfiles(rows.map((row) => row.otherUserId));
+  const profiles = await loadProfiles(
+    rows.flatMap((row) => (row.otherUserId ? [row.otherUserId] : []))
+  );
 
   return sortConversations(
     rows.map((row) => {
-      const profile = profiles.get(row.otherUserId);
+      const profile = row.otherUserId ? profiles.get(row.otherUserId) : undefined;
 
       return {
         ...row,
-        displayName: profile?.displayName ?? "Member",
-        handle: profile?.handle ?? null,
-        avatarUrl: profile?.avatarUrl ?? null,
-        accountType: profile?.accountType ?? null,
+        displayName: row.otherUserId ? (profile?.displayName ?? "Member") : "Deleted user",
+        handle: row.otherUserId ? (profile?.handle ?? null) : null,
+        avatarUrl: row.otherUserId ? (profile?.avatarUrl ?? null) : null,
+        accountType: row.otherUserId ? (profile?.accountType ?? null) : null,
       };
     })
   );
@@ -208,10 +212,24 @@ export async function loadConversationPeers(conversationId: string): Promise<Con
     throw new Error(messageForMessagingError(error, "Couldn't load this conversation."));
   }
 
-  const ids = normalizeIds(data).filter((id) => id !== userId);
+  const memberIds = normalizeIds(data);
+
+  if (!memberIds.includes(userId)) {
+    return [];
+  }
+
+  const ids = memberIds.filter((id) => id !== userId);
 
   if (ids.length === 0) {
-    return [];
+    return [
+      {
+        id: DELETED_CONVERSATION_PEER_ID,
+        displayName: "Deleted user",
+        handle: null,
+        avatarUrl: null,
+        accountType: null,
+      },
+    ];
   }
 
   const profiles = await loadProfiles(ids);
@@ -329,9 +347,11 @@ function normalizeSummaries(value: unknown): ConversationSummary[] {
 
     const record = row as Record<string, unknown>;
 
+    const otherUserId = record.other_user_id;
+
     if (
       typeof record.conversation_id !== "string" ||
-      typeof record.other_user_id !== "string" ||
+      (typeof otherUserId !== "string" && otherUserId !== null) ||
       typeof record.conversation_created_at !== "string"
     ) {
       return [];
@@ -342,7 +362,7 @@ function normalizeSummaries(value: unknown): ConversationSummary[] {
     return [
       {
         conversationId: record.conversation_id,
-        otherUserId: record.other_user_id,
+        otherUserId: typeof otherUserId === "string" ? otherUserId : null,
         displayName: "Member",
         handle: null,
         avatarUrl: null,
@@ -371,10 +391,12 @@ function normalizeMessages(value: unknown): ChatMessage[] {
 
     const record = row as Record<string, unknown>;
 
+    const senderId = record.sender_id;
+
     if (
       typeof record.id !== "string" ||
       typeof record.conversation_id !== "string" ||
-      typeof record.sender_id !== "string" ||
+      (typeof senderId !== "string" && senderId !== null) ||
       typeof record.body !== "string" ||
       typeof record.created_at !== "string"
     ) {
@@ -385,7 +407,7 @@ function normalizeMessages(value: unknown): ChatMessage[] {
       {
         id: record.id,
         conversationId: record.conversation_id,
-        senderId: record.sender_id,
+        senderId: typeof senderId === "string" ? senderId : null,
         body: record.body,
         createdAt: record.created_at,
         deletedAt: typeof record.deleted_at === "string" ? record.deleted_at : null,

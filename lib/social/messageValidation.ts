@@ -58,7 +58,7 @@ export function messageForMessagingError(error: unknown, fallback: string): stri
 
 export type ConversationSummary = {
   conversationId: string;
-  otherUserId: string;
+  otherUserId: string | null;
   displayName: string;
   handle: string | null;
   avatarUrl: string | null;
@@ -96,6 +96,10 @@ export function conversationPreview(
 
   if (item.lastSenderId === viewerId) {
     return `You: ${text}`;
+  }
+
+  if (item.lastSenderId === null) {
+    return `Deleted user: ${text}`;
   }
 
   return text;

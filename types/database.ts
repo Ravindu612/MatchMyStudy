@@ -3,7 +3,8 @@
  *
  * Matches supabase/migrations/20261010230300_social_phase1.sql,
  * supabase/migrations/20261013220000_social_phase2_messages.sql,
- * supabase/migrations/20261014200000_social_phase2_notifications.sql, plus the
+ * supabase/migrations/20261014200000_social_phase2_notifications.sql,
+ * supabase/migrations/20261015220000_account_privacy.sql, plus the
  * production profile columns (id uuid, email text null, role text not null,
  * created_at timestamptz). consultants is not listed here: those migrations
  * do not change that table, and the repo does not contain its full column
@@ -299,7 +300,7 @@ export type Database = {
           created_at: string
           deleted_at: string | null
           id: string
-          sender_id: string
+          sender_id: string | null
         }
         Insert: {
           body: string
@@ -315,7 +316,7 @@ export type Database = {
           created_at?: string
           deleted_at?: string | null
           id?: string
-          sender_id?: string
+          sender_id?: string | null
         }
         Relationships: [
           {
@@ -543,7 +544,7 @@ export type Database = {
           created_at: string
           id: string
           reason: string
-          reporter_id: string
+          reporter_id: string | null
           resolution_note: string | null
           reviewed_by: string | null
           status: Database["public"]["Enums"]["report_status"]
@@ -567,7 +568,7 @@ export type Database = {
           created_at?: string
           id?: string
           reason?: string
-          reporter_id?: string
+          reporter_id?: string | null
           resolution_note?: string | null
           reviewed_by?: string | null
           status?: Database["public"]["Enums"]["report_status"]
@@ -622,7 +623,7 @@ export type Database = {
           last_message_at: string | null
           last_read_at: string | null
           last_sender_id: string | null
-          other_user_id: string
+          other_user_id: string | null
           unread_count: number
         }
         Relationships: []
@@ -636,6 +637,14 @@ export type Database = {
       can_view_post: {
         Args: { p_id: string }
         Returns: boolean
+      }
+      delete_user_account: {
+        Args: { p_uid: string }
+        Returns: undefined
+      }
+      export_my_data: {
+        Args: Record<PropertyKey, never>
+        Returns: Json
       }
       get_or_create_dm: {
         Args: { other_user: string }

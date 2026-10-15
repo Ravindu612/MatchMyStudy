@@ -103,6 +103,13 @@ test("previews, search, unread totals, and ordering follow the inbox", () => {
   );
   assert.equal(conversationPreview(deleted, viewer), "You deleted a message");
   assert.equal(conversationPreview(empty, viewer), "No messages yet");
+  assert.equal(
+    conversationPreview(
+      summary({ lastSenderId: null, lastBody: "See you at the airport" }),
+      viewer
+    ),
+    "Deleted user: See you at the airport"
+  );
 
   const sorted = sortConversations([older, empty, deleted, summary()]);
   assert.deepEqual(

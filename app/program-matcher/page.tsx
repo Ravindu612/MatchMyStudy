@@ -1,6 +1,10 @@
+import type { Metadata } from "next";
 import { STATIC_META } from "@/lib/seo-meta";
 
-export const metadata = STATIC_META["/program-matcher"];
+export const metadata: Metadata = {
+  ...STATIC_META["/program-matcher"],
+  robots: { index: false, follow: true },
+};
 
 export default function ProgramMatcherPage() {
   return (

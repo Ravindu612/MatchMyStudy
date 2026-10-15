@@ -1,3 +1,5 @@
+import CookieSettingsButton from "@/components/CookieSettingsButton";
+
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white px-6 py-16">
@@ -226,16 +228,28 @@ export default function PrivacyPage() {
           </p>
 
           <p className="text-slate-300 leading-7">
-            MatchMyStudy uses Google&apos;s consent management functionality
-            for users in the European Economic Area, the United Kingdom,
-            and Switzerland to provide users with choices regarding
-            applicable consent preferences.
+            MatchMyStudy uses a cookie banner on this website together
+            with Google Consent Mode version 2. For visitors in the
+            European Economic Area, the United Kingdom, and Switzerland,
+            Consent Mode defaults to denied for advertising storage
+            (ad_storage), analytics storage (analytics_storage), ad user
+            data (ad_user_data), and ad personalisation
+            (ad_personalization) until you choose. If you accept, those
+            signals are updated to granted. If you reject non-essential
+            cookies, they stay denied. Cookies needed to sign in and
+            keep the site secure are not used for advertising.
           </p>
 
           <p className="text-slate-300 leading-7">
-            You may change or withdraw your applicable consent choices
-            through the available consent settings on the website.
+            You can change or withdraw that choice at any time with the
+            Cookie settings control in the footer or the button below.
+            The choice is stored in your browser. This banner is our own
+            consent control, not the certified platform in Google AdSense
+            Privacy and messaging. If a message is later published for
+            this site there, it can use the same Consent Mode signals.
           </p>
+
+          <CookieSettingsButton className="inline-flex rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white hover:bg-blue-500" />
         </section>
 
         {/* Analytics */}
@@ -260,8 +274,8 @@ export default function PrivacyPage() {
 
           <p className="text-slate-300 leading-7">
             Where consent is required, analytics-related storage and
-            processing will be handled according to the user&apos;s consent
-            choices.
+            processing follow the analytics_storage Consent Mode signal
+            and the choice you make in the cookie banner.
           </p>
 
           <p className="text-slate-300 leading-7">
@@ -340,8 +354,10 @@ export default function PrivacyPage() {
 
           <p className="text-slate-300 leading-7">
             Users in the European Economic Area, the United Kingdom, and
-            Switzerland may be presented with a consent message and
-            choices regarding applicable advertising-related processing.
+            Switzerland are shown a consent message with choices for
+            advertising-related processing. Those choices update Consent
+            Mode: ad_storage, ad_user_data, and ad_personalization stay
+            denied for visitors in those regions until they accept.
           </p>
 
           <p className="text-slate-300 leading-7">

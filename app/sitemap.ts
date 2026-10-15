@@ -3,6 +3,10 @@ import { supabase } from "@/lib/supabase";
 import { consultants } from "@/data/consultants";
 import { universities } from "@/data/universities";
 import { programs } from "@/data/programs";
+import {
+  getIndexableUniversitySlugs,
+  isIndexableProgram,
+} from "@/lib/contentQuality";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.matchmystudy.com";
@@ -118,8 +122,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const allUniversities = Object.values(universities).flat();
 
+  const indexableUniversitySlugs = getIndexableUniversitySlugs();
+
+  // Short templated profiles stay on the site but are noindex and
+  // omitted here. A university page is included when it catalogs at
+  // least one substantial program (or its own description is long).
   const universityUrls: MetadataRoute.Sitemap =
-    allUniversities.map((university) => ({
+    allUniversities
+      .filter((university) => indexableUniversitySlugs.has(university.slug))
+      .map((university) => ({
       url: `${baseUrl}/universities/${university.slug}`,
       changeFrequency: "monthly",
       priority: 0.8,
@@ -131,8 +142,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
    * ------------------------------------------------
    */
 
+  // Templated program pages (no admission requirements and a short
+  // description) are noindex and left out of the sitemap.
   const programUrls: MetadataRoute.Sitemap =
-    programs.map((program) => ({
+    programs.filter(isIndexableProgram).map((program) => ({
       // Percent-encode so accented slugs (e.g. "iarchéime") are valid URLs.
       url: `${baseUrl}/programs/${encodeURIComponent(program.slug)}`,
       changeFrequency: "monthly",

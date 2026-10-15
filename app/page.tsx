@@ -4,6 +4,7 @@ import GlobalSearch from "@/components/GlobalSearch";
 import Link from "next/link";
 import { countries } from "@/data/countries";
 import FindConsultantsButton from "@/components/consultant/FindConsultantsButton";
+import AdSlot from "@/components/AdSlot";
 
 export const metadata = STATIC_META["/"];
 
@@ -161,7 +162,8 @@ Get personalized recommendations based on your goals, interests, and career aspi
 
 </div>
       </section>
-      
+
+      <AdSlot allowAds className="px-6 pb-16" />
     </main>
   );
 }

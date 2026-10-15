@@ -19,6 +19,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { universities } from "@/data/universities";
 import { getCountryPath, pageMeta, truncateDescription } from "@/lib/seo-meta";
+import {
+  getIndexableUniversitySlugs,
+  indexingRobots,
+} from "@/lib/contentQuality";
+import AdSlot from "@/components/AdSlot";
 
 const allUniversities = Object.values(universities).flat();
 
@@ -120,15 +125,20 @@ export async function generateMetadata({
     notFound();
   }
 
-  return pageMeta(
-    `/universities/${university.slug}`,
-    `${university.name} — Programs, Tuition & Study Information | MatchMyStudy`,
-    truncateDescription(
-      university.descriptionShort ||
-        university.description ||
-        `Explore ${university.name}, including study programs, tuition information, scholarships, rankings, and international student information.`
-    )
-  );
+  return {
+    ...pageMeta(
+      `/universities/${university.slug}`,
+      `${university.name} — Programs, Tuition & Study Information | MatchMyStudy`,
+      truncateDescription(
+        university.descriptionShort ||
+          university.description ||
+          `Explore ${university.name}, including study programs, tuition information, scholarships, rankings, and international student information.`
+      )
+    ),
+    robots: indexingRobots(
+      getIndexableUniversitySlugs().has(university.slug)
+    ),
+  };
 }
 
 export default async function UniversityDetailPage({
@@ -478,6 +488,11 @@ export default async function UniversityDetailPage({
         <UniversityProgramList
           universityName={university.name}
           programs={universityPrograms}
+        />
+
+        <AdSlot
+          allowAds={getIndexableUniversitySlugs().has(university.slug)}
+          className="my-10 px-8"
         />
 
       </section>

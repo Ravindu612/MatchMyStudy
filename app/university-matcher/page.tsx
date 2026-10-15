@@ -1,6 +1,10 @@
+import type { Metadata } from "next";
 import { STATIC_META } from "@/lib/seo-meta";
 
-export const metadata = STATIC_META["/university-matcher"];
+export const metadata: Metadata = {
+  ...STATIC_META["/university-matcher"],
+  robots: { index: false, follow: true },
+};
 
 export default function UniversityMatcherPage() {
   return (

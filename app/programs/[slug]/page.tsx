@@ -10,6 +10,11 @@ import {
   pageMeta,
   truncateDescription,
 } from "@/lib/seo-meta";
+import {
+  indexingRobots,
+  isIndexableProgram,
+} from "@/lib/contentQuality";
+import AdSlot from "@/components/AdSlot";
 
 const PLACEHOLDER_DESCRIPTION = "Program details will be added soon.";
 
@@ -43,11 +48,14 @@ export async function generateMetadata({
 
   // Same title/description/canonical as before, plus Open Graph
   // tags via the shared helper (canonical resolves against metadataBase).
-  return pageMeta(
-    `/programs/${encodeURIComponent(program.slug)}`,
-    getProgramTitle(program),
-    description
-  );
+  return {
+    ...pageMeta(
+      `/programs/${encodeURIComponent(program.slug)}`,
+      getProgramTitle(program),
+      description
+    ),
+    robots: indexingRobots(isIndexableProgram(program)),
+  };
 }
 
 export default async function ProgramDetailPage({
@@ -316,6 +324,11 @@ export default async function ProgramDetailPage({
               </div>
             </div>
           )}
+
+          <AdSlot
+            allowAds={isIndexableProgram(program)}
+            className="mb-8"
+          />
 
           {/* Official Link */}
           <a

@@ -1,8 +1,13 @@
 import AppFrame from "@/components/AppFrame";
+import CookieConsent from "@/components/CookieConsent";
 import type { Metadata } from "next";
 import { DEFAULT_OPEN_GRAPH, DEFAULT_TWITTER } from "@/lib/seo-meta";
+import {
+  ADSENSE_SCRIPT_SRC,
+  buildConsentHeadScript,
+  GTAG_SCRIPT_SRC,
+} from "@/lib/googleHeadScript";
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -40,21 +45,24 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          id="google-consent"
+          dangerouslySetInnerHTML={{ __html: buildConsentHeadScript() }}
+        />
+        {/* Raw Google tags, not next/script: Consent Mode must run in the
+            initial HTML before either library, and AdSense looks for this
+            exact adsbygoogle.js snippet in the document head. */}
+        <script async src={GTAG_SCRIPT_SRC} />
+        <script
+          async
+          src={ADSENSE_SCRIPT_SRC}
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <AppFrame>{children}</AppFrame>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-VE9WKS9YNG"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-VE9WKS9YNG');
-          `}
-        </Script>
+        <CookieConsent />
       </body>
     </html>
   );

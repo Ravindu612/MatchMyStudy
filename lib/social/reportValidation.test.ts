@@ -160,5 +160,38 @@ test("open reports assemble post, comment, and profile targets", () => {
   assert.equal(views[3]?.contentStatus, "active");
   assert.equal(views[3]?.profileHandle, "consultant");
   assert.equal(views[4]?.body, null);
-  assert.equal(views[4]?.contentStatus, null);
+  assert.equal(views[4]?.contentStatus, "deleted");
+});
+
+test("reports stay visible after the reporter or message sender deletes their account", () => {
+  const views = assembleOpenReports({
+    reports: [
+      {
+        id: "r-deleted",
+        reporterId: null,
+        targetType: "message",
+        targetId: "message-deleted",
+        reason: "Still needs review",
+        createdAt: "2026-10-06T00:00:00.000Z",
+      },
+    ],
+    people: [],
+    posts: [],
+    comments: [],
+    messages: [
+      {
+        id: "message-deleted",
+        body: "Hello after deletion",
+        senderId: null,
+        conversationId: "conversation-1",
+        deletedAt: null,
+      },
+    ],
+  });
+
+  assert.equal(views.length, 1);
+  assert.equal(views[0]?.reporterName, "Deleted user");
+  assert.equal(views[0]?.profileName, "Deleted user");
+  assert.equal(views[0]?.body, "Hello after deletion");
+  assert.equal(views[0]?.contentStatus, "active");
 });

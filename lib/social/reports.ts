@@ -28,7 +28,7 @@ export async function submitReport(input: {
   const userId = await requireUserId();
   const ownerId = await visibleOwnerId(input.targetType, input.targetId);
 
-  if (ownerId === userId) {
+  if (ownerId !== null && ownerId === userId) {
     throw new Error("You can't report your own content.");
   }
 
@@ -54,7 +54,7 @@ export async function submitReport(input: {
 async function visibleOwnerId(
   targetType: ReportTargetType,
   targetId: string
-): Promise<string> {
+): Promise<string | null> {
   if (targetType === "post") {
     const { data, error } = await supabase
       .from("posts")
@@ -95,11 +95,11 @@ async function visibleOwnerId(
       .is("deleted_at", null)
       .maybeSingle();
 
-    if (error || typeof data?.sender_id !== "string") {
+    if (error || !data) {
       throw new Error("This message is unavailable.");
     }
 
-    return data.sender_id;
+    return typeof data.sender_id === "string" ? data.sender_id : null;
   }
 
   const { data, error } = await supabase

@@ -38,6 +38,7 @@ import { columbiaUniversityPrograms } from "./programs/unitedStates/columbiaUniv
 import { universityOfSouthernCaliforniaPrograms } from "./programs/unitedStates/universityOfSouthernCaliforniaPrograms";
 import { arizonaStateUniversityPrograms } from "./programs/unitedStates/arizonaStateUniversityPrograms";
 import { universityOfIllinoisUrbanaChampaignPrograms } from "./programs/unitedStates/universityOfIllinoisUrbanaChampaignPrograms";
+import { purdueUniversityPrograms } from "./programs/unitedStates/purdueUniversityPrograms";
 import { universityCollegeDublinPrograms } from "./programs/ireland/universityCollegeDublinPrograms";
 import { trinityCollegeDublinPrograms } from "./programs/ireland/trinityCollegeDublinPrograms";
 import { universityCollegeCorkPrograms } from "./programs/ireland/universityCollegeCorkPrograms";
@@ -132,6 +133,7 @@ export const programs: Program[] = [
   ...universityOfSouthernCaliforniaPrograms,
   ...arizonaStateUniversityPrograms,
   ...universityOfIllinoisUrbanaChampaignPrograms,
+  ...purdueUniversityPrograms,
   ...universityCollegeDublinPrograms,
   ...trinityCollegeDublinPrograms,
   ...universityCollegeCorkPrograms,

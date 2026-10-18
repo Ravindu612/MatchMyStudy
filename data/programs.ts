@@ -30,11 +30,11 @@ import { rmitUniversityPrograms } from "./programs/australia/rmitUniversityProgr
 import { universityOfQueenslandPrograms } from "./programs/australia/universityOfQueenslandPrograms";
 import { universityOfNewSouthWalesPrograms } from "./programs/australia/universityOfNewSouthWalesPrograms";
 import { monashUniversityPrograms } from "./programs/australia/monashUniversityPrograms";
+import { universityOfAdelaidePrograms } from "./programs/australia/universityOfAdelaidePrograms";
 import { australianNationalUniversityPrograms } from "./programs/australia/australianNationalUniversityPrograms";
 import { utsPrograms } from "./programs/australia/utsPrograms";
 import { macquarieUniversityPrograms } from "./programs/australia/macquarieUniversityPrograms";
 import { deakinUniversityPrograms } from "./programs/australia/deakinUniversityPrograms";
-import { universityOfAdelaidePrograms } from "./programs/australia/universityOfAdelaidePrograms";
 import { newYorkUniversityPrograms } from "./programs/unitedStates/newYorkUniversityPrograms";
 import { northeasternUniversityPrograms } from "./programs/unitedStates/northeasternUniversityPrograms";
 import { columbiaUniversityPrograms } from "./programs/unitedStates/columbiaUniversityPrograms";
@@ -129,11 +129,11 @@ export const programs: Program[] = [
   ...universityOfQueenslandPrograms,
   ...universityOfNewSouthWalesPrograms,
   ...monashUniversityPrograms,
+  ...universityOfAdelaidePrograms,
   ...australianNationalUniversityPrograms,
   ...utsPrograms,
   ...macquarieUniversityPrograms,
   ...deakinUniversityPrograms,
-  ...universityOfAdelaidePrograms,
   ...newYorkUniversityPrograms,
   ...northeasternUniversityPrograms,
   ...columbiaUniversityPrograms,

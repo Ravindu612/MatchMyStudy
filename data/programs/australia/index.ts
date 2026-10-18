@@ -8,6 +8,7 @@ import { australianNationalUniversityPrograms } from "./australianNationalUniver
 import { utsPrograms } from "./utsPrograms";
 import { macquarieUniversityPrograms } from "./macquarieUniversityPrograms";
 import { deakinUniversityPrograms } from "./deakinUniversityPrograms";
+import { universityOfAdelaidePrograms } from "./universityOfAdelaidePrograms";
 
 export const australiaPrograms = [
   ...universityOfMelbournePrograms,
@@ -20,4 +21,5 @@ export const australiaPrograms = [
   ...utsPrograms,
   ...macquarieUniversityPrograms,
   ...deakinUniversityPrograms,
+  ...universityOfAdelaidePrograms,
 ];

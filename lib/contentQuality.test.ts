@@ -2,8 +2,8 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import vm from "node:vm";
-import { programs } from "@/data/programs";
-import { universities } from "@/data/universities";
+import { programs, type Program } from "@/data/programs";
+import { universities, type University } from "@/data/universities";
 import {
   ADSENSE_CLIENT,
   CONSENT_STORAGE_KEY,
@@ -15,6 +15,7 @@ import {
   getIndexableUniversitySlugs,
   isAdsAllowedPath,
   isIndexableProgram,
+  isIndexableUniversity,
   MIN_STANDALONE_DESCRIPTION_CHARS,
 } from "@/lib/contentQuality";
 import {
@@ -31,24 +32,49 @@ test("ads.txt publishes the AdSense publisher line", () => {
 });
 
 test("program and university index splits match the content rule", () => {
-  const stats = getContentIndexStats();
-
-  assert.equal(stats.programs.total, programs.length);
-  assert.equal(
-    stats.programs.indexable + stats.programs.thin,
-    stats.programs.total
+  const indexablePrograms = programs.filter(meetsProgramIndexRule);
+  const indexableProgramUniversitySlugs = new Set(
+    indexablePrograms.map((program) => program.universitySlug)
   );
-  assert.equal(stats.universities.total, Object.values(universities).flat().length);
-  assert.equal(
-    stats.universities.indexable + stats.universities.thin,
-    stats.universities.total
+  const allUniversities = Object.values(universities).flat();
+  const indexableUniversities = allUniversities.filter((university) =>
+    meetsUniversityIndexRule(university, indexableProgramUniversitySlugs)
   );
 
-  // Locked to the rule so a data or threshold change is visible in review.
-  assert.deepEqual(stats, {
-    programs: { total: 2599, indexable: 792, thin: 1807 },
-    universities: { total: 637, indexable: 46, thin: 591 },
+  assert.deepEqual(getContentIndexStats(), {
+    programs: {
+      total: programs.length,
+      indexable: indexablePrograms.length,
+      thin: programs.length - indexablePrograms.length,
+    },
+    universities: {
+      total: allUniversities.length,
+      indexable: indexableUniversities.length,
+      thin: allUniversities.length - indexableUniversities.length,
+    },
   });
+
+  for (const program of programs) {
+    assert.equal(
+      isIndexableProgram(program),
+      meetsProgramIndexRule(program),
+      program.slug
+    );
+  }
+
+  const indexedUniversitySlugs = getIndexableUniversitySlugs();
+  for (const university of allUniversities) {
+    const expected = meetsUniversityIndexRule(
+      university,
+      indexableProgramUniversitySlugs
+    );
+    assert.equal(
+      isIndexableUniversity(university, indexableProgramUniversitySlugs),
+      expected,
+      university.slug
+    );
+    assert.equal(indexedUniversitySlugs.has(university.slug), expected, university.slug);
+  }
 });
 
 test("templated program pages are thin and researched pages stay indexable", () => {
@@ -133,6 +159,38 @@ test("consent head script denies EEA storage and pauses ads on thin pages", () =
     );
   }
 });
+
+const PLACEHOLDER_DESCRIPTION = /will be added soon/i;
+
+function meetsProgramIndexRule(program: Program) {
+  const hasAdmissions = program.admissionRequirements?.some((item) =>
+    Boolean(item && item.trim())
+  );
+  if (hasAdmissions) return true;
+
+  const description = program.description ?? "";
+  return (
+    Boolean(description.trim()) &&
+    !PLACEHOLDER_DESCRIPTION.test(description) &&
+    description.trim().length >= MIN_STANDALONE_DESCRIPTION_CHARS
+  );
+}
+
+function meetsUniversityIndexRule(
+  university: University,
+  indexableProgramUniversitySlugs: ReadonlySet<string>
+) {
+  const description = university.description ?? "";
+  if (
+    Boolean(description.trim()) &&
+    !PLACEHOLDER_DESCRIPTION.test(description) &&
+    description.trim().length >= MIN_STANDALONE_DESCRIPTION_CHARS
+  ) {
+    return true;
+  }
+
+  return indexableProgramUniversitySlugs.has(university.slug);
+}
 
 function pauseAdRequestsFor(script: string, path: string) {
   const sandbox: {

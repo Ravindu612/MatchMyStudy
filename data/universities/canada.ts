@@ -27,7 +27,8 @@ export const canadaUniversities: University[] = [
     internationalStudents: "25,000+",
     logo: "/logos/ubc.png",
     bannerImage: "/banners/ubc.jpg",
-    description: "...",
+    description:
+      "Founded in 1915, UBC is a leading public research university with campuses in Vancouver and Kelowna (Okanagan), regularly placed among the top public universities worldwide for teaching and research.",
     officialWebsite: "https://www.ubc.ca",
   },
 
@@ -119,6 +120,8 @@ export const canadaUniversities: University[] = [
     country: "Canada",
     city: "Edmonton",
     type: "Public University",
+    ranking: "#96 QS World Rankings",
+    internationalStudents: "8,990 (2024-25)",
     logo: "/logos/ualberta.png",
     founded: "1908",
     popularFields: ["Engineering", "Business", "Science", "Health Sciences"],

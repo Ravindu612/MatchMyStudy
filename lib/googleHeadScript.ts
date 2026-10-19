@@ -4,12 +4,7 @@ import {
   EEA_UK_CH_REGIONS,
   GA_MEASUREMENT_ID,
 } from "@/lib/consentConfig";
-import {
-  ADS_DENY_EXACT,
-  ADS_DENY_PREFIXES,
-  getIndexableProgramSlugs,
-  getIndexableUniversitySlugs,
-} from "@/lib/contentQuality";
+import { ADS_DENY_EXACT, ADS_DENY_PREFIXES } from "@/lib/contentQuality";
 
 function jsonForInlineScript(value: unknown) {
   return JSON.stringify(value).replace(/</g, "\\u003c");
@@ -19,13 +14,14 @@ function jsonForInlineScript(value: unknown) {
  * Runs from a blocking inline script in <head>, before gtag.js and
  * adsbygoogle.js. Consent defaults are queued first. Thin and empty
  * pages pause AdSense requests so auto ads cannot fill there.
+ *
+ * Thin program/university pages are found by their
+ * <meta name="robots" content="noindex, ..."> tag (set from
+ * lib/contentQuality.ts), which Next renders in <head> before this
+ * script. That avoids inlining every indexable slug into every page.
  */
 export function buildConsentHeadScript() {
   const regions = jsonForInlineScript(EEA_UK_CH_REGIONS);
-  const richPrograms = jsonForInlineScript([...getIndexableProgramSlugs()]);
-  const richUniversities = jsonForInlineScript([
-    ...getIndexableUniversitySlugs(),
-  ]);
   const denyExact = jsonForInlineScript(ADS_DENY_EXACT);
   const denyPrefixes = jsonForInlineScript(ADS_DENY_PREFIXES);
   const storageKey = jsonForInlineScript(CONSENT_STORAGE_KEY);
@@ -71,8 +67,6 @@ try {
 gtag('js', new Date());
 gtag('config', ${gaId});
 (function () {
-  var richPrograms = new Set(${richPrograms});
-  var richUniversities = new Set(${richUniversities});
   var denyExact = new Set(${denyExact});
   var denyPrefixes = ${denyPrefixes};
   var path = location.pathname || '/';
@@ -90,10 +84,10 @@ gtag('config', ${gaId});
       }
     }
   }
-  var program = path.match(/^\\/programs\\/([^/]+)$/);
-  if (program && !richPrograms.has(program[1])) blocked = true;
-  var university = path.match(/^\\/universities\\/([^/]+)$/);
-  if (university && !richUniversities.has(university[1])) blocked = true;
+  if (!blocked && typeof document !== 'undefined') {
+    var robots = document.querySelector('meta[name="robots"]');
+    if (robots && /noindex/i.test(robots.getAttribute('content') || '')) blocked = true;
+  }
   window.adsbygoogle = window.adsbygoogle || [];
   if (blocked) window.adsbygoogle.pauseAdRequests = 1;
 })();

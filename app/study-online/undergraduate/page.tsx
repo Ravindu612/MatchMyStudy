@@ -1,11 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMeta } from "@/lib/seo-meta";
 import { undergraduateCourses } from "@/data/onlineCourses/undergraduateCourses";
 
-export const metadata = {
-  title: "Free Undergraduate Courses Online | MatchMyStudy",
-  description:
-    "Explore free undergraduate-level online courses from leading universities and education providers.",
-};
+export const metadata: Metadata = pageMeta(
+  "/study-online/undergraduate",
+  "Free Undergraduate Courses Online | MatchMyStudy",
+  "Explore free undergraduate-level online courses from leading universities and education providers."
+);
 
 export default function UndergraduateCoursesPage() {
   return (

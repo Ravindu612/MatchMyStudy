@@ -1,11 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMeta } from "@/lib/seo-meta";
 import { postgraduateCourses } from "@/data/onlineCourses/postgraduateCourses";
 
-export const metadata = {
-  title: "Free Postgraduate Courses Online | MatchMyStudy",
-  description:
-    "Explore free postgraduate-level online courses and university learning resources from leading institutions.",
-};
+export const metadata: Metadata = pageMeta(
+  "/study-online/postgraduate",
+  "Free Postgraduate Courses Online | MatchMyStudy",
+  "Explore free postgraduate-level online courses and university learning resources from leading institutions."
+);
 
 export default function PostgraduateCoursesPage() {
   return (

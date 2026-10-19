@@ -11,6 +11,7 @@ import { conestogaCollegePrograms } from "./conestogaCollegePrograms";
 import { universityOfCalgaryPrograms } from "./universityOfCalgaryPrograms";
 import { sheridanCollegePrograms } from "./sheridanCollegePrograms";
 import { carletonUniversityPrograms } from "./carletonUniversityPrograms";
+import { brockUniversityPrograms } from "./brockUniversityPrograms";
 import { centennialCollegePrograms } from "./centennialCollegePrograms";
 import { georgeBrownCollegePrograms } from "./georgeBrownCollegePrograms";
 import { fanshaweCollegePrograms } from "./fanshaweCollegePrograms";
@@ -41,6 +42,7 @@ export const canadaPrograms = [
   ...universityOfCalgaryPrograms,
   ...sheridanCollegePrograms,
   ...carletonUniversityPrograms,
+  ...brockUniversityPrograms,
   ...centennialCollegePrograms,
   ...georgeBrownCollegePrograms,
   ...fanshaweCollegePrograms,

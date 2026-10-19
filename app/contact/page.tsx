@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo-meta";
+
+export const metadata: Metadata = pageMeta(
+  "/contact",
+  "Contact MatchMyStudy | MatchMyStudy",
+  "Questions about studying abroad, universities, programs or education consultants? Contact the MatchMyStudy team."
+);
+
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white px-6 py-16">

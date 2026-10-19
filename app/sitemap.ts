@@ -58,6 +58,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     // /feed is left out (and noindex) until public posts
     // render server-side; it can be added back then.
+    ...[
+      "/study-online/undergraduate",
+      "/study-online/postgraduate",
+      "/study-online/short-courses",
+    ].map((path) => ({
+      url: `${baseUrl}${path}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    // Trust and legal pages.
+    ...["/privacy", "/terms", "/contact", "/affiliate-disclosure"].map(
+      (path) => ({
+        url: `${baseUrl}${path}`,
+        changeFrequency: "yearly" as const,
+        priority: 0.3,
+      })
+    ),
   ];
 
   /*

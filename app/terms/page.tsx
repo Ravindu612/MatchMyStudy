@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo-meta";
 
-export const metadata: Metadata = {
-  title: "Terms & Conditions | MatchMyStudy",
-  description:
-    "Read the Terms & Conditions for using MatchMyStudy, including accounts, consultant profiles, reviews, subscriptions, third-party services, advertising, and affiliate links.",
-};
+export const metadata: Metadata = pageMeta(
+  "/terms",
+  "Terms & Conditions | MatchMyStudy",
+  "Read the Terms & Conditions for using MatchMyStudy, including accounts, consultant profiles, reviews, subscriptions, third-party services, advertising, and affiliate links."
+);
 
 export default function TermsPage() {
   return (

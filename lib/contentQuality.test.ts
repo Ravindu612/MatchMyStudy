@@ -12,6 +12,7 @@ import {
 } from "@/lib/consentConfig";
 import {
   getContentIndexStats,
+  getIndexableProgramSlugs,
   getIndexableUniversitySlugs,
   isAdsAllowedPath,
   isIndexableProgram,
@@ -149,8 +150,12 @@ test("consent head script denies EEA storage and pauses ads on thin pages", () =
     `/universities/${programs.find((program) => isIndexableProgram(program))!.universitySlug}`,
   ];
 
+  // The script reads the robots meta tag instead of inlining slugs.
+  assert.doesNotMatch(script, /uts-information-technology/);
+  assert.ok(script.length < 5000, `script is ${script.length} chars`);
+
   for (const path of samples) {
-    const paused = pauseAdRequestsFor(script, path);
+    const paused = pauseAdRequestsFor(script, path, robotsFor(path));
     const allowed = isAdsAllowedPath(path);
     assert.equal(
       paused,
@@ -192,16 +197,41 @@ function meetsUniversityIndexRule(
   return indexableProgramUniversitySlugs.has(university.slug);
 }
 
-function pauseAdRequestsFor(script: string, path: string) {
+// The robots meta the page would render (lib/contentQuality.ts
+// indexingRobots), or null when the page has none.
+function robotsFor(path: string) {
+  const program = path.replace(/\/$/, "").match(/^\/programs\/([^/]+)$/);
+  if (program) {
+    return getIndexableProgramSlugs().has(program[1])
+      ? "index, follow"
+      : "noindex, follow";
+  }
+  const university = path.replace(/\/$/, "").match(/^\/universities\/([^/]+)$/);
+  if (university) {
+    return getIndexableUniversitySlugs().has(university[1])
+      ? "index, follow"
+      : "noindex, follow";
+  }
+  return null;
+}
+
+function pauseAdRequestsFor(script: string, path: string, robots: string | null) {
   const sandbox: {
     window: Record<string, unknown>;
     location: { pathname: string };
     localStorage: { getItem: () => null };
+    document: { querySelector: (selector: string) => unknown };
     adsbygoogle?: { pauseAdRequests?: number };
   } = {
     window: {},
     location: { pathname: path },
     localStorage: { getItem: () => null },
+    document: {
+      querySelector: (selector: string) =>
+        selector === 'meta[name="robots"]' && robots !== null
+          ? { getAttribute: () => robots }
+          : null,
+    },
   };
   sandbox.window = sandbox as unknown as Record<string, unknown>;
   vm.createContext(sandbox);

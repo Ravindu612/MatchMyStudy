@@ -11,6 +11,7 @@ import { conestogaCollegePrograms } from "./programs/canada/conestogaCollegeProg
 import { universityOfCalgaryPrograms } from "./programs/canada/universityOfCalgaryPrograms";
 import { sheridanCollegePrograms } from "./programs/canada/sheridanCollegePrograms";
 import { carletonUniversityPrograms } from "./programs/canada/carletonUniversityPrograms";
+import { brockUniversityPrograms } from "./programs/canada/brockUniversityPrograms";
 import { centennialCollegePrograms } from "./programs/canada/centennialCollegePrograms";
 import { georgeBrownCollegePrograms } from "./programs/canada/georgeBrownCollegePrograms";
 import { fanshaweCollegePrograms } from "./programs/canada/fanshaweCollegePrograms";
@@ -20,20 +21,24 @@ import { universityOfManitobaPrograms } from "./programs/canada/universityOfMani
 import { westernUniversityPrograms } from "./programs/canada/westernUniversityPrograms";
 import { mcgillUniversityPrograms } from "./programs/canada/mcgillUniversityPrograms";
 import { simonFraserUniversityPrograms } from "./programs/canada/simonFraserUniversityPrograms";
+import { universityOfSaskatchewanPrograms } from "./programs/canada/universityOfSaskatchewanPrograms";
 import { saitPrograms } from "./programs/canada/saitPrograms";
 import { naitPrograms } from "./programs/canada/naitPrograms";
 import { memorialUniversityPrograms } from "./programs/canada/memorialUniversityPrograms";
 import { universityOfWindsorPrograms } from "./programs/canada/universityOfWindsorPrograms";
+import { trentUniversityPrograms } from "./programs/canada/trentUniversityPrograms";
 import { universityOfMelbournePrograms } from "./programs/australia/universityOfMelbournePrograms";
 import { universityOfSydneyPrograms } from "./programs/australia/universityOfSydneyPrograms";
 import { rmitUniversityPrograms } from "./programs/australia/rmitUniversityPrograms";
 import { universityOfQueenslandPrograms } from "./programs/australia/universityOfQueenslandPrograms";
 import { universityOfNewSouthWalesPrograms } from "./programs/australia/universityOfNewSouthWalesPrograms";
 import { monashUniversityPrograms } from "./programs/australia/monashUniversityPrograms";
+import { universityOfAdelaidePrograms } from "./programs/australia/universityOfAdelaidePrograms";
 import { australianNationalUniversityPrograms } from "./programs/australia/australianNationalUniversityPrograms";
 import { utsPrograms } from "./programs/australia/utsPrograms";
 import { macquarieUniversityPrograms } from "./programs/australia/macquarieUniversityPrograms";
 import { deakinUniversityPrograms } from "./programs/australia/deakinUniversityPrograms";
+import { universityOfWesternAustraliaPrograms } from "./programs/australia/universityOfWesternAustraliaPrograms";
 import { newYorkUniversityPrograms } from "./programs/unitedStates/newYorkUniversityPrograms";
 import { northeasternUniversityPrograms } from "./programs/unitedStates/northeasternUniversityPrograms";
 import { columbiaUniversityPrograms } from "./programs/unitedStates/columbiaUniversityPrograms";
@@ -109,6 +114,7 @@ export const programs: Program[] = [
   ...universityOfCalgaryPrograms,
   ...sheridanCollegePrograms,
   ...carletonUniversityPrograms,
+  ...brockUniversityPrograms,
   ...centennialCollegePrograms,
   ...georgeBrownCollegePrograms,
   ...fanshaweCollegePrograms,
@@ -118,20 +124,24 @@ export const programs: Program[] = [
   ...westernUniversityPrograms,
   ...mcgillUniversityPrograms,
   ...simonFraserUniversityPrograms,
+  ...universityOfSaskatchewanPrograms,
   ...saitPrograms,
   ...naitPrograms,
   ...memorialUniversityPrograms,
   ...universityOfWindsorPrograms,
+  ...trentUniversityPrograms,
   ...universityOfMelbournePrograms,
   ...universityOfSydneyPrograms,
   ...rmitUniversityPrograms,
   ...universityOfQueenslandPrograms,
   ...universityOfNewSouthWalesPrograms,
   ...monashUniversityPrograms,
+  ...universityOfAdelaidePrograms,
   ...australianNationalUniversityPrograms,
   ...utsPrograms,
   ...macquarieUniversityPrograms,
   ...deakinUniversityPrograms,
+  ...universityOfWesternAustraliaPrograms,
   ...newYorkUniversityPrograms,
   ...northeasternUniversityPrograms,
   ...columbiaUniversityPrograms,

@@ -4,10 +4,12 @@ import { rmitUniversityPrograms } from "./rmitUniversityPrograms";
 import { universityOfQueenslandPrograms } from "./universityOfQueenslandPrograms";
 import { universityOfNewSouthWalesPrograms } from "./universityOfNewSouthWalesPrograms";
 import { monashUniversityPrograms } from "./monashUniversityPrograms";
+import { universityOfAdelaidePrograms } from "./universityOfAdelaidePrograms";
 import { australianNationalUniversityPrograms } from "./australianNationalUniversityPrograms";
 import { utsPrograms } from "./utsPrograms";
 import { macquarieUniversityPrograms } from "./macquarieUniversityPrograms";
 import { deakinUniversityPrograms } from "./deakinUniversityPrograms";
+import { universityOfWesternAustraliaPrograms } from "./universityOfWesternAustraliaPrograms";
 
 export const australiaPrograms = [
   ...universityOfMelbournePrograms,
@@ -16,8 +18,10 @@ export const australiaPrograms = [
   ...universityOfQueenslandPrograms,
   ...universityOfNewSouthWalesPrograms,
   ...monashUniversityPrograms,
+  ...universityOfAdelaidePrograms,
   ...australianNationalUniversityPrograms,
   ...utsPrograms,
   ...macquarieUniversityPrograms,
   ...deakinUniversityPrograms,
+  ...universityOfWesternAustraliaPrograms,
 ];

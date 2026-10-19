@@ -11,6 +11,7 @@ import { conestogaCollegePrograms } from "./conestogaCollegePrograms";
 import { universityOfCalgaryPrograms } from "./universityOfCalgaryPrograms";
 import { sheridanCollegePrograms } from "./sheridanCollegePrograms";
 import { carletonUniversityPrograms } from "./carletonUniversityPrograms";
+import { brockUniversityPrograms } from "./brockUniversityPrograms";
 import { centennialCollegePrograms } from "./centennialCollegePrograms";
 import { georgeBrownCollegePrograms } from "./georgeBrownCollegePrograms";
 import { fanshaweCollegePrograms } from "./fanshaweCollegePrograms";
@@ -20,10 +21,12 @@ import { universityOfManitobaPrograms } from "./universityOfManitobaPrograms";
 import { westernUniversityPrograms } from "./westernUniversityPrograms";
 import { mcgillUniversityPrograms } from "./mcgillUniversityPrograms";
 import { simonFraserUniversityPrograms } from "./simonFraserUniversityPrograms";
+import { universityOfSaskatchewanPrograms } from "./universityOfSaskatchewanPrograms";
 import { saitPrograms } from "./saitPrograms";
 import { naitPrograms } from "./naitPrograms";
 import { memorialUniversityPrograms } from "./memorialUniversityPrograms";
 import { universityOfWindsorPrograms } from "./universityOfWindsorPrograms";
+import { trentUniversityPrograms } from "./trentUniversityPrograms";
 
 export const canadaPrograms = [
   ...universityOfTorontoPrograms,
@@ -39,6 +42,7 @@ export const canadaPrograms = [
   ...universityOfCalgaryPrograms,
   ...sheridanCollegePrograms,
   ...carletonUniversityPrograms,
+  ...brockUniversityPrograms,
   ...centennialCollegePrograms,
   ...georgeBrownCollegePrograms,
   ...fanshaweCollegePrograms,
@@ -48,9 +52,11 @@ export const canadaPrograms = [
   ...westernUniversityPrograms,
   ...mcgillUniversityPrograms,
   ...simonFraserUniversityPrograms,
+  ...universityOfSaskatchewanPrograms,
   ...saitPrograms,
   ...naitPrograms,
   ...memorialUniversityPrograms,
   ...universityOfWindsorPrograms,
+  ...trentUniversityPrograms,
 ];
 

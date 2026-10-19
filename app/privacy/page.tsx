@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo-meta";
 import CookieSettingsButton from "@/components/CookieSettingsButton";
+
+export const metadata: Metadata = pageMeta(
+  "/privacy",
+  "Privacy Policy | MatchMyStudy",
+  "How MatchMyStudy collects, uses and protects personal data, including cookies, Google Consent Mode, advertising, and how to export or delete your account."
+);
 
 export default function PrivacyPage() {
   return (

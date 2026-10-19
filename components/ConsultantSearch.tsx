@@ -26,17 +26,22 @@ const stopWords = [
   "consultants",
 ];
 
-export default function ConsultantSearch() {
+export default function ConsultantSearch({
+  initialConsultants = consultants,
+}: {
+  // Built on the server by app/consultants/page.tsx.
+  initialConsultants?: Consultant[];
+}) {
   const [keyword, setKeyword] = useState("");
   const [homeCountry, setHomeCountry] = useState("");
   const [destinationCountry, setDestinationCountry] =
     useState("");
 
   const [allConsultants, setAllConsultants] =
-    useState<Consultant[]>(consultants);
+    useState<Consultant[]>(initialConsultants);
 
   const [results, setResults] =
-    useState<Consultant[]>(consultants);
+    useState<Consultant[]>(initialConsultants);
 
   useEffect(() => {
     async function loadConsultants() {
@@ -171,9 +176,8 @@ const formattedConsultants: Consultant[] =
 
         /*
          * If Supabase fails, keep showing the
-         * original local consultant profiles.
+         * server-built list (initialConsultants).
          */
-        setAllConsultants(consultants);
       }
     }
 

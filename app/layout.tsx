@@ -35,6 +35,31 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Consent defaults must run before gtag.js and adsbygoogle.js execute.
+ * React 19 hoists `<script async src>` ahead of an inline head script, and
+ * `next/script` preloads external `beforeInteractive` URLs into `<head>`
+ * first. This blocking inline script queues the defaults, then inserts both
+ * libraries so neither URL can start loading before that.
+ */
+function buildOrderedGoogleHeadScript() {
+  return `${buildConsentHeadScript()}
+(function () {
+  var parent = document.head || document.documentElement;
+  var ga = document.createElement('script');
+  ga.async = true;
+  ga.id = 'google-analytics';
+  ga.src = ${JSON.stringify(GTAG_SCRIPT_SRC)};
+  var ads = document.createElement('script');
+  ads.async = true;
+  ads.id = 'google-adsense';
+  ads.src = ${JSON.stringify(ADSENSE_SCRIPT_SRC)};
+  ads.crossOrigin = 'anonymous';
+  parent.appendChild(ga);
+  parent.appendChild(ads);
+})();`;
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -48,16 +73,7 @@ export default function RootLayout({
       <head>
         <script
           id="google-consent"
-          dangerouslySetInnerHTML={{ __html: buildConsentHeadScript() }}
-        />
-        {/* Raw Google tags, not next/script: Consent Mode must run in the
-            initial HTML before either library, and AdSense looks for this
-            exact adsbygoogle.js snippet in the document head. */}
-        <script async src={GTAG_SCRIPT_SRC} />
-        <script
-          async
-          src={ADSENSE_SCRIPT_SRC}
-          crossOrigin="anonymous"
+          dangerouslySetInnerHTML={{ __html: buildOrderedGoogleHeadScript() }}
         />
       </head>
       <body className="min-h-full flex flex-col">

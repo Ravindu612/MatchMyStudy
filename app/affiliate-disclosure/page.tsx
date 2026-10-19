@@ -1,8 +1,11 @@
-export const metadata = {
-  title: "Affiliate Disclosure | MatchMyStudy",
-  description:
-    "Learn how MatchMyStudy may use affiliate links and commercial relationships.",
-};
+import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo-meta";
+
+export const metadata: Metadata = pageMeta(
+  "/affiliate-disclosure",
+  "Affiliate Disclosure | MatchMyStudy",
+  "Learn how MatchMyStudy may use affiliate links and commercial relationships."
+);
 
 export default function AffiliateDisclosurePage() {
   return (

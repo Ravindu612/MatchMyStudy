@@ -1,10 +1,63 @@
 import ConsultantSearch from "@/components/ConsultantSearch";
 import ConsultantCTA from "@/components/ConsultantCTA";
 import { STATIC_META } from "@/lib/seo-meta";
+import { consultants } from "@/data/consultants";
+import { getConsultants, mapDbConsultant } from "@/lib/consultantService";
+import { supabase } from "@/lib/supabase";
+import type { Consultant } from "@/types/consultant";
 
 export const metadata = STATIC_META["/consultants"];
 
-export default function ConsultantsPage() {
+// Rebuilt at most once an hour, so new or edited Supabase
+// profiles show up in the server HTML without a redeploy.
+export const revalidate = 3600;
+
+/*
+ * The full public list, built on the server so the first HTML
+ * already links to every real profile (crawlers don't wait for
+ * the client-side Supabase fetch).
+ *
+ * Same rules as the profile page (getPublicConsultant) and the
+ * sitemap: a Supabase profile wins over a static one with the same
+ * slug, and a static profile with an approved claim isn't public
+ * (its URL 404s), so it isn't listed.
+ */
+async function getListedConsultants(): Promise<Consultant[]> {
+  try {
+    const dbConsultants = ((await getConsultants()) ?? []).map(
+      mapDbConsultant
+    );
+
+    let claimedIds = new Set<string>();
+    const { data: approvedClaims, error: claimsError } = await supabase
+      .from("consultant_claims")
+      .select("consultant_id")
+      .eq("status", "approved");
+
+    if (claimsError) {
+      console.error("Load approved consultant claims error:", claimsError);
+    } else {
+      claimedIds = new Set(
+        (approvedClaims ?? []).map((claim) => claim.consultant_id)
+      );
+    }
+
+    const dbSlugs = new Set(dbConsultants.map((c) => c.slug));
+    const local = consultants.filter(
+      (c) => !dbSlugs.has(c.slug) && !claimedIds.has(c.id)
+    );
+
+    return [...local, ...dbConsultants];
+  } catch (error) {
+    // Supabase unavailable: fall back to the static profiles.
+    console.error("Load consultants error:", error);
+    return consultants;
+  }
+}
+
+export default async function ConsultantsPage() {
+  const initialConsultants = await getListedConsultants();
+
   return (
     <main className="min-h-screen bg-slate-50">
 
@@ -34,7 +87,7 @@ export default function ConsultantsPage() {
           </div>
 
           <div className="mt-12">
-            <ConsultantSearch />
+            <ConsultantSearch initialConsultants={initialConsultants} />
           </div>
 
         </div>

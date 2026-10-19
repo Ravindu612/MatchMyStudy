@@ -1,11 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMeta } from "@/lib/seo-meta";
 import ShortCourseSearch from "@/components/onlineCourses/ShortCourseSearch";
 
-export const metadata = {
-  title: "Free Short Courses Online | MatchMyStudy",
-  description:
-    "Explore free online short courses from Google and other leading education providers. Develop digital, business, technology, analytics, and career skills.",
-};
+export const metadata: Metadata = pageMeta(
+  "/study-online/short-courses",
+  "Free Short Courses Online | MatchMyStudy",
+  "Explore free online short courses from Google and other leading education providers. Develop digital, business, technology, analytics, and career skills."
+);
 
 export default function ShortCoursesPage() {
   return (

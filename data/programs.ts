@@ -27,6 +27,7 @@ import { naitPrograms } from "./programs/canada/naitPrograms";
 import { memorialUniversityPrograms } from "./programs/canada/memorialUniversityPrograms";
 import { universityOfWindsorPrograms } from "./programs/canada/universityOfWindsorPrograms";
 import { trentUniversityPrograms } from "./programs/canada/trentUniversityPrograms";
+import { ontarioTechUniversityPrograms } from "./programs/canada/ontarioTechUniversityPrograms";
 import { universityOfMelbournePrograms } from "./programs/australia/universityOfMelbournePrograms";
 import { universityOfSydneyPrograms } from "./programs/australia/universityOfSydneyPrograms";
 import { rmitUniversityPrograms } from "./programs/australia/rmitUniversityPrograms";
@@ -131,6 +132,7 @@ export const programs: Program[] = [
   ...memorialUniversityPrograms,
   ...universityOfWindsorPrograms,
   ...trentUniversityPrograms,
+  ...ontarioTechUniversityPrograms,
   ...universityOfMelbournePrograms,
   ...universityOfSydneyPrograms,
   ...rmitUniversityPrograms,

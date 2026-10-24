@@ -44,6 +44,7 @@ import { universityOfWesternAustraliaPrograms } from "./programs/australia/unive
 import { newYorkUniversityPrograms } from "./programs/unitedStates/newYorkUniversityPrograms";
 import { northeasternUniversityPrograms } from "./programs/unitedStates/northeasternUniversityPrograms";
 import { columbiaUniversityPrograms } from "./programs/unitedStates/columbiaUniversityPrograms";
+import { uclaPrograms } from "./programs/unitedStates/uclaPrograms";
 import { universityOfSouthernCaliforniaPrograms } from "./programs/unitedStates/universityOfSouthernCaliforniaPrograms";
 import { bostonUniversityPrograms } from "./programs/unitedStates/bostonUniversityPrograms";
 import { arizonaStateUniversityPrograms } from "./programs/unitedStates/arizonaStateUniversityPrograms";
@@ -149,6 +150,7 @@ export const programs: Program[] = [
   ...newYorkUniversityPrograms,
   ...northeasternUniversityPrograms,
   ...columbiaUniversityPrograms,
+  ...uclaPrograms,
   ...universityOfSouthernCaliforniaPrograms,
   ...bostonUniversityPrograms,
   ...arizonaStateUniversityPrograms,

@@ -36,6 +36,11 @@ export type BlogPost = {
   coverImage: string;
   coverImageAlt: string;
   unsplash: UnsplashCredit;
+  /**
+   * Editorial note for the speaking-practice link.
+   * Set only when this article already discusses language prep.
+   */
+  languagePracticeNote?: string;
 };
 
 const FULL_ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
@@ -99,6 +104,8 @@ export const blogPosts: BlogPost[] = [
         text: "Every clean comparison falls apart the week you get sick, your card is declined, or a class is harder than its title. Build a small margin into the Tuesday before you need it. An hour with nothing scheduled. A little money that is not already promised to rent. The phone number of the campus health desk and the international student office, saved while you are still calm.\n\nThe right program is the one whose ordinary Tuesday you can repeat. You can still want the beautiful city. Make sure that city has a Tuesday you can live through, and then live through again the week after.",
       },
     ],
+    languagePracticeNote:
+      "The Tuesday above already counts an extra hour when lectures are in a language you are still learning. Speaking practice is the part of that hour that is hard to do from a textbook.",
     coverImage: "/images/blog/the-tuesday-test.jpg",
     coverImageAlt: "A person writing on a notebook with a pen",
     unsplash: {
@@ -136,6 +143,8 @@ export const blogPosts: BlogPost[] = [
         text: "Finland offers high-quality education, a safe living environment, and growing opportunities for international students. Learning Finnish can improve job opportunities while studying.",
       },
     ],
+    languagePracticeNote:
+      "The Finland section notes that learning Finnish can improve job opportunities while you study. The same idea applies in Germany and other places where daily life is not in English: speaking practice is how you prepare before you go.",
     coverImage: "/images/blog/best-countries-2026.jpg",
     coverImageAlt: "Students walk and bike on a college campus path",
     unsplash: {
@@ -169,6 +178,8 @@ export const blogPosts: BlogPost[] = [
         text: "Both countries can be expensive, especially in large cities. Students should compare rent, transport, food, insurance, and tuition before choosing a destination.",
       },
     ],
+    languagePracticeNote:
+      "Both countries teach in English. Extra speaking practice helps with tests such as IELTS or TOEFL and with everyday conversation after you arrive.",
     coverImage: "/images/blog/canada-vs-australia.jpg",
     coverImageAlt: "Colorful pushpins marking locations on a world map",
     unsplash: {
@@ -202,6 +213,8 @@ export const blogPosts: BlogPost[] = [
         text: "The cheapest country is not always the best country. Students should also consider job opportunities, language requirements, immigration rules, and long-term career plans.",
       },
     ],
+    languagePracticeNote:
+      "The advice above says to weigh language requirements, not only tuition. If you do not already speak the language you will use in class or in daily life, speaking practice is the part you can start now.",
     coverImage: "/images/blog/cheapest-countries.jpg",
     coverImageAlt: "A stack of books",
     unsplash: {

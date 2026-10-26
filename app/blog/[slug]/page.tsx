@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BlogCover, BlogPhotoCredit } from "@/components/blog/BlogCover";
+import ItalkiSpeakingCta from "@/components/ItalkiSpeakingCta";
 import {
   formatBlogDate,
   getBlogPost,
@@ -145,6 +146,13 @@ export default async function BlogPostPage({
             </section>
           ))}
         </div>
+
+        {post.languagePracticeNote && (
+          <ItalkiSpeakingCta
+            note={post.languagePracticeNote}
+            className="mt-8"
+          />
+        )}
 
         <div className="mt-12 p-8 rounded-3xl bg-blue-50 border border-blue-200">
           <h2 className="text-2xl font-bold mb-3 text-slate-900">

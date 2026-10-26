@@ -5,7 +5,9 @@ import { universities } from "@/data/universities";
 import CountrySearch from "@/components/CountrySearch";
 import { programs } from "@/data/programs";
 import FindConsultantsButton from "@/components/consultant/FindConsultantsButton";
+import ItalkiSpeakingCta from "@/components/ItalkiSpeakingCta";
 import { countryQuickInfo } from "@/data/countryQuickInfo";
+import { countrySpeakingNote } from "@/lib/italki";
 
 type CountryKey = keyof typeof universities;
 
@@ -31,6 +33,7 @@ export default function CountryPage({
   );
 
   const quickInfo = countryQuickInfo[countryKey];
+  const speakingNote = countrySpeakingNote(String(countryKey), country);
 
   const quickInfoCards = [
     { title: "Tuition Fees", section: quickInfo?.tuitionFees },
@@ -196,6 +199,10 @@ export default function CountryPage({
             </div>
           ))}
         </div>
+
+        {speakingNote && (
+          <ItalkiSpeakingCta note={speakingNote} className="mb-16" />
+        )}
 
         <div id="universities">
           <h2 className="text-3xl font-bold mb-8 text-slate-900">

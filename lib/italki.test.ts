@@ -90,6 +90,14 @@ test("English destinations mention speaking for tests and arrival", () => {
   const note = countrySpeakingNote("canada", "Canada");
   assert.match(note ?? "", /IELTS or TOEFL/);
   assert.match(note ?? "", /English/);
+  assert.match(
+    countrySpeakingNote("usa", "United States") ?? "",
+    /in the United States/
+  );
+  assert.match(
+    countrySpeakingNote("netherlands", "Netherlands") ?? "",
+    /in the Netherlands/
+  );
 });
 
 test("unknown countries do not get a note", () => {

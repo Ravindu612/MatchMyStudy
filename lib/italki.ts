@@ -69,6 +69,18 @@ export function speakingPracticeCountryKeys(): string[] {
   return Object.keys(speakingPracticeByCountry);
 }
 
+function inCountry(countryName: string): string {
+  const needsArticle = new Set([
+    "United States",
+    "United Kingdom",
+    "United Arab Emirates",
+    "Czech Republic",
+    "Netherlands",
+  ]);
+
+  return needsArticle.has(countryName) ? `the ${countryName}` : countryName;
+}
+
 export function countrySpeakingNote(
   countryKey: string,
   countryName: string
@@ -78,10 +90,10 @@ export function countrySpeakingNote(
   if (!entry) return null;
 
   if (entry.kind === "english") {
-    return `Programmes in ${countryName} are taught in English. Speaking practice helps if you are preparing for a test such as IELTS or TOEFL, and it helps with conversation after you arrive.`;
+    return `Programmes in ${inCountry(countryName)} are taught in English. Speaking practice helps if you are preparing for a test such as IELTS or TOEFL, and it helps with conversation after you arrive.`;
   }
 
-  return `Outside class in ${countryName} you will use ${entry.language}. Some programmes are taught in ${entry.language}, and an English-taught degree may still ask for a test such as IELTS or TOEFL. Speaking practice is the part that is hard to do from a textbook.`;
+  return `Outside class in ${inCountry(countryName)} you will use ${entry.language}. Some programmes are taught in ${entry.language}, and an English-taught degree may still ask for a test such as IELTS or TOEFL. Speaking practice is the part that is hard to do from a textbook.`;
 }
 
 const ENGLISH_TEST = /\b(IELTS|TOEFL)\b/i;

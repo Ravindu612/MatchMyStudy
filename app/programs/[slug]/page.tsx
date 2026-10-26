@@ -15,6 +15,8 @@ import {
   isIndexableProgram,
 } from "@/lib/contentQuality";
 import AdSlot from "@/components/AdSlot";
+import ItalkiSpeakingCta from "@/components/ItalkiSpeakingCta";
+import { programSpeakingNote } from "@/lib/italki";
 
 const PLACEHOLDER_DESCRIPTION = "Program details will be added soon.";
 
@@ -72,6 +74,12 @@ export default async function ProgramDetailPage({
   }
 
   const universityHref = `/universities/${program.universitySlug}`;
+  const speakingNote = programSpeakingNote({
+    language: program.language,
+    admissionRequirements: program.admissionRequirements,
+    showsEnglishTests:
+      program.universitySlug === "university-of-british-columbia",
+  });
 
   const breadcrumbItems = [
     { name: "Home", href: "/" },
@@ -323,6 +331,10 @@ export default async function ProgramDetailPage({
                 </div>
               </div>
             </div>
+          )}
+
+          {speakingNote && (
+            <ItalkiSpeakingCta note={speakingNote} className="mb-8" />
           )}
 
           <AdSlot

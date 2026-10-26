@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { blogPosts } from "@/data/blog/posts";
 import { countries } from "@/data/countries";
 
 export const SITE_URL = "https://www.matchmystudy.com";
@@ -171,6 +172,26 @@ export function getCountryPath(countryName: string) {
 
 /*
  * ------------------------------------------------
+ * Blog posts
+ * ------------------------------------------------
+ *
+ * One entry in data/blog/posts.ts is enough. Titles and
+ * descriptions here stay in step with that list.
+ */
+
+const blogPostMeta: Record<string, Metadata> = Object.fromEntries(
+  blogPosts.map((post) => [
+    `/blog/${post.slug}`,
+    pageMeta(
+      `/blog/${post.slug}`,
+      `${post.title} | MatchMyStudy`,
+      post.description
+    ),
+  ])
+);
+
+/*
+ * ------------------------------------------------
  * Static pages
  * ------------------------------------------------
  */
@@ -218,21 +239,5 @@ export const STATIC_META: Record<string, Metadata> = {
     "The MatchMyStudy University Matcher is coming soon to help you shortlist universities abroad that match your goals. Explore universities by country in the meantime."
   ),
 
-  "/blog/canada-vs-australia": pageMeta(
-    "/blog/canada-vs-australia",
-    "Canada vs Australia for International Students | MatchMyStudy",
-    "Canada or Australia? Compare education quality, part-time student jobs and living costs in both countries to decide which study destination fits your budget and goals."
-  ),
-
-  "/blog/cheapest-countries": pageMeta(
-    "/blog/cheapest-countries",
-    "Cheapest Countries to Study Abroad | MatchMyStudy",
-    "Looking for an affordable study destination? See why Germany's low-tuition public universities and Finland's scholarships make them good-value options, and what else to budget for."
-  ),
-
-  "/blog/best-countries-2026": pageMeta(
-    "/blog/best-countries-2026",
-    "Best Countries for International Students in 2026 | MatchMyStudy",
-    "Compare Canada, Australia, Germany and Finland for international students in 2026: tuition fees, student jobs, living costs, post-study work and quality of education."
-  ),
+  ...blogPostMeta,
 };

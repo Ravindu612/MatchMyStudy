@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/seo-meta";
+import JsonLd from "@/components/JsonLd";
+import { hubPageJsonLd } from "@/lib/hub-jsonld";
 
 export const metadata: Metadata = pageMeta(
   "/terms",
@@ -10,6 +12,7 @@ export const metadata: Metadata = pageMeta(
 export default function TermsPage() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
+      <JsonLd data={hubPageJsonLd({ name: "Terms of Use", path: "/terms" })} />
       <div className="mx-auto max-w-4xl px-6 py-16">
         <h1 className="text-4xl font-bold tracking-tight">
           Terms & Conditions

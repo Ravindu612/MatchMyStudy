@@ -5,10 +5,20 @@ import { useMemo, useState } from "react";
 import type { University } from "@/data/universities";
 import type { Program } from "@/data/programs";
 
+export type SearchProgram = Pick<
+  Program,
+  "slug" | "universitySlug" | "universityName" | "name" | "field" | "level" | "duration" | "language"
+>;
+
+export type SearchUniversity = Pick<
+  University,
+  "slug" | "name" | "city" | "country" | "type" | "description"
+>;
+
 type CountrySearchProps = {
   country: string;
-  universities: University[];
-  programs: Program[];
+  universities: SearchUniversity[];
+  programs: SearchProgram[];
 };
 
 export default function CountrySearch({

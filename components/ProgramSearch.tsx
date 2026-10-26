@@ -5,9 +5,14 @@ import { useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import type { Program } from "@/data/programs";
 
+export type ProgramSearchItem = Pick<
+  Program,
+  "slug" | "name" | "field" | "level" | "duration" | "language" | "campus" | "degree"
+>;
+
 type ProgramSearchProps = {
   universityName: string;
-  programs: Program[];
+  programs: ProgramSearchItem[];
 };
 
 export default function ProgramSearch({

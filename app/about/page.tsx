@@ -1,10 +1,13 @@
 import { STATIC_META } from "@/lib/seo-meta";
+import JsonLd from "@/components/JsonLd";
+import { hubPageJsonLd } from "@/lib/hub-jsonld";
 
 export const metadata = STATIC_META["/about"];
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white px-6 py-16">
+      <JsonLd data={hubPageJsonLd({ type: "AboutPage", name: "About MatchMyStudy", path: "/about" })} />
       <div className="max-w-4xl mx-auto">
 
         <h1 className="text-4xl font-bold mb-6">

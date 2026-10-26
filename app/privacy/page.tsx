@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/seo-meta";
 import CookieSettingsButton from "@/components/CookieSettingsButton";
+import JsonLd from "@/components/JsonLd";
+import { hubPageJsonLd } from "@/lib/hub-jsonld";
 
 export const metadata: Metadata = pageMeta(
   "/privacy",
@@ -11,6 +13,7 @@ export const metadata: Metadata = pageMeta(
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white px-6 py-16">
+      <JsonLd data={hubPageJsonLd({ name: "Privacy Policy", path: "/privacy" })} />
       <div className="max-w-4xl mx-auto">
 
         {/* Header */}

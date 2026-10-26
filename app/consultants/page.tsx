@@ -5,6 +5,8 @@ import { consultants } from "@/data/consultants";
 import { getConsultants, mapDbConsultant } from "@/lib/consultantService";
 import { supabase } from "@/lib/supabase";
 import type { Consultant } from "@/types/consultant";
+import JsonLd from "@/components/JsonLd";
+import { hubPageJsonLd } from "@/lib/hub-jsonld";
 
 export const metadata = STATIC_META["/consultants"];
 
@@ -60,6 +62,17 @@ export default async function ConsultantsPage() {
 
   return (
     <main className="min-h-screen bg-slate-50">
+      <JsonLd
+        data={hubPageJsonLd({
+          type: "CollectionPage",
+          name: "Study Abroad Consultants",
+          path: "/consultants",
+          items: initialConsultants.map((c) => ({
+            name: c.name,
+            url: `/consultants/${c.slug}`,
+          })),
+        })}
+      />
 
       <section className="bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 py-20">
 

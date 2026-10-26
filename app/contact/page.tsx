@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/seo-meta";
+import JsonLd from "@/components/JsonLd";
+import { hubPageJsonLd } from "@/lib/hub-jsonld";
 
 export const metadata: Metadata = pageMeta(
   "/contact",
@@ -10,6 +12,7 @@ export const metadata: Metadata = pageMeta(
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white px-6 py-16">
+      <JsonLd data={hubPageJsonLd({ type: "ContactPage", name: "Contact MatchMyStudy", path: "/contact" })} />
       <div className="max-w-4xl mx-auto">
 
         {/* Heading */}

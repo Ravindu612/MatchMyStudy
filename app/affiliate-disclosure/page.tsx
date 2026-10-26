@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/seo-meta";
+import JsonLd from "@/components/JsonLd";
+import { hubPageJsonLd } from "@/lib/hub-jsonld";
 
 export const metadata: Metadata = pageMeta(
   "/affiliate-disclosure",
@@ -10,6 +12,7 @@ export const metadata: Metadata = pageMeta(
 export default function AffiliateDisclosurePage() {
   return (
     <main className="min-h-screen bg-slate-50 py-16">
+      <JsonLd data={hubPageJsonLd({ name: "Affiliate Disclosure", path: "/affiliate-disclosure" })} />
       <div className="mx-auto max-w-4xl px-6">
         <article className="rounded-3xl bg-white p-8 shadow-sm md:p-12">
           <h1 className="text-4xl font-bold tracking-tight text-slate-900">

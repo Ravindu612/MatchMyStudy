@@ -1,9 +1,11 @@
 import Link from "next/link";
 import type { Program, ProgramLevel } from "@/data/programs";
 
+export type ProgramListItem = Pick<Program, "slug" | "name" | "level">;
+
 type UniversityProgramListProps = {
   universityName: string;
-  programs: Program[];
+  programs: ProgramListItem[];
 };
 
 /*
@@ -55,7 +57,7 @@ export default function UniversityProgramList({
     return null;
   }
 
-  const groups = new Map<string, Program[]>();
+  const groups = new Map<string, ProgramListItem[]>();
 
   for (const program of programs) {
     const group = groups.get(program.level) ?? [];

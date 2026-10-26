@@ -2,6 +2,8 @@ import Link from "next/link";
 import { BlogCover, BlogPhotoCredit } from "@/components/blog/BlogCover";
 import { formatBlogDate, getBlogPosts } from "@/data/blog/posts";
 import { STATIC_META } from "@/lib/seo-meta";
+import JsonLd from "@/components/JsonLd";
+import { hubPageJsonLd } from "@/lib/hub-jsonld";
 
 export const metadata = STATIC_META["/blog"];
 
@@ -10,6 +12,14 @@ export default function BlogPage() {
 
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900 px-6 py-16">
+      <JsonLd
+        data={hubPageJsonLd({
+          type: "CollectionPage",
+          name: "Study Abroad Articles",
+          path: "/blog",
+          items: posts.map((p) => ({ name: p.title, url: `/blog/${p.slug}` })),
+        })}
+      />
       <section className="max-w-7xl mx-auto">
         <p className="text-blue-600 font-semibold mb-4">
           Student Blog

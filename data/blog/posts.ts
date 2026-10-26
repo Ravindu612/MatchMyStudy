@@ -73,6 +73,51 @@ export function formatBlogDate(date: string) {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "Pack for Week Three: A Suitcase Guide for International Students",
+    slug: "pack-for-week-three",
+    description:
+      "Pack for the ordinary third week abroad, not the arrival photo: what to carry, what to buy there, and the small things that make a new room feel like yours.",
+    category: "Student Life",
+    date: "2026-10-26",
+    readTime: "5 min read",
+    intro:
+      "Most packing lists are written for the first day. The flight, the arrivals hall, the photo you send home from the new room. That day matters, but it only happens once, and you will get through it on adrenaline and snacks.\n\nThe day your suitcase really has to work for is somewhere in week three. The excitement has worn thin, the laundry is piling up, a cold is starting, and you have a seminar at nine. Pack for that day. It is a quieter list, and a more useful one.",
+    sections: [
+      {
+        heading: "Start with the folder, not the clothes",
+        text: "Before a single shirt goes in, put your paper life in one place. Your passport, your admission letter, your visa or permit documents, proof of accommodation, insurance details, and anything the university asked you to bring on arrival. Keep the originals in your hand luggage, never in the checked bag, and keep a scanned copy somewhere you can open from any phone.\n\nAdd the boring extras: a few passport photos, a copy of your prescriptions, and your school certificates if there is any chance a local office will want to see them. Read the official pages from your university and the immigration authority for the exact list, because it changes from country to country. The folder is the only part of the suitcase that is hard to replace once you land.",
+      },
+      {
+        heading: "Pack clothes for a normal week",
+        text: "It is tempting to pack for the person you hope to be abroad: the hiking version, the party version, the version who irons. Pack for the person who goes to class, does laundry once a week, and gets cold in the library. Count roughly a week and a half of everyday clothes, one outfit you would wear to a presentation or an interview, and layers you can add or remove.\n\nLook up the weather for the months you will actually be there, not only arrival month. If the winter will be serious and you have never lived through one, you can often buy a proper coat locally, made for that climate and sometimes cheaper second-hand. A suitcase full of guesses is heavier than a suitcase with space left over.",
+      },
+      {
+        heading: "Bring the things that are hard to find",
+        text: "Some items are easy to buy anywhere: towels, hangers, shampoo, a cheap pan. Others are surprisingly hard to replace. Medicine you take regularly is the obvious one. Bring it in its original packaging with a copy of the prescription, and check your destination's official rules first, because some common medicines are restricted in some countries.\n\nThen think about the smaller things. Glasses and a spare pair, or your contact lens prescription. A phone charger, plus a plug adapter for the country you are heading to. The spice blend or tea you cannot find abroad, if customs allows it. Clothes in your size if your size is unusual. These are the gaps that show up on a Tuesday night when the shops are closed.",
+      },
+      {
+        heading: "Leave room for the first shopping trip",
+        text: "You will shop in the first week, whatever you pack. Bedding, a pillow, cleaning things, groceries, a bin, a lamp because the ceiling light is harsh. Many universities and student groups run welcome sales or swap tables where these cost very little, and older students often leave usable things behind.\n\nSo leave space, and leave a little money set aside for that trip in your budget. Write a short list before you go of what you will buy on arrival, so you do not panic-buy everything in the first shop near the station. A half-empty suitcase on the way out is a full one on the way home, and that is fine.",
+      },
+      {
+        heading: "Pack one small piece of home",
+        text: "Week three is often when homesickness arrives, quietly, in the middle of an ordinary afternoon. Practical lists tend to skip this part. Pack something light that makes a rented room feel like yours: a few printed photos, a small blanket, a mug, a scarf someone gave you, a recipe written in a familiar hand.\n\nIt is not about decoration. It is about having one thing in the room that already knows you. On the grey days, that matters more than a second pair of shoes.",
+      },
+      {
+        heading: "The night-before check",
+        text: "Before you close the bag, run through a short list. Documents in hand luggage, with copies saved online. Medicine and prescriptions together. Phone, charger, and adapter where you can reach them. A change of clothes in your carry-on in case the checked bag takes the scenic route. The address of your first night's stay written down, in case your phone dies at the airport.\n\nThen weigh the bag against your airline's allowance, take one thing out, and go to sleep. Week three will be easier because of what you chose tonight.",
+      },
+    ],
+    coverImage: "/images/blog/pack-for-week-three.jpg",
+    coverImageAlt: "Clothing items and a pair of shoes in an open suitcase",
+    unsplash: {
+      photographerName: "Arnel Hasanovic",
+      photographerUrl: "https://unsplash.com/@arnelhasanovic",
+      photoUrl:
+        "https://unsplash.com/photos/clothing-items-and-pair-of-shoes-in-luggage-Nl-SXO4FAHw",
+    },
+  },
+  {
     title: "The Tuesday Test: How to Choose a Study Abroad Plan You Can Actually Live",
     slug: "the-tuesday-test",
     description:

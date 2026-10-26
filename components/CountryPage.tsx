@@ -2,7 +2,10 @@ import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Link from "next/link";
 import { universities } from "@/data/universities";
-import CountrySearch from "@/components/CountrySearch";
+import CountrySearch, {
+  type SearchProgram,
+  type SearchUniversity,
+} from "@/components/CountrySearch";
 import { programs } from "@/data/programs";
 import FindConsultantsButton from "@/components/consultant/FindConsultantsButton";
 import ItalkiSpeakingCta from "@/components/ItalkiSpeakingCta";
@@ -28,8 +31,18 @@ export default function CountryPage({
 }: CountryPageProps) {
   const countryUniversities = universities[countryKey];
 
-  const countryPrograms = programs.filter(
-    (program) => program.country.toLowerCase() === country.toLowerCase()
+  // The search box only needs these fields; sending whole program
+  // objects made country pages several MB of HTML.
+  const countryPrograms: SearchProgram[] = programs
+    .filter((program) => program.country.toLowerCase() === country.toLowerCase())
+    .map(({ slug, universitySlug, universityName, name, field, level, duration, language }) => ({
+      slug, universitySlug, universityName, name, field, level, duration, language,
+    }));
+
+  const searchUniversities: SearchUniversity[] = countryUniversities.map(
+    ({ slug, name, city, country, type, description }) => ({
+      slug, name, city, country, type, description: description.slice(0, 200),
+    })
   );
 
   const quickInfo = countryQuickInfo[countryKey];
@@ -124,7 +137,7 @@ export default function CountryPage({
   <CountrySearch
     country={country}
     programs={countryPrograms}
-    universities={countryUniversities}
+    universities={searchUniversities}
   />
 </div>
 

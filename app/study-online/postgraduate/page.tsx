@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { pageMeta } from "@/lib/seo-meta";
 import { postgraduateCourses } from "@/data/onlineCourses/postgraduateCourses";
+import JsonLd from "@/components/JsonLd";
+import { hubPageJsonLd } from "@/lib/hub-jsonld";
 
 export const metadata: Metadata = pageMeta(
   "/study-online/postgraduate",
@@ -12,6 +14,14 @@ export const metadata: Metadata = pageMeta(
 export default function PostgraduateCoursesPage() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
+      <JsonLd
+        data={hubPageJsonLd({
+          type: "CollectionPage",
+          name: "Online Postgraduate Courses",
+          path: "/study-online/postgraduate",
+          items: postgraduateCourses.map((c) => ({ name: c.title, url: c.url })),
+        })}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 px-6 py-20 text-center text-white">
         <div className="mx-auto max-w-4xl">

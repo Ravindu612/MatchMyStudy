@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/seo-meta";
 import CountriesPageClient from "./CountriesPageClient";
+import JsonLd from "@/components/JsonLd";
+import { hubPageJsonLd } from "@/lib/hub-jsonld";
+import { countries } from "@/data/countries";
 
 export const metadata: Metadata = pageMeta(
   "/countries",
@@ -9,5 +12,19 @@ export const metadata: Metadata = pageMeta(
 );
 
 export default function CountriesPage() {
-  return <CountriesPageClient />;
+  return (
+    <>
+      <JsonLd
+        data={hubPageJsonLd({
+          type: "CollectionPage",
+          name: "Study Abroad Countries",
+          path: "/countries",
+          items: countries
+            .filter((c) => c.status === "available")
+            .map((c) => ({ name: c.name, url: c.href })),
+        })}
+      />
+      <CountriesPageClient />
+    </>
+  );
 }

@@ -11,8 +11,10 @@ import {
   DollarSign,
   Award,
 } from "lucide-react";
-import ProgramSearch from "@/components/ProgramSearch";
-import UniversityProgramList from "@/components/UniversityProgramList";
+import ProgramSearch, { type ProgramSearchItem } from "@/components/ProgramSearch";
+import UniversityProgramList, {
+  type ProgramListItem,
+} from "@/components/UniversityProgramList";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { programs } from "@/data/programs";
 import Link from "next/link";
@@ -158,6 +160,16 @@ export default async function UniversityDetailPage({
 
     const universityPrograms = programs.filter(
     (program) => program.universitySlug === slug
+  );
+
+  // The client search box only gets the fields it shows or filters on.
+  const searchPrograms: ProgramSearchItem[] = universityPrograms.map(
+    ({ slug, name, field, level, duration, language, campus, degree }) => ({
+      slug, name, field, level, duration, language, campus, degree,
+    })
+  );
+  const listPrograms: ProgramListItem[] = universityPrograms.map(
+    ({ slug, name, level }) => ({ slug, name, level })
   );
 
   const universityJsonLd = createUniversityJsonLd(university);
@@ -481,13 +493,13 @@ export default async function UniversityDetailPage({
         {/* PROGRAM SEARCH */}
         <ProgramSearch
           universityName={university.name}
-          programs={universityPrograms}
+          programs={searchPrograms}
         />
 
         {/* ALL PROGRAMS (server-rendered links for crawlers) */}
         <UniversityProgramList
           universityName={university.name}
-          programs={universityPrograms}
+          programs={listPrograms}
         />
 
         <AdSlot

@@ -1,5 +1,7 @@
 import { pageMeta } from "@/lib/seo-meta";
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+import { hubPageJsonLd } from "@/lib/hub-jsonld";
 
 export const metadata = pageMeta(
   "/study-online",
@@ -34,6 +36,18 @@ const categories = [
 export default function StudyOnlinePage() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
+      <JsonLd
+        data={hubPageJsonLd({
+          type: "CollectionPage",
+          name: "Study Online",
+          path: "/study-online",
+          items: [
+            { name: "Short Courses", url: "/study-online/short-courses" },
+            { name: "Undergraduate Courses", url: "/study-online/undergraduate" },
+            { name: "Postgraduate Courses", url: "/study-online/postgraduate" },
+          ],
+        })}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 px-6 py-20 text-center text-white">
         <div className="mx-auto max-w-4xl">

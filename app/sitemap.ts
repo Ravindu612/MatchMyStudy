@@ -7,6 +7,7 @@ import {
   getIndexableUniversitySlugs,
   isIndexableProgram,
 } from "@/lib/contentQuality";
+import { blogPosts, isFullIsoDate } from "@/data/blog/posts";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.matchmystudy.com";
@@ -175,18 +176,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
    * ------------------------------------------------
    */
 
-  const blogPosts = [
-    "best-countries-2026",
-    "canada-vs-australia",
-    "cheapest-countries",
-  ];
-
-  const blogUrls: MetadataRoute.Sitemap =
-    blogPosts.map((slug) => ({
-      url: `${baseUrl}/blog/${slug}`,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    }));
+  const blogUrls: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    ...(isFullIsoDate(post.date) ? { lastModified: post.date } : {}),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
 
   /*
    * ------------------------------------------------

@@ -1,83 +1,19 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL, STATIC_META } from "@/lib/seo-meta";
+import { BlogCover, BlogPhotoCredit } from "@/components/blog/BlogCover";
+import {
+  formatBlogDate,
+  getBlogPost,
+  getBlogPosts,
+  isFullIsoDate,
+} from "@/data/blog/posts";
+import { SITE_NAME, SITE_URL, STATIC_META } from "@/lib/seo-meta";
 import JsonLd from "@/components/JsonLd";
 
-const blogPosts = {
-  "best-countries-2026": {
-    title: "Best Countries for International Students in 2026",
-    category: "Country Comparison",
-    readTime: "5 min read",
-    date: "May 2026",
-    intro:
-      "Canada, Australia, Germany, and Finland are among the popular study destinations for international students. Each country offers different advantages depending on tuition fees, student jobs, living costs, and future opportunities.",
-    sections: [
-      {
-        heading: "Canada",
-        text: "Canada is attractive for students because of its multicultural environment, quality education, and post-study work opportunities. However, tuition fees and living costs can be higher compared with some European countries.",
-      },
-      {
-        heading: "Australia",
-        text: "Australia is popular for its strong universities, English-speaking environment, and student work opportunities. It can be a good option for students who want both education and work experience.",
-      },
-      {
-        heading: "Germany",
-        text: "Germany is known for affordable or low-tuition public universities. It is especially attractive for students who are looking for quality education in Europe with lower study costs.",
-      },
-      {
-        heading: "Finland",
-        text: "Finland offers high-quality education, a safe living environment, and growing opportunities for international students. Learning Finnish can improve job opportunities while studying.",
-      },
-    ],
-  },
-
-  "canada-vs-australia": {
-    title: "Canada vs Australia for International Students",
-    category: "Country Comparison",
-    readTime: "4 min read",
-    date: "May 2026",
-    intro:
-      "Canada and Australia are two of the most popular destinations for international students. Both countries offer English-taught education, part-time work opportunities, and future career pathways.",
-    sections: [
-      {
-        heading: "Education Quality",
-        text: "Both Canada and Australia have internationally recognized universities and colleges. The best choice depends on the student’s study field, budget, and long-term goals.",
-      },
-      {
-        heading: "Student Jobs",
-        text: "Australia is often attractive for students looking for part-time work during studies. Canada also offers work opportunities, but availability can depend on the city and local job market.",
-      },
-      {
-        heading: "Living Costs",
-        text: "Both countries can be expensive, especially in large cities. Students should compare rent, transport, food, insurance, and tuition before choosing a destination.",
-      },
-    ],
-  },
-
-  "cheapest-countries": {
-    title: "Cheapest Countries to Study Abroad",
-    category: "Budget Study Guide",
-    readTime: "4 min read",
-    date: "May 2026",
-    intro:
-      "For many international students, affordability is one of the most important factors when choosing a study destination. Germany and Finland can be attractive options for students looking for quality education with reasonable costs.",
-    sections: [
-      {
-        heading: "Germany",
-        text: "Germany is popular because many public universities have low or no tuition fees. However, students still need to plan for living expenses, health insurance, and the blocked account requirement.",
-      },
-      {
-        heading: "Finland",
-        text: "Finland offers high-quality education and a safe study environment. Tuition fees may apply for non-EU students, but scholarships can reduce the cost.",
-      },
-      {
-        heading: "Important Advice",
-        text: "The cheapest country is not always the best country. Students should also consider job opportunities, language requirements, immigration rules, and long-term career plans.",
-      },
-    ],
-  },
-};
+export function generateStaticParams() {
+  return getBlogPosts().map((post) => ({ slug: post.slug }));
+}
 
 export async function generateMetadata({
   params,
@@ -95,36 +31,44 @@ export async function generateMetadata({
   return meta;
 }
 
+function paragraphs(text: string) {
+  return text.split(/\n\n+/).map((paragraph) => paragraph.trim()).filter(Boolean);
+}
+
 export default async function BlogPostPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = blogPosts[slug as keyof typeof blogPosts];
+  const post = getBlogPost(slug);
 
   if (!post) {
     notFound();
   }
 
   const postUrl = `${SITE_URL}/blog/${slug}`;
+  const coverUrl = post.coverImage.startsWith("http")
+    ? post.coverImage
+    : `${SITE_URL}${post.coverImage}`;
   const organization = {
     "@type": "Organization",
     name: SITE_NAME,
     url: SITE_URL,
     logo: { "@type": "ImageObject", url: `${SITE_URL}/og-default.png` },
   };
-  // Posts only have a month label ("May 2026"), not a full date,
-  // so datePublished/dateModified are left out for now.
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
-    description: post.intro,
-    image: [`${SITE_URL}${DEFAULT_OG_IMAGE.url}`],
+    description: post.description,
+    image: [coverUrl],
     author: organization,
     publisher: organization,
     mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
+    ...(isFullIsoDate(post.date)
+      ? { datePublished: post.date, dateModified: post.date }
+      : {}),
   };
 
   return (
@@ -138,7 +82,20 @@ export default async function BlogPostPage({
           ← Back to Blog
         </Link>
 
-        <div className="mt-10 mb-10">
+        <div className="relative mt-8 h-64 md:h-[420px] overflow-hidden rounded-3xl shadow-sm">
+          <BlogCover
+            post={post}
+            preload
+            sizes="(max-width: 896px) 100vw, 896px"
+          />
+        </div>
+
+        <BlogPhotoCredit
+          credit={post.unsplash}
+          className="mt-3 text-xs text-slate-500"
+        />
+
+        <div className="mt-8 mb-10">
           <p className="text-blue-600 font-semibold mb-4">
             {post.category}
           </p>
@@ -148,14 +105,21 @@ export default async function BlogPostPage({
           </h1>
 
           <div className="flex flex-wrap gap-4 text-sm text-slate-500 mb-8">
-            <span>{post.date}</span>
+            <span>{formatBlogDate(post.date)}</span>
             <span>•</span>
             <span>{post.readTime}</span>
           </div>
 
-          <p className="text-xl text-slate-600 leading-8">
-            {post.intro}
-          </p>
+          <div className="space-y-4">
+            {paragraphs(post.intro).map((paragraph) => (
+              <p
+                key={paragraph}
+                className="text-xl text-slate-600 leading-8"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
         </div>
 
         <div className="space-y-8">
@@ -168,9 +132,16 @@ export default async function BlogPostPage({
                 {section.heading}
               </h2>
 
-              <p className="text-slate-600 leading-8">
-                {section.text}
-              </p>
+              <div className="space-y-4">
+                {paragraphs(section.text).map((paragraph) => (
+                  <p
+                    key={paragraph}
+                    className="text-slate-600 leading-8"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </section>
           ))}
         </div>

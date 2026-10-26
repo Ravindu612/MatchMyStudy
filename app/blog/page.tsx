@@ -1,30 +1,13 @@
 import Link from "next/link";
+import { BlogCover, BlogPhotoCredit } from "@/components/blog/BlogCover";
+import { formatBlogDate, getBlogPosts } from "@/data/blog/posts";
 import { STATIC_META } from "@/lib/seo-meta";
 
 export const metadata = STATIC_META["/blog"];
 
-const posts = [
-  {
-    title: "Best Countries for International Students in 2026",
-    slug: "best-countries-2026",
-    description:
-      "Compare Canada, Australia, Germany, and Finland for tuition fees, jobs, and student life.",
-  },
-  {
-    title: "Canada vs Australia for International Students",
-    slug: "canada-vs-australia",
-    description:
-      "Explore the differences in cost of living, work opportunities, and PR pathways.",
-  },
-  {
-    title: "Cheapest Countries to Study Abroad",
-    slug: "cheapest-countries",
-    description:
-      "Find affordable study destinations with quality education and lower living costs.",
-  },
-];
-
 export default function BlogPage() {
+  const posts = getBlogPosts();
+
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900 px-6 py-16">
       <section className="max-w-7xl mx-auto">
@@ -46,16 +29,38 @@ export default function BlogPage() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-blue-400 hover:-translate-y-1 transition"
+              className="bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-blue-400 hover:-translate-y-1 transition overflow-hidden flex flex-col"
             >
-              <article>
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">
+              <div className="relative h-48">
+                <BlogCover
+                  post={post}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                />
+              </div>
+
+              <article className="p-6 flex flex-col flex-1">
+                <p className="text-sm font-semibold text-blue-600 mb-3">
+                  {post.category}
+                </p>
+
+                <h2 className="text-2xl font-bold text-slate-900 mb-3">
                   {post.title}
                 </h2>
 
-                <p className="text-slate-600 mb-6">
+                <p className="text-slate-600 mb-4 flex-1">
                   {post.description}
                 </p>
+
+                <div className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-slate-500 mb-4">
+                  <span>{formatBlogDate(post.date)}</span>
+                  <span aria-hidden="true">·</span>
+                  <span>{post.readTime}</span>
+                </div>
+
+                <BlogPhotoCredit
+                  credit={post.unsplash}
+                  className="text-xs text-slate-500 mb-4"
+                />
 
                 <span className="text-blue-600 font-semibold">
                   Read article →

@@ -10,9 +10,26 @@ type ItalkiSpeakingCtaProps = {
   className?: string;
 };
 
+export function ItalkiSpeakingLink({
+  className = "",
+}: {
+  className?: string;
+}) {
+  return (
+    <a
+      href={ITALKI_AFFILIATE_URL}
+      target="_blank"
+      rel={ITALKI_LINK_REL}
+      className={className}
+    >
+      {ITALKI_CTA_LABEL}
+    </a>
+  );
+}
+
 /**
- * Editorial speaking-practice link. Not an ad unit: short context,
- * one affiliate URL, and a link to the site affiliate disclosure.
+ * Editorial speaking-practice link: short context, one affiliate URL,
+ * and a link to the site affiliate disclosure.
  */
 export default function ItalkiSpeakingCta({
   note,
@@ -26,25 +43,15 @@ export default function ItalkiSpeakingCta({
 
       <p className="mt-3 leading-8 text-slate-600">{note}</p>
 
-      <a
-        href={ITALKI_AFFILIATE_URL}
-        target="_blank"
-        rel={ITALKI_LINK_REL}
-        className="mt-5 inline-flex rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white transition hover:bg-blue-700"
-      >
-        {ITALKI_CTA_LABEL}
-      </a>
+      <ItalkiSpeakingLink className="mt-5 inline-flex rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white transition hover:bg-blue-700" />
 
-      <p className="mt-3 text-sm leading-6 text-slate-500">
-        This is an affiliate link. If you register through it, MatchMyStudy
-        may earn a commission.{" "}
+      <p className="mt-3 text-sm leading-6">
         <Link
           href="/affiliate-disclosure"
           className="font-semibold text-blue-600 hover:text-blue-700"
         >
           Affiliate disclosure
         </Link>
-        .
       </p>
     </aside>
   );

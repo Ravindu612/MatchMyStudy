@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
+import CountryCard, {
+  countryDirectoryCardSizes,
+} from "@/components/CountryCard";
 import { countries } from "@/data/countries";
 
 export default function CountriesPageClient() {
@@ -44,52 +46,16 @@ export default function CountriesPageClient() {
 </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {filteredCountries.map((country) =>
-            country.status === "available" ? (
-              <Link
-                key={country.slug}
-                href={country.href}
-                className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-blue-400 hover:-translate-y-1 transition"
-              >
-                <div className="flex items-center justify-between gap-4 mb-3">
-                  <h2 className="text-2xl font-bold text-slate-900">
-                    {country.name}
-                  </h2>
-
-                  <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-semibold">
-                    Available
-                  </span>
-                </div>
-
-                <p className="text-slate-600 mb-5">
-                  {country.description}
-                </p>
-
-                <span className="text-blue-600 font-semibold">
-                  View country guide →
-                </span>
-              </Link>
-            ) : (
-              <div
-                key={country.slug}
-                className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm"
-              >
-                <div className="flex items-center justify-between gap-4 mb-3">
-                  <h2 className="text-2xl font-bold text-slate-900">
-                    {country.name}
-                  </h2>
-
-                  <span className="text-xs bg-slate-100 text-slate-600 px-3 py-1 rounded-full font-semibold">
-                    Coming Soon
-                  </span>
-                </div>
-
-                <p className="text-slate-600">
-                  {country.description}
-                </p>
-              </div>
-            )
-          )}
+          {filteredCountries.map((country) => (
+            <CountryCard
+              key={country.slug}
+              country={country}
+              sizes={countryDirectoryCardSizes}
+              headingLevel="h2"
+              exploreLabel="View country guide →"
+              showStatus
+            />
+          ))}
         </div>
       </section>
     </main>

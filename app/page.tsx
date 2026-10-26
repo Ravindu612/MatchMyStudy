@@ -2,6 +2,9 @@ import { SITE_NAME, SITE_URL, STATIC_META } from "@/lib/seo-meta";
 import JsonLd from "@/components/JsonLd";
 import GlobalSearch from "@/components/GlobalSearch";
 import Link from "next/link";
+import CountryCard, {
+  homepageCountryCardSizes,
+} from "@/components/CountryCard";
 import { countries } from "@/data/countries";
 import FindConsultantsButton from "@/components/consultant/FindConsultantsButton";
 import { ItalkiSpeakingLink } from "@/components/ItalkiSpeakingCta";
@@ -139,27 +142,17 @@ Get personalized recommendations based on your goals, interests, and career aspi
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {countries
-  .filter((country) => country.status === "available")
-  .slice(0, 12)
-  .map((country) => (
-            <Link
-              href={country.href}
-              key={country.name}
-              className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition duration-300"
-            >
-              <h3 className="text-2xl font-bold mb-3 text-slate-900">
-                {country.name}
-              </h3>
-
-              <p className="text-slate-600 leading-relaxed">
-                {country.description}
-              </p>
-
-              <div className="mt-5 text-blue-600 font-semibold">
-                Explore →
-              </div>
-            </Link>
-          ))}
+            .filter((country) => country.status === "available")
+            .slice(0, 12)
+            .map((country) => (
+              <CountryCard
+                key={country.slug}
+                country={country}
+                sizes={homepageCountryCardSizes}
+                headingLevel="h3"
+                exploreLabel="Explore →"
+              />
+            ))}
         </div>
 
         <div className="mt-10 flex justify-center">

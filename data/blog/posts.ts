@@ -73,6 +73,55 @@ export function formatBlogDate(date: string) {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "Read the Small Print: How to Understand Your University Offer Letter",
+    slug: "read-your-offer-letter",
+    description:
+      "You got in. Now read the letter again slowly: conditions, deadlines, fees, and visa documents, explained in plain words for international students.",
+    category: "Admissions",
+    date: "2026-10-27",
+    readTime: "5 min read",
+    intro:
+      "The email arrives, you read the first line, and the rest of the page goes blurry. You got in. Take a moment for that, because it is a real achievement.\n\nThen, sometime in the next day or two, read the letter again slowly. An offer letter is not only good news. It is a short set of instructions with deadlines attached, and the students who run into trouble later are often the ones who skimmed it on the first happy read.",
+    sections: [
+      {
+        heading: "First, find out what kind of offer it is",
+        text: "Most offers fall into one of two groups. An unconditional offer means the university is satisfied and the place is yours once you accept it. A conditional offer means the place depends on something still to come: final exam results, a language test score, a missing document, or a degree you have not finished yet.\n\nIf your offer is conditional, write each condition down on its own line, in plain words, with the date it has to be met. Then check every condition against your real situation. If one looks impossible or unclear, ask the admissions office now, while there is still time to fix it, not in August.",
+      },
+      {
+        heading: "Check that the details are actually yours",
+        text: "It sounds obvious, but read the letter as if you were checking someone else's homework. Is your name spelled exactly as it is in your passport? Is the program the one you applied for, at the level you expected? Are the start date, campus, and length of study right?\n\nThese details often flow into other paperwork later, including visa or study permit applications. A small mismatch is much easier to correct now with a polite email than after it has been copied onto three other documents.",
+      },
+      {
+        heading: "Circle every deadline",
+        text: "Offer letters and the portals that come with them usually hide several dates. There may be a date to accept the offer, a date to pay a deposit if the university asks for one, a date to send final documents, and a date to apply for housing. They are rarely in the same paragraph.\n\nPut every date into your phone calendar with a reminder a week before. If you are waiting on more than one university, note which deadlines come first, so a decision is not made for you simply because one date passed. If you need more time, ask. The answer may be no, but it is sometimes yes.",
+      },
+      {
+        heading: "Read the money part twice",
+        text: "Look carefully at what the letter says about fees, and what it does not say. Is the amount for one year or the whole program? Is it in a currency you need to convert? Does it say fees may change in later years? Is a deposit refundable if your visa is refused, and on what terms?\n\nDo not rely on a figure you remember from a ranking site or a friend. The university's own fee pages and the letter itself are the sources that count, and if the two seem to disagree, email the university and keep the reply. If a scholarship is mentioned, check whether it is automatic or whether you still have to apply, and whether it renews each year or only applies once.",
+      },
+      {
+        heading: "Spot the documents the visa will need",
+        text: "Many countries ask international students for an official letter or code from the university before they can apply for a student visa or permit. Sometimes that is the offer itself, and sometimes it is a separate document issued only after you accept and pay a deposit.\n\nFind out which one your destination needs by reading the official immigration website for that country, then match it against what your university says it will send. Visa processing can take weeks, so knowing which document unlocks your application is worth an evening of reading.",
+      },
+      {
+        heading: "Write one good email instead of five worried ones",
+        text: "After reading everything, you will probably have a few questions. Collect them into one short, clear email to the admissions office. Put your full name and applicant number in the subject line, number your questions, and keep each one to a sentence or two.\n\nIt is a small habit, but it gets faster, clearer answers, and it gives you a written record. Save every reply in the same folder as the letter itself.",
+      },
+      {
+        heading: "Then let yourself celebrate",
+        text: "Once the conditions are listed, the dates are in your calendar, and your questions have gone out, put the letter away for the night. You have turned a page of good news into a plan you actually understand.\n\nThat is the part nobody photographs, and it is the part that gets you onto the plane.",
+      },
+    ],
+    coverImage: "/images/blog/read-your-offer-letter.jpg",
+    coverImageAlt: "Smiling woman reading a letter at a kitchen table with coffee and fruit",
+    unsplash: {
+      photographerName: "Vitaly Gariev",
+      photographerUrl: "https://unsplash.com/@silverkblack",
+      photoUrl:
+        "https://unsplash.com/photos/woman-reading-document-at-kitchen-table-with-coffee-RNUNbvIXUbg",
+    },
+  },
+  {
     title: "Pack for Week Three: A Suitcase Guide for International Students",
     slug: "pack-for-week-three",
     description:

@@ -167,6 +167,55 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "Send It Once: How to Email a University Office and Get a Useful Reply",
+    slug: "email-your-university",
+    description:
+      "A plain guide to writing emails to admissions, international offices, and professors: subject lines, what to include, how to follow up, and when to stop waiting.",
+    category: "Applications",
+    date: "2026-10-28",
+    readTime: "5 min read",
+    intro:
+      "Somewhere in every application there is a question the website does not answer. Does my degree count? Is this document translated well enough? Can I start in January instead? So you write an email, and then you wait, refreshing your inbox and wondering if it went to the wrong place.\n\nThe people who read these emails are often handling hundreds of them in a busy week. The ones that get quick, clear answers are rarely the most polite or the most formal. They are the ones a tired person can understand and answer in one go. Here is how to write that email.",
+    sections: [
+      {
+        heading: "Check the page before you write",
+        text: "Before you write anything, spend ten minutes on the official pages. Many universities publish answers to the common questions: entry requirements by country, English test rules, deadlines, document formats. If the answer is already there, an email will often just bring back a link to it, a few days later.\n\nIf the page is unclear, that is a good reason to write. Copy the link and the exact sentence that confuses you. \"Your page says applicants need a recognised bachelor's degree. Is a three-year degree from my university recognised for this program?\" is a question someone can answer. \"Can I apply?\" is not.",
+      },
+      {
+        heading: "Find the right inbox",
+        text: "Universities are made of many small offices, and each one answers different things. Admissions usually handles applications, documents, and offers. The international student office often handles visas, arrival, and insurance questions. Fees and payment can sit with a finance or student accounts team. A department or program coordinator knows the details of the course itself.\n\nLook for the contact listed on the program page first, since that is usually the team that owns your question. Avoid sending the same email to five addresses at once. It feels efficient, but it often means five people each assume someone else will answer, or you get two replies that disagree.",
+      },
+      {
+        heading: "Write a subject line that does the sorting",
+        text: "A good subject line lets the reader know what this is before they open it. Put your applicant or student ID if you have one, the program name, and the question in a few words. Something like \"Application 123456, MSc Data Science: question about transcript translation.\"\n\nAvoid subject lines like \"Urgent!!\", \"Help\", or \"Question\". They do not make anyone move faster, and they are hard to find later when someone searches the inbox for your name.",
+      },
+      {
+        heading: "Keep the body short and complete",
+        text: "Start with who you are in one line: your full name as it appears on your passport, your applicant number, the program, and the intake you applied for. Then ask your question. If you have two questions, number them, so the reply can answer them one by one.\n\nAttach only what helps answer the question, and name the files clearly, such as \"Surname_Transcript_English.pdf\". End with a simple thank you and your name. You do not need long apologies or a paragraph about how much you love the university. Clear is kind, and it is what gets read.",
+      },
+      {
+        heading: "Writing to a professor is different",
+        text: "If you are applying for a research degree, or want to ask about a supervisor, you may write to a professor directly. Read the department page first, because some programs ask applicants not to contact staff before applying. If contact is welcome, show that you have actually read their recent work. Mention one paper or project and say, in two or three sentences, how your own interests connect to it.\n\nDo not send the same message to a long list of professors with the name swapped. They can usually tell. A short, specific note to the two or three people whose work genuinely fits you is worth more than fifty copies.",
+      },
+      {
+        heading: "Follow up, but calmly",
+        text: "Look for a stated response time on the contact page and give it a fair chance. If nothing comes back after that, or after about a week if no time is given, reply to your own original email rather than starting a new thread. Keep it to two lines: you are following up on the question below, and here is your applicant number again.\n\nIf a deadline is close, say so plainly, with the date. If you still hear nothing, check whether the university has an online enquiry form or a phone line, and use that. Keep every reply you receive in one folder. When an office tells you something important in writing, that email is your record.",
+      },
+      {
+        heading: "A short template to start from",
+        text: "Subject: Application [number], [program name]: [question in a few words].\n\nDear Admissions team,\n\nMy name is [full name] and I applied for [program] starting [intake], applicant number [number]. I have one question about [topic]. Your page at [link] says [quote]. Does this apply to [your situation]?\n\nThank you for your help.\n[Full name]\n\nChange it to fit your voice, keep it short, and send it once. Then close the inbox and get back to the rest of your application.",
+      },
+    ],
+    coverImage: "/images/blog/email-your-university.jpg",
+    coverImageAlt: "A person typing on a laptop next to an open notebook on a wooden table",
+    unsplash: {
+      photographerName: "Ebru Doğan",
+      photographerUrl: "https://unsplash.com/@ebrubodyy",
+      photoUrl:
+        "https://unsplash.com/photos/a-person-typing-on-a-laptop-on-a-wooden-table-8VJjpY51FSA",
+    },
+  },
+  {
     title: "The Tuesday Test: How to Choose a Study Abroad Plan You Can Actually Live",
     slug: "the-tuesday-test",
     description:

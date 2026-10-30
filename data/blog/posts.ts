@@ -216,6 +216,55 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "Read the Module List: How to Choose a Program by What You Will Actually Study",
+    slug: "read-the-module-list",
+    description:
+      "Two programs can share a name and teach very different things. A practical guide to reading course structures, core and optional modules, assessment, and placements before you apply.",
+    category: "Choosing a Program",
+    date: "2026-10-30",
+    readTime: "5 min read",
+    intro:
+      "Search for a program like \"International Business\" or \"Computer Science\" and you will find hundreds of them, all with the same title and very similar photos of smiling students on a lawn. It is tempting to sort them by ranking or city and stop there.\n\nBut the title is only the cover of the book. What you will actually do for one, two, or four years is written further down the page, in the part most applicants skim: the module list, sometimes called the course structure, curriculum, or study plan. Reading it properly takes about half an hour per program, and it is one of the best half hours you can spend before applying.",
+    sections: [
+      {
+        heading: "Find the real course structure",
+        text: "On most university websites, the program page has a section called something like \"What you will study\", \"Course structure\", \"Curriculum\", or \"Modules\". Sometimes it links to a separate handbook or a module catalogue with a short description of every course. That handbook is gold. It often lists the topics week by week, the reading, and how the course is graded.\n\nCheck which year the information is for. Universities update their programs, and a page may show this year's modules with a note that they can change. That is normal. You are not looking for a promise of every detail, you are looking for the shape of the program.",
+      },
+      {
+        heading: "Separate core from optional",
+        text: "Most programs have core modules that everyone takes, and optional modules you choose from. The core tells you what the program really is. If a degree called \"Data Science\" is mostly statistics in its core, it will feel different from one where the core is mostly programming, even though both have the same name on the certificate.\n\nBe a little careful with the optional list. A long list looks exciting, but options can depend on staff availability, timetable clashes, or minimum student numbers. If one optional module is the main reason you want a program, it is fair to email the department and ask how often it actually runs.",
+      },
+      {
+        heading: "Look at how you will be assessed",
+        text: "Module descriptions often say how you are graded: exams, essays, group projects, lab reports, presentations, or a mix. This matters more than people expect. Some students do their best work in a quiet exam hall, and others shine in a long project with time to think. Neither is better, but a program built almost entirely on one style will suit some people far more than others.\n\nNotice group work too. In many countries, group projects are a big part of the grade, and you will be working closely with classmates from very different backgrounds. That can be one of the best parts of studying abroad, and it is worth knowing about before you arrive.",
+      },
+      {
+        heading: "Check the bits that live outside the classroom",
+        text: "Some programs include a placement year, an internship module, fieldwork, a study exchange, or a final research project or dissertation. Read the small details here. Is the placement guaranteed, or do you have to find it yourself with support from the university? Is it optional or required? Does it add time to the degree?\n\nIf you are an international student, also check whether any placement or exchange has rules that depend on your visa or residence status. Keep this general at first, then look at the official government and university guidance for your specific country. Do not assume that what worked for a friend in another country will work for you.",
+      },
+      {
+        heading: "Compare two programs side by side",
+        text: "Once you have two or three programs you like, put them on one page. Make a simple table with a row for each year or semester and write the core modules in it. Add a line for assessment style, a line for placements or projects, and a line for anything that surprised you.\n\nPatterns jump out quickly. One program may spend its first year on broad foundations while another goes straight into specialist topics. One may finish with a big individual project, and another with a team project for a real organisation. You will probably find that one of them simply sounds more like the student you want to be on a normal Tuesday.",
+      },
+      {
+        heading: "Use the list in your application",
+        text: "Reading the modules is not only for choosing. It also makes your application better. When a personal statement or motivation letter says \"I am excited about your program\", it says nothing. When it says \"I want to take the module on urban water systems because of a flood project I worked on at home\", it shows you have done the reading and know why you are applying.\n\nOne honest, specific reason is enough. Pick a module or project that genuinely connects to something you have done or want to do, and say why in two or three sentences.",
+      },
+      {
+        heading: "Questions worth asking before you apply",
+        text: "If the page leaves you unsure, a short email to the department or admissions team is perfectly normal. Good questions include: Which optional modules ran last year? How big are the classes in the first year? Who usually teaches the core modules? Is the final project individual or in a group? How are placements arranged?\n\nYou may not get every answer, and that is fine. The aim is not to find a perfect program. It is to choose one where you know, roughly, what your days will be full of, and you still want to go.",
+      },
+    ],
+    coverImage: "/images/blog/read-the-module-list.jpg",
+    coverImageAlt: "A spiral notebook and pen on a seminar desk next to a seated student",
+    unsplash: {
+      photographerName: "Marco J Haenssgen",
+      photographerUrl: "https://unsplash.com/@marcohaenssgen",
+      photoUrl:
+        "https://unsplash.com/photos/a-man-sitting-at-a-desk-with-a-notebook-and-pen-JU7-JtAAzmQ",
+    },
+  },
+  {
     title: "The Tuesday Test: How to Choose a Study Abroad Plan You Can Actually Live",
     slug: "the-tuesday-test",
     description:

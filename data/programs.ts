@@ -60,6 +60,7 @@ import { universityCollegeCorkPrograms } from "./programs/ireland/universityColl
 import { universityOfGalwayPrograms } from "./programs/ireland/universityOfGalwayPrograms";
 import { kingsCollegeLondonPrograms } from "./programs/unitedKingdom/kingsCollegeLondonPrograms";
 import { dublinCityUniversityPrograms } from "./programs/ireland/dublinCityUniversityPrograms";
+import { universityOfLimerickPrograms } from "./programs/ireland/universityOfLimerickPrograms";
 import { universityCollegeLondonPrograms } from "./programs/unitedKingdom/universityCollegeLondonPrograms";
 import { universityOfManchesterPrograms } from "./programs/unitedKingdom/universityOfManchesterPrograms";
 import { universityOfBristolPrograms } from "./programs/unitedKingdom/universityOfBristolPrograms";
@@ -171,6 +172,7 @@ export const programs: Program[] = [
   ...universityOfGalwayPrograms,
   ...kingsCollegeLondonPrograms,
   ...dublinCityUniversityPrograms,
+  ...universityOfLimerickPrograms,
   ...universityCollegeLondonPrograms,
   ...universityOfManchesterPrograms,
   ...universityOfBristolPrograms,

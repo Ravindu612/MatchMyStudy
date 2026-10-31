@@ -259,6 +259,55 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "The Corridor Hello: How to Make Friends in Your First Semester Abroad",
+    slug: "make-friends-abroad",
+    description:
+      "Friendships abroad rarely happen in week one. A practical, kind guide to the quiet patch, small repeated habits, and building a circle in a new country.",
+    category: "Student Life",
+    date: "2026-10-31",
+    readTime: "5 min read",
+    intro:
+      "Moving abroad to study means leaving the people who already know you. Some students find their circle in the first week, but many do not, and that is completely normal. Friendship in a new country is less about luck and more about small habits repeated over a few months. Here is how to get through the quiet patch and build real connections, one ordinary hello at a time.",
+    sections: [
+      {
+        heading: "Expect a quiet patch, and don't read it as failure",
+        text: "Most students arrive expecting either instant best friends or total loneliness. The truth is usually in between. The first week is loud: welcome events, flatmates, a hundred names you will forget. Then lectures start, everyone retreats into their timetable, and for a few weeks it can feel like the door closed.\n\nThat dip is normal, and it happens to local students too. Friendships at university are mostly built by seeing the same faces again and again, not by one perfect first conversation. If week four feels lonelier than week one, it does not mean you picked the wrong country. It means you are in the slow part, and the slow part is where real friendships grow.",
+      },
+      {
+        heading: "Say yes to small, repeated things",
+        text: "Big welcome parties are fun, but they are rarely where friendships start. Small things that repeat are much better: the same seminar group every Thursday, a weekly language caf\u00e9, a club that trains on Monday evenings, a volunteering shift, a choir. Seeing people regularly gives you a reason to talk without having to invent one.\n\nPick two or three repeating things in your first month and go even when you are tired. One society linked to your subject and one that has nothing to do with your studies is a good mix. The second one often turns out to be the one you remember.",
+      },
+      {
+        heading: "Use the corridor hello",
+        text: "Your flat, your corridor, and your shared kitchen are the easiest places to start. A simple routine works: say hello every time, learn names, and leave the kitchen door open when you cook. Cooking something from home and offering a taste is one of the oldest tricks in student housing, and it still works.\n\nIf conversation feels hard, ask small practical questions. Where do you buy groceries? Which bus goes to campus? Is the library open late? People like being helpful, and a practical question is an easy way in. Next time you see them, you already have something to follow up on.",
+      },
+      {
+        heading: "Find your people and also step outside them",
+        text: "It is completely natural to look for students from your own country or who speak your language. They understand the jokes, the food you miss, and the paperwork you are struggling with. Many universities have national or cultural student associations, and they can be a real lifeline in the first months.\n\nTry not to let that be your only circle, though. Mix it with local students and international students from other places. You will improve your language faster, you will learn how things work in your new city, and you will end up with friends you would never have met at home. Both kinds of friendship matter.",
+      },
+      {
+        heading: "Study together on purpose",
+        text: "Group work can feel stressful, but it is also a ready-made reason to spend time with classmates. Suggest meeting in the library a little before a deadline, or invite one or two people to review lecture notes over coffee. Study sessions turn classmates into friends surprisingly often, because you are working on something real together.\n\nIn many countries, it is normal to be direct about this. Saying \"I am new here and still meeting people, do you want to study together this week?\" is not strange. Most people will respect the honesty, and some will be quietly relieved you asked first.",
+      },
+      {
+        heading: "Mind the language and culture gaps kindly",
+        text: "If you are studying in a language that is not your first, group conversations can be exhausting. People talk fast, interrupt each other, and joke about things you have no context for. One-to-one conversations are often much easier at the start, so do not judge yourself by how you do at a noisy party.\n\nCultural habits around friendship differ too. In some places people are warm on the first day but slow to invite you home. In others they seem reserved for weeks and then become very loyal friends. Give it time before deciding that people are cold, and assume good intentions when something feels awkward.",
+      },
+      {
+        heading: "Look after yourself while it grows",
+        text: "Making friends takes energy, and so does everything else about moving abroad. Keep in touch with family and friends at home, but try not to spend every evening on video calls, because it can keep you from settling in. Get outside, keep some kind of routine, and eat properly.\n\nIf loneliness or homesickness starts to feel heavy, or lasts for weeks, talk to someone. Most universities have student support or counselling services, and international student offices see this all the time. Asking for help early is a sensible step, not a sign that you are failing. Friendship abroad usually arrives slowly, then all at once, and it is worth the wait.",
+      },
+    ],
+    coverImage: "/images/blog/make-friends-abroad.jpg",
+    coverImageAlt: "Four smiling young friends walking arm in arm through a park in autumn",
+    unsplash: {
+      photographerName: "Vitaly Gariev",
+      photographerUrl: "https://unsplash.com/@silverkblack",
+      photoUrl:
+        "https://unsplash.com/photos/four-friends-walking-together-in-a-park-NMSvDSJV4LQ",
+    },
+  },
+  {
     title: "Best Countries for International Students in 2026",
     slug: "best-countries-2026",
     description:

@@ -73,6 +73,53 @@ export function formatBlogDate(date: string) {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "Before You Pay a Deposit: How to Find Student Housing Abroad Safely",
+    slug: "before-you-pay-a-deposit",
+    description: "A calm guide to finding a room abroad from far away: where to look first, the warning signs of a rental scam, what to check in a contract, and when it is safe to send money.",
+    category: "Student Life",
+    date: "2026-10-29",
+    readTime: "5 min read",
+    intro: "Finding a room in a city you have never visited is one of the strangest parts of studying abroad. You are scrolling through photos of kitchens on the other side of the world, trying to guess which street is safe, which price is fair, and which friendly landlord is real.\n\nMost listings are honest. But housing is also where many international students lose money, because they are far away, short on time, and easy to rush. This guide is about slowing down at the one moment that matters most: before you pay anything.",
+    sections: [
+      {
+        heading: "Start with the university, not the internet",
+        text: "Before you open a single listings site, read your university's accommodation pages. Many universities run their own residences, keep lists of approved private halls, or have a housing office that answers questions from new international students. Some offer a guaranteed or priority place for first-year or international students if you apply by a certain date.\n\nEven if university housing is full or not right for you, the housing office often knows which local platforms are reputable, what a normal contract looks like in that country, and which scams are going around this year. A short email to them can save you hours of guessing.",
+      },
+      {
+        heading: "Know what normal looks like where you are going",
+        text: "Renting works differently from country to country. In some places a large deposit is standard; in others it is capped by law. Some cities expect you to bring your own furniture, and in others rooms are almost always furnished. Some contracts include heating, water, and internet, and others leave you to set them up yourself.\n\nLook for the official government or city page on renting, and read your university's advice for students. Once you know what is normal, anything far outside it, such as a much lower rent than similar rooms nearby, or a demand for months of rent upfront, starts to stand out.",
+      },
+      {
+        heading: "The warning signs of a rental scam",
+        text: "Scams tend to look alike. The rent is noticeably cheaper than everything else in the area. The landlord is abroad, busy, or for some reason cannot show you the room, but promises to post the keys once you pay. You are pushed to decide today because \"many other students are interested\". You are asked to pay by money transfer service, cryptocurrency, gift cards, or to a personal account in another country.\n\nOther signs are quieter: photos that look like a hotel advert, an address that does not quite match the pictures, or a landlord who stops answering simple questions once you ask them. If you are unsure, copy one of the photos into a reverse image search. If the same room appears in other cities under other names, walk away.",
+      },
+      {
+        heading: "See the room, or get someone to see it for you",
+        text: "The safest rule is simple: do not send money for a room that nobody you trust has seen. If you cannot visit yourself, ask for a live video call where the landlord walks through the room, opens the window to show the street, and tells you the address while you watch. A recorded video is not the same, because it can be copied.\n\nIf you know a student already in the city, or the university has a buddy or mentor program, ask whether someone could look at the place. Another option is to book a short, flexible stay for your first week or two, through a provider with clear cancellation rules, and look for a longer-term room once you are there. It costs a little more at the start, but it lets you see places in person.",
+      },
+      {
+        heading: "Read the contract before you sign it",
+        text: "Ask for the contract in writing, and read it fully, ideally with a translation tool if it is in a language you do not read well. Check the full address, the names of both parties, the rent and what it includes, the start and end dates, how much notice you must give to leave, and exactly how and when the deposit is returned.\n\nIf something is unclear, ask, and keep the answer in writing. The university housing office or student union can often explain a local contract, and some can check it for you. Never sign a document you have only been shown as a blurry photo, and be wary of anyone who refuses to put the agreement on paper.",
+      },
+      {
+        heading: "When you do pay, leave a trail",
+        text: "Pay through a method that leaves a record and, where possible, gives you some protection: a bank transfer to an account in the landlord's or company's name in the same country as the property, or the payment system of a reputable housing platform. Avoid cash handed over before you have the keys, and avoid anything that cannot be traced or reversed.\n\nKeep every message, receipt, and the signed contract in one folder. On arrival, take dated photos of the room, including any damage, and send them to the landlord. It is a small habit that helps a lot when the deposit comes up again at the end of the year.",
+      },
+      {
+        heading: "If something already went wrong",
+        text: "If you think you have paid a scammer, act quickly and do not feel ashamed. These schemes are designed to fool careful people. Contact your bank or payment provider straight away and ask whether the payment can be stopped. Report it to the local police and the platform where you found the listing, and tell your university's housing or international office, since they may be able to help you find somewhere to stay.\n\nThen take a breath. A lost deposit is painful, but it is not the end of your plans. The next search, done slowly and with these checks, is usually the one that works.",
+      },
+    ],
+    coverImage: "/images/blog/before-you-pay-a-deposit.jpg",
+    coverImageAlt: "A hand holding a keyring next to an open apartment door",
+    unsplash: {
+      photographerName: "Jakub Żerdzicki",
+      photographerUrl: "https://unsplash.com/@jakubzerdzicki",
+      photoUrl:
+        "https://unsplash.com/photos/a-hand-holds-a-keyring-near-an-open-door-z8OGyY0v24w",
+    },
+  },
+  {
     title: "Read the Small Print: How to Understand Your University Offer Letter",
     slug: "read-your-offer-letter",
     description:

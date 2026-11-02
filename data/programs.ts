@@ -68,6 +68,7 @@ import { universityOfManchesterPrograms } from "./programs/unitedKingdom/univers
 import { universityOfBristolPrograms } from "./programs/unitedKingdom/universityOfBristolPrograms";
 import { universityOfEdinburghPrograms } from "./programs/unitedKingdom/universityOfEdinburghPrograms";
 import { maynoothUniversityPrograms } from "./programs/ireland/maynoothUniversityPrograms";
+import { tuDublinPrograms } from "./programs/ireland/tuDublinPrograms";
 import { universityOfGlasgowPrograms } from "./programs/unitedKingdom/universityOfGlasgowPrograms";
 import { imperialCollegeLondonPrograms } from "./programs/unitedKingdom/imperialCollegeLondonPrograms";
 import { universityOfWarwickPrograms } from "./programs/unitedKingdom/universityOfWarwickPrograms";
@@ -183,6 +184,7 @@ export const programs: Program[] = [
   ...universityOfBristolPrograms,
   ...universityOfEdinburghPrograms,
   ...maynoothUniversityPrograms,
+  ...tuDublinPrograms,
   ...universityOfGlasgowPrograms,
   ...imperialCollegeLondonPrograms,
   ...universityOfWarwickPrograms,

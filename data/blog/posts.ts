@@ -488,6 +488,55 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "The First Thirty Days: How to Budget Your First Month Abroad",
+    slug: "first-month-budget",
+    description:
+      "A practical guide to money in your first month abroad: why it costs more than the rest of the year, how to pay before your bank account is open, how to buy in waves, and how to turn real spending into a budget that works.",
+    category: "Budget Study Guide",
+    date: "2026-11-02",
+    readTime: "5 min read",
+    intro:
+      "The first month abroad is the most expensive one you will have, and the hardest to predict. You arrive with a suitcase, a rough budget, and a list of things you think you need. Then the city adds its own list: a deposit, a transport card, a pillow, a phone plan, a cooking pan, a winter coat that was cheaper at home.\n\nNone of this means you planned badly. It just means the first month works differently from the rest of the year. This guide is about getting through it calmly, with money left over, and coming out the other side with a budget that actually fits your life.",
+    sections: [
+      {
+        heading: "Treat the first month as its own budget",
+        text: "Most students plan a monthly budget for the whole year and then expect the first month to match it. It rarely does. Month one carries setup costs that never come back: bedding, kitchen basics, a SIM card, an adaptor, maybe a deposit or the first rent payment plus fees, and travel from the airport.\n\nSo plan two budgets. One is your normal monthly budget, built from your university's cost-of-living guidance and your own research. The other is a one-off setup budget for the first few weeks. Keeping them apart stops you from panicking when week one looks expensive, and stops a heavy start from quietly becoming your normal.",
+      },
+      {
+        heading: "Arrive with more than one way to pay",
+        text: "Opening a local bank account can take a few days or a few weeks, depending on the country and on paperwork such as your address or residence documents. Until then, you need money you can actually reach.\n\nBring a mix: a card that works abroad, a small amount of local cash for your first day, and a backup card kept separately from your main wallet. Before you leave, check with your bank about foreign transaction fees, daily withdrawal limits, and whether they need to know you are travelling. A blocked card on day two is a stressful way to start.",
+      },
+      {
+        heading: "Buy in waves, not all at once",
+        text: "The first trip to a big store is where budgets go to die. Everything looks necessary when your room is empty. Instead, buy in three small waves.\n\nWave one is the first two days: only what you need to sleep, wash, and eat. Wave two is the end of week one, once you know what your room already has and what your flatmates are happy to share. Wave three is the end of the month, when you know your routine and can see what you are actually missing.\n\nAsk around before you buy. Many universities have welcome sales, second-hand groups, or leaving students who give away kitchen things and lamps for almost nothing.",
+      },
+      {
+        heading: "Track everything, but only for four weeks",
+        text: "You do not need a complicated app. A note on your phone or a simple notebook is enough. For the first four weeks, write down everything you spend, with a one-word category: rent, food, transport, phone, setup, fun.\n\nIt feels tedious, but this is the most useful money habit you can build abroad. At the end of the month you will see your real costs, not the ones you guessed from home. Food is often higher than expected because of eating out while you settle in. Transport is sometimes lower once you find a student pass. Those surprises are exactly what your normal budget needs to learn.",
+      },
+      {
+        heading: "Find the student prices early",
+        text: "Many cities and countries have discounts for students, but you usually have to ask, apply, or show the right card. Look at your university's welcome pages and your student union for public transport passes, student cards, cheap meals on campus, gym memberships, and software you get free through your university.\n\nCheck the details yourself, because what is available varies a lot between places and changes from year to year. But setting these up in your first two weeks can lower your monthly costs for the whole year, which is worth one slightly boring afternoon.",
+      },
+      {
+        heading: "Keep a small cushion you do not touch",
+        text: "Something unexpected will happen. A charger breaks, a form needs an official copy, or you need a taxi late at night. Set aside a small emergency amount that is not part of your spending money, ideally somewhere slightly harder to reach than your everyday card.\n\nIf you do need it, use it without guilt, and then rebuild it gradually. The point is not to be perfect. It is to make sure one bad day does not become a money crisis.",
+      },
+      {
+        heading: "At the end of the month, rewrite the plan",
+        text: "When the first month ends, sit down with your notes and compare them with the budget you made at home. Which categories were too low? Which were too high? Which setup costs are finished for good?\n\nThen write a new monthly budget based on what you actually spent, adjusted for anything that will change, like heating in winter or travel home at the holidays. If the numbers do not work, talk to your university's student support or money advice service early. They see this every year, and asking in month two is much easier than asking in month eight.",
+      },
+    ],
+    coverImage: "/images/blog/first-month-budget.jpg",
+    coverImageAlt: "A hand writing figures on a paper form beside a calculator, a phone and a stack of banknotes",
+    unsplash: {
+      photographerName: "Jakub Żerdzicki",
+      photographerUrl: "https://unsplash.com/@jakubzerdzicki",
+      photoUrl:
+        "https://unsplash.com/photos/hand-writing-in-notebook-with-calculator-and-cash-leLj_06wjJQ",
+    },
+  },
+  {
     title: "Canada vs Australia for International Students",
     slug: "canada-vs-australia",
     description:

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import type { University } from "@/data/universities";
 import type { Program } from "@/data/programs";
 
@@ -17,26 +17,48 @@ export type SearchUniversity = Pick<
 
 type CountrySearchProps = {
   country: string;
+  countryKey: string;
+  fields: string[];
   universities: SearchUniversity[];
-  programs: SearchProgram[];
 };
 
 export default function CountrySearch({
   country,
+  countryKey,
+  fields: fieldList,
   universities,
-  programs,
 }: CountrySearchProps) {
+  // Programs are loaded from /api/search/<country> the first time the
+  // visitor uses the search box, instead of being embedded in the page.
+  const [programs, setPrograms] = useState<SearchProgram[]>([]);
+  const [loadState, setLoadState] = useState<"idle" | "loading" | "ready" | "error">("idle");
+  const started = useRef(false);
+
+  const loadPrograms = useCallback(() => {
+    if (started.current) return;
+    started.current = true;
+    setLoadState("loading");
+    fetch(`/api/search/${encodeURIComponent(countryKey)}`)
+      .then((res) => {
+        if (!res.ok) throw new Error(String(res.status));
+        return res.json() as Promise<{ programs: SearchProgram[] }>;
+      })
+      .then((data) => {
+        setPrograms(data.programs);
+        setLoadState("ready");
+      })
+      .catch(() => {
+        started.current = false;
+        setLoadState("error");
+      });
+  }, [countryKey]);
+
   const [searchTerm, setSearchTerm] = useState("");
   const [searchType, setSearchType] = useState("All");
   const [selectedLevel, setSelectedLevel] = useState("All");
   const [selectedField, setSelectedField] = useState("All");
 
-  const fields = useMemo(() => {
-    return [
-      "All",
-      ...Array.from(new Set(programs.map((program) => program.field))),
-    ];
-  }, [programs]);
+  const fields = ["All", ...fieldList];
 
   const hasActiveSearch =
     searchTerm.trim().length > 0 ||
@@ -95,13 +117,21 @@ export default function CountrySearch({
           type="text"
           placeholder={`Search in ${country}`}
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onFocus={loadPrograms}
+          onChange={(e) => {
+            loadPrograms();
+            setSearchTerm(e.target.value);
+          }}
           className="bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
         />
 
         <select
           value={searchType}
-          onChange={(e) => setSearchType(e.target.value)}
+          onFocus={loadPrograms}
+          onChange={(e) => {
+            loadPrograms();
+            setSearchType(e.target.value);
+          }}
           className="bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
         >
           <option value="All">Universities and Courses</option>
@@ -111,7 +141,11 @@ export default function CountrySearch({
 
         <select
           value={selectedLevel}
-          onChange={(e) => setSelectedLevel(e.target.value)}
+          onFocus={loadPrograms}
+          onChange={(e) => {
+            loadPrograms();
+            setSelectedLevel(e.target.value);
+          }}
           className="bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
         >
           <option value="All">All Levels</option>
@@ -126,7 +160,11 @@ export default function CountrySearch({
 
         <select
           value={selectedField}
-          onChange={(e) => setSelectedField(e.target.value)}
+          onFocus={loadPrograms}
+          onChange={(e) => {
+            loadPrograms();
+            setSelectedField(e.target.value);
+          }}
           className="bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
         >
           {fields.map((field) => (
@@ -191,7 +229,13 @@ export default function CountrySearch({
                 Courses / Programmes
               </h3>
 
-              {filteredPrograms.length > 0 ? (
+              {loadState === "loading" || loadState === "idle" ? (
+                <p className="text-slate-600">Loading courses…</p>
+              ) : loadState === "error" ? (
+                <p className="text-slate-600">
+                  Couldn&apos;t load courses. Please try again.
+                </p>
+              ) : filteredPrograms.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {filteredPrograms.map((program) => (
                     <Link

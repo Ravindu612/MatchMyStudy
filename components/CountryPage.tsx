@@ -2,17 +2,19 @@ import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Link from "next/link";
 import { universities } from "@/data/universities";
-import CountrySearch, {
-  type SearchProgram,
-  type SearchUniversity,
-} from "@/components/CountrySearch";
-import { programs } from "@/data/programs";
+import CountrySearch from "@/components/CountrySearch";
+import {
+  getCountrySearchPrograms,
+  getCountrySearchUniversities,
+} from "@/lib/countrySearch";
 import FindConsultantsButton from "@/components/consultant/FindConsultantsButton";
 import ItalkiSpeakingCta from "@/components/ItalkiSpeakingCta";
 import { countryQuickInfo } from "@/data/countryQuickInfo";
 import { countrySpeakingNote } from "@/lib/italki";
 
 type CountryKey = keyof typeof universities;
+
+const PREVIEW_COUNT = 30;
 
 type CountryPageProps = {
   country: string;
@@ -31,19 +33,13 @@ export default function CountryPage({
 }: CountryPageProps) {
   const countryUniversities = universities[countryKey];
 
-  // The search box only needs these fields; sending whole program
-  // objects made country pages several MB of HTML.
-  const countryPrograms: SearchProgram[] = programs
-    .filter((program) => program.country.toLowerCase() === country.toLowerCase())
-    .map(({ slug, universitySlug, universityName, name, field, level, duration, language }) => ({
-      slug, universitySlug, universityName, name, field, level, duration, language,
-    }));
-
-  const searchUniversities: SearchUniversity[] = countryUniversities.map(
-    ({ slug, name, city, country, type, description }) => ({
-      slug, name, city, country, type, description: description.slice(0, 200),
-    })
-  );
+  // Only the first programs go into the HTML as plain links; the full
+  // slim list is fetched from /api/search/<country> when someone uses
+  // the search box, which keeps big country pages light.
+  const countryPrograms = getCountrySearchPrograms(country);
+  const previewPrograms = countryPrograms.slice(0, PREVIEW_COUNT);
+  const fields = Array.from(new Set(countryPrograms.map((p) => p.field)));
+  const searchUniversities = getCountrySearchUniversities(countryKey);
 
   const quickInfo = countryQuickInfo[countryKey];
   const speakingNote = countrySpeakingNote(String(countryKey), country);
@@ -136,9 +132,39 @@ export default function CountryPage({
         <div id="programs">
   <CountrySearch
     country={country}
-    programs={countryPrograms}
+    countryKey={String(countryKey)}
+    fields={fields}
     universities={searchUniversities}
   />
+
+  {previewPrograms.length > 0 && (
+    <div className="mb-16">
+      <h2 className="text-2xl font-bold mb-6 text-slate-900">
+        Programmes in {country}
+      </h2>
+      <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+        {previewPrograms.map((program) => (
+          <li key={`${program.universitySlug}-${program.slug}`}>
+            <Link
+              href={`/programs/${program.slug}`}
+              className="block bg-white p-4 rounded-2xl border border-slate-200 hover:shadow-md transition"
+            >
+              <span className="block font-semibold text-slate-900">{program.name}</span>
+              <span className="block text-sm text-slate-600">
+                {program.level} · {program.universityName}
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+      {countryPrograms.length > previewPrograms.length && (
+        <p className="mt-4 text-slate-600">
+          Showing {previewPrograms.length} of {countryPrograms.length} programmes.
+          Use the search above or open a university below to see them all.
+        </p>
+      )}
+    </div>
+  )}
 </div>
 
         {/* Quick Info */}

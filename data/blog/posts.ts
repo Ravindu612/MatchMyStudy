@@ -409,7 +409,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Compare Canada, Australia, Germany and Finland for international students in 2026: tuition fees, student jobs, living costs, post-study work and quality of education.",
     category: "Country Comparison",
-    date: "2026-05",
+    date: "2026-05-15",
     readTime: "5 min read",
     intro:
       "Canada, Australia, Germany, and Finland are among the popular study destinations for international students. Each country offers different advantages depending on tuition fees, student jobs, living costs, and future opportunities.",
@@ -493,7 +493,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Canada or Australia? Compare education quality, part-time student jobs and living costs in both countries to decide which study destination fits your budget and goals.",
     category: "Country Comparison",
-    date: "2026-05",
+    date: "2026-05-15",
     readTime: "4 min read",
     intro:
       "Canada and Australia are two of the most popular destinations for international students. Both countries offer English-taught education, part-time work opportunities, and future career pathways.",
@@ -528,7 +528,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Looking for an affordable study destination? See why Germany's low-tuition public universities and Finland's scholarships make them good-value options, and what else to budget for.",
     category: "Budget Study Guide",
-    date: "2026-05",
+    date: "2026-05-15",
     readTime: "4 min read",
     intro:
       "For many international students, affordability is one of the most important factors when choosing a study destination. Germany and Finland can be attractive options for students looking for quality education with reasonable costs.",

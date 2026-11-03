@@ -1621,7 +1621,7 @@ export const countryQuickInfo: Partial<Record<CountryKey, CountryQuickInfo>> = {
     },
   },
   portugal: {
-    lastChecked: "October 2026",
+    lastChecked: "November 2026",
     tuitionFees: {
       summary:
         "Public institutions set their own fees for international (non-EU) students under the International Student Statute, so there is no national figure. For Portuguese and EU students, the state caps the yearly fee for bachelor's and integrated master's degrees.",
@@ -1630,19 +1630,19 @@ export const countryQuickInfo: Partial<Record<CountryKey, CountryQuickInfo>> = {
           label: "Tuition for international students",
           value: "Not centrally published – set by each institution",
           sourceUrl:
-            "https://www.dges.gov.pt/pt/pagina/propinas",
+            "https://diariodarepublica.pt/dr/detalhe/lei/73-a-2025-993270096-994041075",
         },
         {
-          label: "National fee cap, Portuguese/EU students (2025-26)",
+          label: "National fee cap, Portuguese/EU students (2026-27)",
           value: "€697 per year",
           sourceUrl:
-            "https://www.dges.gov.pt/pt/pagina/propinas",
+            "https://diariodarepublica.pt/dr/detalhe/lei/73-a-2025-993270096-994041075",
         },
       ],
       sources: [
         {
-          name: "DGES: Tuition fees (in Portuguese)",
-          url: "https://www.dges.gov.pt/pt/pagina/propinas",
+          name: "Diário da República: State Budget Law 2026 (Lei 73-A/2025), Article 161 – tuition fee limits (in Portuguese)",
+          url: "https://diariodarepublica.pt/dr/detalhe/lei/73-a-2025-993270096-994041075",
         },
       ],
     },

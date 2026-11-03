@@ -5,6 +5,7 @@ import { ubcEnglishRequirements } from "@/data/ubcEnglishRequirements";
 import { englishRequirements } from "@/data/englishRequirements";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import JsonLd from "@/components/JsonLd";
 import {
   getCountryPath,
   pageMeta,
@@ -97,8 +98,28 @@ export default async function ProgramDetailPage({
     },
   ];
 
+  const courseLd = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: program.name,
+    description: truncateDescription(
+      hasRealInfo(program.description)
+        ? program.description
+        : `${program.name} at ${program.universityName}, ${program.country}.`
+    ),
+    url: `https://www.matchmystudy.com/programs/${encodeURIComponent(program.slug)}`,
+    ...(program.level && { educationalCredentialAwarded: program.level }),
+    ...(program.language && { inLanguage: program.language }),
+    provider: {
+      "@type": "CollegeOrUniversity",
+      name: program.universityName,
+      url: `https://www.matchmystudy.com${universityHref}`,
+    },
+  };
+
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900 px-6 py-16">
+      <JsonLd data={courseLd} />
       <section className="max-w-6xl mx-auto">
         <Breadcrumbs
           items={breadcrumbItems}

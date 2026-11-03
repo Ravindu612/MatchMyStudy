@@ -31,9 +31,15 @@ export async function generateMetadata({
 
   const path = `/consultants/${consultant.slug}`;
   const title = `${consultant.name} — Study Abroad Consultant | MatchMyStudy`;
+  // Lead with name + location so profiles that share a description
+  // (e.g. the same agency in two countries) still get unique meta text.
+  const location = [consultant.city, consultant.country]
+    .filter(Boolean)
+    .join(", ");
   const description = truncateDescription(
-    consultant.description ||
-      `Learn about ${consultant.name}, a study abroad education consultant offering services for international students.`
+    `${consultant.name}${location ? ` in ${location}` : ""}: ` +
+      (consultant.description ||
+        "a study abroad education consultant offering services for international students.")
   );
 
   return {

@@ -73,6 +73,7 @@ import { universityOfGlasgowPrograms } from "./programs/unitedKingdom/university
 import { imperialCollegeLondonPrograms } from "./programs/unitedKingdom/imperialCollegeLondonPrograms";
 import { universityOfWarwickPrograms } from "./programs/unitedKingdom/universityOfWarwickPrograms";
 import { ucSanDiegoPrograms } from "./programs/unitedStates/ucSanDiegoPrograms";
+import { ucBerkeleyPrograms } from "./programs/unitedStates/ucBerkeleyPrograms";
 export type ProgramLevel =
   | "Bachelor"
   | "Master"
@@ -189,6 +190,7 @@ export const programs: Program[] = [
   ...imperialCollegeLondonPrograms,
   ...universityOfWarwickPrograms,
   ...ucSanDiegoPrograms,
+  ...ucBerkeleyPrograms,
   {
     name: "Bachelor's Programme in Science and Technology",
     slug: "bachelor-science-technology-aalto-university",

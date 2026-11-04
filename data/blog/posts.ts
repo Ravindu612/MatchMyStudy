@@ -443,6 +443,55 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "New Classroom, New Rules: How to Adjust to Academic Culture Abroad",
+    slug: "new-academic-culture",
+    description:
+      "A practical guide to the unwritten rules of studying at a university abroad: speaking up in class, independent study, office hours, group work, referencing and academic integrity, and reading feedback without panic.",
+    category: "Student Life",
+    date: "2026-11-04",
+    readTime: "5 min read",
+    intro:
+      "You can prepare for the visa, the flight and the housing, and still feel lost in your first week of classes. The lecture starts, the professor asks the room a question, and everyone seems to know something you were never told. How much should you speak? How much reading is really expected? Is it rude to email a lecturer, or rude not to?\n\nEvery university system has its own unwritten rules. None of them are better or worse than the ones you grew up with, but they are different, and nobody hands you the list. This guide walks through the ones that surprise international students most often, so your first semester feels less like guessing.",
+    sections: [
+      {
+        heading: "Speaking up is often part of the work",
+        text: "In many places, students are expected to listen carefully and speak only when asked. In others, especially in seminars and small classes, asking questions, disagreeing politely and building on a classmate's point is part of how you learn, and sometimes part of your grade.\n\nIf you come from a quieter tradition, start small. Prepare one question or one comment before each seminar and aim to say it in the first half of the session, before the conversation gets fast. Phrases like \"I wondered whether\" or \"Could I add something to that\" give you a gentle way in. Nobody expects perfect English or a brilliant point. They expect you to take part.",
+      },
+      {
+        heading: "The hours outside class matter more than the hours inside",
+        text: "A timetable abroad can look surprisingly empty. A few lectures, a seminar or two, and long gaps in between. Those gaps are not free time. Many systems assume that most of your learning happens through reading, problem sets and projects you organise yourself.\n\nCheck your course handbook or module page for the expected study hours, then block them into your week like classes. Find a place where you actually focus, whether that is the library, a quiet cafe or a study room in your building. Students who treat independent study as a real appointment usually feel much calmer by mid-semester than those who wait for a deadline to push them.",
+      },
+      {
+        heading: "Office hours are an invitation, not a punishment",
+        text: "In some education systems, going to see a teacher means you are in trouble. At many universities abroad, it means you are engaged. Lecturers often set aside regular office hours, in person or online, specifically so students can come with questions.\n\nYou do not need a big problem to go. Asking how to approach an essay question, what a piece of feedback meant, or which reading to start with is completely normal. Bring your question written down, be on time, and keep it focused. One short visit early in the semester also means the lecturer knows your face, which helps later if you need advice or a reference.",
+      },
+      {
+        heading: "Group work is assessed on how you work, not only what you hand in",
+        text: "Group projects are common, and they can feel strange if you are used to being marked only as an individual. Some groups divide the work neatly. Others drift until the week before the deadline.\n\nAt the first meeting, agree on three things: who does which part, when you will check in, and how you will share files. Write it down in a shared message so nobody remembers it differently. If someone disappears, raise it kindly with the group first, then with the lecturer if it continues. Most universities have a process for this, and using it early is far better than doing two people's work in silence.",
+      },
+      {
+        heading: "Referencing is a rule, not a style choice",
+        text: "This is the one that catches the most well-meaning students. Universities abroad usually have strict academic integrity rules. Using someone else's words or ideas without a clear reference can be treated as plagiarism, even if you did not mean to copy and even if it was accepted where you studied before.\n\nFind out which referencing style your department uses and learn it in your first few weeks. Most university libraries run free workshops and have online guides. Check your course rules on AI writing tools too, because they vary a lot between universities and even between modules. When you are unsure whether something is allowed, ask before you submit, not after.",
+      },
+      {
+        heading: "Read feedback as directions, not a verdict",
+        text: "Your first marked assignment abroad might come back lower than you expected, with comments that feel blunt. That is common, and it is not a sign you do not belong. Grading scales and expectations differ between countries, and it takes time to learn what a strong answer looks like in a new system.\n\nRead the comments twice, once to feel whatever you feel and once to find two or three specific things to change. If something is unclear, take it to office hours. Many universities also have academic skills or writing centres where staff will look at a draft with you. Using them is what successful students do, not a sign of struggling.",
+      },
+      {
+        heading: "Give yourself a semester to learn the rules",
+        text: "Adjusting to a new academic culture is a skill, and like any skill it improves with practice. In the first few weeks, watch how other students take part, notice what lecturers praise, and keep a short list of anything that confuses you to ask about.\n\nBy the end of your first semester, the things that felt strange will start to feel normal. You will also have something valuable that you did not have before: the ability to learn well in more than one system, which employers and graduate programs around the world quietly respect.",
+      },
+    ],
+    coverImage: "/images/blog/new-academic-culture.jpg",
+    coverImageAlt: "A lecturer standing in front of students who are listening and taking notes at wooden desks in a lecture hall",
+    unsplash: {
+      photographerName: "Vitaly Gariev",
+      photographerUrl: "https://unsplash.com/@silverkblack",
+      photoUrl:
+        "https://unsplash.com/photos/professor-lecturing-students-in-a-university-lecture-hall-nrE0LK_qN7E",
+    },
+  },
+  {
     title: "Ask Early, Ask Well: How to Get Strong Recommendation Letters for Study Abroad",
     slug: "recommendation-letters",
     description:

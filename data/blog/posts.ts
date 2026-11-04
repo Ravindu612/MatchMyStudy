@@ -537,6 +537,59 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "The Sunday Evening Feeling: How to Handle Homesickness When You Study Abroad",
+    slug: "homesick-abroad",
+    description:
+      "A gentle, practical guide to homesickness for international students: why it often arrives weeks after you land, how to stay close to home without living there, small routines that help, and when to ask your university for support.",
+    category: "Student Life",
+    date: "2026-11-03",
+    readTime: "5 min read",
+    intro:
+      "It often arrives on a quiet evening. The lectures are done, your flatmates have gone out or gone silent, and the light outside is fading earlier than it does at home. You open your phone, see a photo of a family dinner you were not at, and something in your chest goes heavy.\n\nThat is homesickness, and almost every international student meets it at some point. It does not mean you chose the wrong country or the wrong course. It means you left somewhere that mattered. This guide is about living with that feeling kindly, and making sure it stays a visitor rather than moving in.",
+    sections: [
+      {
+        heading: "Expect it later than you think",
+        text: "The first weeks abroad are loud. There are forms to fill in, rooms to set up, people to meet, and a new city to find your way around. Many students feel fine, even excited, through all of it.\n\nHomesickness often turns up afterwards, when the novelty fades and life settles into a routine. Shorter days, the first deadlines, or a holiday you are missing at home can all bring it on. Knowing this in advance helps. If you feel low a month or two in, it is not a sign that something has gone wrong. It is a very normal stage of settling in, and it usually eases as the new place starts to feel like yours.",
+      },
+      {
+        heading: "Give home a regular slot, not every spare minute",
+        text: "Staying in touch with family and friends is one of the best comforts you have. But there is a difference between feeling connected and living in two places at once. If you are on the phone to home every free hour, it becomes harder to build a life where you actually are.\n\nTry giving home a regular, predictable slot instead. A longer call at the weekend, a short voice message after classes, a shared photo album where everyone adds one picture a day. Your family gets something to look forward to, and so do you. Time zones can make this tricky, so agree on a time that works for both sides rather than squeezing calls in late at night.",
+      },
+      {
+        heading: "Build small routines that belong to you",
+        text: "Homesickness feeds on empty, shapeless time. Routines give your week a shape, and they do not need to be impressive. A walk to the same café on Saturday morning. Cooking one dish from home every week. A regular study spot in the library. A short run along the same route.\n\nAfter a while, these small habits become anchors. They are the first things in your new city that feel familiar, and familiarity is exactly what homesickness is asking for.",
+      },
+      {
+        heading: "Bring a little of home with you",
+        text: "Comfort objects are not childish. A photo on your wall, a blanket from your bedroom, a favourite tea, or a playlist of songs from home can make a rented room feel less like a waiting room.\n\nFood is especially powerful. Look for shops that sell ingredients from your country or region, and ask other students where they buy theirs. Cooking a familiar meal and sharing it with flatmates is one of the easiest ways to turn homesickness into a connection instead of a wall.",
+      },
+      {
+        heading: "Say yes to small things with other people",
+        text: "When you feel low, staying in your room feels safest. It is also the thing most likely to keep you feeling low. You do not have to go to every party. Small, low-pressure plans work just as well: a study session with a classmate, a society meeting, a volunteering shift, a free event on campus.\n\nOther international students understand this feeling better than anyone, and many local students will have felt something similar when they first left home for university. You may find that saying, honestly, that you miss home is the start of a real conversation rather than an awkward one.",
+      },
+      {
+        heading: "Look after the basics",
+        text: "Sleep, food, daylight, and movement have a big effect on mood, and they are often the first things to slip in a new country. Late nights, irregular meals, and long days indoors can make homesickness feel much heavier than it really is.\n\nYou do not need a perfect routine. Aim for roughly regular sleep, real meals most days, and some time outside when it is light. If you are moving somewhere with long dark winters, getting outdoors around midday can make a noticeable difference.",
+      },
+      {
+        heading: "Know when to ask for help",
+        text: "Homesickness usually comes and goes. But if the low feeling sticks around for weeks, if you stop sleeping or eating properly, if you cannot face classes, or if you feel hopeless, it is time to talk to someone. That is not a failure. It is exactly what university support services are there for.\n\nMost universities have student counselling or wellbeing teams, and many have advisers who work specifically with international students. Your university's website or your welcome pack will tell you how to reach them. If you ever feel unsafe or at risk, contact local emergency services straight away.",
+      },
+      {
+        heading: "Let both places matter",
+        text: "Missing home and enjoying your new life are not opposites. You can love your new city and still feel a pang when your family sits down to eat without you. Over time, most students find that the feeling softens, and that they end up with two places that feel like home instead of one.\n\nSo be patient with yourself. Call home, cook the dish, go to the meeting, take the walk. One quiet Sunday evening at a time, the place you are now becomes a place you belong.",
+      },
+    ],
+    coverImage: "/images/blog/homesick-abroad.jpg",
+    coverImageAlt: "A student on a laptop video call with a smiling woman and girl at home",
+    unsplash: {
+      photographerName: "Vitaly Gariev",
+      photographerUrl: "https://unsplash.com/@silverkblack",
+      photoUrl:
+        "https://unsplash.com/photos/man-video-calls-with-a-woman-and-child-Xdiq2Ygfhms",
+    },
+  },
+  {
     title: "Canada vs Australia for International Students",
     slug: "canada-vs-australia",
     description:

@@ -142,7 +142,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-white text-2xl"
+            className="lg:hidden text-white text-2xl"
           >
             ☰
           </button>
@@ -150,7 +150,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-6 text-slate-300 font-medium ml-6">
+        <ul className="hidden lg:flex gap-4 text-slate-300 font-medium ml-6 xl:gap-6">
 
   <li>
     <Link href="/">Home</Link>
@@ -182,6 +182,10 @@ export default function Navbar() {
 
   <li>
     <Link href="/feed">Feed</Link>
+  </li>
+
+  <li>
+    <Link href="/support">Donate</Link>
   </li>
 
   {!loadingUser && (
@@ -239,7 +243,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden px-4 pb-4 bg-slate-900 border-t border-slate-800 flex flex-col gap-4">
+        <div className="lg:hidden px-4 pb-4 bg-slate-900 border-t border-slate-800 flex flex-col gap-4">
 
           <Link
             href="/"
@@ -327,6 +331,14 @@ export default function Navbar() {
             className="text-white text-lg font-medium hover:text-blue-400 transition"
           >
             Feed
+          </Link>
+
+          <Link
+            href="/support"
+            onClick={() => setOpen(false)}
+            className="text-white text-lg font-medium hover:text-blue-400 transition"
+          >
+            Donate
           </Link>
 
         </div>

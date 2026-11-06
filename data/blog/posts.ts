@@ -443,6 +443,55 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "Touch Down, Then Breathe: Getting from the Airport to Your First Night Abroad",
+    slug: "arrival-day",
+    description:
+      "A calm arrival-day checklist for international students: documents, immigration and bags, getting into town, getting online, and settling in for the first night without trying to do everything at once.",
+    category: "Student Life",
+    date: "2026-11-06",
+    readTime: "6 min read",
+    intro:
+      "Landing in a new country after a long flight is strange. Your body thinks it is the middle of the night, the signs are in a language you only half recognise, and everyone else seems to know exactly where to walk. It is easy to feel that you should already be organised, smiling, and unpacking.\n\nYou do not need to be. Arrival day has one job: get you from the plane to a safe bed with your bags, your documents, and enough energy left to sleep. Everything else can wait until tomorrow. This guide is a calm checklist for that single day.",
+    sections: [
+      {
+        heading: "Before you leave the plane, know where you are going",
+        text: "While you are still seated, open the note you prepared at home. It should have your full address for tonight, the name of your residence or host, a phone number that works in that country, and how you plan to get there from the airport. Add a screenshot of the route or booking confirmation in case the airport Wi-Fi is slow.\n\nKeep your passport, visa or entry documents, offer letter, and housing confirmation in one place you can reach without unpacking your whole bag. Immigration officers and university welcome desks ask for these often. Having them ready is less about looking efficient and more about not digging through a suitcase while a queue forms behind you.",
+      },
+      {
+        heading: "Move through immigration and bags one step at a time",
+        text: "Follow the signs for arrivals and immigration. If you are unsure which queue is yours, ask a staff member once rather than guessing twice. Have your documents out, put your phone away while you speak to the officer, and answer the questions they ask. Most of the time the process is ordinary, even when it feels serious.\n\nAt baggage claim, stand where you can see the belt clearly and keep your hand luggage with you. If a bag does not arrive, go to the airline desk in the arrivals hall before you leave the airport, and keep the report they give you. It is annoying, but it is also common, and it is much easier to fix from the airport than from a student residence an hour away.",
+      },
+      {
+        heading: "Choose your way into town before you are tired",
+        text: "The best transport plan is the one you decided before you landed. Many universities publish clear advice on airport transfers, welcome pickups, and public transport options for new students. If yours does, follow it. If you booked a train, coach, or ride in advance, go to the meeting point written on your confirmation, not the first person who offers you a taxi in the arrivals hall.\n\nOfficial taxi ranks, licensed ride apps used in that city, and airport buses are usually easier to trust than a stranger who approaches you. Check that the destination on the meter, app, or ticket matches the address you wrote down. Keep your bags where you can see them, and send a short message to someone at home once you are on your way, so they know you left the airport safely.",
+      },
+      {
+        heading: "Get online just enough to be reachable",
+        text: "You do not need perfect connectivity on day one, but you do need a way to receive messages, open maps, and contact housing or the university if something goes wrong. Airport Wi-Fi is often enough for that first hour. Some students buy a local SIM or eSIM before they travel; others wait until they can visit a phone shop with their passport the next day.\n\nWhatever you choose, test one thing early: that you can open your housing address, your university emergency or arrival contacts, and a message to family. Save those numbers offline too. A dead battery and no offline copy of your address is a small problem that feels huge when you are jet-lagged.",
+      },
+      {
+        heading: "When you arrive, do the boring important things first",
+        text: "At your residence or host home, check in properly. Confirm your room number, how you get back in after hours, where the kitchen and bathroom are, and what Wi-Fi password you need. Take a photo of any existing damage in the room before you unpack. It takes two minutes and can save arguments about deposits months later.\n\nThen look after your body. Drink water, eat something simple, even if it is only from a nearby shop, and decide when you will sleep. Unpack only what you need for the night: chargers, toiletries, pyjamas, tomorrow's clothes, and your documents folder. A fully unpacked suitcase can wait. Sleep usually cannot.",
+      },
+      {
+        heading: "Tell the right people you landed, then stop scrolling",
+        text: "Send a short message to your family or a close friend once you are inside and safe. If your university asked you to confirm arrival, do that too, especially if they are expecting you for orientation or a residence check-in. One clear update is better than a long stream of half-awake photos.\n\nAfter that, put the phone down for a while. Comparing your tired arrival with someone else's polished day-one post will not help you sleep. Your first night abroad does not need to look like a highlight reel. It needs to be quiet enough that tomorrow feels possible.",
+      },
+      {
+        heading: "Leave day two for day two",
+        text: "It is tempting to open a bank account, buy a phone plan, tour the campus, and find every supermarket before you go to bed. Resist that. Arrival day ends when you are fed, locked in, and lying down. Orientation, registration, and exploring work better when you have slept.\n\nIf something already went wrong, such as a missed pickup or a room that is not ready, contact the housing office or the university's international or student support team rather than inventing a late-night solution alone. They deal with arrival problems every term. Asking for help on day one is not a failure. It is how most good first nights begin.",
+      },
+    ],
+    coverImage: "/images/blog/arrival-day.jpg",
+    coverImageAlt: "A traveler sitting alone in a quiet airport waiting area at night under bright terminal lights",
+    unsplash: {
+      photographerName: "Eric Prouzet",
+      photographerUrl: "https://unsplash.com/@eprouzet",
+      photoUrl:
+        "https://unsplash.com/photos/man-sitting-in-empty-airport-waiting-area-dsp3EelRZl4",
+    },
+  },
+  {
     title: "Small Awards Add Up: A Calm Guide to Finding Scholarships for Study Abroad",
     slug: "scholarship-search",
     description:

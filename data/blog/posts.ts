@@ -443,6 +443,55 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "Small Awards Add Up: A Calm Guide to Finding Scholarships for Study Abroad",
+    slug: "scholarship-search",
+    description:
+      "Where study abroad scholarships actually come from, how to build a simple shortlist, how to tell real funding from scams, and how to write applications that do not all sound the same.",
+    category: "Scholarships",
+    date: "2026-11-05",
+    readTime: "6 min read",
+    intro:
+      "Searching for scholarships can feel like shouting into a very large room. You type a few words into a search engine, open twenty tabs, and find lists of awards that are closed, meant for someone else, or so vague you cannot tell whether you qualify.\n\nThe students who end up with funding are rarely the ones who searched the hardest for one perfect award. They are usually the ones who searched in the right places, kept a tidy list, and applied steadily to awards they had a real chance of winning. This guide walks through that approach, one calm step at a time.",
+    sections: [
+      {
+        heading: "Start with the university you want to attend",
+        text: "The most reliable place to look is the scholarships or funding page of each university on your list. Many universities offer awards for international students, and some consider you automatically when you apply for admission, while others need a separate application with its own deadline. The page will usually say which, so read it carefully rather than assuming.\n\nLook at the department or faculty pages too. Individual schools sometimes have their own smaller awards that never appear on the main university list. If anything is unclear, a short email to the admissions or scholarships office is perfectly normal, and the answer comes from the people who actually decide.",
+      },
+      {
+        heading: "Then look closer to home and further afield",
+        text: "After universities, check two kinds of official sources. The first is the government of the country you want to study in. Many governments run scholarship programs for international students, often listed on an official study portal or the website of their embassy in your country. The second is your own government, ministry of education, or national scholarship body, which may fund students who study abroad and return.\n\nBeyond those, look at international organisations, foundations, and professional bodies linked to your field. A future engineer, nurse, or teacher may find awards that a general search never shows. Always follow the link back to the organisation's own website before you trust the details, because third-party lists are often out of date.",
+      },
+      {
+        heading: "Build a shortlist you can actually manage",
+        text: "Make a simple spreadsheet or note with one row per award. For each one, write the name, the official link, who it is for, what it covers, the deadline, and what you need to submit. Add a column for your honest chance, such as strong, possible, or long shot.\n\nThis list does two useful things. It stops you losing track of deadlines, and it shows you quickly which awards are worth your time. An award that matches your country, subject, and level of study is usually a better bet than a famous one that thousands of people apply for. Aim for a realistic mix rather than putting everything into a single application.",
+      },
+      {
+        heading: "Read the eligibility rules like a checklist",
+        text: "Before writing a word, go through the eligibility section line by line. Check your nationality, the level of study, the subject areas, the start date, any academic or language requirements, and whether you need an offer of admission before you apply. If you miss one condition, the application may not be read at all.\n\nPay attention to what the award covers, too. Some scholarships pay part of the tuition, some cover living costs, some pay for travel, and a few cover several of these. Knowing exactly what you would receive helps you plan the rest of your budget honestly, instead of counting on money that was never part of the offer.",
+      },
+      {
+        heading: "Write each application for the people reading it",
+        text: "Most scholarship applications ask some version of the same question: why you, why this subject, and what you will do with it. It is tempting to write one essay and send it everywhere. Reviewers can usually tell. Start from a strong core story about your goals, then adjust it for each award, connecting your plans to that organisation's purpose in its own words.\n\nBe specific. One clear example of something you did, learned, or built says more than a paragraph of big adjectives. Ask a teacher or friend to read your draft and tell you what they remember afterwards. If they cannot name your main point, make it clearer. Give your referees plenty of notice, and send them the award details so their letters fit too.",
+      },
+      {
+        heading: "Learn to spot scholarship scams",
+        text: "Real scholarships do not usually ask you to pay a fee to apply or to receive the award. Be careful with any offer that arrives without you applying, promises guaranteed funding, asks for bank details or card numbers early on, or pressures you to act within hours. Check that emails come from the organisation's official domain and that the award appears on its official website.\n\nIf you are unsure, ask the university's international or scholarships office whether they recognise the award. A two-minute question can save you a lot of money and worry.",
+      },
+      {
+        heading: "Keep going after the first no",
+        text: "Rejections are part of the process, and they say very little about your worth as a student. Competitive awards often have far more strong applicants than places. Keep your notes, reuse what worked, and move on to the next deadline on your list.\n\nAnd remember that funding often arrives in pieces. A partial tuition award, a small travel grant, and a departmental bursary can together make a real difference. Small awards add up, and every application you send makes the next one a little easier to write.",
+      },
+    ],
+    coverImage: "/images/blog/scholarship-search.jpg",
+    coverImageAlt: "A person writing in a small notebook beside an open laptop and a cup of coffee on a wooden table",
+    unsplash: {
+      photographerName: "Esra Afşar",
+      photographerUrl: "https://unsplash.com/@esraafsar",
+      photoUrl:
+        "https://unsplash.com/photos/person-writing-in-notebook-next-to-laptop-and-coffee-vDNMEn8VCfU",
+    },
+  },
+  {
     title: "New Classroom, New Rules: How to Adjust to Academic Culture Abroad",
     slug: "new-academic-culture",
     description:

@@ -31,7 +31,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="flex gap-6 text-sm">
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm md:justify-end">
           <Link
             href="/privacy"
             className="hover:text-white transition-colors"
@@ -65,6 +65,13 @@ export default function Footer() {
             className="hover:text-white transition-colors"
           >
             About
+          </Link>
+
+          <Link
+            href="/support"
+            className="hover:text-white transition-colors"
+          >
+            Support MatchMyStudy
           </Link>
 
           <CookieSettingsButton className="bg-transparent p-0 text-inherit hover:text-white transition-colors" />

@@ -69,7 +69,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     })),
     // Trust and legal pages.
-    ...["/privacy", "/terms", "/contact", "/affiliate-disclosure"].map(
+    ...["/privacy", "/terms", "/contact", "/affiliate-disclosure", "/support"].map(
       (path) => ({
         url: `${baseUrl}${path}`,
         changeFrequency: "yearly" as const,

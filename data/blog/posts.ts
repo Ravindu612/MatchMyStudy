@@ -443,6 +443,51 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "Tell One True Story: How to Write a Personal Statement for Study Abroad",
+    slug: "personal-statement",
+    description:
+      "A calm, practical guide to writing a personal statement or statement of purpose for a university abroad: reading the prompt, finding one honest story, linking it to the program, and editing without losing your own voice.",
+    category: "Applications",
+    date: "2026-11-07",
+    readTime: "6 min read",
+    intro:
+      "The personal statement is often the part of an application that students leave until last, because it feels the most exposing. Grades and test scores are numbers. A statement asks you to explain, in your own words, why you want this program and why you are ready for it. Staring at an empty page with that question can make anyone freeze.\n\nThe good news is that admissions readers are not looking for a perfect writer or a dramatic life story. They want to understand who you are, what you want to study, and whether you have thought about it seriously. This guide walks through a simple way to get there, one honest paragraph at a time.",
+    sections: [
+      {
+        heading: "Read the prompt like a set of instructions",
+        text: "Before you write a single sentence, find the exact instructions on the university or application portal page. Different systems ask for different things. Some want a general personal statement, some want a statement of purpose focused on research or career plans, and some ask two or three short questions instead of one long essay. The word or character limit, and whether it is strict, matters too.\n\nCopy the prompt into the top of your document and underline the verbs: describe, explain, discuss, tell us. Those words are the real brief. A beautiful essay that answers a different question will still feel off to the person reading it. If anything is unclear, check the program's admissions page or email the admissions office before you guess.",
+      },
+      {
+        heading: "Start with notes, not with an opening line",
+        text: "Many students lose hours trying to write a clever first sentence. Skip it for now. Open a blank page and list moments instead: a class that changed how you think, a project you stayed up late to finish, a problem at home or at work that you wanted to solve, a book or person that pushed you toward this subject.\n\nNext to each moment, write one line on what you learned or what it made you curious about. You will not use all of them. You are looking for two or three that point clearly toward the program you are applying for. The best material is usually specific and a little ordinary, like a lab result that failed or a customer question you could not answer, rather than a grand statement about your passion.",
+      },
+      {
+        heading: "Choose one true story and let it carry the essay",
+        text: "A strong statement often has one thread running through it. Pick the moment from your notes that best explains why you want to study this subject, and build around it. Describe what happened briefly, then spend more words on what you did, what you noticed, and how it shaped your next steps.\n\nShow, then explain. Instead of saying you are hardworking, describe the weekend you rebuilt a project after it broke. Instead of saying you love economics, mention the question about local prices you kept trying to answer. Readers remember details. They forget adjectives.",
+      },
+      {
+        heading: "Connect yourself to this program, not to any program",
+        text: "Admissions readers want to know why you chose their course. Go back to the official program page and read the modules, research areas, teaching style, and any placement or project options. Pick one or two that genuinely match your interests, and say how they connect to what you have already done.\n\nKeep it honest and specific. One clear sentence about a module you are excited to take is better than a paragraph of praise for the university's reputation. If you are applying to several universities, keep a shared core but rewrite this part for each one. A statement that could be sent anywhere usually reads that way.",
+      },
+      {
+        heading: "Finish by looking forward",
+        text: "The last part of your statement should answer a quiet question: what will you do with this degree? You do not need a fixed ten-year plan. It is enough to describe the kind of work, research, or problem you hope to move toward, and how this program helps you take the next step.\n\nIf you have a gap in your studies, a change of subject, or a weaker semester that the reader might notice, a short, calm explanation can help. State what happened, what you did about it, and what has changed. Keep it brief and move on. The statement is about where you are going, not an apology for where you have been.",
+      },
+      {
+        heading: "Edit for clarity, then stop",
+        text: "Leave your first draft for a day before editing. Then read it aloud. Cut sentences that repeat your CV, words you would never say in real life, and any paragraph that does not help answer the prompt. Check that you are within the limit, and that the university and program names are correct in every version you send.\n\nAsk one or two people you trust, such as a teacher or a friend who writes well, to tell you where they got confused or bored. Be careful with heavy rewriting from others or from writing tools. Universities expect the statement to be your own work, and many state this clearly in their application rules. Your voice, even if it is simple, is the point. When it is clear, honest, and answers the question, you are done.",
+      },
+    ],
+    coverImage: "/images/blog/personal-statement.jpg",
+    coverImageAlt: "A hand writing notes in a lined notebook beside a laptop and phone on a white desk",
+    unsplash: {
+      photographerName: "Светлана Химочка",
+      photographerUrl: "https://unsplash.com/@oraswet",
+      photoUrl:
+        "https://unsplash.com/photos/a-person-writing-on-a-notebook-with-a-laptop-in-the-background-0KT9gxj_BdM",
+    },
+  },
+  {
     title: "Touch Down, Then Breathe: Getting from the Airport to Your First Night Abroad",
     slug: "arrival-day",
     description:

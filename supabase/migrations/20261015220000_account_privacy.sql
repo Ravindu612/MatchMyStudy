@@ -60,7 +60,7 @@ declare
 begin
   select con.confdeltype
   into delete_action
-  from pg_constraint
+  from pg_constraint con
   where conname = 'messages_sender_id_fkey'
     and conrelid = 'public.messages'::regclass;
 
@@ -79,7 +79,7 @@ declare
 begin
   select con.confdeltype
   into delete_action
-  from pg_constraint
+  from pg_constraint con
   where conname = 'reports_reporter_id_fkey'
     and conrelid = 'public.reports'::regclass;
 

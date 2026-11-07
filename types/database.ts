@@ -4,7 +4,8 @@
  * Matches supabase/migrations/20261010230300_social_phase1.sql,
  * supabase/migrations/20261013220000_social_phase2_messages.sql,
  * supabase/migrations/20261014200000_social_phase2_notifications.sql,
- * supabase/migrations/20261015220000_account_privacy.sql, plus the
+ * supabase/migrations/20261015220000_account_privacy.sql,
+ * supabase/migrations/20261107104500_site_feedback.sql, plus the
  * production profile columns (id uuid, email text null, role text not null,
  * created_at timestamptz). consultants is not listed here: those migrations
  * do not change that table, and the repo does not contain its full column
@@ -592,6 +593,27 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      site_feedback: {
+        Row: {
+          created_at: string
+          id: string
+          rating: string
+          source: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          rating: string
+          source: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          rating?: string
+          source?: string
+        }
+        Relationships: []
       }
     }
     Views: {

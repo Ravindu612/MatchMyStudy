@@ -120,11 +120,12 @@ export function getContentIndexStats() {
 
 /**
  * Paths that should not request ads: empty "coming soon" screens,
- * account tools, and thin program / university pages.
+ * account tools, the feedback form, and thin program / university pages.
  * Other content URLs may show ads.
  */
 export const ADS_DENY_EXACT = [
   "/login",
+  "/helpful",
   "/program-matcher",
   "/university-matcher",
   "/consultants/success",

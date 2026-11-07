@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Separate Expo app. It has its own package.json and is not part of the Next.js build.
+    "mobile/**",
   ]),
 ]);
 

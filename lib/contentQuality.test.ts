@@ -139,6 +139,7 @@ test("consent head script denies EEA storage and pauses ads on thin pages", () =
     "/",
     "/about",
     "/blog/best-countries-2026",
+    "/helpful",
     "/program-matcher",
     "/university-matcher",
     "/admin/moderation",

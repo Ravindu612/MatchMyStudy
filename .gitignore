@@ -2,6 +2,12 @@
 
 # dependencies
 /node_modules
+node_modules/
+
+# expo (mobile/)
+.expo/
+mobile/dist/
+
 /.pnp
 .pnp.*
 .yarn/*
@@ -32,6 +38,8 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+# The mobile app documents its public env names in this template.
+!mobile/.env.example
 
 # vercel
 .vercel

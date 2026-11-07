@@ -11,6 +11,7 @@ import {
 } from "@/data/blog/posts";
 import { SITE_NAME, SITE_URL, STATIC_META } from "@/lib/seo-meta";
 import JsonLd from "@/components/JsonLd";
+import HelpfulPrompt from "@/components/HelpfulPrompt";
 
 export function generateStaticParams() {
   return getBlogPosts().map((post) => ({ slug: post.slug }));
@@ -165,6 +166,8 @@ export default async function BlogPostPage({
             The best country depends on your personal goals, budget, and long-term plans.
           </p>
         </div>
+
+        <HelpfulPrompt source={`/blog/${slug}`} />
       </article>
     </main>
   );

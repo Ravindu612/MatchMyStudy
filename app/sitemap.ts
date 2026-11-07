@@ -69,6 +69,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     })),
     // Trust and legal pages.
+    // /helpful is a noindex feedback form, so it is left out of the sitemap.
     ...["/privacy", "/terms", "/contact", "/affiliate-disclosure", "/support"].map(
       (path) => ({
         url: `${baseUrl}${path}`,

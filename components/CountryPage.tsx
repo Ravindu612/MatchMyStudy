@@ -9,6 +9,7 @@ import {
 } from "@/lib/countrySearch";
 import FindConsultantsButton from "@/components/consultant/FindConsultantsButton";
 import ItalkiSpeakingCta from "@/components/ItalkiSpeakingCta";
+import HelpfulPrompt from "@/components/HelpfulPrompt";
 import { countryQuickInfo } from "@/data/countryQuickInfo";
 import { countrySpeakingNote } from "@/lib/italki";
 
@@ -289,6 +290,7 @@ export default function CountryPage({
           </div>
         </div>
 
+        <HelpfulPrompt source={`/${String(countryKey)}`} />
       </section>
     </main>
   );

@@ -9,6 +9,7 @@ import { countries } from "@/data/countries";
 import FindConsultantsButton from "@/components/consultant/FindConsultantsButton";
 import { ItalkiSpeakingLink } from "@/components/ItalkiSpeakingCta";
 import AdSlot from "@/components/AdSlot";
+import HelpfulPrompt from "@/components/HelpfulPrompt";
 
 export const metadata = STATIC_META["/"];
 
@@ -168,6 +169,8 @@ Get personalized recommendations based on your goals, interests, and career aspi
       </section>
 
       <AdSlot allowAds className="px-6 pb-16" />
+
+      <HelpfulPrompt source="home" variant="section" />
     </main>
   );
 }

@@ -7,7 +7,7 @@ import CountryCard, {
 } from "@/components/CountryCard";
 import { countries } from "@/data/countries";
 import FindConsultantsButton from "@/components/consultant/FindConsultantsButton";
-import { ItalkiSpeakingLink } from "@/components/ItalkiSpeakingCta";
+import { LANGUAGE_STUDY_HREF, LANGUAGE_STUDY_LABEL } from "@/lib/languageStudy/paths";
 import AdSlot from "@/components/AdSlot";
 import HelpfulPrompt from "@/components/HelpfulPrompt";
 
@@ -79,15 +79,12 @@ Get personalized recommendations based on your goals, interests, and career aspi
     💻 Study Online
   </Link>
 
-  <div className="flex flex-col items-center gap-2">
-    <ItalkiSpeakingLink className="inline-block border-2 border-white text-white hover:bg-white hover:text-blue-700 px-8 py-4 rounded-xl font-semibold transition" />
-    <Link
-      href="/affiliate-disclosure"
-      className="text-sm font-semibold text-blue-100 underline underline-offset-2 hover:text-white"
-    >
-      Affiliate disclosure
-    </Link>
-  </div>
+  <Link
+    href={LANGUAGE_STUDY_HREF}
+    className="inline-block border-2 border-white text-white hover:bg-white hover:text-blue-700 px-8 py-4 rounded-xl font-semibold transition"
+  >
+    {LANGUAGE_STUDY_LABEL}
+  </Link>
 
 </div>
       </section>

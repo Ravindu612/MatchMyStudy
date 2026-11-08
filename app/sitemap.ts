@@ -8,6 +8,7 @@ import {
   isIndexableProgram,
 } from "@/lib/contentQuality";
 import { blogPosts, isFullIsoDate } from "@/data/blog/posts";
+import { languageStudySitemapPaths } from "@/lib/languageStudy/paths";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.matchmystudy.com";
@@ -39,6 +40,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    ...languageStudySitemapPaths().map((path) => ({
+      url: `${baseUrl}${path}`,
+      changeFrequency: "monthly" as const,
+      priority: path === "/language-study" ? 0.7 : 0.5,
+    })),
     {
       url: `${baseUrl}/study-matcher`,
       changeFrequency: "monthly",

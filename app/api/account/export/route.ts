@@ -59,8 +59,13 @@ export async function GET(request: Request) {
   const payload = {
     ...record,
     account: accountSection(session.user),
+    language_study: await languageStudyExport(session.client, session.user.id),
     files,
-    notes: EXPORT_NOTES,
+    notes: {
+      ...EXPORT_NOTES,
+      language_study:
+        "Your language study attempts and purchase records, when that storage is installed. Answer keys are not included.",
+    },
   };
   const filename = `matchmystudy-data-${new Date().toISOString().slice(0, 10)}.json`;
 
@@ -72,6 +77,41 @@ export async function GET(request: Request) {
       "Cache-Control": "no-store",
     },
   });
+}
+
+async function languageStudyExport(client: SupabaseClient, userId: string) {
+  const [attempts, orders] = await Promise.all([
+    client
+      .from("language_study_attempts")
+      .select(
+        "id, skill, language_code, task_id, mode, exam_variant, credit_source, score_correct, score_total, response, feedback, started_at, submitted_at"
+      )
+      .eq("user_id", userId),
+    client
+      .from("language_study_orders")
+      .select("id, product, skill, language_code, exam_variant, status, credits, created_at, fulfilled_at")
+      .eq("user_id", userId),
+  ]);
+  const missing = [attempts.error, orders.error].some(
+    (error) =>
+      error &&
+      (error.code === "42P01" ||
+        error.code === "PGRST205" ||
+        /does not exist|schema cache/i.test(error.message))
+  );
+
+  if (missing) {
+    return {
+      note: "Language study storage is not installed.",
+      attempts: [],
+      orders: [],
+    };
+  }
+
+  return {
+    attempts: attempts.data ?? [],
+    orders: orders.data ?? [],
+  };
 }
 
 function accountSection(user: User) {

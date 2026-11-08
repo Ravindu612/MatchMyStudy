@@ -9,7 +9,10 @@
  * production profile columns (id uuid, email text null, role text not null,
  * created_at timestamptz). consultants is not listed here: those migrations
  * do not change that table, and the repo does not contain its full column
- * list. Regenerate this file after the migration is applied and replace it
+ * list. Language study tables are described in
+ * supabase/migrations/20261108120000_language_study.sql and are omitted here
+ * until that migration is reviewed and applied. Regenerate this file after
+ * the migration is applied and replace it
  * if the CLI output differs (including __InternalSupabase).
  *
  * profiles.role stays text. The social identity enum is account_type.

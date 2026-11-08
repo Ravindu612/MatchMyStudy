@@ -167,6 +167,16 @@ export default function Navbar() {
   </li>
 
   <li>
+    <Link
+      href="/language-study"
+      aria-current={pathname.startsWith("/language-study") ? "page" : undefined}
+      className="hover:text-blue-400 transition"
+    >
+      Language Study
+    </Link>
+  </li>
+
+  <li>
   <Link
     href="/consultants"
     onClick={handleConsultantsClick}
@@ -267,6 +277,15 @@ export default function Navbar() {
             className="text-white text-lg font-medium hover:text-blue-400 transition"
           >
             Countries
+          </Link>
+
+          <Link
+            href="/language-study"
+            onClick={() => setOpen(false)}
+            aria-current={pathname.startsWith("/language-study") ? "page" : undefined}
+            className="text-white text-lg font-medium hover:text-blue-400 transition"
+          >
+            Language Study
           </Link>
 
           <Link

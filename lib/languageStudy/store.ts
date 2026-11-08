@@ -33,4 +33,7 @@ export interface LanguageStudyStore {
   fulfill(input: Parameters<typeof import("./ledger").fulfillOrder>[1]): Promise<
     FulfillResult | StoreFailure
   >;
+  failCheckout(orderId: string): Promise<
+    { ok: true; status: "failed" | "left_fulfilled" | "missing" } | StoreFailure
+  >;
 }

@@ -8,7 +8,7 @@ import {
   summarizeMock,
   taskHref,
 } from "@/lib/languageStudy/access";
-import { readLanguageStudyConfig } from "@/lib/languageStudy/config";
+import { productOffer, readLanguageStudyConfig, TAX_NOTE } from "@/lib/languageStudy/config";
 import { loadStudyContext } from "@/lib/languageStudy/context";
 import { mocksFor, practiceTasksFor } from "@/lib/languageStudy/content";
 import { freeSubmissionsUsed } from "@/lib/languageStudy/ledger";
@@ -82,6 +82,16 @@ export default async function LanguagePracticePage({
       </h1>
       <p className="mt-4 leading-8 text-slate-700">{languageIntro(skill, language)}</p>
       <p className="mt-4 leading-7 text-slate-700">{provisionalAllowanceText(config)}</p>
+      <section className="mt-4 rounded-3xl border border-slate-200 bg-white p-5 leading-7 text-slate-700">
+        <h2 className="text-xl font-bold text-slate-900">What a purchase includes</h2>
+        <p className="mt-3">{productOffer("task_batch")}</p>
+        <p className="mt-3">{productOffer("mock_test")}</p>
+        <p className="mt-3">{TAX_NOTE}</p>
+        <p className="mt-3">
+          Pressing a purchase button does not charge a card until Stripe Checkout is connected to
+          these exact amounts. A cancelled or failed checkout does not add tasks.
+        </p>
+      </section>
       {context.userId && context.storageReady ? (
         <p className="mt-3 font-semibold text-slate-900">
           Saved free submissions: {freeUsed} of {config.freeTasksPerSkillPerLanguage}.

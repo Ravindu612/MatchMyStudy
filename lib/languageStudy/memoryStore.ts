@@ -1,5 +1,6 @@
 import {
   createPendingOrder,
+  failCheckout,
   fulfillOrder,
   openPaidItem,
   saveMockSubmission,
@@ -89,5 +90,12 @@ export class MemoryLanguageStudyStore implements LanguageStudyStore {
     }
 
     return result;
+  }
+
+  async failCheckout(orderId: string) {
+    const result = failCheckout(this.state, orderId);
+    this.state = result.state;
+
+    return { ok: true as const, status: result.status };
   }
 }

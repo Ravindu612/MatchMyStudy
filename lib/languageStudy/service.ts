@@ -34,8 +34,14 @@ export type ServiceDeps = {
   now: () => Date;
   ids: () => IdBundle;
   stripe?: {
+    retrievePrice: (priceId: string) => Promise<{
+      currency: string;
+      unitAmount: number | null;
+      recurring: boolean;
+    }>;
     createSession: (input: {
       priceId: string;
+      expectedAmountMinor: number;
       userId: string;
       orderId: string;
       product: OrderProduct;
@@ -726,6 +732,24 @@ export async function handleCheckout(
     return denied(409, assessment.code, assessment.message);
   }
 
+  if (!deps.stripe) {
+    return denied(503, "stripe_secret_missing", "Checkout is not configured. Nothing was charged or unlocked.");
+  }
+
+  const listed = await deps.stripe.retrievePrice(assessment.stripePriceId);
+  const amountMatches =
+    listed.currency.toLowerCase() === "usd" &&
+    listed.unitAmount === assessment.priceMinor &&
+    listed.recurring === false;
+
+  if (!amountMatches) {
+    return denied(
+      409,
+      "price_mismatch",
+      "The Stripe Price does not match the launch price of USD 1.99 for ten tasks or USD 4.99 for one short practice-test attempt. Nothing was charged and nothing was unlocked."
+    );
+  }
+
   const loaded = await readyState(deps.store, input.userId);
 
   if ("status" in loaded) {
@@ -782,12 +806,9 @@ export async function handleCheckout(
     };
   }
 
-  if (!deps.stripe) {
-    return denied(503, "stripe_secret_missing", "Checkout is not configured. Nothing was charged or unlocked.");
-  }
-
   const session = await deps.stripe.createSession({
     priceId: assessment.stripePriceId,
+    expectedAmountMinor: assessment.priceMinor,
     userId: input.userId,
     orderId: created.order.id,
     product,
@@ -849,6 +870,26 @@ export async function handleWebhook(
     event = input.constructEvent(input.rawBody, input.signature, input.secret);
   } catch {
     return denied(400, "invalid_signature", "The webhook signature could not be verified. Nothing was granted.");
+  }
+
+  if (
+    event.type === "checkout.session.expired" ||
+    event.type === "checkout.session.async_payment_failed"
+  ) {
+    const orderId = event.session?.metadata.orderId;
+
+    if (event.session?.metadata.kind === "language_study" && orderId) {
+      const failed = await deps.store.failCheckout(orderId);
+
+      if (!failed.ok) {
+        return denied(500, failed.reason, "The failed checkout was not recorded. Nothing was unlocked.");
+      }
+    }
+
+    return {
+      status: 200,
+      body: { ok: true, granted: false, unlocked: false, charged: false, failed: true },
+    };
   }
 
   if (event.type !== "checkout.session.completed" || event.session?.metadata.kind !== "language_study") {

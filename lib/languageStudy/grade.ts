@@ -1,4 +1,5 @@
 import {
+  LISTENING_AUDIO_NOTE,
   LISTENING_DISCLOSURE,
   MAX_WRITING_WORDS,
   MIN_WRITING_WORDS,
@@ -100,6 +101,8 @@ export function toPublicListening(task: ListeningTask): PublicListening {
     audioLang: task.audioLang,
     speakerNote: task.speakerNote,
     disclosure: LISTENING_DISCLOSURE,
+    audioSrc: `/language-study/audio/${task.id}.mp3`,
+    audioNote: LISTENING_AUDIO_NOTE,
     questions: task.questions.map(toPublicQuestion),
   };
 }
@@ -142,6 +145,8 @@ export function toPublicMock(mock: {
     audioLang: body.audioLang,
     speakerNote: body.speakerNote,
     disclosure: body.script ? LISTENING_DISCLOSURE : undefined,
+    audioSrc: body.script ? `/language-study/audio/${mock.id}.mp3` : undefined,
+    audioNote: body.script ? LISTENING_AUDIO_NOTE : undefined,
     questions: body.questions.map(toPublicQuestion),
   };
 }
@@ -310,6 +315,10 @@ export function gradeWriting(
       wordCountIsScore: false,
       summary: selfReviewSummary(criteria),
       criteria,
+      evaluator: {
+        status: "not_configured",
+        note: "An external writing evaluator is not configured. This result is only your self-review. No automated comment was added.",
+      },
     },
   };
 }

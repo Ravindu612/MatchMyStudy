@@ -152,6 +152,9 @@ export type PublicListening = {
   audioLang: string;
   speakerNote: string;
   disclosure: string;
+  /** Synthesized file. The script text is not included. */
+  audioSrc: string;
+  audioNote: string;
   questions: PublicQuestion[];
 };
 
@@ -167,6 +170,8 @@ export type PublicObjectiveMock = {
   audioLang?: string;
   speakerNote?: string;
   disclosure?: string;
+  audioSrc?: string;
+  audioNote?: string;
   questions: PublicQuestion[];
 };
 
@@ -204,6 +209,12 @@ export type ObjectiveFeedback = {
   openedScript?: boolean;
 };
 
+export type WritingEvaluatorNote = {
+  status: "not_configured" | "comments" | "unavailable";
+  note: string;
+  comments?: string[];
+};
+
 export type SelfReviewFeedback = {
   scoringKind: "self_review";
   officialScore: null;
@@ -220,6 +231,7 @@ export type SelfReviewFeedback = {
     description: string;
     rating: SelfRating;
   }[];
+  evaluator: WritingEvaluatorNote;
 };
 
 export type ExpiredFeedback = {
@@ -270,7 +282,7 @@ export type StoredOrder = {
   skill: Skill;
   language: LanguageCode;
   examVariant: ExamVariant | null;
-  status: "pending" | "fulfilled" | "expired";
+  status: "pending" | "fulfilled" | "expired" | "failed";
   credits: number;
   stripeCheckoutSessionId: string | null;
   stripeEventId: string | null;

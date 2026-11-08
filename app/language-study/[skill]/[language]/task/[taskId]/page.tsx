@@ -92,12 +92,27 @@ export default async function TaskPage({
         </p>
       ) : null}
       {access === "sign_in" ? (
-        <p className="mt-4">
-          <Link href={loginPathFor(languagePath(skill, language))} className="font-semibold text-blue-700">
-            Sign in
-          </Link>{" "}
-          to open this task. The passage stays hidden so a guest preview cannot bypass the allowance.
-        </p>
+        <div className="mt-4">
+          <p>
+            <Link href={loginPathFor(languagePath(skill, language))} className="font-semibold text-blue-700">
+              Sign in
+            </Link>{" "}
+            to open this task. The passage stays hidden so a guest preview cannot bypass the allowance.
+          </p>
+          {task.access === "paid" ? (
+            <div className="mt-4">
+              <Paywall
+                title="This task is in the paid batch"
+                message={lockedTaskText(config, skill, language)}
+                product="task_batch"
+                skill={skill}
+                language={language}
+                actionLabel="Check task batch purchase"
+                showPurchase
+              />
+            </div>
+          ) : null}
+        </div>
       ) : null}
       {access === "storage_unavailable" ? (
         <p className="mt-4 rounded-2xl bg-amber-50 p-4 text-amber-950" role="status">

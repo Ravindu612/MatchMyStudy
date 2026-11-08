@@ -87,6 +87,15 @@ export function serviceDeps(): ServiceDeps {
     }),
     stripe: stripe
       ? {
+          async retrievePrice(priceId: string) {
+            const price = await stripe.prices.retrieve(priceId);
+
+            return {
+              currency: price.currency,
+              unitAmount: price.unit_amount,
+              recurring: Boolean(price.recurring),
+            };
+          },
           async createSession(input) {
             const site = process.env.NEXT_PUBLIC_SITE_URL || "https://www.matchmystudy.com";
             const session = await stripe.checkout.sessions.create(

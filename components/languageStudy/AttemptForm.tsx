@@ -189,7 +189,14 @@ export default function AttemptForm({
         </article>
       ) : null}
 
-      {task.skill === "listening" ? <SpeechButton taskId={task.id} onScript={() => setOpenedScript(true)} /> : null}
+      {task.skill === "listening" ? (
+        <SpeechButton
+          taskId={task.id}
+          audioSrc={"audioSrc" in task ? task.audioSrc : undefined}
+          audioNote={"audioNote" in task ? task.audioNote : undefined}
+          onScript={() => setOpenedScript(true)}
+        />
+      ) : null}
 
       {questions?.map((question, index) => (
         <QuestionFields key={question.id} question={question} index={index} />

@@ -28,8 +28,11 @@ export const SELF_REVIEW_LABEL = "Self-review, not an exam score" as const;
 export const UNOFFICIAL_NOTICE =
   "Unofficial practice. This is not an official or certified score.";
 
+export const LISTENING_AUDIO_NOTE =
+  "This file was synthesized with eSpeak NG 1.51 from an original MatchMyStudy script. It is not a human recording and not an exam recording.";
+
 export const LISTENING_DISCLOSURE =
-  "Audio is a browser text-to-speech preview of an original script, not a studio recording. The words are sent to your browser when you press play so it can speak them. This is practice, not a secured listening exam.";
+  "If the synthesized file does not play, the browser voice is a separate fallback. It is not the same recording, and it is not a studio or exam recording. The words are sent to your browser only when you choose that fallback.";
 
 export const PREVIEW_NOTICE =
   "Preview result. It is not saved and does not use or enforce the free allowance. Sign in so submitted practice is counted on the server.";

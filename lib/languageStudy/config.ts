@@ -1,55 +1,74 @@
 /**
  * Language Study product settings.
  *
- * This file is the only place that defines the provisional free allowance,
- * the paid batch size, prices, and whether checkout can run.
+ * Launch prices were set by the owner on 8 Nov 2026 for this initial stage.
+ * They are introductory prices the owner asked the implementation to choose
+ * and then confirmed. They are not a market survey.
  *
- * The owner has not chosen prices, currency, the lasting free allowance, the
- * full language list, or a payment setup for this feature. The defaults below
- * are provisional: 3 submitted tasks per skill and language, a batch size of 1
- * (the library currently withholds one extra task per skill and language),
- * prices unset, and payments off.
+ * - Currency is USD only.
+ * - USD 1.99 (199 cents) buys 10 additional practice tasks in one skill and
+ *   one language. One-time. Not a subscription.
+ * - USD 4.99 (499 cents) buys one attempt at one short unofficial practice
+ *   test for the selected language, skill, and exam style. Not a full exam.
+ * - The free allowance remains 3 submitted tasks per skill and language.
  *
- * Optional environment overrides:
- * - LANGUAGE_STUDY_FREE_TASKS — integer 0 through 20
- * - LANGUAGE_STUDY_BATCH_SIZE — integer 1 through 50
- * - LANGUAGE_STUDY_CURRENCY — usd, eur, or gbp
- * - LANGUAGE_STUDY_BATCH_PRICE_MINOR — integer minor units, such as cents
- * - LANGUAGE_STUDY_MOCK_PRICE_MINOR — integer minor units
+ * Amounts are constants. The browser cannot send a price. Env vars cannot
+ * change 199 or 499. Checkout still does not run until Stripe Price ids,
+ * the secret key, the language-study webhook secret, and
+ * LANGUAGE_STUDY_PAYMENTS_ENABLED=true are present, and the Stripe Price
+ * object matches these amounts. Creating those Stripe prices is a separate
+ * owner step. This code does not create products or charge anyone.
+ *
+ * Optional environment values:
+ * - LANGUAGE_STUDY_FREE_TASKS — integer 0 through 20, default 3
  * - STRIPE_LANGUAGE_STUDY_BATCH_PRICE_ID
  * - STRIPE_LANGUAGE_STUDY_MOCK_PRICE_ID
- * - LANGUAGE_STUDY_STRIPE_WEBHOOK_SECRET — dedicated endpoint secret
- * - LANGUAGE_STUDY_PAYMENTS_ENABLED — must be the exact string "true"
- *
- * Checkout stays off unless payments are explicitly enabled and currency,
- * price, Stripe Price id, STRIPE_SECRET_KEY, and the webhook secret are all
- * set. A task-batch purchase also stays off when the batch is larger than the
- * withheld tasks currently in the library. The existing consultant Stripe
- * secret does not, by itself, turn on language-study charges.
+ * - LANGUAGE_STUDY_STRIPE_WEBHOOK_SECRET
+ * - LANGUAGE_STUDY_PAYMENTS_ENABLED — exact string "true"
+ * - STRIPE_SECRET_KEY — existing server secret; it does not by itself enable
+ *   language-study checkout
  */
 
 export const PROVISIONAL_FREE_TASKS = 3;
-export const PROVISIONAL_BATCH_SIZE = 1;
+export const TASK_BATCH_SIZE = 10;
+export const TASK_BATCH_PRICE_MINOR = 199;
+export const MOCK_PRICE_MINOR = 499;
+export const LAUNCH_CURRENCY = "usd" as const;
 export const FREE_TASK_CAP_LIMIT = 20;
-export const BATCH_SIZE_LIMIT = 50;
-
-export const CURRENCIES = ["usd", "eur", "gbp"] as const;
+export const CURRENCIES = ["usd"] as const;
 export type StudyCurrency = (typeof CURRENCIES)[number];
 
 export type LanguageStudyConfig = {
-  /** True while the owner has not confirmed the allowance and prices. */
-  provisional: true;
+  /** Free allowance remains the launch value of 3 unless LANGUAGE_STUDY_FREE_TASKS overrides it. */
   freeTasksPerSkillPerLanguage: number;
-  paidBatchSize: number;
-  currency: StudyCurrency | null;
-  taskBatchPriceMinor: number | null;
-  mockPriceMinor: number | null;
+  paidBatchSize: typeof TASK_BATCH_SIZE;
+  currency: typeof LAUNCH_CURRENCY;
+  taskBatchPriceMinor: typeof TASK_BATCH_PRICE_MINOR;
+  mockPriceMinor: typeof MOCK_PRICE_MINOR;
   stripeTaskBatchPriceId: string | null;
   stripeMockPriceId: string | null;
   stripeSecretConfigured: boolean;
   webhookSecretConfigured: boolean;
   paymentsEnabledFlag: boolean;
 };
+
+export const TAX_NOTE =
+  "MatchMyStudy does not add tax and does not turn on Stripe Tax. The total for this checkout is the one-time price shown here. No subscription is created and the purchase does not renew. If a card payment page shows another figure, that is not a tax rate configured in this app.";
+
+export function formatUsd(minor: number): string {
+  const dollars = Math.floor(minor / 100);
+  const cents = String(minor % 100).padStart(2, "0");
+
+  return `USD ${dollars}.${cents}`;
+}
+
+export function productOffer(product: "task_batch" | "mock_test"): string {
+  if (product === "task_batch") {
+    return `${formatUsd(TASK_BATCH_PRICE_MINOR)} buys ${TASK_BATCH_SIZE} additional practice tasks in this one skill and language. Each credit opens one paid task that is not part of the free ${PROVISIONAL_FREE_TASKS}.`;
+  }
+
+  return `${formatUsd(MOCK_PRICE_MINOR)} buys one attempt at this short unofficial practice test. The page states how many items it has and how many minutes it runs. It is not a full public exam and it is not an official score.`;
+}
 
 export type PurchaseBlockCode =
   | "payments_disabled"
@@ -98,30 +117,6 @@ function integerInRange(
   return parsed;
 }
 
-function positiveInteger(value: string | undefined): number | null {
-  if (!value || !/^\d+$/.test(value.trim())) {
-    return null;
-  }
-
-  const parsed = Number(value);
-
-  if (!Number.isInteger(parsed) || parsed <= 0) {
-    return null;
-  }
-
-  return parsed;
-}
-
-function currency(value: string | undefined): StudyCurrency | null {
-  const normalized = value?.trim().toLowerCase();
-
-  if (normalized === "usd" || normalized === "eur" || normalized === "gbp") {
-    return normalized;
-  }
-
-  return null;
-}
-
 function clean(value: string | undefined): string | null {
   const trimmed = value?.trim() ?? "";
 
@@ -132,22 +127,16 @@ export function readLanguageStudyConfig(
   env: Record<string, string | undefined>
 ): LanguageStudyConfig {
   return {
-    provisional: true,
     freeTasksPerSkillPerLanguage: integerInRange(
       env.LANGUAGE_STUDY_FREE_TASKS,
       PROVISIONAL_FREE_TASKS,
       0,
       FREE_TASK_CAP_LIMIT
     ),
-    paidBatchSize: integerInRange(
-      env.LANGUAGE_STUDY_BATCH_SIZE,
-      PROVISIONAL_BATCH_SIZE,
-      1,
-      BATCH_SIZE_LIMIT
-    ),
-    currency: currency(env.LANGUAGE_STUDY_CURRENCY),
-    taskBatchPriceMinor: positiveInteger(env.LANGUAGE_STUDY_BATCH_PRICE_MINOR),
-    mockPriceMinor: positiveInteger(env.LANGUAGE_STUDY_MOCK_PRICE_MINOR),
+    paidBatchSize: TASK_BATCH_SIZE,
+    currency: LAUNCH_CURRENCY,
+    taskBatchPriceMinor: TASK_BATCH_PRICE_MINOR,
+    mockPriceMinor: MOCK_PRICE_MINOR,
     stripeTaskBatchPriceId: clean(env.STRIPE_LANGUAGE_STUDY_BATCH_PRICE_ID),
     stripeMockPriceId: clean(env.STRIPE_LANGUAGE_STUDY_MOCK_PRICE_ID),
     stripeSecretConfigured: Boolean(clean(env.STRIPE_SECRET_KEY)),
@@ -156,8 +145,9 @@ export function readLanguageStudyConfig(
   };
 }
 
-export const PAYMENT_NOT_READY_MESSAGE =
-  "Purchase is not available yet. Prices have not been set and payments are not turned on. Nothing was charged, and no task or test was unlocked.";
+export function checkoutNotConnectedMessage(product: "task_batch" | "mock_test"): string {
+  return `${productOffer(product)} ${TAX_NOTE} Checkout is not connected yet, so nothing was charged and nothing was unlocked.`;
+}
 
 export function assessPurchase(
   config: LanguageStudyConfig,
@@ -173,59 +163,52 @@ export function assessPurchase(
     };
   }
 
-  if (!config.paymentsEnabledFlag) {
-    return {
-      available: false,
-      code: "payments_disabled",
-      message: PAYMENT_NOT_READY_MESSAGE,
-    };
-  }
-
-  if (!config.currency) {
-    return {
-      available: false,
-      code: "currency_unset",
-      message: PAYMENT_NOT_READY_MESSAGE,
-    };
-  }
-
   const priceMinor =
     product === "task_batch" ? config.taskBatchPriceMinor : config.mockPriceMinor;
   const stripePriceId =
     product === "task_batch"
       ? config.stripeTaskBatchPriceId
       : config.stripeMockPriceId;
+  const blocked = checkoutNotConnectedMessage(product);
 
-  if (priceMinor === null) {
+  if (!config.paymentsEnabledFlag) {
+    return { available: false, code: "payments_disabled", message: blocked };
+  }
+
+  if (config.currency !== "usd" || (priceMinor !== 199 && priceMinor !== 499)) {
     return {
       available: false,
       code: "price_unset",
-      message: PAYMENT_NOT_READY_MESSAGE,
+      message: "The server price is not the launch USD amount. Nothing was charged.",
+    };
+  }
+
+  if (product === "task_batch" && priceMinor !== TASK_BATCH_PRICE_MINOR) {
+    return {
+      available: false,
+      code: "price_unset",
+      message: "The task batch price is not USD 1.99. Nothing was charged.",
+    };
+  }
+
+  if (product === "mock_test" && priceMinor !== MOCK_PRICE_MINOR) {
+    return {
+      available: false,
+      code: "price_unset",
+      message: "The practice test price is not USD 4.99. Nothing was charged.",
     };
   }
 
   if (!stripePriceId) {
-    return {
-      available: false,
-      code: "stripe_price_missing",
-      message: PAYMENT_NOT_READY_MESSAGE,
-    };
+    return { available: false, code: "stripe_price_missing", message: blocked };
   }
 
   if (!config.stripeSecretConfigured) {
-    return {
-      available: false,
-      code: "stripe_secret_missing",
-      message: PAYMENT_NOT_READY_MESSAGE,
-    };
+    return { available: false, code: "stripe_secret_missing", message: blocked };
   }
 
   if (!config.webhookSecretConfigured) {
-    return {
-      available: false,
-      code: "webhook_secret_missing",
-      message: PAYMENT_NOT_READY_MESSAGE,
-    };
+    return { available: false, code: "webhook_secret_missing", message: blocked };
   }
 
   if (product === "task_batch" && options.lockedPracticeTasks < config.paidBatchSize) {

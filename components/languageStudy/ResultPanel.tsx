@@ -62,6 +62,7 @@ export default function ResultPanel({
             Word count: {feedback.wordCount}. Suggested range: {feedback.suggestedMin} to{" "}
             {feedback.suggestedMax} words. Word count is not a score.
           </p>
+          <p className="mt-3 text-slate-700">{feedback.evaluator.note}</p>
           <ul className="mt-4 space-y-3">
             {feedback.criteria.map((criterion) => (
               <li key={criterion.id} className="rounded-2xl bg-slate-50 p-4">

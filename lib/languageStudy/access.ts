@@ -1,6 +1,6 @@
 import { ITALKI_AFFILIATE_URL, ITALKI_CTA_LABEL, ITALKI_LINK_REL } from "@/lib/italki";
 import type { LanguageStudyConfig } from "./config";
-import { PAYMENT_NOT_READY_MESSAGE } from "./config";
+import { checkoutNotConnectedMessage, productOffer, TAX_NOTE } from "./config";
 import { lockedPracticeCount, mockQuestionCount } from "./content";
 import {
   findAttempt,
@@ -174,7 +174,7 @@ export function languageStudyHubCards(): HubCard[] {
     {
       title: SKILL_NAMES.listening,
       description:
-        "Listen to an original script in your browser's voice, then check your answers.",
+        "Play a synthesized recording of an original script, then check your answers. A browser voice is only the fallback.",
       href: skillPath("listening"),
       external: false,
     },
@@ -190,26 +190,27 @@ export function languageStudyHubCards(): HubCard[] {
 }
 
 export function provisionalAllowanceText(config: LanguageStudyConfig): string {
-  return `The provisional free allowance is ${config.freeTasksPerSkillPerLanguage} submitted tasks for each skill and language. That number is a placeholder until the owner confirms it. It is counted only for signed-in students, on the server.`;
+  return `The free allowance is ${config.freeTasksPerSkillPerLanguage} submitted tasks for each skill and language. It is counted only for signed-in students, on the server.`;
 }
 
 export function capReachedText(config: LanguageStudyConfig, freeUsed: number): string {
-  return `Free practice allowance reached. The provisional allowance is ${config.freeTasksPerSkillPerLanguage} submitted tasks for this skill and language, and ${freeUsed} have been saved. ${PAYMENT_NOT_READY_MESSAGE}`;
+  return `Free practice allowance reached. ${freeUsed} of ${config.freeTasksPerSkillPerLanguage} free tasks for this skill and language have been saved. ${checkoutNotConnectedMessage("task_batch")}`;
 }
 
 export function lockedTaskText(config: LanguageStudyConfig, skill: Skill, language: LanguageCode): string {
   const extra = lockedPracticeCount(skill, language);
 
-  const credits = `${config.paidBatchSize} credit${config.paidBatchSize === 1 ? "" : "s"}`;
-  const extras = `${extra} extra task${extra === 1 ? "" : "s"}`;
-
-  return `This task is outside the provisional free allowance. A paid batch is configured as ${credits} for ${LANGUAGE_NAMES[language]} ${skill}, and ${extras} are in the library today. ${PAYMENT_NOT_READY_MESSAGE}`;
+  return `This task is outside the free ${config.freeTasksPerSkillPerLanguage}. A purchase adds ${config.paidBatchSize} credits for ${LANGUAGE_NAMES[language]} ${skill}. ${extra} paid tasks are in the library for that pair. ${productOffer("task_batch")} ${TAX_NOTE}`;
 }
 
 export function mockLockedText(mock: MockTest): string {
   const count = mockQuestionCount(mock);
+  const scope =
+    mock.availability.status === "short_unofficial"
+      ? `It has ${count} item${count === 1 ? "" : "s"} and a ${mock.minutes}-minute clock. That is the whole paid attempt, not a full public exam.`
+      : "This variant cannot be purchased.";
 
-  return `${mock.title} is a separate paid option with ${count} item${count === 1 ? "" : "s"} and a ${mock.minutes}-minute clock. ${UNOFFICIAL_NOTICE} ${PAYMENT_NOT_READY_MESSAGE}`;
+  return `${mock.title}. ${scope} ${UNOFFICIAL_NOTICE} ${productOffer("mock_test")} ${TAX_NOTE}`;
 }
 
 export function skillIntro(skill: Skill): string {

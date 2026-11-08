@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync, readdirSync, statSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
 import { createElement } from "react";
@@ -85,17 +85,21 @@ function walk(dir: string, found: string[] = []): string[] {
   return found;
 }
 
-test("provisional config keeps prices unset and payments off", () => {
-  const config = readLanguageStudyConfig({});
+test("launch prices are USD 1.99 and USD 4.99 and stay fixed", () => {
+  const config = readLanguageStudyConfig({
+    LANGUAGE_STUDY_CURRENCY: "eur",
+    LANGUAGE_STUDY_BATCH_PRICE_MINOR: "500",
+    LANGUAGE_STUDY_MOCK_PRICE_MINOR: "700",
+    LANGUAGE_STUDY_BATCH_SIZE: "1",
+  });
 
-  assert.equal(config.provisional, true);
   assert.equal(config.freeTasksPerSkillPerLanguage, 3);
-  assert.equal(config.paidBatchSize, 1);
-  assert.equal(config.currency, null);
-  assert.equal(config.taskBatchPriceMinor, null);
-  assert.equal(config.mockPriceMinor, null);
+  assert.equal(config.paidBatchSize, 10);
+  assert.equal(config.currency, "usd");
+  assert.equal(config.taskBatchPriceMinor, 199);
+  assert.equal(config.mockPriceMinor, 499);
   assert.equal(config.paymentsEnabledFlag, false);
-  assert.match(provisionalAllowanceText(config), /provisional free allowance is 3/);
+  assert.match(provisionalAllowanceText(config), /free allowance is 3/);
 
   const purchase = assessPurchase(config, "task_batch", {
     lockedPracticeTasks: lockedPracticeCount("reading", "en"),
@@ -104,8 +108,12 @@ test("provisional config keeps prices unset and payments off", () => {
   assert.equal(purchase.available, false);
   if (!purchase.available) {
     assert.equal(purchase.code, "payments_disabled");
-    assert.match(purchase.message, /Nothing was charged/);
-    assert.match(purchase.message, /no task or test was unlocked/);
+    assert.match(purchase.message, /USD 1\.99/);
+    assert.match(purchase.message, /10 additional practice tasks/);
+    assert.match(purchase.message, /nothing was charged/i);
+    assert.match(purchase.message, /nothing was unlocked/i);
+    assert.match(purchase.message, /No subscription is created/);
+    assert.match(purchase.message, /does not turn on Stripe Tax/);
   }
 });
 
@@ -123,7 +131,9 @@ test("a consultant Stripe secret does not enable language study checkout", () =>
 
   assert.equal(purchase.available, false);
   if (!purchase.available) {
-    assert.equal(purchase.code, "price_unset");
+    assert.equal(purchase.code, "stripe_price_missing");
+    assert.match(purchase.message, /USD 4\.99/);
+    assert.match(purchase.message, /Nothing was charged|nothing was charged/);
   }
 });
 
@@ -147,18 +157,35 @@ test("checkout stays off when the withheld library is smaller than the batch", (
   }
 });
 
-test("the library is original English and Finnish practice, with one withheld task each", () => {
+test("each skill and language has 3 free tasks and 10 paid tasks", () => {
   for (const skill of ["reading", "writing", "listening"] as const) {
     for (const language of ["en", "fi"] as const) {
       const tasks = practiceTasksFor(skill, language);
 
-      assert.equal(tasks.length, 4, `${skill} ${language}`);
+      assert.equal(tasks.length, 13, `${skill} ${language}`);
       assert.equal(tasks.filter((task) => task.access === "free").length, 3);
-      assert.equal(lockedPracticeCount(skill, language), 1);
+      assert.equal(lockedPracticeCount(skill, language), 10);
     }
   }
 
   assert.equal(practiceTasks.some((task) => !["en", "fi"].includes(task.language)), false);
+});
+
+test("listening tasks include a synthesized file and hide the script", () => {
+  const task = findListeningTask("listening-en-5");
+
+  assert.ok(task);
+  const pub = toPublicListening(task);
+
+  assert.equal(pub.audioSrc, "/language-study/audio/listening-en-5.mp3");
+  assert.equal(containsAnswerKey(pub), false);
+  assert.match(pub.audioNote, /eSpeak NG/);
+  assert.match(pub.audioNote, /not a human recording/);
+  assert.equal(existsSync(new URL("../../public/language-study/audio/listening-en-5.mp3", import.meta.url)), true);
+  assert.equal(
+    existsSync(new URL("../../public/language-study/audio/mock-listening-fi-yki.mp3", import.meta.url)),
+    true
+  );
 });
 
 test("every objective item has one keyed choice and no band claim", () => {
@@ -585,6 +612,9 @@ test("counted practice fails closed when storage is not configured", async () =>
       async fulfill() {
         throw new Error("should not fulfill");
       },
+      async failCheckout() {
+        return { ok: true as const, status: "missing" as const };
+      },
     }),
     { userId, body: { mode: "practice", taskId: "reading-en-1", answers: { "reading-en-1-q1": "a" } } }
   );
@@ -601,6 +631,9 @@ test("default checkout does not create an order or a Stripe session", async () =
     {
       ...deps(store),
       stripe: {
+        async retrievePrice() {
+          throw new Error("Stripe should not be called when checkout is disconnected");
+        },
         async createSession() {
           stripeCalls += 1;
           return { id: "cs_test", url: "https://checkout.stripe.test/session" };
@@ -626,6 +659,50 @@ test("default checkout does not create an order or a Stripe session", async () =
   assert.equal(store.state.orders.length, 0);
 });
 
+test("mocked Stripe test mode rejects a Price that is not the launch amount", async () => {
+  const store = new MemoryLanguageStudyStore();
+  let created = 0;
+  const result = await handleCheckout(
+    {
+      ...deps(
+        store,
+        readLanguageStudyConfig({
+          LANGUAGE_STUDY_PAYMENTS_ENABLED: "true",
+          STRIPE_LANGUAGE_STUDY_BATCH_PRICE_ID: "price_batch",
+          STRIPE_SECRET_KEY: "sk_test_example",
+          LANGUAGE_STUDY_STRIPE_WEBHOOK_SECRET: "whsec_language",
+        })
+      ),
+      stripe: {
+        async retrievePrice() {
+          return { currency: "usd", unitAmount: 100, recurring: false };
+        },
+        async createSession() {
+          created += 1;
+          return { id: "cs_wrong", url: "https://checkout.stripe.test/wrong" };
+        },
+      },
+    },
+    {
+      userId,
+      body: {
+        product: "task_batch",
+        skill: "reading",
+        language: "en",
+        amount: 100,
+        idempotencyKey: "88888888-8888-4888-8888-888888888888",
+      },
+    }
+  );
+
+  assert.equal(result.status, 409);
+  assert.equal(result.body.code, "price_mismatch");
+  assert.equal(result.body.unlocked, false);
+  assert.equal(result.body.charged, false);
+  assert.equal(created, 0);
+  assert.equal(store.state.orders.length, 0);
+});
+
 test("configured checkout reuses one session and the webhook grants once", async () => {
   const store = new MemoryLanguageStudyStore();
   const config = readLanguageStudyConfig({
@@ -639,11 +716,17 @@ test("configured checkout reuses one session and the webhook grants once", async
     LANGUAGE_STUDY_STRIPE_WEBHOOK_SECRET: "whsec_language",
   });
   let stripeCalls = 0;
+  let seenAmount = 0;
   const service = {
     ...deps(store, config),
     stripe: {
-      async createSession() {
+      async retrievePrice() {
+        return { currency: "usd", unitAmount: 499, recurring: false };
+      },
+      async createSession(input: { expectedAmountMinor: number; priceId: string }) {
         stripeCalls += 1;
+        seenAmount = input.expectedAmountMinor;
+        assert.equal(input.priceId, "price_mock");
         return { id: "cs_live_test", url: "https://checkout.stripe.test/once" };
       },
     },
@@ -653,6 +736,7 @@ test("configured checkout reuses one session and the webhook grants once", async
     skill: "listening",
     language: "fi",
     examVariant: "yki",
+    amount: 1,
     idempotencyKey: "55555555-5555-4555-8555-555555555555",
   };
   const first = await handleCheckout(service, { userId, body });
@@ -661,6 +745,7 @@ test("configured checkout reuses one session and the webhook grants once", async
   assert.equal(first.status, 200);
   assert.equal(first.body.unlocked, false);
   assert.equal(first.body.url, "https://checkout.stripe.test/once");
+  assert.equal(seenAmount, 499);
   assert.equal(second.body.reused, true);
   assert.equal(stripeCalls, 1);
   assert.equal(store.state.orders.length, 1);

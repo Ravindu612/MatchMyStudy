@@ -9,9 +9,13 @@ const focus =
 export default function SpeechButton({
   taskId,
   onScript,
+  audioSrc,
+  audioNote,
 }: {
   taskId: string;
   onScript: (script: string) => void;
+  audioSrc?: string;
+  audioNote?: string;
 }) {
   const scriptRef = useRef<string | null>(null);
   const [phase, setPhase] = useState<"idle" | "loading" | "playing" | "unsupported" | "error">(
@@ -97,17 +101,25 @@ export default function SpeechButton({
   return (
     <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
       <p className="text-sm leading-6 text-slate-700">
-        Audio is a browser text-to-speech preview of an original script, not a studio recording.
-        The words are sent to your browser when you press play. This is practice, not a secured
-        listening exam.
+        {audioNote ??
+          "No synthesized file is attached. The browser voice is a fallback, not a studio recording."}
       </p>
+      {audioSrc ? (
+        <audio className="mt-3 w-full" controls src={audioSrc} preload="none">
+          The audio file cannot play in this browser.
+        </audio>
+      ) : null}
       <div className="mt-3 flex flex-wrap gap-3">
         <button
           type="button"
           onClick={phase === "playing" ? stop : play}
           className={`inline-flex min-h-11 items-center rounded-xl bg-blue-600 px-4 py-3 font-semibold text-white ${focus}`}
         >
-          {phase === "loading" ? "Preparing audio" : phase === "playing" ? "Stop audio" : "Play audio preview"}
+          {phase === "loading"
+            ? "Preparing browser voice"
+            : phase === "playing"
+              ? "Stop browser voice"
+              : "Play browser voice instead"}
         </button>
         <button
           type="button"

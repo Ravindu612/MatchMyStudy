@@ -73,7 +73,10 @@ function mapAttempt(row: Row): StoredAttempt {
 }
 
 function mapOrder(row: Row): StoredOrder {
-  const status = row.status === "fulfilled" || row.status === "expired" ? row.status : "pending";
+  const status =
+    row.status === "fulfilled" || row.status === "expired" || row.status === "failed"
+      ? row.status
+      : "pending";
 
   return {
     id: String(row.id),
@@ -328,6 +331,28 @@ export class SupabaseLanguageStudyStore implements LanguageStudyStore {
     }
 
     return { ok: true as const };
+  }
+
+  async failCheckout(orderId: string) {
+    const admin = getSupabaseAdmin();
+
+    if (!admin) {
+      return { ok: false as const, reason: "storage_unconfigured" as const };
+    }
+
+    const { data, error } = await admin
+      .from("language_study_orders")
+      .update({ status: "failed", checkout_url: null })
+      .eq("id", orderId)
+      .eq("status", "pending")
+      .select("id")
+      .maybeSingle();
+
+    if (error) {
+      return storageFailure(error);
+    }
+
+    return { ok: true as const, status: data ? ("failed" as const) : ("missing" as const) };
   }
 
   async fulfill(

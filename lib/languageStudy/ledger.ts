@@ -483,3 +483,25 @@ export function fulfillOrder(
 
   return { ok: true, state: next, status: "fulfilled" };
 }
+
+/** Marks a checkout that ended without payment. Does not remove a granted credit. */
+export function failCheckout(
+  state: StudyState,
+  orderId: string
+): { ok: true; state: StudyState; status: "failed" | "left_fulfilled" | "missing" } {
+  const next = cloneState(state);
+  const order = next.orders.find((item) => item.id === orderId);
+
+  if (!order) {
+    return { ok: true, state: next, status: "missing" };
+  }
+
+  if (order.status === "fulfilled") {
+    return { ok: true, state: next, status: "left_fulfilled" };
+  }
+
+  order.status = "failed";
+  order.checkoutUrl = null;
+
+  return { ok: true, state: next, status: "failed" };
+}

@@ -8,6 +8,7 @@ import type {
   Skill,
   WritingTask,
 } from "../types";
+import { extraListeningTasks, extraReadingTasks, extraWritingTasks } from "./extra";
 import { listeningTasks } from "./listening";
 import { mockTests } from "./mocks";
 import { readingTasks } from "./reading";
@@ -15,8 +16,11 @@ import { writingTasks } from "./writing";
 
 export const practiceTasks: PracticeTask[] = [
   ...readingTasks,
+  ...extraReadingTasks,
   ...writingTasks,
+  ...extraWritingTasks,
   ...listeningTasks,
+  ...extraListeningTasks,
 ];
 
 export function practiceTasksFor(skill: Skill, language: LanguageCode): PracticeTask[] {
@@ -60,6 +64,8 @@ export function findMock(
     ) ?? null
   );
 }
+
+export { mockTests };
 
 export function mocksFor(skill: Skill, language: LanguageCode): MockTest[] {
   return mockTests.filter((mock) => mock.skill === skill && mock.language === language);

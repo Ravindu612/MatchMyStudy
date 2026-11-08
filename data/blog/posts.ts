@@ -782,6 +782,55 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "When You Feel Unwell Far From Home: Finding Care as an International Student",
+    slug: "feel-unwell-abroad",
+    description:
+      "A calm guide for international students who feel unwell far from home: using campus health, keeping insurance documents close, describing symptoms, handling medicines, and knowing when it is an emergency.",
+    category: "Student Life",
+    date: "2026-11-08",
+    readTime: "7 min read",
+    intro:
+      "Feeling unwell is unsettling anywhere. Far from home, it can feel larger than it is. A fever or a sleepless night arrives without the familiar clinic or the person who always knew which pharmacy to call, and you start wondering whether to wait, go to an emergency department, or explain yourself in a language that is not yet yours.\n\nYou do not have to solve the whole health system on a bad afternoon. Most universities expect international students to need care, and they publish clear steps for how to get it. This guide is about those first, calm moves.",
+    sections: [
+      {
+        heading: "Your university has probably already planned for this",
+        text: "Before you feel unwell, or as soon as you can if you already do, open the official international-student health page on your university's website. It should explain how campus health services work, how to register with a local doctor or clinic, what insurance students are expected to have, and who to contact outside office hours.\n\nIf you have not registered yet, follow the university's instructions even if you feel fine. Registration is much easier when you are well than when you have a temperature. Bookmark the page and save any after-hours or international-student support contacts in your phone.",
+      },
+      {
+        heading: "Keep insurance and ID where you can actually find them",
+        text: "When you feel rough, you will not want to dig through unpacked boxes for a policy number. Keep copies of your passport, student ID, visa or residence documents, insurance details, and policy number in one folder, on paper and as files on your phone.\n\nInsurance rules differ by country, university, and policy. Some plans ask you to contact them before certain kinds of care; others want you to keep receipts and claim afterwards. Read your own documents, or the official explanation your university provides. If anything is unclear, ask the international office or the insurer named on your paperwork.",
+      },
+      {
+        heading: "Start with campus health or a GP, not automatically A&E",
+        text: "A crowded emergency department is the right place for a real emergency. It is not always the best first stop for a sore throat, a mild fever, or a question about medication. In many systems, campus health services or a general practitioner (a family doctor or local clinic) are where ordinary illness should begin.\n\nCheck what your university recommends for non-urgent care, including evenings and weekends. Some campuses run drop-in clinics; others ask you to book. A pharmacist can advise on minor symptoms and tell you when you need a doctor. If you are unsure how unwell you are, start with the official student health contact rather than waiting alone.",
+      },
+      {
+        heading: "Describe your symptoms, even if the language feels clumsy",
+        text: "You do not need perfect sentences to get help. Before you go or call, write down when the symptoms started, what they feel like, whether they are getting worse, any medicines you take, any allergies, and whether you have a temperature. Simple words are fine: \"It hurts here,\" \"I have had this for three days,\" \"It is worse at night.\"\n\nIf you are not speaking your first language, show the note, prepare key phrases with a translation app and then confirm details with the clinician, or ask whether an interpreter is available. Take a friend if that helps, but the staff still need to hear from you. Bring your insurance details and a list of current medicines, including the names you use at home.",
+      },
+      {
+        heading: "Check the rules on medicines before you need a pharmacy",
+        text: "Rules about bringing medicine into a country vary, and so do rules about what you can buy without a local prescription. Before you travel, read the official customs or health guidance of your destination country and what your university says about pharmacies. Some everyday medicines from home are restricted elsewhere, or sold under different names. Pack regular medicines in their original packaging, with a prescription or doctor's letter if you take something ongoing.\n\nOnce you arrive, do not assume you can keep using a home supply indefinitely, or that a friend can share leftover tablets. Ask a pharmacist or campus health how to continue a regular medicine locally. If you buy something over the counter, read the label and mention any other medicines you take.",
+      },
+      {
+        heading: "Mental health is health too",
+        text: "Feeling low, anxious, unable to sleep, or unable to face class is as much a health matter as a fever. Being far from the people who usually notice when you are not yourself can make this harder to admit. You do not need to wait until things feel unbearable.\n\nMost universities offer counselling or wellbeing services, and many have advisers who work with international students. The same official page that explains campus clinics will usually explain how to book. Friends can help you feel less alone, but they are not a substitute for professional care if you need it. If your mood or anxiety is making daily life difficult, treat that as a reason to reach out.",
+      },
+      {
+        heading: "When it really is an emergency",
+        text: "Some situations should not wait for office hours. Severe difficulty breathing, chest pain, a serious injury, sudden confusion, fainting, a severe allergic reaction, or feeling that you might harm yourself or someone else are reasons to get emergency help immediately.\n\nLook up the official local emergency number for your city before you need it, and save it beside your university's after-hours or campus-security contact. If you are with other people, ask someone to stay with you or to make the call. You do not have to decide, alone and afraid, whether you are \"unwell enough.\" After you are safe, tell your university's international or student-support team so they can help with the next steps.",
+      },
+    ],
+    coverImage: "/images/blog/feel-unwell-abroad.jpg",
+    coverImageAlt: "A person sitting on a window sill in a cream sweater, holding a mug of tea beside a notebook and a plaid blanket",
+    unsplash: {
+      photographerName: "Kelly Sikkema",
+      photographerUrl: "https://unsplash.com/@kellysikkema",
+      photoUrl:
+        "https://unsplash.com/photos/a-woman-sitting-on-a-window-sill-holding-a-cup-of-tea-bs1Mm0xHQNE",
+    },
+  },
+  {
     title: "Canada vs Australia for International Students",
     slug: "canada-vs-australia",
     description:

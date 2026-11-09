@@ -73,6 +73,7 @@ export const unitedKingdomUniversities: University[] = [
     "Numerous scholarships and financial aid programmes are available for international students.",
 
   officialWebsite: "https://www.cam.ac.uk",
+  logo: "/logos/university-of-cambridge.webp",
 
   admissionsWebsite:
     "https://www.undergraduate.study.cam.ac.uk",
@@ -111,6 +112,7 @@ export const unitedKingdomUniversities: University[] = [
     "Imperial offers scholarships and funding opportunities for talented students from around the world.",
 
   officialWebsite: "https://www.imperial.ac.uk",
+  logo: "/logos/imperial-college-london.webp",
 
   admissionsWebsite:
     "https://www.imperial.ac.uk/study",

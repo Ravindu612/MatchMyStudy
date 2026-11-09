@@ -36,6 +36,7 @@ export const usaUniversities: University[] = [
     "Harvard offers generous need-based financial aid for domestic and international students.",
 
   officialWebsite: "https://www.harvard.edu",
+  logo: "/logos/harvard-university.webp",
 
   admissionsWebsite:
     "https://college.harvard.edu/admissions",
@@ -74,6 +75,7 @@ export const usaUniversities: University[] = [
     "Stanford provides need-based financial aid and scholarships for eligible students.",
 
   officialWebsite: "https://www.stanford.edu",
+  logo: "/logos/stanford-university.webp",
 
   admissionsWebsite:
     "https://admission.stanford.edu",

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useRef, useState } from "react";
+import UniversityLogo from "@/components/UniversityLogo";
 import type { University } from "@/data/universities";
 import type { Program } from "@/data/programs";
 
@@ -12,7 +13,7 @@ export type SearchProgram = Pick<
 
 export type SearchUniversity = Pick<
   University,
-  "slug" | "name" | "city" | "country" | "type" | "description"
+  "slug" | "name" | "city" | "country" | "type" | "description" | "logo"
 >;
 
 type CountrySearchProps = {
@@ -197,9 +198,15 @@ export default function CountrySearch({
                       href={`/universities/${university.slug}`}
                       className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition"
                     >
-                      <h4 className="text-xl font-bold text-slate-900 mb-2">
-                        {university.name}
-                      </h4>
+                      <div className="mb-2 flex items-center gap-3">
+                        <UniversityLogo
+                          name={university.name}
+                          src={university.logo}
+                        />
+                        <h4 className="text-xl font-bold text-slate-900">
+                          {university.name}
+                        </h4>
+                      </div>
 
                       <p className="text-slate-600 mb-2">
                         {university.city}, {university.country}

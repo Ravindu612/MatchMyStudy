@@ -20,8 +20,8 @@ export function getCountrySearchPrograms(country: string): SearchProgram[] {
 }
 
 export function getCountrySearchUniversities(key: CountryKey): SearchUniversity[] {
-  return (universities[key] ?? []).map(({ slug, name, city, country, type, description }) => ({
-    slug, name, city, country, type, description: description.slice(0, 200),
+  return (universities[key] ?? []).map(({ slug, name, city, country, type, description, logo }) => ({
+    slug, name, city, country, type, logo, description: description.slice(0, 200),
   }));
 }
 

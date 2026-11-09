@@ -80,4 +80,76 @@ export const postgraduateCourses: PostgraduateCourse[] = [
     certificate:
       "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
   },
+
+  {
+    title: "Microeconomic Theory I",
+    provider: "MIT OpenCourseWare",
+    subject: "Economics",
+    description:
+      "A half-semester graduate introduction to microeconomic theory for an economics Ph.D. program. Parts of the course teach material graduate students should know, and other parts introduce methodologies.",
+    url: "https://ocw.mit.edu/courses/14-121-microeconomic-theory-i-fall-2015/",
+    isFree: true,
+    certificate:
+      "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
+  },
+
+  {
+    title: "Microeconomic Theory II",
+    provider: "MIT OpenCourseWare",
+    subject: "Economics",
+    description:
+      "A graduate introduction to noncooperative game theory for students developing a background for research in applied economics and related disciplines, or specializing in economic theory. The course is open to students who have taken and passed 14.121.",
+    url: "https://ocw.mit.edu/courses/14-122-microeconomic-theory-ii-fall-2002/",
+    isFree: true,
+    certificate:
+      "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
+  },
+
+  {
+    title: "Microeconomic Theory III",
+    provider: "MIT OpenCourseWare",
+    subject: "Economics",
+    description:
+      "A graduate course on models of individual decision-making under certainty and uncertainty, with applications including risk sharing and financial markets, contracts and information economics, village economies and national development, money and credit, and trade, spatial economics, and differentiated commodities.",
+    url: "https://ocw.mit.edu/courses/14-123-microeconomic-theory-iii-spring-2015/",
+    isFree: true,
+    certificate:
+      "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
+  },
+
+  {
+    title: "Microeconomic Theory IV",
+    provider: "MIT OpenCourseWare",
+    subject: "Economics",
+    description:
+      "A graduate course on information and contract theory. It introduces decision making under uncertainty, risk sharing, moral hazard, adverse selection, mechanism design, and incomplete contracting.",
+    url: "https://ocw.mit.edu/courses/14-124-microeconomic-theory-iv-spring-2017/",
+    isFree: true,
+    certificate:
+      "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
+  },
+
+  {
+    title: "Game Theory",
+    provider: "MIT OpenCourseWare",
+    subject: "Economics",
+    description:
+      "A graduate treatment of non-cooperative solution concepts in game theory, including rationalizability and Nash, sequential, and stable equilibria. It also introduces cooperative solution concepts, including the Nash bargaining solution, the core, and the Shapley value, and develops corresponding non-cooperative foundations.",
+    url: "https://ocw.mit.edu/courses/14-126-game-theory-spring-2016/",
+    isFree: true,
+    certificate:
+      "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
+  },
+
+  {
+    title: "Dynamic Optimization & Economic Applications (Recursive Methods)",
+    provider: "MIT OpenCourseWare",
+    subject: "Economics",
+    description:
+      "A graduate course on recursive methods in economic dynamics. It covers deterministic and stochastic dynamic optimization using dynamic programming, the properties of the resulting dynamic systems, and a recursive method for repeated games used in contract theory and macroeconomics.",
+    url: "https://ocw.mit.edu/courses/14-128-dynamic-optimization-economic-applications-recursive-methods-spring-2003/",
+    isFree: true,
+    certificate:
+      "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
+  },
 ];

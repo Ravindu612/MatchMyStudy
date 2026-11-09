@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import UniversityLogo from "@/components/UniversityLogo";
 import Link from "next/link";
 import { universities } from "@/data/universities";
 import CountrySearch from "@/components/CountrySearch";
@@ -256,19 +257,13 @@ export default function CountryPage({
                 href={`/universities/${university.slug}`}
                 className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition duration-300"
               >
-                <div className="flex items-center gap-3 mb-3">
-  {university.logo && (
-    <img
-      src={university.logo}
-      alt={university.name}
-      className="w-16 h-16 object-contain"
-    />
-  )}
-
-  <h3 className="text-xl font-bold">
-    {university.name}
-  </h3>
-</div>
+                <div className="mb-3 flex items-center gap-3">
+                  <UniversityLogo
+                    name={university.name}
+                    src={university.logo}
+                  />
+                  <h3 className="text-xl font-bold">{university.name}</h3>
+                </div>
 
                 <p className="text-slate-600 mb-2">
                   {university.city}, {university.country}

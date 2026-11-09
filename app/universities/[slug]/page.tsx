@@ -26,6 +26,8 @@ import {
   indexingRobots,
 } from "@/lib/contentQuality";
 import AdSlot from "@/components/AdSlot";
+import UniversityLogo from "@/components/UniversityLogo";
+import { universityLogoCredit } from "@/lib/universityLogoManifest";
 
 const allUniversities = Object.values(universities).flat();
 
@@ -253,11 +255,12 @@ export default async function UniversityDetailPage({
             <div className="max-w-3xl px-8 md:px-12 text-white">
 
               {university.logo && (
-                <div className="inline-block bg-white p-2 md:p-3 rounded-2xl shadow-xl mb-4">
-                  <img
+                <div className="mb-4 inline-block rounded-2xl bg-white p-2 shadow-xl md:p-3">
+                  <UniversityLogo
+                    name={university.name}
                     src={university.logo}
-                    alt={university.name}
-                    className="h-10 md:h-20 w-auto object-contain"
+                    variant="hero"
+                    credit={universityLogoCredit(university.slug)}
                   />
                 </div>
               )}

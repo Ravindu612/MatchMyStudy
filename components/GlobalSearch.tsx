@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import UniversityLogo from "@/components/UniversityLogo";
 import { countries } from "@/data/countries";
 import { universities } from "@/data/universities";
 import { programs } from "@/data/programs";
@@ -159,9 +160,15 @@ export default function GlobalSearch() {
                         href={`/universities/${university.slug}`}
                         className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-400 transition"
                       >
-                        <h4 className="text-lg font-bold mb-2">
-                          {university.name}
-                        </h4>
+                        <div className="mb-2 flex items-center gap-3">
+                          <UniversityLogo
+                            name={university.name}
+                            src={university.logo}
+                          />
+                          <h4 className="text-lg font-bold">
+                            {university.name}
+                          </h4>
+                        </div>
 
                         <p className="text-slate-600 text-sm mb-2">
                           {university.city}, {university.country}

@@ -102,6 +102,11 @@ export type University = {
   internationalStudents?: string;
 
   descriptionShort?: string;
+
+  // ISO date (YYYY-MM-DD) when this university's page or its programs
+  // last changed. Used as the sitemap <lastmod>. Optional: when absent,
+  // the generated map in data/universityUpdatedAt.ts is used instead.
+  updatedAt?: string;
 };
 
 export const universities: Record<CountryKey, University[]> = {

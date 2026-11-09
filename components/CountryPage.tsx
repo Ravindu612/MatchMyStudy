@@ -11,6 +11,9 @@ import {
 import FindConsultantsButton from "@/components/consultant/FindConsultantsButton";
 import ItalkiSpeakingCta from "@/components/ItalkiSpeakingCta";
 import HelpfulPrompt from "@/components/HelpfulPrompt";
+import JsonLd from "@/components/JsonLd";
+import { hubPageJsonLd } from "@/lib/hub-jsonld";
+import { getIndexableUniversitySlugs } from "@/lib/contentQuality";
 import { countryQuickInfo } from "@/data/countryQuickInfo";
 import { countrySpeakingNote } from "@/lib/italki";
 
@@ -43,6 +46,24 @@ export default function CountryPage({
   const fields = Array.from(new Set(countryPrograms.map((p) => p.field)));
   const searchUniversities = getCountrySearchUniversities(countryKey);
 
+  const countryPath = `/${String(countryKey).toLowerCase()}`;
+
+  // CollectionPage structured data listing this country's universities.
+  // Only universities that are open to Google (not noindex) are listed.
+  const indexableUniversitySlugs = getIndexableUniversitySlugs();
+  const collectionJsonLd = hubPageJsonLd({
+    type: "CollectionPage",
+    name: `Study in ${country}`,
+    path: countryPath,
+    description,
+    items: countryUniversities
+      .filter((university) => indexableUniversitySlugs.has(university.slug))
+      .map((university) => ({
+        name: university.name,
+        url: `/universities/${university.slug}`,
+      })),
+  });
+
   const quickInfo = countryQuickInfo[countryKey];
   const speakingNote = countrySpeakingNote(String(countryKey), country);
 
@@ -54,13 +75,14 @@ export default function CountryPage({
 
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
+      <JsonLd data={collectionJsonLd} />
       <section className="max-w-7xl mx-auto px-6 py-16">
         <Breadcrumbs
           className="mb-8"
           items={[
             { name: "Home", href: "/" },
             { name: "Countries", href: "/countries" },
-            { name: country, href: `/${String(countryKey).toLowerCase()}` },
+            { name: country, href: countryPath },
           ]}
         />
 

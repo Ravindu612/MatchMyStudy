@@ -8,7 +8,7 @@ import {
   isIndexableProgram,
 } from "@/lib/contentQuality";
 import { blogPosts, isFullIsoDate } from "@/data/blog/posts";
-import { languageStudySitemapPaths } from "@/lib/languageStudy/paths";
+import { universityUpdatedAt } from "@/data/universityUpdatedAt";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.matchmystudy.com";
@@ -40,11 +40,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.8,
     },
-    ...languageStudySitemapPaths().map((path) => ({
-      url: `${baseUrl}${path}`,
-      changeFrequency: "monthly" as const,
-      priority: path === "/language-study" ? 0.7 : 0.5,
-    })),
+    // Language Study is left out (and noindex in
+    // app/language-study/layout.tsx) while it is under development.
+    // AT LAUNCH: remove the noindex there and add back here:
+    //   ...languageStudySitemapPaths().map((path) => ({
+    //     url: `${baseUrl}${path}`,
+    //     changeFrequency: "monthly" as const,
+    //     priority: path === "/language-study" ? 0.7 : 0.5,
+    //   })),
+    // (import languageStudySitemapPaths from "@/lib/languageStudy/paths").
     {
       url: `${baseUrl}/study-matcher`,
       changeFrequency: "monthly",
@@ -149,6 +153,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const indexableUniversitySlugs = getIndexableUniversitySlugs();
 
+  // When a university (or one of its program batches) last changed,
+  // from its `updatedAt` field or the generated data/universityUpdatedAt.ts
+  // map. Used as lastmod for the university page and all its programs;
+  // omitted when there is no valid date.
+  const universityLastModified = new Map<string, string>();
+  for (const university of allUniversities) {
+    const date = university.updatedAt ?? universityUpdatedAt[university.slug];
+    if (date && isFullIsoDate(date)) {
+      universityLastModified.set(university.slug, date);
+    }
+  }
+  const lastModifiedFor = (universitySlug: string) => {
+    const date = universityLastModified.get(universitySlug);
+    return date ? { lastModified: date } : {};
+  };
+
   // Short templated profiles stay on the site but are noindex and
   // omitted here. A university page is included when it catalogs at
   // least one substantial program (or its own description is long).
@@ -157,6 +177,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       .filter((university) => indexableUniversitySlugs.has(university.slug))
       .map((university) => ({
       url: `${baseUrl}/universities/${university.slug}`,
+      ...lastModifiedFor(university.slug),
       changeFrequency: "monthly",
       priority: 0.8,
     }));
@@ -173,6 +194,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     programs.filter(isIndexableProgram).map((program) => ({
       // Percent-encode so accented slugs (e.g. "iarchéime") are valid URLs.
       url: `${baseUrl}/programs/${encodeURIComponent(program.slug)}`,
+      ...lastModifiedFor(program.universitySlug),
       changeFrequency: "monthly",
       priority: 0.7,
     }));

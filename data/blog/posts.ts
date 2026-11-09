@@ -831,6 +831,55 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "Your First Student Job Abroad: Finding Part-Time Work That Fits Your Studies",
+    slug: "first-student-job-abroad",
+    description:
+      "A practical guide for international students looking for part-time work: checking what your visa allows, where student jobs are found, adapting your CV, spotting job scams, and protecting your studies.",
+    category: "Work & Visas",
+    date: "2026-11-09",
+    readTime: "6 min read",
+    intro:
+      "Somewhere in your first term, the idea usually arrives: a few shifts a week would make the budget easier, help you meet people outside class, and put a local job on your CV. It is a good idea. It is also one where a small mistake, like working more hours than your visa allows, can cause problems far bigger than a missed paycheck.\n\nThis guide walks through the order that tends to work best: rules first, then the search, then the job itself, with your studies kept firmly at the centre.",
+    sections: [
+      {
+        heading: "Check what your visa actually allows",
+        text: "Before you apply anywhere, find out exactly what your student visa or permit says about work. Many countries let international students work part-time, but the details differ: there may be a weekly hour limit during term, different rules in official holidays, restrictions on certain kinds of work such as self-employment, or conditions that only start once your course begins.\n\nRead the official immigration or government page for your destination, and the visa documents you were actually issued, since the conditions printed there are the ones that apply to you. If anything is unclear, ask your university's international student advisers. Do not rely on what a friend, an employer, or a forum post says the limit is. Rules change, and they can differ by visa type and level of study.",
+      },
+      {
+        heading: "Start the search on campus",
+        text: "Your university is often the easiest first employer. Libraries, cafés, sports centres, open days, student ambassador programs, and research projects all hire students, and they already understand exam weeks and timetables. Many universities run a careers service with a jobs board that only lists roles suitable for students.\n\nThe careers team can also help in quieter ways: reviewing your CV, explaining how local interviews work, and telling you which employers regularly hire international students. Visit them early, before you urgently need the money, so you are not taking the first offer out of panic.",
+      },
+      {
+        heading: "Make your CV look local",
+        text: "A CV that works at home can look strange elsewhere. Some countries expect a photo and date of birth; others prefer you leave them out. Some like a one-page summary; others expect more detail. Look at your university careers service's CV guidance and follow the local style rather than translating your old document word for word.\n\nIf you have little formal work experience, that is normal for students. Volunteering, student societies, family business work, tutoring, and group projects all count when you describe what you actually did. Mention the languages you speak. In customer-facing jobs, being able to help visitors in a second or third language can genuinely set you apart.",
+      },
+      {
+        heading: "Sort out the paperwork early",
+        text: "Before your first payday, you may need a local bank account, a tax or social security number, and proof of your right to work. Each country names and issues these differently, and some take a few weeks to arrive. Your university's international office or the official government website usually explains which numbers you need and how to apply for them.\n\nAsk for a written contract or job offer, and keep copies of your payslips. They show what you were paid, what was deducted for tax, and how many hours you worked, which also helps you keep track of any visa limit on your hours.",
+      },
+      {
+        heading: "Spot the jobs to walk away from",
+        text: "Some offers aimed at students are not real jobs. Be careful if you are asked to pay a fee to get the job, to receive money into your bank account and send it on to someone else, to buy equipment or gift cards upfront, or to work \"cash in hand\" with no contract and no payslip. Receiving and forwarding money for a stranger can involve you in fraud, even if you did not mean any harm.\n\nAlso be wary of employers who suggest you work more hours than your visa allows and promise nobody will notice. The risk falls on you, not on them. If an offer feels off, show it to your university careers or international office before you say yes.",
+      },
+      {
+        heading: "Protect the reason you came",
+        text: "The job is there to support your studies, not to replace them. Before accepting shifts, map out your timetable, assessment deadlines, and exam periods, and be honest with the employer about when you cannot work. Reliable students who state their limits upfront are often more valued than those who say yes to everything and then cancel.\n\nCheck in with yourself every few weeks. If you are tired in every lecture, falling behind on reading, or skipping seminars to cover a shift, it is time to cut hours. Your university's student support and money advice teams can help you find other options, such as hardship funds or budgeting help, if the job feels necessary but is starting to cost you your grades.",
+      },
+      {
+        heading: "Treat the job as part of the experience",
+        text: "A good student job gives you more than money. You practise the local language in real situations, learn how workplaces run in that country, and meet people you would never meet in your degree program. Those small conversations with a regular customer or a coworker can make a new city feel much more like home.\n\nWhen you leave, ask a manager whether they would act as a reference. A local reference from a job you did well, alongside your studies, is a quiet but useful thing to carry into your next application.",
+      },
+    ],
+    coverImage: "/images/blog/first-student-job-abroad.jpg",
+    coverImageAlt: "A barista preparing drinks behind a warmly lit café counter",
+    unsplash: {
+      photographerName: "tommao wang",
+      photographerUrl: "https://unsplash.com/@tommaomaoer",
+      photoUrl:
+        "https://unsplash.com/photos/barista-preparing-drinks-behind-a-counter-foZzfQWGSqM",
+    },
+  },
+  {
     title: "Canada vs Australia for International Students",
     slug: "canada-vs-australia",
     description:

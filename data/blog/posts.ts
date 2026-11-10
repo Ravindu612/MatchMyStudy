@@ -880,6 +880,55 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "Your First Winter Abroad: Staying Warm, Bright, and Well Through the Dark Months",
+    slug: "first-winter-abroad",
+    description:
+      "A practical guide for international students facing their first real winter: dressing in layers, keeping your room warm and dry, getting through short days, staying safe on ice, and planning the winter break.",
+    category: "Student Life",
+    date: "2026-11-10",
+    readTime: "6 min read",
+    intro:
+      "If you grew up somewhere warm, your first winter abroad can arrive as a surprise. One week the trees are golden and the evenings are long enough for a walk after class. A few weeks later it is dark by late afternoon, the wind finds every gap in your jacket, and the walk to the library feels like an expedition.\n\nWinter does not have to be the hardest part of your year. With the right clothes, a few small habits, and a plan for the quiet weeks, it can become one of the parts you remember most fondly.",
+    sections: [
+      {
+        heading: "Dress in layers, not in one huge coat",
+        text: "Local students rarely survive winter in a single enormous jacket. They wear layers: a thin base layer that sits close to the skin, a warm middle layer such as a fleece or wool jumper, and an outer layer that blocks wind and rain. Layers let you stay warm outside and peel something off when you walk into an overheated lecture hall.\n\nThe small things matter more than people expect. A hat, a scarf, gloves, and warm socks make a bigger difference than an expensive coat. Waterproof shoes or boots with a good grip are worth it if your city gets rain, slush, or snow. You do not need to buy everything before you fly: shops in cold places sell clothing made for their own winter, and second-hand shops, student swap events, and university welcome stalls often have good coats for much less.",
+      },
+      {
+        heading: "Keep your room warm, dry, and safe",
+        text: "Find out early how the heating works in your accommodation. Some buildings have central heating you cannot control, some have a thermostat or radiator dials, and some private rentals expect you to pay for heating yourself. Ask your landlord or residence office how it works and who to contact if it stops, before the first cold night rather than during it.\n\nCold rooms can also get damp. Opening a window briefly each day, drying clothes in a ventilated space, and wiping condensation off windows helps prevent mould. If you use a portable heater, make sure it is allowed in your accommodation, keep it away from curtains and bedding, and never leave it running while you sleep or go out. A hot water bottle and a thick duvet are cheap and surprisingly effective.",
+      },
+      {
+        heading: "Find your light on short days",
+        text: "In many popular study destinations, winter days are much shorter than students from near the equator are used to. Waking up in the dark and leaving class after sunset can quietly drain your energy and mood.\n\nTry to get outside during daylight, even for a short walk between classes. Keep regular sleep and meal times, and sit near a window when you study. Movement helps too: many universities have a sports centre, swimming pool, or free fitness classes for students. If you notice that low mood, tiredness, or loss of interest in things you normally enjoy lasts for weeks, talk to your university's student wellbeing service or a doctor. Feeling flat in winter is common, and there is support for it.",
+      },
+      {
+        heading: "Walk carefully on snow and ice",
+        text: "Ice is the winter hazard that catches newcomers most often. Footpaths can look clear and still be slippery, especially early in the morning and after dark. Take shorter steps, keep your hands out of your pockets for balance, and allow extra time so you are not rushing.\n\nWinter can also disrupt travel. Trains, buses, and flights may be delayed by snow or storms, so check local transport updates before a journey and keep your phone charged. If you cycle, check that your lights work and think about whether conditions are safe on icy days. Your university will usually announce closures or changes on its official channels, so make sure you know where to look.",
+      },
+      {
+        heading: "Make the long evenings social",
+        text: "Winter is when loneliness tends to creep in. It is darker, colder, and easier to stay in your room scrolling your phone. The fix is to plan small, regular reasons to leave it: a weekly film night with your flatmates, a society meeting, a language exchange, or simply studying in the library with a friend instead of alone.\n\nMany cold-weather countries have their own winter traditions, from markets and festivals to cosy cafés and shared meals. Say yes to a few of them. Cooking a dish from home and inviting people over is one of the warmest things you can do, in every sense.",
+      },
+      {
+        heading: "Plan the winter break early",
+        text: "Many universities have a break around the end of the year, and halls can become very quiet. Decide early whether you will travel home, visit somewhere new, or stay. If you plan to travel outside the country, check with your university's international office and the official immigration website about the documents you will need to return, and keep your passport, visa or residence permit, and enrolment letter together.\n\nIf you are staying, find out which university services, libraries, and accommodation offices stay open over the break. Some residences and student unions organise events for students who are not going home. Staying behind can be lovely: quiet streets, time to rest, and the chance to see a new city in its winter clothes.",
+      },
+      {
+        heading: "Look after your health",
+        text: "Colds and flu spread easily in winter, especially in shared housing and busy lecture halls. Wash your hands often, eat regular meals with fruit and vegetables, drink enough water, and rest when you feel ill. Register with a local doctor or your campus health service early in the year so you know where to go if you need care.\n\nIf you have questions about vaccines or supplements for winter, ask a doctor or pharmacist rather than following advice from social media. They can tell you what makes sense for you in your new country.",
+      },
+    ],
+    coverImage: "/images/blog/first-winter-abroad.jpg",
+    coverImageAlt: "Students in winter coats walking through falling snow past a red-brick university building",
+    unsplash: {
+      photographerName: "Alora Griffiths",
+      photographerUrl: "https://unsplash.com/@aloragriffiths",
+      photoUrl:
+        "https://unsplash.com/photos/people-walking-near-building-during-daytime-rjzqXYwQM-M",
+    },
+  },
+  {
     title: "Canada vs Australia for International Students",
     slug: "canada-vs-australia",
     description:

@@ -265,6 +265,7 @@ export const unitedKingdomUniversities: University[] = [
     "The university offers scholarships and financial aid opportunities for international students.",
 
   officialWebsite: "https://www.ed.ac.uk",
+  logo: "/logos/university-of-edinburgh.webp",
 
   admissionsWebsite:
     "https://www.ed.ac.uk/studying",

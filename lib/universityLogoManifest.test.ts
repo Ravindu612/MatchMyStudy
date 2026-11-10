@@ -53,6 +53,48 @@ test("batch 1 dispositions stay stable for the next run", () => {
   assert.match(universityLogoCredit("imperial-college-london") ?? "", /CC BY 3.0/);
   assert.equal(universityLogoCredit("harvard-university"), null);
   assert.equal(universityLogoCredit("stanford-university"), null);
+});
+
+test("batch 2 dispositions stay stable for the next run", () => {
+  const batch = manifest.universities.filter((entry) => entry.batch === 2);
+  assert.deepEqual(
+    batch.map((entry) => [entry.slug, entry.status]).sort(),
+    [
+      ["australian-national-university", "completed"],
+      ["bocconi-university", "blocked"],
+      ["california-institute-of-technology", "blocked"],
+      ["cornell-university", "completed"],
+      ["epfl", "blocked"],
+      ["eth-zurich", "blocked"],
+      ["massachusetts-institute-of-technology", "blocked"],
+      ["nanyang-technological-university", "blocked"],
+      ["national-university-of-singapore", "blocked"],
+      ["peking-university", "blocked"],
+      ["princeton-university", "blocked"],
+      ["psl-university", "blocked"],
+      ["technical-university-of-munich", "blocked"],
+      ["the-university-of-hong-kong", "blocked"],
+      ["tsinghua-university", "blocked"],
+      ["university-college-london", "blocked"],
+      ["university-of-california-berkeley", "blocked"],
+      ["university-of-chicago", "blocked"],
+      ["university-of-edinburgh", "completed"],
+      ["university-of-melbourne", "completed"],
+      ["university-of-new-south-wales", "blocked"],
+      ["university-of-pennsylvania", "completed"],
+      ["university-of-sydney", "blocked"],
+      ["yale-university", "blocked"],
+    ]
+  );
+  assert.match(universityLogoCredit("university-of-melbourne") ?? "", /CC BY-SA 4.0/);
+  assert.match(universityLogoCredit("cornell-university") ?? "", /CC BY-SA 4.0/);
+  assert.match(
+    universityLogoCredit("australian-national-university") ?? "",
+    /CC BY-SA 4.0/
+  );
+  assert.equal(universityLogoCredit("university-of-pennsylvania"), null);
+  assert.equal(universityLogoCredit("university-of-edinburgh"), null);
+  assert.equal(universityLogoCredit("massachusetts-institute-of-technology"), null);
 
   const pending = manifest.universities
     .filter((entry) => entry.status === "pending")

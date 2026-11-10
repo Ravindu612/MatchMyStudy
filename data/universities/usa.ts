@@ -380,6 +380,7 @@ export const usaUniversities: University[] = [
     "Need-based financial aid and scholarship opportunities are available.",
 
   officialWebsite: "https://www.cornell.edu",
+  logo: "/logos/cornell-university.webp",
 
   admissionsWebsite:
     "https://admissions.cornell.edu",
@@ -1026,6 +1027,7 @@ export const usaUniversities: University[] = [
     "Need-based financial aid and scholarships are available.",
 
   officialWebsite: "https://www.upenn.edu",
+  logo: "/logos/university-of-pennsylvania.webp",
 
   admissionsWebsite:
     "https://admissions.upenn.edu",

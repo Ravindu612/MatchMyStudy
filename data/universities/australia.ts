@@ -35,6 +35,8 @@ export const australiaUniversities: University[] = [
       "The University of Melbourne offers a variety of scholarships for international students based on academic merit and eligibility.",
 
     officialWebsite: "https://www.unimelb.edu.au",
+    logo: "/logos/university-of-melbourne.webp",
+
     admissionsWebsite:
       "https://study.unimelb.edu.au",
 
@@ -79,6 +81,7 @@ export const australiaUniversities: University[] = [
       "ANU offers a range of scholarships for international students, including merit-based and region-specific awards.",
 
     officialWebsite: "https://www.anu.edu.au",
+    logo: "/logos/australian-national-university.webp",
 
     admissionsWebsite:
       "https://www.anu.edu.au/study",

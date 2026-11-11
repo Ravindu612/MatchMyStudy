@@ -108,3 +108,44 @@ test("batch 2 dispositions stay stable for the next run", () => {
     manifest.audit.total
   );
 });
+
+test("batch 3 dispositions stay stable for the next run", () => {
+  const batch = manifest.universities.filter((entry) => entry.batch === 3);
+  assert.deepEqual(
+    batch.map((entry) => [entry.slug, entry.status]).sort(),
+    [
+      ["columbia-university", "blocked"],
+      ["ecole-polytechnique", "blocked"],
+      ["fudan-university", "blocked"],
+      ["hong-kong-university-of-science-and-technology", "blocked"],
+      ["johns-hopkins-university", "blocked"],
+      ["kaist", "blocked"],
+      ["kings-college-london", "completed"],
+      ["kyoto-university", "blocked"],
+      ["monash-university", "blocked"],
+      ["new-york-university", "blocked"],
+      ["northwestern-university", "blocked"],
+      ["seoul-national-university", "blocked"],
+      ["the-chinese-university-of-hong-kong", "blocked"],
+      ["the-university-of-tokyo", "blocked"],
+      ["university-of-amsterdam", "blocked"],
+      ["university-of-bristol", "completed"],
+      ["university-of-california-los-angeles", "blocked"],
+      ["university-of-glasgow", "completed"],
+      ["university-of-manchester", "completed"],
+      ["university-of-michigan", "blocked"],
+      ["university-of-queensland", "blocked"],
+      ["university-of-warwick", "completed"],
+    ]
+  );
+  assert.match(universityLogoCredit("university-of-manchester") ?? "", /CC BY-SA 4.0/);
+  assert.match(universityLogoCredit("kings-college-london") ?? "", /CC BY-SA 4.0/);
+  assert.match(universityLogoCredit("university-of-bristol") ?? "", /CC BY-SA 4.0/);
+  assert.match(universityLogoCredit("university-of-warwick") ?? "", /CC BY-SA 4.0/);
+  assert.match(universityLogoCredit("university-of-glasgow") ?? "", /CC BY-SA 4.0/);
+  assert.match(universityLogoCredit("kings-college-london") ?? "", /David Liuzzo/);
+  assert.equal(universityLogoCredit("seoul-national-university"), null);
+  assert.equal(universityLogoCredit("the-university-of-tokyo"), null);
+  assert.equal(universityLogoCredit("johns-hopkins-university"), null);
+  assert.equal(universityLogoCredit("columbia-university"), null);
+});

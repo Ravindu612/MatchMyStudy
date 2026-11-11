@@ -189,6 +189,7 @@ export const unitedKingdomUniversities: University[] = [
     "A variety of scholarships and bursaries are available for international students.",
 
   officialWebsite: "https://www.kcl.ac.uk",
+  logo: "/logos/kings-college-london.webp",
 
   admissionsWebsite:
     "https://www.kcl.ac.uk/study",
@@ -227,6 +228,7 @@ export const unitedKingdomUniversities: University[] = [
     "Various scholarships and funding opportunities are available for international students.",
 
   officialWebsite: "https://www.manchester.ac.uk",
+  logo: "/logos/university-of-manchester.webp",
 
   admissionsWebsite:
     "https://www.manchester.ac.uk/study",
@@ -304,6 +306,7 @@ export const unitedKingdomUniversities: University[] = [
     "Scholarships are available for outstanding international students.",
 
   officialWebsite: "https://www.bristol.ac.uk",
+  logo: "/logos/university-of-bristol.webp",
 
   admissionsWebsite:
     "https://www.bristol.ac.uk/study",
@@ -342,6 +345,7 @@ export const unitedKingdomUniversities: University[] = [
     "The university offers a range of scholarships for international students.",
 
   officialWebsite: "https://www.gla.ac.uk",
+  logo: "/logos/university-of-glasgow.webp",
 
   admissionsWebsite:
     "https://www.gla.ac.uk/study",
@@ -380,6 +384,7 @@ export const unitedKingdomUniversities: University[] = [
     "International students can apply for a variety of merit-based scholarships.",
 
   officialWebsite: "https://warwick.ac.uk",
+  logo: "/logos/university-of-warwick.webp",
 
   admissionsWebsite:
     "https://warwick.ac.uk/study",

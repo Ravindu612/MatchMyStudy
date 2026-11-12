@@ -3,11 +3,11 @@
   "purpose": "Batch tracker for authentic university logos. Future batches should take the next pending slugs and must not redo completed or blocked entries unless the notes say the evidence changed.",
   "audit": {
     "total": 637,
-    "completed": 24,
-    "pending": 576,
-    "blocked": 37,
-    "workingLogoFiles": 24,
-    "missing": 613,
+    "completed": 29,
+    "pending": 543,
+    "blocked": 65,
+    "workingLogoFiles": 29,
+    "missing": 608,
     "brokenLiveReferences": 0,
     "commentedOutPaths": 3,
     "renderers": [
@@ -25,11 +25,11 @@
     ]
   },
   "nextPendingSlugs": [
-    "shanghai-jiao-tong-university",
-    "zhejiang-university",
-    "delft-university-of-technology",
-    "yonsei-university",
-    "the-hong-kong-polytechnic-university"
+    "purdue-university",
+    "pennsylvania-state-university",
+    "free-university-of-berlin",
+    "postech",
+    "rwth-aachen-university"
   ],
   "universities": [
     {
@@ -896,14 +896,15 @@
       "officialWebsite": "https://en.sjtu.edu.cn",
       "prominenceRank": 46,
       "qsRank": 45,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:SJTU_emblem_1940.jpg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "The emblem files are reproductions from a 2007 Shanghai Jiao Tong University page, not a licence to redistribute them. No permission was requested.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. File:SJTU emblem 1912-1921.png is tagged PD-old, author Ericmetro, source own work, while the date field says 1912. PD-old does not apply to that uploader. File:SJTU emblem 1926.jpg and File:SJTU emblem 1934.jpg are tagged PD-old, author the university, source http://jd.sjtu.edu.cn/www/tzgg/2007-12-24/7918.html, and the JPEGs were saved with Microsoft Office. PD-old does not apply to an institution, and those files are not verified 1926 or 1934 publications. File:SJTU emblem 1940.jpg adds PD-China and PD-1996 on the same 2007 page. Do not retry these files unless a publication that matches the tag is the source."
     },
     {
       "id": "ecole-polytechnique",
@@ -933,14 +934,15 @@
       "officialWebsite": "https://www.zju.edu.cn",
       "prominenceRank": 48,
       "qsRank": 47,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%B1%82%E6%98%AF.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "No terms permitting redistribution of the Zhejiang University emblem were identified, and none were requested. Official assets were not downloaded.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. Commons title searches and Category:Zhejiang University contain campus photographs, not a public-domain or CC file of the university emblem. File:求是.svg is the motto calligraphy 求是, vectorized by Pion from Zhu Kezhen, not the logo. Do not use that calligraphy as the mark. A later batch may add a different file of the emblem if its licence is clear."
     },
     {
       "id": "hong-kong-university-of-science-and-technology",
@@ -970,14 +972,15 @@
       "officialWebsite": "https://www.tudelft.nl",
       "prominenceRank": 50,
       "qsRank": 49,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Zegel_Technische_Universiteit_Delft.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "The modern TU Delft seal was not licensed for redistribution. No permission was requested.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. File:Zegel Technische Universiteit Delft.svg is an Adobe Illustrator export of the modern flame seal, claimed as own work under CC BY-SA 4.0 by NielsvSilfhout in 2024. The uploader is not the rights holder of that official seal. File:TUDelftSeal.png is a CC BY-SA 4.0 claim by Delftstudent, but the PNG is a corrupted, sheared render and cannot be used. Do not retry these two files."
     },
     {
       "id": "kyoto-university",
@@ -1083,14 +1086,15 @@
       "officialWebsite": "https://www.yonsei.ac.kr",
       "prominenceRank": 56,
       "qsRank": 56,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Yonsei_University_Logo.png",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "The files are Yonsei University's official symbol and logotypes. No redistribution term was found, and none was requested.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. File:Yonsei University Logo.png is tagged CC BY 3.0, but the author is Yonsei University and the source is the official symbol page. The university did not grant CC BY. File:Yonsei university logo en.gif and File:Yonsei University logotype.png are official-site files tagged only PD-textlogo and trademarked. Do not retry these official marks."
     },
     {
       "id": "the-hong-kong-polytechnic-university",
@@ -1101,14 +1105,15 @@
       "officialWebsite": "https://www.polyu.edu.hk",
       "prominenceRank": 57,
       "qsRank": 57,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:HK_Polytechnic_Institute_logo.jpg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "No terms permitting redistribution of the PolyU logo were identified, and none were requested. Official assets were not downloaded.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. File:HK Polytechnic Institute logo.jpg is a campus photograph, not a logo. File:HK PolyU FCE Logo.png is the Faculty of Construction and Environment mark from the faculty site, tagged public domain without a grant. File:PolyU Design Logo.svg is the School of Design mark, a CC BY-SA claim on that school's own logo. Category:Logos of the Hong Kong Polytechnic University is photographs of signs. Do not use these. A later batch may add a different file of the university logo if its licence is clear."
     },
     {
       "id": "university-of-malaya",
@@ -1123,10 +1128,11 @@
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "No terms permitting redistribution of the University of Malaya logo were identified, and none were requested. Official assets were not downloaded.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. Commons title searches for University of Malaya and Universiti Malaya returned campus photographs and a silver mace, not a public-domain or CC file of the university's own logo. A later batch may add a different file if its licence is clear."
     },
     {
       "id": "carnegie-mellon-university",
@@ -1137,14 +1143,15 @@
       "officialWebsite": "https://www.cmu.edu",
       "prominenceRank": 59,
       "qsRank": 58,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:PSM_V66_D486_Seal_of_the_carnegie_institution.png",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "No Carnegie Mellon seal with a licence for this use was identified, and none was requested. Official assets were not downloaded.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. Commons title searches returned campus photographs. File:PSM V66 D486 Seal of the carnegie institution.png is the Carnegie Institution, not Carnegie Mellon University. Do not use it. A later batch may add a file of the university's own seal if its licence is clear."
     },
     {
       "id": "ludwig-maximilian-university-of-munich",
@@ -1155,14 +1162,15 @@
       "officialWebsite": "https://www.lmu.de",
       "prominenceRank": 60,
       "qsRank": 59,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Sigillum_Universitatis_Ludovico-Maximilianeae.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "The seal SVG is taken from LMU's corporate-design manual. That PDF is not a licence to copy the seal. No permission was requested.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. File:Sigillum Universitatis Ludovico-Maximilianeae.svg is sourced from the 2009 LMU corporate-design PDF, author unknown, and tagged PD-old and insignia. PD-old does not match a 2009 brand manual. Do not retry this file unless a publication matches the tag."
     },
     {
       "id": "duke-university",
@@ -1173,14 +1181,15 @@
       "officialWebsite": "https://www.duke.edu",
       "prominenceRank": 61,
       "qsRank": 61,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Duke_University_Seal.jpg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "The seal file is taken from Duke's bylaws page. That page is not a licence to copy the seal. No permission was requested.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. File:Duke University Seal.jpg is sourced from https://trustees.duke.edu/governing-documents/bylaws-duke-university/ and tagged PD-US-expired. The description says the seal was first published in 1896 and cites a 1939 paper rendition at the Library of Congress. The file itself is the modern bylaws image, not a verified pre-1930 publication, and a 1939 publication is not PD-US-expired. Do not retry this file unless the scan is of a pre-1930 publication."
     },
     {
       "id": "city-university-of-hong-kong",
@@ -1195,10 +1204,11 @@
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "No terms permitting redistribution of the City University of Hong Kong logo were identified, and none were requested. Official assets were not downloaded.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. Commons title searches returned campus photographs, not a public-domain or CC file of the university logo. A later batch may add a different file if its licence is clear."
     },
     {
       "id": "ku-leuven",
@@ -1209,14 +1219,15 @@
       "officialWebsite": "https://www.kuleuven.be",
       "prominenceRank": 63,
       "qsRank": 63,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:KU_Leuven_logo.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "The files are the official KU Leuven logo from the university style guide. No redistribution term was found, and none was requested.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. File:KU Leuven logo.svg is sourced from https://stijl.kuleuven.be/releases/latest/img/svg/logo.svg, author KU Leuven, tagged PD-textlogo and trademarked. File:KU Leuven logo.png carries a CC BY-SA 4.0 tag on that same official logo, with the author still KU Leuven. The university did not grant either tag. Do not retry these wordmarks."
     },
     {
       "id": "sorbonne-university",
@@ -1227,14 +1238,15 @@
       "officialWebsite": "https://www.sorbonne-universite.fr",
       "prominenceRank": 64,
       "qsRank": 63,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Logo_of_Sorbonne_University.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "The Sorbonne University wordmark is an official site file. No redistribution term was found, and none was requested.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. File:Logo of Sorbonne University.svg is from sorbonne-universite.fr, author Sorbonne Université, tagged only PD-textlogo. File:Logo of the Pantheon-Sorbonne University in Paris.png is Paris 1 Panthéon-Sorbonne, a different university, and its CC BY-SA 4.0 tag has an unknown author and an official-site source. Do not use either file."
     },
     {
       "id": "university-of-auckland",
@@ -1245,14 +1257,15 @@
       "officialWebsite": "https://www.auckland.ac.nz",
       "prominenceRank": 65,
       "qsRank": 65,
-      "logoSourceUrl": null,
-      "assetPath": null,
-      "license": null,
-      "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Coat_of_arms_of_the_University_of_Auckland.svg",
+      "assetPath": "/logos/university-of-auckland.webp",
+      "license": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0). Jakob (TheLoyalOrder) released this own heraldic drawing, 7 May 2025, under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). The open book comes from File:Blason famille be Colling.svg by Jpgibert (CC BY 4.0), which uses File:Meuble héraldique Livre ancien ouvert.svg by Jpgibert (CC BY 4.0), adapted from File:Book heraldic transparent.svg by Paladium (CC BY-SA 4.0), based on File:Meuble héraldique livre.svg by Bluebear2 (CC BY-SA 3.0). The kiwis come from File:Roundel of New Zealand – Low Visibility – Type 1.svg, which Liftarn released with the PD-self tag. The book element is ShareAlike, so this WebP is shared under CC BY-SA 4.0. Attribution is required. The WebP is a raster of that SVG at 320px on the long side, with no redraw. Drawn from the blazon, not from a University of Auckland brand file.",
+      "attribution": "Arms by Jakob (TheLoyalOrder), via Wikimedia Commons, CC BY-SA 4.0. Book by Jpgibert, Paladium, and Bluebear2.",
+      "attributionRequired": true,
+      "restrictions": "The University of Auckland requires use of its logo to follow the Brand Platform, and third-party reproduction of that logo is approved by the Registrar (https://www.auckland.ac.nz/en/about-us/about-the-university/policy-hub/strategic-engagement/marketing-advertising-publishing/marketing-advertising-publishing-policy.html). Official brand files were not used. This coat of arms is used only to identify the university on its own cards and profile.",
+      "status": "completed",
+      "batch": 4,
+      "notes": "Upload URL: https://upload.wikimedia.org/wikipedia/commons/8/8c/Coat_of_arms_of_the_University_of_Auckland.svg. SVG had no script or external image references (internal fragment links only). The Inkscape document name napier.svg is the working filename. The blazon is azure, an open book proper between three mullets argent, on a chief wavy argent three kiwis proper."
     },
     {
       "id": "university-of-texas-at-austin",
@@ -1263,14 +1276,15 @@
       "officialWebsite": "https://www.utexas.edu",
       "prominenceRank": 66,
       "qsRank": 66,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Logo_in_1899_detail,_University_of_Texas_at_Austin_yearbook_The_Cactus_1899_(page_10_crop).jpg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "No current University of Texas at Austin seal was licensed for this use. No permission was requested.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. File:Logo in 1899 detail, University of Texas at Austin yearbook The Cactus 1899 (page 10 crop).jpg is a crop from The Cactus 1899 in the UT repository (https://repositories.lib.utexas.edu/handle/2152/23365), tagged PD-1923, which matches a United States publication of 1899. The crop is a star, wreath, and rays with no university name, so it was not treated as the university seal. Do not use this crop unless the yearbook page shows the device as the seal."
     },
     {
       "id": "korea-university",
@@ -1281,14 +1295,15 @@
       "officialWebsite": "https://www.korea.edu",
       "prominenceRank": 67,
       "qsRank": 67,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Korea_University_logotype.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "The files are official Korea University logotypes. No redistribution term was found, and none was requested.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. File:Korea University logotype.svg and File:Korea University logotype (English version).svg are from korea.ac.kr, author Korea University, tagged only PD-textlogo and trademarked. Do not retry these wordmarks."
     },
     {
       "id": "national-taiwan-university",
@@ -1299,14 +1314,15 @@
       "officialWebsite": "https://www.ntu.edu.tw",
       "prominenceRank": 68,
       "qsRank": 68,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:NTU_official_text_seal_20140901.png",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "The files are the official National Taiwan University seal. No redistribution term was found, and none was requested.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. File:NTU official text seal 20140901.png and File:Official text seal of National Taiwan University.svg are the official seal, author National Taiwan University, tagged PD-ROC-exempt. That tag is for the constitution, laws, regulations, and official documents, not for a university seal. Do not retry these files unless a different licence is shown."
     },
     {
       "id": "university-of-warwick",
@@ -1336,14 +1352,15 @@
       "officialWebsite": "https://illinois.edu",
       "prominenceRank": 70,
       "qsRank": 69,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Illinois_seal.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "The seal SVG is taken from a University of Illinois public-affairs PDF. That PDF is not a licence to copy the seal. No permission was requested.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. File:University of Illinois seal.svg is sourced from http://publicaffairs.illinois.edu/resources/illinois.pdf, author an employee of the University of Illinois, tagged public domain and insignia. A brand PDF is not a public-domain grant. Do not retry this seal."
     },
     {
       "id": "university-of-california-san-diego",
@@ -1358,10 +1375,11 @@
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "No terms permitting redistribution of the UC San Diego logo were identified, and none were requested. Official assets were not downloaded.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. Commons title searches for University of California, San Diego and UC San Diego returned no logo or seal file. A later batch may add a different file if its licence is clear."
     },
     {
       "id": "universite-paris-saclay",
@@ -1372,14 +1390,15 @@
       "officialWebsite": "https://www.universite-paris-saclay.fr",
       "prominenceRank": 72,
       "qsRank": 73,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Logo_Universit%C3%A9_Paris-Saclay_2019-12.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "The file is described as the Université Paris-Saclay logo for internal members. No redistribution term was found, and none was requested.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. File:Logo Université Paris-Saclay 2019-12.svg is the official logo from universite-paris-saclay.fr, author the university, tagged PD-textlogo and trademarked. The description says it is for internal members. Do not retry this wordmark."
     },
     {
       "id": "kth-royal-institute-of-technology",
@@ -1394,10 +1413,11 @@
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "No terms permitting redistribution of the KTH logo were identified, and none were requested. Official assets were not downloaded.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. Commons title searches for KTH and the Royal Institute of Technology returned no logo or seal file. A later batch may add a different file if its licence is clear."
     },
     {
       "id": "trinity-college-dublin",
@@ -1408,14 +1428,15 @@
       "officialWebsite": "https://www.tcd.ie",
       "prominenceRank": 74,
       "qsRank": 75,
-      "logoSourceUrl": null,
-      "assetPath": null,
-      "license": null,
-      "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Trinity_College_Dublin_Arms.svg",
+      "assetPath": "/logos/trinity-college-dublin.webp",
+      "license": "CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/). Wikimedia Commons LicenseShortName is CC BY-SA 3.0; attribution is required. Kwekubo vectorised and colourised File:TCD Arms.png in Inkscape, 30 December 2010. That PNG is the line drawing on page 287 of W. Macneile Dixon, Trinity College, Dublin (London: F. E. Robinson, 1902), archived as https://archive.org/details/trinitycollegedu00dixouoft (William Macneile Dixon, 1866-1945). Commons tags the PNG {{PD-US}}. A 1902 publication is in the public domain in the United States. The WebP is a raster of the SVG at 320px on the long side, with no redraw. ShareAlike applies to the raster.",
+      "attribution": "Arms by Kwekubo, via Wikimedia Commons, CC BY-SA 3.0. Line drawing from W. Macneile Dixon, Trinity College, Dublin (1902).",
+      "attributionRequired": true,
+      "restrictions": "Official Trinity College Dublin logo files were not used. This coat of arms is used only to identify the college on its own cards and profile.",
+      "status": "completed",
+      "batch": 4,
+      "notes": "Upload URL: https://upload.wikimedia.org/wikipedia/commons/7/7f/Trinity_College_Dublin_Arms.svg. SVG had no script or external image references. Charges match the 1902 line drawing: lion, harp, closed book, and a castle of two towers with flags."
     },
     {
       "id": "lund-university",
@@ -1426,14 +1447,15 @@
       "officialWebsite": "https://www.lunduniversity.lu.se",
       "prominenceRank": 75,
       "qsRank": 75,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Sigill_Lunds_universitet_(vit).png",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "The file is credited to Lund University. No redistribution term was found, and none was requested.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. File:Sigill Lunds universitet (vit).png is credited to Lunds Universitet, described as an image from 1666, and tagged PD-old-1923, PD-textlogo, insignia, and trademarked. The source given is the university, not a verified 1666 publication, and PD-textlogo is not a grant. Do not retry this logotype unless a publication matches the tag."
     },
     {
       "id": "university-of-washington",
@@ -1448,10 +1470,11 @@
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "No terms permitting redistribution of the University of Washington seal were identified, and none were requested. Official assets were not downloaded.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. A Commons title search for a University of Washington seal or arms returned a 1925 rifle-team photograph, not a seal file. A later batch may add a different file if its licence is clear."
     },
     {
       "id": "university-of-western-australia",
@@ -1466,10 +1489,11 @@
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "No terms permitting redistribution of the University of Western Australia arms were identified, and none were requested. Official assets were not downloaded.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. Commons title searches for arms, logo, or crest returned a campus photograph, not an arms file. A later batch may add a different file if its licence is clear."
     },
     {
       "id": "university-of-glasgow",
@@ -1499,14 +1523,15 @@
       "officialWebsite": "https://www.birmingham.ac.uk",
       "prominenceRank": 79,
       "qsRank": 80,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Shield_of_the_University_of_Birmingham.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "The only usable SVG of the shield mis-letters the motto. Official logo files were not used, and no permission was requested.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. File:Shield of the University of Birmingham.svg is CC BY-SA 4.0 by Shadowssettle, but the book is lettered PER AD / ARDUA ALTA instead of the motto Per ardua ad alta. Gate and library photographs are not a card logo. Do not use this SVG unless the motto on Commons is corrected."
     },
     {
       "id": "university-of-southampton",
@@ -1517,14 +1542,15 @@
       "officialWebsite": "https://www.southampton.ac.uk",
       "prominenceRank": 80,
       "qsRank": 81,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Shield_of_the_University_of_Southampton.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "The only shield SVG adds charges that are not in the grant of arms. Official logo files were not used, and no permission was requested.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. File:Shield of the University of Southampton.svg places two Tudor roses on the chief. The arms granted in 1948 are argent, a hart trippant gules, on a chief azure an open book proper, edged and bound or. The roses belong on the crest's flag, not on the shield (https://www.heraldry-wiki.com/wiki/University_of_Southampton). Do not use this SVG."
     },
     {
       "id": "university-of-adelaide",
@@ -1535,14 +1561,15 @@
       "officialWebsite": "https://www.adelaide.edu.au",
       "prominenceRank": 81,
       "qsRank": 82,
-      "logoSourceUrl": null,
-      "assetPath": null,
-      "license": null,
-      "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Arms_of_the_University_of_Adelaide.svg",
+      "assetPath": "/logos/university-of-adelaide.webp",
+      "license": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0). Wikimedia Commons LicenseShortName is CC BY-SA 4.0; attribution is required. GarterKingOfArms, own heraldic work in Inkscape, 17 January 2023, not a University of Adelaide brand file. Chief azure with the Southern Cross, an open book proper, and the motto scroll Sub cruce lumen. The WebP is a raster of that SVG at 320px on the long side, with no redraw. ShareAlike applies to the raster.",
+      "attribution": "Arms by GarterKingOfArms, via Wikimedia Commons, CC BY-SA 4.0.",
+      "attributionRequired": true,
+      "restrictions": "Official University of Adelaide logo files were not used. This coat of arms is used only to identify the university on its own cards and profile.",
+      "status": "completed",
+      "batch": 4,
+      "notes": "Upload URL: https://upload.wikimedia.org/wikipedia/commons/4/4e/Arms_of_the_University_of_Adelaide.svg. SVG had no script or external image references (internal fragment links only). The open book's page lettering is part of the drawing and includes a short description of the university. It is not legible at card size. The scroll reads Sub cruce lumen."
     },
     {
       "id": "university-of-leeds",
@@ -1553,14 +1580,15 @@
       "officialWebsite": "https://www.leeds.ac.uk",
       "prominenceRank": 82,
       "qsRank": 82,
-      "logoSourceUrl": null,
-      "assetPath": null,
-      "license": null,
-      "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Shield_of_the_University_of_Leeds.svg",
+      "assetPath": "/logos/university-of-leeds.webp",
+      "license": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0). Wikimedia Commons LicenseShortName is CC BY-SA 4.0; attribution is required. Shadowssettle, own heraldic work, 21 May 2020, drawn from the blazon, not from a University of Leeds brand file. Blazon: vert, an open book proper, edged and clasped gold, inscribed Et augebitur scientia, between in chief three mullets argent and in base a rose argent. Incorporated elements: Yorkshire_rose.svg by Booyabazooka (CC BY-SA 3.0; the file also carries GFDL 1.2 or later with the Commons relicensing migration, and Commons reports LicenseShortName CC BY-SA 3.0) and SVG coat of arms elements - books 00.svg by Eugenio Hansen, OFS (CC0, https://creativecommons.org/publicdomain/zero/1.0/). The WebP is a raster of that SVG at 320px on the long side, with no redraw. ShareAlike applies to the raster.",
+      "attribution": "Arms by Shadowssettle, via Wikimedia Commons, CC BY-SA 4.0. Rose by Booyabazooka.",
+      "attributionRequired": true,
+      "restrictions": "Commons marks the file as trademarked. Official University of Leeds logo files were not used. This shield is used only to identify the university on its own cards and profile.",
+      "status": "completed",
+      "batch": 4,
+      "notes": "Upload URL: https://upload.wikimedia.org/wikipedia/commons/a/a4/Shield_of_the_University_of_Leeds.svg. SVG had no script or external image references (internal fragment links only). The book reads Et augebitur scientia."
     },
     {
       "id": "heidelberg-university",
@@ -1571,14 +1599,15 @@
       "officialWebsite": "https://www.uni-heidelberg.de",
       "prominenceRank": 83,
       "qsRank": 84,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Heidelberg_univ_seal.png",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "The seal image is taken from the university's history page. That page is not a licence to copy the seal. No permission was requested.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. File:Heidelberg univ seal.png is sourced from https://www.uni-heidelberg.de/en/university/history/heidelbergs-university-seal/university-seal, author unknown, tagged public domain. The page says the seal dates from 1386, but the file is a modern download from the university site, not a verified historical publication. File:Ruprecht-Karls-Universität Heidelberg Logo.svg is a derivative of the official logo. Do not retry these files unless a publication matches a public-domain tag."
     },
     {
       "id": "tokyo-institute-of-technology",
@@ -1593,10 +1622,11 @@
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "No terms permitting redistribution of the Tokyo Institute of Technology logo were identified, and none were requested. Official assets were not downloaded.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. Commons title searches for Tokyo Institute of Technology and Tokyo Tech returned no logo file. A later batch may add a different file if its licence is clear."
     },
     {
       "id": "osaka-university",
@@ -1607,14 +1637,15 @@
       "officialWebsite": "https://www.osaka-u.ac.jp",
       "prominenceRank": 85,
       "qsRank": 86,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Osaka_symbol.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "The symbol file is taken from the university visual-identity guidelines. Those guidelines are not a licence to copy the symbol. No permission was requested.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. File:University of Osaka symbol.svg is the ginkgo symbol, source the university visual-identity guidelines, author the university public-relations office, tagged CC BY-SA 3.0. The university did not grant that tag. File:Osaka University Logo.png is a CC BY-SA 4.0 own-work claim on the logo. Do not retry these official marks."
     },
     {
       "id": "university-of-technology-sydney",
@@ -1629,10 +1660,11 @@
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "No terms permitting redistribution of the University of Technology Sydney logo were identified, and none were requested. Official assets were not downloaded.",
+      "status": "blocked",
+      "batch": 4,
+      "notes": "Reviewed in batch 4 and not used. Commons title searches returned no logo file. A later batch may add a different file if its licence is clear."
     },
     {
       "id": "durham-university",
@@ -1643,14 +1675,15 @@
       "officialWebsite": "https://www.durham.ac.uk",
       "prominenceRank": 87,
       "qsRank": 89,
-      "logoSourceUrl": null,
-      "assetPath": null,
-      "license": null,
-      "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Durham_arms.svg",
+      "assetPath": "/logos/durham-university.webp",
+      "license": "Public domain. Hogweard dedicated this own work, dated 18 December 2016, with the Wikimedia Commons PD-self tag. Commons LicenseShortName is Public domain. Attribution is not required. The WebP is a raster of that SVG at 320px on the long side, with no redraw. The page has no conflicting licence tag.",
+      "attribution": "Arms by Hogweard, via Wikimedia Commons. The author released the drawing to the public domain. Attribution is not required.",
+      "attributionRequired": false,
+      "restrictions": "Official Durham University logo files were not used. This coat of arms is used only to identify the university on its own cards and profile.",
+      "status": "completed",
+      "batch": 4,
+      "notes": "Upload URL: https://upload.wikimedia.org/wikipedia/commons/7/71/University_of_Durham_arms.svg. SVG had no script or external image references. Arms: argent, a cross patée quadrate gules, on a canton azure a chevron or between three lions rampant argent."
     },
     {
       "id": "purdue-university",

@@ -35,6 +35,7 @@ export const newZealandUniversities: University[] = [
     "Numerous scholarships are available for international students.",
 
   officialWebsite: "https://www.auckland.ac.nz",
+  logo: "/logos/university-of-auckland.webp",
 
   admissionsWebsite:
     "https://www.auckland.ac.nz/en/study.html",

@@ -978,6 +978,55 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "A Little Goes a Long Way: Learning the Local Language While You Study Abroad",
+    slug: "learn-the-local-language",
+    description:
+      "A practical, encouraging guide for international students studying in a country where English is not the everyday language: why a little goes a long way, where to start, free ways to practise, and how to keep going when it feels awkward.",
+    category: "Student Life",
+    date: "2026-11-12",
+    readTime: "6 min read",
+    intro:
+      "Plenty of international students study in a country where their whole degree is taught in English, yet the bakery, the bus driver, and the notice on the laundry room door all speak another language. It is easy to tell yourself you will get by without it. And often you can.\n\nBut even a small amount of the local language changes how a place feels. Ordering a coffee, asking for directions, or understanding a joke at a flat party turns a city you are visiting into a city you live in. You do not need to become fluent. You just need to start, and keep going a little at a time.",
+    sections: [
+      {
+        heading: "Why a few words matter more than you think",
+        text: "Learning the basics is less about grammar and more about connection. People tend to warm up quickly when you try, even if you only manage a greeting and a thank you before switching to English. It shows respect for the place you have chosen to live.\n\nThere are practical benefits too. Signs, timetables, supermarket labels, letters from your landlord, and forms at the local registration or tax office are not always translated. Part-time jobs in shops, cafés, and restaurants often expect at least some of the local language. And many students who hope to stay and work after graduating find that language skills make a real difference to their options. Check your university's careers service for what employers in your field actually expect.",
+      },
+      {
+        heading: "Start before you land",
+        text: "The months before departure are a gift. Even fifteen minutes a day of an app, a podcast for beginners, or a free online course will give you a head start. Focus on the phrases you will need in your first week: greetings, numbers, asking for help, ordering food, buying a transport ticket, and saying that you are still learning.\n\nLearn how the language sounds, not just how it looks. Listen to music, watch a children's programme, or follow a few local creators online. Your ear needs time to adjust, and arriving already used to the rhythm of the language makes those first conversations far less overwhelming.",
+      },
+      {
+        heading: "Use what your university already offers",
+        text: "Many universities run language courses for international students, sometimes free or at a reduced price, and some count towards your degree as elective credits. Look on your university's language centre or international office pages, or ask at welcome week. Places can fill up fast, so sign up early.\n\nAlso look for tandem or language-exchange programmes, where you are paired with a local student who wants to practise your language. You spend half the time in each language, and you both win. Student societies, conversation cafés, and international clubs are other easy ways to practise with people who are happy to be patient.",
+      },
+      {
+        heading: "Make the city your classroom",
+        text: "Every errand is a small lesson. Read the menu before you ask for the English one. Say your order out loud, even if you point at the same time. Read shop signs, adverts on the metro, and the backs of cereal boxes. Switch your phone or one favourite app into the local language once you know a few words.\n\nKeep a tiny notebook or a note on your phone for new words you meet during the day, and look them up in the evening. Words you actually needed stick far better than words from a list. Over a semester, those little moments add up to hundreds of words you genuinely use.",
+      },
+      {
+        heading: "Get comfortable with feeling awkward",
+        text: "The hardest part of learning a language abroad is not the grammar. It is the moment you try a sentence and the other person replies quickly in English. This happens a lot, especially in cities where many people speak English well. They are usually trying to be helpful, not dismissive.\n\nIt is fine to smile and say, in the local language, that you are practising and would like to continue. Many people will happily slow down. Mistakes are part of the process, and most listeners care far more that you are trying than whether your verb endings are perfect. Every slightly awkward conversation is one more step towards an easy one.",
+      },
+      {
+        heading: "Build a routine you can keep",
+        text: "Your studies come first, so keep your language goals realistic. A steady habit beats a burst of enthusiasm that fades by week four. Try a short daily slot, such as ten minutes of vocabulary on the bus and one conversation a week with a tandem partner or a friendly neighbour.\n\nSet small, concrete goals: order a full meal without English by the end of the month, follow a short news clip by the end of the semester, or make a phone call to book an appointment. Notice your progress. Looking back at the phrases you struggled with in your first week is one of the best motivators there is.",
+      },
+      {
+        heading: "When you need things in English",
+        text: "Learning the language does not mean you have to handle everything in it. For important matters such as your visa or residence permit, housing contracts, medical appointments, or anything legal, it is completely sensible to ask for English or to bring someone who can help translate. Your international office can often explain official letters and point you to services that work in English.\n\nUse translation apps as a support, not a crutch, and double-check anything that really matters with a person. The goal is not to prove anything. It is to feel more at home, one word at a time.",
+      },
+    ],
+    coverImage: "/images/blog/learn-the-local-language.jpg",
+    coverImageAlt: "Three students laughing and chatting around a café table with laptops and notebooks",
+    unsplash: {
+      photographerName: "Brooke Cagle",
+      photographerUrl: "https://unsplash.com/@brookecagle",
+      photoUrl:
+        "https://unsplash.com/photos/three-people-sitting-in-front-of-table-laughing-together-g1Kr4Ozfoac",
+    },
+  },
+  {
     title: "Canada vs Australia for International Students",
     slug: "canada-vs-australia",
     description:

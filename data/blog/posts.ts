@@ -929,6 +929,55 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "The Shared Kitchen: Cooking Simple, Cheap Meals in Your First Year Abroad",
+    slug: "shared-kitchen-cooking",
+    description:
+      "A friendly guide for international students learning to cook abroad: a small starter kit, a handful of reliable meals, shopping in a new country, shared-kitchen etiquette, and cooking with friends.",
+    category: "Student Life",
+    date: "2026-11-11",
+    readTime: "6 min read",
+    intro:
+      "For many international students, the first night in a shared kitchen is a small shock. At home, someone else may have done most of the cooking, or the food you love was always just around the corner. Now there is a fridge shelf with your name on it, a cupboard of strangers' pans, and a supermarket full of brands you have never seen.\n\nThe good news is that you do not need to become a chef. A few simple habits and five or six meals you can make without thinking will feed you well, save you money compared with eating out every day, and give you one of the easiest ways to make friends.",
+    sections: [
+      {
+        heading: "Start with a tiny kit, not a full kitchen",
+        text: "Before you buy anything, check what your accommodation already provides. Many halls supply a hob, oven, microwave, and fridge, but not pans or cutlery. Some provide nothing beyond the appliances. Ask the residence office or look at their website so you do not pack things you will find there.\n\nA short list covers most student cooking: one medium pan with a lid, one frying pan, a sharp knife, a chopping board, a wooden spoon, a baking tray, a plate, a bowl, a mug, cutlery, and a couple of food containers for leftovers. That is enough. Second-hand shops, student swap groups, and students leaving at the end of the year are great places to find these cheaply. Bring one thing from home only if it really matters to you, like a favourite spice blend or a small rice cooker, and check what your airline and the destination's customs rules allow first.",
+      },
+      {
+        heading: "Learn five meals you can make tired",
+        text: "The meals that save you are not the impressive ones. They are the ones you can cook at nine in the evening after a long day in the library. Aim for a handful of reliable dishes built on things that keep well: rice, pasta, noodles, oats, eggs, lentils or beans, frozen vegetables, onions, garlic, and a few sauces or spices you like.\n\nA good starter set might be a vegetable stir-fry with rice or noodles, a big pot of lentil or bean curry or soup, pasta with a tomato sauce you build yourself, eggs any way you like with toast or vegetables, and a tray of roasted vegetables with whatever protein you prefer. Once these feel easy, change one ingredient at a time. That is how a few meals quietly become twenty.",
+      },
+      {
+        heading: "Shop like a local, slowly",
+        text: "Your first few supermarket trips will take longer than you expect, and that is normal. Labels, units, and even what counts as a normal portion can be different. Walk the aisles without rushing, compare the price per kilo or per litre shown on shelf labels, and try the shop's own brand, which is often cheaper and perfectly good.\n\nLook for an international or Asian, African, Middle Eastern, or Latin American grocery near campus. Ingredients from home can be easier to find, and cheaper, than in big supermarkets. Local markets near closing time, reduced-price shelves for food close to its date, and food-waste apps in some cities can help too. Make a short list before you go and try not to shop hungry; both habits stretch your budget further than any coupon.",
+      },
+      {
+        heading: "Cook once, eat three times",
+        text: "Batch cooking is the closest thing students have to a superpower. On a quiet afternoon, cook a big pot of soup, chilli, curry, or pasta sauce. Eat one portion, put a couple in the fridge for the next days, and freeze the rest in labelled containers if you have freezer space.\n\nKeep food safety simple. Let food cool a little, then get it into the fridge within a couple of hours rather than leaving it out overnight. Eat fridge leftovers within a few days, reheat them until they are steaming hot all the way through, and if you are not sure something is still good, throw it away. A stomach upset during exam week is never worth saving one meal.",
+      },
+      {
+        heading: "Be the flatmate everyone likes",
+        text: "Shared kitchens work when everyone does the small things. Wash, dry, and put away your dishes soon after you eat instead of leaving them to soak for days. Wipe the hob and counter, keep your food to your own shelf, and never use someone else's milk or spices without asking. Take the bins out when it is your turn, or even when it is not.\n\nIf something bothers you, mention it early and kindly, or suggest a simple rota on the fridge. Remember that your flatmates may come from places with very different food habits and smells, and so do you. A little curiosity goes a long way: asking what someone is cooking is often the start of a friendship.",
+      },
+      {
+        heading: "Turn dinner into a social life",
+        text: "Cooking is one of the easiest ways to meet people abroad. Invite a few flatmates or classmates to a shared dinner where everyone brings one dish from home. Start a weekly pasta night, a dumpling-folding afternoon, or a Sunday breakfast. People who might never chat in a lecture will happily talk over a pot of food.\n\nMany universities and student unions also run cooking classes, community kitchens, or international food evenings, so check your students' union or welcome week programme. Sharing the food you grew up with is a lovely way to feel less homesick, and learning your flatmates' recipes means you will leave with a collection of meals from around the world.",
+      },
+      {
+        heading: "Eat well when money or time runs short",
+        text: "There will be weeks when deadlines pile up or the budget is tight. Keep a small emergency shelf: oats, rice, pasta, tinned beans or tomatoes, peanut butter, and a few frozen vegetables can carry you through. Fruit and vegetables do not need to be fresh to be good for you; frozen and tinned options count too.\n\nIf you are regularly struggling to afford food, you are not alone, and you do not have to manage it quietly. Many universities offer hardship funds, food pantries, or advice through the student support or international office. Asking for help is a sensible step, not a failure.",
+      },
+    ],
+    coverImage: "/images/blog/shared-kitchen-cooking.jpg",
+    coverImageAlt: "Friends laughing and dishing up food together in a bright kitchen",
+    unsplash: {
+      photographerName: "Sweet Life",
+      photographerUrl: "https://unsplash.com/@sweetlifediabetes",
+      photoUrl:
+        "https://unsplash.com/photos/a-group-of-people-preparing-food-in-a-kitchen-Fry0a2qcNkA",
+    },
+  },
+  {
     title: "Canada vs Australia for International Students",
     slug: "canada-vs-australia",
     description:

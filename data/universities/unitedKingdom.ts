@@ -423,6 +423,7 @@ export const unitedKingdomUniversities: University[] = [
     "Scholarships and financial support opportunities are available for international students.",
 
   officialWebsite: "https://www.leeds.ac.uk",
+  logo: "/logos/university-of-leeds.webp",
 
   admissionsWebsite:
     "https://www.leeds.ac.uk/study",
@@ -537,6 +538,7 @@ export const unitedKingdomUniversities: University[] = [
     "International students can apply for a variety of scholarships and bursaries.",
 
   officialWebsite: "https://www.durham.ac.uk",
+  logo: "/logos/durham-university.webp",
 
   admissionsWebsite:
     "https://www.durham.ac.uk/study",

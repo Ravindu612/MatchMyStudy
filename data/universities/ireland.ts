@@ -35,6 +35,7 @@ export const irelandUniversities: University[] = [
     "Numerous scholarships are available for outstanding international students.",
 
   officialWebsite: "https://www.tcd.ie",
+  logo: "/logos/trinity-college-dublin.webp",
 
   admissionsWebsite:
     "https://www.tcd.ie/study",

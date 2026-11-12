@@ -325,6 +325,7 @@ export const australiaUniversities: University[] = [
     "The university provides several scholarships for international students based on academic merit and programme requirements.",
 
   officialWebsite: "https://www.adelaide.edu.au",
+  logo: "/logos/university-of-adelaide.webp",
 
   admissionsWebsite:
     "https://international.adelaide.edu.au",

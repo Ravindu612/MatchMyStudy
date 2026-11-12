@@ -149,3 +149,58 @@ test("batch 3 dispositions stay stable for the next run", () => {
   assert.equal(universityLogoCredit("johns-hopkins-university"), null);
   assert.equal(universityLogoCredit("columbia-university"), null);
 });
+
+test("batch 4 dispositions stay stable for the next run", () => {
+  const batch = manifest.universities.filter((entry) => entry.batch === 4);
+  assert.deepEqual(
+    batch.map((entry) => [entry.slug, entry.status]).sort(),
+    [
+      ["carnegie-mellon-university", "blocked"],
+      ["city-university-of-hong-kong", "blocked"],
+      ["delft-university-of-technology", "blocked"],
+      ["duke-university", "blocked"],
+      ["durham-university", "completed"],
+      ["heidelberg-university", "blocked"],
+      ["korea-university", "blocked"],
+      ["kth-royal-institute-of-technology", "blocked"],
+      ["ku-leuven", "blocked"],
+      ["ludwig-maximilian-university-of-munich", "blocked"],
+      ["lund-university", "blocked"],
+      ["national-taiwan-university", "blocked"],
+      ["osaka-university", "blocked"],
+      ["shanghai-jiao-tong-university", "blocked"],
+      ["sorbonne-university", "blocked"],
+      ["the-hong-kong-polytechnic-university", "blocked"],
+      ["tokyo-institute-of-technology", "blocked"],
+      ["trinity-college-dublin", "completed"],
+      ["universite-paris-saclay", "blocked"],
+      ["university-of-adelaide", "completed"],
+      ["university-of-auckland", "completed"],
+      ["university-of-birmingham", "blocked"],
+      ["university-of-california-san-diego", "blocked"],
+      ["university-of-illinois-urbana-champaign", "blocked"],
+      ["university-of-leeds", "completed"],
+      ["university-of-malaya", "blocked"],
+      ["university-of-southampton", "blocked"],
+      ["university-of-technology-sydney", "blocked"],
+      ["university-of-texas-at-austin", "blocked"],
+      ["university-of-washington", "blocked"],
+      ["university-of-western-australia", "blocked"],
+      ["yonsei-university", "blocked"],
+      ["zhejiang-university", "blocked"],
+    ]
+  );
+  assert.match(universityLogoCredit("university-of-auckland") ?? "", /CC BY-SA 4.0/);
+  assert.match(universityLogoCredit("university-of-auckland") ?? "", /TheLoyalOrder/);
+  assert.match(universityLogoCredit("trinity-college-dublin") ?? "", /CC BY-SA 3.0/);
+  assert.match(universityLogoCredit("trinity-college-dublin") ?? "", /Kwekubo/);
+  assert.match(universityLogoCredit("university-of-adelaide") ?? "", /CC BY-SA 4.0/);
+  assert.match(universityLogoCredit("university-of-leeds") ?? "", /CC BY-SA 4.0/);
+  assert.match(universityLogoCredit("university-of-leeds") ?? "", /Booyabazooka/);
+  assert.equal(universityLogoCredit("durham-university"), null);
+  assert.equal(universityLogoCredit("shanghai-jiao-tong-university"), null);
+  assert.equal(universityLogoCredit("yonsei-university"), null);
+  assert.equal(universityLogoCredit("university-of-birmingham"), null);
+  assert.equal(manifest.audit.completed, 29);
+  assert.equal(manifest.audit.blocked, 65);
+});

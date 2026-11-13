@@ -1027,6 +1027,55 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "The Bike, the Bus, and Your Own Two Feet: Getting Around Your New City Abroad",
+    slug: "getting-around-your-new-city",
+    description:
+      "A friendly guide for international students to getting around a new city: learning the transport map, student travel discounts, cycling safely, walking at night, and the small habits that make a strange city feel like home.",
+    category: "Student Life",
+    date: "2026-11-13",
+    readTime: "6 min read",
+    intro:
+      "In your first week abroad, a short trip can feel like a small expedition. Which ticket do you need? Does this bus stop on request, or do you have to wave? Why is everyone else walking confidently in the bike lane you just stepped into?\n\nGetting around is one of those everyday skills nobody mentions in the brochure, yet it shapes your whole experience. Once you can move through a city without thinking about it, you go to more events, explore more neighbourhoods, and stop feeling like a visitor. Here is how to get there faster.",
+    sections: [
+      {
+        heading: "Learn the map before you need it",
+        text: "Before you arrive, spend an evening with your city's official public transport website or app. Find the routes between the three places you will visit most: your home, your main campus building, and the nearest big supermarket. Note the line names, roughly how often they run, and when the last service leaves at night.\n\nDownload the official journey planner and an offline map of the city, so you are not stuck if your phone has no data on day one. Many cities also publish accessibility information, service changes, and night routes on the same site. Five minutes of reading now saves a lot of standing at the wrong stop later.",
+      },
+      {
+        heading: "Work out the ticket system early",
+        text: "Every city seems to have its own logic. Some use a contactless bank card tapped at the gate. Some sell a rechargeable travel card. Others divide the city into zones, or ask you to validate a paper ticket before you board. Ticket inspectors in many places issue fines on the spot, and \"I didn't know\" rarely helps, so it is worth getting this right from the start.\n\nCheck whether students can get a discounted pass. In some countries the discount comes through your university, in others through the transport operator, and sometimes a semester ticket is already included in your student fees. Your university's international office or student union pages usually explain what applies to you and what proof of enrolment you need. Prices and rules change, so always use the official source rather than an old forum post.",
+      },
+      {
+        heading: "Get on a bike, carefully",
+        text: "In many university towns, the bicycle is the fastest way around. A second-hand bike, a university bike-share scheme, or a city rental can save time and money. Before you buy, ask the student union or local students where people buy used bikes honestly, because stolen bikes are sometimes resold cheaply to newcomers.\n\nLearn the local rules before your first ride: which side of the road to ride on, whether you can cycle on pavements, how to signal, and when lights are required. These differ by country, and the police do enforce them. Wear a helmet if it is required or simply if it makes you feel safer, and invest in a good lock. A cheap lock on a nice bike is an invitation. Lock the frame, not only the wheel, to something solid.",
+      },
+      {
+        heading: "Walking is underrated",
+        text: "Some of the best ways to learn a city happen on foot. Walk your route to campus at least once before classes start, so the first morning is not also your first time finding the building. Walking slowly shows you the cafés, the late-night shop, the quiet park bench, and the shortcut that no app mentions.\n\nIt is also how a place starts to feel like yours. After a few weeks, you will notice that you no longer check your phone at every corner. That moment, when the streets simply make sense, is a quiet milestone worth celebrating.",
+      },
+      {
+        heading: "Getting home safely at night",
+        text: "Plan your journey home before you go out, not at midnight when your battery is low. Know the last train or bus, whether night buses run, and roughly what a licensed taxi costs. Save the number of a reputable local taxi company, and if you use ride-hailing apps, check the car and driver details match before you get in.\n\nMany universities run safety services such as campus security escorts, safe-walk schemes, or late-night shuttles. Find out what yours offers and save the campus security number in your phone. Stick to well-lit, busier streets, share your location with a friend when you are travelling late, and trust your instincts. If a route or situation feels wrong, change it.",
+      },
+      {
+        heading: "Beyond the city: weekends and longer trips",
+        text: "Once you are settled, a whole region opens up. Regional trains and long-distance coaches are often far cheaper when booked in advance or with a youth or student railcard, where one exists. Look at the official rail operator's website for the discounts that apply in your country.\n\nIf you plan to cross borders, check your visa or residence permit conditions before you book, and keep your passport and residence card with you. Rules about travelling on a student permit differ a lot between countries, so read your immigration authority's guidance or ask your international office rather than assuming.",
+      },
+      {
+        heading: "Small habits that make it easier",
+        text: "Keep a little money on your travel card, so you are never stuck at a gate. Carry a portable charger, since your phone is your map, ticket, and lifeline all at once. Learn a few transport phrases in the local language, such as \"Does this go to...?\" and \"Which stop for...?\" People are usually kind to someone who asks.\n\nMost of all, be patient with yourself. Everyone takes the wrong bus at least once. You will get lost, laugh about it, and discover a new street because of it. Before long, a friend will arrive from home, and you will be the one confidently showing them the way.",
+      },
+    ],
+    coverImage: "/images/blog/getting-around-your-new-city.jpg",
+    coverImageAlt: "Two students cycling past city buildings in Kyoto, blurred with motion",
+    unsplash: {
+      photographerName: "Len Crockett",
+      photographerUrl: "https://unsplash.com/@lencrockett",
+      photoUrl:
+        "https://unsplash.com/photos/two-students-cycle-past-buildings-in-motion-blur-ZtNdSrmiGq8",
+    },
+  },
+  {
     title: "Canada vs Australia for International Students",
     slug: "canada-vs-australia",
     description:

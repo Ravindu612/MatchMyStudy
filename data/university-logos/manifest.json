@@ -3,11 +3,11 @@
   "purpose": "Batch tracker for authentic university logos. Future batches should take the next pending slugs and must not redo completed or blocked entries unless the notes say the evidence changed.",
   "audit": {
     "total": 637,
-    "completed": 29,
-    "pending": 543,
-    "blocked": 65,
-    "workingLogoFiles": 29,
-    "missing": 608,
+    "completed": 30,
+    "pending": 532,
+    "blocked": 75,
+    "workingLogoFiles": 30,
+    "missing": 607,
     "brokenLiveReferences": 0,
     "commentedOutPaths": 3,
     "renderers": [
@@ -25,11 +25,11 @@
     ]
   },
   "nextPendingSlugs": [
-    "purdue-university",
-    "pennsylvania-state-university",
-    "free-university-of-berlin",
-    "postech",
-    "rwth-aachen-university"
+    "tohoku-university",
+    "university-of-nottingham",
+    "boston-university",
+    "technical-university-of-denmark",
+    "university-of-zurich"
   ],
   "universities": [
     {
@@ -1694,14 +1694,15 @@
       "officialWebsite": "https://www.purdue.edu",
       "prominenceRank": 88,
       "qsRank": 89,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Old_Purdue_Seal.png",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "Purdue's brand and trademark pages were not a licence to copy the marks, and no permission was requested. Official artwork was not downloaded.",
+      "status": "blocked",
+      "batch": 5,
+      "notes": "Reviewed in batch 5 and not used. File:Purdue University system logo.svg, File:Purdue University wordmark.svg, and File:Purdue University signature mark black.svg are official marks tagged only PD-textlogo (sources brand.purdue.edu, a Purdue standards PDF, and the Purdue artwork sheet). Purdue did not grant those tags. File:Purdue.png is the athletic Block P, tagged CC BY-SA 4.0 as own work by the uploader, not by Purdue. File:Old Purdue Seal.png is the 1909–1968 griffin seal, tagged PD-US-expired, but the file is a blackened copy of a 2016 Purdue newsroom image, not a scan of the 1909–10 catalogue. Do not retry these files unless a verified public-domain publication or a Purdue licence is found."
     },
     {
       "id": "pennsylvania-state-university",
@@ -1712,14 +1713,15 @@
       "officialWebsite": "https://www.psu.edu",
       "prominenceRank": 89,
       "qsRank": 89,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Penn_state_university_textlogo.png",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "No terms permitting redistribution of the Pennsylvania State University mark were identified, and none were requested. Official assets were not downloaded.",
+      "status": "blocked",
+      "batch": 5,
+      "notes": "Reviewed in batch 5 and not used. File:Penn state university textlogo.png is a 2024 wordmark from psu.edu, tagged only PD-textlogo. File:Penn State text logo.svg is the 1983–2011 athletics wordmark, traced from a sports-logo site and tagged PD-textlogo. File:WPSU Penn State logo 2016.svg is a station logo, not the university seal. No seal from a verified pre-1930 publication was found. Do not retry these wordmarks."
     },
     {
       "id": "university-of-alberta",
@@ -1749,14 +1751,15 @@
       "officialWebsite": "https://www.fu-berlin.de",
       "prominenceRank": 91,
       "qsRank": 97,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Freie_Universit%C3%A4t_Berlin_Logo_05.2024.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "The Free University of Berlin logo and seal were not licensed for this directory, and no permission was requested. Official assets were not downloaded.",
+      "status": "blocked",
+      "batch": 5,
+      "notes": "Reviewed in batch 5 and not used. File:Freie Universität Berlin Logo 05.2024.svg is the May 2024 wordmark from fu-berlin.de, author the university, tagged only PD-textlogo. File:Siegel FU Berlin.svg is sourced from Einst und Jetzt, volume 33 (1988), page 173, and tagged PD-Coa-Germany. That template is an uploader reading of German copyright law, and the 1988 yearbook illustration is not a verified public-domain publication. File:Siegel-freie-universitaet-2000px.jpg is a clean digital seal tagged CC BY-SA 4.0 as own work while editing Korean Wikipedia; the university did not grant that tag. File:2005-02-06 Freie Universität Berlin - Siegel - bearbeitet.jpg is an artistic reworking, not the seal. Do not retry these files."
     },
     {
       "id": "postech",
@@ -1767,14 +1770,15 @@
       "officialWebsite": "https://www.postech.ac.kr",
       "prominenceRank": 92,
       "qsRank": 98,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Postech_Logotype.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "No terms permitting redistribution of the POSTECH logotype were identified, and none were requested. Official assets were not downloaded.",
+      "status": "blocked",
+      "batch": 5,
+      "notes": "Reviewed in batch 5 and not used. File:Postech Logotype.svg is the university logotype, captured from a conference site, author Pohang University of Science and Technology, tagged only PD-textlogo. Commons title searches returned no other POSTECH emblem. Do not retry this logotype."
     },
     {
       "id": "rwth-aachen-university",
@@ -1785,14 +1789,15 @@
       "officialWebsite": "https://www.rwth-aachen.de",
       "prominenceRank": 93,
       "qsRank": 99,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:RWTH_Logo.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "RWTH Aachen did not license its logo for this directory. A file sent to Wikipedia for use there is not a licence for this directory. No permission was requested. Official assets were not downloaded.",
+      "status": "blocked",
+      "batch": 5,
+      "notes": "Reviewed in batch 5 and not used. File:RWTH Logo.svg, File:RWTH Logo 2.svg, File:RWTH Logo 3.svg, and File:RWTH Aachen-Logo 3.svg are the official wordmark, tagged only PD-textlogo, with sources on rwth-aachen.de or an Inkscape trace of that mark. File:RWTH-logo.png says the university press office sent it for use on Wikipedia under the file's licence conditions; the file is still tagged only PD-textlogo, not a permission template. Do not retry these wordmarks."
     },
     {
       "id": "university-of-copenhagen",
@@ -1803,14 +1808,15 @@
       "officialWebsite": "https://www.ku.dk",
       "prominenceRank": 94,
       "qsRank": 100,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Ku-ucph-logo-svg.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "No terms permitting redistribution of the University of Copenhagen logo were identified, and none were requested. Official assets were not downloaded.",
+      "status": "blocked",
+      "batch": 5,
+      "notes": "Reviewed in batch 5 and not used. File:Ku-ucph-logo-svg.svg is tagged CC BY-SA 4.0 as Canconier's own work, but the SVG is an autotrace of the seal (decimal path coordinates, empty paths, two near-red fills), not an independent heraldic drawing. File:Sigillum universitatis hafniensis a Christiano 3 rege instauratae 1537 Krystalgade Copenhagen Denmark.jpg is Jebulon's CC0 photograph of the stone relief on a brick wall, and File:Copenhagen relief.jpg is a CC BY 2.0 photograph of the same kind of carving. Those are pictures of a building, not a logo. Do not retry the traced seal."
     },
     {
       "id": "king-fahd-university-of-petroleum-and-minerals",
@@ -1821,14 +1827,15 @@
       "officialWebsite": "https://www.kfupm.edu.sa",
       "prominenceRank": 95,
       "qsRank": 101,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:KFUPM_seal.png",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "The KFUPM seal file is taken from kfupm.edu.sa. The university did not license it for this directory, and no permission was requested.",
+      "status": "blocked",
+      "batch": 5,
+      "notes": "Reviewed in batch 5 and not used. File:KFUPM seal.png gives the source as kfupm.edu.sa and the author as the university creative team, and is tagged CC BY-SA 4.0. The university did not grant that tag. Do not retry this file."
     },
     {
       "id": "karlsruhe-institute-of-technology",
@@ -1839,14 +1846,15 @@
       "officialWebsite": "https://www.kit.edu",
       "prominenceRank": 96,
       "qsRank": 102,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Logo_KIT.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "No terms permitting redistribution of the Karlsruhe Institute of Technology logo were identified, and none were requested. Official assets were not downloaded.",
+      "status": "blocked",
+      "batch": 5,
+      "notes": "Reviewed in batch 5 and not used. File:Logo KIT.svg is the KIT wordmark, tagged only PD-textlogo. File:Unika.svg is the former University of Karlsruhe mark, taken from a TU9 PDF and tagged only PD-textlogo. File:German Medal FRIDERICIANA 1825 1925, obverse.jpg is a 1925 commemorative medal (a runner and the arms of Baden), not the KIT logo. Do not retry the wordmarks."
     },
     {
       "id": "uppsala-university",
@@ -1857,14 +1865,15 @@
       "officialWebsite": "https://www.uu.se",
       "prominenceRank": 97,
       "qsRank": 103,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Uppsala_universitet_vapen.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "The coat of arms file cannot be redistributed under a single licence that satisfies every element it includes. Official Uppsala University logo files were not used, and no permission was requested.",
+      "status": "blocked",
+      "batch": 5,
+      "notes": "Reviewed in batch 5 and not used. File:Uppsala universitet vapen.svg is Lokal_Profil's 2014 drawing from the blazon, tagged CC BY-SA 2.5. It includes File:Globe icon 2.svg (CC BY-SA 3.0 only) and oak and laurel from File:Coat of Arms of Alcalá de Henares.svg (CC BY-SA 3.0 only). A CC BY-SA 2.5 derivative must stay under 2.5, and a CC BY-SA 3.0 derivative cannot be relicensed under 2.5, so the combined file has no single licence that covers every part. The sun element is dual-licensed, including CC BY-SA 2.5, and is not the conflict. Do not retry this file unless the element licences are reconciled."
     },
     {
       "id": "utrecht-university",
@@ -1875,14 +1884,15 @@
       "officialWebsite": "https://www.uu.nl",
       "prominenceRank": 98,
       "qsRank": 105,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Utrecht-univesrsity-logo.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "attributionRequired": false,
+      "restrictions": "The wordmark is taken from Utrecht University's brand-policy logo page. That page is not a licence to copy the logo. No permission was requested.",
+      "status": "blocked",
+      "batch": 5,
+      "notes": "Reviewed in batch 5 and not used. File:Utrecht-univesrsity-logo.svg is the wordmark from https://www.uu.nl/en/organisation/corporate-identity/brand-policy/logo, tagged only PD-textlogo. File:Minerva met pedelstaf en wapenschild van de Universiteit Utrecht, RP-P-OB-23.383.jpg is a CC0 Rijksmuseum print of 1724–1769 showing Minerva holding the shield. It is an allegory, not the university logo. Do not retry the wordmark."
     },
     {
       "id": "university-of-sheffield",
@@ -1893,14 +1903,15 @@
       "officialWebsite": "https://www.sheffield.ac.uk",
       "prominenceRank": 99,
       "qsRank": 105,
-      "logoSourceUrl": null,
-      "assetPath": null,
-      "license": null,
-      "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Shield_of_the_University_of_Sheffield.svg",
+      "assetPath": "/logos/university-of-sheffield.webp",
+      "license": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0). Wikimedia Commons LicenseShortName is CC BY-SA 4.0; attribution is required. Shadowssettle, own heraldic work, 11 May 2020, drawn from the blazon, not from a University of Sheffield brand file. Blazon: azure, an open book proper, edged or, inscribed Disce Doce, between in fess two sheaves of eight arrows interlaced saltireways and banded argent, in chief an open crown or, and in base a rose argent. Incorporated elements: Ducal crown (heraldic).svg by Wikimandia (CC BY-SA 4.0), based on Heraldic Crown of Spanish Marqueses (Variant 1).svg by Heralder (CC BY-SA 3.0); Yorkshire_rose.svg by Booyabazooka (CC BY-SA 3.0; the file also carries GFDL with the Commons relicensing migration, and Commons reports LicenseShortName CC BY-SA 3.0); SVG coat of arms elements - books 00.svg by Eugenio Hansen, OFS (CC0, https://creativecommons.org/publicdomain/zero/1.0/). CC BY-SA 3.0 elements may be adapted under CC BY-SA 4.0. The WebP is a raster of that SVG at 320px on the long side, with no redraw. ShareAlike applies to the raster.",
+      "attribution": "Arms by Shadowssettle, via Wikimedia Commons, CC BY-SA 4.0. Crown by Wikimandia. Rose by Booyabazooka.",
+      "attributionRequired": true,
+      "restrictions": "Commons marks the file as trademarked. Official University of Sheffield logo files were not used. This shield is used only to identify the university on its own cards and profile.",
+      "status": "completed",
+      "batch": 5,
+      "notes": "Upload URL: https://upload.wikimedia.org/wikipedia/commons/3/34/Shield_of_the_University_of_Sheffield.svg. SVG had no script or external image references (internal fragment links only). The book reads Disce Doce. File:University of Sheffield Coat of Arms from The Book of Public Arms.png is a 1915 Fox-Davies extract, but the scan is broken by black blotches and was not used."
     },
     {
       "id": "tohoku-university",

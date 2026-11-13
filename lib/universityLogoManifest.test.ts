@@ -201,6 +201,36 @@ test("batch 4 dispositions stay stable for the next run", () => {
   assert.equal(universityLogoCredit("shanghai-jiao-tong-university"), null);
   assert.equal(universityLogoCredit("yonsei-university"), null);
   assert.equal(universityLogoCredit("university-of-birmingham"), null);
-  assert.equal(manifest.audit.completed, 29);
-  assert.equal(manifest.audit.blocked, 65);
+});
+
+test("batch 5 dispositions stay stable for the next run", () => {
+  const batch = manifest.universities.filter((entry) => entry.batch === 5);
+  assert.deepEqual(
+    batch.map((entry) => [entry.slug, entry.status]).sort(),
+    [
+      ["free-university-of-berlin", "blocked"],
+      ["karlsruhe-institute-of-technology", "blocked"],
+      ["king-fahd-university-of-petroleum-and-minerals", "blocked"],
+      ["pennsylvania-state-university", "blocked"],
+      ["postech", "blocked"],
+      ["purdue-university", "blocked"],
+      ["rwth-aachen-university", "blocked"],
+      ["university-of-copenhagen", "blocked"],
+      ["university-of-sheffield", "completed"],
+      ["uppsala-university", "blocked"],
+      ["utrecht-university", "blocked"],
+    ]
+  );
+  assert.match(universityLogoCredit("university-of-sheffield") ?? "", /CC BY-SA 4.0/);
+  assert.match(universityLogoCredit("university-of-sheffield") ?? "", /Shadowssettle/);
+  assert.match(universityLogoCredit("university-of-sheffield") ?? "", /Booyabazooka/);
+  assert.match(universityLogoCredit("university-of-sheffield") ?? "", /Wikimandia/);
+  assert.equal(universityLogoCredit("purdue-university"), null);
+  assert.equal(universityLogoCredit("pennsylvania-state-university"), null);
+  assert.equal(universityLogoCredit("free-university-of-berlin"), null);
+  assert.equal(universityLogoCredit("postech"), null);
+  assert.equal(universityLogoCredit("rwth-aachen-university"), null);
+  assert.equal(universityLogoCredit("uppsala-university"), null);
+  assert.equal(manifest.audit.completed, 30);
+  assert.equal(manifest.audit.blocked, 75);
 });

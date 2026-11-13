@@ -500,6 +500,7 @@ export const unitedKingdomUniversities: University[] = [
     "Scholarships are available for eligible international students.",
 
   officialWebsite: "https://www.sheffield.ac.uk",
+  logo: "/logos/university-of-sheffield.webp",
 
   admissionsWebsite:
     "https://www.sheffield.ac.uk/study",

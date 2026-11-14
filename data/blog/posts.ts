@@ -1076,6 +1076,55 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "Six Accents, One Deadline: Surviving Your First Group Project Abroad",
+    slug: "group-projects-abroad",
+    description:
+      "A warm, practical guide for international students to group projects abroad: getting started well, splitting work fairly, working across cultures and time zones, handling a teammate who disappears, and turning teamwork into a real skill.",
+    category: "Student Life",
+    date: "2026-11-14",
+    readTime: "6 min read",
+    intro:
+      "Somewhere in your first semester, a lecturer will smile and say the words: \"For this assignment, you'll work in groups.\" Suddenly you are sharing a grade with four people you met ten minutes ago. One of them is already planning a colour scheme, one has not said a word, and one lives two buses away.\n\nGroup projects are a big part of university life in many countries, and they can feel strange if you come from a system built around individual exams. The good news is that they are a learnable skill, and done well, they are one of the best ways to make friends, improve your language, and practise exactly what employers ask about in interviews. Here is how to make yours work.",
+    sections: [
+      {
+        heading: "Start with a proper first meeting",
+        text: "The first meeting sets the tone for everything after it, so do not let it be a rushed chat after class. Agree on a time, find a quiet room or a video call, and spend the first few minutes on simple introductions: names, what everyone is studying, and what else is on their plate this term.\n\nThen read the assignment brief together, line by line. Highlight the deadline, the word count or length, how it will be marked, and whether there is an individual part or a peer review. Misreading the brief is one of the most common reasons groups lose marks, and it is much easier to catch when five people are reading it at once. If something is unclear, agree who will email the lecturer to ask.",
+      },
+      {
+        heading: "Split the work so it is fair and visible",
+        text: "Break the project into clear pieces, such as research, writing particular sections, data or analysis, slides, and final editing. Let people choose parts that suit their strengths, but try to share the less exciting jobs too. Formatting references at midnight should not always fall to the same person.\n\nWrite everything down in one shared place: a simple document or task list with each job, who owns it, and when it is due. Set your internal deadline a few days before the real one, so there is time to put the pieces together and fix anything that does not fit. When the plan is visible, nobody has to nag, and nobody can quietly forget.",
+      },
+      {
+        heading: "Working across cultures",
+        text: "An international group is a mix of habits as well as accents. In some places, students are taught to disagree openly and debate every idea. In others, it is polite to stay quiet until asked, or to avoid criticising a classmate's work in front of others. Some people treat a meeting time as exact; others see it as a rough guide. None of these is wrong, but they can easily be misread as rudeness or laziness.\n\nTalk about it early and kindly. Ask how people like to give feedback, and make space for quieter members by going round the table or inviting written comments in the shared document. If you are the quiet one, remember that your perspective is often exactly what the group is missing. A short message like \"I have an idea for section two, can I share it?\" is a perfectly good start.",
+      },
+      {
+        heading: "Language is a team effort",
+        text: "If you are working in a language that is not your first, group work can feel intimidating. You might worry that you speak too slowly, or that your writing will need more editing than everyone else's. Try to see it the other way round: a group is a safe place to practise, and most classmates are far more patient than you expect.\n\nFor native speakers in the group, small habits help everyone. Speak clearly, avoid heavy slang, summarise decisions in writing after each meeting, and check understanding without making it awkward. A shared summary at the end of every meeting, listing who does what by when, removes a lot of confusion for everybody.",
+      },
+      {
+        heading: "Pick your tools and your rhythm",
+        text: "Keep it simple. Agree on one place to chat, one place to store files, and one document where the actual work lives. Too many apps means messages get lost. Decide how quickly people are expected to reply, and respect evenings and weekends where you can.\n\nIf some members are commuting, working part-time, or still in a different time zone at the start of term, choose a regular meeting slot that works for most people and record or summarise it for anyone who cannot attend. Short, regular check-ins usually work better than one long, panicked meeting the night before the deadline.",
+      },
+      {
+        heading: "When someone goes quiet",
+        text: "Almost every student has a story about the teammate who disappeared. Before assuming the worst, reach out privately and kindly. People go quiet because they are ill, overwhelmed, homesick, or confused about the task, and a friendly message often brings them back.\n\nIf it continues, keep notes of what was agreed and what was delivered, and redistribute the work so the project is not at risk. Many universities expect groups to try to solve problems themselves first, but they also want to know early if something is seriously wrong. Check your course handbook for how group issues and peer assessment work, and speak to your tutor before the deadline, not after the marks come out.",
+      },
+      {
+        heading: "Finish strong, and take the skill with you",
+        text: "Leave time for one person, or a pair, to read the whole project from start to finish so it sounds like one piece of work rather than five. Check that everything matches the brief, references are consistent, and everyone has seen the final version before it is submitted. Make sure your work is genuinely your own and follows your university's academic integrity rules; shared projects still have rules about copying and using sources.\n\nAfterwards, take a moment to notice what you learned. You planned work with strangers, solved problems across cultures, and delivered under pressure, possibly in a second language. That is a real story to tell in a job interview or scholarship application. And quite often, the people you met over a messy shared document become the friends you study with all year.",
+      },
+    ],
+    coverImage: "/images/blog/group-projects-abroad.jpg",
+    coverImageAlt: "A diverse group of university students gathered around a laptop in a lecture hall, smiling as they discuss a project",
+    unsplash: {
+      photographerName: "Vitaly Gariev",
+      photographerUrl: "https://unsplash.com/@silverkblack",
+      photoUrl:
+        "https://unsplash.com/photos/diverse-group-of-students-gathered-around-a-laptop-8gAbl776pc0",
+    },
+  },
+  {
     title: "Canada vs Australia for International Students",
     slug: "canada-vs-australia",
     description:

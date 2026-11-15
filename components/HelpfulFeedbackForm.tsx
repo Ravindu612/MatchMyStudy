@@ -3,9 +3,12 @@
 import { FormEvent, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { getSupabase } from "@/lib/supabase";
 import {
+  FEEDBACK_PRIVACY_NOTE,
   FEEDBACK_RATINGS,
+  FEEDBACK_RETRY_MESSAGE,
+  FEEDBACK_UNAVAILABLE_MESSAGE,
   isFeedbackRating,
-  sanitizeFeedbackSource,
+  saveSiteFeedback,
   type FeedbackRating,
 } from "@/lib/siteFeedback";
 
@@ -44,6 +47,7 @@ export default function HelpfulFeedbackForm({ source }: { source: string }) {
   const [rating, setRating] = useState<FeedbackRating | "">("");
   const [company, setCompany] = useState("");
   const [status, setStatus] = useState<SubmitStatus>("idle");
+  const [problem, setProblem] = useState<"unavailable" | "retry" | null>(null);
   const saved = useSyncExternalStore(
     subscribeToSubmission,
     alreadySubmitted,
@@ -76,23 +80,29 @@ export default function HelpfulFeedbackForm({ source }: { source: string }) {
     }
 
     lock.current = true;
+    setProblem(null);
     setStatus("submitting");
 
     const client = getSupabase();
 
     if (!client) {
       lock.current = false;
+      setProblem("unavailable");
       setStatus("error");
       return;
     }
 
-    const { error } = await client.from("site_feedback").insert({
+    // Insert only. Chaining .select() asks the database to return the row,
+    // and this table does not allow visitors to read ratings.
+    const result = await saveSiteFeedback(
+      (row) => client.from("site_feedback").insert(row),
       rating,
-      source: sanitizeFeedbackSource(source),
-    });
+      source
+    );
 
-    if (error) {
+    if (!result.ok) {
       lock.current = false;
+      setProblem(result.problem);
       setStatus("error");
       return;
     }
@@ -126,7 +136,7 @@ export default function HelpfulFeedbackForm({ source }: { source: string }) {
         Quick feedback
       </h2>
       <p className="mx-auto mt-3 max-w-xl text-center leading-7 text-slate-600">
-        Pick the option that fits. Nothing else is stored.
+        {FEEDBACK_PRIVACY_NOTE}
       </p>
       <fieldset className="mt-8">
         <legend className="sr-only">How helpful is MatchMyStudy?</legend>
@@ -162,6 +172,7 @@ export default function HelpfulFeedbackForm({ source }: { source: string }) {
         </div>
       </fieldset>
 
+      {/* Spam trap. Kept off-screen. A filled value is ignored and nothing is saved. */}
       <div className="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
         <label htmlFor="feedback-company">Company</label>
         <input
@@ -176,8 +187,15 @@ export default function HelpfulFeedbackForm({ source }: { source: string }) {
       </div>
 
       {status === "error" && (
-        <p className="mt-4 text-sm leading-6 text-red-700" role="alert">
-          We couldn&apos;t save that just now. Please try again.
+        <p
+          className={`mt-4 text-sm leading-6 ${
+            problem === "unavailable" ? "text-slate-600" : "text-red-700"
+          }`}
+          role="alert"
+        >
+          {problem === "unavailable"
+            ? FEEDBACK_UNAVAILABLE_MESSAGE
+            : FEEDBACK_RETRY_MESSAGE}
         </p>
       )}
 

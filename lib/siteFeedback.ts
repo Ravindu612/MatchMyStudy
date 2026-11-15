@@ -40,3 +40,93 @@ export function sanitizeFeedbackSource(value: string | undefined | null) {
 export function helpfulPath(source: string) {
   return `/helpful?source=${encodeURIComponent(sanitizeFeedbackSource(source))}`;
 }
+
+export const FEEDBACK_PRIVACY_NOTE =
+  "Pick the option that fits. Nothing else is stored.";
+
+export const FEEDBACK_UNAVAILABLE_MESSAGE =
+  "Feedback can't be saved right now. Nothing was stored.";
+
+export const FEEDBACK_RETRY_MESSAGE =
+  "We couldn't save that just now. Please try again.";
+
+export type FeedbackInsertRow = {
+  rating: FeedbackRating;
+  source: string;
+};
+
+/** The only fields written. There is no name, email, or free text. */
+export function feedbackInsertRow(
+  rating: FeedbackRating,
+  source: string
+): FeedbackInsertRow {
+  return {
+    rating,
+    source: sanitizeFeedbackSource(source),
+  };
+}
+
+export type FeedbackWriteError = {
+  code?: string;
+  message?: string;
+};
+
+export type FeedbackSaveProblem = "unavailable" | "retry";
+
+/**
+ * Missing table, missing column, or no insert permission will not start
+ * working if the visitor clicks again. Other failures might.
+ */
+export function classifyFeedbackSaveError(
+  error: FeedbackWriteError
+): FeedbackSaveProblem {
+  const code = error.code ?? "";
+
+  if (
+    code === "PGRST205" ||
+    code === "PGRST204" ||
+    code === "42P01" ||
+    code === "42703" ||
+    code === "42501"
+  ) {
+    return "unavailable";
+  }
+
+  const message = error.message ?? "";
+
+  if (
+    /could not find the table/i.test(message) ||
+    /schema cache/i.test(message) ||
+    /permission denied for table/i.test(message)
+  ) {
+    return "unavailable";
+  }
+
+  return "retry";
+}
+
+type FeedbackInsert = (row: FeedbackInsertRow) => PromiseLike<{
+  error: FeedbackWriteError | null;
+}>;
+
+export async function saveSiteFeedback(
+  insert: FeedbackInsert,
+  rating: string,
+  source: string
+): Promise<{ ok: true } | { ok: false; problem: FeedbackSaveProblem }> {
+  if (!isFeedbackRating(rating)) {
+    return { ok: false, problem: "retry" };
+  }
+
+  try {
+    const { error } = await insert(feedbackInsertRow(rating, source));
+
+    if (!error) {
+      return { ok: true };
+    }
+
+    return { ok: false, problem: classifyFeedbackSaveError(error) };
+  } catch {
+    return { ok: false, problem: "retry" };
+  }
+}

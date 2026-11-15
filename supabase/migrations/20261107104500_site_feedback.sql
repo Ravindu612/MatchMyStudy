@@ -3,12 +3,18 @@
 --
 -- Safe to run more than once.
 --
+-- The website cannot save Quick feedback until this file has been run in
+-- the Supabase SQL Editor. Paste the whole file into a new query and run it.
+-- No Vercel setting changes are required.
+--
 -- Rows are ratings from /helpful. There is no name, email, or account.
 -- source is the page or entry point (home, direct, /australia, /blog/slug).
 --
 -- anon and authenticated may insert only. There is no public read, update,
--- or delete policy. Review rows in the Supabase dashboard; service_role
--- bypasses row level security.
+-- or delete policy. Do not add one: visitors must not be able to read ratings.
+-- The form inserts without asking for the new row back (no RETURNING).
+-- Review rows in the Supabase dashboard; service_role bypasses row level
+-- security.
 -- =====================================================================
 
 create table if not exists public.site_feedback (
@@ -68,6 +74,10 @@ create index if not exists site_feedback_created_at_idx
 
 alter table public.site_feedback enable row level security;
 
+-- Supabase already grants this. Repeating it keeps a fresh database able
+-- to see the table without opening any other access.
+grant usage on schema public to anon, authenticated, service_role;
+
 revoke all on table public.site_feedback from public;
 revoke all on table public.site_feedback from anon, authenticated;
 grant insert on table public.site_feedback to anon, authenticated;
@@ -80,3 +90,6 @@ create policy site_feedback_insert
   for insert
   to anon, authenticated
   with check (true);
+
+-- Ask the API to notice the new table. Harmless if nothing is listening.
+notify pgrst, 'reload schema';

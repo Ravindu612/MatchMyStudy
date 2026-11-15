@@ -1125,6 +1125,55 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "Staying for the Holidays: Making the Most of Winter Break When You Can't Fly Home",
+    slug: "winter-break-abroad",
+    description:
+      "A warm, practical guide for international students spending the winter holidays abroad: planning ahead, finding company, keeping traditions alive, using the quiet weeks well, and looking after yourself when campus goes silent.",
+    category: "Student Life",
+    date: "2026-11-15",
+    readTime: "6 min read",
+    intro:
+      "In late November, the conversations around campus start to change. Classmates compare flight prices, someone is counting down the days until their mum's cooking, and the halls slowly fill with suitcases by the door. If you are not going home this year, because of cost, distance, a part-time job, or simply timing, it is easy to feel like you are the only one staying behind.\n\nYou are not. Every winter, plenty of international students spend the holidays in their study country, and many of them later say it was one of their favourite parts of the year. A quiet campus, a new city in winter, and a little freedom from deadlines can be a gift, if you plan for it. Here is how to make your winter break feel less like waiting and more like living.",
+    sections: [
+      {
+        heading: "Plan before the campus empties",
+        text: "The weeks before the break are busy with assignments and exams, so it is tempting to leave holiday planning until the last day of term. Try not to. Once most students leave, you may find that some cafés, libraries, and student services keep shorter hours or close for a while.\n\nA few simple checks help a lot. Find out which campus buildings stay open and when, whether your accommodation stays open the whole time or needs you to register if you are staying, and how shops and public transport run on public holidays where you live. Stock up on basics before the busiest days, and note an emergency contact number for your accommodation and for your university's out-of-hours support. Ten minutes of planning now saves a stressful evening later.",
+      },
+      {
+        heading: "Find your holiday people",
+        text: "You will rarely be the only one staying. Ask around in your course group chat, your hall, or your student society: \"Who is around over the break?\" usually brings more replies than you expect. Many universities, international student offices, student unions, and local faith or community groups also organise holiday meals, walks, or social evenings specially for students who are not travelling. Check your university's news page or noticeboards in early December.\n\nIf a local friend or classmate invites you to their family's celebration, say yes if you feel comfortable. It is a generous offer, and a wonderful window into local traditions. Bring something small, like a sweet from home, flowers, or a card, and do not worry about getting every custom right. Curiosity and a thank-you go a long way.",
+      },
+      {
+        heading: "Bring your own traditions with you",
+        text: "Holidays far from home can feel strange because the rhythm is different. Maybe your biggest celebration falls at another time of year, or the dishes and songs you grew up with are nowhere to be found. You can recreate a small piece of home, even in a shared kitchen.\n\nCook one dish that tastes like your family's table and share it with friends from other countries. Ask them to bring something from theirs. These mixed holiday meals, with five cuisines and a slightly chaotic table, are often the ones students remember most. Schedule a video call with family at a time that works across your time zones, and if you can, let them see the meal or the decorations. It helps them feel close to your new life too.",
+      },
+      {
+        heading: "Explore your city in its winter clothes",
+        text: "During term, most students only know the route between their room, the lecture hall, and the supermarket. The break is your chance to really meet the city. Look up seasonal markets, free museum days, light displays, concerts, and winter walks. Local tourism and city council websites usually list events, and many are free or cheap.\n\nIf you want to travel further, a short trip by train or bus to a nearby town can be lovely, but check your study visa or residence permit rules before you leave the country, and make sure your passport and any travel documents are valid for the trip and your return. Your university's international office can tell you what documents you need to re-enter. When in doubt, stay a little closer to home and save the big trips for the summer.",
+      },
+      {
+        heading: "Use the quiet weeks without burning out",
+        text: "A long break can be a great time to catch up on reading, start a dissertation plan, update your CV, or practise the local language. It can also slide into sleeping until noon and scrolling until three. Both extremes are common, and neither feels good for long.\n\nTry a light routine: get up around the same time, go outside every day while it is light, and choose one or two small goals for the week rather than a huge list. If you have a part-time job over the break, make sure your hours stay within the work limits that apply to you, and check them with your university or the official immigration website rather than relying on friends. Remember that rest is part of the plan. You have worked hard this term, and your brain needs real time off before the next one starts.",
+      },
+      {
+        heading: "Be gentle with the harder days",
+        text: "Even with good plans, some days will feel lonely, especially around big family celebrations when your social media is full of other people's homecomings. That feeling is normal, and it usually passes. Keep in touch with a few friends who are also around, plan something small for the days you expect to be hardest, and limit scrolling if it makes you feel worse.\n\nIf the low mood stays or gets heavy, reach out. Many universities keep wellbeing or counselling services available over the holidays, sometimes with reduced hours or a phone line, and local health services stay open for urgent needs. Asking for help is a sensible step, not a failure.",
+      },
+      {
+        heading: "Start the new term a little ahead",
+        text: "In the final days of the break, take an hour to look ahead. Check your new timetable, any deadlines in the first few weeks, and whether there is anything to register for. Tidy your room, restock your kitchen, and get your sleep back to a normal rhythm before classes return.\n\nWhen your friends come back with stories from home, you will have your own: the market you discovered, the meal you cooked for eight people from six countries, the city you saw under winter lights. Staying for the holidays does not mean missing out. Often, it is the moment a foreign city quietly starts to feel like yours.",
+      },
+    ],
+    coverImage: "/images/blog/winter-break-abroad.jpg",
+    coverImageAlt: "People browsing warmly lit market stalls beneath Christmas lights on a winter night in Bruges",
+    unsplash: {
+      photographerName: "Matt Seymour",
+      photographerUrl: "https://unsplash.com/@mattseymour",
+      photoUrl:
+        "https://unsplash.com/photos/people-walking-on-street-with-christmas-decor-store-1O0lbPKl1vM",
+    },
+  },
+  {
     title: "Canada vs Australia for International Students",
     slug: "canada-vs-australia",
     description:

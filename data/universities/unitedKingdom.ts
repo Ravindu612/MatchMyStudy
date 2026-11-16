@@ -578,6 +578,7 @@ export const unitedKingdomUniversities: University[] = [
     "The university offers merit-based scholarships and financial support opportunities.",
 
   officialWebsite: "https://www.nottingham.ac.uk",
+  logo: "/logos/university-of-nottingham.webp",
 
   admissionsWebsite:
     "https://www.nottingham.ac.uk/study",
@@ -692,6 +693,7 @@ export const unitedKingdomUniversities: University[] = [
     "Scholarships are available for eligible international students.",
 
   officialWebsite: "https://www.ncl.ac.uk",
+  logo: "/logos/newcastle-university-uk.webp",
 
   admissionsWebsite:
     "https://www.ncl.ac.uk/study",
@@ -730,6 +732,7 @@ export const unitedKingdomUniversities: University[] = [
     "Scholarships and bursaries are available for international students.",
 
   officialWebsite: "https://www.york.ac.uk",
+  logo: "/logos/university-of-york.webp",
 
   admissionsWebsite:
     "https://www.york.ac.uk/study",
@@ -768,6 +771,7 @@ export const unitedKingdomUniversities: University[] = [
     "The university offers merit-based scholarships and funding opportunities for international students.",
 
   officialWebsite: "https://www.exeter.ac.uk",
+  logo: "/logos/university-of-exeter.webp",
 
   admissionsWebsite:
     "https://www.exeter.ac.uk/study",
@@ -844,6 +848,7 @@ export const unitedKingdomUniversities: University[] = [
     "Scholarships and bursaries are available for eligible international students.",
 
   officialWebsite: "https://www.liverpool.ac.uk",
+  logo: "/logos/university-of-liverpool.webp",
 
   admissionsWebsite:
     "https://www.liverpool.ac.uk/study",

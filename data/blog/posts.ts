@@ -1174,6 +1174,55 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "Pens Down, Deep Breath: Getting Through Your First Exam Season Abroad",
+    slug: "first-exam-season-abroad",
+    description:
+      "A calm, practical guide for international students facing their first exams at a university abroad: understanding new exam formats, reading the rules, revising with past papers, using support if life gets in the way, and looking after yourself until the last paper.",
+    category: "Student Life",
+    date: "2026-11-16",
+    readTime: "6 min read",
+    intro:
+      "Somewhere around the middle of your first semester, a new word starts appearing in emails and group chats: exams. Timetables are published, the library gets busier, and students who seemed relaxed in October suddenly carry highlighters everywhere.\n\nIf you are studying in a new country, your first exam season can feel bigger than it should. The format may be different from what you know, the rules are written in a language that is not always yours, and nobody at home quite understands what you are facing. The good news is that exams abroad reward preparation more than panic. Here is how to walk into your first one feeling ready.",
+    sections: [
+      {
+        heading: "Find out what kind of exam you are actually sitting",
+        text: "Not every exam is a three-hour silent paper. Depending on your country and course, you might have an open-book exam, a take-home paper with a 24-hour or one-week window, an online quiz, an oral exam where you talk with an examiner, a practical, or a mix of coursework and a final test. Each one needs a different kind of preparation.\n\nStart with your course handbook or module page. Look for the format, the length, what share of your final grade it carries, and which topics are covered. If anything is unclear, ask your lecturer or tutor now, in office hours or by email. \"Will the exam be essay questions or short answers?\" is a completely normal question, and the answer can change how you revise.",
+      },
+      {
+        heading: "Read the exam rules like a contract",
+        text: "Universities take exam rules seriously, and they can be stricter than you expect. There may be rules about what ID to bring, which calculators are allowed, whether your phone must be switched off and left in a bag, when you can enter or leave the room, and what you can write on before the exam starts. Breaking a rule by accident can still lead to an academic misconduct investigation.\n\nYour university's exams office or student pages will publish the regulations. Read them once properly, and check your exam timetable for the exact room, date, and start time. Check the rules on AI tools and sources for take-home and online exams too, because they vary a lot between universities and even between modules. When in doubt, ask before the exam, not after.",
+      },
+      {
+        heading: "Revise with past papers, not just your notes",
+        text: "Re-reading notes feels productive, but it is one of the least effective ways to prepare. Testing yourself works better. Many universities keep past exam papers in the library or on the course site, and lecturers often share sample questions. Use them to see how questions are worded, how much detail is expected, and which topics come up again and again.\n\nTry answering a question under timed conditions, then compare it with your notes or any model answers. Explain a topic out loud to a friend, or make simple flashcards and quiz yourself. Spread your revision over several weeks rather than cramming in the final days, and mix subjects so each session stays fresh. A study group can help too, as long as it stays focused on questions rather than turning into a long coffee break.",
+      },
+      {
+        heading: "Plan your weeks around the timetable",
+        text: "Once your exam timetable is out, put every exam into one calendar. Count backwards and give each subject its share of revision time, with more for the exams that carry more weight or feel hardest. Leave a little empty space each week, because something will always take longer than planned.\n\nIf you have a part-time job, tell your employer your exam dates early and ask for lighter shifts. If you are planning to travel home after exams, double-check that your last exam really is your last before you book a flight. Exam dates can sometimes move, and missing one for a cheaper ticket is never worth it.",
+      },
+      {
+        heading: "Know where to go if life gets in the way",
+        text: "Sometimes you get ill on exam day, a family emergency happens at home, or something serious knocks you off balance. Most universities have a process for this, often called extenuating circumstances, mitigating circumstances, or a deferral. It may let you sit the exam later or have your situation taken into account.\n\nThe process usually has deadlines and asks for evidence, such as a note from a doctor, so look up your university's rules before you need them. If you have a disability, a long-term health condition, or a learning difference, contact your university's disability or accessibility service well before exams. They may be able to arrange adjustments such as extra time or a separate room, but these usually need to be set up in advance.",
+      },
+      {
+        heading: "Look after the person sitting the exam",
+        text: "Your brain is part of your body. Late nights, skipped meals, and endless energy drinks make revision less effective, not more. Aim for regular sleep, real meals, water, and some time outside each day, even a short walk between study sessions. The night before an exam, a good sleep will do more for you than one more hour of reading.\n\nExam stress is normal, and a little nervousness can even help you focus. But if anxiety is stopping you from sleeping, eating, or studying, talk to someone. Most universities offer wellbeing or counselling services, and many run extra support during exam periods. Asking for help early is a smart study strategy, not a sign of weakness.",
+      },
+      {
+        heading: "On the day, and after the last paper",
+        text: "Pack your bag the night before with your ID, allowed pens and equipment, and a clear water bottle if permitted. Plan to arrive early, since finding the right building on a large campus can take longer than you think. In the exam, read every instruction and question carefully, plan your time across the questions, and answer what is asked rather than everything you know.\n\nWhen it is over, let it go. Comparing answers in the corridor rarely helps. Results can take several weeks, and grading scales abroad may look very different from the ones at home, so a number that seems low may be a solid result locally. If things do not go as planned, find out about resits and academic advice through your department. Your first exam season is a learning experience in itself, and the next one will feel much more familiar.",
+      },
+    ],
+    coverImage: "/images/blog/first-exam-season-abroad.jpg",
+    coverImageAlt: "A student wearing headphones studies at a laptop at a long wooden table in a grand library lined with bookshelves",
+    unsplash: {
+      photographerName: "Zoshua Colah",
+      photographerUrl: "https://unsplash.com/@zoshuacolah",
+      photoUrl:
+        "https://unsplash.com/photos/student-studies-at-a-library-with-books-klbApl9mxr0",
+    },
+  },
+  {
     title: "Canada vs Australia for International Students",
     slug: "canada-vs-australia",
     description:

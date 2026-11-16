@@ -231,6 +231,39 @@ test("batch 5 dispositions stay stable for the next run", () => {
   assert.equal(universityLogoCredit("postech"), null);
   assert.equal(universityLogoCredit("rwth-aachen-university"), null);
   assert.equal(universityLogoCredit("uppsala-university"), null);
-  assert.equal(manifest.audit.completed, 30);
-  assert.equal(manifest.audit.blocked, 75);
+});
+
+test("batch 6 dispositions stay stable for the next run", () => {
+  const batch = manifest.universities.filter((entry) => entry.batch === 6);
+  assert.deepEqual(
+    batch.map((entry) => [entry.slug, entry.status]).sort(),
+    [
+      ["boston-university", "blocked"],
+      ["cardiff-university", "blocked"],
+      ["newcastle-university-uk", "completed"],
+      ["technical-university-of-denmark", "blocked"],
+      ["tohoku-university", "blocked"],
+      ["university-of-exeter", "completed"],
+      ["university-of-liverpool", "completed"],
+      ["university-of-nottingham", "completed"],
+      ["university-of-york", "completed"],
+      ["university-of-zurich", "blocked"],
+    ]
+  );
+  assert.match(universityLogoCredit("university-of-nottingham") ?? "", /CC BY-SA 4.0/);
+  assert.match(universityLogoCredit("university-of-nottingham") ?? "", /Shadowssettle/);
+  assert.match(universityLogoCredit("newcastle-university-uk") ?? "", /CC BY-SA 4.0/);
+  assert.match(universityLogoCredit("newcastle-university-uk") ?? "", /Shadowssettle/);
+  assert.match(universityLogoCredit("university-of-liverpool") ?? "", /CC BY-SA 4.0/);
+  assert.match(universityLogoCredit("university-of-liverpool") ?? "", /ET72/);
+  assert.match(universityLogoCredit("university-of-york") ?? "", /CC BY 4.0/);
+  assert.match(universityLogoCredit("university-of-york") ?? "", /GrandDukeofBrittany/);
+  assert.equal(universityLogoCredit("university-of-exeter"), null);
+  assert.equal(universityLogoCredit("tohoku-university"), null);
+  assert.equal(universityLogoCredit("boston-university"), null);
+  assert.equal(universityLogoCredit("technical-university-of-denmark"), null);
+  assert.equal(universityLogoCredit("university-of-zurich"), null);
+  assert.equal(universityLogoCredit("cardiff-university"), null);
+  assert.equal(manifest.audit.completed, 35);
+  assert.equal(manifest.audit.blocked, 80);
 });

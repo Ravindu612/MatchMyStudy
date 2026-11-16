@@ -152,4 +152,76 @@ export const postgraduateCourses: PostgraduateCourse[] = [
     certificate:
       "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
   },
+
+  {
+    title: "Machine Learning",
+    provider: "MIT OpenCourseWare",
+    subject: "Machine Learning",
+    description:
+      "A graduate introductory course on machine learning that gives an overview of concepts, techniques, and algorithms, beginning with classification and linear regression and continuing through boosting, support vector machines, hidden Markov models, and Bayesian networks. Statistical inference is the underlying theme, and the course develops the ideas and intuition behind modern methods together with a more formal understanding of how, why, and when they work.",
+    url: "https://ocw.mit.edu/courses/6-867-machine-learning-fall-2006/",
+    isFree: true,
+    certificate:
+      "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
+  },
+
+  {
+    title: "Algorithms for Inference",
+    provider: "MIT OpenCourseWare",
+    subject: "Machine Learning",
+    description:
+      "A graduate-level introduction to the principles of statistical inference with probabilistic models defined using graphical representations. The material is a common foundation for work in machine learning, signal processing, artificial intelligence, computer vision, control, and communication, and the course presents contemporary approaches to problems of statistical inference.",
+    url: "https://ocw.mit.edu/courses/6-438-algorithms-for-inference-fall-2014/",
+    isFree: true,
+    certificate:
+      "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
+  },
+
+  {
+    title: "Mathematics of Machine Learning",
+    provider: "MIT OpenCourseWare",
+    subject: "Machine Learning",
+    description:
+      "A graduate course on machine learning as the automated identification of patterns in data, introducing the statistical and algorithmic developments in that field. It provides a mathematically rigorous introduction to those developments, with emphasis on methods and their analysis.",
+    url: "https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/",
+    isFree: true,
+    certificate:
+      "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
+  },
+
+  {
+    title: "Statistical Learning Theory and Applications",
+    provider: "MIT OpenCourseWare",
+    subject: "Statistics & Machine Learning",
+    description:
+      "An upper-level graduate course for students planning careers in computational neuroscience, focused on supervised learning from the perspective of modern statistical learning theory. It begins with multivariate function approximation from sparse data and develops regularization, including support vector machines for regression and classification, generalization bounds using stability and VC theory, boosting, and feature selection, with applications in computer vision, computer graphics, text classification, and bioinformatics.",
+    url: "https://ocw.mit.edu/courses/9-520-statistical-learning-theory-and-applications-spring-2006/",
+    isFree: true,
+    certificate:
+      "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
+  },
+
+  {
+    title: "Prediction: Machine Learning and Statistics",
+    provider: "MIT OpenCourseWare",
+    subject: "Statistics & Machine Learning",
+    description:
+      "A graduate course on prediction from data that presents a selection of the most important topics from machine learning and statistics. Parts of both fields aim at prediction from data, the study of generalization, which is the central topic of machine learning, statistics, and data mining.",
+    url: "https://ocw.mit.edu/courses/15-097-prediction-machine-learning-and-statistics-spring-2012/",
+    isFree: true,
+    certificate:
+      "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
+  },
+
+  {
+    title: "Machine Learning for Healthcare",
+    provider: "MIT OpenCourseWare",
+    subject: "Machine Learning & Healthcare",
+    description:
+      "A graduate introduction to machine learning in healthcare, including the nature of clinical data and the use of machine learning for risk stratification, disease progression modeling, precision medicine, diagnosis, subtype discovery, and improving clinical workflows.",
+    url: "https://ocw.mit.edu/courses/6-s897-machine-learning-for-healthcare-spring-2019/",
+    isFree: true,
+    certificate:
+      "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
+  },
 ];

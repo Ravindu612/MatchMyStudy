@@ -10,6 +10,8 @@ import FindConsultantsButton from "@/components/consultant/FindConsultantsButton
 import { LANGUAGE_STUDY_HREF, LANGUAGE_STUDY_LABEL } from "@/lib/languageStudy/paths";
 import AdSlot from "@/components/AdSlot";
 import HelpfulPrompt from "@/components/HelpfulPrompt";
+import BlogPostLinks from "@/components/blog/BlogPostLinks";
+import { getLatestPosts } from "@/lib/blog";
 
 export const metadata = STATIC_META["/"];
 
@@ -164,6 +166,12 @@ Get personalized recommendations based on your goals, interests, and career aspi
 
 </div>
       </section>
+
+      <BlogPostLinks
+        heading="Latest articles"
+        posts={getLatestPosts()}
+        className="px-6 pb-20 max-w-7xl mx-auto"
+      />
 
       <AdSlot allowAds className="px-6 pb-16" />
 

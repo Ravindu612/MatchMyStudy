@@ -12,6 +12,8 @@ import {
 import { SITE_NAME, SITE_URL, STATIC_META } from "@/lib/seo-meta";
 import JsonLd from "@/components/JsonLd";
 import HelpfulPrompt from "@/components/HelpfulPrompt";
+import BlogPostLinks from "@/components/blog/BlogPostLinks";
+import { getRelatedPosts } from "@/lib/blog";
 
 export function generateStaticParams() {
   return getBlogPosts().map((post) => ({ slug: post.slug }));
@@ -166,6 +168,12 @@ export default async function BlogPostPage({
             The best country depends on your personal goals, budget, and long-term plans.
           </p>
         </div>
+
+        <BlogPostLinks
+          heading="More articles"
+          posts={getRelatedPosts(slug)}
+          className="mt-12"
+        />
 
         <HelpfulPrompt source={`/blog/${slug}`} />
       </article>

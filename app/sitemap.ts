@@ -8,6 +8,7 @@ import {
   isIndexableProgram,
 } from "@/lib/contentQuality";
 import { blogPosts, isFullIsoDate } from "@/data/blog/posts";
+import { blogPageCount, blogPagePath } from "@/lib/blog";
 import { universityUpdatedAt } from "@/data/universityUpdatedAt";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -212,6 +213,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  // Older listing pages: /blog/page/2 .. /blog/page/N (page 1 is /blog).
+  const blogListingUrls: MetadataRoute.Sitemap = Array.from(
+    { length: blogPageCount() - 1 },
+    (_, i) => ({
+      url: `${baseUrl}${blogPagePath(i + 2)}`,
+      changeFrequency: "weekly" as const,
+      priority: 0.5,
+    })
+  );
+
   /*
    * ------------------------------------------------
    * Consultant profiles
@@ -316,6 +327,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...countryUrls,
     ...universityUrls,
     ...programUrls,
+    ...blogListingUrls,
     ...blogUrls,
     ...consultantUrls,
   ];

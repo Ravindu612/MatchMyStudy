@@ -187,6 +187,7 @@ export const netherlandsUniversities: University[] = [
     "Scholarships and financial support are available for international students.",
 
   officialWebsite: "https://www.universiteitleiden.nl",
+  logo: "/logos/leiden-university.webp",
 
   admissionsWebsite:
     "https://www.universiteitleiden.nl/en/education",

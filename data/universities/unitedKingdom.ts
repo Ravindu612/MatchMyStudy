@@ -887,6 +887,7 @@ export const unitedKingdomUniversities: University[] = [
     "Merit-based scholarships are available for international students.",
 
   officialWebsite: "https://www.bath.ac.uk",
+  logo: "/logos/university-of-bath.webp",
 
   admissionsWebsite:
     "https://www.bath.ac.uk/study",
@@ -963,6 +964,7 @@ export const unitedKingdomUniversities: University[] = [
     "Scholarships and financial support are available for international students.",
 
   officialWebsite: "https://www.qub.ac.uk",
+  logo: "/logos/queens-university-belfast.webp",
 
   admissionsWebsite:
     "https://www.qub.ac.uk/study",

@@ -74,6 +74,7 @@ export const newZealandUniversities: University[] = [
     "Scholarships are available for high-achieving international students.",
 
   officialWebsite: "https://www.otago.ac.nz",
+  logo: "/logos/university-of-otago.webp",
 
   admissionsWebsite:
     "https://www.otago.ac.nz/study",
@@ -150,6 +151,7 @@ export const newZealandUniversities: University[] = [
     "Merit-based scholarships are available for international students.",
 
   officialWebsite: "https://www.canterbury.ac.nz",
+  logo: "/logos/university-of-canterbury.webp",
 
   admissionsWebsite:
     "https://www.canterbury.ac.nz/study",

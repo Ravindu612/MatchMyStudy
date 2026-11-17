@@ -264,6 +264,45 @@ test("batch 6 dispositions stay stable for the next run", () => {
   assert.equal(universityLogoCredit("technical-university-of-denmark"), null);
   assert.equal(universityLogoCredit("university-of-zurich"), null);
   assert.equal(universityLogoCredit("cardiff-university"), null);
-  assert.equal(manifest.audit.completed, 35);
-  assert.equal(manifest.audit.blocked, 80);
+});
+
+test("batch 7 dispositions stay stable for the next run", () => {
+  const batch = manifest.universities.filter((entry) => entry.batch === 7);
+  assert.deepEqual(
+    batch.map((entry) => [entry.slug, entry.status]).sort(),
+    [
+      ["aalto-university", "blocked"],
+      ["georgia-institute-of-technology", "blocked"],
+      ["lancaster-university", "blocked"],
+      ["leiden-university", "completed"],
+      ["politecnico-di-milano", "blocked"],
+      ["queen-mary-university-of-london", "blocked"],
+      ["queens-university-belfast", "completed"],
+      ["university-of-bath", "completed"],
+      ["university-of-canterbury", "completed"],
+      ["university-of-helsinki", "blocked"],
+      ["university-of-otago", "completed"],
+      ["university-of-wisconsin-madison", "blocked"],
+    ]
+  );
+  assert.match(universityLogoCredit("university-of-bath") ?? "", /CC BY-SA 4.0/);
+  assert.match(universityLogoCredit("university-of-bath") ?? "", /ET72/);
+  assert.match(universityLogoCredit("university-of-bath") ?? "", /Sodacan/);
+  assert.match(universityLogoCredit("university-of-otago") ?? "", /CC BY-SA 4.0/);
+  assert.match(universityLogoCredit("university-of-otago") ?? "", /Stanley Bannerman/);
+  assert.match(universityLogoCredit("queens-university-belfast") ?? "", /CC BY-SA 3.0/);
+  assert.match(universityLogoCredit("queens-university-belfast") ?? "", /Rathgarrr/);
+  assert.match(universityLogoCredit("university-of-canterbury") ?? "", /CC BY-SA 4.0/);
+  assert.match(universityLogoCredit("university-of-canterbury") ?? "", /TheLoyalOrder/);
+  assert.match(universityLogoCredit("leiden-university") ?? "", /CC BY-SA 3.0/);
+  assert.match(universityLogoCredit("leiden-university") ?? "", /Leiden University/);
+  assert.equal(universityLogoCredit("politecnico-di-milano"), null);
+  assert.equal(universityLogoCredit("aalto-university"), null);
+  assert.equal(universityLogoCredit("georgia-institute-of-technology"), null);
+  assert.equal(universityLogoCredit("university-of-wisconsin-madison"), null);
+  assert.equal(universityLogoCredit("university-of-helsinki"), null);
+  assert.equal(universityLogoCredit("queen-mary-university-of-london"), null);
+  assert.equal(universityLogoCredit("lancaster-university"), null);
+  assert.equal(manifest.audit.completed, 40);
+  assert.equal(manifest.audit.blocked, 87);
 });

@@ -1223,6 +1223,51 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "Home, But Different: Handling Reverse Culture Shock After Studying Abroad",
+    slug: "reverse-culture-shock",
+    description:
+      "A warm, practical guide for international students going home for the holidays or for good: why home can feel strange after time abroad, how to talk about your experience, staying connected to the life you built, and turning what you learned into your next step.",
+    category: "Student Life",
+    date: "2026-11-17",
+    readTime: "6 min read",
+    intro:
+      "Everyone warns you about culture shock before you leave. Fewer people mention what can happen when you come back. You land, your family is waiting, the food tastes exactly right, and yet something feels slightly off. The streets seem smaller, conversations move differently, and the person you were before you left does not quite fit anymore.\n\nThis is often called reverse culture shock, and it is a very normal part of studying abroad. Whether you are flying home for winter break or returning for good after graduation, here is how to understand it, talk about it, and come out the other side with the best of both worlds.",
+    sections: [
+      {
+        heading: "Why home can feel strange",
+        text: "While you were away, you changed. You learned to cook for yourself, navigate a new city, speak up in a different classroom, and solve problems with nobody to call down the hall. Meanwhile, home kept moving too. Friends started new jobs, shops closed, little brothers grew taller, and the family group chat developed jokes you missed.\n\nWhen these two sets of changes meet, there is a small gap. You may expect everything to be exactly as you left it, and feel unsettled when it is not. Or you may find that habits you once took for granted now look different through new eyes. None of this means something is wrong with you or with home. It simply means you have grown, and growth takes a little getting used to.",
+      },
+      {
+        heading: "Expect the ups and the dips",
+        text: "Many returning students describe a pattern. The first days are exciting: favourite meals, long hugs, sleeping in your old room. Then, after a week or two, a quieter feeling can arrive. You might feel restless, a bit lonely, or irritated by small things that never bothered you before. Later, most people settle into a new normal that mixes old routines with new ideas.\n\nKnowing this pattern in advance helps. If the dip comes, you can name it rather than worry about it. Give yourself time, keep some structure in your days, and avoid big decisions in your first restless week, such as changing your whole career plan because home suddenly feels boring.",
+      },
+      {
+        heading: "Tell your story in small pieces",
+        text: "One of the hardest moments is when someone asks, \"So, how was it?\" and then waits about ten seconds for an answer. It is hard to sum up months of new experiences in one sentence, and it can sting when people lose interest quickly.\n\nTry preparing a few short stories instead of one big summary: the first meal you cooked badly, the classmate who became a close friend, the day you finally understood the bus system. Small, specific stories are easier for people to connect with. Save the longer conversations for the friends and family who really want to hear them, and remember that their interest in your new life does not have to match your excitement for it to be real.",
+      },
+      {
+        heading: "Stay connected to the life you built",
+        text: "Your time abroad did not end when you boarded the plane. Keep in touch with friends you made there with regular calls or messages, even short ones. If you are only home for the holidays, keep a light link to your university life by checking your student email now and then, so deadlines, housing notices, and enrolment reminders do not surprise you when you get back.\n\nYou can also bring a little of that life home. Cook a dish you learned abroad for your family, keep practising the language you started, or look for an international students' group, alumni network, or language exchange in your home city. These small habits help the two halves of your life feel like one story rather than two separate chapters.",
+      },
+      {
+        heading: "Turn what you learned into your next step",
+        text: "Studying abroad gives you skills that are easy to overlook: adapting to new systems, working with people from different backgrounds, managing money and time on your own, and communicating across languages and cultures. Write these down while they are fresh, with a real example for each. They are useful for job applications, interviews, scholarship essays, and further study.\n\nIf you are heading back abroad after the break, use this time to reflect on what went well in your first months and what you would like to change next term. If you have graduated and are home for good, think about how your experience might shape your next move, whether that is a job, a postgraduate program, or simply a new routine at home.",
+      },
+      {
+        heading: "When to ask for support",
+        text: "Feeling a bit out of place for a few weeks is common. But if low mood, anxiety, or loneliness carries on, stops you from sleeping or enjoying things, or feels overwhelming, it is worth talking to someone. That could be a trusted friend or family member, your doctor, or a counselling service. If you are still enrolled, many universities offer wellbeing support that you can contact even while you are away for the holidays, so check your university's student services pages.\n\nComing home after studying abroad is not going backwards. It is bringing everything you gained back with you. Be patient with yourself, be kind to the people who missed you, and let both places be part of who you are now.",
+      },
+    ],
+    coverImage: "/images/blog/reverse-culture-shock.jpg",
+    coverImageAlt: "A traveller in a pink jacket and jeans walks through a bright airport corridor pulling a small pink suitcase",
+    unsplash: {
+      photographerName: "Gabrielle Henderson",
+      photographerUrl: "https://unsplash.com/@gabriellefaithhenderson",
+      photoUrl:
+        "https://unsplash.com/photos/person-wearing-red-jacket-and-blue-denim-jeans-pulling-luggage-bag-while-walking-on-pathway-lT_uN_5atEw",
+    },
+  },
+  {
     title: "Canada vs Australia for International Students",
     slug: "canada-vs-australia",
     description:

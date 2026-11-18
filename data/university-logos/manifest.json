@@ -4,8 +4,8 @@
   "audit": {
     "total": 637,
     "completed": 40,
-    "pending": 510,
-    "blocked": 87,
+    "pending": 495,
+    "blocked": 102,
     "workingLogoFiles": 40,
     "missing": 597,
     "brokenLiveReferences": 0,
@@ -25,11 +25,11 @@
     ]
   },
   "nextPendingSlugs": [
-    "iit-bombay",
-    "university-college-dublin",
-    "university-of-oslo",
-    "rice-university",
-    "qatar-university"
+    "eindhoven-university-of-technology",
+    "university-of-vienna",
+    "centralesupelec",
+    "universiti-kebangsaan-malaysia",
+    "chalmers-university-of-technology"
   ],
   "universities": [
     {
@@ -2135,10 +2135,11 @@
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "restrictions": "IIT Bombay's IP policy says the logo is the Institute's trademark, and that any use of the logo or the IITB name outside officially recognised Institute activities needs IIT Bombay's approval (https://rnd.iitb.ac.in/ip). No approval was requested. Official logo files were not downloaded.",
+      "status": "blocked",
+      "batch": 8,
+      "notes": "Reviewed in batch 8 and not used. Commons title and category searches returned no IIT Bombay logo or seal. Do not use the Institute logo unless IIT Bombay grants permission.",
+      "attributionRequired": false
     },
     {
       "id": "university-college-dublin",
@@ -2149,14 +2150,15 @@
       "officialWebsite": "https://www.ucd.ie",
       "prominenceRank": 112,
       "qsRank": 118,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:UCD_logo_digicomp.jpg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "restrictions": "UCD says a third-party organisation needs permission from the marketing team before it is given the crest or brand mark (https://www.ucd.ie/marketingandcommunications/marketing/brandidentity/guidelineandtemplatefaq/). No permission was requested. Official brand files were not downloaded.",
+      "status": "blocked",
+      "batch": 8,
+      "notes": "Reviewed in batch 8 and not used. File:UCD logo digicomp.jpg and File:Ucdlogo.jpg are photographs of the mark, tagged CC BY-SA 4.0 as the photographers' own work. That tag does not license UCD's logo. File:Logo-UCD.jpg is Université Chouaib Doukkali, and File:Logo UCD.svg is Unión de Centro Democrático. File:National University of Ireland Achievement.png is the National University of Ireland achievement, not UCD's mark. No UCD coat of arms with a public-domain or CC record was found. Do not retry these files.",
+      "attributionRequired": false
     },
     {
       "id": "university-of-oslo",
@@ -2167,14 +2169,15 @@
       "officialWebsite": "https://www.uio.no",
       "prominenceRank": 113,
       "qsRank": 119,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Seal_of_the_University_of_Oslo.jpg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "restrictions": "The University of Oslo design manual publishes the logo and seal for the university's own profile and does not grant a licence to copy them (https://www.uio.no/om/designmanual/profilelementer/logo/). No permission was requested. Official brand files were not downloaded.",
+      "status": "blocked",
+      "batch": 8,
+      "notes": "Reviewed in batch 8 and not used. File:Seal of the University of Oslo.jpg is a 178×136 image from a university web page, tagged PD-old with the date 1842 and an unknown author. It is not a verified 1842 publication. The legend reads Universitas Regia Fredericiana, and the scan is tilted on a pink ground. File:University of Oslo seal 1842.png is CC BY-SA 3.0, and its description says it does not look like the 1842 seal. The transparent copy is tagged PD-old while it is derived from that CC BY-SA file. File:UiO logo.png is CC BY-SA 4.0 claimed as own work by the uploader, not by the university. File:Apollo seal.svg is a 2009 trace. Do not retry these files unless a publication matches a public-domain tag.",
+      "attributionRequired": false
     },
     {
       "id": "rice-university",
@@ -2185,14 +2188,15 @@
       "officialWebsite": "https://www.rice.edu",
       "prominenceRank": 114,
       "qsRank": 119,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Academic_Seal_Rice_University.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "restrictions": "Rice says its name and official marks are protected by copyright and may not be used without prior written permission. The academic seal is reserved for the Board of Trustees and the president and may not be used by any other internal or external organization (https://brand.rice.edu/policies). No permission was requested. Official brand files were not downloaded.",
+      "status": "blocked",
+      "batch": 8,
+      "notes": "Reviewed in batch 8 and not used. File:Academic Seal Rice University.svg is sourced from Rice University Identity Standards and tagged PD-US-expired with the date 1912. The SVG is a trace of that brand file, with no script or embedded image, and it is not a scan of a pre-1930 publication. Pierre de Chaignon la Rose designed the seal, but this file is the current identity asset. File:Rice University Logo.png and File:Rice University seal.png are CC BY-SA 4.0 claimed as own work by the uploader, not by Rice. Do not retry these files unless a verified public-domain publication is found.",
+      "attributionRequired": false
     },
     {
       "id": "queen-mary-university-of-london",
@@ -2222,14 +2226,15 @@
       "officialWebsite": "https://www.qu.edu.qa",
       "prominenceRank": 116,
       "qsRank": 122,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:شعار_جامعة_قطر.png",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "restrictions": "Qatar University's external-relations handbook says the trademark may not be used in a way that misleads the public about university sponsorship, and that registered trademarks may not be used for commercial purposes except as authorized by the university (https://www.qu.edu.qa/en-us/about/policy/documents/cpr-hb-01-en.pdf). No authorisation was requested. Official brand files were not downloaded.",
+      "status": "blocked",
+      "batch": 8,
+      "notes": "Reviewed in batch 8 and not used. File:شعار جامعة قطر.png is the 2024 logo from the university website, dated 10 May 2024, and tagged PD-US. A 2024 logo is not in the public domain in the United States under that tag. Commons searches returned no other logo file. Do not retry this file.",
+      "attributionRequired": false
     },
     {
       "id": "rmit-university",
@@ -2240,14 +2245,15 @@
       "officialWebsite": "https://www.rmit.edu.au",
       "prominenceRank": 117,
       "qsRank": 123,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Arms_of_the_Royal_Melbourne_Institute_of_Technology.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "restrictions": "RMIT's brand policy makes the Executive Director, Governance, Legal and Strategic Operations responsible for approving use of the RMIT coat of arms (https://policies.rmit.edu.au/download.php?id=65&version=2). No approval was requested. Official brand files were not downloaded.",
+      "status": "blocked",
+      "batch": 8,
+      "notes": "Reviewed in batch 8 and not used. File:RMIT University Logo.svg was extracted from a course PDF and is tagged only PD-textlogo. File:RMIT logo.gif is tagged CC BY 3.0 and GFDL as the uploader's own work while the author line is a university email address; RMIT did not grant that tag. File:Arms of the Royal Melbourne Institute of Technology.svg is CC BY-SA 4.0 by GaryJetner and cites a Wikipedia file that is no longer on English Wikipedia. The SVG embeds a PNG, so it is not a clean heraldic drawing. Do not retry these files.",
+      "attributionRequired": false
     },
     {
       "id": "sungkyunkwan-university",
@@ -2262,10 +2268,11 @@
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "restrictions": "Sungkyunkwan University's symbol pages reserve copyright in the marks and say unauthorised use and distribution can bring civil and criminal liability (https://www.skku.edu/skku/about/symbol/symbol_06.do). No permission was requested. Official UI files were not downloaded.",
+      "status": "blocked",
+      "batch": 8,
+      "notes": "Reviewed in batch 8 and not used. Commons title searches for Sungkyunkwan and SKKU returned no logo or emblem file. A later batch may add a different file if its licence is clear.",
+      "attributionRequired": false
     },
     {
       "id": "university-of-southern-california",
@@ -2276,14 +2283,15 @@
       "officialWebsite": "https://www.usc.edu",
       "prominenceRank": 119,
       "qsRank": 125,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Southern_California_(USC)_seal.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "restrictions": "USC says its marks are protected by university policy and trademark law, that download is limited to faculty and staff, and that use is restricted to official university business (https://identity.usc.edu/identity/logos-marks/). Commercial use needs a licence from Trademarks and Licensing (https://trademarks.usc.edu/). No licence was requested. Official brand files were not downloaded.",
+      "status": "blocked",
+      "batch": 8,
+      "notes": "Reviewed in batch 8 and not used. File:University of Southern California (USC) seal.svg is the seal adopted in 1948, traced from identity.usc.edu, and tagged PD-US-1923. That tag does not describe a 1948 seal. File:USC Seal.jpg is CC BY-SA 4.0 with the university named as author and identity.usc.edu as the source; USC did not grant that tag. File:Usc seal original 1.jpg is the 1884 seal, replaced in 1908, taken from usc.edu and tagged PD-US-expired. It is not the current seal and is not a verified pre-1930 publication scan. Do not retry these files unless a verified public-domain publication is found.",
+      "attributionRequired": false
     },
     {
       "id": "humboldt-university-of-berlin",
@@ -2294,14 +2302,15 @@
       "officialWebsite": "https://www.hu-berlin.de",
       "prominenceRank": 120,
       "qsRank": 126,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Huberlin-logo.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "restrictions": "The Humboldt University seal files come from the university design download. That download is not a licence to copy the seal, and no permission was requested. Official brand files were not downloaded separately.",
+      "status": "blocked",
+      "batch": 8,
+      "notes": "Reviewed in batch 8 and not used. File:Huberlin-logo.svg is the seal from the university design download, dated 2007, tagged PD-Seal-Germany. File:HU Siegel RGB-1.svg is the seal from the 16 February 2023 corporate design (https://www.hu-berlin.de/de/service/design/basiselemente/logo), also tagged PD-Seal-Germany. That template is an uploader's reading of German copyright law, and these files are modern brand assets, not verified historical publications. The same reading was not accepted for the Free University of Berlin seal in batch 5. File:Humbold Universität Logo.png is CC BY-SA 3.0 claimed as own work by the uploader, not by the university. Do not retry these files.",
+      "attributionRequired": false
     },
     {
       "id": "stockholm-university",
@@ -2312,14 +2321,15 @@
       "officialWebsite": "https://www.su.se",
       "prominenceRank": 121,
       "qsRank": 128,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Stockholms_universitet_Coat_of_Arms_old.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "restrictions": "Stockholm University says the logotype is registered and protected by copyright, and that misuse will be prosecuted. People other than students need permission from the communications department before using it (https://medarbetare.su.se/en/our-su/governance/rules--regulations/communication/rules-for-the-visual-identity-at-stockholm-university). No permission was requested. Official logo files were not downloaded.",
+      "status": "blocked",
+      "batch": 8,
+      "notes": "Reviewed in batch 8 and not used. File:Stockholms universitet Coat of Arms old.svg is described as the coat of arms until 2007, authored by Väsk, sourced from a Fandom logos page, and tagged CC BY 4.0. The emblem was drawn by Karl-Erik Forsberg (1914–1995) and was redrawn in 2007. Väsk's tag does not license Forsberg's emblem, and the file is not the current logotype. No other public-domain or CC logo was found. Do not retry this file.",
+      "attributionRequired": false
     },
     {
       "id": "newcastle-university-uk",
@@ -2349,14 +2359,15 @@
       "officialWebsite": "https://www.unibas.ch",
       "prominenceRank": 123,
       "qsRank": 131,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Universität_Basel_2018_logo.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "restrictions": "The University of Basel says the logo, designed in 1990 and revised in 2014, is legally protected and may be used only by university units and members. Others must obtain permission (https://www.unibas.ch/de/Universitaet/Administration-Services/Bereich-Rektorin/Kommunikation-Marketing/Corporate-Design.html). The website notice also says the logo may not be reproduced for commercial purposes without written permission (https://www.unibas.ch/de/Impressum.html). No permission was requested. Official brand files were not downloaded.",
+      "status": "blocked",
+      "batch": 8,
+      "notes": "Reviewed in batch 8 and not used. File:Universität Basel 2018 logo.svg and File:Uni basel logo.svg were taken from university files and tagged only PD-textlogo. File:University of Basel Logo.png is tagged PD-shape and sourced from unibas.ch. File:UniBas Logo EN Schwarz RGB 65.jpg is the official logo tagged CC BY-SA 2.5; the university did not grant that tag. No historical seal with a matching public-domain publication was found. Do not retry these files.",
+      "attributionRequired": false
     },
     {
       "id": "sapienza-university-of-rome",
@@ -2367,14 +2378,15 @@
       "officialWebsite": "https://www.uniroma1.it",
       "prominenceRank": 124,
       "qsRank": 132,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Logo_Sapienza_Università_di_Roma.jpg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "restrictions": "Sapienza's trademark regulation requires authorisation before third parties use the registered mark, including the cherub emblem (https://www.uniroma1.it/sites/default/files/regolamenti/Regolamento_Marchio_logotipo_0.pdf). The visual-identity page says external use follows that regulation (https://www.uniroma1.it/it/pagina/marchio-identita-visiva-e-sistema-grafico). No authorisation was requested. Official brand files were not downloaded.",
+      "status": "blocked",
+      "batch": 8,
+      "notes": "Reviewed in batch 8 and not used. File:Logo Sapienza Università di Roma.jpg and File:Logo sapienza.jpg are sourced from the university and tagged CC BY-SA 4.0. Sapienza did not grant that tag. Commons searches did not return a public-domain historical seal. Do not retry these files.",
+      "attributionRequired": false
     },
     {
       "id": "macquarie-university",
@@ -2385,14 +2397,15 @@
       "officialWebsite": "https://www.mq.edu.au",
       "prominenceRank": 125,
       "qsRank": 133,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:MacquarieUniversityCoatofArms-updated.png",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "restrictions": "Macquarie's brand guidelines say permission from Marketing is required to reproduce the symbol apart from the masterbrand (https://www.mq.edu.au/__data/assets/pdf_file/0006/498867/Brandmark_MacQuarie-Guidelines-2015-2.pdf). No permission was requested. Official brand files were not downloaded.",
+      "status": "blocked",
+      "batch": 8,
+      "notes": "Reviewed in batch 8 and not used. File:MacquarieUniversityCoatofArms-updated.png is the logo extracted from the university marketing page and tagged CC0. Macquarie did not grant that tag. File:Macquarie Logo.svg and File:Macquarie-logo.svg are the Macquarie Group, not the university. Do not retry the university file.",
+      "attributionRequired": false
     },
     {
       "id": "university-of-science-and-technology-of-china",
@@ -2407,10 +2420,11 @@
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "restrictions": "No terms permitting redistribution of the University of Science and Technology of China emblem were identified. The visual-identity handbook describes the 2007 emblem for the university's own use (https://djyszw.ustc.edu.cn/info/1070/6829.htm). No permission was requested. Official assets were not downloaded.",
+      "status": "blocked",
+      "batch": 8,
+      "notes": "Reviewed in batch 8 and not used. Commons title searches for the university and for USTC returned no logo file. The current emblem dates from the 2007 visual-identity system. A later batch may add a different file if its licence is clear.",
+      "attributionRequired": false
     },
     {
       "id": "university-of-bologna",
@@ -2421,14 +2435,15 @@
       "officialWebsite": "https://www.unibo.it",
       "prominenceRank": 127,
       "qsRank": 133,
-      "logoSourceUrl": null,
+      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Seal_of_the_University_of_Bologna.svg",
       "assetPath": null,
       "license": null,
       "attribution": null,
-      "restrictions": null,
-      "status": "pending",
-      "batch": null,
-      "notes": "No logo in the university record."
+      "restrictions": "The seal files are taken from University of Bologna image pages, including https://www.unibo.it/en/university/who-we-are/image-identity-brand. Those pages are not a licence to copy the seal. No permission was requested. Official brand files were not downloaded.",
+      "status": "blocked",
+      "batch": 8,
+      "notes": "Reviewed in batch 8 and not used. File:Seal of the University of Bologna.svg was vectorised in 2010 from a university raster. The file says it is a 2002 restyling of an 1888 seal by Augusto Sezanne and is tagged PD-old-100. That tag does not describe a 2002 restyling. File:University of Bologna seal.png is sourced from the university identity page, dated 1088, and tagged PD-old-100. File:Bologna University seal.jpg is the same 2002 restyling. Do not retry these files unless a publication matches a public-domain tag.",
+      "attributionRequired": false
     },
     {
       "id": "eindhoven-university-of-technology",

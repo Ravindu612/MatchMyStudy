@@ -303,6 +303,35 @@ test("batch 7 dispositions stay stable for the next run", () => {
   assert.equal(universityLogoCredit("university-of-helsinki"), null);
   assert.equal(universityLogoCredit("queen-mary-university-of-london"), null);
   assert.equal(universityLogoCredit("lancaster-university"), null);
+});
+
+test("batch 8 dispositions stay stable for the next run", () => {
+  const batch = manifest.universities.filter((entry) => entry.batch === 8);
+  assert.deepEqual(
+    batch.map((entry) => [entry.slug, entry.status]).sort(),
+    [
+      ["humboldt-university-of-berlin", "blocked"],
+      ["iit-bombay", "blocked"],
+      ["macquarie-university", "blocked"],
+      ["qatar-university", "blocked"],
+      ["rice-university", "blocked"],
+      ["rmit-university", "blocked"],
+      ["sapienza-university-of-rome", "blocked"],
+      ["stockholm-university", "blocked"],
+      ["sungkyunkwan-university", "blocked"],
+      ["university-college-dublin", "blocked"],
+      ["university-of-basel", "blocked"],
+      ["university-of-bologna", "blocked"],
+      ["university-of-oslo", "blocked"],
+      ["university-of-science-and-technology-of-china", "blocked"],
+      ["university-of-southern-california", "blocked"],
+    ]
+  );
+  for (const slug of batch.map((entry) => entry.slug)) {
+    assert.equal(universityLogoCredit(slug), null, slug);
+    assert.equal(batch.find((entry) => entry.slug === slug)?.assetPath, null);
+  }
   assert.equal(manifest.audit.completed, 40);
-  assert.equal(manifest.audit.blocked, 87);
+  assert.equal(manifest.audit.blocked, 102);
+  assert.equal(manifest.audit.pending, 495);
 });

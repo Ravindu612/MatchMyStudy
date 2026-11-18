@@ -1268,6 +1268,50 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "Bright Lights or Quiet Streets: Choosing Between a Big City and a Small University Town",
+    slug: "big-city-or-small-town",
+    description:
+      "A warm, practical guide for international students deciding where to study: what daily life really feels like in a big city versus a small university town, how each affects costs, friendships, work and wellbeing, and simple ways to test which one fits you before you accept an offer.",
+    category: "Choosing a Program",
+    date: "2026-11-18",
+    readTime: "6 min read",
+    intro:
+      "When you shortlist universities, it is easy to focus on rankings, course modules and entry requirements. But you will not live inside a ranking table. You will live on a street, in a neighbourhood, in a place with its own rhythm, weather and late-night food options. For many international students, the city or town around the campus shapes their experience as much as the degree itself.\n\nSome students thrive in a huge, busy city where something is always happening. Others do their best work in a smaller town where the university is the heart of everything. Neither is better. The right choice is the one that suits how you like to live, study and recharge. Here is how to think it through.",
+    sections: [
+      {
+        heading: "What a big city gives you",
+        text: "Big cities offer variety. There are more cafés to study in, more cultural events, more communities from your home country, and more choice of food that tastes like home. Transport links are usually strong, so weekend trips and trips to the airport can be simpler.\n\nCities can also bring more opportunities beyond the classroom: internships, part-time jobs, networking events, and companies that hire graduates. If you are studying business, media, finance, design or technology, being close to an industry hub can make it easier to meet people and gain experience while you study.\n\nThe trade-off is that city life can feel fast and anonymous at first. Your classmates may be spread across different neighbourhoods, journeys to campus can be long, and you may need to make more effort to build a close circle of friends.",
+      },
+      {
+        heading: "What a small university town gives you",
+        text: "In a smaller town, the university is often the centre of local life. You keep bumping into the same faces at the library, the supermarket and the bus stop, which makes friendships form more naturally. Many students find it easier to settle in, feel safe walking home, and get involved in clubs and societies because everything is close by.\n\nDaily life can also feel calmer. Fewer distractions can mean better focus, and getting around on foot or by bike is often realistic. Some students say they felt part of a community within weeks rather than months.\n\nThe trade-off is choice. There may be fewer part-time jobs, fewer specialist shops, and a quieter nightlife. Getting to a major airport can take longer, and holidays can feel very quiet when many local students go home.",
+      },
+      {
+        heading: "Think about money without guessing",
+        text: "Living costs can differ a lot between a capital city and a smaller town, especially rent. Do not rely on general impressions. Look at each university's own cost of living guidance and accommodation pages, check how much student housing is available, and read what current students say about finding a room.\n\nAlso think about hidden costs. In a city, you may spend more on transport and going out. In a town, you may spend more on travel home or trips to bigger cities. Build a simple monthly budget for each option using official figures and real listings, then compare them side by side.",
+      },
+      {
+        heading: "Match the place to your goals",
+        text: "Ask yourself what you most want from these years abroad. If building professional experience during your studies matters most, a city close to your industry may help. If you want deep focus, a tight-knit community and an easier first year away from home, a smaller town might suit you better.\n\nAlso consider your course itself. Some subjects benefit from local connections, such as marine science near the coast, agriculture in a rural region, or politics near a capital. Check whether your program includes placements or projects, and where those usually happen.",
+      },
+      {
+        heading: "Be honest about your personality",
+        text: "Think about the moments you feel most like yourself. Do you recharge in a busy café surrounded by noise, or on a quiet walk by a river? Do you love discovering new restaurants every weekend, or do you prefer a few favourite places where people know your name?\n\nNeither answer is wrong. Students who love energy and anonymity can feel restless in a small town, while students who value routine and calm can feel worn out by a huge city. Choosing a place that matches your temperament makes the hard weeks easier.",
+      },
+      {
+        heading: "Test the fit before you decide",
+        text: "You can learn a lot about a place without visiting. Watch student vlogs filmed in the area, use street-view maps to walk from the accommodation to campus, and look at local events listings for a normal week. Join virtual open days and ask current international students what surprised them most about living there.\n\nTry imagining an ordinary weekday: where you wake up, how you get to class, where you buy groceries, and what you do in the evening. The place where that ordinary day feels good is often the right one.\n\nWherever you choose, you will grow into it. Big cities become smaller once you have your favourite corners, and small towns become bigger once you know their stories. Pick the place where you can picture yourself settling in, and let the rest unfold.",
+      },
+    ],
+    coverImage: "/images/blog/big-city-or-small-town.jpg",
+    coverImageAlt: "A student with a backpack walks along a tree-lined autumn street past road signs pointing to university colleges",
+    unsplash: {
+      photographerName: "Jeffrey Zhang",
+      photographerUrl: "https://unsplash.com/@jeffreyzhang_920",
+      photoUrl: "https://unsplash.com/photos/road-signs-on-autumn-street-XUZhMtM8ZaY",
+    },
+  },
+  {
     title: "Canada vs Australia for International Students",
     slug: "canada-vs-australia",
     description:

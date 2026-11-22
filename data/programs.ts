@@ -92,6 +92,7 @@ import { yaleUniversityPrograms } from "./programs/unitedStates/yaleUniversityPr
 import { riceUniversityPrograms } from "./programs/unitedStates/riceUniversityPrograms";
 import { princetonUniversityPrograms } from "./programs/unitedStates/princetonUniversityPrograms";
 import { caltechPrograms } from "./programs/unitedStates/caltechPrograms";
+import { atlanticTechnologicalUniversityPrograms } from "./programs/ireland/atlanticTechnologicalUniversityPrograms";
 export type ProgramLevel =
   | "Bachelor"
   | "Master"
@@ -227,6 +228,7 @@ export const programs: Program[] = [
   ...riceUniversityPrograms,
   ...princetonUniversityPrograms,
   ...caltechPrograms,
+  ...atlanticTechnologicalUniversityPrograms,
   {
     name: "Bachelor's Programme in Science and Technology",
     slug: "bachelor-science-technology-aalto-university",

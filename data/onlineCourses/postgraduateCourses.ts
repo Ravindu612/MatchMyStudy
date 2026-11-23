@@ -224,4 +224,88 @@ export const postgraduateCourses: PostgraduateCourse[] = [
     certificate:
       "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
   },
+
+  {
+    title: "Finance Theory I",
+    provider: "MIT OpenCourseWare",
+    subject: "Finance",
+    description:
+      "A graduate-level MIT Sloan course that introduces the core theory of modern financial economics and financial management, with a focus on capital markets and investments. Topics include the functions of capital markets and financial intermediaries, asset valuation, fixed-income securities, common stocks, capital budgeting, diversification and portfolio selection, equilibrium pricing of risky assets, the theory of efficient markets, and an introduction to derivatives and options.",
+    url: "https://ocw.mit.edu/courses/15-401-finance-theory-i-fall-2008/",
+    isFree: true,
+    certificate:
+      "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
+  },
+
+  {
+    title: "Finance Theory II",
+    provider: "MIT OpenCourseWare",
+    subject: "Finance",
+    description:
+      "A graduate-level MIT Sloan course on the financial tools needed to make good business decisions. It presents the basic insights of corporate finance theory and emphasizes applying that theory to real business decisions through class discussion of lectures and business cases.",
+    url: "https://ocw.mit.edu/courses/15-402-finance-theory-ii-spring-2003/",
+    isFree: true,
+    certificate:
+      "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
+  },
+
+  {
+    title: "Investments",
+    provider: "MIT OpenCourseWare",
+    subject: "Finance",
+    description:
+      "A graduate-level MIT Sloan course on financial theory and empirical evidence for making investment decisions. Topics include portfolio theory, equilibrium models of security prices (including the capital asset pricing model and the arbitrage pricing theory), the empirical behavior of security prices, market efficiency, performance evaluation, and behavioral finance.",
+    url: "https://ocw.mit.edu/courses/15-433-investments-spring-2003/",
+    isFree: true,
+    certificate:
+      "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
+  },
+
+  {
+    title: "Analytics of Finance",
+    provider: "MIT OpenCourseWare",
+    subject: "Finance",
+    description:
+      "A graduate-level MIT Sloan course on the key quantitative methods of finance: financial econometrics and statistical inference for financial applications, dynamic optimization, Monte Carlo simulation, and stochastic (Itô) calculus, together with their computer implementation. Application areas include portfolio management, risk management, derivatives, and proprietary trading.",
+    url: "https://ocw.mit.edu/courses/15-450-analytics-of-finance-fall-2010/",
+    isFree: true,
+    certificate:
+      "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
+  },
+
+  {
+    title: "Business Analysis Using Financial Statements",
+    provider: "MIT OpenCourseWare",
+    subject: "Accounting",
+    description:
+      "A graduate-level MIT Sloan course on using financial information to value and analyze firms. It applies economics, accounting, and finance skills to problems drawn from business news, to show what financial reports contain, why firms report certain information, and how to use that information.",
+    url: "https://ocw.mit.edu/courses/15-535-business-analysis-using-financial-statements-spring-2003/",
+    isFree: true,
+    certificate:
+      "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
+  },
+
+  {
+    title: "Financial Management",
+    provider: "MIT OpenCourseWare",
+    subject: "Finance",
+    description:
+      "A graduate-level MIT Sloan course on corporate finance and capital markets, emphasizing the financial aspects of managerial decisions. It covers the valuation of real and financial assets, risk management and financial derivatives, the trade-off between risk and expected return, and corporate financing and dividend policy, and draws on empirical research to guide those decisions.",
+    url: "https://ocw.mit.edu/courses/15-414-financial-management-summer-2003/",
+    isFree: true,
+    certificate:
+      "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
+  },
+
+  {
+    title: "Practice of Finance: Advanced Corporate Risk Management",
+    provider: "MIT OpenCourseWare",
+    subject: "Finance",
+    description:
+      "A graduate-level MIT Sloan course on how corporations use the insights and tools of risk management, taught from the viewpoint of an end user of derivatives rather than a dealer. The focus is on using those insights and pricing models to improve operations, increase the value of real assets, or create the financial flexibility needed to implement a core strategy.",
+    url: "https://ocw.mit.edu/courses/15-997-practice-of-finance-advanced-corporate-risk-management-spring-2009/",
+    isFree: true,
+    certificate:
+      "MIT OpenCourseWare provides free course materials but does not issue academic credit or certificates.",
+  },
 ];

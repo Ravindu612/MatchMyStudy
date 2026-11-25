@@ -41,6 +41,7 @@ import { utsPrograms } from "./programs/australia/utsPrograms";
 import { macquarieUniversityPrograms } from "./programs/australia/macquarieUniversityPrograms";
 import { deakinUniversityPrograms } from "./programs/australia/deakinUniversityPrograms";
 import { universityOfWesternAustraliaPrograms } from "./programs/australia/universityOfWesternAustraliaPrograms";
+import { universityOfOtagoPrograms } from "./programs/newZealand/universityOfOtagoPrograms";
 import { newYorkUniversityPrograms } from "./programs/unitedStates/newYorkUniversityPrograms";
 import { northeasternUniversityPrograms } from "./programs/unitedStates/northeasternUniversityPrograms";
 import { columbiaUniversityPrograms } from "./programs/unitedStates/columbiaUniversityPrograms";
@@ -177,6 +178,7 @@ export const programs: Program[] = [
   ...macquarieUniversityPrograms,
   ...deakinUniversityPrograms,
   ...universityOfWesternAustraliaPrograms,
+  ...universityOfOtagoPrograms,
   ...newYorkUniversityPrograms,
   ...northeasternUniversityPrograms,
   ...columbiaUniversityPrograms,

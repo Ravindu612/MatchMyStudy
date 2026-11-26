@@ -7,6 +7,7 @@ import { supabase } from "@/lib/supabase";
 import { loginPathFor } from "@/lib/signupRole";
 import Image from "next/image";
 import NotificationBell from "@/components/social/NotificationBell";
+import ResourcesMenu from "@/components/ResourcesMenu";
 
 export default function Navbar() {
   const router = useRouter();
@@ -176,6 +177,8 @@ export default function Navbar() {
     </Link>
   </li>
 
+  <ResourcesMenu variant="desktop" />
+
   <li>
   <Link
     href="/consultants"
@@ -287,6 +290,11 @@ export default function Navbar() {
           >
             Language Study
           </Link>
+
+          <ResourcesMenu
+            variant="mobile"
+            onNavigate={() => setOpen(false)}
+          />
 
           <Link
   href="/consultants"

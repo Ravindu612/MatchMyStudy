@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import CookieSettingsButton from "@/components/CookieSettingsButton";
+import { resourceGuides } from "@/data/resourceGuides";
 
 export default function Footer() {
   return (
@@ -73,6 +74,16 @@ export default function Footer() {
           >
             Support MatchMyStudy
           </Link>
+
+          {resourceGuides.map((guide) => (
+            <Link
+              key={guide.href}
+              href={guide.href}
+              className="hover:text-white transition-colors"
+            >
+              {guide.label}
+            </Link>
+          ))}
 
           <CookieSettingsButton className="bg-transparent p-0 text-inherit hover:text-white transition-colors" />
         </div>

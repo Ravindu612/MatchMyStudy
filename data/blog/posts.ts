@@ -1223,6 +1223,50 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "Same Hallway, Different Habits: Living Well With Flatmates Abroad",
+    slug: "living-with-flatmates",
+    description:
+      "A warm, practical guide for international students sharing a flat or student house abroad: setting a few simple house agreements early, handling noise, guests and shared costs, understanding cultural differences in tidiness, and raising problems kindly before they grow.",
+    category: "Student Life",
+    date: "2026-11-25",
+    readTime: "6 min read",
+    intro:
+      "Your flatmates are often the first people you really get to know abroad. You did not choose them, you may not share a first language, and you will soon know exactly how each of them loads a dishwasher. That can be the start of a lifelong friendship, a slightly awkward year of nodding in the hallway, or something in between.\n\nMost flat problems are not about bad people. They are about different habits that nobody talked about: one person thinks \"clean\" means spotless, another thinks it means no visible mould. One person goes to bed at ten, another starts video calls with home at midnight. The good news is that a little early conversation and some everyday kindness prevent most of it. Here is how to make a shared home feel like home.",
+    sections: [
+      {
+        heading: "Talk in the first week, before anything goes wrong",
+        text: "The easiest time to agree on house habits is before anyone is annoyed. In the first week, suggest a short, relaxed chat, ideally over tea or a simple shared meal rather than a formal meeting. Keep it light: \"How do we want to handle cleaning, bins and quiet hours?\" is enough to start.\n\nYou do not need a long rulebook. Three or four simple agreements cover most things: who cleans what and when, how the bins get taken out, roughly when the flat should be quiet, and how you let each other know about guests. Write them on a note on the fridge or in a group chat so nobody has to remember who said what. Agreements made together feel fair; rules announced by one person rarely do.",
+      },
+      {
+        heading: "Expect different ideas of normal",
+        text: "If your flatmates come from several countries, you are living in a small cultural exchange. Ideas about shoes indoors, how loudly to talk on the phone, how often to clean the bathroom, whether food on a shared shelf is for everyone, or how warm the flat should be can all feel obvious, and they are obvious, just differently in each home.\n\nWhen something surprises you, try curiosity before judgement. \"In my family we always take shoes off at the door, what do you usually do?\" opens a conversation instead of a standoff. You will probably discover habits of your own that seem strange to others, and that is fine. Living with different people is one of the quiet lessons of studying abroad, and it is good preparation for working in international teams later.",
+      },
+      {
+        heading: "Noise, sleep and the shared walls",
+        text: "Student timetables do not match. One flatmate has a nine o'clock lecture, another works evening shifts, a third is calling family in a time zone hours away. Headphones, a closed door, and moving late conversations out of the kitchen help more than any rule.\n\nIf noise is keeping you up, mention it soon and specifically: \"The calls after midnight carry through my wall, could you use headphones or the living room after then?\" is easier to hear than a general complaint a month later. And if you are the one who is up late, a quick message in the group chat when you have friends over is a small courtesy that builds a lot of goodwill.",
+      },
+      {
+        heading: "Guests, partners and personal space",
+        text: "Guests are part of student life, but a shared flat is everyone's home. A simple habit of letting others know when someone is visiting, especially overnight, avoids surprises in the bathroom queue. If a guest starts to stay most nights, that is worth a friendly conversation, because it changes how much the shared space, and sometimes the shared bills, get used.\n\nRespect for personal space works both ways. Knock before entering a room, ask before borrowing anything, and keep your belongings in your own space rather than spread across the living room. If you need quiet time to recharge, it is completely fine to say so. Being friendly does not mean being available every hour of the day.",
+      },
+      {
+        heading: "Shared costs without awkwardness",
+        text: "Money is where small misunderstandings grow fastest. If you share bills, internet or household basics such as cleaning products and toilet paper, agree early on how you will split them and keep a simple record, for example a shared note or a bill-splitting app. Settle up regularly rather than letting amounts build up for months.\n\nRead your accommodation contract so you know which costs are included and who is responsible for what. If something in the flat breaks, report it to the landlord or accommodation office in writing, and tell your flatmates you have done so. Clear, written communication protects everyone and avoids arguments about who should have reported the leak.",
+      },
+      {
+        heading: "When something is not working",
+        text: "Raise problems early, privately and kindly. Talk to the person directly rather than complaining to the others or leaving passive notes. Describe what happened and how it affects you, and suggest a practical fix: \"The dishes have piled up for a few days and there is no space to cook. Could we try washing up the same evening?\"\n\nIf a conversation does not help, or if you ever feel unsafe, uncomfortable or harassed in your home, you do not have to sort it out alone. University accommodation teams, residence assistants, student advice services and the international student office deal with flat disagreements all the time, and they can mediate or explain your options. Asking for help is not overreacting; it is what those services are for.\n\nMost flats settle into a rhythm after a few weeks. With a few shared agreements, a little patience and the occasional cup of tea together, the people down the hallway can become one of the best parts of your time abroad.",
+      },
+    ],
+    coverImage: "/images/blog/living-with-flatmates.jpg",
+    coverImageAlt: "Two people hold white mugs of a warm drink side by side at a worn wooden table",
+    unsplash: {
+      photographerName: "Sam Hojati",
+      photographerUrl: "https://unsplash.com/@samhojati",
+      photoUrl: "https://unsplash.com/photos/KxKbXRfrO3I",
+    },
+  },
+  {
     title: "Home, But Different: Handling Reverse Culture Shock After Studying Abroad",
     slug: "reverse-culture-shock",
     description:

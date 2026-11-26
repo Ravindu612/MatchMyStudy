@@ -8,11 +8,12 @@ import {
   isIndexableProgram,
 } from "@/lib/contentQuality";
 import { blogPosts, isFullIsoDate } from "@/data/blog/posts";
-import { blogPageCount, blogPagePath } from "@/lib/blog";
+import { blogListingLastModified, blogPageCount, blogPagePath } from "@/lib/blog";
 import { universityUpdatedAt } from "@/data/universityUpdatedAt";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.matchmystudy.com";
+  const blogIndexLastModified = blogListingLastModified(1);
 
   /*
    * ------------------------------------------------
@@ -65,6 +66,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // out until they have real content.
     {
       url: `${baseUrl}/blog`,
+      ...(blogIndexLastModified ? { lastModified: blogIndexLastModified } : {}),
       changeFrequency: "weekly",
       priority: 0.8,
     },
@@ -214,13 +216,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Older listing pages: /blog/page/2 .. /blog/page/N (page 1 is /blog).
+  // lastmod is the newest post on that page (page 1 uses the same rule above).
   const blogListingUrls: MetadataRoute.Sitemap = Array.from(
     { length: blogPageCount() - 1 },
-    (_, i) => ({
-      url: `${baseUrl}${blogPagePath(i + 2)}`,
-      changeFrequency: "weekly" as const,
-      priority: 0.5,
-    })
+    (_, i) => {
+      const n = i + 2;
+      const lastModified = blogListingLastModified(n);
+      return {
+        url: `${baseUrl}${blogPagePath(n)}`,
+        ...(lastModified ? { lastModified } : {}),
+        changeFrequency: "weekly" as const,
+        priority: 0.5,
+      };
+    }
   );
 
   /*

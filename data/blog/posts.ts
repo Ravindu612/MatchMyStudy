@@ -1223,6 +1223,50 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "The Conversation Behind the Application: Getting Ready for a University Admissions Interview",
+    slug: "admissions-interview",
+    description:
+      "A calm, practical guide for international students invited to a university or scholarship admissions interview: what interviewers are usually looking for, how to prepare without memorising a script, setting up for an online interview across time zones, handling nerves and second-language moments, and the questions worth asking back.",
+    category: "Applications",
+    date: "2026-11-26",
+    readTime: "6 min read",
+    intro:
+      "The email arrives and your heart jumps: the university would like to invite you to an interview. You might be wondering what they will ask, whether your English is good enough, and how anyone can judge you properly through a laptop screen from another continent.\n\nHere is the reassuring part. An interview invitation usually means your written application already interested someone. Interviews are not the norm everywhere: many universities never hold them, while others use them for particular courses, competitive programs, research degrees or scholarships. When they do, the interview is mostly a chance to hear the person behind the paperwork. You do not need to be perfect. You need to be prepared, honest and yourself. Here is how to get there.",
+    sections: [
+      {
+        heading: "Find out what kind of interview it is",
+        text: "Before you prepare answers, prepare facts. Read the invitation carefully and look for the format, the length, who will be on the panel, and whether there is any task, such as a short presentation, a problem to work through, or a piece of writing to discuss.\n\nInterviews can look very different. Some are friendly conversations about why you chose the subject. Some are academic, with questions that test how you think rather than what you have memorised. Research and PhD interviews often focus on your proposal and your fit with a supervisor, while scholarship panels may ask about your goals and your community. If anything is unclear, it is completely fine to reply politely and ask.",
+      },
+      {
+        heading: "Know your own application better than anyone",
+        text: "Most interview questions grow from what you have already sent. Reread your personal statement, CV, research proposal and any essays as if you were the interviewer. Underline anything you could be asked to explain: a book you mentioned, a project you led, a gap year, a change of subject, a grade that dipped one term.\n\nThen prepare a few true stories rather than a script. Think of two or three moments that show your interest in the subject, a time something went wrong and what you did next, and a reason you want this particular program, not just any program in that country. Practise saying them out loud in different ways, so they sound natural rather than recited.",
+      },
+      {
+        heading: "Online interviews and time zones",
+        text: "Many international applicants interview online, which brings its own small details. Convert the time carefully into your own time zone, write both times in your calendar, and double-check around daylight saving changes, when it is easy to be an hour out. Test the video platform, link, camera and microphone a day before, and again an hour before.\n\nChoose a quiet room with light in front of you rather than behind you, a plain background, and the camera roughly at eye level. Earphones with a microphone often sound clearer than a laptop speaker. Keep your phone nearby but silent, charged and ready to use as a hotspot or backup in case the internet drops. If the connection fails, stay calm, reconnect, and send a short email to the contact in your invitation.",
+      },
+      {
+        heading: "When English is not your first language",
+        text: "If you are interviewing in a second language, remember that the panel knows this. They are usually listening for ideas, reasoning and motivation, not for a perfect accent.\n\nYou are allowed to ask for help with the language of the question. \"Sorry, could you repeat the question?\" or \"Do you mean ... ?\" is a normal, confident thing to say, not a weakness. You are also allowed to think. A short pause, or saying \"That's an interesting question, let me think for a moment,\" is far better than rushing into an answer you did not mean.",
+      },
+      {
+        heading: "On the day: nerves, honesty and \"I don't know\"",
+        text: "Feeling nervous is normal and usually invisible to others. Before the interview, practise out loud with a friend, a teacher or a recording of yourself. Eat something, have water nearby, and log in or arrive a little early so you are not starting out of breath.\n\nListen to the whole question before answering, and answer the question that was actually asked. If an academic question stumps you, do not panic or pretend. Talk through how you would approach it, what you do know, and where you are unsure. Many interviewers are more interested in how you think than whether you reach the right answer straight away. And if you genuinely do not know something, an honest \"I'm not sure, but I would guess...\" is far stronger than an invented fact.",
+      },
+      {
+        heading: "Ask something back, then follow up",
+        text: "Near the end, you will often be asked whether you have any questions. Prepare two or three that you really want answered and that are not already on the website: how students usually work with their supervisors, what a typical week looks like in the first year, or what past students found most surprising about the program. A thoughtful question shows that you are choosing them too.\n\nAfterwards, write down what you were asked and how you felt it went while it is still fresh. Then try to let it go. Whatever the outcome, you have just practised explaining who you are and what you care about to strangers, in a new system and possibly a new language. That skill will follow you to every seminar, job interview and new beginning abroad.",
+      },
+    ],
+    coverImage: "/images/blog/admissions-interview.jpg",
+    coverImageAlt: "Top-down view of an open laptop, a smartphone, wireless earbuds and a camera on a round wooden table",
+    unsplash: {
+      photographerName: "Howard Bouchevereau",
+      photographerUrl: "https://unsplash.com/@howardbouchevereau",
+      photoUrl: "https://unsplash.com/photos/-WPdgomuLT4",
+    },
+  },
+  {
     title: "Same Hallway, Different Habits: Living Well With Flatmates Abroad",
     slug: "living-with-flatmates",
     description:

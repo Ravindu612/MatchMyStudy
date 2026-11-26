@@ -1312,6 +1312,56 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "Catching Every Word: Following Lectures When English Isn't Your First Language",
+    slug: "lectures-in-a-second-language",
+    description:
+      "A practical, kind guide for international students who study in English as a second or third language: how to prepare before class, take notes that work, use recordings well, ask questions, and stop translating every word.",
+    category: "Student Life",
+    date: "2026-11-23",
+    readTime: "6 min read",
+    intro:
+      "You passed the English test. You can order coffee, chat with your flatmates and read the reading list. Then the first lecture starts, the lecturer talks fast, makes a joke you miss, uses three words you have never heard, and suddenly the slides are two pages ahead of you.\n\nThis is one of the most common experiences of studying abroad, and almost nobody talks about it. It does not mean your English is not good enough or that you chose the wrong program. Listening to an hour of specialist content in a second language is a different skill from passing a test, and like any skill, it gets easier with the right habits. Here are the ones that help most.",
+    sections: [
+      {
+        heading: "Know that the first weeks are the hardest",
+        text: "In your first weeks, your brain is doing several jobs at once: adjusting to a new accent, learning subject vocabulary, following the structure of the lecture, and writing notes. Local students are only doing the last two. That is why you can leave a lecture feeling exhausted even when you understood most of it.\n\nThe good news is that the first two jobs shrink quickly. Accents become familiar within a few weeks, and subject vocabulary repeats far more than you expect. Many students say there is a moment, often around the middle of the first semester, when lectures suddenly feel normal. Be patient with yourself until then.",
+      },
+      {
+        heading: "Prepare before you walk in",
+        text: "The single most useful habit is a short preview before each lecture. If slides or readings are posted in advance on your university's learning platform, spend fifteen or twenty minutes with them. You do not need to understand everything. Just read the headings, look at the diagrams, and note the key terms.\n\nMake a small personal glossary for each module: the word, a simple explanation in English, and, if it helps, the word in your own language. When you hear a term in the lecture that you met the night before, it lands instead of flying past you. After a few weeks, this glossary also becomes excellent revision material.",
+      },
+      {
+        heading: "Take notes for meaning, not for every word",
+        text: "Trying to write down everything the lecturer says is a trap. You end up so busy writing that you stop listening. Instead, listen for structure. Lecturers often signal what matters with phrases like \"the key point here is\", \"there are three reasons\", \"in contrast\" or \"to sum up\". Those phrases tell you where to focus.\n\nWrite short notes: keywords, arrows, questions and quick examples. Leave space on the page, and mark anything you did not catch with a question mark so you can fill it in later. It is completely fine to write some notes in your own language if that is faster. What matters is that you can understand them tomorrow.",
+      },
+      {
+        heading: "Use recordings wisely",
+        text: "Many universities record lectures or provide captions, and some offer note-taking support through disability or learning support services. Check what your university offers, and if recordings exist, use them. But use them with a plan. Rewatching every lecture in full doubles your workload and is hard to keep up.\n\nA better approach is to watch only the parts you marked with a question mark, at normal speed or slightly slower. Captions can help you spot the spelling of a new word so you can look it up. Treat the recording as a safety net, not a replacement for being in the room.",
+      },
+      {
+        heading: "Ask, even when it feels awkward",
+        text: "Many international students stay silent because they worry their question will sound simple or their accent will be noticed. In reality, lecturers usually appreciate questions, and other students often have the same one.\n\nIf asking in front of a full room feels too much, there are quieter options. Stay for a minute after class, go to office hours, post on the course discussion board, or send a short, polite email. Tutorials and seminars are smaller and are often the best place to check your understanding. Study groups help too: comparing notes with classmates fills gaps quickly, and you will often find you caught things they missed.",
+      },
+      {
+        heading: "Stop translating everything",
+        text: "In the beginning, it is natural to translate in your head. Over time, try to let go of this. Translating every sentence slows you down and makes you fall behind. When you meet an unknown word, see if you can guess it from context and keep going. Look it up afterwards if it keeps coming back.\n\nOutside class, give your ears daily practice with your subject in English: podcasts, short talks, or videos from your field. Even twenty minutes on the bus makes a difference over a semester. Speaking helps listening too, so join a society, chat with classmates, or try a language exchange.",
+      },
+      {
+        heading: "Look after your energy",
+        text: "Listening in a second language is tiring, and tiredness makes it harder. Sleep, food and short breaks between lectures matter more than they seem. Sit where you can see the speaker's face and the slides clearly. If you are struggling for more than a few weeks, visit your university's academic skills or language support centre. Many universities offer free workshops on academic listening, note-taking and writing, and they are there for exactly this situation.\n\nFinally, remember what you are already doing. You are learning a subject at university level in a language that is not your first one. That is impressive. Give it time, build the habits, and one day you will notice that you laughed at the lecturer's joke before you had time to think about it.",
+      },
+    ],
+    languagePracticeNote:
+      "Following lectures in a second language gets easier when your ears and mouth both get practice. Speaking practice outside class makes fast, real-world English feel familiar much sooner.",
+    coverImage: "/images/blog/lectures-in-a-second-language.jpg",
+    coverImageAlt: "Students listen to a lecturer in a bright, tiered lecture hall with slides projected on a large screen",
+    unsplash: {
+      photographerName: "Dom Fou",
+      photographerUrl: "https://unsplash.com/@domlafou",
+      photoUrl: "https://unsplash.com/photos/people-sitting-on-chair-in-front-of-computer-YRMWVcdyhmI",
+    },
+  },
+  {
     title: "Canada vs Australia for International Students",
     slug: "canada-vs-australia",
     description:

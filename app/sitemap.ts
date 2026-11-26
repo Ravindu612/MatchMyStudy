@@ -10,6 +10,7 @@ import {
 import { blogPosts, isFullIsoDate } from "@/data/blog/posts";
 import { blogListingLastModified, blogPageCount, blogPagePath } from "@/lib/blog";
 import { universityUpdatedAt } from "@/data/universityUpdatedAt";
+import { resourceGuides } from "@/data/resourceGuides";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.matchmystudy.com";
@@ -61,6 +62,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    ...resourceGuides.map((guide) => ({
+      url: `${baseUrl}${guide.href}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
     // /universities (no index page yet) and the "Coming soon"
     // /program-matcher and /university-matcher pages are left
     // out until they have real content.

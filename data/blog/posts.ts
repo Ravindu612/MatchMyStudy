@@ -1268,6 +1268,51 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "The Paperwork Week: Bank, Phone and Registration Tasks for Your First Days Abroad",
+    slug: "first-week-admin-abroad",
+    description:
+      "A calm, practical guide for international students to the admin that fills the first week abroad: registering with your university, any local registration rules, getting a phone number, opening a bank account, and keeping your documents organised, without the panic.",
+    category: "Student Life",
+    date: "2026-11-24",
+    readTime: "6 min read",
+    intro:
+      "Nobody posts photos of their first week of admin. There are pictures of the campus, the new room and the first coffee with classmates, but not of the queue at the student services desk or the evening spent filling in a bank form. Yet for many international students, that paperwork is what the first week is really about.\n\nThe good news is that it is a finite list. Every task you complete makes the next one easier, because many of them depend on each other. With a little order, a folder of documents and some patience, the paperwork week becomes something you get through rather than something that gets to you. Here is a way to approach it.",
+    sections: [
+      {
+        heading: "Start with a simple list and the right order",
+        text: "Before you arrive, or on your first evening, write down every admin task you know about. A typical list might include: university enrolment, collecting your student card, any registration your visa or the local authorities require, a phone number, a bank account, health cover or a doctor, and accommodation paperwork.\n\nThen look for the dependencies. A bank may ask for a local address and proof that you are a student. Some registrations ask for a phone number. Your student card can unlock discounts and building access. Working out which task unlocks which saves you from turning up at a counter only to be told to come back with another document. Your university's international student office usually publishes an arrival checklist, so compare your list with theirs.",
+      },
+      {
+        heading: "Keep a documents folder, both paper and digital",
+        text: "Most first-week tasks ask for the same handful of papers: your passport, your visa or residence permit if you have one, your university offer or enrolment letter, your accommodation contract, and sometimes passport photos. Carry printed copies in one folder, and keep scanned copies in a secure cloud folder you can open on your phone.\n\nAs new documents arrive, such as a confirmation of enrolment or a registration certificate, add them straight away. It sounds fussy, but when an office asks for \"proof of address\" you will be glad to find it in ten seconds rather than searching your email in a queue.",
+      },
+      {
+        heading: "Complete university registration first",
+        text: "Enrolment with your university is often the key that opens everything else. It confirms that you are a student, gives you access to your student account and email, and usually lets you request official letters, such as proof of enrolment, which banks and local offices often ask for.\n\nGo to orientation sessions even if they feel long. They are where staff explain local rules, answer questions about visas and registration, and tell you which deadlines are strict. If your visa or permit has conditions, such as reporting your arrival or registering your address within a set period, follow the official instructions from the government website and your international office rather than advice from social media. Rules differ between countries and change over time, so the official source is the one to trust.",
+      },
+      {
+        heading: "Get connected: a phone number that works locally",
+        text: "A local number makes life easier. Many banks, delivery services, doctors and landlords expect one, and some apps send security codes only to local numbers. Some students arrive with an eSIM or a travel SIM; others pick up a prepaid SIM in the first days and switch to a monthly plan later.\n\nStarting with a prepaid option is a gentle choice. It gives you a number quickly without committing to a long contract before you know your usage, and you can compare plans once you have settled. Keep your home number active too if you rely on it for banking apps or family contact, and check that you can receive its security codes while abroad.",
+      },
+      {
+        heading: "Open a bank account without stress",
+        text: "Requirements vary by country and by bank, so check a few banks' websites before you go in. Look for what documents they ask for, whether they offer accounts for students or newcomers, and whether you can apply online or need an appointment. Some banks need proof of address, which may mean waiting until your accommodation is confirmed in writing.\n\nWhile you wait, a card from home or a multi-currency card can cover daily spending, but watch for fees on foreign transactions and cash withdrawals. Once your local account is open, set up your banking app, note how to freeze your card if it is lost, and never share security codes with anyone, including people who claim to be calling from your bank or your university.",
+      },
+      {
+        heading: "Pace yourself and ask for help",
+        text: "Admin is tiring in any language. Spread tasks across the week rather than trying to finish everything on the first day, and give yourself a reward after each one: a walk, a proper meal, a call home. Book appointments early where possible, because offices can be busiest at the start of term.\n\nIf you get stuck, ask. The international office, student union advisers and the students a year ahead of you have seen every version of the problem. Keep a note of who you spoke to and what they said, in case you need to follow up.\n\nBy the end of the week you will have a student card in your wallet, a number in your phone and a folder that makes sense. It is not glamorous, but it is the quiet foundation that lets the rest of your time abroad feel easy.",
+      },
+    ],
+    coverImage: "/images/blog/first-week-admin-abroad.jpg",
+    coverImageAlt: "A man works through tasks on a laptop at a wooden desk by a bright window, with a folder beside him",
+    unsplash: {
+      photographerName: "Windows",
+      photographerUrl: "https://unsplash.com/@windows",
+      photoUrl:
+        "https://unsplash.com/photos/a-person-sitting-at-a-desk-with-a-laptop-and-papers-241bwQl2uWE",
+    },
+  },
+  {
     title: "Bright Lights or Quiet Streets: Choosing Between a Big City and a Small University Town",
     slug: "big-city-or-small-town",
     description:

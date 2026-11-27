@@ -1223,6 +1223,54 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "The Kitchen Table Talk: Planning Study Abroad Together With Your Family",
+    slug: "talk-with-your-family",
+    description:
+      "A warm, practical guide to talking with your parents or family about studying abroad: when to start the conversation, how to bring real information instead of a dream, talking honestly about money, answering safety worries, sharing decisions, and staying close once you go.",
+    category: "Choosing a Program",
+    date: "2026-11-27",
+    readTime: "6 min read",
+    intro:
+      "For many students, the hardest part of studying abroad is not the application form. It is the evening you sit down with your family and say it out loud: I want to study in another country.\n\nSome families are excited straight away. Others go quiet, ask a hundred questions, or say no before you have finished the sentence. Most land somewhere in between. Whatever your family is like, this conversation usually goes better as a series of talks than as one big announcement. Here is how to prepare for it, and how to keep the people who love you on your side through the whole journey.",
+    sections: [
+      {
+        heading: "Start earlier than feels necessary",
+        text: "It is tempting to wait until you have an offer in your hand, so you can present a finished plan. But a surprise can feel like a decision made without them, and that often turns curiosity into resistance.\n\nTry opening the subject while you are still exploring. Something as simple as \"I've been reading about studying abroad and I'd like to look into it properly. Can we talk about it this weekend?\" gives everyone time to get used to the idea. Families who feel included early tend to become helpers rather than gatekeepers.",
+      },
+      {
+        heading: "Bring information, not just a dream",
+        text: "\"I want to go to Canada\" is a wish. \"I'm looking at these three programs, here is what I would study, and here is what each university says about entry requirements and deadlines\" is a plan your family can engage with.\n\nBefore the first serious talk, gather a short page of facts from official university websites and government sources: the program names, the length of study, what the application involves, and where you found each detail. Write down the questions you cannot answer yet, too. Saying \"I don't know, but I'll find out from the university\" shows maturity, not weakness.",
+      },
+      {
+        heading: "Talk about money honestly and early",
+        text: "Money is often the real worry behind other questions, so it helps to put it on the table gently and directly. Look up tuition and living costs on each university's official pages, and remember that rent, food, insurance, travel and visa-related costs all vary a lot by country and city. Avoid guessing or repeating figures from social media.\n\nThen talk about what is realistic for your family, without pressure in either direction. Which options would need savings, loans or scholarships? Are there universities or countries that fit the budget better? If you plan to look for scholarships or part-time work, explain that these are possibilities to research, not guarantees. Families often relax once they see you treating money as a shared, serious question.",
+      },
+      {
+        heading: "Listen to the worry behind the question",
+        text: "When a parent asks \"Is it safe?\" or \"What if you get sick?\", they are rarely asking for statistics. They are imagining you far away and on your own. Arguing back can make that fear louder.\n\nInstead, acknowledge it first: \"I understand that worries you.\" Then share what you have found out, such as the support services the university lists for international students, how student housing works, and what health cover students are expected to have. Offer to look at the university website together. Sometimes the most reassuring thing is simply seeing that there is a real office with real people whose job is to help students like you.",
+      },
+      {
+        heading: "Decide which choices are shared",
+        text: "Not every family makes decisions the same way. In some homes, parents expect the final say; in others, the student leads and the family advises. Many students find it helps to be clear about which parts are joint decisions, like the budget, and which parts are mostly yours, like the subject you want to spend years studying.\n\nIf you disagree, look for a middle path rather than a winner. That might mean adding a university closer to home to your list, choosing a country with family friends nearby, or agreeing to revisit the plan after you hear back from your applications. A compromise you both believe in is stronger than a yes given through gritted teeth.",
+      },
+      {
+        heading: "Make a plan for staying close",
+        text: "For many families, the hardest thought is the empty chair at dinner. Talk about how you will stay in touch before it becomes a problem. Will you have a regular video call at the weekend? A family chat where you share one photo a day? Who will you contact first if something goes wrong?\n\nIt also helps to share the practical details once you have them: your university's name and address, the international student office contact, and your housing information. Knowing where you are and who to call can calm a lot of late-night worry back home.",
+      },
+      {
+        heading: "Keep the conversation going",
+        text: "One talk rarely settles everything. Questions will come up again when the offer arrives, when the visa process starts, and the week before you fly. Treat each one as a chance to keep your family close to your plans rather than a test you have to pass.\n\nAnd remember that their worry is usually a form of love. With patience, honest information and a little time, many families who started with \"Why so far?\" end up being the loudest voices cheering at the airport.",
+      },
+    ],
+    coverImage: "/images/blog/family-conversation-study-abroad.jpg",
+    coverImageAlt: "A smiling man, a woman with a laptop and a young girl sitting together at a table by a sunny window",
+    unsplash: {
+      photographerName: "Ana Rojas",
+      photographerUrl: "https://unsplash.com/@analinerojas",
+      photoUrl: "https://unsplash.com/photos/man-woman-and-girl-sitting-at-table-GwpHi85G3Eo",
+    },
+  },
+  {
     title: "The Conversation Behind the Application: Getting Ready for a University Admissions Interview",
     slug: "admissions-interview",
     description:

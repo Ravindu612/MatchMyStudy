@@ -1,4 +1,5 @@
 import AppFrame from "@/components/AppFrame";
+import ChatWidgetGate from "@/components/chat/ChatWidgetGate";
 import CookieConsent from "@/components/CookieConsent";
 import type { Metadata } from "next";
 import { DEFAULT_OPEN_GRAPH, DEFAULT_TWITTER } from "@/lib/seo-meta";
@@ -78,6 +79,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         <AppFrame>{children}</AppFrame>
+        <ChatWidgetGate />
         <CookieConsent />
       </body>
     </html>

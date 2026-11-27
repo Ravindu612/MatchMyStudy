@@ -23,7 +23,7 @@ export default function PrivacyPage() {
           </h1>
 
           <p className="text-slate-400">
-            Last updated: 15 October 2026
+            Last updated: 27 November 2026
           </p>
         </div>
 
@@ -132,13 +132,26 @@ export default function PrivacyPage() {
 
             <li>
               <strong className="text-white">
+                Study assistant:
+              </strong>{" "}
+              questions you type into the study assistant. If you ask to
+              be contacted and tick the consent box, we also collect your
+              name, email address, message, and any country of interest
+              or study level you choose to add.
+            </li>
+
+            <li>
+              <strong className="text-white">
                 Technical and usage information:
               </strong>{" "}
               information that may be generated automatically when you
               access and use the website, such as browser information,
               device information, approximate location information,
               pages viewed, interactions, and technical and security
-              information.
+              information. The study assistant also stores a one-way hash
+              of your IP address with a daily message count, so the
+              assistant cannot be used without a limit. That hash is not
+              linked to an account.
             </li>
           </ul>
         </section>
@@ -333,6 +346,15 @@ export default function PrivacyPage() {
           </p>
 
           <p className="text-slate-300 leading-7">
+            The study assistant sends the questions you type to an AI
+            provider through Vercel so it can answer from MatchMyStudy&apos;s
+            published listings. Contact details from the chat form are
+            saved only when you tick the consent box. Those details are
+            stored in our database and are used to follow up with you.
+            They are not kept as a chat transcript.
+          </p>
+
+          <p className="text-slate-300 leading-7">
             Third-party services may process information according to
             their own privacy policies and applicable contractual and
             legal requirements.
@@ -505,7 +527,9 @@ export default function PrivacyPage() {
             moderation, with the deleted account&apos;s name removed. A
             consultant page you created is removed. A directory listing
             you claimed stays on MatchMyStudy and is disconnected from
-            your account.
+            your account. Chat contact requests that use the same email
+            address as the account are deleted with it. Requests sent
+            with a different email are not linked to the account.
           </p>
         </section>
 

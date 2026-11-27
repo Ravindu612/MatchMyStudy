@@ -1,3 +1,5 @@
+import { chatLeadsForEmail } from "@/lib/chat/account";
+import { getSupabaseAdmin } from "@/lib/supabaseAdmin";
 import {
   filesForExport,
   isUserFolderObject,
@@ -16,6 +18,8 @@ const EXPORT_NOTES = {
   messages:
     "Messages you sent, plus the conversation id, when it was opened, and the participant ids. Messages the other person sent are not included.",
   reports: "Reports you filed.",
+  chat_leads:
+    "Contact requests whose email matches this account. Requests sent from a different email are not included.",
 };
 
 export async function GET(request: Request) {
@@ -60,6 +64,7 @@ export async function GET(request: Request) {
     ...record,
     account: accountSection(session.user),
     language_study: await languageStudyExport(session.client, session.user.id),
+    chat_leads: await chatLeadsExport(session.user.email),
     files,
     notes: {
       ...EXPORT_NOTES,
@@ -77,6 +82,27 @@ export async function GET(request: Request) {
       "Cache-Control": "no-store",
     },
   });
+}
+
+async function chatLeadsExport(email: string | null | undefined) {
+  const admin = getSupabaseAdmin();
+
+  if (!admin) {
+    return {
+      note: "Contact requests could not be included because the server cannot read them.",
+      leads: [],
+    };
+  }
+
+  try {
+    return await chatLeadsForEmail(admin, email);
+  } catch (error) {
+    console.error("Could not export chat contact requests:", error);
+    return {
+      note: "Contact requests could not be included.",
+      leads: [],
+    };
+  }
 }
 
 async function languageStudyExport(client: SupabaseClient, userId: string) {

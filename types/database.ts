@@ -5,7 +5,8 @@
  * supabase/migrations/20261013220000_social_phase2_messages.sql,
  * supabase/migrations/20261014200000_social_phase2_notifications.sql,
  * supabase/migrations/20261015220000_account_privacy.sql,
- * supabase/migrations/20261107104500_site_feedback.sql, plus the
+ * supabase/migrations/20261107104500_site_feedback.sql,
+ * supabase/migrations/20261127120000_chat_assistant.sql, plus the
  * production profile columns (id uuid, email text null, role text not null,
  * created_at timestamptz). consultants is not listed here: those migrations
  * do not change that table, and the repo does not contain its full column
@@ -618,6 +619,66 @@ export type Database = {
         }
         Relationships: []
       }
+      chat_daily_usage: {
+        Row: {
+          ip_hash: string
+          lead_count: number
+          message_count: number
+          usage_date: string
+        }
+        Insert: {
+          ip_hash: string
+          lead_count?: number
+          message_count?: number
+          usage_date: string
+        }
+        Update: {
+          ip_hash?: string
+          lead_count?: number
+          message_count?: number
+          usage_date?: string
+        }
+        Relationships: []
+      }
+      chat_leads: {
+        Row: {
+          consent: boolean
+          contacted: boolean
+          contacted_at: string | null
+          country_of_interest: string | null
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+          study_level: string | null
+        }
+        Insert: {
+          consent?: boolean
+          contacted?: boolean
+          contacted_at?: string | null
+          country_of_interest?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+          study_level?: string | null
+        }
+        Update: {
+          consent?: boolean
+          contacted?: boolean
+          contacted_at?: string | null
+          country_of_interest?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+          study_level?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       public_profiles: {
@@ -674,6 +735,10 @@ export type Database = {
       get_or_create_dm: {
         Args: { other_user: string }
         Returns: string
+      }
+      consume_chat_quota: {
+        Args: { p_ip_hash: string; p_kind: string; p_limit: number }
+        Returns: Json
       }
       is_admin: {
         Args: { uid?: string }

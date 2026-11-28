@@ -11,6 +11,7 @@ import { blogPosts, isFullIsoDate } from "@/data/blog/posts";
 import { blogListingLastModified, blogPageCount, blogPagePath } from "@/lib/blog";
 import { universityUpdatedAt } from "@/data/universityUpdatedAt";
 import { resourceGuides } from "@/data/resourceGuides";
+import { languageStudySitemapPaths } from "@/lib/languageStudy/paths";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.matchmystudy.com";
@@ -43,15 +44,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.8,
     },
-    // Language Study is left out (and noindex in
-    // app/language-study/layout.tsx) while it is under development.
-    // AT LAUNCH: remove the noindex there and add back here:
-    //   ...languageStudySitemapPaths().map((path) => ({
-    //     url: `${baseUrl}${path}`,
-    //     changeFrequency: "monthly" as const,
-    //     priority: path === "/language-study" ? 0.7 : 0.5,
-    //   })),
-    // (import languageStudySitemapPaths from "@/lib/languageStudy/paths").
+    ...languageStudySitemapPaths().map((path) => ({
+      url: `${baseUrl}${path}`,
+      changeFrequency: "monthly" as const,
+      priority: path === "/language-study" ? 0.7 : 0.5,
+    })),
     {
       url: `${baseUrl}/study-matcher`,
       changeFrequency: "monthly",

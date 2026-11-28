@@ -1,9 +1,7 @@
-import AttemptForm from "@/components/languageStudy/AttemptForm";
 import Frame from "@/components/languageStudy/Frame";
-import OpenButton, { CloseAttemptButton } from "@/components/languageStudy/OpenButton";
-import Paywall from "@/components/languageStudy/Paywall";
-import ResultPanel from "@/components/languageStudy/ResultPanel";
+import TaskExperience from "@/components/languageStudy/TaskExperience";
 import { languageCrumbs, mockAccess, mockLockedText } from "@/lib/languageStudy/access";
+import { checkoutNotConnectedMessage, isCheckoutReady, readLanguageStudyConfig } from "@/lib/languageStudy/config";
 import { loadStudyContext } from "@/lib/languageStudy/context";
 import { findMock } from "@/lib/languageStudy/content";
 import { toPublicMock } from "@/lib/languageStudy/grade";
@@ -25,8 +23,7 @@ import { notFound } from "next/navigation";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  robots: { index: false, follow: true },
-  title: "Unofficial practice test | MatchMyStudy",
+  title: "Practice test | MatchMyStudy",
 };
 
 export default async function MockPage({
@@ -44,6 +41,7 @@ export default async function MockPage({
     notFound();
   }
 
+  const checkoutReady = isCheckoutReady(readLanguageStudyConfig(process.env));
   const context = await loadStudyContext();
   const access = mockAccess({
     mock,
@@ -70,7 +68,7 @@ export default async function MockPage({
       <p className="mt-4 rounded-2xl bg-slate-900 p-4 leading-7 text-white">{UNOFFICIAL_NOTICE}</p>
       <p className="mt-4 leading-7 text-slate-700">{mock.scopeNote}</p>
 
-      {mock.availability.status === "short_unofficial" ? (
+      {mock.availability.status === "full_practice" ? (
         <ol className="mt-4 list-decimal space-y-2 pl-5 text-slate-700">
           {mock.instructions.map((instruction) => (
             <li key={instruction}>{instruction}</li>
@@ -84,73 +82,32 @@ export default async function MockPage({
         </section>
       )}
 
-      {access === "sign_in" || access === "locked" ? (
-        <div className="mt-6">
-          <Paywall
-            title="This unofficial practice test is not open"
-            message={mockLockedText(mock)}
-            product="mock_test"
-            skill={skill}
-            language={language}
-            examVariant={variant}
-            actionLabel="Check mock test purchase"
-            showPurchase
-          />
-          {!context.userId ? (
-            <p className="mt-4">
-              <Link href={loginPathFor(here)} className="font-semibold text-blue-700">
-                Sign in
-              </Link>{" "}
-              to keep a future purchase on your account. Signing in does not unlock this test.
-            </p>
-          ) : null}
-        </div>
+      {mock.availability.status === "full_practice" ? (
+        <TaskExperience
+          taskId={mock.id}
+          initialAccess={access}
+          initialTask={
+            (access === "in_progress" || access === "result") && mock.availability.status === "full_practice"
+              ? toPublicMock({ ...mock, availability: mock.availability })
+              : null
+          }
+          initialFeedback={attempt?.feedback ?? null}
+          initialStartedAt={attempt?.startedAt ?? null}
+          minutes={mock.minutes}
+          checkoutReady={checkoutReady}
+          mode="mock"
+          loginHref={loginPathFor(here)}
+          paywall={{
+            title: "This practice test is not open",
+            message: checkoutReady ? mockLockedText(mock) : checkoutNotConnectedMessage("mock_test"),
+            product: "mock_test",
+            skill,
+            language,
+            examVariant: variant,
+            actionLabel: "Buy this test for USD 4.99",
+          }}
+        />
       ) : null}
-
-      {access === "storage_unavailable" ? (
-        <p className="mt-6 rounded-2xl bg-amber-50 p-4 text-amber-950" role="status">
-          The test cannot start because practice storage is not available. Nothing was unlocked.
-        </p>
-      ) : null}
-
-      {access === "start" ? (
-        <section className="mt-6 rounded-3xl border border-slate-200 bg-white p-6">
-          <h2 className="text-2xl font-bold">Start the timed practice</h2>
-          <p className="mt-3 text-slate-700">
-            Starting uses one mock credit and reveals the items. The questions stay hidden until
-            then. No card is charged on this step.
-          </p>
-          <OpenButton taskId={mock.id} label="Start unofficial practice" />
-        </section>
-      ) : null}
-
-      {access === "in_progress" && attempt && mock.availability.status === "short_unofficial" ? (
-        <section>
-          <h2 className="mt-8 text-2xl font-bold">Timed items</h2>
-          <AttemptForm
-            task={toPublicMock({ ...mock, availability: mock.availability })}
-            mode="mock"
-            preview={false}
-            startedAt={attempt.startedAt}
-            minutes={mock.minutes}
-          />
-        </section>
-      ) : null}
-
-      {access === "expired" ? (
-        <section className="mt-6 rounded-3xl border border-slate-200 bg-white p-6">
-          <h2 className="text-2xl font-bold">Time is up</h2>
-          <p className="mt-3 leading-7 text-slate-700">
-            The clock has passed, including a short grace period for the submission to arrive. The
-            items stay hidden, and this attempt is not given a score.
-          </p>
-          {attempt?.feedback ? <ResultPanel feedback={attempt.feedback} /> : (
-            <CloseAttemptButton taskId={mock.id} />
-          )}
-        </section>
-      ) : null}
-
-      {access === "result" && attempt?.feedback ? <ResultPanel feedback={attempt.feedback} /> : null}
 
       <p className="mt-8">
         <Link href={languagePath(skill, language)} className="font-semibold text-blue-700">

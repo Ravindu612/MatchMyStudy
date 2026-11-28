@@ -1,6 +1,6 @@
 "use client";
 
-import { supabase } from "@/lib/supabase";
+import { readAccessToken } from "@/lib/languageStudy/browserProgress";
 import { useRef, useState } from "react";
 
 const focus =
@@ -18,6 +18,7 @@ export default function SpeechButton({
   audioNote?: string;
 }) {
   const scriptRef = useRef<string | null>(null);
+  const langRef = useRef("en-GB");
   const [phase, setPhase] = useState<"idle" | "loading" | "playing" | "unsupported" | "error">(
     "idle"
   );
@@ -30,8 +31,7 @@ export default function SpeechButton({
     }
 
     setPhase("loading");
-    const { data } = await supabase.auth.getSession();
-    const token = data.session?.access_token;
+    const token = await readAccessToken();
     const response = await fetch("/api/language-study/speech", {
       method: "POST",
       headers: {
@@ -46,7 +46,7 @@ export default function SpeechButton({
       return null;
     }
 
-    const body = (await response.json()) as { script?: string };
+    const body = (await response.json()) as { script?: string; lang?: string };
 
     if (!body.script) {
       setPhase("error");
@@ -54,6 +54,7 @@ export default function SpeechButton({
     }
 
     scriptRef.current = body.script;
+    langRef.current = body.lang || "en-GB";
     setPhase("idle");
     return body.script;
   }
@@ -72,6 +73,7 @@ export default function SpeechButton({
 
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = langRef.current;
     utterance.onend = () => setPhase("idle");
     utterance.onerror = () => setPhase("error");
     setPhase("playing");

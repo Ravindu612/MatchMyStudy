@@ -1,6 +1,6 @@
 "use client";
 
-import { supabase } from "@/lib/supabase";
+import { readAccessToken } from "@/lib/languageStudy/browserProgress";
 import { useState } from "react";
 
 const focus =
@@ -27,8 +27,7 @@ export default function PurchaseButton({
     setPending(true);
     setMessage(null);
 
-    const { data } = await supabase.auth.getSession();
-    const token = data.session?.access_token;
+    const token = await readAccessToken();
     const response = await fetch("/api/language-study/checkout", {
       method: "POST",
       headers: {
@@ -47,19 +46,12 @@ export default function PurchaseButton({
 
     setPending(false);
 
-    if (body.unlocked === true || body.url) {
-      setMessage(
-        body.url
-          ? "Checkout returned a payment link. This page does not unlock the task until a verified webhook records the payment."
-          : "The server reported an unlock. Refresh and confirm the task is still locked if you have not paid."
-      );
+    if (body.url) {
+      window.location.assign(body.url);
       return;
     }
 
-    setMessage(
-      body.message ??
-        "Purchase is not available yet. Nothing was charged, and no task or test was unlocked."
-    );
+    setMessage(body.message ?? "Coming soon. Nothing was charged, and nothing was unlocked.");
   }
 
   return (

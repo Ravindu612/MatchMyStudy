@@ -8,7 +8,10 @@ export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
 export async function POST(request: Request) {
-  const secret = process.env.LANGUAGE_STUDY_STRIPE_WEBHOOK_SECRET?.trim() || null;
+  const secret =
+    process.env.LANGUAGE_STUDY_STRIPE_WEBHOOK_SECRET?.trim() ||
+    process.env.STRIPE_WEBHOOK_SECRET?.trim() ||
+    null;
   const stripe = getStripe();
   const rawBody = await request.text();
   const result = await handleWebhook(serviceDeps(), {
@@ -22,7 +25,14 @@ export async function POST(request: Request) {
 
       const event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
 
-      if (event.type !== "checkout.session.completed") {
+      const sessionEvents = new Set([
+        "checkout.session.completed",
+        "checkout.session.expired",
+        "checkout.session.async_payment_failed",
+        "checkout.session.async_payment_succeeded",
+      ]);
+
+      if (!sessionEvents.has(event.type)) {
         return { id: event.id, type: event.type };
       }
 

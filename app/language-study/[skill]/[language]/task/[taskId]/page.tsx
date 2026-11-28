@@ -1,15 +1,12 @@
-import AttemptForm from "@/components/languageStudy/AttemptForm";
 import Frame from "@/components/languageStudy/Frame";
-import OpenButton from "@/components/languageStudy/OpenButton";
-import Paywall from "@/components/languageStudy/Paywall";
-import ResultPanel from "@/components/languageStudy/ResultPanel";
+import TaskExperience from "@/components/languageStudy/TaskExperience";
 import {
   capReachedText,
   languageCrumbs,
   lockedTaskText,
   practiceTaskAccess,
 } from "@/lib/languageStudy/access";
-import { readLanguageStudyConfig } from "@/lib/languageStudy/config";
+import { checkoutNotConnectedMessage, isCheckoutReady, readLanguageStudyConfig } from "@/lib/languageStudy/config";
 import { loadStudyContext } from "@/lib/languageStudy/context";
 import { findPracticeTask } from "@/lib/languageStudy/content";
 import { toPublicListening, toPublicReading, toPublicWriting } from "@/lib/languageStudy/grade";
@@ -30,7 +27,6 @@ import { notFound } from "next/navigation";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  robots: { index: false, follow: true },
   title: "Practice task | MatchMyStudy",
 };
 
@@ -49,6 +45,7 @@ export default async function TaskPage({
   }
 
   const config = readLanguageStudyConfig(process.env);
+  const checkoutReady = isCheckoutReady(config);
   const context = await loadStudyContext();
   const access = practiceTaskAccess({
     task,
@@ -82,81 +79,36 @@ export default async function TaskPage({
       <p className="mt-3 text-slate-600">
         {LANGUAGE_NAMES[language]} practice. {UNOFFICIAL_NOTICE}
       </p>
-      {access === "preview" ? (
-        <p className="mt-4 rounded-2xl bg-amber-50 p-4 text-amber-950">
-          Preview. This result is not saved and does not enforce the free allowance.{" "}
-          <Link href={loginPathFor(taskPath(skill, language, task.id))} className="font-semibold text-blue-800">
+      {task.access === "free" ? (
+        <p className="mt-4 text-slate-700">
+          This free task works without an account.{" "}
+          <Link href={loginPathFor(taskPath(skill, language, task.id))} className="font-semibold text-blue-700">
             Sign in
           </Link>{" "}
-          for counted practice.
+          if you want the result saved to your account.
         </p>
       ) : null}
-      {access === "sign_in" ? (
-        <div className="mt-4">
-          <p>
-            <Link href={loginPathFor(languagePath(skill, language))} className="font-semibold text-blue-700">
-              Sign in
-            </Link>{" "}
-            to open this task. The passage stays hidden so a guest preview cannot bypass the allowance.
-          </p>
-          {task.access === "paid" ? (
-            <div className="mt-4">
-              <Paywall
-                title="This task is in the paid batch"
-                message={lockedTaskText(config, skill, language)}
-                product="task_batch"
-                skill={skill}
-                language={language}
-                actionLabel="Check task batch purchase"
-                showPurchase
-              />
-            </div>
-          ) : null}
-        </div>
-      ) : null}
-      {access === "storage_unavailable" ? (
-        <p className="mt-4 rounded-2xl bg-amber-50 p-4 text-amber-950" role="status">
-          Counted practice cannot be saved yet. The passage stays hidden, nothing was scored, and
-          nothing was unlocked.
-        </p>
-      ) : null}
-      {access === "locked" ? (
-        <div className="mt-6">
-          <Paywall
-            title={task.access === "paid" ? "Extra task locked" : "Free practice allowance reached"}
-            message={
-              task.access === "paid"
-                ? lockedTaskText(config, skill, language)
-                : capReachedText(config, freeUsed)
-            }
-            product="task_batch"
-            skill={skill}
-            language={language}
-            actionLabel="Check task batch purchase"
-            showPurchase
-          />
-        </div>
-      ) : null}
-      {access === "needs_open" ? (
-        <section className="mt-6 rounded-3xl border border-slate-200 bg-white p-6">
-          <h2 className="text-2xl font-bold">Use one practice credit to open this task</h2>
-          <p className="mt-3 text-slate-700">
-            The passage and questions stay hidden until a credit is used. Opening does not charge a
-            card.
-          </p>
-          <OpenButton taskId={task.id} label="Open with one credit" />
-        </section>
-      ) : null}
-      {showBody && access === "completed" && saved?.feedback ? (
-        <ResultPanel feedback={saved.feedback} />
-      ) : null}
-      {showBody && access !== "completed" ? (
-        <AttemptForm
-          task={publicTask}
-          mode={access === "preview" ? "preview" : "practice"}
-          preview={access === "preview"}
-        />
-      ) : null}
+      <TaskExperience
+        taskId={task.id}
+        initialAccess={access}
+        initialTask={showBody ? publicTask : null}
+        initialFeedback={showBody && access === "completed" ? saved?.feedback ?? null : null}
+        checkoutReady={checkoutReady}
+        mode="practice"
+        loginHref={loginPathFor(taskPath(skill, language, task.id))}
+        paywall={{
+          title: task.access === "paid" ? "Extra task locked" : "Free practice allowance reached",
+          message: checkoutReady
+            ? task.access === "paid"
+              ? lockedTaskText(config, skill, language)
+              : capReachedText(config, freeUsed)
+            : checkoutNotConnectedMessage("task_batch"),
+          product: "task_batch",
+          skill,
+          language,
+          actionLabel: "Buy 10 tasks for USD 1.99",
+        }}
+      />
       <p id="language-study-next" className="mt-8">
         <Link href={languagePath(skill, language)} className="font-semibold text-blue-700">
           Back to {LANGUAGE_NAMES[language]} tasks

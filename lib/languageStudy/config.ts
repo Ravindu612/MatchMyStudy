@@ -13,20 +13,21 @@
  * - The free allowance remains 3 submitted tasks per skill and language.
  *
  * Amounts are constants. The browser cannot send a price. Env vars cannot
- * change 199 or 499. Checkout still does not run until Stripe Price ids,
- * the secret key, the language-study webhook secret, and
- * LANGUAGE_STUDY_PAYMENTS_ENABLED=true are present, and the Stripe Price
- * object matches these amounts. Creating those Stripe prices is a separate
- * owner step. This code does not create products or charge anyone.
+ * change 199 or 499. Checkout creates a one-time Stripe Checkout Session
+ * with those amounts. It does not need a pre-made Stripe Price id.
  *
- * Optional environment values:
+ * Checkout runs only when all of these are set:
+ * - STRIPE_SECRET_KEY
+ * - NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY (or STRIPE_PUBLISHABLE_KEY)
+ * - STRIPE_WEBHOOK_SECRET or LANGUAGE_STUDY_STRIPE_WEBHOOK_SECRET
+ *
+ * If any of those is missing, paid items show a coming-soon state.
+ * A consultant secret key by itself does not turn checkout on.
+ *
+ * Optional:
  * - LANGUAGE_STUDY_FREE_TASKS — integer 0 through 20, default 3
- * - STRIPE_LANGUAGE_STUDY_BATCH_PRICE_ID
- * - STRIPE_LANGUAGE_STUDY_MOCK_PRICE_ID
- * - LANGUAGE_STUDY_STRIPE_WEBHOOK_SECRET
- * - LANGUAGE_STUDY_PAYMENTS_ENABLED — exact string "true"
- * - STRIPE_SECRET_KEY — existing server secret; it does not by itself enable
- *   language-study checkout
+ * - LANGUAGE_STUDY_WRITING_API_KEY or OPENAI_API_KEY — extra writing comments.
+ *   The rubric still scores when the key is missing.
  */
 
 export const PROVISIONAL_FREE_TASKS = 3;
@@ -45,11 +46,9 @@ export type LanguageStudyConfig = {
   currency: typeof LAUNCH_CURRENCY;
   taskBatchPriceMinor: typeof TASK_BATCH_PRICE_MINOR;
   mockPriceMinor: typeof MOCK_PRICE_MINOR;
-  stripeTaskBatchPriceId: string | null;
-  stripeMockPriceId: string | null;
   stripeSecretConfigured: boolean;
+  publishableKeyConfigured: boolean;
   webhookSecretConfigured: boolean;
-  paymentsEnabledFlag: boolean;
 };
 
 export const TAX_NOTE =
@@ -67,16 +66,12 @@ export function productOffer(product: "task_batch" | "mock_test"): string {
     return `${formatUsd(TASK_BATCH_PRICE_MINOR)} buys ${TASK_BATCH_SIZE} additional practice tasks in this one skill and language. Each credit opens one paid task that is not part of the free ${PROVISIONAL_FREE_TASKS}.`;
   }
 
-  return `${formatUsd(MOCK_PRICE_MINOR)} buys one attempt at this short unofficial practice test. The page states how many items it has and how many minutes it runs. It is not a full public exam and it is not an official score.`;
+  return `${formatUsd(MOCK_PRICE_MINOR)} buys one attempt at one full unofficial practice test for the language, skill, and exam style you chose. The page states the timing and the number of items. It is not an official score.`;
 }
 
 export type PurchaseBlockCode =
-  | "payments_disabled"
+  | "coming_soon"
   | "price_unset"
-  | "currency_unset"
-  | "stripe_price_missing"
-  | "stripe_secret_missing"
-  | "webhook_secret_missing"
   | "library_smaller_than_batch"
   | "variant_unavailable";
 
@@ -90,7 +85,6 @@ export type PurchaseAssessment =
       available: true;
       currency: StudyCurrency;
       priceMinor: number;
-      stripePriceId: string;
       credits: number;
     };
 
@@ -137,16 +131,26 @@ export function readLanguageStudyConfig(
     currency: LAUNCH_CURRENCY,
     taskBatchPriceMinor: TASK_BATCH_PRICE_MINOR,
     mockPriceMinor: MOCK_PRICE_MINOR,
-    stripeTaskBatchPriceId: clean(env.STRIPE_LANGUAGE_STUDY_BATCH_PRICE_ID),
-    stripeMockPriceId: clean(env.STRIPE_LANGUAGE_STUDY_MOCK_PRICE_ID),
     stripeSecretConfigured: Boolean(clean(env.STRIPE_SECRET_KEY)),
-    webhookSecretConfigured: Boolean(clean(env.LANGUAGE_STUDY_STRIPE_WEBHOOK_SECRET)),
-    paymentsEnabledFlag: env.LANGUAGE_STUDY_PAYMENTS_ENABLED === "true",
+    publishableKeyConfigured: Boolean(
+      clean(env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY) || clean(env.STRIPE_PUBLISHABLE_KEY)
+    ),
+    webhookSecretConfigured: Boolean(
+      clean(env.LANGUAGE_STUDY_STRIPE_WEBHOOK_SECRET) || clean(env.STRIPE_WEBHOOK_SECRET)
+    ),
   };
 }
 
+export function isCheckoutReady(config: LanguageStudyConfig): boolean {
+  return (
+    config.stripeSecretConfigured &&
+    config.publishableKeyConfigured &&
+    config.webhookSecretConfigured
+  );
+}
+
 export function checkoutNotConnectedMessage(product: "task_batch" | "mock_test"): string {
-  return `${productOffer(product)} ${TAX_NOTE} Checkout is not connected yet, so nothing was charged and nothing was unlocked.`;
+  return `Coming soon. ${productOffer(product)} ${TAX_NOTE} Nothing was charged and nothing was unlocked. Free practice stays available.`;
 }
 
 export function assessPurchase(
@@ -165,14 +169,10 @@ export function assessPurchase(
 
   const priceMinor =
     product === "task_batch" ? config.taskBatchPriceMinor : config.mockPriceMinor;
-  const stripePriceId =
-    product === "task_batch"
-      ? config.stripeTaskBatchPriceId
-      : config.stripeMockPriceId;
   const blocked = checkoutNotConnectedMessage(product);
 
-  if (!config.paymentsEnabledFlag) {
-    return { available: false, code: "payments_disabled", message: blocked };
+  if (!isCheckoutReady(config)) {
+    return { available: false, code: "coming_soon", message: blocked };
   }
 
   if (config.currency !== "usd" || (priceMinor !== 199 && priceMinor !== 499)) {
@@ -199,18 +199,6 @@ export function assessPurchase(
     };
   }
 
-  if (!stripePriceId) {
-    return { available: false, code: "stripe_price_missing", message: blocked };
-  }
-
-  if (!config.stripeSecretConfigured) {
-    return { available: false, code: "stripe_secret_missing", message: blocked };
-  }
-
-  if (!config.webhookSecretConfigured) {
-    return { available: false, code: "webhook_secret_missing", message: blocked };
-  }
-
   if (product === "task_batch" && options.lockedPracticeTasks < config.paidBatchSize) {
     return {
       available: false,
@@ -224,7 +212,6 @@ export function assessPurchase(
     available: true,
     currency: config.currency,
     priceMinor,
-    stripePriceId,
     credits: product === "task_batch" ? config.paidBatchSize : 1,
   };
 }

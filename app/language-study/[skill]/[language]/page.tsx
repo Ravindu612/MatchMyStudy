@@ -8,7 +8,7 @@ import {
   summarizeMock,
   taskHref,
 } from "@/lib/languageStudy/access";
-import { productOffer, readLanguageStudyConfig, TAX_NOTE } from "@/lib/languageStudy/config";
+import { checkoutNotConnectedMessage, isCheckoutReady, productOffer, readLanguageStudyConfig, TAX_NOTE } from "@/lib/languageStudy/config";
 import { loadStudyContext } from "@/lib/languageStudy/context";
 import { mocksFor, practiceTasksFor } from "@/lib/languageStudy/content";
 import { freeSubmissionsUsed } from "@/lib/languageStudy/ledger";
@@ -84,13 +84,19 @@ export default async function LanguagePracticePage({
       <p className="mt-4 leading-7 text-slate-700">{provisionalAllowanceText(config)}</p>
       <section className="mt-4 rounded-3xl border border-slate-200 bg-white p-5 leading-7 text-slate-700">
         <h2 className="text-xl font-bold text-slate-900">What a purchase includes</h2>
-        <p className="mt-3">{productOffer("task_batch")}</p>
-        <p className="mt-3">{productOffer("mock_test")}</p>
-        <p className="mt-3">{TAX_NOTE}</p>
-        <p className="mt-3">
-          Pressing a purchase button does not charge a card until Stripe Checkout is connected to
-          these exact amounts. A cancelled or failed checkout does not add tasks.
-        </p>
+        {isCheckoutReady(config) ? (
+          <>
+            <p className="mt-3">{productOffer("task_batch")}</p>
+            <p className="mt-3">{productOffer("mock_test")}</p>
+            <p className="mt-3">{TAX_NOTE}</p>
+            <p className="mt-3">
+              The purchase button opens Stripe Checkout. A cancelled or failed checkout does not add
+              tasks.
+            </p>
+          </>
+        ) : (
+          <p className="mt-3">{checkoutNotConnectedMessage("task_batch")}</p>
+        )}
       </section>
       {context.userId && context.storageReady ? (
         <p className="mt-3 font-semibold text-slate-900">
@@ -106,18 +112,22 @@ export default async function LanguagePracticePage({
       ) : null}
       {!context.userId ? (
         <p className="mt-4 rounded-2xl bg-slate-100 p-4 text-slate-800">
-          You are viewing a preview. It does not enforce the free allowance.{" "}
+          Free tasks work without an account and are saved in this browser.{" "}
           <Link href={loginPathFor(here)} className="font-semibold text-blue-700">
             Sign in
           </Link>{" "}
-          so submissions are counted on the server.
+          to save results to your account.
         </p>
       ) : null}
-      {query.purchase ? (
+      {query.purchase === "pending" ? (
         <p className="mt-4 rounded-2xl bg-slate-100 p-4 text-slate-800" role="status">
-          Returning from a payment page does not unlock a task. A purchase is recorded only after
-          the signed webhook confirms it. Prices are not set in the default setup, so no charge
-          should have been made.
+          If the card page took a payment, it is recorded only after Stripe confirms it. Refresh
+          this page in a moment. Cancelling checkout does not unlock a task.
+        </p>
+      ) : null}
+      {query.purchase === "cancelled" ? (
+        <p className="mt-4 rounded-2xl bg-slate-100 p-4 text-slate-800" role="status">
+          Checkout was cancelled. Nothing was charged and nothing was unlocked.
         </p>
       ) : null}
 
@@ -151,10 +161,10 @@ export default async function LanguagePracticePage({
         })}
       </ul>
 
-      <h2 className="mt-10 text-2xl font-bold">Unofficial practice tests</h2>
+      <h2 className="mt-10 text-2xl font-bold">Full practice tests</h2>
       <p className="mt-2 text-slate-600">
-        These are separate from the free tasks. A short sample is not a full exam, and an
-        unavailable variant cannot be purchased.
+        These are separate from the free tasks. Each one uses a full-section clock. The result is
+        not an official score.
       </p>
       <ul className="mt-4 space-y-4">
         {mocks.map((mock) => {
@@ -182,13 +192,17 @@ export default async function LanguagePracticePage({
       {context.userId && context.storageReady && freeUsed >= config.freeTasksPerSkillPerLanguage ? (
         <div className="mt-10">
           <Paywall
-            title="Free practice allowance reached"
-            message={`The provisional allowance of ${config.freeTasksPerSkillPerLanguage} submitted tasks for this skill and language has been used. Purchase is not available yet. Nothing was charged, and no extra task was unlocked.`}
+            title={isCheckoutReady(config) ? "Free practice allowance reached" : "Coming soon"}
+            message={
+              isCheckoutReady(config)
+                ? `The free allowance of ${config.freeTasksPerSkillPerLanguage} submitted tasks for this skill and language has been used. A pack of 10 extra tasks is USD 1.99.`
+                : checkoutNotConnectedMessage("task_batch")
+            }
             product="task_batch"
             skill={skill}
             language={language}
-            actionLabel="Check task batch purchase"
-            showPurchase
+            actionLabel="Buy 10 tasks for USD 1.99"
+            showPurchase={isCheckoutReady(config)}
           />
         </div>
       ) : null}
@@ -199,17 +213,16 @@ export default async function LanguagePracticePage({
 function stateLabel(state: string): string {
   switch (state) {
     case "preview":
-      return "Preview. This task is not saved and does not enforce the free allowance.";
     case "practice":
-      return "Open. Submitting counts toward the provisional free allowance.";
+      return "Open. A signed-in result is saved to your account. Otherwise it is saved in this browser.";
     case "completed":
       return "Submitted. Your saved result is available.";
     case "needs_open":
       return "A paid credit can open this task. The passage stays hidden until then.";
     case "locked":
-      return "Locked. The free allowance does not include this task, and purchase is not available yet.";
+      return "Locked. The free allowance does not include this task.";
     case "sign_in":
-      return "Sign in to take this task under the server-side allowance.";
+      return "Sign in to open this paid task. Free tasks on this page do not need an account.";
     default:
       return "Counted practice is waiting for the database migration.";
   }

@@ -55,6 +55,38 @@ export default function ResultPanel({
         </div>
       ) : null}
 
+      {feedback.scoringKind === "writing_assessment" ? (
+        <div className="mt-4">
+          <p className="text-slate-800">
+            Practice estimate {feedback.practiceEstimate} of {feedback.estimateMax}. This is not an
+            official score.
+          </p>
+          <p className="mt-3 text-slate-800">{feedback.summary}</p>
+          <p className="mt-3 text-slate-700">
+            Word count: {feedback.wordCount}. Suggested range: {feedback.suggestedMin} to{" "}
+            {feedback.suggestedMax} words. Word count is not a score by itself.
+          </p>
+          <p className="mt-3 text-slate-700">{feedback.evaluator.note}</p>
+          {feedback.evaluator.comments?.length ? (
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-700">
+              {feedback.evaluator.comments.map((comment) => (
+                <li key={comment}>{comment}</li>
+              ))}
+            </ul>
+          ) : null}
+          <ul className="mt-4 space-y-3">
+            {feedback.criteria.map((criterion) => (
+              <li key={criterion.id} className="rounded-2xl bg-slate-50 p-4">
+                <p className="font-semibold text-slate-900">
+                  {criterion.label}: {criterion.score} of {criterion.max}
+                </p>
+                <p className="mt-1 text-slate-600">{criterion.note}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+
       {feedback.scoringKind === "self_review" ? (
         <div className="mt-4">
           <p className="text-slate-800">{feedback.summary}</p>

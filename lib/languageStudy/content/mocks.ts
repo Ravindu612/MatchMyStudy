@@ -1,14 +1,20 @@
 import type { MockTest } from "../types";
-import { choices, reorder } from "./questions";
+import {
+  ieltsListeningParts,
+  pteListeningParts,
+  toeflListeningParts,
+  ykiListeningParts,
+} from "./listeningMocks";
+import { prompt } from "./mockBuild";
+import {
+  ieltsReadingParts,
+  pteReadingParts,
+  toeflReadingParts,
+  ykiReadingParts,
+} from "./readingMocks";
 
-const unavailableToeflWriting =
-  "TOEFL writing is scored by human raters or ETS's own automated scoring. MatchMyStudy cannot produce that score, so a TOEFL-style writing mock is not offered.";
-
-const unavailablePteWriting =
-  "PTE writing is scored by Pearson's automated systems. MatchMyStudy cannot reproduce that score, so a PTE-style writing mock is not offered.";
-
-const unavailablePteListening =
-  "The distinctive PTE listening tasks need audio aligned to an exact script, including items such as highlight incorrect words. A browser voice cannot support that format honestly, so a PTE-style listening mock is not offered.";
+const unofficial =
+  "Unofficial practice. The result is not an official or certified score, and MatchMyStudy is not the exam board.";
 
 export const mockTests: MockTest[] = [
   {
@@ -16,310 +22,103 @@ export const mockTests: MockTest[] = [
     skill: "reading",
     language: "en",
     variant: "ielts",
-    title: "Short unofficial IELTS-style reading",
-    minutes: 12,
+    title: "Full unofficial IELTS-style reading",
+    minutes: 60,
     scopeNote:
-      "IELTS Academic Reading is normally three long passages, 40 questions, and 60 minutes. This practice has one short passage and four questions. The raw mark is not an IELTS band, and MatchMyStudy is not a British Council, IDP, or Cambridge exam.",
+      "This unofficial section has 3 passages, 40 questions, and a 60-minute clock, matching the length of an IELTS Academic reading paper. The raw mark is not an IELTS band, and MatchMyStudy is not a British Council, IDP, or Cambridge exam.",
     instructions: [
-      "Read the passage and answer four questions.",
+      "Read the three passages and answer all 40 questions.",
       "True means the passage states it. False means the passage states the opposite. Not given means the passage does not say.",
-      "The clock runs for 12 minutes and then the test closes without a score if you have not submitted.",
+      "The clock runs for 60 minutes.",
       "You receive a raw mark only. There is no band conversion.",
     ],
-    availability: {
-      status: "short_unofficial",
-      body: {
-        kind: "objective",
-        passageLang: "en",
-        passage:
-          "The campus repair cafe opens on the first Saturday of each month in the engineering atrium. Students and neighbours bring small broken items, and volunteer fixers help them repair the item rather than replace it. The cafe does not accept televisions or anything that uses gas. Visitors take a numbered ticket at the door. Tickets 1 to 20 are seen before noon, and later tickets are seen only if a fixer is free. Tools stay on the tables. A visitor may borrow a screwdriver for use inside the atrium, but the tool cannot leave the building. Last month the cafe repaired 34 items and declined 6 because the parts were missing. The organisers publish the count on the student union page the following Monday. They do not publish the names of the visitors.",
-        questions: [
-          choices(
-            "mock-reading-en-ielts-q1",
-            "What is the main purpose of the repair cafe?",
-            [
-              { id: "a", text: "To sell replacement appliances" },
-              { id: "b", text: "To help people repair small items" },
-              { id: "c", text: "To teach a credited engineering course" },
-              { id: "d", text: "To collect televisions for recycling" },
-            ],
-            "b",
-            "Volunteer fixers help people repair an item rather than replace it."
-          ),
-          choices(
-            "mock-reading-en-ielts-q2",
-            "Which items will the cafe not accept?",
-            [
-              { id: "a", text: "Small items with a numbered ticket" },
-              { id: "b", text: "Televisions and anything that uses gas" },
-              { id: "c", text: "Items that need a screwdriver" },
-              { id: "d", text: "Items brought by neighbours" },
-            ],
-            "b",
-            "The cafe does not accept televisions or anything that uses gas."
-          ),
-          choices(
-            "mock-reading-en-ielts-q3",
-            "The cafe repaired more items than it declined last month.",
-            [
-              { id: "t", text: "True" },
-              { id: "f", text: "False" },
-              { id: "ng", text: "Not given" },
-            ],
-            "t",
-            "It repaired 34 items and declined 6, so more were repaired than declined."
-          ),
-          choices(
-            "mock-reading-en-ielts-q4",
-            "Most visitors come from the engineering faculty.",
-            [
-              { id: "t", text: "True" },
-              { id: "f", text: "False" },
-              { id: "ng", text: "Not given" },
-            ],
-            "ng",
-            "The passage says students and neighbours visit. It does not say which faculty they come from."
-          ),
-        ],
-      },
-    },
+    availability: { status: "full_practice", body: { kind: "objective", parts: ieltsReadingParts } },
   },
   {
     id: "mock-reading-en-toefl",
     skill: "reading",
     language: "en",
     variant: "toefl",
-    title: "Short unofficial TOEFL-style reading",
-    minutes: 11,
-    scopeNote:
-      "A full TOEFL iBT reading section is longer and is reported on a 0 to 30 scale. This practice is one short academic passage and four questions. The raw mark is not converted to a TOEFL score. MatchMyStudy is not affiliated with ETS.",
+    title: "Full unofficial TOEFL-style reading",
+    minutes: 35,
+    scopeNote: `${unofficial} This section has 2 passages and 20 questions in 35 minutes, in the range of a TOEFL iBT reading section. The raw mark is not converted to a TOEFL score. MatchMyStudy is not affiliated with ETS.`,
     instructions: [
-      "Read the passage once, then answer the questions in order.",
+      "Read each passage and answer its questions.",
       "One question asks about a word as it is used in the passage.",
-      "The clock runs for 11 minutes.",
+      "The clock runs for 35 minutes.",
       "The result is the number of matching answers. It is not a scaled TOEFL score.",
     ],
-    availability: {
-      status: "short_unofficial",
-      body: {
-        kind: "objective",
-        passageLang: "en",
-        passage:
-          "City trees are often planted to cool streets, but the benefit depends on where the roots can drink. In a study of one campus avenue, trees in open lawns used more water and grew wider crowns than trees in paved pits of the same age. The wider crowns shaded the pavement for more of the afternoon. The paved trees were not dying. They were smaller because the soil under the pavement dried quickly after rain. The author argues that planting plans should treat soil volume as part of the cooling effect, not as a separate gardening detail. A tree with little soil may survive and still fail at the job the planners gave it.",
-        questions: [
-          choices(
-            "mock-reading-en-toefl-q1",
-            "What did the study compare?",
-            [
-              { id: "a", text: "Trees of different ages on two campuses" },
-              { id: "b", text: "Trees in open lawns and trees in paved pits" },
-              { id: "c", text: "Afternoon shade and morning shade only" },
-              { id: "d", text: "Dying trees and newly planted trees" },
-            ],
-            "b",
-            "The study compared lawn trees with paved-pit trees of the same age."
-          ),
-          choices(
-            "mock-reading-en-toefl-q2",
-            "The word crowns in the passage is closest in meaning to",
-            [
-              { id: "a", text: "the leafy tops of the trees" },
-              { id: "b", text: "the metal covers of the pits" },
-              { id: "c", text: "the awards given to the planners" },
-              { id: "d", text: "the amount of water in the soil" },
-            ],
-            "a",
-            "Wider crowns are what shaded the pavement, so the word refers to the trees' leafy tops."
-          ),
-          choices(
-            "mock-reading-en-toefl-q3",
-            "What can be inferred about the paved trees?",
-            [
-              { id: "a", text: "They were older than the lawn trees." },
-              { id: "b", text: "They failed to survive the study." },
-              { id: "c", text: "Limited soil water helps explain their smaller size." },
-              { id: "d", text: "They shaded the pavement longer than the lawn trees." },
-            ],
-            "c",
-            "They were smaller because the soil under the pavement dried quickly. They were not dying."
-          ),
-          choices(
-            "mock-reading-en-toefl-q4",
-            "Why does the author mention the job the planners gave the tree?",
-            [
-              { id: "a", text: "To show that survival alone may not meet the cooling goal" },
-              { id: "b", text: "To recommend removing trees from paved streets" },
-              { id: "c", text: "To compare two gardening prizes" },
-              { id: "d", text: "To prove that lawns use no water" },
-            ],
-            "a",
-            "The closing point is that a surviving tree can still fail at the cooling job."
-          ),
-        ],
-      },
-    },
+    availability: { status: "full_practice", body: { kind: "objective", parts: toeflReadingParts } },
   },
   {
     id: "mock-reading-en-pte",
     skill: "reading",
     language: "en",
     variant: "pte",
-    title: "Short unofficial PTE-style reading",
-    minutes: 10,
+    title: "Full unofficial PTE-style reading",
+    minutes: 30,
     scopeNote:
-      "PTE Academic reading is longer, uses partial credit on some items, and produces an automated score. This practice has two single-answer questions and one reorder item. The reorder item scores a point only when the whole order matches. Partial credit is not used. The result is not a PTE score, and MatchMyStudy is not affiliated with Pearson.",
+      "This unofficial reading section runs for 30 minutes. It has single-answer questions and one reorder item. The reorder item scores a point only when the whole order matches. Partial credit is not used. The result is not a PTE score, and MatchMyStudy is not affiliated with Pearson.",
     instructions: [
-      "Answer the multiple-choice questions from the passage.",
+      "Answer the multiple-choice questions from the passages.",
       "Put the three sentences into the only order that makes a coherent paragraph.",
       "The reorder item is right only if every sentence is in the keyed order.",
-      "The clock runs for 10 minutes. There is no PTE score.",
+      "The clock runs for 30 minutes. There is no PTE score.",
     ],
-    availability: {
-      status: "short_unofficial",
-      body: {
-        kind: "objective",
-        passageLang: "en",
-        passage:
-          "The night kitchen in the student residence heats up at 11, when seminars end. Residents may cook until midnight, and the extractor fan must stay on. Dishes left in the sink after midnight are moved to a labelled shelf. The shelf is cleared at 8 the next morning, and unclaimed dishes are washed by the duty team.",
-        questions: [
-          choices(
-            "mock-reading-en-pte-q1",
-            "Until what time may residents cook?",
-            [
-              { id: "a", text: "Until 11" },
-              { id: "b", text: "Until midnight" },
-              { id: "c", text: "Until 8 in the morning" },
-              { id: "d", text: "Only while the duty team is there" },
-            ],
-            "b",
-            "Residents may cook until midnight."
-          ),
-          choices(
-            "mock-reading-en-pte-q2",
-            "What happens to dishes left in the sink after midnight?",
-            [
-              { id: "a", text: "They are thrown away at once." },
-              { id: "b", text: "They are moved to a labelled shelf." },
-              { id: "c", text: "The extractor fan is switched off." },
-              { id: "d", text: "Residents may keep cooking." },
-            ],
-            "b",
-            "Dishes left after midnight are moved to a labelled shelf."
-          ),
-          reorder(
-            "mock-reading-en-pte-q3",
-            "Put the sentences into one clear order.",
-            [
-              { id: "s1", text: "The duty team then washes anything still unclaimed." },
-              { id: "s2", text: "Residents finish cooking at midnight and leave some pans in the sink." },
-              { id: "s3", text: "Staff move those pans to a labelled shelf that is cleared at 8." },
-            ],
-            ["s1", "s3", "s2"],
-            ["s2", "s3", "s1"],
-            "Cooking ends at midnight, the pans are moved and the shelf is cleared at 8, and then the duty team washes what remains."
-          ),
-        ],
-      },
-    },
+    availability: { status: "full_practice", body: { kind: "objective", parts: pteReadingParts } },
   },
   {
     id: "mock-reading-fi-yki",
     skill: "reading",
     language: "fi",
     variant: "yki",
-    title: "Lyhyt epävirallinen YKI-tyylinen luetun ymmärtäminen",
-    minutes: 10,
+    title: "Täysimittainen epävirallinen YKI-tyylinen luetun ymmärtäminen",
+    minutes: 55,
     scopeNote:
-      "Yleiset kielitutkinnot (YKI) järjestää Opetushallitus. Täysi koe ja taso 1–6 eivät ole tämä harjoitus. Tässä on kaksi lyhyttä tekstiä ja neljä kysymystä. Tulos on raakapistemäärä, ei YKI-tasoa eikä todistusta.",
+      "Yleiset kielitutkinnot (YKI) järjestää Opetushallitus. Tässä harjoituksessa on neljä tekstiä, 20 kysymystä ja 55 minuutin kello. Tulos on raakapistemäärä, ei YKI-tasoa eikä todistusta.",
     instructions: [
-      "Lue molemmat tekstit.",
+      "Lue kaikki tekstit.",
       "Valitse jokaiseen kysymykseen yksi vastaus.",
-      "Aikaa on 10 minuuttia.",
+      "Aikaa on 55 minuuttia.",
       "Saat oikeiden vastausten määrän. Siitä ei lasketa YKI-tasoa.",
     ],
-    availability: {
-      status: "short_unofficial",
-      body: {
-        kind: "objective",
-        passageLang: "fi",
-        passage:
-          "Ilmoitus liikuntakeskuksen ovessa: Sulkapallovuoro peruttu torstaina kello 18, koska sali on varattu turnaukselle. Korvaava vuoro on perjantaina kello 17 samassa salissa. Uusi varaus ei ole tarpeen, jos nimi on jo listalla.\n\nViesti opettajalta: Palauta essee perjantaihin kello 12 mennessä verkkoon. Paperiversiota ei tarvita. Jos tiedosto ei aukea, lähetä se sähköpostilla ennen samaa kellonaikaa.",
-        questions: [
-          choices(
-            "mock-reading-fi-yki-q1",
-            "Miksi sulkapallovuoro on peruttu?",
-            [
-              { id: "a", text: "Opettaja siirtää esseen." },
-              { id: "b", text: "Sali on varattu turnaukselle." },
-              { id: "c", text: "Lista on täynnä perjantaina." },
-              { id: "d", text: "Vuoro alkaa kello 17." },
-            ],
-            "b",
-            "Torstain vuoro on peruttu, koska sali on varattu turnaukselle."
-          ),
-          choices(
-            "mock-reading-fi-yki-q2",
-            "Pitääkö opiskelijan tehdä uusi varaus, jos nimi on jo listalla?",
-            [
-              { id: "a", text: "Kyllä, perjantaihin kello 12 mennessä" },
-              { id: "b", text: "Ei" },
-              { id: "c", text: "Kyllä, sähköpostilla" },
-              { id: "d", text: "Teksti ei kerro." },
-            ],
-            "b",
-            "Uusi varaus ei ole tarpeen, jos nimi on jo listalla."
-          ),
-          choices(
-            "mock-reading-fi-yki-q3",
-            "Milloin essee pitää palauttaa?",
-            [
-              { id: "a", text: "Torstaina kello 18" },
-              { id: "b", text: "Perjantaina kello 17" },
-              { id: "c", text: "Perjantaihin kello 12 mennessä" },
-              { id: "d", text: "Kun paperiversio on valmis" },
-            ],
-            "c",
-            "Essee palautetaan perjantaihin kello 12 mennessä."
-          ),
-          choices(
-            "mock-reading-fi-yki-q4",
-            "Mitä opiskelija tekee, jos tiedosto ei aukea?",
-            [
-              { id: "a", text: "Tuo paperiversion saliin." },
-              { id: "b", text: "Lähettää sen sähköpostilla ennen samaa kellonaikaa." },
-              { id: "c", text: "Odota seuraavaa sulkapallovuoroa." },
-              { id: "d", text: "Tekee uuden varauksen." },
-            ],
-            "b",
-            "Jos tiedosto ei aukea, sen voi lähettää sähköpostilla ennen samaa kellonaikaa."
-          ),
-        ],
-      },
-    },
+    availability: { status: "full_practice", body: { kind: "objective", parts: ykiReadingParts } },
   },
   {
     id: "mock-writing-en-ielts",
     skill: "writing",
     language: "en",
     variant: "ielts",
-    title: "Short unofficial IELTS-style writing",
-    minutes: 20,
+    title: "Full unofficial IELTS-style writing",
+    minutes: 60,
     scopeNote:
-      "IELTS Writing Task 2 is normally about 40 minutes and is marked by examiners on a band scale. This is a shorter opinion task with a 20-minute clock. The checklist afterwards is your own review. It is not an IELTS band and it is not an examiner's mark.",
+      "IELTS Academic Writing is two tasks and 60 minutes. This practice uses the same clock and two tasks. The rubric estimate is not an IELTS band. MatchMyStudy is not a British Council, IDP, or Cambridge exam.",
     instructions: [
-      "Read the task and write a direct response.",
-      "The suggested length is a guide, not a score.",
-      "Before you submit, mark the four review statements yourself.",
-      "The clock runs for 20 minutes. There is no band score.",
+      "Task 1 should describe the information in the prompt. A suggested length is 150 words.",
+      "Task 2 should give your view with reasons. A suggested length is 250 words.",
+      "The clock runs for 60 minutes for both tasks together.",
+      "There is no band conversion.",
     ],
     availability: {
-      status: "short_unofficial",
+      status: "full_practice",
       body: {
         kind: "writing",
-        promptLang: "en",
-        suggestedWords: { min: 180, max: 250 },
-        prompt:
-          "Some university students prefer to prepare alone. Others learn more when they prepare with a group. Discuss both ways and give your own opinion. This is a short unofficial practice, not IELTS Writing Task 2 and not a band score.",
+        prompts: [
+          prompt(
+            "mock-writing-en-ielts-t1",
+            "Task 1",
+            "The tool library recorded 220 loans and 9 late returns in October. All late returns were drills. Describe these figures for a reader who has not seen them, and say which number is larger. Do not invent a cause.",
+            150,
+            220
+          ),
+          prompt(
+            "mock-writing-en-ielts-t2",
+            "Task 2",
+            "Some students think a campus should keep one library floor silent at all times. Others think students should choose their own noise level. Discuss both views and give your own opinion, with one concrete example.",
+            250,
+            320
+          ),
+        ],
       },
     },
   },
@@ -328,46 +127,114 @@ export const mockTests: MockTest[] = [
     skill: "writing",
     language: "en",
     variant: "toefl",
-    title: "TOEFL-style writing",
-    minutes: 0,
-    scopeNote: unavailableToeflWriting,
-    instructions: [],
-    availability: { status: "unavailable", reason: unavailableToeflWriting },
+    title: "Full unofficial TOEFL-style writing",
+    minutes: 29,
+    scopeNote:
+      "A TOEFL iBT writing section is two tasks in about 29 minutes and is scored by ETS raters or ETS systems. This practice uses that clock and a MatchMyStudy rubric. The estimate is not a TOEFL score. MatchMyStudy is not affiliated with ETS.",
+    instructions: [
+      "Task 1: read the short passage in the prompt and explain the author's point in your own words.",
+      "Task 2: give your opinion and one specific reason.",
+      "The clock runs for 29 minutes for both tasks.",
+      "The result is a rubric estimate, not a TOEFL score.",
+    ],
+    availability: {
+      status: "full_practice",
+      body: {
+        kind: "writing",
+        prompts: [
+          prompt(
+            "mock-writing-en-toefl-t1",
+            "Task 1",
+            "Passage: Trees in open lawns grew wider crowns than trees of the same age in paved pits, because the soil under the pavement dried quickly. The author says soil volume is part of the cooling effect. Explain that point in your own words and mention both groups of trees.",
+            120,
+            200
+          ),
+          prompt(
+            "mock-writing-en-toefl-t2",
+            "Task 2",
+            "Do you agree that a university should publish how many students use a quiet room, but never publish their names? Give your opinion and one specific reason.",
+            120,
+            200
+          ),
+        ],
+      },
+    },
   },
   {
     id: "mock-writing-en-pte",
     skill: "writing",
     language: "en",
     variant: "pte",
-    title: "PTE-style writing",
-    minutes: 0,
-    scopeNote: unavailablePteWriting,
-    instructions: [],
-    availability: { status: "unavailable", reason: unavailablePteWriting },
+    title: "Full unofficial PTE-style writing",
+    minutes: 50,
+    scopeNote:
+      "Pearson scores PTE writing with its own system. This practice has two writing tasks and a 50-minute clock. Partial credit is not used on the reading reorder item elsewhere, and this writing result is not a PTE score. MatchMyStudy is not affiliated with Pearson.",
+    instructions: [
+      "Task 1: summarise the notice in one paragraph.",
+      "Task 2: write an essay with a clear opinion and one example.",
+      "The clock runs for 50 minutes.",
+      "There is no PTE score.",
+    ],
+    availability: {
+      status: "full_practice",
+      body: {
+        kind: "writing",
+        prompts: [
+          prompt(
+            "mock-writing-en-pte-t1",
+            "Task 1",
+            "Summarise this notice in your own words: Residents may cook until midnight. The extractor fan must stay on. Dishes left after midnight go to a labelled shelf that is cleared at 8. The duty team then washes anything unclaimed.",
+            80,
+            140
+          ),
+          prompt(
+            "mock-writing-en-pte-t2",
+            "Task 2",
+            "Should a student residence set a midnight end to cooking? Give your view, one reason, and one example from shared living.",
+            200,
+            280
+          ),
+        ],
+      },
+    },
   },
   {
     id: "mock-writing-fi-yki",
     skill: "writing",
     language: "fi",
     variant: "yki",
-    title: "Lyhyt epävirallinen YKI-tyylinen kirjoittaminen",
-    minutes: 15,
+    title: "Täysimittainen epävirallinen YKI-tyylinen kirjoittaminen",
+    minutes: 50,
     scopeNote:
-      "YKI-kirjoittamisessa on useita tehtäviä, ja tason antaa koulutettu arvioija. Tässä on yksi lyhyt viestitehtävä ja 15 minuutin kello. Itsearvio ei ole YKI-taso eikä todistus.",
+      "YKI-kirjoittamisen arvioi tutkinnon järjestäjä. Tässä on kaksi tehtävää ja 50 minuutin kello. Arvio on harjoitusarvio, ei YKI-tasoa eikä todistusta.",
     instructions: [
-      "Kirjoita viesti tehtävän mukaan.",
-      "Sanamäärä on ohje, ei arvosana.",
-      "Merkitse lopuksi neljä itsearvioinnin kohtaa.",
-      "Aikaa on 15 minuuttia. Tulos ei ole YKI-taso.",
+      "Tehtävä 1 on viesti.",
+      "Tehtävä 2 on mielipide.",
+      "Aikaa on 50 minuuttia yhteensä.",
+      "Tuloksesta ei lasketa YKI-tasoa.",
     ],
     availability: {
-      status: "short_unofficial",
+      status: "full_practice",
       body: {
         kind: "writing",
-        promptLang: "fi",
-        suggestedWords: { min: 40, max: 80 },
-        prompt:
-          "Kirjoita viesti kurssikaverille. Ehdota yhteistä lukuaikaa kirjastossa ensi viikolla. Kerro päivä, kellonaika ja yksi syy, miksi se aika sopii sinulle.",
+        prompts: [
+          prompt(
+            "mock-writing-fi-yki-t1",
+            "Tehtävä 1",
+            "Kirjoita viesti opettajalle. Kerro, että myöhästyt laboratoriotunnilta, koska bussi lähtee vasta kello 9.05. Kerro yksi tapa, jolla kirität työn, ja kysy yksi tarkka kysymys raportista.",
+            70,
+            120,
+            "fi"
+          ),
+          prompt(
+            "mock-writing-fi-yki-t2",
+            "Tehtävä 2",
+            "Pitäisikö kampuskirjastossa olla yksi hiljainen kerros koko ajan? Perustele mielipiteesi yhdellä esimerkillä.",
+            120,
+            180,
+            "fi"
+          ),
+        ],
       },
     },
   },
@@ -376,238 +243,66 @@ export const mockTests: MockTest[] = [
     skill: "listening",
     language: "en",
     variant: "ielts",
-    title: "Short unofficial IELTS-style listening",
-    minutes: 8,
+    title: "Full unofficial IELTS-style listening",
+    minutes: 30,
     scopeNote:
-      "IELTS Listening is normally four sections and about 30 minutes, plus time to transfer answers. This is one short conversation in a browser voice, with four questions. The raw mark is not a band. MatchMyStudy is not an IELTS test centre.",
+      "An IELTS listening paper has four sections and 40 questions in about 30 minutes. This practice uses that length. The audio is your browser reading an original script, not an exam recording. The raw mark is not an IELTS band.",
     instructions: [
-      "Play the browser voice. You can replay it.",
-      "The words are sent to your browser so it can speak them. This is not a studio recording and not a secured exam.",
-      "Answer four questions. The clock runs for 8 minutes.",
-      "The result checks your answers against the script. It is not an IELTS band.",
+      "Play each section, then answer its questions.",
+      "You may replay the browser voice.",
+      "If you open the script, the result is marked as a script review.",
+      "There is no band conversion.",
     ],
-    availability: {
-      status: "short_unofficial",
-      body: {
-        kind: "objective",
-        audioLang: "en-GB",
-        speakerNote: "A student and a housing officer.",
-        script:
-          "Officer: You asked to move from room C4 to a quieter floor. Student: Yes, the courtyard door slams at night. Officer: Room D2 is free from Monday, and it faces the garden, not the door. The rent is the same. Student: Can I see it tomorrow at 2? Officer: The porter can show it at 2:15. Bring your resident card. If you want the room, sign the form before Friday at noon or it goes back on the list.",
-        questions: [
-          choices(
-            "mock-listening-en-ielts-q1",
-            "Why does the student want to move?",
-            [
-              { id: "a", text: "The rent is too high." },
-              { id: "b", text: "The courtyard door slams at night." },
-              { id: "c", text: "Room D2 has no garden." },
-              { id: "d", text: "The porter lost the resident card." },
-            ],
-            "b",
-            "The student says the courtyard door slams at night."
-          ),
-          choices(
-            "mock-listening-en-ielts-q2",
-            "Which room is offered?",
-            [
-              { id: "a", text: "Room C4" },
-              { id: "b", text: "Room D2" },
-              { id: "c", text: "A room on the courtyard door" },
-              { id: "d", text: "No room is free." },
-            ],
-            "b",
-            "The officer says room D2 is free from Monday."
-          ),
-          choices(
-            "mock-listening-en-ielts-q3",
-            "What time can the student see the room?",
-            [
-              { id: "a", text: "Tomorrow at 2" },
-              { id: "b", text: "Tomorrow at 2:15" },
-              { id: "c", text: "Friday at noon" },
-              { id: "d", text: "Monday morning" },
-            ],
-            "b",
-            "The student asks for 2, and the porter can show it at 2:15."
-          ),
-          choices(
-            "mock-listening-en-ielts-q4",
-            "What must the student do to keep the room?",
-            [
-              { id: "a", text: "Pay a higher rent" },
-              { id: "b", text: "Sign the form before Friday at noon" },
-              { id: "c", text: "Move on Monday without a form" },
-              { id: "d", text: "Leave the resident card with the porter" },
-            ],
-            "b",
-            "The student must sign the form before Friday at noon."
-          ),
-        ],
-      },
-    },
+    availability: { status: "full_practice", body: { kind: "objective", parts: ieltsListeningParts } },
   },
   {
     id: "mock-listening-en-toefl",
     skill: "listening",
     language: "en",
     variant: "toefl",
-    title: "Short unofficial TOEFL-style listening",
-    minutes: 8,
-    scopeNote:
-      "A full TOEFL listening section uses several campus conversations and lectures and a scaled score. This is one short original lecture in a browser voice. The raw mark is not a TOEFL score. MatchMyStudy is not affiliated with ETS.",
+    title: "Full unofficial TOEFL-style listening",
+    minutes: 36,
+    scopeNote: `${unofficial} This section has 28 questions and a 36-minute clock, in the range of a TOEFL iBT listening section. The browser voice is not an ETS recording, and the raw mark is not a TOEFL score.`,
     instructions: [
-      "Play the short lecture. You can replay the browser voice.",
-      "This is text-to-speech, not a studio recording.",
-      "Answer four questions in 8 minutes.",
-      "The result is an answer check, not a scaled TOEFL score.",
+      "Listen to each part before you answer it.",
+      "The clock runs for 36 minutes.",
+      "Opening the script marks the result as a script review.",
+      "There is no scaled TOEFL score.",
     ],
-    availability: {
-      status: "short_unofficial",
-      body: {
-        kind: "objective",
-        audioLang: "en-US",
-        speakerNote: "A short geography lecture.",
-        script:
-          "Glacier ice looks still, but it moves. Snow piles up in the cold upper part of the glacier, and the weight presses the older snow into ice. That ice then creeps downhill. In the lower part, melting can be faster than the new ice arriving, so the front retreats even while the ice itself is still flowing forward. A retreating glacier is not a glacier that has started to slide backward. Researchers measure the movement with stakes drilled into the ice and checked again months later.",
-        questions: [
-          choices(
-            "mock-listening-en-toefl-q1",
-            "What turns older snow into ice?",
-            [
-              { id: "a", text: "Stakes drilled into the ice" },
-              { id: "b", text: "The weight of snow piling up" },
-              { id: "c", text: "Melting at the front" },
-              { id: "d", text: "The glacier sliding backward" },
-            ],
-            "b",
-            "The weight of the snow presses older snow into ice."
-          ),
-          choices(
-            "mock-listening-en-toefl-q2",
-            "What can happen at the lower part of the glacier?",
-            [
-              { id: "a", text: "Melting can be faster than the new ice arriving, so the front retreats." },
-              { id: "b", text: "The ice starts to flow back up the hill." },
-              { id: "c", text: "Snow stops falling for months." },
-              { id: "d", text: "Researchers move the glacier with stakes." },
-            ],
-            "a",
-            "The front can retreat when melting is faster than the arriving ice."
-          ),
-          choices(
-            "mock-listening-en-toefl-q3",
-            "What does a retreating glacier not mean?",
-            [
-              { id: "a", text: "The front is moving back." },
-              { id: "b", text: "The ice has started to slide backward." },
-              { id: "c", text: "Melting can exceed the new ice." },
-              { id: "d", text: "The ice can still flow forward." },
-            ],
-            "b",
-            "The lecturer says a retreating glacier is not ice sliding backward."
-          ),
-          choices(
-            "mock-listening-en-toefl-q4",
-            "How do researchers measure the movement?",
-            [
-              { id: "a", text: "They watch the front from the lower valley only." },
-              { id: "b", text: "They drill stakes into the ice and check them months later." },
-              { id: "c", text: "They weigh the snow each afternoon." },
-              { id: "d", text: "They stop the ice from creeping." },
-            ],
-            "b",
-            "They use stakes drilled into the ice and check them months later."
-          ),
-        ],
-      },
-    },
+    availability: { status: "full_practice", body: { kind: "objective", parts: toeflListeningParts } },
   },
   {
     id: "mock-listening-en-pte",
     skill: "listening",
     language: "en",
     variant: "pte",
-    title: "PTE-style listening",
-    minutes: 0,
-    scopeNote: unavailablePteListening,
-    instructions: [],
-    availability: { status: "unavailable", reason: unavailablePteListening },
+    title: "Full unofficial PTE-style listening",
+    minutes: 30,
+    scopeNote:
+      "This is a 30-minute unofficial listening practice with 17 multiple-choice questions. It does not include Pearson item types that need studio audio aligned word by word, such as highlight incorrect words. Partial credit is not used. The result is not a PTE score, and MatchMyStudy is not affiliated with Pearson.",
+    instructions: [
+      "Play the browser voice for each part.",
+      "Choose one answer for each question.",
+      "The clock runs for 30 minutes.",
+      "There is no PTE score.",
+    ],
+    availability: { status: "full_practice", body: { kind: "objective", parts: pteListeningParts } },
   },
   {
     id: "mock-listening-fi-yki",
     skill: "listening",
     language: "fi",
     variant: "yki",
-    title: "Lyhyt epävirallinen YKI-tyylinen kuullun ymmärtäminen",
-    minutes: 8,
+    title: "Täysimittainen epävirallinen YKI-tyylinen kuullun ymmärtäminen",
+    minutes: 30,
     scopeNote:
-      "YKI-kuullun ymmärtäminen käyttää toimitettuja äänitteitä ja antaa tasoarvion. Tämä on kaksi lyhyttä alkuperäistä kuulutusta selaimen puheäänellä. Tulos on raakapistemäärä, ei YKI-taso eikä todistus.",
+      "Tässä on kolme osiota, 15 kysymystä ja 30 minuutin kello. Ääni on selaimen ääni, ei tutkinnon äänite. Tulos on raakapistemäärä, ei YKI-tasoa.",
     instructions: [
-      "Kuuntele molemmat kuulutukset selaimen puheäänellä. Voit toistaa ne.",
-      "Kyseessä on tekstistä puheeksi -esikatselu, ei studioäänite.",
-      "Vastaa neljään kysymykseen. Aikaa on 8 minuuttia.",
-      "Tulos ei ole YKI-taso.",
+      "Kuuntele jokainen osio.",
+      "Valitse yksi vastaus.",
+      "Aikaa on 30 minuuttia.",
+      "Siitä ei lasketa YKI-tasoa.",
     ],
-    availability: {
-      status: "short_unofficial",
-      body: {
-        kind: "objective",
-        audioLang: "fi-FI",
-        speakerNote: "Kaksi lyhyttä kuulutusta.",
-        script:
-          "Kirjaston kuulutus: Tänään klo 15 alakerroksen näyttely suljetaan tuntia aikaisemmin. Yläkerran lukusali on auki normaalisti klo 20 asti. Palautusluukku toimii myös illalla. Seuraava kuulutus, kampuksen kahvila: Lounas päättyy tänään klo 13.30, koska henkilökunnalla on kokous. Iltapäiväkahvi alkaa taas klo 14.",
-        questions: [
-          choices(
-            "mock-listening-fi-yki-q1",
-            "Milloin näyttely suljetaan tänään?",
-            [
-              { id: "a", text: "Kello 15" },
-              { id: "b", text: "Kello 20" },
-              { id: "c", text: "Kello 13.30" },
-              { id: "d", text: "Kello 14" },
-            ],
-            "a",
-            "Näyttely suljetaan tänään kello 15, tuntia aikaisemmin."
-          ),
-          choices(
-            "mock-listening-fi-yki-q2",
-            "Mihin asti yläkerran lukusali on auki?",
-            [
-              { id: "a", text: "Kello 15 asti" },
-              { id: "b", text: "Kello 20 asti" },
-              { id: "c", text: "Kello 13.30 asti" },
-              { id: "d", text: "Se on tänään kiinni." },
-            ],
-            "b",
-            "Lukusali on auki normaalisti kello 20 asti."
-          ),
-          choices(
-            "mock-listening-fi-yki-q3",
-            "Miksi lounas päättyy aikaisemmin?",
-            [
-              { id: "a", text: "Näyttely tarvitsee salin." },
-              { id: "b", text: "Henkilökunnalla on kokous." },
-              { id: "c", text: "Palautusluukku on rikki." },
-              { id: "d", text: "Iltapäiväkahvi on peruttu." },
-            ],
-            "b",
-            "Lounas päättyy kello 13.30, koska henkilökunnalla on kokous."
-          ),
-          choices(
-            "mock-listening-fi-yki-q4",
-            "Milloin iltapäiväkahvi alkaa?",
-            [
-              { id: "a", text: "Kello 13.30" },
-              { id: "b", text: "Kello 14" },
-              { id: "c", text: "Kello 15" },
-              { id: "d", text: "Kello 20" },
-            ],
-            "b",
-            "Iltapäiväkahvi alkaa taas kello 14."
-          ),
-        ],
-      },
-    },
+    availability: { status: "full_practice", body: { kind: "objective", parts: ykiListeningParts } },
   },
 ];

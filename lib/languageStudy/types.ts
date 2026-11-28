@@ -82,22 +82,29 @@ export type ListeningTask = SkillLanguage & {
 
 export type PracticeTask = ReadingTask | WritingTask | ListeningTask;
 
+export type MockPart = {
+  id: string;
+  title: string;
+  passage?: string;
+  passageLang?: "en" | "fi";
+  /** Original listening script. Never send this before the attempt is open. */
+  script?: string;
+  audioLang?: string;
+  speakerNote?: string;
+  questions: GradedQuestion[];
+};
+
+export type MockWritingPrompt = {
+  id: string;
+  title: string;
+  prompt: string;
+  promptLang: "en" | "fi";
+  suggestedWords: { min: number; max: number };
+};
+
 export type MockBody =
-  | {
-      kind: "objective";
-      passage?: string;
-      passageLang?: "en" | "fi";
-      script?: string;
-      audioLang?: string;
-      speakerNote?: string;
-      questions: GradedQuestion[];
-    }
-  | {
-      kind: "writing";
-      prompt: string;
-      promptLang: "en" | "fi";
-      suggestedWords: { min: number; max: number };
-    };
+  | { kind: "objective"; parts: MockPart[] }
+  | { kind: "writing"; prompts: MockWritingPrompt[] };
 
 export type MockTest = {
   id: string;
@@ -110,7 +117,7 @@ export type MockTest = {
   instructions: string[];
   availability:
     | { status: "unavailable"; reason: string }
-    | { status: "short_unofficial"; body: MockBody };
+    | { status: "full_practice"; body: MockBody };
 };
 
 export type PublicChoice = { id: string; text: string };
@@ -158,6 +165,14 @@ export type PublicListening = {
   questions: PublicQuestion[];
 };
 
+export type PublicMockPart = {
+  id: string;
+  title: string;
+  passage?: string;
+  passageLang?: "en" | "fi";
+  questions: PublicQuestion[];
+};
+
 export type PublicObjectiveMock = {
   id: string;
   skill: "reading" | "listening";
@@ -165,14 +180,20 @@ export type PublicObjectiveMock = {
   variant: ExamVariant;
   title: string;
   minutes: number;
-  passage?: string;
-  passageLang?: "en" | "fi";
+  parts: PublicMockPart[];
   audioLang?: string;
   speakerNote?: string;
   disclosure?: string;
   audioSrc?: string;
   audioNote?: string;
-  questions: PublicQuestion[];
+};
+
+export type PublicWritingPrompt = {
+  id: string;
+  title: string;
+  prompt: string;
+  promptLang: "en" | "fi";
+  suggestedWords: { min: number; max: number };
 };
 
 export type PublicWritingMock = {
@@ -182,9 +203,7 @@ export type PublicWritingMock = {
   variant: ExamVariant;
   title: string;
   minutes: number;
-  prompt: string;
-  promptLang: "en" | "fi";
-  suggestedWords: { min: number; max: number };
+  prompts: PublicWritingPrompt[];
   criteria: { id: string; label: string; description: string }[];
 };
 
@@ -234,6 +253,35 @@ export type SelfReviewFeedback = {
   evaluator: WritingEvaluatorNote;
 };
 
+export type WritingCriterionScore = {
+  id: string;
+  label: string;
+  description: string;
+  score: number;
+  max: number;
+  note: string;
+};
+
+export type WritingAssessmentFeedback = {
+  scoringKind: "writing_assessment";
+  officialScore: null;
+  examScore: null;
+  label: string;
+  wordCount: number;
+  suggestedMin: number;
+  suggestedMax: number;
+  wordCountIsScore: false;
+  practiceEstimate: number;
+  estimateMax: 9;
+  summary: string;
+  criteria: WritingCriterionScore[];
+  evaluator: {
+    status: "rubric_only" | "ai_comments" | "ai_unavailable";
+    note: string;
+    comments?: string[];
+  };
+};
+
 export type ExpiredFeedback = {
   scoringKind: "unscored";
   officialScore: null;
@@ -241,7 +289,11 @@ export type ExpiredFeedback = {
   label: "Time is up. This attempt was not scored.";
 };
 
-export type AttemptFeedback = ObjectiveFeedback | SelfReviewFeedback | ExpiredFeedback;
+export type AttemptFeedback =
+  | ObjectiveFeedback
+  | SelfReviewFeedback
+  | WritingAssessmentFeedback
+  | ExpiredFeedback;
 
 export type StoredAttempt = {
   id: string;

@@ -43,7 +43,18 @@ export async function readOptionalUser(request: Request): Promise<
   const token = bearerToken(request);
 
   if (!token) {
-    return { ok: true, userId: null };
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+      return { ok: true, userId: null };
+    }
+
+    try {
+      const supabase = await createSupabaseServerClient();
+      const { data } = await supabase.auth.getUser();
+
+      return { ok: true, userId: data.user?.id ?? null };
+    } catch {
+      return { ok: true, userId: null };
+    }
   }
 
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -87,21 +98,21 @@ export function serviceDeps(): ServiceDeps {
     }),
     stripe: stripe
       ? {
-          async retrievePrice(priceId: string) {
-            const price = await stripe.prices.retrieve(priceId);
-
-            return {
-              currency: price.currency,
-              unitAmount: price.unit_amount,
-              recurring: Boolean(price.recurring),
-            };
-          },
           async createSession(input) {
             const site = process.env.NEXT_PUBLIC_SITE_URL || "https://www.matchmystudy.com";
             const session = await stripe.checkout.sessions.create(
               {
                 mode: "payment",
-                line_items: [{ price: input.priceId, quantity: 1 }],
+                line_items: [
+                  {
+                    quantity: 1,
+                    price_data: {
+                      currency: "usd",
+                      unit_amount: input.expectedAmountMinor,
+                      product_data: { name: input.productName },
+                    },
+                  },
+                ],
                 success_url: `${site}/language-study/${input.skill}/${input.language}?purchase=pending`,
                 cancel_url: `${site}/language-study/${input.skill}/${input.language}?purchase=cancelled`,
                 client_reference_id: input.orderId,
@@ -126,5 +137,6 @@ export function serviceDeps(): ServiceDeps {
           },
         }
       : null,
+    writingEnv: process.env,
   };
 }

@@ -70,9 +70,9 @@ export default function LanguageStudyPage() {
           <h2 className="text-xl font-bold text-slate-900">How the free allowance works</h2>
           <p className="mt-3">{provisionalAllowanceText(config)}</p>
           <p className="mt-3">
-            A guest can open one preview task in each skill and language. That preview is labeled
-            and is not an enforced cap. Paid task batches and mock tests stay locked because prices
-            are not set.
+            Every free task can be submitted without an account. The result is saved in this browser,
+            or in the account when you are signed in and the database is ready. Paid packs and full
+            practice tests show a coming soon note until checkout is connected.
           </p>
           <p className="mt-3">{UNOFFICIAL_NOTICE}</p>
         </aside>

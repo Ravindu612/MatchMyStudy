@@ -71,16 +71,36 @@ export function mocksFor(skill: Skill, language: LanguageCode): MockTest[] {
   return mockTests.filter((mock) => mock.skill === skill && mock.language === language);
 }
 
+export function mockQuestions(mock: MockTest) {
+  if (mock.availability.status !== "full_practice" || mock.availability.body.kind !== "objective") {
+    return [];
+  }
+
+  return mock.availability.body.parts.flatMap((part) => part.questions);
+}
+
+export function mockScript(mock: MockTest): string | null {
+  if (mock.availability.status !== "full_practice" || mock.availability.body.kind !== "objective") {
+    return null;
+  }
+
+  const scripts = mock.availability.body.parts
+    .map((part) => (part.script ? `${part.title}. ${part.script}` : ""))
+    .filter(Boolean);
+
+  return scripts.length > 0 ? scripts.join("\n\n") : null;
+}
+
 export function mockQuestionCount(mock: MockTest): number {
-  if (mock.availability.status !== "short_unofficial") {
+  if (mock.availability.status !== "full_practice") {
     return 0;
   }
 
   const body = mock.availability.body;
 
   if (body.kind === "writing") {
-    return 1;
+    return body.prompts.length;
   }
 
-  return body.questions.length;
+  return body.parts.reduce((sum, part) => sum + part.questions.length, 0);
 }

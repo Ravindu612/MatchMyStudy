@@ -27,13 +27,24 @@ for (const task of practiceTasks) {
 }
 
 for (const mock of mockTests) {
-  if (mock.availability.status !== "short_unofficial") continue;
-  const body = mock.availability.body;
-  if (body.kind !== "objective" || !body.script) continue;
+  if (mock.availability.status !== "full_practice" || mock.availability.body.kind !== "objective") {
+    continue;
+  }
+
+  const text = mock.availability.body.parts
+    .map((part) => part.script)
+    .filter((script): script is string => Boolean(script))
+    .join("\n\n");
+
+  if (!text) {
+    continue;
+  }
+
+  const lang = mock.availability.body.parts.find((part) => part.audioLang)?.audioLang ?? "en";
   clips.push({
     id: mock.id,
-    text: body.script,
-    voice: (body.audioLang ?? "en").toLowerCase().startsWith("fi") ? "fi" : "en-gb",
+    text,
+    voice: lang.toLowerCase().startsWith("fi") ? "fi" : "en-gb",
   });
 }
 

@@ -1,3 +1,4 @@
+import { deleteChatLeadsForEmail } from "@/lib/chat/account";
 import { getStripe } from "@/lib/stripe";
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin";
 import type { SupabaseClient } from "@supabase/supabase-js";
@@ -303,7 +304,7 @@ async function cancelOwnedSubscriptions(rows: Row[]) {
  * user. The service role client is created inside getSupabaseAdmin on first
  * use. Call this only after the session token has been verified.
  */
-export async function deleteUserAccount(userId: string): Promise<void> {
+export async function deleteUserAccount(userId: string, email?: string | null): Promise<void> {
   const admin = getSupabaseAdmin();
 
   if (!admin) {
@@ -316,6 +317,13 @@ export async function deleteUserAccount(userId: string): Promise<void> {
 
   await cancelOwnedSubscriptions(consultants);
   await removeStorageObjects(admin, objects);
+
+  try {
+    await deleteChatLeadsForEmail(admin, email);
+  } catch (leadError) {
+    console.error("Could not delete chat contact requests:", leadError);
+    throw new AccountPrivacyError("Could not delete your account.", 500);
+  }
 
   const { error: deleteError } = await admin.rpc("delete_user_account", {
     p_uid: userId,

@@ -204,6 +204,11 @@ export default function SocialShell({ children }: { children: ReactNode }) {
                   Moderation
                 </Link>
               ) : null}
+              {viewer.role === "admin" ? (
+                <Link href="/admin/leads" className="text-slate-300 hover:text-white">
+                  Leads
+                </Link>
+              ) : null}
               </nav>
             </div>
           </div>
@@ -294,6 +299,15 @@ export default function SocialShell({ children }: { children: ReactNode }) {
                 >
                   <Shield className="h-5 w-5 text-slate-500" aria-hidden="true" />
                   Moderation
+                </Link>
+              ) : null}
+              {viewer.role === "admin" ? (
+                <Link
+                  href="/admin/leads"
+                  className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+                >
+                  <Shield className="h-5 w-5 text-slate-500" aria-hidden="true" />
+                  Leads
                 </Link>
               ) : null}
             </nav>

@@ -37,7 +37,7 @@ export async function POST(request: Request) {
   }
 
   try {
-    await deleteUserAccount(session.user.id);
+    await deleteUserAccount(session.user.id, session.user.email);
   } catch (error) {
     if (error instanceof AccountPrivacyError) {
       return NextResponse.json({ error: error.message }, { status: error.status });

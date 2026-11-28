@@ -1223,6 +1223,54 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    title: "The Coffee Chat Habit: Building Professional Connections While You Study Abroad",
+    slug: "coffee-chat-connections",
+    description:
+      "A friendly guide for international students who want to build professional connections without feeling fake: why networking is really just conversation, how to use your university's careers service, talking to lecturers and alumni, asking for a short coffee chat, handling events in a second language, and keeping in touch.",
+    category: "Work & Visas",
+    date: "2026-11-28",
+    readTime: "6 min read",
+    intro:
+      "Ask a room of international students how they feel about networking and you will hear a lot of groans. The word sounds like business cards, forced smiles and pretending to be more confident than you are. If you are also new to the country, the language and the unwritten rules, it can feel like a game everyone else already knows.\n\nBut most useful professional connections do not start at a formal event. They start with a question after class, a chat with a guest speaker, or twenty minutes over coffee with someone who did the same degree a few years ago. Here is how to build those connections steadily during your studies, in a way that feels like you.",
+    sections: [
+      {
+        heading: "Think conversation, not performance",
+        text: "Networking is mostly curiosity. You meet someone whose work interests you, you ask about it, you listen, and you stay in touch. Nobody expects a polished pitch from a student. They expect interest and good questions.\n\nIt also helps to remember that you already have something to offer. You bring a different country, a second or third language and a fresh way of seeing things. Many people enjoy talking to students simply because they remember being one, and because your questions make them think about their own path.",
+      },
+      {
+        heading: "Visit the careers service early",
+        text: "Most universities have a careers or employability team, and international students often wait until their final year to visit. Go in your first semester instead, when there is no pressure.\n\nAsk what they offer: CV and cover letter checks, mock interviews, employer talks, mentoring schemes, alumni events, and job or internship boards. Some services run sessions especially for international students, including how local hiring works. Before you apply for internships or placements, check what your visa allows using official government and university guidance, and ask the careers or international office if anything is unclear.",
+      },
+      {
+        heading: "Your lecturers are your first network",
+        text: "The people who teach you often know researchers, companies and organisations in their field. You do not need to ask them for favours. Start by being a student they remember for good reasons: go to office hours with real questions, take part in seminars, and follow up on something they mentioned in a lecture.\n\nOver time, it becomes natural to ask, \"I'm interested in working in this area. Are there events, groups or people you would suggest I look into?\" A single suggestion from someone who knows the field can open more doors than a hundred online applications.",
+      },
+      {
+        heading: "Ask for the twenty-minute coffee chat",
+        text: "An informational chat is a short, relaxed conversation where you ask someone about their work, not for a job. Alumni from your program, guest speakers and people you meet through student societies are good places to start, and many universities have alumni platforms or mentoring programs to help.\n\nKeep the request short and specific: who you are, why you are writing to them in particular, and a clear ask, such as twenty minutes on a video call or near campus. Prepare three or four questions, like what a normal week looks like in their role or what they wish they had known as a student. Respect their time, end when you said you would, and send a thank-you message the same day.",
+      },
+      {
+        heading: "Events in a second language",
+        text: "A busy room full of fast conversation can be exhausting when you are working in a second language. Make it easier on yourself. Look at the list of speakers or employers beforehand and choose two or three people you really want to meet. Prepare a simple introduction: your name, what you study, and one thing you are curious about.\n\nGo with a friend if it helps, and give yourself permission to step outside for a breather. If you miss a word, it is fine to say, \"Sorry, could you say that again?\" Most people respect someone who listens carefully more than someone who talks a lot.",
+      },
+      {
+        heading: "Build a small online presence",
+        text: "In many countries, people look you up online after meeting you. A simple professional profile on a site such as LinkedIn, with a clear photo, your program, your languages and a few lines about your interests, is usually enough as a student.\n\nWhen you connect with someone you met, add a short note reminding them where you spoke. Share or comment on things you genuinely find interesting in your field, but there is no need to post constantly. A tidy, honest profile works better than a loud one.",
+      },
+      {
+        heading: "Keep in touch without keeping score",
+        text: "Connections grow through small, occasional contact. Send an update when you finish a project they helped with, share an article you think they would like, or congratulate them on news. Keep a simple note of who you have met and what you talked about, so you remember the details later.\n\nAnd look sideways as well as up. Your classmates, flatmates and society friends will one day work in companies and countries all over the world. The friendly people you study with now may become the most valuable professional network you ever have.",
+      },
+    ],
+    coverImage: "/images/blog/coffee-chat-network-abroad.jpg",
+    coverImageAlt: "Four smiling students talking around a café table with a laptop, a tablet and takeaway coffee cups",
+    unsplash: {
+      photographerName: "Brooke Cagle",
+      photographerUrl: "https://unsplash.com/@brookecagle",
+      photoUrl: "https://unsplash.com/photos/a-group-of-friends-at-a-coffee-shop--uHVRvDr7pg",
+    },
+  },
+  {
     title: "The Kitchen Table Talk: Planning Study Abroad Together With Your Family",
     slug: "talk-with-your-family",
     description:

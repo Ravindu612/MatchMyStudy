@@ -35,7 +35,12 @@ export const LISTENING_DISCLOSURE =
   "If the synthesized file does not play, the browser voice is a separate fallback. It is not the same recording, and it is not a studio or exam recording. The words are sent to your browser only when you choose that fallback.";
 
 export const PREVIEW_NOTICE =
-  "Preview result. It is not saved and does not use or enforce the free allowance. Sign in so submitted practice is counted on the server.";
+  "Saved on this device. Sign in if you want this result kept in your account.";
+
+export const BROWSER_SAVE_NOTICE =
+  "Saved on this device. Sign in if you want this result kept in your account.";
+
+export const ACCOUNT_SAVE_NOTICE = "Saved in your account.";
 
 export const MIN_WRITING_WORDS = 15;
 export const MAX_WRITING_WORDS = 1200;

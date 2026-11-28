@@ -12,7 +12,6 @@ import {
 import { officialTests } from "@/data/officialTests";
 import { PLAIN_LINK_REL, testPrepPartners } from "@/data/partners";
 import { hubPageJsonLd } from "@/lib/hub-jsonld";
-import { LANGUAGE_STUDY_DEVELOPMENT_NOTICE } from "@/lib/languageStudy/developmentNotice";
 import {
   LANGUAGE_STUDY_HREF,
   LANGUAGE_STUDY_LABEL,
@@ -242,7 +241,7 @@ export default function TestPrepPage() {
                   {LANGUAGE_STUDY_LABEL}
                 </Link>{" "}
                 on MatchMyStudy has reading, writing, and listening practice in
-                English. {UNOFFICIAL_NOTICE} {LANGUAGE_STUDY_DEVELOPMENT_NOTICE}
+                English and Finnish. {UNOFFICIAL_NOTICE} Free practice is ready. Paid packs and full practice tests say coming soon until checkout is connected.
               </p>
             </GuideNote>
           </div>

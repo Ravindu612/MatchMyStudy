@@ -12,7 +12,7 @@ import {
   parseBlogPageParam,
 } from "./blog";
 
-function fakePosts(n: number, category = (i: number) => (i % 3 === 0 ? "A" : "B")) {
+function fakePosts(n: number, category: (i: number) => string = (i) => (i % 3 === 0 ? "A" : "B")) {
   return Array.from({ length: n }, (_, i) => ({
     slug: `post-${i}`,
     category: category(i),

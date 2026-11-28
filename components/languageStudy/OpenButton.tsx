@@ -1,21 +1,28 @@
 "use client";
 
-import { supabase } from "@/lib/supabase";
+import { readAccessToken } from "@/lib/languageStudy/browserProgress";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const focus =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700";
 
-export default function OpenButton({ taskId, label }: { taskId: string; label: string }) {
+export default function OpenButton({
+  taskId,
+  label,
+  onOpened,
+}: {
+  taskId: string;
+  label: string;
+  onOpened?: () => void;
+}) {
   const router = useRouter();
   const [message, setMessage] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
 
   async function openItem() {
     setPending(true);
-    const { data } = await supabase.auth.getSession();
-    const token = data.session?.access_token;
+    const token = await readAccessToken();
     const response = await fetch("/api/language-study/open", {
       method: "POST",
       headers: {
@@ -28,7 +35,11 @@ export default function OpenButton({ taskId, label }: { taskId: string; label: s
     setPending(false);
 
     if (response.ok && body.opened) {
-      router.refresh();
+      if (onOpened) {
+        onOpened();
+      } else {
+        router.refresh();
+      }
       return;
     }
 
@@ -61,8 +72,7 @@ export function CloseAttemptButton({ taskId }: { taskId: string }) {
 
   async function closeAttempt() {
     setPending(true);
-    const { data } = await supabase.auth.getSession();
-    const token = data.session?.access_token;
+    const token = await readAccessToken();
     const response = await fetch("/api/language-study/attempt", {
       method: "POST",
       headers: {

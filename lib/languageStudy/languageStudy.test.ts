@@ -18,6 +18,7 @@ import {
   findPracticeTask,
   lockedPracticeCount,
   mockQuestionCount,
+  mockQuestions,
   practiceTasks,
   practiceTasksFor,
 } from "./content";
@@ -34,7 +35,7 @@ import { MemoryLanguageStudyStore } from "./memoryStore";
 import type { LanguageStudyStore } from "./store";
 import { LANGUAGE_STUDY_HREF, languageStudySitemapPaths } from "./paths";
 import { handleAttempt, handleCheckout, handleSpeech, handleWebhook } from "./service";
-import { emptyStudyState, type SelfRating } from "./types";
+import { emptyStudyState } from "./types";
 import AttemptForm from "../../components/languageStudy/AttemptForm";
 import Paywall from "../../components/languageStudy/Paywall";
 import ResultPanel from "../../components/languageStudy/ResultPanel";
@@ -98,7 +99,7 @@ test("launch prices are USD 1.99 and USD 4.99 and stay fixed", () => {
   assert.equal(config.currency, "usd");
   assert.equal(config.taskBatchPriceMinor, 199);
   assert.equal(config.mockPriceMinor, 499);
-  assert.equal(config.paymentsEnabledFlag, false);
+  assert.equal(config.publishableKeyConfigured, false);
   assert.match(provisionalAllowanceText(config), /free allowance is 3/);
 
   const purchase = assessPurchase(config, "task_batch", {
@@ -107,7 +108,8 @@ test("launch prices are USD 1.99 and USD 4.99 and stay fixed", () => {
 
   assert.equal(purchase.available, false);
   if (!purchase.available) {
-    assert.equal(purchase.code, "payments_disabled");
+    assert.equal(purchase.code, "coming_soon");
+    assert.match(purchase.message, /Coming soon/);
     assert.match(purchase.message, /USD 1\.99/);
     assert.match(purchase.message, /10 additional practice tasks/);
     assert.match(purchase.message, /nothing was charged/i);
@@ -131,7 +133,7 @@ test("a consultant Stripe secret does not enable language study checkout", () =>
 
   assert.equal(purchase.available, false);
   if (!purchase.available) {
-    assert.equal(purchase.code, "stripe_price_missing");
+    assert.equal(purchase.code, "coming_soon");
     assert.match(purchase.message, /USD 4\.99/);
     assert.match(purchase.message, /Nothing was charged|nothing was charged/);
   }
@@ -139,15 +141,13 @@ test("a consultant Stripe secret does not enable language study checkout", () =>
 
 test("checkout stays off when the withheld library is smaller than the batch", () => {
   const config = readLanguageStudyConfig({
-    LANGUAGE_STUDY_PAYMENTS_ENABLED: "true",
     LANGUAGE_STUDY_CURRENCY: "eur",
     LANGUAGE_STUDY_BATCH_PRICE_MINOR: "500",
     LANGUAGE_STUDY_MOCK_PRICE_MINOR: "700",
     LANGUAGE_STUDY_BATCH_SIZE: "10",
-    STRIPE_LANGUAGE_STUDY_BATCH_PRICE_ID: "price_batch",
-    STRIPE_LANGUAGE_STUDY_MOCK_PRICE_ID: "price_mock",
     STRIPE_SECRET_KEY: "sk_test_example",
-    LANGUAGE_STUDY_STRIPE_WEBHOOK_SECRET: "whsec_language",
+    STRIPE_WEBHOOK_SECRET: "whsec_language",
+    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: "pk_test_example",
   });
   const purchase = assessPurchase(config, "task_batch", { lockedPracticeTasks: 1 });
 
@@ -259,14 +259,14 @@ test("reading and listening scores are raw marks with no official conversion", (
 test("PTE-style reorder scores only an exact order", () => {
   const mock = findMock("reading", "en", "pte");
 
-  assert.ok(mock && mock.availability.status === "short_unofficial");
+  assert.ok(mock && mock.availability.status === "full_practice");
   assert.equal(mock.availability.body.kind, "objective");
   if (mock.availability.body.kind !== "objective") {
     return;
   }
 
   const exact = gradeQuestions(
-    mock.availability.body.questions,
+    mockQuestions(mock),
     {
       "mock-reading-en-pte-q1": "b",
       "mock-reading-en-pte-q2": "b",
@@ -275,7 +275,7 @@ test("PTE-style reorder scores only an exact order", () => {
     "reading"
   );
   const partialOrder = gradeQuestions(
-    mock.availability.body.questions,
+    mockQuestions(mock),
     { "mock-reading-en-pte-q3": ["s2", "s1", "s3"] },
     "reading"
   );
@@ -291,24 +291,12 @@ test("writing review is not an exam score and word count is not a mark", () => {
   const task = findPracticeTask("writing-en-1");
 
   assert.ok(task && task.skill === "writing");
-  const tooShort = gradeWriting(task, "Too short.", {
-    task: "met",
-    organization: "met",
-    development: "met",
-    language: "met",
-  });
+  const tooShort = gradeWriting(task, "Too short.");
 
   assert.equal(tooShort.ok, false);
-  const ratings: Record<string, SelfRating> = {
-    task: "met",
-    organization: "partly",
-    development: "not_yet",
-    language: "met",
-  };
   const review = gradeWriting(
     task,
-    "Dear tutor, I missed yesterday because the night bus stopped early. I will read the notes today and send a summary. Which paragraph of the assignment should I redo first? Thank you, Mina.",
-    ratings
+    "Dear tutor, I missed yesterday because the night bus stopped early. I will read the notes today and send a summary. Which paragraph of the assignment should I redo first? Thank you, Mina."
   );
 
   assert.equal(review.ok, true);
@@ -316,14 +304,16 @@ test("writing review is not an exam score and word count is not a mark", () => {
     return;
   }
 
-  assert.equal(review.feedback.scoringKind, "self_review");
+  assert.equal(review.feedback.scoringKind, "writing_assessment");
   assert.equal(review.feedback.examScore, null);
   assert.equal(review.feedback.officialScore, null);
   assert.equal(review.feedback.wordCountIsScore, false);
-  assert.equal(review.feedback.label, "Self-review, not an exam score");
-  assert.match(review.feedback.summary, /your own review/i);
+  assert.equal(review.feedback.estimateMax, 9);
+  assert.ok(review.feedback.practiceEstimate >= 1 && review.feedback.practiceEstimate <= 9);
+  assert.match(review.feedback.label, /not an official or certified score/i);
+  assert.match(review.feedback.evaluator.note, /built-in rubric only/i);
   assert.doesNotMatch(JSON.stringify(review.feedback), /band\s*[0-9]|IELTS\s*[0-9]|TOEFL\s*[0-9]/i);
-  assert.match(review.feedback.summary, /not an exam score, an AI score, or an official mark/);
+  assert.match(review.feedback.summary, /not an exam score/i);
 });
 
 test("signed-in free cap blocks another submission and does not reveal a score", async () => {
@@ -564,20 +554,32 @@ test("guest preview scores only the first task and does not claim an enforced ca
   });
 
   assert.equal(result.status, 200);
-  assert.equal(result.body.preview, true);
+  assert.equal(result.body.persist, "browser");
   assert.equal(result.body.enforced, false);
-  assert.match(String(result.body.previewNotice), /does not use or enforce the free allowance/);
-  const hidden = await handleAttempt(deps(), {
+  assert.match(String(result.body.saveNotice), /this device/i);
+  const second = await handleAttempt(deps(), {
     userId: null,
-    body: { mode: "preview", taskId: "reading-fi-2", answers: {} },
+    body: { mode: "practice", taskId: "reading-fi-2", answers: {} },
   });
 
-  assert.equal(hidden.status, 401);
-  assert.equal(hidden.body.feedback, null);
-  const speech = await handleSpeech(deps(), { userId: null, body: { taskId: "listening-en-2" } });
+  assert.equal(second.status, 200);
+  assert.equal(second.body.persist, "browser");
+  const paid = await handleAttempt(deps(), {
+    userId: null,
+    body: { mode: "practice", taskId: "reading-en-4", answers: {} },
+  });
+
+  assert.equal(paid.status, 401);
+  assert.equal(paid.body.feedback, null);
+  const speech = await handleSpeech(deps(), { userId: null, body: { taskId: "listening-en-4" } });
 
   assert.equal(speech.status, 401);
   assert.equal(speech.body.script, undefined);
+  const freeSpeech = await handleSpeech(deps(), { userId: null, body: { taskId: "listening-en-2" } });
+
+  assert.equal(freeSpeech.status, 200);
+  assert.match(String(freeSpeech.body.script), /cafe at 5/);
+  assert.equal(freeSpeech.body.lang, "en-GB");
   const previewSpeech = await handleSpeech(deps(), {
     userId: null,
     body: { taskId: "listening-en-1" },
@@ -619,9 +621,42 @@ test("counted practice fails closed when storage is not configured", async () =>
     { userId, body: { mode: "practice", taskId: "reading-en-1", answers: { "reading-en-1-q1": "a" } } }
   );
 
-  assert.equal(result.status, 503);
-  assert.equal(result.body.feedback, null);
+  assert.equal(result.status, 200);
+  assert.equal(result.body.persist, "browser");
+  assert.ok(result.body.feedback);
   assert.equal(result.body.unlocked, false);
+  const paid = await handleAttempt(
+    deps({
+      async load() {
+        return { ok: false, reason: "storage_unconfigured" };
+      },
+      async savePractice() {
+        throw new Error("should not save");
+      },
+      async openItem() {
+        throw new Error("should not open");
+      },
+      async saveMock() {
+        throw new Error("should not save");
+      },
+      async createOrder() {
+        throw new Error("should not order");
+      },
+      async attachSession() {
+        return { ok: true };
+      },
+      async fulfill() {
+        throw new Error("should not fulfill");
+      },
+      async failCheckout() {
+        return { ok: true as const, status: "missing" as const };
+      },
+    }),
+    { userId, body: { mode: "practice", taskId: "reading-en-4", answers: {} } }
+  );
+
+  assert.equal(paid.status, 503);
+  assert.equal(paid.body.feedback, null);
 });
 
 test("default checkout does not create an order or a Stripe session", async () => {
@@ -631,12 +666,9 @@ test("default checkout does not create an order or a Stripe session", async () =
     {
       ...deps(store),
       stripe: {
-        async retrievePrice() {
-          throw new Error("Stripe should not be called when checkout is disconnected");
-        },
         async createSession() {
           stripeCalls += 1;
-          return { id: "cs_test", url: "https://checkout.stripe.test/session" };
+          throw new Error("Stripe should not be called when checkout is disconnected");
         },
       },
     },
@@ -659,27 +691,23 @@ test("default checkout does not create an order or a Stripe session", async () =
   assert.equal(store.state.orders.length, 0);
 });
 
-test("mocked Stripe test mode rejects a Price that is not the launch amount", async () => {
+test("a browser-sent amount cannot change the USD 1.99 checkout", async () => {
   const store = new MemoryLanguageStudyStore();
-  let created = 0;
+  let seenAmount = 0;
   const result = await handleCheckout(
     {
       ...deps(
         store,
         readLanguageStudyConfig({
-          LANGUAGE_STUDY_PAYMENTS_ENABLED: "true",
-          STRIPE_LANGUAGE_STUDY_BATCH_PRICE_ID: "price_batch",
           STRIPE_SECRET_KEY: "sk_test_example",
-          LANGUAGE_STUDY_STRIPE_WEBHOOK_SECRET: "whsec_language",
+          STRIPE_WEBHOOK_SECRET: "whsec_language",
+          NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: "pk_test_example",
         })
       ),
       stripe: {
-        async retrievePrice() {
-          return { currency: "usd", unitAmount: 100, recurring: false };
-        },
-        async createSession() {
-          created += 1;
-          return { id: "cs_wrong", url: "https://checkout.stripe.test/wrong" };
+        async createSession(input: { expectedAmountMinor: number }) {
+          seenAmount = input.expectedAmountMinor;
+          return { id: "cs_fixed", url: "https://checkout.stripe.test/fixed" };
         },
       },
     },
@@ -695,38 +723,32 @@ test("mocked Stripe test mode rejects a Price that is not the launch amount", as
     }
   );
 
-  assert.equal(result.status, 409);
-  assert.equal(result.body.code, "price_mismatch");
+  assert.equal(result.status, 200);
+  assert.equal(seenAmount, 199);
+  assert.equal(result.body.url, "https://checkout.stripe.test/fixed");
   assert.equal(result.body.unlocked, false);
   assert.equal(result.body.charged, false);
-  assert.equal(created, 0);
-  assert.equal(store.state.orders.length, 0);
 });
 
 test("configured checkout reuses one session and the webhook grants once", async () => {
   const store = new MemoryLanguageStudyStore();
   const config = readLanguageStudyConfig({
-    LANGUAGE_STUDY_PAYMENTS_ENABLED: "true",
     LANGUAGE_STUDY_CURRENCY: "eur",
     LANGUAGE_STUDY_BATCH_PRICE_MINOR: "500",
     LANGUAGE_STUDY_MOCK_PRICE_MINOR: "700",
-    STRIPE_LANGUAGE_STUDY_BATCH_PRICE_ID: "price_batch",
-    STRIPE_LANGUAGE_STUDY_MOCK_PRICE_ID: "price_mock",
     STRIPE_SECRET_KEY: "sk_test_example",
     LANGUAGE_STUDY_STRIPE_WEBHOOK_SECRET: "whsec_language",
+    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: "pk_test_example",
   });
   let stripeCalls = 0;
   let seenAmount = 0;
   const service = {
     ...deps(store, config),
     stripe: {
-      async retrievePrice() {
-        return { currency: "usd", unitAmount: 499, recurring: false };
-      },
-      async createSession(input: { expectedAmountMinor: number; priceId: string }) {
+      async createSession(input: { expectedAmountMinor: number; productName: string }) {
         stripeCalls += 1;
         seenAmount = input.expectedAmountMinor;
-        assert.equal(input.priceId, "price_mock");
+        assert.match(input.productName, /full practice test/);
         return { id: "cs_live_test", url: "https://checkout.stripe.test/once" };
       },
     },
@@ -830,32 +852,39 @@ test("configured checkout reuses one session and the webhook grants once", async
   assert.equal(stripeCalls, 1);
 });
 
-test("unavailable exam variants cannot be started or described as full mocks", () => {
-  for (const variant of ["toefl", "pte"] as const) {
-    const mock = findMock("writing", "en", variant);
-
-    assert.ok(mock);
-    assert.equal(mock.availability.status, "unavailable");
-    assert.equal(mockQuestionCount(mock), 0);
-    assert.equal(
-      mockAccess({ mock, userId, storageReady: true, state: emptyStudyState(), now: now.getTime() }),
-      "unavailable"
-    );
-  }
-
+test("full practice tests use a full section length and stay unofficial", () => {
+  const reading = findMock("reading", "en", "ielts");
+  const listening = findMock("listening", "en", "ielts");
+  const writing = findMock("writing", "en", "toefl");
   const pteListening = findMock("listening", "en", "pte");
 
-  assert.ok(pteListening && pteListening.availability.status === "unavailable");
-  assert.match(pteListening.availability.reason, /not offered/);
-  const ielts = findMock("reading", "en", "ielts");
-
-  assert.ok(ielts);
-  assert.match(ielts.scopeNote, /not an IELTS band/);
-  assert.match(ielts.instructions.join(" "), /no band conversion/i);
+  assert.ok(reading && listening && writing && pteListening);
+  assert.equal(reading.availability.status, "full_practice");
+  assert.equal(reading.minutes, 60);
+  assert.equal(mockQuestionCount(reading), 40);
+  assert.equal(listening.minutes, 30);
+  assert.equal(mockQuestionCount(listening), 40);
+  assert.equal(writing.availability.status, "full_practice");
+  assert.equal(mockQuestionCount(writing), 2);
+  assert.equal(pteListening.availability.status, "full_practice");
+  assert.match(pteListening.scopeNote, /highlight incorrect words/);
+  assert.match(pteListening.scopeNote, /not a PTE score/i);
+  assert.match(reading.scopeNote, /not an IELTS band/);
+  assert.match(reading.instructions.join(" "), /no band conversion/i);
   const yki = findMock("reading", "fi", "yki");
 
   assert.ok(yki);
+  assert.equal(mockQuestionCount(yki), 20);
   assert.match(yki.scopeNote, /ei YKI-tasoa/);
+  assert.equal(
+    mockAccess({
+      mock: writing,
+      userId: null,
+      storageReady: true,
+      state: emptyStudyState(),
+    }),
+    "sign_in"
+  );
 });
 
 test("a late mock submission is unscored", () => {
@@ -977,7 +1006,7 @@ test("hub, homepage, and navigation keep the italki speaking link exact", () => 
       state: emptyStudyState(),
       freeCap: 3,
     }),
-    "sign_in"
+    "practice"
   );
 });
 
@@ -996,7 +1025,10 @@ test("client code does not import the answer bank or store entitlements in the b
 
     const source = readFileSync(file, "utf8");
 
-    assert.doesNotMatch(source, /localStorage/);
+    if (source.includes("localStorage")) {
+      assert.match(file, /browserProgress\.ts$/);
+      assert.doesNotMatch(source, /language_study_ledger|practiceCredit|\"orders\"|unlocked:\s*true/);
+    }
     if (source.includes('"use client"') || source.includes("'use client'")) {
       assert.doesNotMatch(source, /languageStudy\/content|languageStudy\/grade|languageStudy\/ledger|languageStudy\/service/);
     }

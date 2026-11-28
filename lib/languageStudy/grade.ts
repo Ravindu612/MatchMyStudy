@@ -3,15 +3,14 @@ import {
   LISTENING_DISCLOSURE,
   MAX_WRITING_WORDS,
   MIN_WRITING_WORDS,
-  SELF_REVIEW_LABEL,
   WRITING_CRITERIA,
   countWords,
-  selfReviewSummary,
 } from "./rubric";
 import type {
   AttemptFeedback,
   GradedQuestion,
   ListeningTask,
+  MockTest,
   ObjectiveFeedback,
   ObjectiveQuestion,
   PublicListening,
@@ -22,11 +21,10 @@ import type {
   PublicWritingMock,
   ReadingTask,
   ReorderQuestion,
-  SelfRating,
-  SelfReviewFeedback,
+  WritingAssessmentFeedback,
   WritingTask,
 } from "./types";
-import { SELF_RATINGS } from "./types";
+import { writingFeedback } from "./writingAssessment";
 
 const SECRET_KEYS = [
   "correctChoiceId",
@@ -107,15 +105,12 @@ export function toPublicListening(task: ListeningTask): PublicListening {
   };
 }
 
-export function toPublicMock(mock: {
-  id: string;
-  skill: "reading" | "listening" | "writing";
-  language: ReadingTask["language"];
-  variant: PublicObjectiveMock["variant"] | PublicWritingMock["variant"];
-  title: string;
-  minutes: number;
-  availability: { status: "short_unofficial"; body: import("./types").MockBody };
-}): PublicObjectiveMock | PublicWritingMock {
+export const FULL_LISTENING_AUDIO_NOTE =
+  "This full practice reads the original script with your browser's voice. It is not a human recording and not an exam recording.";
+
+export function toPublicMock(
+  mock: MockTest & { availability: { status: "full_practice" } }
+): PublicObjectiveMock | PublicWritingMock {
   const body = mock.availability.body;
 
   if (body.kind === "writing") {
@@ -126,28 +121,37 @@ export function toPublicMock(mock: {
       variant: mock.variant,
       title: mock.title,
       minutes: mock.minutes,
-      prompt: body.prompt,
-      promptLang: body.promptLang,
-      suggestedWords: body.suggestedWords,
+      prompts: body.prompts.map((prompt) => ({
+        id: prompt.id,
+        title: prompt.title,
+        prompt: prompt.prompt,
+        promptLang: prompt.promptLang,
+        suggestedWords: prompt.suggestedWords,
+      })),
       criteria: WRITING_CRITERIA.map((criterion) => ({ ...criterion })),
     };
   }
 
+  const listening = mock.skill === "listening";
+
   return {
     id: mock.id,
-    skill: mock.skill === "listening" ? "listening" : "reading",
+    skill: listening ? "listening" : "reading",
     language: mock.language,
     variant: mock.variant,
     title: mock.title,
     minutes: mock.minutes,
-    passage: body.passage,
-    passageLang: body.passageLang,
-    audioLang: body.audioLang,
-    speakerNote: body.speakerNote,
-    disclosure: body.script ? LISTENING_DISCLOSURE : undefined,
-    audioSrc: body.script ? `/language-study/audio/${mock.id}.mp3` : undefined,
-    audioNote: body.script ? LISTENING_AUDIO_NOTE : undefined,
-    questions: body.questions.map(toPublicQuestion),
+    parts: body.parts.map((part) => ({
+      id: part.id,
+      title: part.title,
+      passage: part.passage,
+      passageLang: part.passageLang,
+      questions: part.questions.map(toPublicQuestion),
+    })),
+    audioLang: body.parts.find((part) => part.audioLang)?.audioLang,
+    speakerNote: body.parts.find((part) => part.speakerNote)?.speakerNote,
+    disclosure: listening ? LISTENING_DISCLOSURE : undefined,
+    audioNote: listening ? FULL_LISTENING_AUDIO_NOTE : undefined,
   };
 }
 
@@ -250,76 +254,60 @@ export function gradeQuestions(
   };
 }
 
-export function parseSelfReview(
-  value: unknown
-): { ok: true; ratings: Record<string, SelfRating> } | { ok: false; message: string } {
-  if (!value || typeof value !== "object" || Array.isArray(value)) {
-    return { ok: false, message: "Mark each self-review statement before you submit." };
+export function gradeWriting(
+  task: { title?: string; prompt?: string; suggestedWords: { min: number; max: number } },
+  essay: string
+): { ok: true; feedback: WritingAssessmentFeedback } | { ok: false; message: string } {
+  return gradeWritingPrompts([
+    {
+      title: task.title ?? "Response",
+      prompt: task.prompt ?? "",
+      essay,
+      suggestedWords: task.suggestedWords,
+    },
+  ]);
+}
+
+export function gradeWritingPrompts(
+  prompts: {
+    title: string;
+    prompt: string;
+    essay: string;
+    suggestedWords: { min: number; max: number };
+  }[]
+): { ok: true; feedback: WritingAssessmentFeedback } | { ok: false; message: string } {
+  if (prompts.length === 0) {
+    return { ok: false, message: "Write a response before submitting." };
   }
 
-  const record = value as Record<string, unknown>;
-  const ratings: Record<string, SelfRating> = {};
+  for (const prompt of prompts) {
+    const wordCount = countWords(prompt.essay);
 
-  for (const criterion of WRITING_CRITERIA) {
-    const rating = record[criterion.id];
-
-    if (!SELF_RATINGS.includes(rating as SelfRating)) {
+    if (wordCount < MIN_WRITING_WORDS) {
       return {
         ok: false,
-        message: `Choose met, partly, or not yet for ${criterion.label}.`,
+        message: `Write at least ${MIN_WRITING_WORDS} words for ${prompt.title} before submitting. This check only stops an empty response. It is not a mark.`,
       };
     }
 
-    ratings[criterion.id] = rating as SelfRating;
+    if (wordCount > MAX_WRITING_WORDS) {
+      return {
+        ok: false,
+        message: `Keep ${prompt.title} under ${MAX_WRITING_WORDS} words and submit again. The length limit is not a mark.`,
+      };
+    }
   }
-
-  return { ok: true, ratings };
-}
-
-export function gradeWriting(
-  task: { suggestedWords: { min: number; max: number } },
-  essay: string,
-  ratings: Record<string, SelfRating>
-): { ok: true; feedback: SelfReviewFeedback } | { ok: false; message: string } {
-  const wordCount = countWords(essay);
-
-  if (wordCount < MIN_WRITING_WORDS) {
-    return {
-      ok: false,
-      message: `Write at least ${MIN_WRITING_WORDS} words before submitting. This check only stops an empty response. It is not a mark.`,
-    };
-  }
-
-  if (wordCount > MAX_WRITING_WORDS) {
-    return {
-      ok: false,
-      message: `Keep the response under ${MAX_WRITING_WORDS} words and submit again. The length limit is not a mark.`,
-    };
-  }
-
-  const criteria = WRITING_CRITERIA.map((criterion) => ({
-    ...criterion,
-    rating: ratings[criterion.id],
-  }));
 
   return {
     ok: true,
-    feedback: {
-      scoringKind: "self_review",
-      officialScore: null,
-      examScore: null,
-      label: SELF_REVIEW_LABEL,
-      wordCount,
-      suggestedMin: task.suggestedWords.min,
-      suggestedMax: task.suggestedWords.max,
-      wordCountIsScore: false,
-      summary: selfReviewSummary(criteria),
-      criteria,
-      evaluator: {
-        status: "not_configured",
-        note: "An external writing evaluator is not configured. This result is only your self-review. No automated comment was added.",
-      },
-    },
+    feedback: writingFeedback({
+      essays: prompts.map((prompt) => ({
+        title: prompt.title,
+        prompt: prompt.prompt,
+        essay: prompt.essay,
+        suggested: prompt.suggestedWords,
+      })),
+    }),
   };
 }
 

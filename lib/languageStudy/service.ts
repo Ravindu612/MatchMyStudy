@@ -1,16 +1,18 @@
-import { isPreviewTask, practiceTaskAccess } from "./access";
+import { mockAccess, practiceTaskAccess } from "./access";
 import type { LanguageStudyConfig } from "./config";
-import { assessPurchase } from "./config";
+import { assessPurchase, checkoutNotConnectedMessage, isCheckoutReady } from "./config";
 import {
   findListeningTask,
   findMock,
   findPracticeTask,
   lockedPracticeCount,
+  mockScript,
 } from "./content";
-import { gradeQuestions, gradeWriting, parseSelfReview } from "./grade";
+import { gradeQuestions, gradeWriting, gradeWritingPrompts, toPublicListening, toPublicMock, toPublicReading, toPublicWriting } from "./grade";
 import { savePracticeSubmission } from "./ledger";
 import type { LanguageStudyStore } from "./store";
-import { PREVIEW_NOTICE } from "./rubric";
+import { ACCOUNT_SAVE_NOTICE, BROWSER_SAVE_NOTICE } from "./rubric";
+import { enrichWritingFeedback } from "./writingAssessment";
 import type {
   AttemptFeedback,
   ExamVariant,
@@ -19,7 +21,7 @@ import type {
   Skill,
   StudyState,
 } from "./types";
-import { EXAM_VARIANTS, LANGUAGE_CODES, SKILLS } from "./types";
+import { emptyStudyState, EXAM_VARIANTS, LANGUAGE_CODES, SKILLS } from "./types";
 
 export type ServiceResult = {
   status: number;
@@ -34,14 +36,9 @@ export type ServiceDeps = {
   now: () => Date;
   ids: () => IdBundle;
   stripe?: {
-    retrievePrice: (priceId: string) => Promise<{
-      currency: string;
-      unitAmount: number | null;
-      recurring: boolean;
-    }>;
     createSession: (input: {
-      priceId: string;
       expectedAmountMinor: number;
+      productName: string;
       userId: string;
       orderId: string;
       product: OrderProduct;
@@ -52,6 +49,7 @@ export type ServiceDeps = {
       idempotencyKey: string;
     }) => Promise<{ id: string; url: string }>;
   } | null;
+  writingEnv?: Record<string, string | undefined>;
 };
 
 const UUID =
@@ -155,7 +153,6 @@ export async function handleAttempt(
     return denied(400, "invalid_request", "Choose a task and submit it again.");
   }
 
-  const mode = body.mode;
   const task = findPracticeTask(body.taskId) ?? null;
   const mock =
     task === null
@@ -166,41 +163,72 @@ export async function handleAttempt(
     return denied(404, "not_found", "That practice item is not in the library.");
   }
 
-  if (mode === "preview") {
-    if (input.userId) {
-      return handleCountedAttempt(deps, input.userId, body, task, mock);
-    }
-
-    if (!task || !isPreviewTask(task)) {
-      return denied(
-        401,
-        "sign_in_required",
-        "Sign in to take this task. A preview is only the first task in each skill and language, and it does not enforce the free allowance."
-      );
-    }
-
-    const graded = gradeTask(task, body);
-
-    if (!graded.ok) {
-      return denied(400, "invalid_response", graded.message);
-    }
-
-    return feedbackBody(graded.feedback, {
-      preview: true,
-      enforced: false,
-      previewNotice: PREVIEW_NOTICE,
-    });
+  if (!input.userId) {
+    return handleGuestAttempt(deps, body, task, mock);
   }
 
-  if (!input.userId) {
+  const loaded = await deps.store.load(input.userId);
+
+  if (!loaded.ok) {
+    if (task?.access === "free") {
+      const graded = await gradeTask(deps, task, body);
+
+      if (!graded.ok) {
+        return denied(400, "invalid_response", graded.message);
+      }
+
+      return feedbackBody(graded.feedback, {
+        persist: "browser",
+        preview: false,
+        enforced: false,
+        saveNotice: BROWSER_SAVE_NOTICE,
+      });
+    }
+
     return denied(
-      401,
-      "sign_in_required",
-      "Sign in so this attempt can be counted on the server. The preview does not enforce the free allowance."
+      503,
+      "storage_unavailable",
+      "Your answers were not scored because practice could not be saved. Apply the language study migration and set the server database key before counted practice can run. Nothing was counted, charged, or unlocked."
     );
   }
 
-  return handleCountedAttempt(deps, input.userId, body, task, mock);
+  return handleCountedAttempt(deps, input.userId, loaded.state, body, task, mock);
+}
+
+async function handleGuestAttempt(
+  deps: ServiceDeps,
+  body: Record<string, unknown>,
+  task: ReturnType<typeof findPracticeTask>,
+  mock: ReturnType<typeof findMock>
+): Promise<ServiceResult> {
+  if (mock || !task) {
+    return denied(
+      401,
+      "sign_in_required",
+      "Sign in to take this item. Free practice tasks can be saved on this device without an account."
+    );
+  }
+
+  if (task.access !== "free") {
+    return denied(
+      401,
+      "sign_in_required",
+      "Sign in before a paid task can be opened. Nothing was charged or unlocked."
+    );
+  }
+
+  const graded = await gradeTask(deps, task, body);
+
+  if (!graded.ok) {
+    return denied(400, "invalid_response", graded.message);
+  }
+
+  return feedbackBody(graded.feedback, {
+    persist: "browser",
+    preview: false,
+    enforced: false,
+    saveNotice: BROWSER_SAVE_NOTICE,
+  });
 }
 
 function findMockFromId(taskId: string) {
@@ -213,22 +241,23 @@ function findMockFromId(taskId: string) {
   return findMock(match[1] as Skill, match[2] as LanguageCode, match[3] as ExamVariant);
 }
 
-function gradeTask(
+async function gradeTask(
+  deps: ServiceDeps,
   task: NonNullable<ReturnType<typeof findPracticeTask>>,
   body: Record<string, unknown>
-): { ok: true; feedback: AttemptFeedback } | { ok: false; message: string } {
+): Promise<{ ok: true; feedback: AttemptFeedback } | { ok: false; message: string }> {
   if (task.skill === "writing") {
-    const review = parseSelfReview(body.selfReview);
-
-    if (!review.ok) {
-      return review;
-    }
-
     if (typeof body.essay !== "string") {
       return { ok: false, message: "Write a response before submitting." };
     }
 
-    return gradeWriting(task, body.essay, review.ratings);
+    const graded = gradeWriting(task, body.essay);
+
+    if (!graded.ok) {
+      return graded;
+    }
+
+    return { ok: true, feedback: await enrichWritingFeedback(graded.feedback, deps.writingEnv ?? {}) };
   }
 
   const listening = task.skill === "listening" ? task : null;
@@ -245,25 +274,20 @@ function gradeTask(
 async function handleCountedAttempt(
   deps: ServiceDeps,
   userId: string,
+  state: StudyState,
   body: Record<string, unknown>,
   task: ReturnType<typeof findPracticeTask>,
   mock: ReturnType<typeof findMock>
 ): Promise<ServiceResult> {
-  const loaded = await readyState(deps.store, userId);
-
-  if ("status" in loaded) {
-    return loaded;
-  }
-
   if (mock) {
-    return submitMock(deps, userId, loaded.state, mock, body);
+    return submitMock(deps, userId, state, mock, body);
   }
 
   if (!task) {
     return denied(404, "not_found", "That practice item is not in the library.");
   }
 
-  const probe = savePracticeSubmission(loaded.state, {
+  const probe = savePracticeSubmission(state, {
     userId,
     skill: task.skill,
     language: task.language,
@@ -290,7 +314,7 @@ async function handleCountedAttempt(
     });
   }
 
-  const graded = gradeTask(task, body);
+  const graded = await gradeTask(deps, task, body);
 
   if (!graded.ok) {
     return denied(400, "invalid_response", graded.message);
@@ -306,16 +330,38 @@ async function handleCountedAttempt(
     freeCap: deps.config.freeTasksPerSkillPerLanguage,
     response:
       task.skill === "writing"
-        ? { essay: typeof body.essay === "string" ? body.essay : "", selfReview: body.selfReview }
+        ? { essay: typeof body.essay === "string" ? body.essay : "" }
         : { answers: parseAnswers(body.answers), openedScript: body.openedScript === true },
     feedback: graded.feedback,
-    scoreCorrect: graded.feedback.scoringKind === "objective" ? graded.feedback.correct : null,
-    scoreTotal: graded.feedback.scoringKind === "objective" ? graded.feedback.total : null,
+    scoreCorrect:
+      graded.feedback.scoringKind === "objective"
+        ? graded.feedback.correct
+        : graded.feedback.scoringKind === "writing_assessment"
+          ? graded.feedback.practiceEstimate
+          : null,
+    scoreTotal:
+      graded.feedback.scoringKind === "objective"
+        ? graded.feedback.total
+        : graded.feedback.scoringKind === "writing_assessment"
+          ? graded.feedback.estimateMax
+          : null,
     now: deps.now(),
     ids: { attemptId: ids.attemptId, ledgerId: ids.ledgerId },
   });
 
   if (!saved.ok) {
+    if (
+      (saved.reason === "storage_unconfigured" || saved.reason === "storage_error") &&
+      task.access === "free"
+    ) {
+      return feedbackBody(graded.feedback, {
+        persist: "browser",
+        preview: false,
+        enforced: false,
+        saveNotice: BROWSER_SAVE_NOTICE,
+      });
+    }
+
     if (saved.reason === "storage_unconfigured" || saved.reason === "storage_error") {
       return denied(
         503,
@@ -340,6 +386,8 @@ async function handleCountedAttempt(
   return feedbackBody(saved.attempt.feedback ?? graded.feedback, {
     preview: false,
     enforced: true,
+    persist: "account",
+    saveNotice: ACCOUNT_SAVE_NOTICE,
     alreadySubmitted: false,
     ...(refreshed.ok
       ? {
@@ -362,10 +410,14 @@ function denyPractice(
   language: LanguageCode
 ): ServiceResult {
   if (reason === "free_cap") {
+    const next = isCheckoutReady(config)
+      ? "A pack of 10 extra tasks is USD 1.99."
+      : checkoutNotConnectedMessage("task_batch");
+
     return denied(
       403,
       "free_cap",
-      `Free practice allowance reached. The provisional allowance is ${config.freeTasksPerSkillPerLanguage} submitted tasks for this skill and language. Purchase is not available yet, so no extra task was unlocked.`
+      `Free practice allowance reached. The allowance is ${config.freeTasksPerSkillPerLanguage} submitted tasks for this skill and language. ${next}`
     );
   }
 
@@ -416,7 +468,7 @@ async function submitMock(
   mock: NonNullable<ReturnType<typeof findMock>>,
   body: Record<string, unknown>
 ): Promise<ServiceResult> {
-  if (mock.availability.status !== "short_unofficial") {
+  if (mock.availability.status !== "full_practice") {
     return denied(403, "variant_unavailable", mock.availability.reason);
   }
 
@@ -446,30 +498,36 @@ async function submitMock(
   let scoreTotal: number | null = null;
 
   if (bodyContent.kind === "writing") {
-    const review = parseSelfReview(body.selfReview);
+    const essays = record(body.essays) ?? {};
+    const graded = gradeWritingPrompts(
+      bodyContent.prompts.map((prompt) => {
+        const essay = essays[prompt.id];
 
-    if (!review.ok) {
-      return denied(400, "invalid_response", review.message);
-    }
-
-    if (typeof body.essay !== "string") {
-      return denied(400, "invalid_response", "Write a response before submitting.");
-    }
-
-    const graded = gradeWriting(bodyContent, body.essay, review.ratings);
+        return {
+          title: prompt.title,
+          prompt: prompt.prompt,
+          essay: typeof essay === "string" ? essay : "",
+          suggestedWords: prompt.suggestedWords,
+        };
+      })
+    );
 
     if (!graded.ok) {
       return denied(400, "invalid_response", graded.message);
     }
 
-    feedback = graded.feedback;
+    const enriched = await enrichWritingFeedback(graded.feedback, deps.writingEnv ?? {});
+    feedback = enriched;
+    scoreCorrect = enriched.practiceEstimate;
+    scoreTotal = enriched.estimateMax;
   } else {
+    const questions = bodyContent.parts.flatMap((part) => part.questions);
     feedback = gradeQuestions(
-      bodyContent.questions,
+      questions,
       parseAnswers(body.answers),
       mock.skill === "listening" ? "listening" : "reading",
       {
-        scriptReview: bodyContent.script,
+        scriptReview: mockScript(mock) ?? undefined,
         openedScript: body.openedScript === true,
       }
     );
@@ -556,7 +614,7 @@ export async function handleOpen(
       return denied(403, "not_open", "This task cannot be opened.");
     }
   } else if (mock) {
-    if (mock.availability.status !== "short_unofficial") {
+    if (mock.availability.status !== "full_practice") {
       return denied(403, "variant_unavailable", mock.availability.reason);
     }
   } else {
@@ -618,16 +676,13 @@ export async function handleSpeech(
 
   const task = findListeningTask(body.taskId);
   const mock = task ? null : findMockFromId(body.taskId);
-  const mockScript =
-    mock && mock.availability.status === "short_unofficial" && mock.availability.body.kind === "objective"
-      ? mock.availability.body.script
-      : null;
+  const script = mock ? mockScript(mock) : null;
 
-  if (!task && !mockScript) {
+  if (!task && !script) {
     return denied(404, "not_found", "This item does not have a speech preview.");
   }
 
-  if (task && isPreviewTask(task) && !input.userId) {
+  if (task?.access === "free") {
     return speechOk(task.script, task.audioLang);
   }
 
@@ -661,16 +716,16 @@ export async function handleSpeech(
     (item) => item.userId === input.userId && item.taskId === mock!.id
   );
 
-  if (!attempt || !mockScript || !mock) {
+  if (!attempt || !script || !mock || mock.availability.status !== "full_practice") {
     return denied(403, "payment_required", "The speech preview stays locked until the mock test is open.");
   }
 
   const audioLang =
-    mock.availability.status === "short_unofficial" && mock.availability.body.kind === "objective"
-      ? mock.availability.body.audioLang ?? "en-GB"
+    mock.availability.body.kind === "objective"
+      ? mock.availability.body.parts.find((part) => part.audioLang)?.audioLang ?? "en-GB"
       : "en-GB";
 
-  return speechOk(mockScript, audioLang);
+  return speechOk(script, audioLang);
 }
 
 function speechOk(script: string, lang: string): ServiceResult {
@@ -725,7 +780,7 @@ export async function handleCheckout(
 
   const assessment = assessPurchase(deps.config, product, {
     lockedPracticeTasks: lockedPracticeCount(skill, language),
-    variantAvailable: mock ? mock.availability.status === "short_unofficial" : true,
+    variantAvailable: mock ? mock.availability.status === "full_practice" : true,
   });
 
   if (!assessment.available) {
@@ -733,21 +788,7 @@ export async function handleCheckout(
   }
 
   if (!deps.stripe) {
-    return denied(503, "stripe_secret_missing", "Checkout is not configured. Nothing was charged or unlocked.");
-  }
-
-  const listed = await deps.stripe.retrievePrice(assessment.stripePriceId);
-  const amountMatches =
-    listed.currency.toLowerCase() === "usd" &&
-    listed.unitAmount === assessment.priceMinor &&
-    listed.recurring === false;
-
-  if (!amountMatches) {
-    return denied(
-      409,
-      "price_mismatch",
-      "The Stripe Price does not match the launch price of USD 1.99 for ten tasks or USD 4.99 for one short practice-test attempt. Nothing was charged and nothing was unlocked."
-    );
+    return denied(503, "coming_soon", "Coming soon. Checkout is not configured. Nothing was charged or unlocked.");
   }
 
   const loaded = await readyState(deps.store, input.userId);
@@ -807,8 +848,11 @@ export async function handleCheckout(
   }
 
   const session = await deps.stripe.createSession({
-    priceId: assessment.stripePriceId,
     expectedAmountMinor: assessment.priceMinor,
+    productName:
+      product === "task_batch"
+        ? "MatchMyStudy Language Study: 10 extra practice tasks"
+        : "MatchMyStudy Language Study: one full practice test",
     userId: input.userId,
     orderId: created.order.id,
     product,
@@ -870,6 +914,10 @@ export async function handleWebhook(
     event = input.constructEvent(input.rawBody, input.signature, input.secret);
   } catch {
     return denied(400, "invalid_signature", "The webhook signature could not be verified. Nothing was granted.");
+  }
+
+  if (event.type === "checkout.session.async_payment_succeeded") {
+    event = { ...event, type: "checkout.session.completed" };
   }
 
   if (
@@ -950,6 +998,128 @@ export async function handleWebhook(
       unlocked: true,
       duplicate: result.status === "already_fulfilled",
       charged: false,
+    },
+  };
+}
+
+export async function handleProgress(
+  deps: ServiceDeps,
+  userId: string | null
+): Promise<ServiceResult> {
+  if (!userId) {
+    return {
+      status: 200,
+      body: { ok: true, storageReady: false, attempts: [] },
+    };
+  }
+
+  const loaded = await deps.store.load(userId);
+
+  if (!loaded.ok) {
+    return {
+      status: 200,
+      body: { ok: true, storageReady: false, attempts: [] },
+    };
+  }
+
+  return {
+    status: 200,
+    body: {
+      ok: true,
+      storageReady: true,
+      attempts: loaded.state.attempts
+        .filter((attempt) => attempt.submittedAt && attempt.feedback)
+        .map((attempt) => ({
+          taskId: attempt.taskId,
+          skill: attempt.skill,
+          language: attempt.language,
+          submittedAt: attempt.submittedAt,
+          feedback: attempt.feedback,
+        })),
+    },
+  };
+}
+
+export async function handleItemView(
+  deps: ServiceDeps,
+  input: { userId: string | null; taskId: string }
+): Promise<ServiceResult> {
+  const task = findPracticeTask(input.taskId);
+  const mock = task ? null : findMockFromId(input.taskId);
+
+  if (!task && !mock) {
+    return denied(404, "not_found", "That practice item is not in the library.");
+  }
+
+  let state = emptyStudyState();
+  let storageReady = !input.userId;
+
+  if (input.userId) {
+    const loaded = await deps.store.load(input.userId);
+
+    if (loaded.ok) {
+      state = loaded.state;
+      storageReady = true;
+    }
+  }
+
+  if (task) {
+    const access = practiceTaskAccess({
+      task,
+      userId: input.userId,
+      storageReady: input.userId ? storageReady || task.access === "free" : true,
+      state,
+      freeCap: deps.config.freeTasksPerSkillPerLanguage,
+    });
+    const saved = state.attempts.find(
+      (attempt) => attempt.userId === input.userId && attempt.taskId === task.id && attempt.submittedAt
+    );
+    const visible = access === "preview" || access === "practice" || access === "completed";
+    const publicTask = visible
+      ? task.skill === "reading"
+        ? toPublicReading(task)
+        : task.skill === "writing"
+          ? toPublicWriting(task)
+          : toPublicListening(task)
+      : null;
+
+    return {
+      status: 200,
+      body: {
+        ok: true,
+        access,
+        task: publicTask,
+        feedback: saved?.feedback ?? null,
+        startedAt: null,
+        minutes: null,
+      },
+    };
+  }
+
+  const access = mockAccess({
+    mock: mock!,
+    userId: input.userId,
+    storageReady,
+    state,
+  });
+  const saved = state.attempts.find(
+    (attempt) => attempt.userId === input.userId && attempt.taskId === mock!.id
+  );
+  const visible = access === "in_progress" || access === "result";
+  const publicTask =
+    visible && mock!.availability.status === "full_practice"
+      ? toPublicMock({ ...mock!, availability: mock!.availability })
+      : null;
+
+  return {
+    status: 200,
+    body: {
+      ok: true,
+      access,
+      task: publicTask,
+      feedback: saved?.feedback ?? null,
+      startedAt: saved?.startedAt ?? null,
+      minutes: mock!.minutes,
     },
   };
 }

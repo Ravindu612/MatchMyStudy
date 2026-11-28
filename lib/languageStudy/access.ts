@@ -1,6 +1,6 @@
 import { ITALKI_AFFILIATE_URL, ITALKI_CTA_LABEL, ITALKI_LINK_REL } from "@/lib/italki";
 import type { LanguageStudyConfig } from "./config";
-import { checkoutNotConnectedMessage, productOffer, TAX_NOTE } from "./config";
+import { checkoutNotConnectedMessage, isCheckoutReady, productOffer, TAX_NOTE } from "./config";
 import { lockedPracticeCount, mockQuestionCount } from "./content";
 import {
   findAttempt,
@@ -56,11 +56,11 @@ export function practiceTaskAccess(input: {
   }
 
   if (!input.userId) {
-    return isPreviewTask(input.task) ? "preview" : "sign_in";
+    return input.task.access === "free" ? "practice" : "sign_in";
   }
 
   if (!input.storageReady) {
-    return isPreviewTask(input.task) ? "preview" : "storage_unavailable";
+    return input.task.access === "free" ? "practice" : "storage_unavailable";
   }
 
   if (input.task.access === "paid") {
@@ -107,7 +107,7 @@ export function mockAccess(input: {
   | "in_progress"
   | "expired"
   | "result" {
-  if (input.mock.availability.status !== "short_unofficial") {
+  if (input.mock.availability.status !== "full_practice") {
     return "unavailable";
   }
 
@@ -167,7 +167,7 @@ export function languageStudyHubCards(): HubCard[] {
     {
       title: SKILL_NAMES.writing,
       description:
-        "Write to a prompt and complete a transparent self-review. The result is not an exam score.",
+        "Write to a prompt and receive a rubric estimate. The result is not an exam score.",
       href: skillPath("writing"),
       external: false,
     },
@@ -190,11 +190,15 @@ export function languageStudyHubCards(): HubCard[] {
 }
 
 export function provisionalAllowanceText(config: LanguageStudyConfig): string {
-  return `The free allowance is ${config.freeTasksPerSkillPerLanguage} submitted tasks for each skill and language. It is counted only for signed-in students, on the server.`;
+  return `The free allowance is ${config.freeTasksPerSkillPerLanguage} tasks for each skill and language. Signed-in results are saved to the account when the database is ready. Otherwise they are saved in this browser.`;
 }
 
 export function capReachedText(config: LanguageStudyConfig, freeUsed: number): string {
-  return `Free practice allowance reached. ${freeUsed} of ${config.freeTasksPerSkillPerLanguage} free tasks for this skill and language have been saved. ${checkoutNotConnectedMessage("task_batch")}`;
+  const next = isCheckoutReady(config)
+    ? "A pack of extra tasks can be bought with the button on this page."
+    : checkoutNotConnectedMessage("task_batch");
+
+  return `Free practice allowance reached. ${freeUsed} of ${config.freeTasksPerSkillPerLanguage} free tasks for this skill and language have been saved. ${next}`;
 }
 
 export function lockedTaskText(config: LanguageStudyConfig, skill: Skill, language: LanguageCode): string {
@@ -206,8 +210,8 @@ export function lockedTaskText(config: LanguageStudyConfig, skill: Skill, langua
 export function mockLockedText(mock: MockTest): string {
   const count = mockQuestionCount(mock);
   const scope =
-    mock.availability.status === "short_unofficial"
-      ? `It has ${count} item${count === 1 ? "" : "s"} and a ${mock.minutes}-minute clock. That is the whole paid attempt, not a full public exam.`
+    mock.availability.status === "full_practice"
+      ? `It has ${count} item${count === 1 ? "" : "s"} and a ${mock.minutes}-minute clock. The raw result is not an official score.`
       : "This variant cannot be purchased.";
 
   return `${mock.title}. ${scope} ${UNOFFICIAL_NOTICE} ${productOffer("mock_test")} ${TAX_NOTE}`;
@@ -215,14 +219,14 @@ export function mockLockedText(mock: MockTest): string {
 
 export function skillIntro(skill: Skill): string {
   if (skill === "reading") {
-    return "Choose a language, read a short original passage, and submit your answers. English also has separate short unofficial IELTS-style, TOEFL-style, and PTE-style reading practices. Finnish has a short unofficial YKI-style reading practice. None of these is an official test.";
+    return "Choose a language, read an original passage, and submit your answers. English has full unofficial IELTS-style, TOEFL-style, and PTE-style reading practices. Finnish has a full unofficial YKI-style reading practice. None of these is an official test.";
   }
 
   if (skill === "writing") {
-    return "Choose a language and write to a prompt. The result is a self-review checklist, not a band, an AI score, or an official mark. Some exam-style writing variants are unavailable because they need a rater MatchMyStudy does not have.";
+    return "Choose a language and write to a prompt. A built-in rubric estimates the response. That estimate is not an official score. If an AI reviewer is not configured, the rubric result still appears and says so.";
   }
 
-  return "Choose a language and play a browser text-to-speech preview of an original script. The result checks your answers. It is not proof that the audio played, and it is not an official listening score.";
+  return "Choose a language and play the audio or the browser voice for an original script. The result checks your answers. It is not proof that the audio played, and it is not an official listening score.";
 }
 
 export function languageIntro(skill: Skill, language: LanguageCode): string {
@@ -267,7 +271,7 @@ export function languageCrumbs(skill: Skill, language: LanguageCode) {
 export type MockSummary = {
   variant: ExamVariant;
   title: string;
-  status: "short_unofficial" | "unavailable";
+  status: "full_practice" | "unavailable";
   reason: string | null;
   minutes: number;
   questionCount: number;
@@ -288,7 +292,7 @@ export function summarizeMock(mock: MockTest): MockSummary {
   return {
     variant: mock.variant,
     title: mock.title,
-    status: "short_unofficial",
+    status: "full_practice",
     reason: null,
     minutes: mock.minutes,
     questionCount: mockQuestionCount(mock),

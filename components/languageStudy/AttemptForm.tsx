@@ -1,5 +1,6 @@
 "use client";
 
+import { readAccessToken, writeBrowserAttempt } from "@/lib/languageStudy/browserProgress";
 import { PREVIEW_NOTICE } from "@/lib/languageStudy/rubric";
 import type {
   AttemptFeedback,
@@ -10,7 +11,6 @@ import type {
   PublicWriting,
   PublicWritingMock,
 } from "@/lib/languageStudy/types";
-import { supabase } from "@/lib/supabase";
 import { useEffect, useRef, useState } from "react";
 import ResultPanel from "./ResultPanel";
 import SpeechButton from "./SpeechButton";
@@ -99,16 +99,15 @@ export default function AttemptForm({
       }
     }
 
-    const selfReview: Record<string, string> = {};
+    const essays: Record<string, string> = {};
 
-    if ("criteria" in task && task.criteria) {
-      for (const criterion of task.criteria) {
-        selfReview[criterion.id] = String(form.get(criterion.id) ?? "");
+    if ("prompts" in task && task.prompts) {
+      for (const item of task.prompts) {
+        essays[item.id] = String(form.get(`essay:${item.id}`) ?? "");
       }
     }
 
-    const { data } = await supabase.auth.getSession();
-    const token = data.session?.access_token;
+    const token = await readAccessToken();
     const response = await fetch("/api/language-study/attempt", {
       method: "POST",
       headers: {
@@ -120,7 +119,7 @@ export default function AttemptForm({
         taskId: task.id,
         answers,
         essay: form.get("essay"),
-        selfReview,
+        essays,
         openedScript,
       }),
     });
@@ -128,6 +127,8 @@ export default function AttemptForm({
       message?: string;
       feedback?: AttemptFeedback | null;
       previewNotice?: string;
+      saveNotice?: string;
+      persist?: "browser" | "account";
       allowance?: { exceeded?: boolean; freeUsed?: number; freeCap?: number };
     };
 
@@ -139,12 +140,20 @@ export default function AttemptForm({
       return;
     }
 
+    if (body.persist === "browser") {
+      writeBrowserAttempt({
+        taskId: task.id,
+        submittedAt: new Date().toISOString(),
+        feedback: body.feedback,
+      });
+    }
+
     setFeedback(body.feedback);
-    setPreviewNotice(body.previewNotice ?? (preview ? PREVIEW_NOTICE : null));
+    setPreviewNotice(body.saveNotice ?? body.previewNotice ?? (preview ? PREVIEW_NOTICE : null));
 
     if (body.allowance?.exceeded) {
       setAllowanceNote(
-        `Free practice allowance reached. ${body.allowance.freeUsed} of ${body.allowance.freeCap} provisional free tasks are saved for this skill and language. Purchase is not available yet, so no extra task was unlocked.`
+        `Free practice allowance reached. ${body.allowance.freeUsed} of ${body.allowance.freeCap} free tasks are saved for this skill and language.`
       );
     }
   }
@@ -179,6 +188,25 @@ export default function AttemptForm({
         </article>
       ) : null}
 
+      {"parts" in task && task.parts
+        ? task.parts.map((part) => (
+            <section key={part.id} className="space-y-6">
+              <h2 className="text-2xl font-bold text-slate-900">{part.title}</h2>
+              {part.passage ? (
+                <article
+                  lang={part.passageLang}
+                  className="rounded-3xl border border-slate-200 bg-white p-6 leading-8 text-slate-800 whitespace-pre-wrap"
+                >
+                  {part.passage}
+                </article>
+              ) : null}
+              {part.questions.map((question, index) => (
+                <QuestionFields key={question.id} question={question} index={index} />
+              ))}
+            </section>
+          ))
+        : null}
+
       {"prompt" in task && task.prompt ? (
         <article lang={task.promptLang} className="rounded-3xl border border-slate-200 bg-white p-6 leading-8 text-slate-800">
           {task.prompt}
@@ -202,7 +230,31 @@ export default function AttemptForm({
         <QuestionFields key={question.id} question={question} index={index} />
       ))}
 
-      {"criteria" in task && task.criteria ? (
+      {"prompts" in task && task.prompts
+        ? task.prompts.map((item) => (
+            <label key={item.id} className="block" htmlFor={`essay-${item.id}`}>
+              <span className="text-xl font-bold text-slate-900">{item.title}</span>
+              <article lang={item.promptLang} className="mt-3 rounded-3xl border border-slate-200 bg-white p-6 leading-8 text-slate-800">
+                {item.prompt}
+                <p className="mt-4 text-sm text-slate-600">
+                  Suggested length: {item.suggestedWords.min} to {item.suggestedWords.max} words. The
+                  suggestion is one signal in the rubric, not a mark by itself.
+                </p>
+              </article>
+              <span className="mt-4 block font-semibold text-slate-900">Your response</span>
+              <textarea
+                id={`essay-${item.id}`}
+                name={`essay:${item.id}`}
+                required
+                rows={10}
+                lang={item.promptLang}
+                className={`mt-2 w-full rounded-2xl border border-slate-300 p-4 text-slate-900 ${focus}`}
+              />
+            </label>
+          ))
+        : null}
+
+      {"criteria" in task && task.criteria && !("prompts" in task && task.prompts) ? (
         <div className="space-y-6">
           <label className="block" htmlFor="essay">
             <span className="font-semibold text-slate-900">Your response</span>
@@ -215,28 +267,19 @@ export default function AttemptForm({
               className={`mt-2 w-full rounded-2xl border border-slate-300 p-4 text-slate-900 ${focus}`}
             />
           </label>
-          {task.criteria.map((criterion) => (
-            <fieldset key={criterion.id} className="rounded-2xl border border-slate-200 p-4">
-              <legend className="px-1 font-semibold text-slate-900">{criterion.label}</legend>
-              <p className="text-sm text-slate-600" id={`${criterion.id}-help`}>
-                {criterion.description} This is your review, not an exam score.
-              </p>
-              <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:gap-4" role="radiogroup" aria-describedby={`${criterion.id}-help`}>
-                {(
-                  [
-                    ["met", "Met"],
-                    ["partly", "Partly"],
-                    ["not_yet", "Not yet"],
-                  ] as const
-                ).map(([value, label]) => (
-                  <label key={value} className="inline-flex min-h-11 items-center gap-2">
-                    <input type="radio" name={criterion.id} value={value} required className={focus} />
-                    {label}
-                  </label>
-                ))}
-              </div>
-            </fieldset>
-          ))}
+          <div className="rounded-2xl border border-slate-200 p-4">
+            <h2 className="font-semibold text-slate-900">What the rubric looks at</h2>
+            <ul className="mt-3 space-y-3">
+              {task.criteria.map((criterion) => (
+                <li key={criterion.id}>
+                  <p className="font-semibold text-slate-900">{criterion.label}</p>
+                  <p className="text-sm text-slate-600">
+                    {criterion.description} This is scored for you. It is not an official exam score.
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       ) : null}
 

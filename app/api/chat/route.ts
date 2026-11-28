@@ -1,5 +1,5 @@
 import { CHAT_INSTRUCTIONS } from "@/lib/chat/prompt";
-import { LIMIT_REACHED_MESSAGE } from "@/lib/chat/constants";
+import { ASSISTANT_UNAVAILABLE_MESSAGE, LIMIT_REACHED_MESSAGE } from "@/lib/chat/constants";
 import {
   CHAT_MODEL,
   MAX_REQUEST_BYTES,
@@ -22,6 +22,20 @@ export const dynamic = "force-dynamic";
 export const maxDuration = 30;
 
 const KNOWN_TOOL_PARTS = new Set(["tool-searchSite", "tool-showContactForm"]);
+
+function providerErrorStatus(error: unknown): number {
+  const message = error instanceof Error ? error.message : "";
+  const statusCode =
+    error && typeof error === "object" && "statusCode" in error
+      ? (error as { statusCode?: unknown }).statusCode
+      : undefined;
+
+  if (statusCode === 429 || /\b429\b|rate limit/i.test(message)) {
+    return 429;
+  }
+
+  return 503;
+}
 
 function textResponse(message: string, status: number) {
   return new Response(message, {
@@ -157,8 +171,7 @@ export async function POST(request: Request) {
     return createUIMessageStreamResponse({
       stream: toUIMessageStream({
         stream: result.stream,
-        onError: () =>
-          "The assistant is unavailable right now. Please try again in a moment.",
+        onError: () => ASSISTANT_UNAVAILABLE_MESSAGE,
       }),
       headers: {
         "cache-control": "no-store",
@@ -170,9 +183,6 @@ export async function POST(request: Request) {
       error instanceof Error ? error.name : "unknown"
     );
 
-    return textResponse(
-      "The assistant is unavailable right now. Please try again in a moment.",
-      503
-    );
+    return textResponse(ASSISTANT_UNAVAILABLE_MESSAGE, providerErrorStatus(error));
   }
 }

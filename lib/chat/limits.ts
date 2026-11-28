@@ -8,6 +8,7 @@ import {
 } from "@/lib/chat/constants";
 
 export {
+  ASSISTANT_UNAVAILABLE_MESSAGE,
   CHAT_MODEL,
   CHAT_UNAVAILABLE_MESSAGE,
   CONVERSATION_LIMIT_MESSAGE,

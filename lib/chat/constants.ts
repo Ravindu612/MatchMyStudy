@@ -1,4 +1,23 @@
-export const CHAT_MODEL = "openai/gpt-5-mini";
+export const CHAT_MODEL = "openai/gpt-5.4-nano";
+
+export const ASSISTANT_UNAVAILABLE_MESSAGE =
+  "The assistant is unavailable right now. Please try again in a moment.";
+
+export function friendlyChatError(message: string): string {
+  const text = message.trim();
+
+  if (
+    !text ||
+    text.length > 400 ||
+    text.startsWith("{") ||
+    text.startsWith("[") ||
+    /\b429\b|rate limit/i.test(text)
+  ) {
+    return ASSISTANT_UNAVAILABLE_MESSAGE;
+  }
+
+  return text;
+}
 
 export const MAX_USER_MESSAGE_CHARS = 1000;
 export const MAX_USER_MESSAGES = 12;

@@ -2,7 +2,7 @@
 
 import ContactForm from "@/components/chat/ContactForm";
 import MessageText from "@/components/chat/MessageText";
-import { MAX_USER_MESSAGE_CHARS } from "@/lib/chat/constants";
+import { friendlyChatError, MAX_USER_MESSAGE_CHARS } from "@/lib/chat/constants";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { useEffect, useRef, useState } from "react";
@@ -17,13 +17,7 @@ const GREETING =
   "Hi. I can help you find countries, universities, programs, and consultants published on MatchMyStudy.";
 
 function visibleError(error: Error): string {
-  const message = error.message.trim();
-
-  if (!message || message.length > 400 || message.startsWith("{") || message.startsWith("[")) {
-    return "The assistant is unavailable right now. Please try again in a moment.";
-  }
-
-  return message;
+  return friendlyChatError(error.message);
 }
 
 type ContactToolPart = {
